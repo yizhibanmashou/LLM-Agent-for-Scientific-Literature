@@ -2,38 +2,339 @@
   "id": "Genetics_chapter16_008",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
+    "section": "POWER OF NESTED ANOVA DESIGNS",
     "subsections": [
-      "SIB ANALYSIS: MAXIMUM LIKELIHOOD"
+      "Several Full-sib Families"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "SIB ANALYSIS: MAXIMUM LIKELIHOOD",
+    "section_level_1": "POWER OF NESTED ANOVA DESIGNS",
+    "section_level_2": "Several Full-sib Families",
     "heading_path": [
-      "Introduction",
-      "SIB ANALYSIS: MAXIMUM LIKELIHOOD"
+      "POWER OF NESTED ANOVA DESIGNS",
+      "Several Full-sib Families"
     ],
-    "display_heading": "SIB ANALYSIS: MAXIMUM LIKELIHOOD"
+    "display_heading": "POWER OF NESTED ANOVA DESIGNS / Several Full-sib Families",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 518,
+      "printed_page": 498,
+      "source_block_ids": [
+        "p518:b3"
+      ],
+      "bbox": [
+        118.0,
+        262.0,
+        431.0,
+        295.0
+      ],
+      "raw_text": "Several Full-sib Families"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "ML estimation of QTL position and effects using a set of relatives from an outbred population proceeds as with inbred-line crosses — one constructs an appropriate likelihood function for the assumed model, obtains the parameter values that"
+      "content": "As with half-sibs, the contrasts noted above are conditional on the parental genotypes, and have expected value zero when considered over a random collection of parents. However, either scaled squared marker contrasts or nested ANOVA can be used to combine results from a collection of full-sib families into an estimate of the genetic variance associated with the marker alleles. The squared marker contrasts used in both backcross and fully informative families have expected values (under a balanced design of n/2 sibs per marker class) of",
+      "source_page": 518,
+      "printed_page": 498,
+      "source_block_ids": [
+        "p518:b4"
+      ],
+      "bbox": [
+        115.0,
+        306.0,
+        1076.0,
+        541.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:16.3]] maximize this function, and tests alternative hypotheses with likelihood ratios. One subtle difference for outbred parents is that likelihood maps displaying the amount of support for a putative QTL often show discontinuities between adjacent markers (Knott and Haley 1992b); see Figure 16.3. Such discontinuities arise when adjacent loci differ in the fraction of informative individuals in the sample because of between-locus variance in the marker allele frequencies (a situation that does not arise with inbred-line crosses). As Figure 16.3 shows, these discontinuities can be avoided by constructing likelihood functions that use all of the marker information on a chromosome (Georges et al. 1995, Kruglyak and Lander 1995b)."
+      "content": "[[FORMULA:Genetics_chapter16_formula027]]",
+      "source_page": 518,
+      "printed_page": 498,
+      "source_block_ids": [
+        "p518:b5"
+      ],
+      "bbox": [
+        251.0,
+        556.0,
+        933.0,
+        737.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The major complication in applying ML methods to outbred populations is that the resulting likelihood functions are much more complex than for inbred-line crosses due to the need to consider all possible genotypes of measured pedigree members. For example, for an inbred-line cross, all $ F_{1} $ parents have the same genotype, say MQ/mq. In contrast, in an outbred population, for a diallelic QTL there are 16 possible genotypes for a pair of parents with marker genotype M/m, as each parent could be QM/Qm, QM/qm, qM/Qm, or qM/qm. The situation is even more complex when more than two alleles are segregating at the QTL or when one considers two (or more) markers simultaneously. For a pedigree with even a modest number of parents, the number of possible genotypes that must be considered is enormous."
+      "content": "In the absence of dominance ( $ \\sigma_{D}^{2}=0 $), this equation reduces to the value for half-sibs (Equation 16.10b).",
+      "source_page": 518,
+      "printed_page": 498,
+      "source_block_ids": [
+        "p518:b7"
+      ],
+      "bbox": [
+        112.0,
+        757.0,
+        1069.0,
+        827.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "LeRoy and Elsen (1995) show for a single marker that likelihood methods can be considerably more powerful for detecting a QTL in a sib design than linear model-based approaches under loose linkage. However, with multiple markers, Knott et al. (1996) find little difference between linear model and ML approaches. Both studies find these two approaches have the same power when the marker and QTL are completely linked. One likely explanation for the apparent discrepancy under loose linkage is that while Le Roy and Elsen assume only a single QTL is segregating, they do not incorporate a factor into their likelihood function to account for segregation at unlinked sites. Hence, as the marker-QTL recombination frequency approaches 1/2, their likelihood function approaches that for classical segregation analysis (i.e., no marker information, see Chapter 13). Thus, as the marker-QTL linkage becomes looser, the power of the linear model decreases to the significance level of the test, while the ML method approaches the power of classical segregation analysis. A likelihood approach which included a factor for account for between-family differences due to segregation of unlinked background polygenes should give similar power to linear model based approach except when the QTL effect is very large (S. Knott and C. Haley, pers. comm.)."
+      "content": "Intercross families use a slightly different marker contrast,",
+      "source_page": 518,
+      "printed_page": 498,
+      "source_block_ids": [
+        "p518:b8"
+      ],
+      "bbox": [
+        163.0,
+        824.0,
+        863.0,
+        860.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula028]]",
+      "source_page": 518,
+      "printed_page": 498,
+      "source_block_ids": [
+        "p518:b9"
+      ],
+      "bbox": [
+        445.0,
+        885.0,
+        734.0,
+        925.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Since the sample sizes for the two marker genotypes are now $ n_{M_i M_i} = n/4 $, the sampling variance of the marker contrasts is doubled (with $ E(SE_I^2) = 8\\sigma_e^2/n $), giving the expected value of the squared marker contrast as",
+      "source_page": 518,
+      "printed_page": 498,
+      "source_block_ids": [
+        "p518:b10"
+      ],
+      "bbox": [
+        109.0,
+        945.0,
+        1068.0,
+        1047.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula029]]",
+      "source_page": 518,
+      "printed_page": 498,
+      "source_block_ids": [
+        "p518:b11"
+      ],
+      "bbox": [
+        287.0,
+        1076.0,
+        889.0,
+        1213.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This is twice the expected value for the contrasts for backcross and fully informative families, exactly compensating for the doubling of sampling variance. Hence, for all informative contrasts we have",
+      "source_page": 518,
+      "printed_page": 498,
+      "source_block_ids": [
+        "p518:b13"
+      ],
+      "bbox": [
+        109.0,
+        1235.0,
+        1067.0,
+        1334.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula030]]",
+      "source_page": 518,
+      "printed_page": 498,
+      "source_block_ids": [
+        "p518:b14"
+      ],
+      "bbox": [
+        285.0,
+        1352.0,
+        888.0,
+        1427.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "As with Equation 16.11, a test statistic T is obtained as the sum of the $ t^{2} $ values over all N informative contrasts, with T significantly greater than N being taken as evidence for a linked QTL.",
+      "source_page": 518,
+      "printed_page": 498,
+      "source_block_ids": [
+        "p518:b16"
+      ],
+      "bbox": [
+        108.0,
+        1451.0,
+        1067.0,
+        1548.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "As in the case of half-sib analysis, nested ANOVA is often used in place of sums of squared marker constrasts. The ANOVA model for full-sib families becomes",
+      "source_page": 519,
+      "printed_page": 499,
+      "source_block_ids": [
+        "p519:b2"
+      ],
+      "bbox": [
+        90.0,
+        136.0,
+        1050.0,
+        234.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula031]]",
+      "source_page": 519,
+      "printed_page": 499,
+      "source_block_ids": [
+        "p519:b3"
+      ],
+      "bbox": [
+        416.0,
+        237.0,
+        728.0,
+        268.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $f_{i}$, the effect of the ith full-sib family, replaces the half-sib family (or sire) effect $s_{i}$ in the half-sib design, and the number of marker effects ranges from two to four, depending on the type of family. Again, a significant between-marker within-sibship variance ($\\sigma_{m}^{2}$) indicates linkage to a segregating QTL, and this is tested using the statistic $F = MS_{m}/MS_{e}$. The use of nested ANOVAs for full-sib families was developed by Jayakar (1970) and A. Hill (1975), while Soller and Genizi (1978), Luo (1993), Knott (1994), van der Beck (1995), and Muranty (1996) examine the power of these designs.",
+      "source_page": 519,
+      "printed_page": 499,
+      "source_block_ids": [
+        "p519:b4"
+      ],
+      "bbox": [
+        91.0,
+        274.0,
+        1052.0,
+        532.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "If one ignores the marker heterozygotes in intercross families and considers the marker contrasts for all informative parents, then using the same logic that leads to Equation 16.15 shows that the contribution to $ MS_m $ is $ (n/4)MC^2 $ for each informative contrast in a backcross or fully informative family and $ (n/8)MC_I^2 $ for an intercross marker contrast. Recalling Equations 16.22 and 16.23, the expected value of $ MS_m $ becomes",
+      "source_page": 519,
+      "printed_page": 499,
+      "source_block_ids": [
+        "p519:b5"
+      ],
+      "bbox": [
+        92.0,
+        531.0,
+        1053.0,
+        727.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula032]]",
+      "source_page": 519,
+      "printed_page": 499,
+      "source_block_ids": [
+        "p519:b6"
+      ],
+      "bbox": [
+        323.0,
+        729.0,
+        824.0,
+        800.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "so that the variance associated with marker alleles is",
+      "source_page": 519,
+      "printed_page": 499,
+      "source_block_ids": [
+        "p519:b8"
+      ],
+      "bbox": [
+        94.0,
+        809.0,
+        726.0,
+        840.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula033]]",
+      "source_page": 519,
+      "printed_page": 499,
+      "source_block_ids": [
+        "p519:b9"
+      ],
+      "bbox": [
+        398.0,
+        842.0,
+        742.0,
+        911.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This can be estimated by using",
+      "source_page": 519,
+      "printed_page": 499,
+      "source_block_ids": [
+        "p519:b11"
+      ],
+      "bbox": [
+        95.0,
+        920.0,
+        471.0,
+        953.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula034]]",
+      "source_page": 519,
+      "printed_page": 499,
+      "source_block_ids": [
+        "p519:b12"
+      ],
+      "bbox": [
+        433.0,
+        960.0,
+        711.0,
+        1024.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, when dominance ( $ \\sigma_D^2 > 0 $) is present, full-sib designs are expected to be more powerful for QTL detection than half-sib designs, as $ \\sigma_m^2 $ is greater. Even in the absence of dominance, full-sib designs are generally more powerful, as power depends on the number of informative marker contrasts (one for each backcross and intercross family, two for each fully informative family). In the extreme case where all N families in a design are fully marker informative, a full-sib design has 2N contrasts vs. N for a half-sib design with the same number of families.",
+      "source_page": 519,
+      "printed_page": 499,
+      "source_block_ids": [
+        "p519:b14"
+      ],
+      "bbox": [
+        94.0,
+        1031.0,
+        1054.0,
+        1257.0
+      ]
     }
   ]
 }

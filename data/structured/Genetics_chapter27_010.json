@@ -2,58 +2,335 @@
   "id": "Genetics_chapter27_010",
   "metadata": {
     "chapter": "Genetics_chapter27",
-    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "section": "SOLVING THE ML/REML EQUATIONS",
     "subsections": [
       "Derivative-based Methods"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_1": "SOLVING THE ML/REML EQUATIONS",
     "section_level_2": "Derivative-based Methods",
     "heading_path": [
-      "Variance-Component Estimation with Complex Pedigrees",
+      "SOLVING THE ML/REML EQUATIONS",
       "Derivative-based Methods"
     ],
-    "display_heading": "Derivative-based Methods"
+    "display_heading": "SOLVING THE ML/REML EQUATIONS / Derivative-based Methods",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 806,
+      "printed_page": 786,
+      "source_block_ids": [
+        "p806:b5"
+      ],
+      "bbox": [
+        169.0,
+        957.0,
+        504.0,
+        999.0
+      ],
+      "raw_text": "Derivative-based Methods"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The Newton-Raphson (NR) algorithm, a standard method for numerically solving coupled sets of nonlinear equations, has been used extensively to solve ML / REML equations (Harville 1977, Jennrich and Sampson 1976, Searle et al. 1992). Specific applications to genetic variance-component estimation include Lange et al. (1977) for ML estimates of additive and dominance variances for single characters and Meyer (1983, 1985) for REML estimates of the additive genetic covariance matrix for multiple characters. We confine our discussion of Newton-Raphson iteration to REML estimates, as applications to ML follow in a similar fashion."
+      "content": "The Newton-Raphson (NR) algorithm, a standard method for numerically solving coupled sets of nonlinear equations, has been used extensively to solve ML / REML equations (Harville 1977, Jennrich and Sampson 1976, Searle et al. 1992). Specific applications to genetic variance-component estimation include Lange et al. (1977) for ML estimates of additive and dominance variances for single characters and Meyer (1983, 1985) for REML estimates of the additive genetic covariance matrix for multiple characters. We confine our discussion of Newton-Raphson iteration to REML estimates, as applications to ML follow in a similar fashion.",
+      "source_page": 806,
+      "printed_page": 786,
+      "source_block_ids": [
+        "p806:b6"
+      ],
+      "bbox": [
+        168.0,
+        981.0,
+        1134.0,
+        1265.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The Newton-Raphson method obtains the REML estimate of the vector of parameters $ \\Theta $ by starting with some initial value $ \\Theta^{(0)} $ and then iterating to convergence to a final solution by using $$ \\mathbf{\\Theta}^{(k+1)}=\\mathbf{\\Theta}^{(k)}-\\left(\\mathbf{H}^{(k)}\\right)^{-1}\\frac{\\partial L}{\\partial\\mathbf{\\Theta}}\\bigg|_{\\mathbf{\\Theta}^{(k)}} $$ where $\\partial L/\\partial\\Theta$ is a column vector of the partials of the log-likelihood function with respect to each parameter evaluated at the estimate $\\Theta^{(k)}$, and H is the Hessian matrix of all second-order partial derivatives of the log-likelihood $L$ with respect to the variance components. $\\mathbf{H}^{-1}$ and $\\partial L/\\partial\\Theta$ respectively provide measures of the curvature and the slope (and directionality) of the likelihood surface, given the current estimates. Their product gives a projected degree of movement of the vector $\\Theta$ towards an improved set of values to be used in the next iteration."
+      "content": "The Newton-Raphson method obtains the REML estimate of the vector of parameters $ \\Theta $ by starting with some initial value $ \\Theta^{(0)} $ and then iterating to convergence to a final solution by using",
+      "source_page": 806,
+      "printed_page": 786,
+      "source_block_ids": [
+        "p806:b7"
+      ],
+      "bbox": [
+        177.0,
+        1236.0,
+        1138.0,
+        1368.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Consider again the mixed model with $m$ random factors plus a residual, $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\sum_{i=1}^{m}\\mathbf{Z}_{i}\\mathbf{u}_{i}+\\mathbf{e} $$ where $ \\mathbf{u}_i \\sim \\text{MVN}(\\mathbf{0}, \\sigma_i^2 \\mathbf{B}_i) $ for $ 1 \\leq i \\leq m $, and $ \\mathbf{B}_i $ is a square symmetric $ n_i \\times n_i $ matrix of known constants. The residuals are also assumed to be multivariate normal with $ \\mathbf{e} \\sim \\text{MVN}(\\mathbf{0}, \\sigma_E^2 \\mathbf{I}) $. Since $ \\mathbf{y} $ is the sum of multivariate normals, it is also multivariate normal with $ \\mathbf{y} \\sim \\text{MVN}(\\mathbf{X}\\beta, \\mathbf{V}) $, where $$ \\mathbf{V}=\\sum_{i=1}^{m}\\sigma_{i}^{2}\\mathbf{Z}_{i}\\mathbf{B}_{i}\\mathbf{Z}_{i}^{T}+\\sigma_{E}^{2}\\mathbf{I} $$"
+      "content": "[[FORMULA:Genetics_chapter27_formula072]]",
+      "source_page": 806,
+      "printed_page": 786,
+      "source_block_ids": [
+        "p806:b8"
+      ],
+      "bbox": [
+        433.0,
+        1361.0,
+        884.0,
+        1438.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Under REML, $ \\boldsymbol{\\Theta} = (\\sigma_{1}^{2}, \\sigma_{2}^{2}, \\cdots, \\sigma_{E}^{2})^{T} $ and Equations 27.14b and 27.27b give the elements of $ \\partial L/\\partial \\boldsymbol{\\Theta} $ as $$ \\frac{\\partial L}{\\partial\\sigma_{i}^{2}}\\bigg|_{\\mathbf{\\Theta}^{(k)}}=-\\frac{1}{2}\\mathbf{t r}\\left(\\mathbf{P}^{(k)}\\mathbf{V}_{i}\\right)+\\frac{1}{2}\\mathbf{y}^{T}\\mathbf{P}^{(k)}\\mathbf{V}_{i}\\mathbf{P}^{(k)}\\mathbf{y} $$ where $V_{i}$ is given by Equation 27.15 and $\\mathbf{P}^{(k)}$ is calculated from Equation 27.17b using the current variance-component estimates in $\\Theta^{(k)}$. Searle et al. (1992) give the elements of $\\mathbf{H}$ for REML as $$ \\mathbf{H}_{i j}^{(k)}=\\frac{\\partial^{2}L}{\\partial\\sigma_{i}^{2}\\partial\\sigma_{j}^{2}}=\\frac{1}{2}\\mathbf{t r}\\left(\\mathbf{P}^{(k)}\\mathbf{V}_{i}\\mathbf{P}^{(k)}\\mathbf{V}_{j}\\right)-\\mathbf{y}^{T}\\mathbf{P}^{(k)}\\mathbf{V}_{i}\\mathbf{P}^{(k)}\\mathbf{V}_{j}\\mathbf{P}^{(k)}\\mathbf{y} $$ where again the partials are evaluated using $\\Theta^{(k)}$"
+      "content": "where $\\partial L/\\partial \\boldsymbol{\\Theta}$ is a column vector of the partials of the log-likelihood function with respect to each parameter evaluated at the estimate $\\boldsymbol{\\Theta}^{(k)}$, and $\\mathbf{H}$ is the Hessian matrix of all second-order partial derivatives of the log-likelihood L with respect to the variance components. $ \\mathbf{H}^{-1} $ and $ \\partial L/\\partial \\Theta $ respectively provide measures of the curvature and the slope (and directionality) of the likelihood surface, given the current estimates. Their product gives a projected degree of movement of the vector $ \\Theta $ towards an improved set of values to be used in the next iteration.",
+      "source_page": 806,
+      "printed_page": 786,
+      "source_block_ids": [
+        "p806:b10",
+        "p807:b2"
+      ],
+      "bbox": [
+        184.0,
+        1442.0,
+        1144.0,
+        1543.0
+      ],
+      "source_page_end": 807
     },
     {
       "type": "discussion",
-      "content": "A common variant of the Newton-Raphson algorithm is Fisher's scoring method, which replaces the inverse of the Hessian matrix in Equation 27.32 by its expected value, which after allowing for a change in sign, turns out to be defined by the inverse of Fisher's information matrix, $ -\\mathbf{F}^{-1} $ (Equation 27.20). This reduces the iterative equation to $$ \\Theta^{\\left(k+1\\right)}=\\Theta^{\\left(k\\right)}+\\left(\\mathbf{F}^{\\left(k\\right)}\\right)^{-1}\\frac{\\partial L}{\\partial\\mathbf{\\Theta}}\\Bigg|_{\\mathbf{\\Theta}^{\\left(k\\right)}} $$ with $$ F_{i j}^{(k)}=\\frac{1}{2}\\mathrm{t r}\\big(\\mathbf{P}^{(k)}\\mathbf{V}_{i}\\mathbf{P}^{(k)}\\mathbf{V}_{j}\\big) $$"
+      "content": "Consider again the mixed model with m random factors plus a residual,",
+      "source_page": 807,
+      "printed_page": 787,
+      "source_block_ids": [
+        "p807:b3"
+      ],
+      "bbox": [
+        109.0,
+        284.0,
+        975.0,
+        344.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "There are several motivations for employing this modification. First, as noted above, the inverse of the information matrix, when evaluated at the REML values, estimates the standard errors for these estimates. Second, F is easier to compute than $ \\mathbf{H}^{-1} $ (compare Equations 27.34 and 27.35b). Finally, Fisher's scoring method appears to be slightly more robust to initial values than strict Newton-Raphson iteration (Jennrich and Sampson 1976)."
+      "content": "[[FORMULA:Genetics_chapter27_formula073]]",
+      "source_page": 807,
+      "printed_page": 787,
+      "source_block_ids": [
+        "p807:b4"
+      ],
+      "bbox": [
+        388.0,
+        349.0,
+        679.0,
+        440.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 4. Again consider the simple animal model with a single observation per individual, $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{a} + \\mathbf{e} $. For REML estimates, letting $$ \\mathbf{\\Theta}^{(k)}=\\left(\\begin{matrix}{\\left(\\sigma_{A}^{2}\\right)^{(k)}}\\\\ {\\left(\\sigma_{E}^{2}\\right)^{(k)}}\\\\ \\end{matrix}\\right)\\qquad\\mathrm{g i v e s}\\qquad\\frac{\\partial{\\cal L}}{\\partial\\mathbf{\\Theta}}=\\frac{1}{2}\\left(\\begin{matrix}{-\\operatorname{t r}(\\mathbf{\\cal P})+\\mathbf{y}^{T}\\mathbf{P}\\mathbf{\\cal P}\\mathbf{y}}\\\\ {-\\operatorname{t r}(\\mathbf{\\cal P}\\mathbf{A})+\\mathbf{y}^{T}\\mathbf{\\cal P}\\mathbf{A}\\mathbf{\\cal P}\\mathbf{y}}\\\\ \\end{matrix}\\right) $$"
+      "content": "where $\\mathbf{u}_i \\sim \\text{MVN}(\\mathbf{0}, \\sigma_i^2 \\mathbf{B}_i)$ for $1 \\leq i \\leq m$, and $\\mathbf{B}_i$ is a square symmetric $n_i \\times n_i$ matrix of known constants. The residuals are also assumed to be multivariate normal with $\\mathbf{e} \\sim \\text{MVN}(\\mathbf{0}, \\sigma_E^2 \\mathbf{I})$. Since $\\mathbf{y}$ is the sum of multivariate normals, it is also multivariate normal with $\\mathbf{y} \\sim \\text{MVN}(\\mathbf{X}\\boldsymbol{\\beta}, \\mathbf{V})$, where",
+      "source_page": 807,
+      "printed_page": 787,
+      "source_block_ids": [
+        "p807:b5"
+      ],
+      "bbox": [
+        48.0,
+        445.0,
+        1007.0,
+        604.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note that P is a function of the current variance-component estimates, with $$ \\mathbf{P}=(\\mathbf{V}^{-1})^{(k)}-(\\mathbf{V}^{-1})^{(k)}\\mathbf{X}(\\mathbf{X}^{T}(\\mathbf{V}^{-1})^{(k)}\\mathbf{X})^{-1}\\mathbf{X}^{T}(\\mathbf{V}^{-1})^{(k)} $$ where $$ \\mathbf{V}^{(k)}=(\\sigma_{A}^{2})^{(k)}\\mathbf{A}+(\\sigma_{E}^{2})^{(k)}\\mathbf{I} $$ with A being the relationship matrix for the individuals being measured. Likewise, from Equation 27.34 the Hessian matrix H is given by $$ \\frac{\\partial^{2}L}{\\partial\\Theta^{2}}\\Bigg|_{\\mathbf{\\Theta}^{(k)}}=\\frac{1}{2}\\left(\\begin{array}{l l}{\\mathrm{t r}(\\mathbf{\\Theta}\\mathbf{P}\\mathbf{P})-2\\mathbf{y}^{T}\\mathbf{P}\\mathbf{P}\\mathbf{P}\\mathbf{y}}&{\\mathrm{t r}(\\mathbf{\\Theta}\\mathbf{P}\\mathbf{A}\\mathbf{P})-2\\mathbf{y}^{T}\\mathbf{P}\\mathbf{A}\\mathbf{P}\\mathbf{P}\\mathbf{y}}\\\\ &\\\\ {\\mathrm{t r}(\\mathbf{\\Theta}\\mathbf{P}\\mathbf{A}\\mathbf{P})-2\\mathbf{y}^{T}\\mathbf{P}\\mathbf{A}\\mathbf{P}\\mathbf{P}\\mathbf{y}}&{\\mathrm{t r}(\\mathbf{\\Theta}\\mathbf{P}\\mathbf{A}\\mathbf{P}\\mathbf{A})-2\\mathbf{y}^{T}\\mathbf{P}\\mathbf{A}\\mathbf{P}\\mathbf{A}\\mathbf{P}\\mathbf{y}}\\end{array}\\right) $$ and the Fisher information matrix by $$ \\mathbf{F}=-E\\left(\\frac{\\partial^{2}L}{\\partial\\boldsymbol{\\Theta}^{2}}\\right)=\\frac{1}{2}\\left(\\begin{array}{c c}{\\operatorname{t r}(\\mathbf{P}\\mathbf{P})}&{\\operatorname{t r}(\\mathbf{P}\\mathbf{A}\\mathbf{P})}\\\\ &\\\\ {\\operatorname{t r}(\\mathbf{P}\\mathbf{P}\\mathbf{A})}&{\\operatorname{t r}(\\mathbf{P}\\mathbf{A}\\mathbf{P}\\mathbf{A})}\\end{array}\\right) $$"
+      "content": "[[FORMULA:Genetics_chapter27_formula074]]",
+      "source_page": 807,
+      "printed_page": 787,
+      "source_block_ids": [
+        "p807:b6"
+      ],
+      "bbox": [
+        358.0,
+        606.0,
+        694.0,
+        699.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note that $ \\mathbf{P} $ is really indexed by $ k $ since it depends on the current estimates of the unknown variance components, $ \\widehat{\\sigma}_A^2 $ and $ \\widehat{\\sigma}_E^2 $."
+      "content": "Under REML, $ \\boldsymbol{\\Theta} = (\\sigma_{1}^{2}, \\sigma_{2}^{2}, \\cdots, \\sigma_{E}^{2})^{T} $ and Equations 27.14b and 27.27b give the elements of $ \\partial L/\\partial \\boldsymbol{\\Theta} $ as",
+      "source_page": 807,
+      "printed_page": 787,
+      "source_block_ids": [
+        "p807:b7"
+      ],
+      "bbox": [
+        43.0,
+        704.0,
+        1001.0,
+        797.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula075]]",
+      "source_page": 807,
+      "printed_page": 787,
+      "source_block_ids": [
+        "p807:b8"
+      ],
+      "bbox": [
+        220.0,
+        797.0,
+        819.0,
+        878.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ V_i $ is given by Equation 27.15 and $ \\mathbf{P}^{(k)} $ is calculated from Equation 27.17b using the current variance-component estimates in $ \\boldsymbol{\\Theta}^{(k)} $. Searle et al. (1992) give the elements of $ \\mathbf{H} $ for REML as",
+      "source_page": 807,
+      "printed_page": 787,
+      "source_block_ids": [
+        "p807:b10"
+      ],
+      "bbox": [
+        35.0,
+        890.0,
+        995.0,
+        1018.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula076]]",
+      "source_page": 807,
+      "printed_page": 787,
+      "source_block_ids": [
+        "p807:b11"
+      ],
+      "bbox": [
+        46.0,
+        1009.0,
+        895.0,
+        1094.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where again the partials are evaluated using $ \\Theta^{(k)} $",
+      "source_page": 807,
+      "printed_page": 787,
+      "source_block_ids": [
+        "p807:b13"
+      ],
+      "bbox": [
+        29.0,
+        1108.0,
+        623.0,
+        1157.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A common variant of the Newton-Raphson algorithm is Fisher’s scoring method, which replaces the inverse of the Hessian matrix in Equation 27.32 by its expected value, which after allowing for a change in sign, turns out to be defined by the inverse of Fisher’s information matrix, $ -\\mathbf{F}^{-1} $ (Equation 27.20). This reduces the iterative equation to",
+      "source_page": 807,
+      "printed_page": 787,
+      "source_block_ids": [
+        "p807:b14"
+      ],
+      "bbox": [
+        24.0,
+        1142.0,
+        988.0,
+        1329.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula077]]",
+      "source_page": 807,
+      "printed_page": 787,
+      "source_block_ids": [
+        "p807:b15"
+      ],
+      "bbox": [
+        275.0,
+        1337.0,
+        722.0,
+        1418.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "with",
+      "source_page": 807,
+      "printed_page": 787,
+      "source_block_ids": [
+        "p807:b17"
+      ],
+      "bbox": [
+        19.0,
+        1415.0,
+        84.0,
+        1446.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula078]]",
+      "source_page": 807,
+      "printed_page": 787,
+      "source_block_ids": [
+        "p807:b18"
+      ],
+      "bbox": [
+        319.0,
+        1447.0,
+        673.0,
+        1516.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "There are several motivations for employing this modification. First, as noted above, the inverse of the information matrix, when evaluated at the REML values, estimates the standard errors for these estimates. Second, F is easier to compute than $ \\mathbf{H}^{-1} $ (compare Equations 27.34 and 27.35b). Finally, Fisher's scoring method appears to be slightly more robust to initial values than strict Newton-Raphson iteration (Jennrich and Sampson 1976).",
+      "source_page": 808,
+      "printed_page": 788,
+      "source_block_ids": [
+        "p808:b2"
+      ],
+      "bbox": [
+        137.0,
+        138.0,
+        1101.0,
+        360.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter27:4]]",
+      "source_page": 808,
+      "source_block_ids": [
+        "p808:b3",
+        "p808:b4",
+        "p808:b5",
+        "p808:b6",
+        "p808:b7",
+        "p808:b8",
+        "p808:b9",
+        "p808:b10",
+        "p808:b11",
+        "p808:b12",
+        "p808:b13"
+      ],
+      "bbox": [
+        193.0,
+        428.0,
+        1059.0,
+        514.0
+      ]
     }
   ]
 }

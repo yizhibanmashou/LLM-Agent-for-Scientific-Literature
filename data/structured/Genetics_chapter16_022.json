@@ -2,38 +2,101 @@
   "id": "Genetics_chapter16_022",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
+    "section": "MAPPING DICHOTOMOUS CHARACTERS",
     "subsections": [
-      "Exclusion Mapping and Information Content Mapping"
+      "Genomic Scanning"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Exclusion Mapping and Information Content Mapping",
+    "section_level_1": "MAPPING DICHOTOMOUS CHARACTERS",
+    "section_level_2": "Genomic Scanning",
     "heading_path": [
-      "Introduction",
-      "Exclusion Mapping and Information Content Mapping"
+      "MAPPING DICHOTOMOUS CHARACTERS",
+      "Genomic Scanning"
     ],
-    "display_heading": "Exclusion Mapping and Information Content Mapping"
+    "display_heading": "MAPPING DICHOTOMOUS CHARACTERS / Genomic Scanning",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 543,
+      "printed_page": 523,
+      "source_block_ids": [
+        "p543:b5"
+      ],
+      "bbox": [
+        78.0,
+        1024.0,
+        323.0,
+        1057.0
+      ],
+      "raw_text": "Genomic Scanning"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "While the support for a QTL is often presented by likelihood (or related) plots, two other types of plots provide useful mapping information. Exclusion mapping displays the support for the hypothesis that a QTL is absent at a particular position. With a standard LOD score plot, one tests the data against the null hypothesis of no linked QTL. In contrast, under exclusion mapping likelihood-ratio test statistics are still plotted, but now the null hypothesis is that the position contains a QTL of specified (or greater) effect. An exclusion LOD score of -2 or less is taken as sufficient evidence to exclude the presence of a gene of this effect or larger segregating within the sample population (Figure 16.5). Using this approach, Ebers et al. (1996) were able to exclude 88 percent of the genome of their sampled population from containing a DS gene for multiple sclerosis of effect $ \\lambda_{S} \\geq 3.0 $. Likewise, Hyer et al. (1991) and Hanis et al. (1996) were able to exclude regions from containing genes influencing diabetes. Further details can be found in Hyer et al. (1991), Risch (1993), and Kruglyak and Lander (1995b). One major caveat is that even a highly significant exclusion only refers to the sample data. It is possible that a DS gene of major effect is segregating in the population, but has been missed by the sampling scheme."
+      "content": "Given the increasing density of the human genetic map, genomic scans for diseases have become popular. In their simplest form, the investigator computes an ASP test statistic (such as the MLS value) at each of a number of markers, scanning the genome for markers showing linkage to DS genes. Examples include scans for type 1 (Davies et al. 1994) and type 2 (Hanis et al. 1996) diabetes and for multiple sclerosis (Ebers et al. 1996). Lander and Kruglyak's (1995) suggested guidelines (for humans) on the appropriate significance level for such tests have generated much discussion (Witte et al. 1996, Curtis 1996, Lander and Kruglyak 1996, Kruglyak 1996).",
+      "source_page": 543,
+      "printed_page": 523,
+      "source_block_ids": [
+        "p543:b6"
+      ],
+      "bbox": [
+        77.0,
+        1068.0,
+        1036.0,
+        1353.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Another useful type of plot is an information content map, which graphs the amount of marker information at each point along a chromosome (Figure 16.6; Kruglyak and Lander 1995b). Here, one plots the $ r^{2} $ value for a model that predicts"
+      "content": "A more sophisticated version of genomic scanning has been developed by Kruglyak and Lander (1995b), who used a multipoint method (simultaneously incorporating information from all linked markers) to estimate the ibd distribution at each point along a chromosome. This estimated distribution is then used to compute some ASP statistic for that point. For example, for arbitrary chromosomal map position $c$, Kruglyak and Lander obtain estimates of $\\pi_{20}(c)$, $\\pi_{21}(c)$, and $\\pi_{22}(c)$ — the ibd values at this position in doubly affected sib pairs — which can then be used to compute any ASP statistics, such as MLS. This method allows for a genomic scan of all chromosomal positions, not just those points corresponding to marker loci. As with likelihood maps, estimates of the locations of DS genes are given by local maxima of the test statistic plot, provided they exceed the significance threshold. With the putative DS gene position in hand, estimates of its effect can be obtained by using the estimated ibd distribution at that position. Recall that the effect of a QTL can be expressed in terms of the relative risks in full-sib and parent-offspring pairs ($\\lambda_S$ and $\\lambda_O$). First noting that estimates of $d_{20}$ and $d_{21}$ can be obtained from the estimated ibd values, $\\widehat{d}_{20} = 1/4 - \\widehat{\\pi}_{20}$ and $\\widehat{d}_{21} = 1/2 - \\widehat{\\pi}_{21}$, substitution of these into Equations 16.52b,c (with $c = 0$) and rearranging gives",
+      "source_page": 543,
+      "printed_page": 523,
+      "source_block_ids": [
+        "p543:b7",
+        "p544:b2"
+      ],
+      "bbox": [
+        74.0,
+        1355.0,
+        1036.0,
+        1515.0
+      ],
+      "source_page_end": 544
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:16.5]]"
+      "content": "[[FORMULA:Genetics_chapter16_formula094]]",
+      "source_page": 544,
+      "printed_page": 524,
+      "source_block_ids": [
+        "p544:b3"
+      ],
+      "bbox": [
+        195.0,
+        589.0,
+        906.0,
+        665.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:16.6]] the ibd distribution for each point along the chromosome. Regions with high $ r^{2} $ values imply that the ibd distribution is estimated with little error, so additional markers are not needed to predict ibd status. In contrast, regions with smaller $ r^{2} $ values would benefit by increasing marker density, as this would improve the ability to predict the ibd status in regions between markers."
+      "content": "If desired, these can be translated into estimates of genetic variances using Equations 16.47b and 16.49b. Kruglyak and Lander (1995a) found that 200 affected pairs are sufficient to localize a gene with effect $ \\lambda_S = \\lambda_O = 5 $ to within 1 cM. Localization of a gene with $ \\lambda_S = 2 $ with the same precision requires 700 pairs.",
+      "source_page": 544,
+      "printed_page": 524,
+      "source_block_ids": [
+        "p544:b5"
+      ],
+      "bbox": [
+        120.0,
+        677.0,
+        1078.0,
+        808.0
+      ]
     }
   ]
 }

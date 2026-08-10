@@ -2,38 +2,176 @@
   "id": "Genetics_chapter15_010",
   "metadata": {
     "chapter": "Genetics_chapter15",
-    "section": "Introduction",
+    "section": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD",
     "subsections": [
       "Likelihood Maps"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
+    "section_level_1": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD",
     "section_level_2": "Likelihood Maps",
     "heading_path": [
-      "Introduction",
+      "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD",
       "Likelihood Maps"
     ],
-    "display_heading": "Likelihood Maps"
+    "display_heading": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / Likelihood Maps",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 460,
+      "printed_page": 440,
+      "source_block_ids": [
+        "p460:b8"
+      ],
+      "bbox": [
+        140.0,
+        1260.0,
+        360.0,
+        1293.0
+      ],
+      "raw_text": "Likelihood Maps"
+    }
   },
   "blocks": [
     {
-      "type": "proposition",
-      "content": "In the likelihood framework, tests of whether a QTL is linked to the marker(s) under consideration are based on the likelihood-ratio statistic, $$ \\mathrm{LR}=-2\\ln\\left[\\frac{\\max\\ell_{r}(\\mathbf{z})}{\\max\\ell(\\mathbf{z})}\\right] $$ where $\\max \\ell_{r}(\\mathbf{z})$, given by Equation 13.8, is the maximum of the likelihood function under the null hypothesis of no segregating QTL (i.e., under the assumption"
+      "type": "discussion",
+      "content": "In the likelihood framework, tests of whether a QTL is linked to the marker(s) under consideration are based on the likelihood-ratio statistic,",
+      "source_page": 460,
+      "printed_page": 440,
+      "source_block_ids": [
+        "p460:b9"
+      ],
+      "bbox": [
+        138.0,
+        1288.0,
+        1096.0,
+        1368.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:15.1]] that the phenotypic distribution is a single normal). This test statistic is approximately $ \\chi^{2} $-distributed, with the degrees of freedom given by the extra number of fitted parameters in the full model. For a model assuming a single QTL, most designs have five parameters in the full model (the three QTL means, the variance, and the QTL position), and two in the reduced model (the mean and variance), giving three degrees of freedom. Certain designs (such as a backcross, RIL, or DHL) involve situations where only two QTL means enter (e.g., QQ and qq for RILs/DHLs, Qq and QQ or qq for a backcross), and here the likelihood ratio has two degrees of freedom."
+      "content": "[[FORMULA:Genetics_chapter15_formula046]]",
+      "source_page": 460,
+      "printed_page": 440,
+      "source_block_ids": [
+        "p460:b10"
+      ],
+      "bbox": [
+        466.0,
+        1377.0,
+        766.0,
+        1453.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The amount of support for a QTL at a particular map position is often displayed graphically through the use of likelihood maps (Figures 15.1, 15.2), which plot the likelihood-ratio statistic (or a closely related quantity) as a function of map position of the putative QTL. For example, the value of the likelihood map at c = 0.05 gives the likelihood-ratio statistic that a QTL is at recombination fraction 0.05 from the marker vs. a model assuming no QTL. This approach for displaying the support for a QTL was introduced by Lander and Botstein (1989), who plotted the LOD (likelihood of odds) scores (Morton 1955b). The LOD score for a particular value of c is related to the likelihood-ratio test statistic (LR) by $$ \\mathrm{L O D}(c)=\\log_{10}\\left[\\frac{\\max\\ell_{r}(\\mathbf{z})}{\\max\\ell(\\mathbf{z},c)}\\right]=\\frac{\\mathrm{L R}(c)}{2\\ln10}\\simeq\\frac{\\mathrm{L R}(c)}{4.61} $$ showing that the LOD score is simply a constant times the likelihood-ratio statistic. Here $ \\max \\ell(\\mathbf{z}, c) $ denotes the maximum of the likelihood function given a QTL at recombination frequency c from the marker. Another variant is simply to plot $ \\max \\ell(\\mathbf{z}, c) $ instead of the likelihood-ratio statistic, as the restricted likelihood, $ \\max \\ell_r(\\mathbf{z}) $, is the same for each value of c."
+      "content": "where $ \\max \\ell_{r}(\\mathbf{z}) $, given by Equation 13.8, is the maximum of the likelihood function under the null hypothesis of no segregating QTL (i.e., under the assumption",
+      "source_page": 460,
+      "printed_page": 440,
+      "source_block_ids": [
+        "p460:b11"
+      ],
+      "bbox": [
+        142.0,
+        1466.0,
+        1101.0,
+        1545.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The likelihood map projects the multidimensional likelihood surface (which is a function of the QTL means, variance, and map position) on to a single dimension, that of the map position, c. The ML estimate of c is that which yields the maximum value on the likelihood map, and the values for the QTL means and variance that maximize the likelihood given this value of c are the ML estimates for the QTL effects. Thus, in the likelihood framework, detection of a linked QTL and estimation of its position are coupled — if the likelihood ratio exceeds the critical threshold for that chromosome, it provides evidence for a linked QTL, whose position is estimated by the peak of the likelihood map. If the peak does not exceed this threshold, there is no evidence for a linked QTL."
+      "content": "[[FIGURE:15.1]]",
+      "source_page": 461,
+      "printed_page": 441,
+      "source_block_ids": [
+        "p461:b3"
+      ],
+      "bbox": [
+        132.0,
+        629.0,
+        994.0,
+        865.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "that the phenotypic distribution is a single normal). This test statistic is approximately $ \\chi^{2} $-distributed, with the degrees of freedom given by the extra number of fitted parameters in the full model. For a model assuming a single QTL, most designs have five parameters in the full model (the three QTL means, the variance, and the QTL position), and two in the reduced model (the mean and variance), giving three degrees of freedom. Certain designs (such as a backcross, RIL, or DHL) involve situations where only two QTL means enter (e.g., QQ and qq for RILs/DHLs, Qq and QQ or qq for a backcross), and here the likelihood ratio has two degrees of freedom.",
+      "source_page": 461,
+      "printed_page": 441,
+      "source_block_ids": [
+        "p461:b4"
+      ],
+      "bbox": [
+        78.0,
+        924.0,
+        1040.0,
+        1218.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The amount of support for a QTL at a particular map position is often displayed graphically through the use of likelihood maps (Figures 15.1, 15.2), which plot the likelihood-ratio statistic (or a closely related quantity) as a function of map position of the putative QTL. For example, the value of the likelihood map at c = 0.05 gives the likelihood-ratio statistic that a QTL is at recombination fraction 0.05 from the marker vs. a model assuming no QTL. This approach for displaying the support for a QTL was introduced by Lander and Botstein (1989), who plotted the LOD (likelihood of odds) scores (Morton 1955b). The LOD score for a particular value of c is related to the likelihood-ratio test statistic (LR) by",
+      "source_page": 461,
+      "printed_page": 441,
+      "source_block_ids": [
+        "p461:b5",
+        "p462:b2"
+      ],
+      "bbox": [
+        73.0,
+        1215.0,
+        1036.0,
+        1474.0
+      ],
+      "source_page_end": 462
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula047]]",
+      "source_page": 462,
+      "printed_page": 442,
+      "source_block_ids": [
+        "p462:b3"
+      ],
+      "bbox": [
+        292.0,
+        188.0,
+        893.0,
+        261.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "showing that the LOD score is simply a constant times the likelihood-ratio statistic. Here $ \\max \\ell(\\mathbf{z}, c) $ denotes the maximum of the likelihood function given a QTL at recombination frequency c from the marker. Another variant is simply to plot $ \\max \\ell(\\mathbf{z}, c) $ instead of the likelihood-ratio statistic, as the restricted likelihood, $ \\max \\ell_{r}(\\mathbf{z}) $, is the same for each value of c.",
+      "source_page": 462,
+      "printed_page": 442,
+      "source_block_ids": [
+        "p462:b5"
+      ],
+      "bbox": [
+        115.0,
+        282.0,
+        1075.0,
+        444.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The likelihood map projects the multidimensional likelihood surface (which is a function of the QTL means, variance, and map position) on to a single dimension, that of the map position, c. The ML estimate of c is that which yields the maximum value on the likelihood map, and the values for the QTL means and variance that maximize the likelihood given this value of c are the ML estimates for the QTL effects. Thus, in the likelihood framework, detection of a linked QTL and estimation of its position are coupled — if the likelihood ratio exceeds the critical threshold for that chromosome, it provides evidence for a linked QTL, whose position is estimated by the peak of the likelihood map. If the peak does not exceed this threshold, there is no evidence for a linked QTL.",
+      "source_page": 462,
+      "printed_page": 442,
+      "source_block_ids": [
+        "p462:b6"
+      ],
+      "bbox": [
+        117.0,
+        442.0,
+        1078.0,
+        765.0
+      ]
     }
   ]
 }

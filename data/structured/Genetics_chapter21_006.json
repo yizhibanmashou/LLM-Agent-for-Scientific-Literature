@@ -2,50 +2,208 @@
   "id": "Genetics_chapter21_006",
   "metadata": {
     "chapter": "Genetics_chapter21",
-    "section": "Introduction",
+    "section": "ESTIMATION OF THE GENETIC CORRELATION",
     "subsections": [
-      "Regression of Family Means"
+      "Nested Analysis of Variance and Covariance"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter21_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Regression of Family Means",
+    "section_level_1": "ESTIMATION OF THE GENETIC CORRELATION",
+    "section_level_2": "Nested Analysis of Variance and Covariance",
     "heading_path": [
-      "Introduction",
-      "Regression of Family Means"
+      "ESTIMATION OF THE GENETIC CORRELATION",
+      "Nested Analysis of Variance and Covariance"
     ],
-    "display_heading": "Regression of Family Means"
+    "display_heading": "ESTIMATION OF THE GENETIC CORRELATION / Nested Analysis of Variance and Covariance",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 645,
+      "printed_page": 625,
+      "source_block_ids": [
+        "p645:b8"
+      ],
+      "bbox": [
+        47.0,
+        1198.0,
+        600.0,
+        1237.0
+      ],
+      "raw_text": "Nested Analysis of Variance and Covariance"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Because of technical difficulties in acquiring genetic correlation estimates and in testing for their significance, a number of investigators have opted to use the correlation between family mean phenotypes as a surrogate for estimating $ \\rho_{A} $. Here one simply regresses the family mean phenotype of character 1 on that of character 2, using the same individuals to compute each mean. The rationale for such an approach is that as the size of a family increases, the sampling error of the mean becomes diminishingly small, leaving the family mean phenotype as an estimate of the family mean genotypic value. However, if the heritability of either trait is low, this approach can yield misleading results because the variances and covariances of family means will be biased estimates of the additive genetic expectations. Although we do not advocate this approach, we elaborate on it somewhat to illustrate the interpretative difficulties that can arise."
+      "content": "The nested full-sib, half-sib design provides an alternative approach to estimating genetic correlations. Recall that with this design, several different females are mated to each sire, and a nested analysis of variance yields estimates of the additive genetic variances (Chapter 18). A parallel analysis can also provide an estimate of the additive genetic covariance. Analysis of covariance is identical in form to analysis of variance except that the former employs mean cross-products of the deviations of traits 1 and 2 rather than mean squared deviations of individual traits (Table 21.1). A lucid overview of the procedure is given by Grossman and Gall (1968).",
+      "source_page": 645,
+      "printed_page": 625,
+      "source_block_ids": [
+        "p645:b9"
+      ],
+      "bbox": [
+        43.0,
+        1239.0,
+        1006.0,
+        1536.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:21.1]]",
+      "source_page": 646,
+      "printed_page": 626,
+      "source_block_ids": [
+        "p646:b3"
+      ],
+      "bbox": [
+        138.0,
+        240.0,
+        1131.0,
+        766.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Suppose each family consists of a group of $n$ individuals, all related with coefficient of coancestry $\\Theta$ (for example, a group of paternal half-sibs), and let $\\bar{z}_{1i}$ be the mean phenotype of the $i$th family and $z_{1ij}$ be the phenotype of the $j$th member of that family. Assuming that all of the resemblance between relatives is a consequence of additive gene action (in particular, that there are no shared environmental effects), the expected variance among family means for character 1 can then be expressed as $$ $$"
+      "content": "[[FORMULA:Genetics_chapter21_formula014]]",
+      "source_page": 646,
+      "printed_page": 626,
+      "source_block_ids": [
+        "p646:b4"
+      ],
+      "bbox": [
+        209.0,
+        814.0,
+        589.0,
+        885.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "^ 2 (_ 1i)&= n^ 2 ^ 2 (_ j=1 ^ n z_ 1ij)= n ^ 2 (z_ 1ij)+ n^ 2 (z_ 1ij,z_ 1ik)\\\\&= n [_ z ^ 2 (1)-2 _ A ^ 2 (1)]+2 _ A ^ 2 (1) $$ $$ where $\\sigma_{z}^{2}(1)$ is the phenotypic variance of the trait. The same logic gives the expected covariance between family means for traits 1 and 2 as $$ \\sigma(\\overline{{z}}_{1i},\\overline{{z}}_{2i})=\\frac{1}{n}[\\sigma_{z}(1,2)-2\\Theta\\sigma_{A}(1,2)]+2\\Theta\\sigma_{A}(1,2) $$"
+      "content": "[[FORMULA:Genetics_chapter21_formula015]]",
+      "source_page": 646,
+      "printed_page": 626,
+      "source_block_ids": [
+        "p646:b5"
+      ],
+      "bbox": [
+        209.0,
+        882.0,
+        1036.0,
+        961.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "After some algebraic rearrangement, and continuing to ignore all sources of variation and covariation except those due to additive genetic effects, the correlation of family means is found to be $$ \\rho_{\\overline{{z}}}\\simeq\\frac{\\sigma(\\overline{{z}}_{1,i},\\overline{{z}}_{2,i})}{\\sigma(\\overline{{z}}_{1,i})\\cdot\\sigma(\\overline{{z}}_{2,i})}=\\rho_{A}\\left[\\frac{\\phi h_{1}h_{2}+(\\rho_{z}/\\rho_{A})}{\\sqrt{(\\phi h_{1}^{2}+1)(\\phi h_{2}^{2}+1)}}\\right] $$ where $\\phi = 2\\Theta(n-1)$, $h_{1}^{2} = \\sigma_{A}^{2}(1)/\\sigma_{z}^{2}(1)$ and $h_{2}^{2} = \\sigma_{A}^{2}(2)/\\sigma_{z}^{2}(2)$ are the heritabilities of the traits, and $\\rho_{z}$ is the phenotypic correlation. The quantity in brackets defines the factor by which the regression of family means deviates from the desired value $ \\rho_{A} $. The amount of bias can be seen to depend on $ \\phi $, $ h_{1}^{2} $, $ h_{2}^{2} $, and on the ratio of phenotypic to genetic correlations."
+      "content": "[[FORMULA:Genetics_chapter21_formula016]]",
+      "source_page": 646,
+      "printed_page": 626,
+      "source_block_ids": [
+        "p646:b6"
+      ],
+      "bbox": [
+        209.0,
+        959.0,
+        916.0,
+        1111.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In the extreme case in which the heritabilities of both traits are equal to one, the genetic and phenotypic correlations are equal (as there is no environmental variance), and the correlation of family means provides an unbiased estimate of the genetic correlation, i.e., $ \\rho_{\\overline{z}} = \\rho_{A} $. However, such concordance is unlikely to arise under any other circumstances. More generally, in order for the correlation between family means to closely approximate the genetic correlation, both $ \\phi h_{1}^{2} $ and $ \\phi h_{2}^{2} $ must be substantially larger than one and than $ |\\rho_{z}/\\rho_{A}| $. Even if the two traits have moderately high heritabilities, the first condition requires large family sizes. Consider, for example, the situation in which both traits have heritabilities of 0.5, 50 paternal half sibs ($ 2\\Theta = 0.25 $) are sampled per family, and the phenotypic correlation is five times larger than the genetic correlation. Substituting for the quantities in the brackets, we find that the correlation of family means inflates the estimate of the genetic correlation by a factor of 1.8."
+      "content": "Note: T is the total number of individuals in the experiment, and $ \\overline{M} $ the mean number of dams/sire. For character 1, $ z_{1ijk} $ is the observed phenotype of the kth offspring of the jth dam mated to the ith sire, $ \\overline{z}_{1ij} $ is the mean phenotype of the ijth full-sib family, $ \\overline{z}_{1i} $ is the mean phenotype of all progeny of the ith sire, and $ \\overline{z}_{1} $ is the mean phenotype of all individuals. Similar notation is used for character 2. MCP denotes a mean cross-product, obtained by dividing a sum of cross-products by its respective degrees of freedom. The coefficients $ k_{1} $, $ k_{2} $, and $ k_{3} $ are defined in Table 18.3.",
+      "source_page": 646,
+      "printed_page": 626,
+      "source_block_ids": [
+        "p646:b7"
+      ],
+      "bbox": [
+        149.0,
+        1133.0,
+        1112.0,
+        1361.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A perceived advantage of the family-mean approach is that $ \\rho_{\\overline{z}} $ is a true product-moment correlation. Thus, unlike the other estimators described above, the correlation among family means cannot exceed $ \\pm1 $, and its significance can be evaluated in a straightforward manner using standard tables of critical values for the sample correlation coefficient. However, the actual utility of this property seems questionable, given the uncertainty of what $ \\rho_{\\overline{z}} $ actually measures."
+      "content": "Although most nested analyses are not perfectly balanced, it is usually preferable to use only individuals for which measures of both characters are available in the analysis, so that estimates of both the variances and the covariance are based on the same sample. Obviously, when a large number of individuals are missing one measure, this has the unfortunate side-effect of making the variance estimates less accurate than they would be otherwise, so in extreme cases it may be preferable to use all of the data.",
+      "source_page": 646,
+      "printed_page": 626,
+      "source_block_ids": [
+        "p646:b8",
+        "p647:b2"
+      ],
+      "bbox": [
+        153.0,
+        1394.0,
+        1114.0,
+        1569.0
+      ],
+      "source_page_end": 647
     },
     {
       "type": "discussion",
-      "content": "A more reasonable path to estimating the genetic correlation from family means involves a combination of univariate ANOVA with covariance analysis, as follows. If each family is divided into two independent groups, one used to estimate the mean of character 1 and the other for character 2, the expected covariance between means is simply $ 2\\Theta\\sigma_{A}(1,2) $. Assuming common family environment is not a significant source of variation, there is no bias from environmental covariance because the two groups being compared contain different individuals. Combining the resultant estimate of $ \\sigma_{A}(1,2) $ with estimates of $ \\sigma_{A}^{2}(1) $ and $ \\sigma_{A}^{2}(2) $ obtained by ANOVA provides a basis for a relatively unbiased estimate of $ \\rho_{A} $."
+      "content": "The nested analysis of variance (covariance) yields nine mean squares (cross-products) — at the sire, dam, and progeny levels, for the variance of character 1, the variance of character 2, and the covariance of 1 and 2. From the observed mean squares and cross-products, and the standard expressions for their expectations (Table 21.1), estimates for the sire, dam, and within-family components of variance and covariance can then be extracted by the method of moments (equating mean squares with their expectations and solving). Recall from Chapter 18 that in a univariate analysis, the sire component of variance is equivalent to the covariance of paternal half sibs, thereby providing an estimate of one-fourth the additive genetic variance for the trait, assuming sources of epistatic variance are of negligible significance. Similarly, in an analysis of covariance, the sire component provides an estimate of one-fourth the additive genetic covariance between the two traits. Thus, letting $ \\operatorname{Var}(s_1), \\operatorname{Var}(s_2), \\operatorname{Var}(s_3) $ denote estimates of the sire components of variance and covariance, the genetic correlation is estimated by",
+      "source_page": 647,
+      "printed_page": 627,
+      "source_block_ids": [
+        "p647:b3"
+      ],
+      "bbox": [
+        57.0,
+        224.0,
+        1023.0,
+        705.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter21_formula017]]",
+      "source_page": 647,
+      "printed_page": 627,
+      "source_block_ids": [
+        "p647:b4"
+      ],
+      "bbox": [
+        391.0,
+        703.0,
+        673.0,
+        777.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "As discussed in the previous section, this measure of the genetic correlation can only be taken to be an approximation, since additive epistatic interactions are potentially included in the estimates of the genetic variances and covariance. However, the reliance on paternal half sibs should minimize the complications that can arise from common-environment effects. Like regression analysis, analysis of variance can also yield estimates of the genetic correlation that are outside the range of true possibilities (−1,1). The likelihood of this situation happening can be substantial, as Hill and Thompson (1978) have shown for one-way (nonnested) ANOVA of sib families. For example, if the intraclass correlations for both traits are t = 0.0625 (assuming only additive genetic variance, this implies $ h^{2} = 0.25 $ or 0.125, depending on whether families consist of half or full sibs), and 160 families of 5 sibs are analyzed, the probability of obtaining a genetic correlation or heritability out of bounds is only about 0.06. However, if t = 0.025 ( $ h^{2} = 0.10 $ or 0.05), with the same sample sizes, the probability of obtaining an unrealistic estimate is nearly 0.5.",
+      "source_page": 647,
+      "printed_page": 627,
+      "source_block_ids": [
+        "p647:b6"
+      ],
+      "bbox": [
+        49.0,
+        793.0,
+        1013.0,
+        1274.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In principle, as in the case of components of variance, the various components of a genetic covariance can be extracted by comparison of the cross-covariances between different types of relatives, e.g., full vs. half sibs in the nested design. It would then be possible to procure estimates of genetic correlations due to dominance and various forms of epistasis in addition to additive effects. However, previous chapters have amply demonstrated the difficulties in accomplishing such partitioning with components of genetic variance with any reasonable degree of accuracy. Since the sampling variance of cross-covariances is also very high (see below), there appears to be little hope of a further dissection of the genetic correlation unless the number of families sampled is in the thousands.",
+      "source_page": 647,
+      "printed_page": 627,
+      "source_block_ids": [
+        "p647:b7",
+        "p648:b2"
+      ],
+      "bbox": [
+        43.0,
+        1269.0,
+        1007.0,
+        1565.0
+      ],
+      "source_page_end": 648
     }
   ]
 }

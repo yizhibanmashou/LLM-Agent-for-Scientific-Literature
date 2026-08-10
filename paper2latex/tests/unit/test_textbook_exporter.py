@@ -5,7 +5,7 @@ from pathlib import Path
 from uuid import uuid4
 
 from textbook_exporter import export_textbooks
-from textbook_exporter.exporter import canonicalize_display_math
+from textbook_exporter.exporter import canonicalize_display_math, inline_table_math
 
 
 TEST_RUNTIME_ROOT = Path(__file__).resolve().parents[3] / "tmp" / "test_runtime" / "textbook_exporter"
@@ -24,6 +24,13 @@ def write_json(path: Path, payload: dict) -> None:
 
 
 class TextbookExporterTests(unittest.TestCase):
+    def test_table_cells_convert_display_delimiters_to_inline_math(self):
+        source = "<table><tr><td>$$ x^2 $$</td><td>$ y $</td></tr></table>"
+        self.assertEqual(
+            inline_table_math(source),
+            "<table><tr><td>$ x^2 $</td><td>$ y $</td></tr></table>",
+        )
+
     def test_canonicalizes_display_math_without_absorbing_inline_prose(self):
         source = "Before $ p=1 $. Given by $$ x=y $$ where $ y=1 $. $$ a=b $$ $$ c=d $$"
         rendered = canonicalize_display_math(source)
@@ -1054,9 +1061,9 @@ class TextbookExporterTests(unittest.TestCase):
         export_textbooks(structured_dir, out_dir, chapters={"chapter16"})
         output = (out_dir / "chapter16_textbook.md").read_text(encoding="utf-8")
 
-        self.assertIn("Directional | $$\\kappa=a$$", output)
+        self.assertIn("Directional | $\\kappa=a$", output)
         self.assertNotIn("[[SEE_FORMULA:16.11a]]", output)
-        self.assertEqual(output.count("Directional | $$\\kappa=a$$"), 1)
+        self.assertEqual(output.count("Directional | $\\kappa=a$"), 1)
 
     def test_table_title_normalizes_nested_subscripts_for_katex(self):
         root = make_test_workspace("nested_subscripts")

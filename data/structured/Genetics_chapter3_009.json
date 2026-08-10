@@ -2,62 +2,236 @@
   "id": "Genetics_chapter3_009",
   "metadata": {
     "chapter": "Genetics_chapter3",
-    "section": "Covariance, Regression, and Correlation",
+    "section": "REGRESSION",
     "subsections": [
       "Properties of Least-squares Regressions"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter3_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Covariance, Regression, and Correlation",
+    "section_level_1": "REGRESSION",
     "section_level_2": "Properties of Least-squares Regressions",
     "heading_path": [
-      "Covariance, Regression, and Correlation",
+      "REGRESSION",
       "Properties of Least-squares Regressions"
     ],
-    "display_heading": "Properties of Least-squares Regressions"
+    "display_heading": "REGRESSION / Properties of Least-squares Regressions",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 57,
+      "printed_page": 37,
+      "source_block_ids": [
+        "p57:b10"
+      ],
+      "bbox": [
+        53.0,
+        675.0,
+        549.0,
+        719.0
+      ],
+      "raw_text": "Properties of Least-squares Regressions"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "3. For any set of paired data, the least-squares regression parameters, a and b, define the straight line that maximizes the amount of variation in y that can be explained by a linear regression on x. Since $\\overline{e}=0$, it follows that the variance of residual errors about the regression is simply $\\overline{e^{2}}$. As noted above, this variance is the quantity minimized by the least-squares procedure."
+      "content": "Here we summarize some fundamental features and useful properties of the least-squares approach to linear regression analysis:",
+      "source_page": 57,
+      "printed_page": 37,
+      "source_block_ids": [
+        "p57:b11"
+      ],
+      "bbox": [
+        52.0,
+        717.0,
+        1010.0,
+        804.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "4. The residual errors around the least-squares regression are uncorrelated with the predictor variable x. This statement follows since $$ \\begin{aligned}\\operatorname{Cov}(x,e)&=\\operatorname{Cov}[x,(y-a-b x)]=\\operatorname{Cov}(x,y)-\\operatorname{Cov}(x,a)-b\\operatorname{Cov}(x,x)\\\\&=\\operatorname{Cov}(x,y)-0-b\\operatorname{Var}(x)\\\\&=\\operatorname{Cov}(x,y)-\\frac{\\operatorname{Cov}(x,y)}{\\operatorname{Var}(x)}\\operatorname{Var}(x)=0\\end{aligned} $$"
+      "content": "1. The regression line passes through the means of both $x$ and $y$. This relationship should be immediately apparent from Equation 3.14a, which implies $\\overline{y} = a + b\\overline{x}$.",
+      "source_page": 57,
+      "printed_page": 37,
+      "source_block_ids": [
+        "p57:b12"
+      ],
+      "bbox": [
+        64.0,
+        795.0,
+        977.0,
+        914.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:3.3]]"
+      "content": "2. The average value of the residual is zero. From Equation 3.13a, the mean residual is $ \\overline{e} = \\overline{y} - a - b\\overline{x} $, which is constrained to be zero by Equation 3.14a. Thus, the least-squares procedure results in a fit to the data such that the sum of (vertical) deviations above and below the regression line are exactly equal.",
+      "source_page": 57,
+      "printed_page": 37,
+      "source_block_ids": [
+        "p57:b13"
+      ],
+      "bbox": [
+        61.0,
+        903.0,
+        975.0,
+        1088.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note, however, that $ \\mathrm{Cov}(x, e) = 0 $ does not guarantee that $ e $ and $ x $ are independent. In Figure 3.3, for example, because of a nonlinear relationship between $ y $ and $ x $, the residual errors associated with extreme values of $ x $ tend to be negative while those for intermediate values are positive. Thus, if the true regression is nonlinear, then $ E(e | x) \\neq 0 $ for some $ x $ values, and the predictive power of the linear model is compromised. Even if the true regression is linear, the variance of the residual errors may vary with $ x $, in which case the regression is said to display heteroscedasticity (Figure 3.4). If the conditional variance of the residual errors given any specified $ x $ value, $ \\sigma^2(e | x) $, is a constant (i.e., independent of the value of $ x $), then the regression is said to be homoscedastic."
+      "content": "3. For any set of paired data, the least-squares regression parameters, a and b, define the straight line that maximizes the amount of variation in y that can be explained by a linear regression on x. Since $ \\overline{e} = 0 $, it follows that the variance of residual errors about the regression is simply $ \\overline{e^2} $. As noted above, this variance is the quantity minimized by the least-squares procedure.",
+      "source_page": 57,
+      "printed_page": 37,
+      "source_block_ids": [
+        "p57:b14"
+      ],
+      "bbox": [
+        57.0,
+        1077.0,
+        970.0,
+        1264.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "5. There is an important situation in which the true regression, the value of $E(y|x)$, is both linear and homoscedastic — when $x$ are $y$ are bivariate normally distributed. The requirements for such a distribution are that the univariate distributions of both $x$ and $y$ are normal and that the conditional distributions of $y$ given $x$, and $x$ given $y$, are also normal (Chapter 8). Since statistical testing is simplified enormously, it is generally desirable to work with normally distributed data. For situations in which the raw data are not so distributed, a variety of transformations exist that can render the data close to normality (Chapter 11)."
+      "content": "4. The residual errors around the least-squares regression are uncorrelated with the predictor variable x. This statement follows since",
+      "source_page": 57,
+      "printed_page": 37,
+      "source_block_ids": [
+        "p57:b15"
+      ],
+      "bbox": [
+        54.0,
+        1253.0,
+        964.0,
+        1337.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "6. It is clear from Equations 3.14a,b that the regression of $y$ on $x$ is different from the regression of $x$ on $y$ unless the means and variances of the two variables are equal. This distinction is made by denoting the regression coefficient by $b(y,x)$ or $b_{y,x}$ when $x$ is the predictor and $y$ the response variable."
+      "content": "[[FORMULA:Genetics_chapter3_formula030]]",
+      "source_page": 57,
+      "printed_page": 37,
+      "source_block_ids": [
+        "p57:b16"
+      ],
+      "bbox": [
+        105.0,
+        1330.0,
+        957.0,
+        1502.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "(A)"
+      "content": "[[FIGURE:3.3]]",
+      "source_page": 58,
+      "printed_page": 38,
+      "source_block_ids": [
+        "p58:b4"
+      ],
+      "bbox": [
+        191.0,
+        543.0,
+        1058.0,
+        710.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:3.4]]"
+      "content": "Note, however, that $ \\text{Cov}(x, e) = 0 $ does not guarantee that $ e $ and $ x $ are independent. In Figure 3.3, for example, because of a nonlinear relationship between $ y $ and $ x $, the residual errors associated with extreme values of $ x $ tend to be negative while those for intermediate values are positive. Thus, if the true regression is nonlinear, then $ E(e \\mid x) \\neq 0 $ for some $ x $ values, and the predictive power of the linear model is compromised. Even if the true regression is linear, the variance of the residual errors may vary with $ x $, in which case the regression is said to display heteroscedasticity (Figure 3.4). If the conditional variance of the residual errors given any specified $ x $ value, $ \\sigma^2(e \\mid x) $, is a constant (i.e., independent of the value of $ x $), then the regression is said to be homoscedastic.",
+      "source_page": 58,
+      "printed_page": 38,
+      "source_block_ids": [
+        "p58:b5"
+      ],
+      "bbox": [
+        209.0,
+        733.0,
+        1082.0,
+        1101.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "For practical reasons, we have expressed properties 1 – 6 in terms of the estimators $a$, $b$, $\\mathrm{Cov}(x, y)$, and $\\mathrm{Var}(x)$. They also hold when the estimators are replaced by the true parameters $\\alpha$, $\\beta$, $\\sigma(x, y)$, and $\\sigma^{2}(x)$."
+      "content": "5. There is an important situation in which the true regression, the value of $ E(y \\mid x) $, is both linear and homoscedastic — when x are y are bivariate normally distributed. The requirements for such a distribution are that the univariate distributions of both x and y are normal and that the conditional distributions of y given x, and x given y, are also normal (Chapter 8). Since statistical testing is simplified enormously, it is generally desirable to work with normally distributed data. For situations in which the raw data are not so distributed, a variety of transformations exist that can render the data close to normality (Chapter 11).",
+      "source_page": 58,
+      "printed_page": 38,
+      "source_block_ids": [
+        "p58:b6"
+      ],
+      "bbox": [
+        173.0,
+        1099.0,
+        1090.0,
+        1405.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 1. Suppose $\\mathrm{Cov}(x, y) = 10$, $\\mathrm{Var}(x) = 10$, $\\mathrm{Var}(y) = 15$, and $\\overline{x} = \\overline{y} = 0$. Compute the least-squares regressions of $y$ on $x$, and of $x$ on $y$. From Equation 3.14a, $a = 0$ for both regressions. However, $$ b(y,x)=\\operatorname{Cov}(x,y)/\\operatorname{Var}(x)=10/10=1 $$ while $b(x,y)=\\mathrm{Cov}(x,y)/\\mathrm{Var}(y)=2/3$. Hence, $\\widehat{y}=x$ is the least-squares regression of $y$ on $x$, while $\\widehat{x}=(2/3)y$ is the regression of $x$ on $y$."
+      "content": "6. It is clear from Equations 3.14a,b that the regression of y on x is different from the regression of x on y unless the means and variances of the two variables are equal. This distinction is made by denoting the regression coefficient by $ b(y, x) $ or $ b_{y,x} $ when x is the predictor and y the response variable.",
+      "source_page": 58,
+      "printed_page": 38,
+      "source_block_ids": [
+        "p58:b7"
+      ],
+      "bbox": [
+        180.0,
+        1399.0,
+        1095.0,
+        1547.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:3.4]]",
+      "source_page": 59,
+      "printed_page": 39,
+      "source_block_ids": [
+        "p59:b5"
+      ],
+      "bbox": [
+        106.0,
+        453.0,
+        970.0,
+        591.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "For practical reasons, we have expressed properties 1 – 6 in terms of the estimators $a$, $b$, $\\operatorname{Cov}(x,y)$, and $\\operatorname{Var}(x)$. They also hold when the estimators are replaced by the true parameters $\\alpha$, $\\beta$, $\\sigma(x,y)$, and $\\sigma^{2}(x)$.",
+      "source_page": 59,
+      "printed_page": 39,
+      "source_block_ids": [
+        "p59:b6"
+      ],
+      "bbox": [
+        53.0,
+        670.0,
+        1011.0,
+        787.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter3:1]]",
+      "source_page": 59,
+      "source_block_ids": [
+        "p59:b7",
+        "p59:b8",
+        "p59:b9",
+        "p59:b10"
+      ],
+      "bbox": [
+        96.0,
+        868.0,
+        958.0,
+        945.0
+      ]
     }
   ]
 }

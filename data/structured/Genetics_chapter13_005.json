@@ -2,42 +2,99 @@
   "id": "Genetics_chapter13_005",
   "metadata": {
     "chapter": "Genetics_chapter13",
-    "section": "Introduction",
+    "section": "ELEMENTARY TESTS",
     "subsections": [
-      "Tests Based on Sibship Variances"
+      "Major-gene Indices (MGI)"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Tests Based on Sibship Variances",
+    "section_level_1": "ELEMENTARY TESTS",
+    "section_level_2": "Major-gene Indices (MGI)",
     "heading_path": [
-      "Introduction",
-      "Tests Based on Sibship Variances"
+      "ELEMENTARY TESTS",
+      "Major-gene Indices (MGI)"
     ],
-    "display_heading": "Tests Based on Sibship Variances"
+    "display_heading": "ELEMENTARY TESTS / Major-gene Indices (MGI)",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 371,
+      "printed_page": 351,
+      "source_block_ids": [
+        "p371:b5"
+      ],
+      "bbox": [
+        65.0,
+        826.0,
+        395.0,
+        859.0
+      ],
+      "raw_text": "Major-gene Indices (MGI)"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The use of collections of known relatives, rather than random individuals, greatly improves the power of tests for major genes. Several simple tests based on sib ship comparisons have been proposed. The presence of major alleles increases the variance within sibships in which the alleles are segregating. For example, if Q and q denote alternative alleles at a major locus, the expected phenotypic variance among sibs from $ Qq \\times Qq $ parents is greater than for sibs from $ qq \\times qq $ or $ QQ \\times QQ $ parents, reflecting segregation within these families, while sibs from $ QQ \\times Qq $ and $ qq \\times Qq $ parents display intermediate levels of variance. A number of tests for unequal variances among sibships have been suggested, the simplest being Bartlett's test for homogeneity of variances (e.g., Sokal and Rohlf 1995). The difficulty with this approach is that nongenetic causes may underlie differences in sibship variances. Bartlett's test is also rather sensitive to departures from normality. As a way around these problems, Mérat (1968) proposed a test based on the notion that families with significantly elevated variances should also exhibit exceptional platykurtosis and possibly skewness if the inflation of the variance is caused by segregating alleles of large effect."
+      "content": "Karlin et al. (1979) show that, under polygenic inheritance with additive loci, offspring more closely resemble the average of their parents (the midparent) than either individual parent, whereas the converse is true when a major gene is segregating. Exploiting this relationship, they proposed a class of indices for indicating the presence of major genes,",
+      "source_page": 371,
+      "printed_page": 351,
+      "source_block_ids": [
+        "p371:b6"
+      ],
+      "bbox": [
+        62.0,
+        869.0,
+        1024.0,
+        1032.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Fain (1978) proposed an alternative test that utilizes both the means and variances of sibships. The basis for this test is the observation that, for a character determined by many genes of roughly equal effect, there should be no relationship between the variance of the sibship and the phenotypic value of the parents (Pearson 1904, Penrose 1969, Felsenstein 1973, Stark 1976). If, however, the character is determined by a few genes of large effect, parents with the most extreme phenotypes are likely to be homozygotes, while parents of intermediate phenotypes are more likely to be heterozygotes. This relationship results in a roughly quadratic regression of offspring variance on midparental phenotypic value, $$ \\mathbf{Var}(z_{i})=a+b_{1}\\overline{z}_{i}+b_{2}\\overline{z}_{i}^{2} $$ where $ \\mathrm{Var}(z_i) $ is the phenotypic variance within the ith sibship, and $ \\overline{z}_i $ is the midparental value for this sibship. Sibship means replace midparental values when the latter are unknown. A significant value of $ b_2 $ is taken as an indication of a major gene. Due to scaling effects (Chapter 11), the variance often increases linearly with the mean, so a significant $ b_1 $, by itself, does not necessarily indicate a major gene."
+      "content": "[[FORMULA:Genetics_chapter13_formula002]]",
+      "source_page": 371,
+      "printed_page": 351,
+      "source_block_ids": [
+        "p371:b7"
+      ],
+      "bbox": [
+        312.0,
+        1052.0,
+        766.0,
+        1127.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 1. Bucher et al. (1982) examined a large sample of families that were classified into groups based on cholesterol levels. One particular group (the High group) showed significant heterogeneity of within-sibship variance for cholesterol level ($ P < 0.001 $ using Bartlett's test of homogeneity of variances), while the other groups did not. Likewise, the regression of the within-sibship variance on the sibship means had a significant quadratic term for the High group, while the quadratic term was not significant in the other groups. These data suggest that a major gene was segregating in at least some of the families forming the High group (i.e., at least one parent was a heterozygote) but was not in the families forming the other groups. Thus, there are additional sources of variance beyond the major gene (such as environmental factors and/or additional polygenes) that contribute to the difference between groups."
+      "content": "where $z_{o}$ is the phenotypic value of an offspring whose parents have values $z_{f}$ and $z_{m}$, and $a$ is a free parameter set by the investigator. Values of $a > 1$ accentuate large deviations between offspring and parents, while values of $a < 1$ accentuate small deviations. If the character is entirely determined by segregation of a major allele with no environmental variation, $\\mathrm{MGI}(a) > 1$ for all $a \\geq 0$ (independent of the amount of dominance), while if the character is entirely determined by an infinite number of genes of equal effect with a normal distribution of environmental effects, $\\mathrm{MGI}(a) < 1$ for all $a \\geq 0$. Karlin et al. recommend evaluation of the index at $a = 0.5$, 1, and 2, but this choice of $a$ values is rather ad hoc. Improvements and embellishments on this test have been suggested by Famula (1986), Carmelli et al. (1979), and Karlin and Williams (1981), but Le Roy and Elsen (1992) found that both the Bartlett and Fain tests are more powerful than MGI-based tests.",
+      "source_page": 371,
+      "printed_page": 351,
+      "source_block_ids": [
+        "p371:b9"
+      ],
+      "bbox": [
+        61.0,
+        1147.0,
+        1019.0,
+        1531.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Our second example of Fain's test is based on Mitchell-Olds and Bergelson's (1990) work on the annual plant Impatiens capensis. These authors found that the regression of within-sibship variance on sibship mean usually had significant linear (but not quadratic) terms, suggesting that scale effects are common. However, the regression for germination date also showed a significant quadratic term (Figure 13.2), suggesting the presence of a major gene influencing this character."
-    },
-    {
-      "type": "proposition",
-      "content": "The power of different sibship variance tests has been considered by several investigators. MacCluer and Kammerer (1984) concluded that both Bartlett's and Fain's test have low power for detecting a major gene even when 100 nuclear families are used. However, they assumed a small number of sibs per family (3 to 5), as their interest was in human populations. On the positive side, they found that these tests are unlikely to give a false indication of a major gene when none is present (under the simplified assumption of normally distributed environmental effects). Mayo et al. (1980) note that Fain's test is compromised if heterozygotes have lower environmental variances than homozygotes, as this difference partially masks the increased genetic variance in sibships from heterozygous parents."
+      "content": "[[FIGURE:13.2]]",
+      "source_page": 372,
+      "printed_page": 352,
+      "source_block_ids": [
+        "p372:b3"
+      ],
+      "bbox": [
+        181.0,
+        677.0,
+        1047.0,
+        855.0
+      ]
     }
   ]
 }

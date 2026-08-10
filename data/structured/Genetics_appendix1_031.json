@@ -1,0 +1,217 @@
+{
+  "id": "Genetics_appendix1_031",
+  "metadata": {
+    "chapter": "Genetics_appendix1",
+    "section": "TESTING HYPOTHESES ABOUT LINEAR MODELS",
+    "subsections": [],
+    "section_level_1": "TESTING HYPOTHESES ABOUT LINEAR MODELS",
+    "section_level_2": null,
+    "heading_path": [
+      "TESTING HYPOTHESES ABOUT LINEAR MODELS"
+    ],
+    "display_heading": "TESTING HYPOTHESES ABOUT LINEAR MODELS",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 860,
+      "printed_page": 840,
+      "source_block_ids": [
+        "p860:b8"
+      ],
+      "bbox": [
+        145.0,
+        534.0,
+        817.0,
+        566.0
+      ],
+      "raw_text": "TESTING HYPOTHESES ABOUT LINEAR MODELS"
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Since sums of squares are very closely related to the variances accounted for by the various components of a particular linear model, it should not be surprising that hypothesis testing is based on the sums of squares. Such hypothesis tests can be quite involved, especially if we are evaluating the various components of a complex model. Here we consider the simplest case of testing the fit of the total model to the data.",
+      "source_page": 860,
+      "printed_page": 840,
+      "source_block_ids": [
+        "p860:b9"
+      ],
+      "bbox": [
+        144.0,
+        600.0,
+        1105.0,
+        789.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "If the residuals are multivariate-normally distributed with",
+      "source_page": 860,
+      "printed_page": 840,
+      "source_block_ids": [
+        "p860:b10"
+      ],
+      "bbox": [
+        199.0,
+        791.0,
+        898.0,
+        822.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula174]]",
+      "source_page": 860,
+      "printed_page": 840,
+      "source_block_ids": [
+        "p860:b11"
+      ],
+      "bbox": [
+        255.0,
+        846.0,
+        995.0,
+        887.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "then (recalling Equation A3.11a and A3.17b), $ SS_{E}/\\sigma_{e}^{2} $ is the sum of squared unit normals and hence is $ \\chi^{2} $-distributed. In particular, with n observations and p estimated parameters,",
+      "source_page": 860,
+      "printed_page": 840,
+      "source_block_ids": [
+        "p860:b12"
+      ],
+      "bbox": [
+        145.0,
+        912.0,
+        1106.0,
+        1009.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula175]]",
+      "source_page": 860,
+      "printed_page": 840,
+      "source_block_ids": [
+        "p860:b13"
+      ],
+      "bbox": [
+        550.0,
+        1006.0,
+        703.0,
+        1075.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "as a degree of freedom is lost for each estimated model parameter.",
+      "source_page": 860,
+      "printed_page": 840,
+      "source_block_ids": [
+        "p860:b15"
+      ],
+      "bbox": [
+        147.0,
+        1088.0,
+        937.0,
+        1118.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose we have $n$ observations and wish to compare two linear models, a full model fitting $p$ parameters and a reduced model which uses only a subset $(q < p)$ of the parameters in the full model. Do the additional $p - q$ fitted parameters provide a significant increase in the amount of variation accounted for by the model? Let $SS_{E_f}$ and $SS_{E_r}$ denote the appropriate (OLS or GLS) error sums of squares for the full and reduced models. Under the null hypothesis (that the full model provides the same fit as the reduced model), the difference in error sums of squares $(SS_{E_r} - SS_{E_f})$ is distributed as constant $(\\sigma_e^2)$ times a $\\chi_{p-q}^2$. Likewise, from Equation A3.18, $SS_{E_f} \\sim \\sigma_e^2 \\chi_{n-p}^2$. Recalling the definition of the $F$ distribution (Appendix 5), it follows that",
+      "source_page": 860,
+      "printed_page": 840,
+      "source_block_ids": [
+        "p860:b16"
+      ],
+      "bbox": [
+        145.0,
+        1122.0,
+        1107.0,
+        1442.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula176]]",
+      "source_page": 860,
+      "printed_page": 840,
+      "source_block_ids": [
+        "p860:b17"
+      ],
+      "bbox": [
+        338.0,
+        1466.0,
+        916.0,
+        1540.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "is distributed as $ F_{p-q,n-p} $ under the null hypothesis of no improved fit.",
+      "source_page": 861,
+      "printed_page": 841,
+      "source_block_ids": [
+        "p861:b2"
+      ],
+      "bbox": [
+        50.0,
+        135.0,
+        901.0,
+        166.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "For example, we can ask if a particular linear model accounts for a significant fraction of the variation in y by considering that model versus the simplest reduced model $ y_i = \\mu + e_i $. It is easily seen that the least-squares solution for $ \\mu $ is $ \\overline{y} $ for OLS and the weighted mean for GLS, giving $ SS_{E_r} = SS_T $. Since the number of parameters in the reduced model is $ q = 1 $, the test for whether a particular linear model accounts for a significant amount of the variation is",
+      "source_page": 861,
+      "printed_page": 841,
+      "source_block_ids": [
+        "p861:b3"
+      ],
+      "bbox": [
+        50.0,
+        168.0,
+        1012.0,
+        360.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula177]]",
+      "source_page": 861,
+      "printed_page": 841,
+      "source_block_ids": [
+        "p861:b4"
+      ],
+      "bbox": [
+        268.0,
+        383.0,
+        797.0,
+        456.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ r^{2} $ is the coefficient of determination for the full model (Equation A3.15). This test statistic follows an $ F_{p-1,n-p} $ distribution.",
+      "source_page": 861,
+      "printed_page": 841,
+      "source_block_ids": [
+        "p861:b6"
+      ],
+      "bbox": [
+        52.0,
+        482.0,
+        1007.0,
+        547.0
+      ]
+    }
+  ]
+}

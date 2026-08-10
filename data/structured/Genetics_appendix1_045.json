@@ -1,0 +1,185 @@
+{
+  "id": "Genetics_appendix1_045",
+  "metadata": {
+    "chapter": "Genetics_appendix1",
+    "section": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
+    "subsections": [
+      "EM Modifications for QTL Mapping"
+    ],
+    "section_level_1": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
+    "section_level_2": "EM Modifications for QTL Mapping",
+    "heading_path": [
+      "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
+      "EM Modifications for QTL Mapping"
+    ],
+    "display_heading": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS / EM Modifications for QTL Mapping",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b17"
+      ],
+      "bbox": [
+        56.0,
+        1189.0,
+        512.0,
+        1225.0
+      ],
+      "raw_text": "EM Modifications for QTL Mapping"
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "One important application of mixture models involves the use of marker data to map QTLs (Chapters 14–16). Here estimates of the category identity are influenced not only by an individual's trait value z but also by its marker genotype value m. For example, suppose a single diallelic QTL (with alleles Q, q) is linked to a marker, and an inbred-line cross is used in an attempt to map and characterize this QTL. In this case, the likelihood for an individual with marker genotype m and trait value z is",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b18"
+      ],
+      "bbox": [
+        54.0,
+        1234.0,
+        1014.0,
+        1458.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula248]]",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b19"
+      ],
+      "bbox": [
+        308.0,
+        1468.0,
+        754.0,
+        1550.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where",
+      "source_page": 878,
+      "printed_page": 858,
+      "source_block_ids": [
+        "p878:b2"
+      ],
+      "bbox": [
+        141.0,
+        136.0,
+        225.0,
+        165.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula249]]",
+      "source_page": 878,
+      "printed_page": 858,
+      "source_block_ids": [
+        "p878:b3"
+      ],
+      "bbox": [
+        275.0,
+        180.0,
+        962.0,
+        217.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ Q_k $ denotes the $ k $th QTL genotype. The mixing proportions $ \\pi_k(m) $ are functions of the marker genotype, the QTL position (generally given by the marker-QTL recombination frequency distance $ c $), and the particular design used (see Example 6 below).",
+      "source_page": 878,
+      "printed_page": 858,
+      "source_block_ids": [
+        "p878:b4"
+      ],
+      "bbox": [
+        139.0,
+        246.0,
+        1097.0,
+        374.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Support for the presence of a QTL is usually displayed using likelihood maps (Chapters 15–16), which plot the maximum value of the likelihood function over all possible values of c, with the c value giving the largest value being taken as the MLE for QTL position. For a given value of c, say $ c_{0} $, the EM method is used to obtain the MLE for $ \\Theta $ under the restriction that a QTL is at map position $ c_{0} $. Here, the weights are again given by Bayes' theorem (Equation A4.21), where the weight for an individual with trait value z and marker genotype m assuming QTL position (c) is",
+      "source_page": 878,
+      "printed_page": 858,
+      "source_block_ids": [
+        "p878:b5"
+      ],
+      "bbox": [
+        140.0,
+        376.0,
+        1100.0,
+        633.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula250]]",
+      "source_page": 878,
+      "printed_page": 858,
+      "source_block_ids": [
+        "p878:b6"
+      ],
+      "bbox": [
+        327.0,
+        672.0,
+        907.0,
+        891.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Using these weights, updated estimates of the means and variance are obtained as above, and these are substituted back into Equation A4.24 to obtain new weights. This procedure is continued until the iterations converge. Ranging through all possible values of c and plotting the resulting maximum of the likelihood function for each c value thus generates a likelihood map for c.",
+      "source_page": 878,
+      "printed_page": 858,
+      "source_block_ids": [
+        "p878:b8"
+      ],
+      "bbox": [
+        142.0,
+        934.0,
+        1099.0,
+        1098.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_appendix1:6:occ2]]",
+      "source_page": 878,
+      "source_block_ids": [
+        "p878:b9",
+        "p878:b10",
+        "p878:b11",
+        "p879:b2",
+        "p879:b3",
+        "p879:b4",
+        "p879:b5",
+        "p879:b6",
+        "p879:b7",
+        "p879:b8",
+        "p879:b9",
+        "p879:b10"
+      ],
+      "bbox": [
+        188.0,
+        1191.0,
+        1052.0,
+        1367.0
+      ]
+    }
+  ]
+}

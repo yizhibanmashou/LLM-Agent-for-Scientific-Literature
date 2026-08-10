@@ -2,51 +2,381 @@
   "id": "Genetics_chapter10_011",
   "metadata": {
     "chapter": "Genetics_chapter10",
-    "section": "Introduction",
-    "subsections": [
-      "THE NUMBER OF LETHAL EQUIVALENTS"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter10_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "10.1"
-    ],
-    "section_level_1": "Introduction",
-    "section_level_2": "THE NUMBER OF LETHAL EQUIVALENTS",
+    "section": "THE NUMBER OF LETHAL EQUIVALENTS",
+    "subsections": [],
+    "section_level_1": "THE NUMBER OF LETHAL EQUIVALENTS",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
       "THE NUMBER OF LETHAL EQUIVALENTS"
     ],
     "display_heading": "THE NUMBER OF LETHAL EQUIVALENTS",
-    "table_reference_keys": [
-      "chapter10:10.1"
-    ]
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 290,
+      "printed_page": 270,
+      "source_block_ids": [
+        "p290:b4"
+      ],
+      "bbox": [
+        141.0,
+        925.0,
+        702.0,
+        963.0
+      ],
+      "raw_text": "THE NUMBER OF LETHAL EQUIVALENTS"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Morton et al. (1956) developed a simple regression technique for summarizing the deleterious consequences of inbreeding for attributes classified by incidence, such as survival, expression of mental retardation, and so on. They defined a lethal equivalent (detrimental equivalent for traits other than survival) as any group of genes “that if dispersed in different individuals... would cause on average one death.” Thus, a lethal equivalent can consist of a single lethal gene or of a large number of mildly deleterious genes."
+      "content": "Morton et al. (1956) developed a simple regression technique for summarizing the deleterious consequences of inbreeding for attributes classified by incidence, such as survival, expression of mental retardation, and so on. They defined a lethal equivalent (detrimental equivalent for traits other than survival) as any group of genes “that if dispersed in different individuals . . . would cause on average one death.” Thus, a lethal equivalent can consist of a single lethal gene or of a large number of mildly deleterious genes.",
+      "source_page": 290,
+      "printed_page": 270,
+      "source_block_ids": [
+        "p290:b5"
+      ],
+      "bbox": [
+        142.0,
+        987.0,
+        1104.0,
+        1223.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Assuming that the environment and all loci act independently in determining survivorship, the probability of survival at inbreeding level $f$ can be written as $$ S_{f}=\\left(1-P_{e}\\right)\\prod_{i=1}^{n}[1-P_{i}(f)] $$ where $P_{e}$ is the genotype-independent probability of dying from environmental causes, and $P_{i}(f)$ is the probability of dying as a result of deleterious genes at the ith locus when the inbreeding coefficient is equal to $f$. From [[SEE_TABLE:10.1]], $$ P_{i}(f)=f q_{i}s_{i}+(1-f)[q_{i}^{2}s_{i}+2q_{i}(1-q_{i})(s h)_{i}] $$ where $q_{i}$ is the frequency of the deleterious allele, and $s_{i}$ and $(sh)_{i}$ are the probabilities of mortality for homozygotes and heterozygotes. If the probability of dying from any single cause is small, then the approximation $(1-x)\\simeq e^{-x}$ gives $$ S_{f}\\simeq\\exp\\left[-P_{e}-\\sum_{i=1}^{n}P_{i}(f)\\right]=\\exp[-(A+Bf)] $$ where $$ A=P_{e}+\\sum_{i=1}^{n}q_{i}[q_{i}s_{i}+2(1-q_{i})(s h)_{i}] $$ is the sum of probabilities of mortality in the random-mating population, and $$ B=\\sum_{i=1}^{n}q_{i}[s_{i}-q_{i}s_{i}-2(1-q_{i})(s h)_{i}] $$ is the excess sum of probabilities of mortality that would exist in a completely inbred population. Logarithmic transformation of Equation 10.18a leads to $$ \\ln S_{f}\\simeq-A-B f $$"
+      "content": "Assuming that the environment and all loci act independently in determining survivorship, the probability of survival at inbreeding level f can be written as",
+      "source_page": 290,
+      "printed_page": 270,
+      "source_block_ids": [
+        "p290:b6"
+      ],
+      "bbox": [
+        144.0,
+        1212.0,
+        1105.0,
+        1287.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Thus, the composite measures A and B can be estimated by regressing the natural logarithm of survivorship on the inbreeding coefficient."
+      "content": "[[FORMULA:Genetics_chapter10_formula027]]",
+      "source_page": 290,
+      "printed_page": 270,
+      "source_block_ids": [
+        "p290:b7"
+      ],
+      "bbox": [
+        456.0,
+        1303.0,
+        794.0,
+        1390.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A slight problem with this approach arises in cases in which the observed survivorship for certain inbreeding classes is zero, since the logarithm of zero is undefined. Templeton and Read (1984) suggest the small sample-size correction $$ S_{f}^{\\prime}=\\frac{1+N_{f}^{\\prime}}{2+N_{f}} $$ where $N_{f}$ and $N_{f}^{\\prime}$ are the numbers of total and surviving individuals at inbreeding level $f$. With no observed survivors, this quantity rapidly approaches zero as the total sample size increases. Morton et al. (1956) also recommend the use of weighted least-squares analysis, weighting the data by $N_{f}S_{f}/[1-S_{f}]$, the inverse of the sampling variance of $\\ln S_{f}$, and iterating the regression by substituting expected for observed $S_{f}$ in the weights. (Recall that a similar procedure is used in the estimation of line-cross variances; Chapter 9.)"
+      "content": "where $P_{e}$ is the genotype-independent probability of dying from environmental causes, and $P_{i}(f)$ is the probability of dying as a result of deleterious genes at the ith locus when the inbreeding coefficient is equal to $f$. From Table 10.1,",
+      "source_page": 290,
+      "printed_page": 270,
+      "source_block_ids": [
+        "p290:b9"
+      ],
+      "bbox": [
+        147.0,
+        1405.0,
+        1107.0,
+        1512.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Unfortunately, the mean number of lethal equivalents per gamete, $ \\sum q_i s_i $, cannot be separated cleanly from other terms in the definitions of A and B. However, since $ A + B = P_e + \\sum q_i s_i $, the number of lethal equivalents per gamete must be between B and $ A + B $, assuming $ (sh)_i \\geq 0 $. As will be seen below, estimates of $ A + B $ are usually not much greater than B, so the use of B as an approximation of the effective number of lethals is not greatly troubling."
+      "content": "[[FORMULA:Genetics_chapter10_formula028]]",
+      "source_page": 290,
+      "printed_page": 270,
+      "source_block_ids": [
+        "p290:b10"
+      ],
+      "bbox": [
+        345.0,
+        1525.0,
+        913.0,
+        1566.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Practical situations often arise in which one only has data for noninbred individuals and a single class of inbred individuals. A regression is not possible in this case, but the parameters can still be estimated by $$ A=-\\ln S_{0} $$ $$ B=-\\frac{\\ln(S_{f}/S_{0})}{f} $$ where, for example, $f$ is $1/2$ for self-fertilization and $1/4$ for full-sib mating. Using the methods of Appendix 1, the large-sample variance for $B$ in this case is found to be $$ \\mathbf{Var}(B)\\simeq\\frac{1}{f^{2}}\\left(\\frac{1-S_{f}}{S_{f} N_{f}}+\\frac{1-S_{0}}{S_{0}N_{0}}\\right) $$"
+      "content": "where $q_i$ is the frequency of the deleterious allele, and $s_i$ and $(sh)_i$ are the probabilities of mortality for homozygotes and heterozygotes. If the probability of dying from any single cause is small, then the approximation $(1-x) \\simeq e^{-x}$ gives",
+      "source_page": 291,
+      "printed_page": 271,
+      "source_block_ids": [
+        "p291:b2"
+      ],
+      "bbox": [
+        78.0,
+        116.0,
+        1041.0,
+        253.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula029]]",
+      "source_page": 291,
+      "printed_page": 271,
+      "source_block_ids": [
+        "p291:b3"
+      ],
+      "bbox": [
+        270.0,
+        251.0,
+        839.0,
+        355.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where",
+      "source_page": 291,
+      "printed_page": 271,
+      "source_block_ids": [
+        "p291:b5"
+      ],
+      "bbox": [
+        73.0,
+        360.0,
+        159.0,
+        392.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula030]]",
+      "source_page": 291,
+      "printed_page": 271,
+      "source_block_ids": [
+        "p291:b6"
+      ],
+      "bbox": [
+        328.0,
+        395.0,
+        774.0,
+        489.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "is the sum of probabilities of mortality in the random-mating population, and",
+      "source_page": 291,
+      "printed_page": 271,
+      "source_block_ids": [
+        "p291:b8"
+      ],
+      "bbox": [
+        68.0,
+        483.0,
+        999.0,
+        543.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula031]]",
+      "source_page": 291,
+      "printed_page": 271,
+      "source_block_ids": [
+        "p291:b9"
+      ],
+      "bbox": [
+        326.0,
+        553.0,
+        765.0,
+        646.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "is the excess sum of probabilities of mortality that would exist in a completely inbred population. Logarithmic transformation of Equation 10.18a leads to",
+      "source_page": 291,
+      "printed_page": 271,
+      "source_block_ids": [
+        "p291:b11"
+      ],
+      "bbox": [
+        62.0,
+        658.0,
+        1022.0,
+        750.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula032]]",
+      "source_page": 291,
+      "printed_page": 271,
+      "source_block_ids": [
+        "p291:b12"
+      ],
+      "bbox": [
+        431.0,
+        764.0,
+        649.0,
+        805.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the composite measures A and B can be estimated by regressing the natural logarithm of survivorship on the inbreeding coefficient.",
+      "source_page": 291,
+      "printed_page": 271,
+      "source_block_ids": [
+        "p291:b14"
+      ],
+      "bbox": [
+        57.0,
+        820.0,
+        1019.0,
+        907.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A slight problem with this approach arises in cases in which the observed survivorship for certain inbreeding classes is zero, since the logarithm of zero is undefined. Templeton and Read (1984) suggest the small sample-size correction",
+      "source_page": 291,
+      "printed_page": 271,
+      "source_block_ids": [
+        "p291:b15"
+      ],
+      "bbox": [
+        54.0,
+        886.0,
+        1018.0,
+        1008.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula033]]",
+      "source_page": 291,
+      "printed_page": 271,
+      "source_block_ids": [
+        "p291:b16"
+      ],
+      "bbox": [
+        450.0,
+        1020.0,
+        614.0,
+        1099.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ N_f $ and $ N'_f $ are the numbers of total and surviving individuals at inbreeding level $ f $. With no observed survivors, this quantity rapidly approaches zero as the total sample size increases. Morton et al. (1956) also recommend the use of weighted least-squares analysis, weighting the data by $ N_f S_f / [1 - S_f] $, the inverse of the sampling variance of $ \\ln S_f $, and iterating the regression by substituting expected for observed $ S_f $ in the weights. (Recall that a similar procedure is used in the estimation of line-cross variances; Chapter 9.)",
+      "source_page": 291,
+      "printed_page": 271,
+      "source_block_ids": [
+        "p291:b18"
+      ],
+      "bbox": [
+        48.0,
+        1115.0,
+        1012.0,
+        1357.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Unfortunately, the mean number of lethal equivalents per gamete, $ \\sum q_i s_i $, cannot be separated cleanly from other terms in the definitions of A and B. However, since $ A + B = P_e + \\sum q_i s_i $, the number of lethal equivalents per gamete must be between B and $ A + B $, assuming $ (sh)_i \\geq 0 $. As will be seen below, estimates of $ A + B $ are usually not much greater than B, so the use of B as an approximation of the effective number of lethals is not greatly troubling.",
+      "source_page": 291,
+      "printed_page": 271,
+      "source_block_ids": [
+        "p291:b19"
+      ],
+      "bbox": [
+        42.0,
+        1337.0,
+        1006.0,
+        1551.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Practical situations often arise in which one only has data for noninbred individuals and a single class of inbred individuals. A regression is not possible in this case, but the parameters can still be estimated by",
+      "source_page": 292,
+      "printed_page": 272,
+      "source_block_ids": [
+        "p292:b2"
+      ],
+      "bbox": [
+        117.0,
+        114.0,
+        1078.0,
+        239.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula034]]",
+      "source_page": 292,
+      "printed_page": 272,
+      "source_block_ids": [
+        "p292:b3"
+      ],
+      "bbox": [
+        498.0,
+        255.0,
+        644.0,
+        291.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula035]]",
+      "source_page": 292,
+      "printed_page": 272,
+      "source_block_ids": [
+        "p292:b5"
+      ],
+      "bbox": [
+        498.0,
+        298.0,
+        705.0,
+        372.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where, for example, $f$ is $1/2$ for self-fertilization and $1/4$ for full-sib mating. Using the methods of Appendix 1, the large-sample variance for $B$ in this case is found to be",
+      "source_page": 292,
+      "printed_page": 272,
+      "source_block_ids": [
+        "p292:b7"
+      ],
+      "bbox": [
+        125.0,
+        387.0,
+        1085.0,
+        507.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula036]]",
+      "source_page": 292,
+      "printed_page": 272,
+      "source_block_ids": [
+        "p292:b8"
+      ],
+      "bbox": [
+        404.0,
+        483.0,
+        808.0,
+        562.0
+      ]
     }
   ]
 }

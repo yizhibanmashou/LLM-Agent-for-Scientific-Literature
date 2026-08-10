@@ -2,46 +2,281 @@
   "id": "Genetics_chapter13_014",
   "metadata": {
     "chapter": "Genetics_chapter13",
-    "section": "Introduction",
+    "section": "COMPLEX SEGREGATION ANALYSIS",
     "subsections": [
-      "Common-family Effects"
+      "Polygenic Background"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Common-family Effects",
+    "section_level_1": "COMPLEX SEGREGATION ANALYSIS",
+    "section_level_2": "Polygenic Background",
     "heading_path": [
-      "Introduction",
-      "Common-family Effects"
+      "COMPLEX SEGREGATION ANALYSIS",
+      "Polygenic Background"
     ],
-    "display_heading": "Common-family Effects"
+    "display_heading": "COMPLEX SEGREGATION ANALYSIS / Polygenic Background",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 385,
+      "printed_page": 365,
+      "source_block_ids": [
+        "p385:b10"
+      ],
+      "bbox": [
+        73.0,
+        1043.0,
+        359.0,
+        1080.0
+      ],
+      "raw_text": "Polygenic Background"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Members of full-sib families usually share environmental effects, and likelihood functions accounting for these have been developed (Morton and MacLean 1974; Knott and Haley 1992a,b). Let the $ i^{th} $ family have a common effect $ c_{i} $, and assume that these effects are normally distributed among families with mean zero and variance $ \\sigma_{c}^{2} $. With this modification, the expected phenotypic value of an offspring with genotype $ g_{o} $ from family i is $ \\mu_{g_{o}} + c_{i} $. As before, we assume that the phenotypic values for each genotype (conditional on $ c_{i} $) are normally distributed with variance $ \\sigma^{2} $, giving the conditional likelihood for the $ n_{i} $ offspring from this family as $$ \\ell(z_{i}.|g_{f},g_{m},c_{i})=\\prod_{j=1}^{n_{i}}\\left[\\sum_{g_{o_{j}}=1}^{3}\\Pr(g_{o_{j}}|g_{f},g_{m})\\cdot\\varphi(z_{ij},\\mu_{g_{o_{j}}}+c_{i},\\sigma^{2})\\right] $$"
+      "content": "Our final modification assumes a background of segregating polygenes in addition to the major gene. The resulting likelihood functions are often called mixed models in the human genetics literature, although this is a different usage of the term from its standard linear-model interpretation (Chapter 26). A variety of such “mixed-model” likelihoods have been proposed for full-sib families (Elston and Stewart 1971, Morton and MacLean 1974, Ott 1979, Lalouel and Morton 1981, Lalouel et al. 1983, Demenais and Bonney 1989, Fernando et al. 1994, Stricker et al. 1995b).",
+      "source_page": 385,
+      "printed_page": 365,
+      "source_block_ids": [
+        "p385:b11"
+      ],
+      "bbox": [
+        68.0,
+        1085.0,
+        1030.0,
+        1357.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Averaging over all possible values of the common-family effect $c_{i}$ gives $$ \\ell(z_{i.}\\mid g_{f},g_{m})=\\int_{-\\infty}^{\\infty}\\ell(z_{i.}\\mid g_{f},g_{m},c)\\cdot\\varphi(c,0,\\sigma_{c}^{2})d c $$"
+      "content": "We will consider the background polygenes to be completely additive, and assume that the background genetic value A is normally distributed with mean 0 and variance $ \\sigma_{A}^{2} $. The phenotypic value of an individual with major-locus genotype g and background polygenic value A is assumed to be normally distributed with mean $ \\mu_{g} + A $ and variance $ \\sigma_{E}^{2} $. Ignoring common-family effects, if the jth sib has background genetic value $ A_{o_{j}} $, the conditional likelihood for the jth sib in the ith family becomes",
+      "source_page": 385,
+      "printed_page": 365,
+      "source_block_ids": [
+        "p385:b12",
+        "p386:b2"
+      ],
+      "bbox": [
+        64.0,
+        1341.0,
+        1025.0,
+        1552.0
+      ],
+      "source_page_end": 386
     },
     {
       "type": "discussion",
-      "content": "Finally, using the above expression for $\\ell(z_{i}.|g_{f},g_{m})$, averaging over all possible parental genotypes gives the unconditional likelihood for this family (Equation 13.11b). Assuming the QTL genotypes are in Hardy-Weinberg proportions, the unconditional likelihood has six unknown parameters: the three genotypic means, the allele frequency $p$, and the variances $\\sigma^{2}$ and $\\sigma_{c}^{2}$. Assuming the $n_{f}$ families in our pedigree are unrelated, the total likelihood is the product of the individual family likelihoods (Equation 13.13)."
+      "content": "[[FORMULA:Genetics_chapter13_formula035]]",
+      "source_page": 386,
+      "printed_page": 366,
+      "source_block_ids": [
+        "p386:b3"
+      ],
+      "bbox": [
+        173.0,
+        188.0,
+        928.0,
+        286.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The likelihood for the ith family under the restricted model assuming common-family effects, but no major genes, is $$ $$"
+      "content": "The conditioning on offspring genetic value $ A_{o} $ is removed in two stages. First, $ A_{o} $ is removed by conditioning on parental polygenic values $ (A_{f}, A_{m}) $,",
+      "source_page": 386,
+      "printed_page": 366,
+      "source_block_ids": [
+        "p386:b5"
+      ],
+      "bbox": [
+        115.0,
+        298.0,
+        1072.0,
+        376.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "(z_ i)&= _ - ^ (z_ i c) (c,0, _ c ^ 2)dc\\\\&= _ - ^ (c,0, _ c ^ 2)dc $$ $$"
+      "content": "[[FORMULA:Genetics_chapter13_formula036]]",
+      "source_page": 386,
+      "printed_page": 366,
+      "source_block_ids": [
+        "p386:b6"
+      ],
+      "bbox": [
+        142.0,
+        386.0,
+        966.0,
+        465.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A test for common-family effects but no major gene is given by the likelihood-ratio test using Equation 13.18 versus the likelihood function with $ \\sigma_{c}^{2} = 0 $. The latter is just the likelihood function assuming a single underlying normal, which has its maximum value given by Equation 13.8. Likewise, the likelihood-ratio test for a major gene but no common-family effects uses the full likelihood and a restricted likelihood assuming $ \\sigma_{c}^{2} = 0 $."
+      "content": "The additive genetic value of an offspring is assumed to be normally distributed with mean $ (A_f + A_m)/2 $ and variance $ \\sigma_A^2/2 $, so that the conditional density function is",
+      "source_page": 386,
+      "printed_page": 366,
+      "source_block_ids": [
+        "p386:b8"
+      ],
+      "bbox": [
+        118.0,
+        473.0,
+        1076.0,
+        582.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula037]]",
+      "source_page": 386,
+      "printed_page": 366,
+      "source_block_ids": [
+        "p386:b9"
+      ],
+      "bbox": [
+        351.0,
+        565.0,
+        841.0,
+        640.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "as developed in Example 7 of Chapter 8. Second, averaging over all possible parental background polygenic values, $ A_{f} $ and $ A_{m} $, gives a likelihood function for the ith family that is conditioned only on the major-locus genotypes of the parents,",
+      "source_page": 386,
+      "printed_page": 366,
+      "source_block_ids": [
+        "p386:b11"
+      ],
+      "bbox": [
+        120.0,
+        643.0,
+        1079.0,
+        788.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula038]]",
+      "source_page": 386,
+      "printed_page": 366,
+      "source_block_ids": [
+        "p386:b12"
+      ],
+      "bbox": [
+        159.0,
+        775.0,
+        1047.0,
+        936.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This expression assumes that parents are drawn at random, are unrelated, and not inbred, but these restrictions can be removed by averaging over an alternative joint distribution of $A_{f}$, $A_{m}$. Finally, Equation 13.22 is substituted into Equation 13.11b to obtain the unconditional likelihood for the entire family. The resulting likelihood has six unknown parameters: the three major-locus means, allele frequency $p$ (assuming genotypes are in Hardy-Weinberg proportions), $\\sigma_{E}^{2}$, and $\\sigma_{A}^{2}$.",
+      "source_page": 386,
+      "printed_page": 366,
+      "source_block_ids": [
+        "p386:b14"
+      ],
+      "bbox": [
+        125.0,
+        950.0,
+        1088.0,
+        1190.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Under the restricted model of an additive polygenic background but no major-locus or common-family effects, the likelihood of an individual conditioned on the polygenic values of its parents is",
+      "source_page": 386,
+      "printed_page": 366,
+      "source_block_ids": [
+        "p386:b15"
+      ],
+      "bbox": [
+        130.0,
+        1173.0,
+        1090.0,
+        1287.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula039]]",
+      "source_page": 386,
+      "printed_page": 366,
+      "source_block_ids": [
+        "p386:b16"
+      ],
+      "bbox": [
+        155.0,
+        1291.0,
+        975.0,
+        1377.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "giving the unconditional likelihood for the ith family as $ \\ell(z_{i.})= $",
+      "source_page": 386,
+      "printed_page": 366,
+      "source_block_ids": [
+        "p386:b18"
+      ],
+      "bbox": [
+        136.0,
+        1386.0,
+        898.0,
+        1435.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula040]]",
+      "source_page": 386,
+      "printed_page": 366,
+      "source_block_ids": [
+        "p386:b19"
+      ],
+      "bbox": [
+        167.0,
+        1440.0,
+        967.0,
+        1551.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Incorporation of a common-family effect into either Equation 13.22 or 13.23 is straightforward and follows the logic leading to Equation 13.16.",
+      "source_page": 387,
+      "printed_page": 367,
+      "source_block_ids": [
+        "p387:b2"
+      ],
+      "bbox": [
+        82.0,
+        128.0,
+        1040.0,
+        205.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The presence of multiple integrals in the common-family effect and polygenic likelihood functions usually means that considerable computing power is required to obtain the MLEs in even modest pedigrees. Knott et al. (1990, 1991a) provide excellent approximations for these Gaussian integrals, decreasing computational requirements. However, since multiple local maxima can occur on the likelihood surface, care must still be taken in numerically computing the global likelihood (Demenais et al. 1986, Borecki et al. 1995).",
+      "source_page": 387,
+      "printed_page": 367,
+      "source_block_ids": [
+        "p387:b3"
+      ],
+      "bbox": [
+        79.0,
+        195.0,
+        1041.0,
+        431.0
+      ]
     }
   ]
 }

@@ -2,34 +2,68 @@
   "id": "Genetics_chapter21_010",
   "metadata": {
     "chapter": "Genetics_chapter21",
-    "section": "Introduction",
-    "subsections": [
-      "Hypothesis Tests"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter21_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Hypothesis Tests",
+    "section": "STATISTICAL ISSUES",
+    "subsections": [],
+    "section_level_1": "STATISTICAL ISSUES",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "Hypothesis Tests"
+      "STATISTICAL ISSUES"
     ],
-    "display_heading": "Hypothesis Tests"
+    "display_heading": "STATISTICAL ISSUES",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 651,
+      "printed_page": 631,
+      "source_block_ids": [
+        "p651:b7"
+      ],
+      "bbox": [
+        52.0,
+        1379.0,
+        344.0,
+        1411.0
+      ],
+      "raw_text": "STATISTICAL ISSUES"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Testing for a significant phenotypic correlation is straightforward, as it is a conventional product-moment correlation, which can be evaluated against critical values widely available in tables in statistics texts. For genetic correlations, the simplest option for testing the hypothesis that $ \\rho_{A} = 0 $ is based on the principle that significant genetic covariance between two traits implies a significant genetic correlation. With the pairwise-comparison method, the significance of the regression of character 2 in set y on character 1 in set x, and vice versa, can be evaluated by the standard test for a regression slope."
+      "content": "As with any parameter estimates, it is useful to have measures of the sampling variances and/or confidence intervals of the phenotypic, genetic, and environmental correlations to aid in their interpretation. For the genetic and environmental correlations, the problems here are considerable. The estimators for $ \\rho_{A} $ and $ \\rho_{E} $ generally utilize a combination of results from different applications of ANOVA and/or regression analysis, all employing data on the same individuals. The sampling properties of functions of statistics derived from nonindependent analyses are poorly understood.",
+      "source_page": 651,
+      "printed_page": 631,
+      "source_block_ids": [
+        "p651:b8",
+        "p652:b4"
+      ],
+      "bbox": [
+        49.0,
+        1444.0,
+        1011.0,
+        1516.0
+      ],
+      "source_page_end": 652
     },
     {
       "type": "discussion",
-      "content": "Methods for evaluating the significance of an environmental correlation are less well developed. However, with the nearly universal availability of high-speed computers, a simple procedure enables simultaneous tests for all three types of correlation ($ r_{z}, r_{A} $, and $ r_{E} $). Bootstrapping and jackknifing over families (Chapter 18) are being relied upon increasingly to generate empirically derived sampling distributions of the desired statistics (Dorn and Mitchell-Olds 1991, Brodie 1993, Paulsen 1994, Roff and Preziosi 1994). For each quasisample of the data set, the estimates $ r_{z} $ and $ r_{A} $ are computed directly, and then $ r_{E} $ is obtained by use of Equation 21.11. After randomly generating numerous sets of such estimates, one can construct confidence intervals for the three parameters from their observed sampling distributions. With the paired-comparison method, an alternative procedure is to randomize members of the set y with respect to those of set x, evaluating the probability (under the null hypothesis of no correlation) of obtaining a correlation coefficient as extreme as that observed with the true data set. A similar approach can be applied to the nested design, by randomizing full-sib families with respect to sires and dams."
-    },
-    {
-      "type": "discussion",
-      "content": "Finally, we note that studies of genetic correlation usually involve the simultaneous analysis of several characters, not just two, resulting in tables of correlations between all possible pairs of characters. Care then needs to be taken so as not to overinterpret the significance levels attached to single correlations. For example, suppose that one were studying a set of $N$ traits, none of which are actually correlated. The probability that none of the $N(N-1)/2$ observed correlations is significant (at level $\\alpha$) is $(1-\\alpha)^{N(N-1)/2}$. The probability that at least one correlation would appear, by chance, to be significant at the level $\\alpha$ or smaller is one minus this quantity. This probability can be substantial — if $N=7$, there is a 0.19 probability that at least one of the 21 correlations will spuriously appear to be significant at the $P=0.01$ level, and a 0.66 probability at the $\\alpha=0.05$ level. Adjusting significance tests to account for multiple comparisons is straightforward when the different tests involve independent data (Rice 1989; see Chapter 14). However, in the analysis of correlated characters, the nonindependence of data renders conventional multiple-comparison procedures invalid, and to our knowledge no satisfactory solution to the problem exists."
+      "content": "[[FIGURE:21.1]]",
+      "source_page": 652,
+      "printed_page": 632,
+      "source_block_ids": [
+        "p652:b3"
+      ],
+      "bbox": [
+        190.0,
+        1191.0,
+        1057.0,
+        1312.0
+      ]
     }
   ]
 }

@@ -2,62 +2,253 @@
   "id": "Genetics_chapter12_011",
   "metadata": {
     "chapter": "Genetics_chapter12",
-    "section": "Introduction",
+    "section": "THE DELETERIOUS EFFECTS OF NEW MUTATIONS",
     "subsections": [
-      "Analysis of Natural Populations"
+      "Results from Flies, Plants, and Bacteria"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter12_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Analysis of Natural Populations",
+    "section_level_1": "THE DELETERIOUS EFFECTS OF NEW MUTATIONS",
+    "section_level_2": "Results from Flies, Plants, and Bacteria",
     "heading_path": [
-      "Introduction",
-      "Analysis of Natural Populations"
+      "THE DELETERIOUS EFFECTS OF NEW MUTATIONS",
+      "Results from Flies, Plants, and Bacteria"
     ],
-    "display_heading": "Analysis of Natural Populations"
+    "display_heading": "THE DELETERIOUS EFFECTS OF NEW MUTATIONS / Results from Flies, Plants, and Bacteria",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 357,
+      "printed_page": 337,
+      "source_block_ids": [
+        "p357:b12"
+      ],
+      "bbox": [
+        53.0,
+        1168.0,
+        538.0,
+        1204.0
+      ],
+      "raw_text": "Results from Flies, Plants, and Bacteria"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Mutation-accumulation experiments of the sort described above are extremely labor intensive and require evolutionarily inert controls that are not easily maintained in most species. An alternative approach to characterizing the features of the deleterious mutation process is to evaluate various properties of the distribution of fitness in a natural population and to interpret them in light of their expected values under mutation-selection balance. Morton et al. (1956) and Mukai and Yamaguchi (1974) first suggested how the genomic deleterious mutation rate in a random-mating population might be estimated from the observed inbreeding depression for fitness, provided an estimate of the average degree of dominance were available, and Charlesworth et al. (1990) expanded their approach to obligately selfing populations. Both methods have been generalized by Deng and Lynch (1996b) to yield joint estimators of $ U, \\overline{h} $, and $ \\overline{s} $ for mutations affecting total fitness. Their method, which we review below, requires estimates of both the mean fitness and the genetic variance for fitness in inbred and outbred generations."
+      "content": "The preceding approaches have been applied extensively to viability in Drosophila. As can be seen in Figure 12.6, when second chromosomes are passed clonally through males (using the techniques outlined in Figure 5.7), where they do not experience recombination, replicate lines exhibit a gradual decline in mean fitness and a gradual increase in among-line variance. Letting $ h_s $ and $ s $ denote the reductions in viability in mutant heterozygotes and homozygotes, and extrapolating results to the whole genome, the results of Mukai and associates (Mukai 1964, 1969, 1979; Mukai and Yamazaki 1968; Mukai et al. 1965, 1972) and of Ohnishi (1977) lead to average estimates of $ \\widehat{U}_{min} = 0.6 $, $ s_{max} = 0.06 $, and $ \\overline{h} = 0.36 $",
+      "source_page": 357,
+      "printed_page": 337,
+      "source_block_ids": [
+        "p357:b13"
+      ],
+      "bbox": [
+        49.0,
+        1210.0,
+        1011.0,
+        1509.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Recall from Chapter 10 that the equilibrium frequency of a deleterious allele under mutation-selection balance is $ u/(h s) $, where u is the genic mutation rate, and $ h s $ is the fractional loss of fitness in heterozygotes. Using this result, and assuming that mutations are distributed among individuals in a Poisson fashion and interact multiplicatively to define total fitness (i.e., there is no epistasis), the mean fitness and genetic variance in fitness in a random-mating (outcrossing) population can be shown to be $$ \\overline{W}_{O}=W_{max}\\exp(-U) $$ and $$ \\sigma_{W}^{2}(O)=\\overline{{W}}_{O}^{2}\\{\\exp[U(\\overline{{h s}})]-1\\} $$ where $W_{max}$ is the expected measure of fitness in a mutation-free individual, and $\\overline{hs}$ denotes the mean effect of a mutation in the heterozygous state. Suppose now that progeny are produced via self-fertilization of a random sample of parental genotypes, and that multiple progeny are assayed per parent. The expected mean fitness and genetic variance in fitness among selfed families are $$ \\overline{{W}}_{S}=W_{m a x}\\exp\\{-{(U/4)}[2+({1/\\widetilde{h}})]\\} $$ $$ \\sigma_{W}^{2}(S)=\\overline{{W}}_{S}^{2}\\{\\exp[(U/4)(\\bar{s}+(1/4)[\\overline{{s/h}}]+\\overline{{h s}})]-1\\} $$ where $ \\widetilde{h} $ is the harmonic mean dominance coefficient of new mutations, and $ \\overline{s/h} $ is the mean value of the ratio s/h for new mutations. These four equations can be rearranged to eliminate the parameter $ W_{max} $, yielding a set of estimators for $ U, \\overline{s} $, and $ \\overline{h} $."
+      "content": "[[FIGURE:12.6]]",
+      "source_page": 358,
+      "printed_page": 338,
+      "source_block_ids": [
+        "p358:b3"
+      ],
+      "bbox": [
+        187.0,
+        718.0,
+        1057.0,
+        1047.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "First, we define a set of observable measures, $$ \\widehat{x}=\\ln\\left(\\frac{\\mathrm{Var}(W_{O})}{\\overline{W}_{O}^{2}}+1\\right) $$ $$ \\widehat{y}=\\ln\\left(\\frac{\\overline{W}_{S}}{\\overline{W}_{O}}\\right) $$ $$ \\widehat{z}=\\ln\\left(\\frac{\\mathrm{Var}(W_{S})}{\\overline{W}_{S}^{2}}+1\\right) $$ where $ \\mathrm{Var}(W_{O}) $ is the observed genetic variance in fitness in the parental generation and $ \\mathrm{Var}(W_{S}) $ is the observed genetic variance in fitness among selfed families. A variety of methods for estimating genetic variances will be covered in the following chapters. Note that $ \\widehat{y} $, the natural logarithm of the ratio of fitnesses observed in selfed and outcrossed generations, is a measure of inbreeding depression, whereas $ \\widehat{x} $ and $ \\widehat{z} $ are, respectively, functions of the squared coefficients of genetic variation of fitness in the random-mating and selfed populations."
+      "content": "(summarized in Simmons and Crow 1977, Crow and Simmons 1983, Lynch et al. 1995b). That is, newly arisen mutations for viability arise at a rate of nearly one per individual per generation, and on average these mutations are slightly recessive, individually causing a reduction of viability of approximately 6% in homozygotes and approximately 2% ( $ 0.06 \\times 0.36 = 0.023 $) in heterozygotes.",
+      "source_page": 358,
+      "printed_page": 338,
+      "source_block_ids": [
+        "p358:b4"
+      ],
+      "bbox": [
+        146.0,
+        1103.0,
+        1105.0,
+        1270.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Given information on the means and genetic variances in fitness, $\\widehat{x},\\widehat{y}$, and $\\widehat{z}$ can be computed, and then estimates of the mutation parameters can be obtained from the solutions of Equations 12.11a–d, $$ \\widehat{h}\\simeq\\frac{1}{8\\sqrt{\\widehat{z}/\\widehat{\\boldsymbol{x}}}-4}\\left(C_{h}+\\frac{2-C_{s,h}^{2}}{1+C_{s,h}}\\right) $$ $$ \\widehat{U}\\simeq\\frac{4\\widehat{h}\\widehat{y}}{2\\widehat{h}-1-C_{h}} $$ $$ \\widehat{s}\\simeq\\frac{\\widehat{x}}{\\widehat{U}\\widehat{h}(1+C_{s,h})} $$"
+      "content": "These results indicate that the per generation input of spontaneous mutations is such that in the absence of effective selection, a Drosophila population is expected to experience an approximately 2% reduction in individual viability per generation. There are two reasons why this value is almost certainly an underestimate. First, the assays reported above were performed in relatively benign environments. When mutation-accumulation lines of Drosophila were assayed in a variety of environments, their fitness (relative to controls) declined much",
+      "source_page": 358,
+      "printed_page": 338,
+      "source_block_ids": [
+        "p358:b5"
+      ],
+      "bbox": [
+        149.0,
+        1265.0,
+        1110.0,
+        1494.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Here, $\\widehat{h}$ and $\\widehat{s}$ are estimates of the arithmetic mean properties of new mutations. Two new terms appearing in these formulae are functions of the distribution of mutational effects: $ C_{h}=\\sigma_{h}^{2}/\\overline{h}^{2} $, the squared coefficient of variation of dominance coefficients for new mutations, and $ C_{s,h}=\\sigma_{s,h}/(\\overline{h}\\cdot\\overline{s}) $, the coefficient of covariation between s and h. Rarely will quantitative estimates of these properties be available. However, $ C_{s,h} $ is expected to be negative (more deleterious mutations tending to be more recessive), and $ C_{h} $ is necessarily positive, although arguments presented in Deng and Lynch (1996b) suggest that it may be small. In the absence of information on these quantities, Equations 12.13a-c can be still be solved by setting $ C_{h}=C_{s,h}=0 $. The estimators will then be biased — the average degree of dominance and the genomic mutation rate in a downward direction, and the average selection coefficient in an upward direction."
+      "content": "[[FIGURE:12.7]]",
+      "source_page": 359,
+      "printed_page": 339,
+      "source_block_ids": [
+        "p359:b3"
+      ],
+      "bbox": [
+        104.0,
+        632.0,
+        969.0,
+        757.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Thus, as in the case of the Bateman-Mukai estimators, the method of Deng and Lynch can yield estimates of one-sided bounds on the mutation parameters. Given these estimates, additional composite measures can also be approximated. For example, the long-term rate of decline in fitness that would result if natural selection were rendered ineffective (as in a very small population) is $$ \\Delta M=\\frac{\\widehat{U}\\widehat{s}}{2} $$"
+      "content": "more dramatically in the more extreme environments (involving dilution of the medium and crowding), in some cases approaching zero (Kondrashov and Houle 1994). Future experiments are needed to evaluate whether this genotype × environment interaction is a consequence of an enhancement of the selective effects (s) of individual mutations in harsh environments, of the expression of a larger number of loci (U) in such environments, or both. Second, all of the preceding analyses excluded chromosomes carrying lethal recessive mutations. Such mutations appear to arise at a rate of about 0.02 per genome per generation (Crow and Simmons 1983), and results from a number of studies suggest that they cause an average viability reduction of 1% to 5% in heterozygotes, which is very similar to the heterozygous effects of mild detrimental (Simmons and Crow 1977).",
+      "source_page": 359,
+      "printed_page": 339,
+      "source_block_ids": [
+        "p359:b4"
+      ],
+      "bbox": [
+        51.0,
+        815.0,
+        1015.0,
+        1173.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Results in Deng and Lynch (1996b) suggest that Equation 12.14 is an almost unbiased estimator because the downward bias in the estimate $ \\widehat{U} $ is balanced by the upward bias in the estimate $ \\widehat{s} $. Moreover, $ \\Delta M $ can be simply estimated by the quantity $ \\widehat{z}/2 $, where $ \\widehat{z} $ is defined in Equation 12.12c."
+      "content": "Unfortunately, all of the Drosophila experiments focus entirely on one aspect of fitness — egg-to-adult viability, and we still do not have an estimate of the mutation parameters for total fitness. Houle et al. (1992) had generated such estimates, but their control lines were later found to be contaminated (Houle et al. 1994a). Results from Mukai and Yamazaki (1971), Yoshimaru and Mukai (1985), and Houle et al. (1994b) suggest the possibility that most deleterious mutations have pleiotropic effects on all components of fitness. In surveys of fitness components such as developmental rate, fecundity, longevity, and mating ability, in no case is the genetic correlation caused by mutation significantly different from one, implying that the total impact of deleterious mutations on fitness in Drosophila can be no less than that for viability, and possibly substantially more.",
+      "source_page": 359,
+      "printed_page": 339,
+      "source_block_ids": [
+        "p359:b5"
+      ],
+      "bbox": [
+        45.0,
+        1165.0,
+        1010.0,
+        1525.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Deng and Lynch (1996b) present a parallel set of equations, which provides the basis for parameter estimation by outcrossing ordinarily selfing populations. These estimators tend to be less biased by variance in mutational effects, apparently because most of the bias is caused by highly deleterious recessives, which are normally purged from regularly selfing populations (Chapter 10). Further information on the practical application of the technique, its power as a function of sample size, and its sensitivity to violations of the assumptions of the model is provided in Deng and Lynch (1996b)."
+      "content": "Two other mutation-accumulation experiments provide insight into the magnitude of the deleterious mutation process at the level of total fitness. Starting from a highly inbred line of the self-fertilizing plant Arabidopsis thaliana, Schultz et al. (in prep.) maintained 1000 replicate lines by single-seed descent for 10 generations. Compared to the initial (control) population, stored as seed, total fitness (seed set assayed in a fairly benign environment) exhibited a decline of about 1% per generation. This total impact of mutations on fitness was a function of cumulative, but smaller, effects on individual fitness components — 0.06%, 0.05%, and 0.4% per generation, respectively, for germination probability, numbers of fruits set, and numbers of seeds per fruit. Application of the Bateman-Mukai technique to the observations on total fitness yields estimates of $ U_{min} = 0.1 $ and $ \\overline{s}_{max} = 0.1 $.",
+      "source_page": 360,
+      "printed_page": 340,
+      "source_block_ids": [
+        "p360:b2"
+      ],
+      "bbox": [
+        137.0,
+        134.0,
+        1096.0,
+        486.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Although the method of Deng and Lynch has not yet been applied to natural populations, a few estimates of U have been obtained from the observed improvement in fitness in outcrossed progeny of normally self-fertilizing plants. Such estimates make use of the estimator of Charlesworth et al. (1990), $$ U=\\frac{\\widehat{y}}{\\widehat{h}-0.5} $$ where $\\widehat{y}$ is defined in Equation 12.12b. As noted above, this method requires an independent estimate of the degree of dominance, $\\widehat{h}$. A variety of methods for estimating $h$ were covered in Chapter 10, although it must be stressed that these estimate the average degree of dominance of segregating mutations. The latter is likely to be somewhat less than the degree of dominance of new mutations"
+      "content": "If real, the lower genomic mutation rate in Arabidopsis, relative to Drosophila, may be due to a number of factors, including differences in genome size and differences in rates of spontaneous mutation per locus. The genome size of Arabidopsis is only about a third the size of that of Drosophila (Table 14.3). On a per year basis, the mutational rate of substitution (estimated from rates of synonymous substitutions) in plants is approximately 2.7 times higher than in Drosophila (Wolfe et al. 1987, Sharp and Li 1989). However, if one assumes that most mutations occur during meiosis, and that Drosophila has two to three times more generations per year than Arabidopsis, then the substitutional mutation rate in the two species may be quite similar on a per generation basis. As noted above, transposable-element activity is a significant source of mutation in Drosophila, but transposable elements are unusually rare and sedentary in Arabidopsis.",
+      "source_page": 360,
+      "printed_page": 340,
+      "source_block_ids": [
+        "p360:b3"
+      ],
+      "bbox": [
+        141.0,
+        484.0,
+        1101.0,
+        868.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "(the parameter that should be used in Equation 12.15), since selection removes more dominant mutations with greater efficiency. In their original survey of the literature, Charlesworth et al. (1990) obtained results that suggested that U must be at least 0.5 for individual fitness components. Johnston and Schoen (1995) obtained estimates of U for total fitness in four populations of the annual plant Amsinckia ranging from 0.24 to 0.87, and Charlesworth et al. (1994) obtained estimates of U ≈ 0.8 and 1.5 for two species of Leavenworthia. All of these estimates are in rough accord with the more direct results cited above for Drosophila and Arabidopsis, supporting the idea that the genomic deleterious mutation rate for total fitness is on the order of 0.2 to 2.0 per individual per generation."
+      "content": "Kibota and Lynch (1996) performed a mutation-accumulation experiment on the bacterium Escherichia coli, taking 50 lines through daily single-cell bottlenecks for 300 days, and periodically assaying the lines for performance (relative to the initial control line, stored at $ -80^{\\circ} $ C to prevent its evolution between assays). Qualitatively, the results were very similar to those for Mukai's Drosophila lines — there was a gradual decline in mean fitness (measured as the rate of clonal expansion) and a gradual increase in the variance among lines (Figure 12.7). The estimate of $ \\overline{s}_{max} = 0.012 $ (in this case the haploid effect of a mutation) is not greatly different from that observed for viability in Drosophila. The genomic deleterious mutation rate estimate, $ U_{min} = 1.7 \\times 10^{-4} $, is about 10% of various estimates of the total genomic mutation rate for this and related species (Drake 1991, Andersson and Hughes 1996). Although this estimate of $ U_{min} $ for E. coli is orders of magnitude lower than the haploid rate for Drosophila, 0.3, the two can be brought more in line by the following considerations. There are about 25 germline cell divisions per generation in Drosophila (Lindsley and Tokuyasy 1980), so the genomic mutation rates per cell division are closer — 0.00017 vs. 0.012 — and they become quite similar when one notes that the haploid genomes sizes of E. coli and Drosophila differ by a factor of 50. Almost certainly, there is more dispensable (junk) DNA in a fly than in a microbe, so a linear scaling based on genome size is probably not entirely defensible. Still, the fairly narrow window of genomic deleterious mutation rates across taxa, when corrected for cell divisions per generation and genome size and for the unusually high amount of transposable element activity in Drosophila, is compelling.",
+      "source_page": 360,
+      "printed_page": 340,
+      "source_block_ids": [
+        "p360:b4",
+        "p361:b2"
+      ],
+      "bbox": [
+        145.0,
+        869.0,
+        1110.0,
+        1509.0
+      ],
+      "source_page_end": 361
+    },
+    {
+      "type": "discussion",
+      "content": "How biased are these estimates by unknown variation in mutational effects? Keightley (1994) developed a maximum-likelihood technique for the analysis of mutation-accumulation experiments that assumes a Poisson distribution of mutational events and a gamma distribution of mutational effects. When applied to existing Drosophila results, his analyses suggest a highly L-shaped distribution of mutational effects, with most mutations being very close to neutral. However, a very broad range of distributions is compatible with the data, as are squared coefficients of variation of s ranging from $ C_{m} = 0.25 $ to approximately 30. Such results suggest that the genomic mutation rate to deleterious mutations in Drosophila could be as low as 0.8 and possibly as high as 20. The mean homozygous effect (s) of a new mutation could be as low as 0.002 or as high as 0.05. With this combination of mutation pressure and mutational effects, populations with effective sizes smaller than several hundreds of individuals are highly vulnerable to gradual mutational decay (Lynch and Gabriel 1990; Lande 1994; Lynch et al. 1995a,b).",
+      "source_page": 361,
+      "printed_page": 341,
+      "source_block_ids": [
+        "p361:b3"
+      ],
+      "bbox": [
+        58.0,
+        231.0,
+        1022.0,
+        680.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Haldane (1935, 1947) and Crow (1993b) have pointed out that in many animal species the vast majority of mutations appear to arise in males rather than females, perhaps because most mutations arise during periods of cell division. In humans, for example, the mutation rate through males appears to be on the order of 10 times that through females. In women, the number of cell divisions between zygote and egg is approximately 24, regardless of maternal age. In men, however, approximately 36 cell divisions have occurred in the germ line by the time of puberty (age 13), and thereafter the number increases at a rate of about 23 per year. Thus, for a male of age 20, the number of cell divisions separating zygote and sperm cell is estimated to be $ 36 + (20 - 13) \\cdot 23 = 200 $, and by the age of 40, this has increased to 657. As reviewed by Crow (1993b), the observed increase in mutation rate with paternal age is even greater than that expected from this simple extrapolation from the increase in number of germline cell divisions. These results are of some relevance to the existing Drosophila experiments where, due to the experimental design, all mutations arose within males. However, the difference between male and female mutation rates in this species, as well as in the mouse, appears to be on the order of only twofold (Crow 1992).",
+      "source_page": 361,
+      "printed_page": 341,
+      "source_block_ids": [
+        "p361:b4"
+      ],
+      "bbox": [
+        51.0,
+        675.0,
+        1016.0,
+        1225.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "One final issue is the extent to which spontaneous deleterious mutations interact epistatically. Evolutionary biologists are particularly interested in this issue because the equilibrium fitness load resulting from segregating deleterious mutations depends on the form of the fitness function, i.e., on the relationship between fitness and number of mutations. As noted in Chapter 10, when the effects of mutations at different loci act independently (with multiplicative effects on fitness), the equilibrium mean fitness, relative to that of a mutation-free individual, is simply $ e^{-U} $, where U is the genomic deleterious mutation rate (Haldane 1937). If deleterious mutations interact synergistically, such that fitness declines at an accelerating rate with an increase in mutation number, the equilibrium load is reduced for the simple reason that the strength of selection increases with subsequent mutations (Kimura and Maruyama 1966, Milkman 1978, Crow and Kimura 1979, Kondrashov 1988, B. Charlesworth 1990). On the other hand, with diminishing-returns epistasis, the equilibrium load is increased because the strength of selection (per mutation) weakens as mutations accumulate.",
+      "source_page": 361,
+      "printed_page": 341,
+      "source_block_ids": [
+        "p361:b5",
+        "p362:b2"
+      ],
+      "bbox": [
+        45.0,
+        1218.0,
+        1010.0,
+        1513.0
+      ],
+      "source_page_end": 362
+    },
+    {
+      "type": "discussion",
+      "content": "Data on epistatic interactions among deleterious mutations are few. If such interactions do exist, they appear to be weak and synergistic (Simmons and Crow 1977, Crow and Simmons 1983). However, almost all of the power in this argument derives from a single observation of Mukai (1969) that mean fitness in his mutation-accumulation lines began to decline at an accelerating rate in later generations of his experiments. The curvilinearity that he observed was not strong, and was primarily a function of two late-generation assays, which are not independent.",
+      "source_page": 362,
+      "printed_page": 342,
+      "source_block_ids": [
+        "p362:b3"
+      ],
+      "bbox": [
+        139.0,
+        324.0,
+        1101.0,
+        588.0
+      ]
     }
   ]
 }

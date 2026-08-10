@@ -2,38 +2,54 @@
   "id": "Genetics_chapter8_015",
   "metadata": {
     "chapter": "Genetics_chapter8",
-    "section": "Introduction",
+    "section": "ELEMENTARY MATRIX ALGEBRA",
     "subsections": [
-      "EXPECTATIONS OF RANDOM VECTORS AND MATRICES"
+      "Computing Inverses"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "EXPECTATIONS OF RANDOM VECTORS AND MATRICES",
+    "section_level_1": "ELEMENTARY MATRIX ALGEBRA",
+    "section_level_2": "Computing Inverses",
     "heading_path": [
-      "Introduction",
-      "EXPECTATIONS OF RANDOM VECTORS AND MATRICES"
+      "ELEMENTARY MATRIX ALGEBRA",
+      "Computing Inverses"
     ],
-    "display_heading": "EXPECTATIONS OF RANDOM VECTORS AND MATRICES"
+    "display_heading": "ELEMENTARY MATRIX ALGEBRA / Computing Inverses",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    }
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "Matrix algebra provides a powerful approach for analyzing linear combinations of random variables. Let x be a column vector containing n random variables, $ \\mathbf{x} = (x_1, x_2, \\cdots, x_n)^T $. We may wish to construct a new univariate (scalar) random variable y by taking some linear combination of the elements of x, $$ \\boldsymbol{y}=\\sum_{i=1}^{n}a_{i}\\boldsymbol{x}_{i}=\\mathbf{a}^{T}\\mathbf{x} $$ where $ \\mathbf{a} = (a_1, a_2, \\cdots, a_n)^T $ is a column vector of constants. L1kewise, we can construct a new $ k $-dimensional vector $ \\mathbf{y} $ by premultiplying $ \\mathbf{x} $ by a $ k \\times n $ matrix $ \\mathbf{A} $ of constants, $ \\mathbf{y} = \\mathbf{A}\\mathbf{x} $. More generally, an $ (n \\times k) $ matrix $ \\mathbf{X} $ of random variables can be transformed into a new $ m \\times \\ell $ dimensional matrix $ \\mathbf{Y} $ of elements consisting of linear combinations of the elements of $ \\mathbf{X} $ by $$ \\mathbf{Y}_{m\\times\\ell}=\\mathbf{A}_{m\\times n}\\mathbf{X}_{n\\times k}\\mathbf{B}_{k\\times\\ell} $$ where the matrices A and B are constants with dimensions as subscribed."
-    },
-    {
-      "type": "discussion",
-      "content": "If X is a matrix whose elements are random variables, then the expected value of X is a matrix $E(\\mathbf{X})$ containing the expected value of each element of X. If X and Z are matrices of the same dimension, then $$ E(\\mathbf{X}+\\mathbf{Z})=E(\\mathbf{X})+E(\\mathbf{Z}) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "This easily follows since the $ij$th element of $E(\\mathbf{X} + \\mathbf{Z})$ is $E(x_{ij} + z_{ij}) = E(x_{ij}) + E(z_{ij})$. Similarly, the expectation of $\\mathbf{Y}$ as defined in Equation 8.14 is $$ \\boldsymbol{E}(\\mathbf{Y})=\\boldsymbol{E}(\\mathbf{A}\\mathbf{X}\\mathbf{B})=\\mathbf{A}\\boldsymbol{E}(\\mathbf{X})\\mathbf{B} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "For example, for $\\mathbf{y} = \\mathbf{X}\\mathbf{b}$ where $\\mathbf{b}$ is an $n \\times 1$ column vector, $$ \\boldsymbol{E}(\\mathbf{y})=\\boldsymbol{E}(\\mathbf{X}\\mathbf{b})=\\boldsymbol{E}(\\mathbf{X})\\mathbf{b} $$ Likewise, for $ y = \\mathbf{a}^{T} \\mathbf{x} = \\sum_{i}^{n} a_{i} x_{i} $, $$ E(y)=E(\\mathbf{a}^{T}\\mathbf{x})=\\mathbf{a}^{T}E(\\mathbf{x}) $$"
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter8:5]]",
+      "source_page": 207,
+      "source_block_ids": [
+        "p207:b3",
+        "p207:b4",
+        "p207:b5",
+        "p207:b6",
+        "p207:b7",
+        "p207:b8",
+        "p207:b9",
+        "p207:b10",
+        "p207:b11",
+        "p207:b12",
+        "p207:b13",
+        "p207:b14",
+        "p207:b15",
+        "p207:b16",
+        "p208:b2",
+        "p208:b3"
+      ],
+      "bbox": [
+        109.0,
+        482.0,
+        514.0,
+        520.0
+      ]
     }
   ]
 }

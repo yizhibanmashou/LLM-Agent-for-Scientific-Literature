@@ -2,38 +2,144 @@
   "id": "Genetics_chapter26_006",
   "metadata": {
     "chapter": "Genetics_chapter26",
-    "section": "Introduction",
+    "section": "THE GENERAL MIXED MODEL",
     "subsections": [
       "Estimability of Fixed Effects"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
+    "section_level_1": "THE GENERAL MIXED MODEL",
     "section_level_2": "Estimability of Fixed Effects",
     "heading_path": [
-      "Introduction",
+      "THE GENERAL MIXED MODEL",
       "Estimability of Fixed Effects"
     ],
-    "display_heading": "Estimability of Fixed Effects"
+    "display_heading": "THE GENERAL MIXED MODEL / Estimability of Fixed Effects",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 765,
+      "printed_page": 745,
+      "source_block_ids": [
+        "p765:b6"
+      ],
+      "bbox": [
+        48.0,
+        842.0,
+        405.0,
+        879.0
+      ],
+      "raw_text": "Estimability of Fixed Effects"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "It is sometimes impossible to obtain unique BLUE estimates for all of the fixed factors in a model. Suppose, for example, that $$ \\boldsymbol{\\beta}=\\begin{pmatrix}{{{\\beta_{1}}}} \\\\{{{\\beta_{2}}}} \\\\{{{\\beta_{3}}}}\\end{pmatrix}\\quad with\\quad\\mathbf{X}=\\begin{pmatrix}{{{1}}}&{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{1}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}\\end{pmatrix} $$"
+      "content": "It is sometimes impossible to obtain unique BLUE estimates for all of the fixed factors in a model. Suppose, for example, that",
+      "source_page": 765,
+      "printed_page": 745,
+      "source_block_ids": [
+        "p765:b7"
+      ],
+      "bbox": [
+        47.0,
+        884.0,
+        1005.0,
+        964.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Here, factors 1 and 2 are completely confounded, as they contribute equally to all individuals, so unique estimates of $\\beta_{1}$ and $\\beta_{2}$ cannot be acquired. Generally, when two or more columns of X are not independent, it is still possible to obtain unique BLUEs for certain linear combinations of $\\beta$ through the use of generalized inverses (Appendix 3). With the preceding design matrix X, the solution is simple—by combining the two factors into a single new factor, $\\beta_{1}+\\beta_{2}$, the new model becomes $$ \\boldsymbol{\\beta}_{*}=\\left(\\begin{array}{c}\\beta_{1}+\\beta_{2}\\\\ \\beta_{3}\\end{array}\\right)\\quad with\\quad\\mathbf{X}_{*}=\\left(\\begin{array}{ll}1&0\\\\ 1&0\\\\ 0&1\\end{array}\\right) $$"
+      "content": "[[FORMULA:Genetics_chapter26_formula026]]",
+      "source_page": 765,
+      "printed_page": 745,
+      "source_block_ids": [
+        "p765:b8"
+      ],
+      "bbox": [
+        287.0,
+        965.0,
+        752.0,
+        1076.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Since the columns of $\\beta_{*}$ are now independent, a unique solution exists for $\\mathbf{X}_{*}^{T}\\mathbf{V}^{-1}\\mathbf{X}_{*}$, and from Equation 26.3, the two BLUEs of the fixed effects are given by $$ \\widehat{\\boldsymbol{\\beta}}_{*}=\\left(\\mathbf{X}_{*}^{T}\\mathbf{V}^{-1}\\mathbf{X}_{*}\\right)^{-1}\\mathbf{X}_{*}^{T}\\mathbf{V}^{-1}\\mathbf{y} $$"
+      "content": "Here, factors 1 and 2 are completely confounded, as they contribute equally to all individuals, so unique estimates of $ \\beta_{1} $ and $ \\beta_{2} $ cannot be acquired. Generally, when two or more columns of X are not independent, it is still possible to obtain unique BLUEs for certain linear combinations of $ \\beta $ through the use of generalized inverses (Appendix 3). With the preceding design matrix X, the solution is simple—by combining the two factors into a single new factor, $ \\beta_{1} + \\beta_{2} $, the new model becomes",
+      "source_page": 765,
+      "printed_page": 745,
+      "source_block_ids": [
+        "p765:b9"
+      ],
+      "bbox": [
+        38.0,
+        1071.0,
+        1002.0,
+        1313.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Situations in which linear combinations of fixed effects are required commonly arise when a very large number of fixed factors are included in the model, as occurs in large breeding programs involving multiple environments (such as different herds and different years.) Henderson (1984a) provides an extended discussion of the issues. Throughout the remainder of the book, we assume that $ \\beta $ is estimable, either immediately or after an appropriate transformation. Appendix 3 discusses how to determine which combinations of effects are estimable when singular matrices exist."
+      "content": "[[FORMULA:Genetics_chapter26_formula027]]",
+      "source_page": 765,
+      "printed_page": 745,
+      "source_block_ids": [
+        "p765:b10"
+      ],
+      "bbox": [
+        247.0,
+        1302.0,
+        778.0,
+        1404.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Since the columns of $ \\beta_{*} $ are now independent, a unique solution exists for $ \\mathbf{X}_{*}^{T}\\mathbf{V}^{-1}\\mathbf{X}_{*} $, and from Equation 26.3, the two BLUEs of the fixed effects are given by",
+      "source_page": 765,
+      "printed_page": 745,
+      "source_block_ids": [
+        "p765:b11"
+      ],
+      "bbox": [
+        32.0,
+        1393.0,
+        994.0,
+        1503.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter26_formula028]]",
+      "source_page": 765,
+      "printed_page": 745,
+      "source_block_ids": [
+        "p765:b12"
+      ],
+      "bbox": [
+        319.0,
+        1498.0,
+        702.0,
+        1558.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Situations in which linear combinations of fixed effects are required commonly arise when a very large number of fixed factors are included in the model, as occurs in large breeding programs involving multiple environments (such as different herds and different years.) Henderson (1984a) provides an extended discussion of the issues. Throughout the remainder of the book, we assume that $ \\beta $ is estimable, either immediately or after an appropriate transformation. Appendix 3 discusses how to determine which combinations of effects are estimable when singular matrices exist.",
+      "source_page": 766,
+      "printed_page": 746,
+      "source_block_ids": [
+        "p766:b2"
+      ],
+      "bbox": [
+        133.0,
+        122.0,
+        1096.0,
+        399.0
+      ]
     }
   ]
 }

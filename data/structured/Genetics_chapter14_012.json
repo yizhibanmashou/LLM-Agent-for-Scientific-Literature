@@ -2,54 +2,160 @@
   "id": "Genetics_chapter14_012",
   "metadata": {
     "chapter": "Genetics_chapter14",
-    "section": "Introduction",
-    "subsections": [
-      "How Many Markers Are Needed?"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter14_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "How Many Markers Are Needed?",
+    "section": "MARKER-TRAIT ASSOCIATIONS",
+    "subsections": [],
+    "section_level_1": "MARKER-TRAIT ASSOCIATIONS",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "How Many Markers Are Needed?"
+      "MARKER-TRAIT ASSOCIATIONS"
     ],
-    "display_heading": "How Many Markers Are Needed?"
+    "display_heading": "MARKER-TRAIT ASSOCIATIONS",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 412,
+      "printed_page": 392,
+      "source_block_ids": [
+        "p412:b6"
+      ],
+      "bbox": [
+        126.0,
+        706.0,
+        575.0,
+        738.0
+      ],
+      "raw_text": "MARKER-TRAIT ASSOCIATIONS"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "For most organisms, genetic maps are not yet available, and one must start with randomly obtained markers. As a rough approximation for the number of random polymorphic markers necessary for a desired saturation of the linkage map, assume a circular linkage map of total length L map units. In order to have a fraction p of all loci within m map units of some marker, the required number of randomly distributed markers is $$ n=\\frac{\\ln(1-p)}{\\ln(1-2m/L)} $$"
+      "content": "We now turn our attention to the mapping of individual QTLs. A variety of experimental designs have been proposed, and we consider these in some detail in Chapters 15 (inbred line crosses) and 16 (outbred populations). Since those chapters focus on methods for estimating both QTL effects and map position, we defer further discussion of most statistical issues until then. The remainder of this chapter is concerned with general design strategies for mapping, and eventual cloning, of QTLs.",
+      "source_page": 412,
+      "printed_page": 392,
+      "source_block_ids": [
+        "p412:b7"
+      ],
+      "bbox": [
+        126.0,
+        770.0,
+        1087.0,
+        995.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "(Lange and Boehnke 1982, Beckmann and Soller 1983). This rearranges to give the proportion of the genome within m map units of a marker as approximately $$ p\\simeq1-\\exp\\left(-\\frac{2mn}{L}\\right) $$"
+      "content": "That QTLs, like normal genes, can be mapped (assigned to linkage groups) was first demonstrated by Payne (1918), who found that the X chromosome from selected lines of Drosophila contains multiple factors influencing scutellar bristle number. Over the next two decades, a number of workers found associations between Mendelian markers and quantitative traits in crosses between inbred lines. For example, Sax (1923) crossed two inbred bean lines (Phaseolus vulgaris) differing in seed pigment and weight, with the pigmented parents having heavier seeds than the nonpigmented parents. These crosses demonstrated that seed pigment is determined by a single locus with two alleles, P and p. Among F₂ segregants from this cross, PP and Pp seeds were, respectively, 4.3 ± 0.8 and 1.9 ± 0.6 centigrams heavier than pp seeds. Hence the P allele is linked to a factor (or factors) that act in an additive fashion on seed weight. In a similar manner, Lindstrom (1924) demonstrated linkage between a locus for fruit color and factors for fruit size in tomatoes, while Smith (1937) observed associations between corolla size differences and several independently segregating flower color genes in tobacco. Similar studies were reported in maize (Lindstrom 1931), peas (Rasmusson 1927), barley (Wexelesen 1933, 1934), and mice (Green 1931, 1933).",
+      "source_page": 412,
+      "printed_page": 392,
+      "source_block_ids": [
+        "p412:b8"
+      ],
+      "bbox": [
+        128.0,
+        994.0,
+        1093.0,
+        1541.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "(Jacob et al. 1991). Assuming a circular genome map ignores the effect of chromosome ends, causing Equation 14.6a to underestimate n and Equation 14.6b to overestimate p. A more general expression, which accounts for linear chromosomes, is given by Bishop et al (1983). Assuming a haploid chromosome number C, $$ p=1-\\frac{2C\\left[\\left(1-x\\right)^{n+1}-\\left(1-2x\\right)^{n+1}\\right]}{n+1}-\\left(1-2x C\\right)\\left(1-2x\\right)^{n} $$ where x = m/L."
+      "content": "These studies raised the possibility that QTLs could be mapped with some precision, perhaps even allowing for the characterization of individual loci, given a population in linkage disequilibrium with a sufficient number of markers. Disequilibrium is a key feature, as it creates marker-trait associations, with different marker genotypes having different expected values for characters influenced by QTLs linked to these markers. This simple idea is the foundation for QTL mapping.",
+      "source_page": 413,
+      "printed_page": 393,
+      "source_block_ids": [
+        "p413:b2"
+      ],
+      "bbox": [
+        75.0,
+        131.0,
+        1039.0,
+        362.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "An alternative consideration is the average distance between a locus and the nearest random marker. Martin et al. (1991) show that the expected distance of a gene from the closest of n random markers is $$ E(m)=\\frac{L}{2(n+1)} $$ with the upper 95% confidence interval for this distance given by $$ \\frac{L}{2}\\left(1-0.05^{1/n}\\right) $$"
+      "content": "Creating populations with linked loci in disequilibrium is straightforward — crosses between inbred lines have this property, as do sibs and other collections of relatives. Other approaches are detailed in Chapters 15 and 16. For mapping purposes, crosses between inbred lines have the fewest complications. The progeny from such crosses display maximum disequilibrium and, being genetically identical, are equally informative as parents. Using such $ F_{1} $ parents, a variety of populations (such as $ F_{2}s $ or backcrosses) can be generated.",
+      "source_page": 413,
+      "printed_page": 393,
+      "source_block_ids": [
+        "p413:b3"
+      ],
+      "bbox": [
+        73.0,
+        359.0,
+        1036.0,
+        586.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "It is important to note that the above expressions refer to randomly chosen markers. It is much more efficient to use sets of equally spaced markers. If the entire genome is covered by marker loci equally spaced at m map units apart, no locus is more than m/2 from any marker, and the average distance of a locus from a marker (assuming a uniform distribution of loci along the chromosome) is m/4."
+      "content": "A number of problems, which are elaborated on in Chapter 16, conspire to make QTL mapping considerably more difficult in outbred populations than with inbred-line crosses. Not all parents are guaranteed to be informative, as some may be segregating marker alleles, but not linked QTLs, or vice-versa. Further, the marker-QTL linkage phase can differ between different sets of relatives. For example, marker allele M might be associated with QTL allele q in one family, but with Q in another. Thus, marker-trait associations have to be assessed in each set of relatives, rather than (as with inbred-line crosses) averaged over all individuals.",
+      "source_page": 413,
+      "printed_page": 393,
+      "source_block_ids": [
+        "p413:b4"
+      ],
+      "bbox": [
+        69.0,
+        582.0,
+        1034.0,
+        846.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter14:4]]",
+      "source_page": 413,
+      "source_block_ids": [
+        "p413:b5",
+        "p413:b6",
+        "p413:b7",
+        "p413:b8",
+        "p413:b9",
+        "p414:b2",
+        "p414:b3"
+      ],
+      "bbox": [
+        113.0,
+        930.0,
+        979.0,
+        1205.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Here $L = 3300$ cM, $m = 10$ cM, and $p = 0.9$. The circular-chromosome approximation (Equation 14.6a) gives $$ n=\\frac{\\ln(1-.9)}{\\ln(1-2/330)}\\simeq379 $$"
+      "content": "An observed association between alleles at a polymorphic marker locus and the value of a quantitative trait can result either because of gametic phase disequilibrium between the marker locus and a QTL or because the marker itself has a pleiotropic effect on the trait. A simple test for pleiotropy versus disequilibrium is to examine a marker-trait association over several generations of random mating. An association due to pleiotropy will not decay over time, while one due to linkage alone will. A caveat is that if linkage is very tight, it can take many generations before any substantial decay is observed (Equation 5.13). If one suspects that the marker itself is the QTL, a variety of candidate-locus approaches (to be discussed below) can be used to test this hypothesis.",
+      "source_page": 414,
+      "printed_page": 394,
+      "source_block_ids": [
+        "p414:b4"
+      ],
+      "bbox": [
+        130.0,
+        744.0,
+        1093.0,
+        1074.0
+      ]
     },
     {
-      "type": "discussion",
-      "content": "Numerically solving Equation 14.7 with p = 0.9 gives n = 404. Hence, the effect of ignoring chromosome ends underestimates n by about 7%."
-    },
-    {
-      "type": "discussion",
-      "content": "Suppose that 110 random markers are used. From Equation 14.8a, the expected distance of a particular gene from the nearest of these 110 markers is 14.9 cM, while Equation 14.8b gives the upper 95% confidence interval for this distance as 44.3 cM. In contrast, suppose these 110 markers are not random, but are instead chosen to be equally spaced at 30 cM apart. With this spacing, no locus is more than 15 cM from a marker, and all loci are, on average, 7.5 cM from a marker."
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter14:5]]",
+      "source_page": 414,
+      "source_block_ids": [
+        "p414:b5"
+      ],
+      "bbox": [
+        182.0,
+        1159.0,
+        1051.0,
+        1489.0
+      ]
     }
   ]
 }

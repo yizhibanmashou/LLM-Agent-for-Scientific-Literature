@@ -2,82 +2,594 @@
   "id": "Genetics_chapter27_003",
   "metadata": {
     "chapter": "Genetics_chapter27",
-    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "section": "ML VERSUS REML ESTIMATES OF VARIANCE COMPONENTS",
     "subsections": [
       "A Simple Example of ML versus REML"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_1": "ML VERSUS REML ESTIMATES OF VARIANCE COMPONENTS",
     "section_level_2": "A Simple Example of ML versus REML",
     "heading_path": [
-      "Variance-Component Estimation with Complex Pedigrees",
+      "ML VERSUS REML ESTIMATES OF VARIANCE COMPONENTS",
       "A Simple Example of ML versus REML"
     ],
-    "display_heading": "A Simple Example of ML versus REML"
+    "display_heading": "ML VERSUS REML ESTIMATES OF VARIANCE COMPONENTS / A Simple Example of ML versus REML",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 793,
+      "printed_page": 773,
+      "source_block_ids": [
+        "p793:b3"
+      ],
+      "bbox": [
+        42.0,
+        660.0,
+        533.0,
+        710.0
+      ],
+      "raw_text": "A Simple Example of ML versus REML"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "In an attempt to make the distinction between ML and REML likelihood equations as simple and transparent as possible, we start with a useful pedagogical connection between ML and REML noticed by Foulley (1993), confining our attention to a very simple application — the estimation of the mean and variance of a set of independent observations. In this case, the mixed model reduces to $$ \\mathbf{y}=\\mathbf{1}_{\\mu}+\\mathbf{e} $$ where $\\mu$ is the population mean (the fixed effect), $1$ is a $n\\times1$ column vector of ones (equivalent to the design matrix $\\mathbf{X}$ in Equation 26.1), and the covariance matrix of residuals about the mean is assumed to be $\\mathbf{R}=\\sigma^{2}\\mathbf{I}$."
+      "content": "In an attempt to make the distinction between ML and REML likelihood equations as simple and transparent as possible, we start with a useful pedagogical connection between ML and REML noticed by Foulley (1993), confining our attention to a very simple application — the estimation of the mean and variance of a set of independent observations. In this case, the mixed model reduces to",
+      "source_page": 793,
+      "printed_page": 773,
+      "source_block_ids": [
+        "p793:b4"
+      ],
+      "bbox": [
+        36.0,
+        705.0,
+        1000.0,
+        897.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "What are the ML estimates of $ \\mu $ and $ \\sigma^{2} $ based on the n sampled individuals? Assuming the phenotypes are independent of each other and normally distributed, the probability density of the data y conditional on the parametric mean and variance is the product of the n univariate normal densities, $$ \\begin{aligned}p(\\mathbf{y}\\mid\\mu,\\sigma^{2})&=\\prod_{i=1}^{n}p(y_{i}\\mid\\mu,\\sigma^{2})\\\\&=(2\\pi)^{-n/2}(\\sigma^{2})^{-n/2}\\exp\\left[-\\sum_{i=1}^{n}\\frac{(y_{i}-\\mu)^{2}}{2\\sigma^{2}}\\right]\\end{aligned} $$ where $y_{i}$ is the phenotypic value of the $i$th individual. Taking the natural logarithm of the expression on the right, the log-likelihood (Appendix 4) for the observed data set is $$ L(\\mathbf{y}\\mid\\mu,\\sigma^{2})=-\\frac{n}{2}\\bigg[\\ln(2\\pi)+\\ln(\\sigma^{2})+\\frac{1}{n\\sigma^{2}}\\sum_{i=1}^{n}(y_{i}-\\mu)^{2}\\bigg] $$"
+      "content": "[[FORMULA:Genetics_chapter27_formula001]]",
+      "source_page": 793,
+      "printed_page": 773,
+      "source_block_ids": [
+        "p793:b5"
+      ],
+      "bbox": [
+        441.0,
+        892.0,
+        585.0,
+        926.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Although this is the logarithm of the likelihood of the data given the moments of the normal distribution ($ \\mu $ and $ \\sigma^{2} $), it can also be viewed as the log-likelihood of the parameter estimates, $ L(\\mu, \\sigma^{2} | \\mathbf{y}) $, treating the $ y_{i} $ as constants and $ \\mu $ and $ \\sigma^{2} $ as variables. To obtain estimates of these two distributional parameters, we need at least two observable statistics. Letting $$ \\overline{y}=\\frac{1}{n}\\sum_{i=1}^{n}y_{i}\\qquad\\mathrm{a n d}\\qquad V=\\frac{1}{n}\\sum_{i=1}^{n}\\left(y_{i}-\\overline{y}\\right)^{2} $$ we have $$ \\begin{aligned}\\sum_{i=1}^{n}(y_{i}-\\mu)^{2}&=\\sum_{i=1}^{n}(y_{i}-\\overline{y}+\\overline{y}-\\mu)^{2}\\\\&=\\sum_{i=1}^{n}(y_{i}-\\overline{y})^{2}+\\sum_{i=1}^{n}(\\overline{y}-\\mu)^{2}+2\\left(\\overline{y}-\\mu\\right)\\sum_{i=1}^{n}(y_{i}-\\overline{y})\\\\&=n\\left[V+\\left(\\overline{y}-\\mu\\right)^{2}\\right]\\end{aligned}\\tag{2 $$"
+      "content": "where $\\mu$ is the population mean (the fixed effect), $1$ is a $n \\times 1$ column vector of ones (equivalent to the design matrix $\\mathbf{X}$ in Equation 26.1), and the covariance matrix of residuals about the mean is assumed to be $\\mathbf{R} = \\sigma^2 \\mathbf{I}$.",
+      "source_page": 793,
+      "printed_page": 773,
+      "source_block_ids": [
+        "p793:b7"
+      ],
+      "bbox": [
+        30.0,
+        921.0,
+        990.0,
+        1047.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Substituting this final expression into Equation 27.3a, the log-likelihood can be expressed as $$ L(\\mu,\\sigma^{2}|\\mathbf{y})=-\\frac{n}{2}\\bigg[\\ln(2\\pi)+\\ln(\\sigma^{2})+\\frac{V+(\\overline{y}-\\mu)^{2}}{\\sigma^{2}}\\bigg] $$"
+      "content": "What are the ML estimates of $ \\mu $ and $ \\sigma^{2} $ based on the n sampled individuals? Assuming the phenotypes are independent of each other and normally distributed, the probability density of the data y conditional on the parametric mean and variance is the product of the n univariate normal densities,",
+      "source_page": 793,
+      "printed_page": 773,
+      "source_block_ids": [
+        "p793:b8"
+      ],
+      "bbox": [
+        24.0,
+        1016.0,
+        988.0,
+        1176.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Differentiating with respect to $ \\mu $ and $ \\sigma^{2} $ yields $$ \\frac{\\partial L(\\mu,\\sigma^{2}|\\mathbf{y})}{\\partial\\mu}=\\frac{n(\\overline{y}-\\mu)}{\\sigma^{2}} $$ $$ \\frac{\\partial L(\\mu,\\sigma^{2}|\\mathbf{y})}{\\partial\\sigma^{2}}=-\\frac{n}{2\\sigma^{2}}\\left[1-\\frac{V+(\\overline{y}-\\mu)^{2}}{\\sigma^{2}}\\right] $$"
-    },
-    {
-      "type": "definition",
-      "content": "By setting these equations equal to zero and solving, we obtain estimators for the population mean and variance that maximize the likelihood function given the observed data y. From Equation 27.4a, we obtain an estimator for the mean that is completely independent of the variance, $$ \\widehat{\\mu}=\\overline{y} $$ where $ \\hat{} $ denotes an estimate. This shows that the standard definition of a sample mean is, in fact, the ML estimate of the parametric value. Unfortunately, the solution to Equation 27.4b, $$ \\widehat{\\sigma}^{2}=V+\\left(\\overline{y}-\\mu\\right)^{2} $$ is not independent of the estimated mean, $\\overline{y}$, unless the estimated mean happens to coincide perfectly with the true mean $\\mu$. The maximum likelihood estimator of $\\sigma^{2}$ is obtained by assuming that the mean is, in fact, estimated without error, yielding $$ \\widehat{\\sigma}^{2}=V $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Since the term ignored in Equation 27.5b is necessarily positive, Equation 27.5c gives a downwardly biased estimate of the true variance $\\sigma^{2}$."
-    },
-    {
-      "type": "discussion",
-      "content": "REML removes this bias by accounting for the error in the estimation of $ \\mu $. From Equation 27.5b, the expected amount by which $ \\widehat{\\sigma}^{2} $ underestimates $ \\sigma^{2} $ is the expected value of $ (\\overline{y}-\\mu)^{2} $, which is simply the sampling variance of the mean, $ \\sigma^{2}/n $. Thus, an improved estimator is $$ \\widehat{\\sigma}^{2}=V+E[\\left(\\overline{y}-\\mu\\right)^{2}]=V+\\frac{\\sigma^{2}}{n} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "We cannot, of course, know exactly what this bias is because we do not know $\\sigma^{2}$ with certainty (indeed, we are trying to estimate it). However, the bias is estimable because we have a preliminary estimate of $\\sigma^{2}$, the maximum likelihood estimate V. Thus, starting with the initial estimate of $\\widehat{\\sigma}^{2}(0) = V$, a second improved estimate of the variance is $$ \\widehat{\\sigma}^{2}(1)=V+\\frac{\\widehat{\\sigma}^{2}(0)}{n}=V+\\frac{V}{n} $$"
+      "content": "[[FORMULA:Genetics_chapter27_formula002]]",
+      "source_page": 793,
+      "printed_page": 773,
+      "source_block_ids": [
+        "p793:b9"
+      ],
+      "bbox": [
+        179.0,
+        1162.0,
+        813.0,
+        1366.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "However, just as this changes the estimate of the variance, it also changes the estimate of $(\\overline{y}-\\mu)^{2}$. Hence, a third estimate of $\\sigma^{2}$ would be $$ \\widehat{\\sigma}^{2}(2)=V+\\frac{\\widehat{\\sigma}^{2}(1)}{n}=V+\\frac{V+(V/n)}{n} $$ $$ \\widehat{\\sigma}^{2}(t+1)=V+\\frac{\\widehat{\\sigma}^{2}(t)}{n} $$"
+      "content": "where $ y_{i} $ is the phenotypic value of the ith individual. Taking the natural logarithm of the expression on the right, the log-likelihood (Appendix 4) for the observed data set is",
+      "source_page": 793,
+      "printed_page": 773,
+      "source_block_ids": [
+        "p793:b11"
+      ],
+      "bbox": [
+        13.0,
+        1343.0,
+        975.0,
+        1472.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "This sequence suggests an iterative approach for estimating the variance."
+      "content": "[[FORMULA:Genetics_chapter27_formula003]]",
+      "source_page": 793,
+      "printed_page": 773,
+      "source_block_ids": [
+        "p793:b12"
+      ],
+      "bbox": [
+        111.0,
+        1451.0,
+        787.0,
+        1546.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The final (stable) solution to this equation, $\\widehat{\\sigma}^{2}$, is obtained by setting $\\widehat{\\sigma}^{2}(t+1)=\\widehat{\\sigma}^{2}(t)$, yielding $$ \\widehat{\\sigma}^{2}=\\frac{n}{n-1}V=\\frac{\\sum_{i=1}^{n}(y_{i}-\\overline{y})^{2}}{n-1} $$ which is the unbiased estimator of the variance that we normally use (Chapter 2)."
+      "content": "Although this is the logarithm of the likelihood of the data given the moments of the normal distribution ( $ \\mu $ and $ \\sigma^{2} $), it can also be viewed as the log-likelihood of the parameter estimates, $ L(\\mu, \\sigma^{2} | \\mathbf{y}) $, treating the $ y_{i} $ as constants and $ \\mu $ and $ \\sigma^{2} $ as variables. To obtain estimates of these two distributional parameters, we need at least two observable statistics. Letting",
+      "source_page": 794,
+      "printed_page": 774,
+      "source_block_ids": [
+        "p794:b2"
+      ],
+      "bbox": [
+        144.0,
+        109.0,
+        1107.0,
+        306.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "To obtain a solution for this particular example, iteration of Equation 27.6a is not really necessary. However, with models containing multiple fixed effects in the form of the vector u, closed solutions such as Equation 27.6b are not usually possible, particularly in complex pedigree analyses involving unbalanced data."
+      "content": "[[FORMULA:Genetics_chapter27_formula004]]",
+      "source_page": 794,
+      "printed_page": 774,
+      "source_block_ids": [
+        "p794:b3"
+      ],
+      "bbox": [
+        346.0,
+        307.0,
+        912.0,
+        406.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In those cases, as we will see below, iterative procedures can still yield solutions that are asymptotically unbiased."
+      "content": "we have",
+      "source_page": 794,
+      "printed_page": 774,
+      "source_block_ids": [
+        "p794:b4"
+      ],
+      "bbox": [
+        156.0,
+        439.0,
+        265.0,
+        472.0
+      ]
     },
     {
-      "type": "proposition",
-      "content": "Note that the REML estimators given by Equations 27.5a and 27.6b were derived under the assumption of normality. That these same solutions can be acquired without reference to any particular distribution (Chapter 2) provides some evidence that REML estimators may often be fairly robust to violations of the normality assumption."
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula005]]",
+      "source_page": 794,
+      "printed_page": 774,
+      "source_block_ids": [
+        "p794:b5"
+      ],
+      "bbox": [
+        220.0,
+        472.0,
+        1057.0,
+        709.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting this final expression into Equation 27.3a, the log-likelihood can be expressed as",
+      "source_page": 794,
+      "printed_page": 774,
+      "source_block_ids": [
+        "p794:b7"
+      ],
+      "bbox": [
+        165.0,
+        704.0,
+        1125.0,
+        802.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula006]]",
+      "source_page": 794,
+      "printed_page": 774,
+      "source_block_ids": [
+        "p794:b8"
+      ],
+      "bbox": [
+        333.0,
+        799.0,
+        960.0,
+        891.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Differentiating with respect to $ \\mu $ and $ \\sigma^{2} $ yields",
+      "source_page": 794,
+      "printed_page": 774,
+      "source_block_ids": [
+        "p794:b10"
+      ],
+      "bbox": [
+        172.0,
+        908.0,
+        726.0,
+        958.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula007]]",
+      "source_page": 794,
+      "printed_page": 774,
+      "source_block_ids": [
+        "p794:b11"
+      ],
+      "bbox": [
+        408.0,
+        969.0,
+        702.0,
+        1048.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula008]]",
+      "source_page": 794,
+      "printed_page": 774,
+      "source_block_ids": [
+        "p794:b13"
+      ],
+      "bbox": [
+        410.0,
+        1043.0,
+        900.0,
+        1128.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "By setting these equations equal to zero and solving, we obtain estimators for the population mean and variance that maximize the likelihood function given the observed data y. From Equation 27.4a, we obtain an estimator for the mean that is completely independent of the variance,",
+      "source_page": 794,
+      "printed_page": 774,
+      "source_block_ids": [
+        "p794:b15"
+      ],
+      "bbox": [
+        179.0,
+        1135.0,
+        1142.0,
+        1294.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula009]]",
+      "source_page": 794,
+      "printed_page": 774,
+      "source_block_ids": [
+        "p794:b16"
+      ],
+      "bbox": [
+        626.0,
+        1306.0,
+        705.0,
+        1341.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where ◠ denotes an estimate. This shows that the standard definition of a sample mean is, in fact, the ML estimate of the parametric value. Unfortunately, the solution to Equation 27.4b,",
+      "source_page": 794,
+      "printed_page": 774,
+      "source_block_ids": [
+        "p794:b18"
+      ],
+      "bbox": [
+        187.0,
+        1353.0,
+        1149.0,
+        1483.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula010]]",
+      "source_page": 794,
+      "printed_page": 774,
+      "source_block_ids": [
+        "p794:b19"
+      ],
+      "bbox": [
+        555.0,
+        1486.0,
+        785.0,
+        1527.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "is not independent of the estimated mean, $ \\overline{y} $, unless the estimated mean happens to coincide perfectly with the true mean $ \\mu $. The maximum likelihood estimator of $ \\sigma^{2} $ is obtained by assuming that the mean is, in fact, estimated without error, yielding",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b2"
+      ],
+      "bbox": [
+        61.0,
+        120.0,
+        1024.0,
+        280.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula011]]",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b3"
+      ],
+      "bbox": [
+        487.0,
+        261.0,
+        588.0,
+        296.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Since the term ignored in Equation 27.5b is necessarily positive, Equation 27.5c gives a downwardly biased estimate of the true variance $ \\sigma^{2} $.",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b5"
+      ],
+      "bbox": [
+        56.0,
+        298.0,
+        1016.0,
+        394.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "REML removes this bias by accounting for the error in the estimation of $ \\mu $. From Equation 27.5b, the expected amount by which $ \\widehat{\\sigma}^{2} $ underestimates $ \\sigma^{2} $ is the expected value of $ (\\overline{y}-\\mu)^{2} $, which is simply the sampling variance of the mean, $ \\sigma^{2}/n $. Thus, an improved estimator is",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b6"
+      ],
+      "bbox": [
+        52.0,
+        363.0,
+        1013.0,
+        522.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula012]]",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b7"
+      ],
+      "bbox": [
+        327.0,
+        535.0,
+        728.0,
+        610.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "We cannot, of course, know exactly what this bias is because we do not know $ \\sigma^{2} $ with certainty (indeed, we are trying to estimate it). However, the bias is estimable because we have a preliminary estimate of $ \\sigma^{2} $, the maximum likelihood estimate V. Thus, starting with the initial estimate of $ \\widehat{\\sigma}^{2}(0) = V $, a second improved estimate of the variance is",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b9"
+      ],
+      "bbox": [
+        43.0,
+        612.0,
+        1006.0,
+        800.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula013]]",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b10"
+      ],
+      "bbox": [
+        336.0,
+        805.0,
+        698.0,
+        885.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "However, just as this changes the estimate of the variance, it also changes the estimate of $ (\\overline{y} - \\mu)^2 $. Hence, a third estimate of $ \\sigma^2 $ would be",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b11"
+      ],
+      "bbox": [
+        35.0,
+        885.0,
+        995.0,
+        981.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula014]]",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b12"
+      ],
+      "bbox": [
+        280.0,
+        984.0,
+        741.0,
+        1068.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula015]]",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b13"
+      ],
+      "bbox": [
+        365.0,
+        1139.0,
+        645.0,
+        1217.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This sequence suggests an iterative approach for estimating the variance,",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b14"
+      ],
+      "bbox": [
+        31.0,
+        1066.0,
+        904.0,
+        1129.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The final (stable) solution to this equation, $ \\widehat{\\sigma}^{2} $, is obtained by setting $ \\widehat{\\sigma}^{2}(t+1) = \\widehat{\\sigma}^{2}(t) $, yielding",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b16"
+      ],
+      "bbox": [
+        24.0,
+        1219.0,
+        984.0,
+        1315.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula016]]",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b17"
+      ],
+      "bbox": [
+        309.0,
+        1297.0,
+        689.0,
+        1370.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "which is the unbiased estimator of the variance that we normally use (Chapter 2).",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b19"
+      ],
+      "bbox": [
+        18.0,
+        1360.0,
+        974.0,
+        1425.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "To obtain a solution for this particular example, iteration of Equation 27.6a is not really necessary. However, with models containing multiple fixed effects in the form of the vector u, closed solutions such as Equation 27.6b are not usually possible, particularly in complex pedigree analyses involving unbalanced data.",
+      "source_page": 795,
+      "printed_page": 775,
+      "source_block_ids": [
+        "p795:b20"
+      ],
+      "bbox": [
+        13.0,
+        1390.0,
+        978.0,
+        1556.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In those cases, as we will see below, iterative procedures can still yield solutions that are asymptotically unbiased.",
+      "source_page": 796,
+      "printed_page": 776,
+      "source_block_ids": [
+        "p796:b2"
+      ],
+      "bbox": [
+        139.0,
+        110.0,
+        1099.0,
+        208.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the REML estimators given by Equations 27.5a and 27.6b were derived under the assumption of normality. That these same solutions can be acquired without reference to any particular distribution (Chapter 2) provides some evidence that REML estimators may often be fairly robust to violations of the normality assumption.",
+      "source_page": 796,
+      "printed_page": 776,
+      "source_block_ids": [
+        "p796:b3"
+      ],
+      "bbox": [
+        143.0,
+        175.0,
+        1107.0,
+        369.0
+      ]
     }
   ]
 }

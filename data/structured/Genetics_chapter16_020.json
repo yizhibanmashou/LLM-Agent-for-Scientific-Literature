@@ -2,46 +2,224 @@
   "id": "Genetics_chapter16_020",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
+    "section": "MAPPING DICHOTOMOUS CHARACTERS",
     "subsections": [
-      "Power of ASP Tests and Related Issues"
+      "Affected Sib-pair Tests"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Power of ASP Tests and Related Issues",
+    "section_level_1": "MAPPING DICHOTOMOUS CHARACTERS",
+    "section_level_2": "Affected Sib-pair Tests",
     "heading_path": [
-      "Introduction",
-      "Power of ASP Tests and Related Issues"
+      "MAPPING DICHOTOMOUS CHARACTERS",
+      "Affected Sib-pair Tests"
     ],
-    "display_heading": "Power of ASP Tests and Related Issues"
+    "display_heading": "MAPPING DICHOTOMOUS CHARACTERS / Affected Sib-pair Tests",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 539,
+      "printed_page": 519,
+      "source_block_ids": [
+        "p539:b3"
+      ],
+      "bbox": [
+        85.0,
+        259.0,
+        375.0,
+        290.0
+      ],
+      "raw_text": "Affected Sib-pair Tests"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The power of different sib-pair tests has been examined by several authors (Suarez et al. 1978, Blackwelder and Elston 1985, Goldin and Gershon 1988, Risch 1990a-c, Schaid and Nick 1990, Sribney and Swift 1992, Goldin and Weeks 1993, Green and Shah 1993, Shah and Green 1994), who conclude that most of the power resides in doubly affected pairs. Blackwelder and Elston (1985) and Schaid and Nick (1990) compared the performance of tests based on the mean number of ibid alleles with those based on a single ibid frequency class (e.g., Equation 16.50b vs. 16.50a). If dominance is modest or linkage is loose, $ T_{m} $ is a more powerful test than $ T_{2} $. However, with strong dominance and tight linkage, the test based on $ T_{2} $ is slightly more powerful. Sribney and Swift (1992), noting that assortative mating and multiple underlying loci can inflate the number of required sib-pairs to achieve a given power, suggest that the use of discordant sib-trios (two normal and one affected, or vice versa) can offer higher power in these cases."
+      "content": "When dealing with a dichotomous character, pairs of relatives can be classified into three groups: pairs where both are normal, singly affected pairs with one affected and one normal member, and doubly affected pairs. The first and last pairs are also called concordant, while pairs that differ are called discordant. The motivation behind relative-pair tests is that if a marker is linked to a QTL influencing the trait, concordant and discordant pairs should have different distributions for the number of ibd marker alleles.",
+      "source_page": 539,
+      "printed_page": 519,
+      "source_block_ids": [
+        "p539:b4"
+      ],
+      "bbox": [
+        83.0,
+        301.0,
+        1045.0,
+        524.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The ibd distribution for a marker locus linked to a DS gene has been solved for full sibs by Suarez et al. (1978) and for more general pairs of relatives by Risch (1990b). These expressions are useful for both power calculations (Appendix 5; Figure 16.4) and for showing how the DS parameters influence the ibd distribution. Since many tests use only doubly affected full-sib pairs, we restrict attention to this case. It is convenient to express the ibd distribution as the expected frequency under no linkage plus a deviation due to linkage, $$ p_{20}=\\frac{1}{4}-d_{20},\\quad p_{21}=\\frac{1}{2}-d_{21},\\quad p_{22}=\\frac{1}{4}+d_{22}, $$"
+      "content": "In addition to being much more robust than ML methods for dichotomous characters, relative-pair tests also have the advantage of selective genotyping in that pairs are usually chosen so that at least one member is affected. The pairs of relatives considered are usually full sibs, and a number of variants of these affected sib-pair, or ASP, methods have been proposed (e.g., Day and Simons 1976; de Vries et al. 1976; Green and Woodrow 1977; Suarez 1978; Suarez et al. 1978; Fishman et al. 1978; Suarez and Eerdewegh 1984; Badner et al. 1984; Hopper et al. 1984; Thompson 1986; Lange 1986a,b; Risch 1987, 1990a–c; Faraway 1993; Commenges 1994; Curtis and Stam 1994; Kruglyak and Lander 1995b). Most of these are detection tests, rather than estimation procedures, as they cannot provide independent estimates of QTL effect and position. While our attention focuses on full-sib pairs, this basic approach can easily be applied to any pair of relatives, provided there is variability in the number of ibd alleles. (This excludes parent-offspring pairs, as these share exactly one allele ibd.) Most affected sib-pair tests have the basic structure of comparing the observed ibd frequencies (or some statistic based on them) of doubly affected pairs with either their expected values under no linkage or with the corresponding values in singly affected pairs. There are many possible tests based on this idea and most, it seems, have made their way into the literature. We consider three here.",
+      "source_page": 539,
+      "printed_page": 519,
+      "source_block_ids": [
+        "p539:b5"
+      ],
+      "bbox": [
+        80.0,
+        524.0,
+        1042.0,
+        1133.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:16.4]]"
+      "content": "Among those $n_i$ pairs with $i$ affected members $(i=0,1,2)$, let $p_{ij}$ denote the frequency of such pairs with $j$ ibd marker alleles $(j=0,1,2)$. From the binomial distribution, the estimator $\\widehat{p}_{ij}$ has mean $p_{ij}$ and variance $p_{ij}(1-p_{ij})/n_i$. One ASP test is based on $\\widehat{p}_{22}$, the observed frequency of doubly affected pairs that have two marker alleles ibd. Under the assumption of no linkage, $\\widehat{p}_{22}$ has mean $1/4$ (as full sibs have a 25% chance of sharing both alleles ibd) and variance $(1/4)(1-1/4)/n_2=3/(16n_2)$, suggesting the test",
+      "source_page": 539,
+      "printed_page": 519,
+      "source_block_ids": [
+        "p539:b6"
+      ],
+      "bbox": [
+        78.0,
+        1134.0,
+        1040.0,
+        1356.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Here, as above, $p_{2i}$ is the probability that a doubly affected pair shares $i$ ibd marker alleles. If $c$ is the recombination fraction between marker and QTL, these deviations are given by $$ d_{20}=\\Gamma+\\left[\\Gamma\\cdot\\Delta\\cdot4c(1-c)\\right] $$ $$ d_{21}=2\\Gamma\\cdot\\Delta\\cdot(1-2c)^{2} $$ $$ d_{22}=\\Gamma+\\{\\Gamma\\cdot\\Delta\\cdot2[(1-c)^{2}+c^{2}]\\} $$ with $$ \\Gamma=\\frac{(1-2c)^{2}}{4}\\left(1-\\frac{1}{\\lambda_{S}}\\right)\\qquad\\mathrm{a n d}\\qquad\\Delta=\\frac{\\lambda_{S}-\\lambda_{O}}{\\lambda_{S}-1} $$ where $\\lambda_{S}$ and $\\lambda_{O}$ are the relative risks in full-sib and parent-offspring pairs attributable to the DS locus. If there is no dominance at the DS locus ($\\lambda_{S}=\\lambda_{O}$ and hence $\\Delta=0$), then $d_{21}=0$, so this class provides no information on linkage. Further, in this case the magnitude of the deviations for $p_{20}$ and $p_{22}$ are identical, and hence each class provides the same amount of linkage information. When dominance is present, $d_{22}>d_{20}$, implying that the $p_{22}$ class provides the most linkage information. Equation 16.52a assumes that a single linked locus underlies the disease. When multiple loci are involved, the marker ibid distribution is no longer a simple function of the population $ \\lambda_{R} $ values, and can be rather involved (Risch 1990a,b)."
+      "content": "[[FORMULA:Genetics_chapter16_formula083]]",
+      "source_page": 539,
+      "printed_page": 519,
+      "source_block_ids": [
+        "p539:b7"
+      ],
+      "bbox": [
+        462.0,
+        1388.0,
+        650.0,
+        1495.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The power using different types of relative pairs has been examined by Risch (1990b,c) and Bishop and Williamson (1990). For diseases with large $ \\lambda_{S} $ values, grandparent-grandchild pairs offer the highest power of detection when tightly linked markers are available. For diseases with smaller $ \\lambda_{S} $ values and/or less tightly linked markers, sibs offer the most power."
+      "content": "For a large number of doubly affected pairs, $ T_{2} $ is approximately distributed as a unit normal under the null hypothesis of no linkage. This test is one-sided, as $ p_{22} > 1/4 $ under linkage.",
+      "source_page": 540,
+      "printed_page": 520,
+      "source_block_ids": [
+        "p540:b2"
+      ],
+      "bbox": [
+        117.0,
+        136.0,
+        1076.0,
+        232.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "An important issue related to power is the verification of previous linkage claims. Such verification has been especially problematic in studies claiming associations between markers and certain psychiatric disorders (reviewed in Gershon and Cloninger 1994, Risch and Botstein 1996). An analysis of this problem was presented by Suarez et al. (1994), who found that when the character is determined by several QTLs of roughly similar effects, the number of families required to detect the first marker-trait association is much smaller than the number of independent families required to replicate the initial claim (also see Bell and Lathrop 1996). In effect, the waiting time (measured as number of sib pairs that must be sampled) required for replication of a claim is far greater than the waiting time to detect an association. This result occurs because if the trait is determined by n QTLs of equal effect, and if p is the probability of detecting a given QTL (i.e., the power of the design), then there are n chances for detecting significant marker effects (and hence a power of approximately np), but only one chance of replicating the initial observation (with probability p). This waiting time is especially a problem if a number of rare genes of large effect are involved, as affected individuals in one set of families may arise from one gene, while a second set of families involves another QTL and hence does not replicate the original finding."
+      "content": "An alternative approach is to consider statistics that employ the mean number of ibd marker alleles, $ p_{i1} + 2p_{i2} $. Under the hypothesis of no linkage, this has expected value $ 1 \\cdot (1/2) + 2 \\cdot (1/4) = 1 $ and variance $ [1^2 \\cdot (1/2) + 2^2 \\cdot (1/4)] - 1^2 = 1/2 $. For doubly affected pairs, the test statistic becomes",
+      "source_page": 540,
+      "printed_page": 520,
+      "source_block_ids": [
+        "p540:b3"
+      ],
+      "bbox": [
+        116.0,
+        232.0,
+        1075.0,
+        362.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula084]]",
+      "source_page": 540,
+      "printed_page": 520,
+      "source_block_ids": [
+        "p540:b4"
+      ],
+      "bbox": [
+        417.0,
+        386.0,
+        775.0,
+        422.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "which again for large samples is approximately distributed as a unit normal and is a one-sided test, as $ p_{21} + 2p_{22} > 1 $ under linkage.",
+      "source_page": 540,
+      "printed_page": 520,
+      "source_block_ids": [
+        "p540:b6"
+      ],
+      "bbox": [
+        118.0,
+        448.0,
+        1075.0,
+        512.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, maximum likelihood-based goodness-of-fit tests can be used (Risch 1990b,c). In keeping with the tradition of human geneticists, ML-based tests usually report LOD (likelihood of odds) scores in place of the closely related likelihood ratio (LR). (Recall from Equation 15.16 that 1 LR = 4.61 LOD.) Here the data are $ n_{20} $, $ n_{21} $, and $ n_{22} $, the number of doubly affected sibs sharing zero, one, or two marker alleles ibd, with the unknown parameters to estimate being the population frequencies of these classes ( $ p_{20} $, $ p_{21} $, $ p_{22} $). The MLEs for these population frequencies are given by $ \\widehat{p}_{2i} = n_{2i}/n_{2} $. The LOD score for the test of no linkage becomes",
+      "source_page": 540,
+      "printed_page": 520,
+      "source_block_ids": [
+        "p540:b7"
+      ],
+      "bbox": [
+        119.0,
+        514.0,
+        1079.0,
+        800.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula085]]",
+      "source_page": 540,
+      "printed_page": 520,
+      "source_block_ids": [
+        "p540:b8"
+      ],
+      "bbox": [
+        235.0,
+        819.0,
+        880.0,
+        907.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\pi_{2i} $ is the probability that the pair of doubly affected sibs shares i alleles ibd in the absence of linkage to a QTL. (For full sibs, $ \\pi_{20} = \\pi_{22} = 1/4 $, $ \\pi_{21} = 1/2 $.) The test statistic given by Equation 16.51 is referred to as the maximum LOD score, or MLS, with a score exceeding three being taken as significant evidence for linkage (Risch 1990b, Morton 1955b).",
+      "source_page": 540,
+      "printed_page": 520,
+      "source_block_ids": [
+        "p540:b10"
+      ],
+      "bbox": [
+        119.0,
+        932.0,
+        1079.0,
+        1095.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter16:6]]",
+      "source_page": 540,
+      "source_block_ids": [
+        "p540:b11",
+        "p540:b12",
+        "p540:b13",
+        "p541:b2",
+        "p541:b3",
+        "p541:b4",
+        "p541:b5"
+      ],
+      "bbox": [
+        167.0,
+        1186.0,
+        1033.0,
+        1363.0
+      ]
     }
   ]
 }

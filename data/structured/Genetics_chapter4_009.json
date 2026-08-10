@@ -2,51 +2,118 @@
   "id": "Genetics_chapter4_009",
   "metadata": {
     "chapter": "Genetics_chapter4",
-    "section": "Introduction",
+    "section": "THE TRANSMISSION OF GENETIC INFORMATION",
     "subsections": [
-      "PARTITIONING THE GENETIC VARIANCE"
+      "Testing for Hardy-Weinberg Proportions"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter4_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "4.1"
-    ],
-    "section_level_1": "Introduction",
-    "section_level_2": "PARTITIONING THE GENETIC VARIANCE",
+    "section_level_1": "THE TRANSMISSION OF GENETIC INFORMATION",
+    "section_level_2": "Testing for Hardy-Weinberg Proportions",
     "heading_path": [
-      "Introduction",
-      "PARTITIONING THE GENETIC VARIANCE"
+      "THE TRANSMISSION OF GENETIC INFORMATION",
+      "Testing for Hardy-Weinberg Proportions"
     ],
-    "display_heading": "PARTITIONING THE GENETIC VARIANCE",
-    "table_reference_keys": [
-      "chapter4:4.1"
-    ]
+    "display_heading": "THE TRANSMISSION OF GENETIC INFORMATION / Testing for Hardy-Weinberg Proportions",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 76,
+      "printed_page": 56,
+      "source_block_ids": [
+        "p76:b6"
+      ],
+      "bbox": [
+        150.0,
+        974.0,
+        655.0,
+        1017.0
+      ],
+      "raw_text": "Testing for Hardy-Weinberg Proportions"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Fisher (1918) showed that once the genotypic values have been partitioned in the above manner, it is a relatively simple step to partition the sources of genetic variation at a locus. Recalling the relationship $G = \\widehat{G} + \\delta$, the total genetic variance may be written as $$ \\begin{aligned}\\sigma_{G}^{2}&=\\sigma^{2}(\\widehat{G}+\\delta)\\\\&=\\sigma^{2}(\\widehat{G})+2\\sigma(\\widehat{G},\\delta)+\\sigma^{2}(\\delta)\\end{aligned} $$ From the property of least-squares regression (Chapter 3), the regression prediction (in this case, $ \\widehat{G} $) is uncorrelated with the residual error (in this case, $ \\delta $). Thus, the total genetic variance attributable to a locus simplifies to the sum of additive and dominance components. Hereafter, we denote these components as $ \\sigma_{A}^{2} $ and $ \\sigma_{D}^{2} $, $$ \\sigma_{G}^{2}=\\sigma_{A}^{2}+\\sigma_{D}^{2} $$"
+      "content": "When data are available on genotype frequencies in a population, it is standard practice to cross-check these with the Hardy-Weinberg expectations. Lack of concordance between the two implies that at least one of the assumptions of the Hardy-Weinberg model is violated and often instigates further investigation. Several different statistical techniques have been proposed (Weir 1996), the most popular by far being the $ \\chi^{2} $ (Chi-square) test. However, the likelihood-ratio test is now becoming more common and appears to be at least as reliable as the former. Likelihood-based tests have a number of desirable statistical features (Appendix 4). Letting $ N_{ij} $ and $ \\hat{N}_{ij} $ be the observed and expected numbers of genotype $ B_{i}B_{j} $ in a sample, then the likelihood-ratio test statistic",
+      "source_page": 76,
+      "printed_page": 56,
+      "source_block_ids": [
+        "p76:b7"
+      ],
+      "bbox": [
+        150.0,
+        1007.0,
+        1114.0,
+        1355.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Statistically speaking, $\\sigma_{A}^{2}$ is the amount of the variance of $G$ that is explained by the regression on $N_{2}$ (or equivalently, on $N_{1}$), whereas $\\sigma_{D}^{2}$ is the residual variance for the regression. Biologically speaking, $\\sigma_{A}^{2}$ is the genetic variance associated with the average additive effects of alleles (the additive genetic variance), and $\\sigma_{D}^{2}$ is the genetic variance associated with dominance effects (the dominance genetic variance)."
+      "content": "[[FORMULA:Genetics_chapter4_formula012]]",
+      "source_page": 76,
+      "printed_page": 56,
+      "source_block_ids": [
+        "p76:b8"
+      ],
+      "bbox": [
+        461.0,
+        1360.0,
+        813.0,
+        1457.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "All of the information necessary to compute these two components of genetic variance for a diallelic locus is contained in [[SEE_TABLE:4.1]], and leads to $$ \\sigma_{A}^{2}=2p_{1}p_{2}\\alpha^{2} $$ $$ \\sigma_{D}^{2}=(2p_{1}p_{2}a k)^{2} $$"
+      "content": "has a sampling distribution very similar to the well-known $ \\chi^{2} $ distribution. That is, if a population in Hardy-Weinberg equilibrium is sampled many different times and G calculated each time, the frequency distribution of the observed G values will be nearly $ \\chi^{2} $ distributed. Thus, the test for Hardy-Weinberg proportions compares the observed statistic G with the cumulative $ \\chi^{2} $ distribution. If G exceeds the level at which there is a 5% chance of obtaining a higher $ \\chi^{2} $, then one can reject the null hypothesis of Hardy-Weinberg proportions with 95% confidence.",
+      "source_page": 76,
+      "printed_page": 56,
+      "source_block_ids": [
+        "p76:b10",
+        "p77:b2"
+      ],
+      "bbox": [
+        161.0,
+        1468.0,
+        1121.0,
+        1557.0
+      ],
+      "source_page_end": 77
     },
     {
       "type": "discussion",
-      "content": "Both components of variance depend upon the gene frequencies, the dominance coefficient k, and the homozygous effect a (Figure 4.8). In the case of purely additive allelic effects (k = 0), the additive genetic variance reaches a maximum"
+      "content": "Regardless of which approach to testing for Hardy-Weinberg frequencies is taken, it should be kept in mind that some of the conditions underlying the Hardy-Weinberg theorem may be violated without causing detectable departures of observations from expectations. For example, if the product of the survivorships of the two homozygotes is equal to the square of the heterozygote survival, the zygotic frequencies after selection will still be in Hardy-Weinberg proportions (Lewontin and Cockerham 1959). Thus, a failure to reject the Hardy-Weinberg model should be interpreted with caution.",
+      "source_page": 77,
+      "printed_page": 57,
+      "source_block_ids": [
+        "p77:b3"
+      ],
+      "bbox": [
+        49.0,
+        295.0,
+        1013.0,
+        585.0
+      ]
     },
     {
-      "type": "discussion",
-      "content": "[[FIGURE:4.8]] at $p_{1}=p_{2}=0.5$, the gene frequency at which heterozygosity is most pronounced. With dominance, however, the additive genetic variance is maximized at a higher frequency of the recessive allele. This occurs because rare recessive alleles cause little genetic variance, due to their infrequent expression."
-    },
-    {
-      "type": "discussion",
-      "content": "A common misconception is that the relative magnitudes of additive and dominance genetic variance provide information on the additivity of gene action. Equations 4.10b and 4.12a show that this generalization does not hold true. Through its influence on $ \\alpha $, dominance contributes to the additive genetic variance, and for certain allele frequencies, can cause $ \\sigma_{A}^{2} $ to reach much higher levels than in the case of alleles with purely additive effects (Figure 4.8). Even in the case of complete dominance, $ \\sigma_{D}^{2} $ is unlikely to greatly exceed $ \\sigma_{A}^{2} $, and it is often substantially smaller. In the case of overdominance (k > 1), probably not a common situation (Chapter 10), there is always an intermediate gene frequency at which $ \\sigma_{A}^{2} $ is zero. This occurs when the least-squares regression of G on $ N_{2} $ has a slope equal to zero (Figure 4.7)."
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter4:2]]",
+      "source_page": 77,
+      "source_block_ids": [
+        "p77:b4",
+        "p77:b5",
+        "p77:b6",
+        "p77:b7"
+      ],
+      "bbox": [
+        90.0,
+        652.0,
+        953.0,
+        737.0
+      ]
     }
   ]
 }

@@ -2,26 +2,399 @@
   "id": "Genetics_chapter11_013",
   "metadata": {
     "chapter": "Genetics_chapter11",
-    "section": "Introduction",
+    "section": "DEVELOPMENTAL MAPS, CANALIZATION, AND GENETIC ASSIMILATION",
     "subsections": [
-      "DEVELOPMENTAL MAPS, CANALIZATION, AND GENETIC ASSIMILATION"
+      "Estimating Developmental Maps"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter11_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "DEVELOPMENTAL MAPS, CANALIZATION, AND GENETIC ASSIMILATION",
+    "section_level_1": "DEVELOPMENTAL MAPS, CANALIZATION, AND GENETIC ASSIMILATION",
+    "section_level_2": "Estimating Developmental Maps",
     "heading_path": [
-      "Introduction",
-      "DEVELOPMENTAL MAPS, CANALIZATION, AND GENETIC ASSIMILATION"
+      "DEVELOPMENTAL MAPS, CANALIZATION, AND GENETIC ASSIMILATION",
+      "Estimating Developmental Maps"
     ],
-    "display_heading": "DEVELOPMENTAL MAPS, CANALIZATION, AND GENETIC ASSIMILATION"
+    "display_heading": "DEVELOPMENTAL MAPS, CANALIZATION, AND GENETIC ASSIMILATION / Estimating Developmental Maps",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 324,
+      "printed_page": 304,
+      "source_block_ids": [
+        "p324:b3"
+      ],
+      "bbox": [
+        132.0,
+        227.0,
+        549.0,
+        262.0
+      ],
+      "raw_text": "Estimating Developmental Maps"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "We hope that by now the reader has a sense that scale is more than a statistical issue in that by choosing an appropriate scale of analysis, we can often simplify the biological interpretation of characters. For example, allometry shows us that complex changes in character shape can be simple consequences of changes in size. Another potentially important aspect of scale concerns the interpretation of character states as the outcome of the mapping (or rescaling) of some underlying variable into a complex phenotypic space. In concluding our discussion of scale, we first examine developmental maps for discrete (meristic) characters and then explore some of the potential implications for continuously distributed characters."
+      "content": "To motivate the idea behind developmental maps, consider hypertension (high blood pressure) in humans. When blood pressure exceeds some critical (or threshold) value, either for genetic or environmental reasons, the individual displays hypertension. Thus, classification of individuals as either normal or hypertensive transforms a continuous underlying measure (blood pressure) into a dichotomous character (normal vs. hypertensive). Many other diseases appear to result when some underlying physiological variable exceeds a threshold value (Chapter 25).",
+      "source_page": 324,
+      "printed_page": 304,
+      "source_block_ids": [
+        "p324:b4"
+      ],
+      "bbox": [
+        133.0,
+        264.0,
+        1095.0,
+        496.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Letting y be the value of the underlying variable (the liability), the observed phenotypic value z can be regarded as a function of the liability, $ z = \\phi(y) $, where $ \\phi $ is the developmental map that rescales the underlying liability value y into the phenotypic value z. For a simple threshold character, letting $ y_c $ be the critical value, and denoting the alternate character states by 0 and 1,",
+      "source_page": 324,
+      "printed_page": 304,
+      "source_block_ids": [
+        "p324:b5"
+      ],
+      "bbox": [
+        136.0,
+        489.0,
+        1097.0,
+        658.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter11_formula020]]",
+      "source_page": 324,
+      "printed_page": 304,
+      "source_block_ids": [
+        "p324:b6"
+      ],
+      "bbox": [
+        469.0,
+        661.0,
+        761.0,
+        737.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This type of scaling can easily be extended to characters displaying multiple states. For example, a character with three discrete states can be represented as the mapping of some underlying continuous value y by",
+      "source_page": 324,
+      "printed_page": 304,
+      "source_block_ids": [
+        "p324:b7"
+      ],
+      "bbox": [
+        139.0,
+        740.0,
+        1100.0,
+        848.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter11_formula021]]",
+      "source_page": 324,
+      "printed_page": 304,
+      "source_block_ids": [
+        "p324:b8"
+      ],
+      "bbox": [
+        341.0,
+        852.0,
+        892.0,
+        971.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Following Waddington (1949), a character (or character state) is said to be canalized if the resulting phenotype is fairly insensitive to changes in the underlying environmental and/or genetic factors. For example, a continuous character can show a zone of canalization — a region of φ that is rather flat and within which changes in the underlying genetic and environmental factors result in relatively little (or no) change in the phenotype (Figure 11.7). Assuming that the distribution of the underlying liability values is normal with variance $ \\sigma^{2} $, the width of the developmental map associated with a particular character state can be estimated in units of $ \\sigma $ (Figure 11.8). This procedure is often referred to as probit analysis because cumulative frequencies are measured on the probit (normal probability) scale.",
+      "source_page": 324,
+      "printed_page": 304,
+      "source_block_ids": [
+        "p324:b9"
+      ],
+      "bbox": [
+        142.0,
+        977.0,
+        1106.0,
+        1335.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose the character of interest has $k$ discrete states, which we order from 1 to $k$. Let $q(m)$ be the cumulative frequency to (and including) class $m$, and define $x_m = \\text{prb}[q(m)]$ to be the probit-scale value associated with $q(m)$, i.e., $x_m$ satisfies $\\Pr(U \\leq x_m) = q(m)$ where $U$ is a unit normal. The width of liability values that map to class $m$ is estimated by",
+      "source_page": 324,
+      "printed_page": 304,
+      "source_block_ids": [
+        "p324:b10"
+      ],
+      "bbox": [
+        148.0,
+        1326.0,
+        1108.0,
+        1498.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter11_formula022]]",
+      "source_page": 324,
+      "printed_page": 304,
+      "source_block_ids": [
+        "p324:b11"
+      ],
+      "bbox": [
+        384.0,
+        1499.0,
+        877.0,
+        1537.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:11.7]]",
+      "source_page": 325,
+      "printed_page": 305,
+      "source_block_ids": [
+        "p325:b3"
+      ],
+      "bbox": [
+        108.0,
+        583.0,
+        974.0,
+        680.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:11.8]]",
+      "source_page": 325,
+      "printed_page": 305,
+      "source_block_ids": [
+        "p325:b5"
+      ],
+      "bbox": [
+        96.0,
+        1335.0,
+        963.0,
+        1517.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:11.9]]",
+      "source_page": 326,
+      "printed_page": 306,
+      "source_block_ids": [
+        "p326:b3"
+      ],
+      "bbox": [
+        185.0,
+        635.0,
+        1055.0,
+        881.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the units of $ D_m $ are in terms of number of standard deviations of liability values (Figure 11.9). Since $ q(k) = 1 $ and $ q(0) = 0 $, the widths for the first and last classes are not defined, as $ \\text{prb}[1] = -\\text{prb}[0] = \\infty $. Using standard results (Kendall and Stuart 1977, p. 254), the sampling variance for the estimator $ D_m $ is given by",
+      "source_page": 326,
+      "printed_page": 306,
+      "source_block_ids": [
+        "p326:b4"
+      ],
+      "bbox": [
+        144.0,
+        935.0,
+        1103.0,
+        1073.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter11_formula023]]",
+      "source_page": 326,
+      "printed_page": 306,
+      "source_block_ids": [
+        "p326:b5"
+      ],
+      "bbox": [
+        284.0,
+        1091.0,
+        963.0,
+        1259.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ p(x) = \\exp(-x^2/2)/\\sqrt{2\\pi} $ is the unit normal density function.",
+      "source_page": 326,
+      "printed_page": 306,
+      "source_block_ids": [
+        "p326:b7"
+      ],
+      "bbox": [
+        149.0,
+        1285.0,
+        948.0,
+        1327.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter11:5]]",
+      "source_page": 326,
+      "source_block_ids": [
+        "p326:b8",
+        "p327:b2"
+      ],
+      "bbox": [
+        197.0,
+        1410.0,
+        1064.0,
+        1539.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Here $n=8149$, $x_{3}=\\text{prb}[0.00012]=-3.70$, and $x_{4}=\\text{prb}[0.99705]=+2.74$. Applying Equation 11.12a, the estimated width of the developmental map for class 4 is",
+      "source_page": 327,
+      "printed_page": 307,
+      "source_block_ids": [
+        "p327:b3"
+      ],
+      "bbox": [
+        112.0,
+        325.0,
+        976.0,
+        393.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter11_formula024]]",
+      "source_page": 327,
+      "printed_page": 307,
+      "source_block_ids": [
+        "p327:b4"
+      ],
+      "bbox": [
+        315.0,
+        413.0,
+        774.0,
+        448.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Noting that $q(3)=0.00012$, $p(-3.70)=0.0004$, $q(4)=0.99705$, and $p(2.74)=0.0093$, Equation 11.12b gives the sample variance for $D_{4}$ as",
+      "source_page": 327,
+      "printed_page": 307,
+      "source_block_ids": [
+        "p327:b5"
+      ],
+      "bbox": [
+        110.0,
+        467.0,
+        972.0,
+        538.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter11_formula025]]",
+      "source_page": 327,
+      "printed_page": 307,
+      "source_block_ids": [
+        "p327:b6"
+      ],
+      "bbox": [
+        200.0,
+        554.0,
+        885.0,
+        740.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "yielding a standard error of $ \\sqrt{0.096} = 0.31 $ and an estimated width of liability values mapping to the four-bristle class as $ 6.44\\sigma \\pm 0.31\\sigma $. Sheldon et al. found considerable variation in the strength of canalization across isogenic lines. The mean $ D_4 $ of all lines was 5.39, but ranged from $ 6.44 \\pm 0.31 $ down to $ 3.34 \\pm 0.10 $.",
+      "source_page": 327,
+      "printed_page": 307,
+      "source_block_ids": [
+        "p327:b7"
+      ],
+      "bbox": [
+        103.0,
+        770.0,
+        971.0,
+        900.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "One reason for using probit analysis to define developmental maps is that untransformed frequencies can give a misleading picture of the strength of canalization. Consider two populations with identical developmental maps, and with normal distributions of liability values with the same variance but different means. For the first population, suppose that individuals with liability values within one standard deviation of the mean map to the four-bristle class, resulting in 68% of the population having four bristles. In the second population, individuals with liability values between one and three standard deviations above the mean map to the four-bristle class, resulting in only 15.7% of the population having four bristles. In both cases, the width of the four-bristle class is $ 2\\sigma $, but on an untransformed scale, the first population appears to be more canalized for the four-bristle class.",
+      "source_page": 327,
+      "printed_page": 307,
+      "source_block_ids": [
+        "p327:b8"
+      ],
+      "bbox": [
+        50.0,
+        986.0,
+        1017.0,
+        1377.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "While probit analysis allows for comparisons of the strength of canalization, interpreting these results is not always straightforward. An increase in the width of a canalized class can occur through the evolution of genotypes with wider developmental maps. However, increased class width can also occur by a reduction",
+      "source_page": 327,
+      "printed_page": 307,
+      "source_block_ids": [
+        "p327:b9"
+      ],
+      "bbox": [
+        46.0,
+        1365.0,
+        1011.0,
+        1508.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:11.10]]",
+      "source_page": 328,
+      "printed_page": 308,
+      "source_block_ids": [
+        "p328:b4"
+      ],
+      "bbox": [
+        180.0,
+        371.0,
+        1047.0,
+        554.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "of the variance of the distribution of liability values without any change in the developmental map on the absolute scale. Because class widths are estimated in terms of liability standard deviations, as the variance of liability decreases, the class width increases.",
+      "source_page": 328,
+      "printed_page": 308,
+      "source_block_ids": [
+        "p328:b5"
+      ],
+      "bbox": [
+        133.0,
+        610.0,
+        1097.0,
+        747.0
+      ]
     }
   ]
 }

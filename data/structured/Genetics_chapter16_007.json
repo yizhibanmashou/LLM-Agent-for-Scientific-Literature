@@ -2,54 +2,236 @@
   "id": "Genetics_chapter16_007",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
+    "section": "POWER OF NESTED ANOVA DESIGNS",
     "subsections": [
-      "Several Full-sib Families"
+      "A Single Full-sib Family"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Several Full-sib Families",
+    "section_level_1": "POWER OF NESTED ANOVA DESIGNS",
+    "section_level_2": "A Single Full-sib Family",
     "heading_path": [
-      "Introduction",
-      "Several Full-sib Families"
+      "POWER OF NESTED ANOVA DESIGNS",
+      "A Single Full-sib Family"
     ],
-    "display_heading": "Several Full-sib Families"
+    "display_heading": "POWER OF NESTED ANOVA DESIGNS / A Single Full-sib Family",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 516,
+      "printed_page": 496,
+      "source_block_ids": [
+        "p516:b7"
+      ],
+      "bbox": [
+        109.0,
+        732.0,
+        420.0,
+        765.0
+      ],
+      "raw_text": "A Single Full-sib Family"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "As with half-sibs, the contrasts noted above are conditional on the parental genotypes, and have expected value zero when considered over a random collection of parents. However, either scaled squared marker contrasts or nested ANOVA can be used to combine results from a collection of full-sib families into an estimate of the genetic variance associated with the marker alleles. The squared marker contrasts used in both backcross and fully informative families have expected values (under a balanced design of n/2 sibs per marker class) of $$ \\begin{aligned}E(\\mathbf{M}\\mathbf{C}^{2})&=E[(\\overline{z}_{M_{1}}-\\overline{z}_{M_{2}})^{2}]\\\\&=(1-2c)^{2}\\left[2E(\\alpha^{2})+4(1/2)^{2}E(\\delta^{2})\\right]+\\frac{4\\sigma_{e}^{2}}{n}\\\\&=(1-2c)^{2}\\left(\\sigma_{A}^{2}+\\sigma_{D}^{2}\\right)+\\frac{4\\sigma_{e}^{2}}{n}\\\\ \\end{aligned} $$"
+      "content": "Large half-sib families are not feasible for many species, and one must instead consider full-sib families, which are often much smaller (as is the case in humans). Some domesticated animals such as pigs and poultry can have full-sib families of at least modest size, while others (such as certain trees) can have huge full-sib families.",
+      "source_page": 516,
+      "printed_page": 496,
+      "source_block_ids": [
+        "p516:b8"
+      ],
+      "bbox": [
+        109.0,
+        772.0,
+        1066.0,
+        933.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In the absence of dominance ($ \\sigma_{D}^{2}=0 $), this equation reduces to the value for half-sibs (Equation 16.10b)."
+      "content": "With a single full-sib family, one can again use a simple one-way ANOVA to detect QTLs (Equation 16.5). The only modification required is that the number of offspring marker genotypes ranges from two to four, depending on the marker genotypes of the parents (Table 16.1). With a backcross family $ (M_i M_j \\times M_k M_k) $, the resulting ANOVA has two marker genotypes $ (M_i M_k $ and $ M_j M_k) $, corresponding to the alternate alleles from the informative parent (and hence the marker contrast $ \\overline{z}_{M_i} - \\overline{z}_{M_j} $). With a fully informative family $ (M_i M_j \\times M_k M_\\ell) $, all genotypes are informative as to parental alleles, and the resulting ANOVA considers all four marker genotypes (giving rise to two marker contrasts, $ \\overline{z}_{M_i} - \\overline{z}_{M_j} $ and $ \\overline{z}_{M_k} - \\overline{z}_{M_\\ell} $, one for each parent). Finally, while an intercross family $ (M_i M_j \\times M_i M_j) $ has three offspring marker genotypes, heterozygotes provide no information on parental marker alleles and are usually excluded. The ANOVA in this case considers only $ M_i M_i $ and $ M_j M_j $ offspring (leading to the marker contrast $ \\overline{z}_{M_i M_i} - \\overline{z}_{M_j M_j} $). Obviously, as one considers different markers, a family that is fully informative for one marker may be a backcross family for another, and noninformative for a third.",
+      "source_page": 516,
+      "printed_page": 496,
+      "source_block_ids": [
+        "p516:b9"
+      ],
+      "bbox": [
+        108.0,
+        933.0,
+        1071.0,
+        1416.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Intercross families use a slightly different marker contrast, $$ \\mathbf{M}\\mathbf{C}_{I}=\\overline{z}_{M_{1}M_{1}}-\\overline{z}_{M_{2}M_{2}} $$"
+      "content": "With a large half-sib family, the effect of a QTL allele from the common parent (typically the sire) is averaged over a large number of random QTL alleles from the other parents, and hence only its additive effect enters into the expected values of marker contrasts. Within a full-sib family, however, each QTL allele from an informative parent is averaged over at most two QTL alleles from the other parent, which results in dominance entering into the expected marker contrasts. To see this result, denote the genotypes of the parents by $ M_{1}Q_{1}/M_{2}Q_{2} $ and $ M_{3}Q_{3}/M_{4}Q_{4} $. This notation simply indicates that the marker allele $ M_{i} $ is associated with QTL allele $ Q_{i} $, and does not indicate the actual state of the allele itself. We also allow the possibility that two or more alleles are the same, so that (for example), $ M_{1}=M_{4} $ and $ Q_{1}=Q_{2} $.",
+      "source_page": 516,
+      "printed_page": 496,
+      "source_block_ids": [
+        "p516:b10",
+        "p517:b2"
+      ],
+      "bbox": [
+        113.0,
+        1415.0,
+        1072.0,
+        1543.0
+      ],
+      "source_page_end": 517
     },
     {
       "type": "discussion",
-      "content": "Since the sample sizes for the two marker genotypes are now $ n_{MiM_i} = n/4 $, the sampling variance of the marker contrasts is doubled (with $ E(SE_I^2) = 8\\sigma_e^2/n $), giving the expected value of the squared marker contrast as $$ \\begin{aligned}E\\big(\\mathrm{MC}_{I}^{2}\\big)&=(1-2c)^{2}\\left[4E\\big(\\alpha^{2}\\big)+2E\\big(\\delta^{2}\\big)\\right]+\\frac{8\\sigma_{e}^{2}}{n}\\\\&=2\\left[(1-2c)^{2}\\left(\\sigma_{A}^{2}+\\sigma_{D}^{2}\\right)+\\frac{4\\sigma_{e}^{2}}{n}\\right]\\end{aligned} $$"
+      "content": "Consider the gametes from the first parent. Among $M_{1}$-bearing gametes, $(1-c)$ contain $Q_{1}$ while the rest $(c)$ contain $Q_{2}$. Likewise, of the $M_{3}$-bearing gametes, $(1-c)$ contain $Q_{3}$ while the rest $(c)$ contain $Q_{4}$. The resulting expected genotypic value for $M_{1}M_{3}$ offspring becomes",
+      "source_page": 517,
+      "printed_page": 497,
+      "source_block_ids": [
+        "p517:b3"
+      ],
+      "bbox": [
+        84.0,
+        363.0,
+        1043.0,
+        504.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "This is twice the expected value for the contrasts for backcross and fully informative families, exactly compensating for the doubling of sampling variance. Hence, for all informative contrasts we have $$ E(t^{2})\\simeq\\frac{E(\\mathrm{M C^{2}})}{E(\\mathrm{S E^{2}})}=1+\\frac{n}{4}\\left(1-2c\\right)^{2}\\left(\\frac{\\sigma_{A}^{2}+\\sigma_{D}^{2}}{\\sigma_{e}^{2}}\\right) $$ As with Equation 16.11, a test statistic $T$ is obtained as the sum of the $t^{2}$ values over all $N$ informative contrasts, with $T$ significantly greater than $N$ being taken as evidence for a linked QTL. As in the case of half-sib analysis, nested ANOVA is often used in place of sums of squared marker contrasts. The ANOVA model for full-sib families becomes $$ z_{i j k}=\\mu+f_{i}+m_{i j}+e_{i j k} $$ where $ f_i $, the effect of the $ i $th full-sib family, replaces the half-sib family (or sire) effect $ s_i $ in the half-sib design, and the number of marker effects ranges from two to four, depending on the type of family. Again, a significant between-marker within-sibship variance ($ \\sigma_m^2 $) indicates linkage to a segregating QTL, and this is tested using the statistic $ F = MS_m/MS_e $. The use of nested ANOVAs for full-sib families was developed by Jayakar (1970) and A. Hill (1975), while Soller and Genizi (1978), Luo (1993), Knott (1994), van der Beck (1995), and Muranty (1996) examine the power of these designs."
+      "content": "[[FORMULA:Genetics_chapter16_formula023]]",
+      "source_page": 517,
+      "printed_page": 497,
+      "source_block_ids": [
+        "p517:b4"
+      ],
+      "bbox": [
+        107.0,
+        509.0,
+        937.0,
+        553.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "If one ignores the marker heteroyzgotes in intercross families and considers the marker contrasts for all informative parents, then using the same logic that leads to Equation 16.15 shows that the contribution to MS_m is $ (n/4)\\text{MC}^2 $ for each informative contrast in a backcross or fully informative family and $ (n/8)\\text{MC}_I^2 $ for an intercross marker contrast. Recalling Equations 16.22 and 16.23, the expected value of MS_m becomes $$ E(\\mathrm{M S}_{m})=n(1-2c)^{2}\\left(\\frac{\\sigma_{A}^{2}}{4}+\\frac{\\sigma_{D}^{2}}{4}\\right)+\\sigma_{e}^{2} $$ so that the variance associated with marker alleles is $$ \\sigma_{m}^{2}=(1-2c)^{2}\\left(\\frac{\\sigma_{A}^{2}}{4}+\\frac{\\sigma_{D}^{2}}{4}\\right) $$"
+      "content": "The other three marker means follow similarly. These values can be used to compute the average genotypic value of offspring (within this family) carrying a particular parental marker allele. For example, for $ M_{1} $,",
+      "source_page": 517,
+      "printed_page": 497,
+      "source_block_ids": [
+        "p517:b6"
+      ],
+      "bbox": [
+        89.0,
+        565.0,
+        1048.0,
+        667.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "This can be estimated by using $$ \\mathrm{Var}(m)=\\frac{\\mathrm{MS}_{m}-\\mathrm{MS}_{e}}{n} $$"
+      "content": "[[FORMULA:Genetics_chapter16_formula024]]",
+      "source_page": 517,
+      "printed_page": 497,
+      "source_block_ids": [
+        "p517:b7"
+      ],
+      "bbox": [
+        226.0,
+        680.0,
+        906.0,
+        834.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Thus, when dominance ($ \\sigma_D^2 > 0 $) is present, full-sib designs are expected to be more powerful for QTL detection than half-sib designs, as $ \\sigma_m^2 $ is greater. Even in the absence of dominance, full-sib designs are generally more powerful, as power depends on the number of informative marker contrasts (one for each backcross and intercross family, two for each fully informative family). In the extreme case where all $ N $ families in a design are fully marker informative, a full-sib design has $ 2N $ contrasts vs. $ N $ for a half-sib design with the same number of families."
+      "content": "Using these results, the expected value of the contrast between offspring bearing alternative marker alleles from the first parent becomes",
+      "source_page": 517,
+      "printed_page": 497,
+      "source_block_ids": [
+        "p517:b9"
+      ],
+      "bbox": [
+        90.0,
+        848.0,
+        1048.0,
+        915.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula025]]",
+      "source_page": 517,
+      "printed_page": 497,
+      "source_block_ids": [
+        "p517:b10"
+      ],
+      "bbox": [
+        197.0,
+        930.0,
+        939.0,
+        1091.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where we have again decomposed the QTL genotype as $ \\mu_{Q_i Q_j} = \\mu + \\alpha_i + \\alpha_j + \\delta_{ij} $. As expected, if this parent is a QTL homozygote ( $ Q_1 = Q_2 $), the contrast has expected value zero. Comparing this with the similar contrast in a half-sib design (Equation 16.9) shows that the two are identical in the absence of dominance $ \\delta_{ij} = 0 $. When dominance is present, the contrast in a full-sib design can be larger or smaller than that which would occur in a half-sib design, depending on the dominance relationships between the QTL alleles of the focal individual and those of its mate.",
+      "source_page": 517,
+      "printed_page": 497,
+      "source_block_ids": [
+        "p517:b12"
+      ],
+      "bbox": [
+        89.0,
+        1105.0,
+        1051.0,
+        1361.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "For an intercross family (both parents are the same marker heterozygote, say, $ M_{1}M_{2} $), the contrast of interest is between the marker homozygotes, and (noting that $ M_{1}=M_{3} $ and $ M_{2}=M_{4} $) Equation 16.19a gives",
+      "source_page": 517,
+      "printed_page": 497,
+      "source_block_ids": [
+        "p517:b13"
+      ],
+      "bbox": [
+        90.0,
+        1360.0,
+        1050.0,
+        1459.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula026]]",
+      "source_page": 517,
+      "printed_page": 497,
+      "source_block_ids": [
+        "p517:b14"
+      ],
+      "bbox": [
+        158.0,
+        1474.0,
+        931.0,
+        1548.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Note that even though the parents share marker alleles (so that $ M_{1}=M_{3} $ and $ M_{2}=M_{4} $), they need not share the corresponding QTL alleles (so that $ Q_{1} $ and $ Q_{3} $ are potentially different, as are $ Q_{2} $ and $ Q_{4} $).",
+      "source_page": 518,
+      "printed_page": 498,
+      "source_block_ids": [
+        "p518:b2"
+      ],
+      "bbox": [
+        119.0,
+        137.0,
+        1075.0,
+        243.0
+      ]
     }
   ]
 }

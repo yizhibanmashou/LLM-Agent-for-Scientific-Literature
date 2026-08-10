@@ -2,26 +2,87 @@
   "id": "Genetics_chapter11_006",
   "metadata": {
     "chapter": "Genetics_chapter11",
-    "section": "Introduction",
+    "section": "STABILIZING THE VARIANCE",
     "subsections": [
-      "STABILIZING THE VARIANCE"
+      "Kleckowski's Transformation"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter11_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "STABILIZING THE VARIANCE",
+    "section_level_1": "STABILIZING THE VARIANCE",
+    "section_level_2": "Kleckowski's Transformation",
     "heading_path": [
-      "Introduction",
-      "STABILIZING THE VARIANCE"
+      "STABILIZING THE VARIANCE",
+      "Kleckowski's Transformation"
     ],
-    "display_heading": "STABILIZING THE VARIANCE"
+    "display_heading": "STABILIZING THE VARIANCE / Kleckowski's Transformation",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 314,
+      "printed_page": 294,
+      "source_block_ids": [
+        "p314:b6"
+      ],
+      "bbox": [
+        145.0,
+        1465.0,
+        515.0,
+        1501.0
+      ],
+      "raw_text": "Kleckowski's Transformation"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "For studies concerned with relative levels of variation in different populations, it is useful to know whether the observed differences are simply a consequence of scale. For example, it is not uncommon for the variance to increase as the population mean increases (Figure 11.4). By operating on a scale for which there is no discernible relation between the mean and variance, one can be secure that any significant differences in observed levels of variance between samples must be attributable to something other than differences in the mean. Here, we consider the use of variance-stabilizing transformations to render the variance on the transformed scale independent of the mean. Wright (1968, Chapters 10 and 11) gives an excellent discussion of the application of such transformations to distributions of quantitative characters."
+      "content": "We have already encountered the idea that a log transformation can render the variance of different samples independent of the mean when the CV is approximately constant on the underlying scale. For this to be strictly valid, the SD must be directly proportional to the mean, $ \\mathrm{SD}(z) = b\\bar{z} $. However, a fairly common situation is for the regression of standard deviations on means to have an intercept significantly greater than zero (Figure 11.4). This causes the coefficient of variation to increase dramatically as the mean approaches zero, which in turn implies an inflation of the variance on the logarithmic scale.",
+      "source_page": 314,
+      "printed_page": 294,
+      "source_block_ids": [
+        "p314:b7",
+        "p315:b2"
+      ],
+      "bbox": [
+        145.0,
+        1495.0,
+        1103.0,
+        1544.0
+      ],
+      "source_page_end": 315
+    },
+    {
+      "type": "discussion",
+      "content": "Kleckowski (1949) suggested a simple way to eliminate this problem. If the standard deviation on the original scale can be described adequately by the linear regression $ \\mathrm{SD}(z) = a + b\\overline{z} $, then it follows by rearrangement that $ \\mathrm{SD}(z)/(\\overline{z} + a/b) = b $. Because a/b is a constant, $ \\mathrm{SD}(z) = \\mathrm{SD}[z + (a/b)] $, so the previous ratio is equivalent to the coefficient of variation of y = z + a/b. Thus, the use of the transformed variable y = z + a/b in place of z yields an expected coefficient of variation that is equal to b and independent of the mean (also see Example 3). This results in the independence of the mean and variance for the log-transformed variable $ \\ln(y) = \\ln(z + a/b) $.",
+      "source_page": 315,
+      "printed_page": 295,
+      "source_block_ids": [
+        "p315:b3"
+      ],
+      "bbox": [
+        61.0,
+        349.0,
+        1028.0,
+        652.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter11:2]]",
+      "source_page": 315,
+      "source_block_ids": [
+        "p315:b4",
+        "p315:b5",
+        "p315:b6"
+      ],
+      "bbox": [
+        103.0,
+        731.0,
+        971.0,
+        866.0
+      ]
     }
   ]
 }

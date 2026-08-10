@@ -2,38 +2,176 @@
   "id": "Genetics_chapter10_008",
   "metadata": {
     "chapter": "Genetics_chapter10",
-    "section": "Introduction",
+    "section": "METHODOLOGICAL CONSIDERATIONS",
     "subsections": [
       "Epistasis and Inbreeding Depression"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter10_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
+    "section_level_1": "METHODOLOGICAL CONSIDERATIONS",
     "section_level_2": "Epistasis and Inbreeding Depression",
     "heading_path": [
-      "Introduction",
+      "METHODOLOGICAL CONSIDERATIONS",
       "Epistasis and Inbreeding Depression"
     ],
-    "display_heading": "Epistasis and Inbreeding Depression"
+    "display_heading": "METHODOLOGICAL CONSIDERATIONS / Epistasis and Inbreeding Depression",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 283,
+      "printed_page": 263,
+      "source_block_ids": [
+        "p283:b3"
+      ],
+      "bbox": [
+        60.0,
+        507.0,
+        524.0,
+        545.0
+      ],
+      "raw_text": "Epistasis and Inbreeding Depression"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "An unresolved issue is the extent to which epistasis is involved in inbreeding depression. As noted above, a nonlinear relationship between the mean phenotype and the inbreeding coefficient is an indicator of the presence of epistasis involving dominance effects. Least-squares quadratic regressions are frequently performed to test for such nonlinearities, but these are saddled with all of the statistical problems discussed above, most notably the extreme nonindependence of data at high levels of $f$, precisely where nonlinearities are most likely to show up."
+      "content": "An unresolved issue is the extent to which epistasis is involved in inbreeding depression. As noted above, a nonlinear relationship between the mean phenotype and the inbreeding coefficient is an indicator of the presence of epistasis involving dominance effects. Least-squares quadratic regressions are frequently performed to test for such nonlinearities, but these are saddled with all of the statistical problems discussed above, most notably the extreme nonindependence of data at high levels of f, precisely where nonlinearities are most likely to show up.",
+      "source_page": 283,
+      "printed_page": 263,
+      "source_block_ids": [
+        "p283:b4"
+      ],
+      "bbox": [
+        57.0,
+        549.0,
+        1018.0,
+        788.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A simple way to test for nonlinearity, which avoids the pitfalls of regression, is to compare the change in mean phenotype (per increment in $f$) between two low levels of $f$ and that between two high levels of $f$. Provided the two ranges of $f$ are nonoverlapping, the two observed changes are statistically independent, even if the individuals at all four points in time are related. Letting the four observed mean phenotypes, in order of increasing $f$, be $\\bar{z}_{1}$, $\\bar{z}_{2}$, $\\bar{z}_{3}$, and $\\bar{z}_{4}$, a measure of nonlinearity is then given by $$ \\Delta I=\\frac{\\bar{z}_{2}-\\bar{z}_{1}}{\\Delta f_{L}}-\\frac{\\bar{z}_{4}-\\bar{z}_{3}}{\\Delta f_{H}} $$ where $\\Delta f_{L}=f_{2}-f_{1}$, and $\\Delta f_{H}=f_{4}-f_{3}$. A conservative estimate of the sampling variance of $\\Delta I$ is given by $$ \\mathrm{Var}(\\Delta I)=\\frac{[\\mathrm{SE}(\\bar{z}_{2})]^{2}+[\\mathrm{SE}(\\bar{z}_{1})]^{2}}{(\\Delta f_{L})^{2}}+\\frac{[\\mathrm{SE}(\\bar{z}_{4})]^{2}+[\\mathrm{SE}(\\bar{z}_{3})]^{2}}{(\\Delta f_{H})^{2}} $$"
+      "content": "A simple way to test for nonlinearity, which avoids the pitfalls of regression, is to compare the change in mean phenotype (per increment in f) between two low levels of f and that between two high levels of f. Provided the two ranges of f are nonoverlapping, the two observed changes are statistically independent, even if the individuals at all four points in time are related. Letting the four observed mean phenotypes, in order of increasing f, be $ \\bar{z}_{1} $, $ \\bar{z}_{2} $, $ \\bar{z}_{3} $, and $ \\bar{z}_{4} $, a measure of nonlinearity is then given by",
+      "source_page": 283,
+      "printed_page": 263,
+      "source_block_ids": [
+        "p283:b5"
+      ],
+      "bbox": [
+        50.0,
+        772.0,
+        1017.0,
+        1010.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A test statistic for nonlinearity is then $$ t=\\frac{|\\Delta I|}{\\sqrt{\\mathrm{Var}(\\Delta I)}} $$ which under the null hypothesis of linearity should be $t$-distributed with degrees of freedom equal to the number of inbred lines in the analysis. To ensure that $\\Delta I$ is not a function of the differential extinction of lines, only the lines surviving to contribute to $\\bar{z}_{4}$ should be used in such an analysis."
+      "content": "[[FORMULA:Genetics_chapter10_formula023]]",
+      "source_page": 283,
+      "printed_page": 263,
+      "source_block_ids": [
+        "p283:b6"
+      ],
+      "bbox": [
+        383.0,
+        1025.0,
+        676.0,
+        1098.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Although it can only detect epistatic effects involving dominance, this test is one of the only ways that we currently have to quantify directional epistasis within populations, short of employing molecular markers. Willis (1993) used a very similar approach to test for epistasis for life-history characters in the monkey flower (Mimulus guttatus). Although he did not correct for line loss, he found very little evidence for epistasis."
+      "content": "where $ \\Delta f_{L} = f_{2} - f_{1} $, and $ \\Delta f_{H} = f_{4} - f_{3} $. A conservative estimate of the sampling variance of $ \\Delta I $ is given by",
+      "source_page": 283,
+      "printed_page": 263,
+      "source_block_ids": [
+        "p283:b8"
+      ],
+      "bbox": [
+        48.0,
+        1111.0,
+        1011.0,
+        1193.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula024]]",
+      "source_page": 283,
+      "printed_page": 263,
+      "source_block_ids": [
+        "p283:b9"
+      ],
+      "bbox": [
+        144.0,
+        1203.0,
+        812.0,
+        1286.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A test statistic for nonlinearity is then",
+      "source_page": 283,
+      "printed_page": 263,
+      "source_block_ids": [
+        "p283:b11"
+      ],
+      "bbox": [
+        47.0,
+        1299.0,
+        501.0,
+        1339.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula025]]",
+      "source_page": 283,
+      "printed_page": 263,
+      "source_block_ids": [
+        "p283:b12"
+      ],
+      "bbox": [
+        429.0,
+        1365.0,
+        617.0,
+        1444.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "which under the null hypothesis of linearity should be t-distributed with degrees of freedom equal to the number of inbred lines in the analysis. To ensure that $ \\Delta I $ is not a function of the differential extinction of lines, only the lines surviving to contribute to $ \\bar{z}_{4} $ should be used in such an analysis.",
+      "source_page": 283,
+      "printed_page": 263,
+      "source_block_ids": [
+        "p283:b14",
+        "p284:b2"
+      ],
+      "bbox": [
+        42.0,
+        1458.0,
+        1005.0,
+        1540.0
+      ],
+      "source_page_end": 284
+    },
+    {
+      "type": "discussion",
+      "content": "Although it can only detect epistatic effects involving dominance, this test is one of the only ways that we currently have to quantify directional epistasis within populations, short of employing molecular markers. Willis (1993) used a very similar approach to test for epistasis for life-history characters in the monkey flower (Mimulus guttatus). Although he did not correct for line loss, he found very little evidence for epistasis.",
+      "source_page": 284,
+      "printed_page": 264,
+      "source_block_ids": [
+        "p284:b3"
+      ],
+      "bbox": [
+        136.0,
+        192.0,
+        1098.0,
+        395.0
+      ]
     }
   ]
 }

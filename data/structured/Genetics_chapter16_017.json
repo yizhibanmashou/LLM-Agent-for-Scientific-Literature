@@ -2,42 +2,371 @@
   "id": "Genetics_chapter16_017",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
+    "section": "THE HASEMAN-ELSTON REGRESSION",
     "subsections": [
-      "MAPPING DICHOTOMOUS CHARACTERS"
+      "Interval Mapping by a Modified Haseman-Elston Regression"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "MAPPING DICHOTOMOUS CHARACTERS",
+    "section_level_1": "THE HASEMAN-ELSTON REGRESSION",
+    "section_level_2": "Interval Mapping by a Modified Haseman-Elston Regression",
     "heading_path": [
-      "Introduction",
-      "MAPPING DICHOTOMOUS CHARACTERS"
+      "THE HASEMAN-ELSTON REGRESSION",
+      "Interval Mapping by a Modified Haseman-Elston Regression"
     ],
-    "display_heading": "MAPPING DICHOTOMOUS CHARACTERS"
+    "display_heading": "THE HASEMAN-ELSTON REGRESSION / Interval Mapping by a Modified Haseman-Elston Regression",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 532,
+      "printed_page": 512,
+      "source_block_ids": [
+        "p532:b5"
+      ],
+      "bbox": [
+        125.0,
+        1214.0,
+        879.0,
+        1252.0
+      ],
+      "raw_text": "Interval Mapping by a Modified Haseman-Elston Regression"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Finally, we turn our attention to mapping and characterizing QTLs that underlie dichotomous characters. This problem has received a tremendous amount of attention from human geneticists, whose ultimate goal is the isolation of disease susceptibility (DS) genes — QTLs that influence human disease. When a disease can be treated as a continuous character by measuring the appropriate underlying continuous variables, such as blood pressure or cholesterol level, the methods discussed in previous sections of this chapter can be applied. However, for many diseases, the appropriate underlying physiological variables are unresolved, and the observed phenotype is naturally dichotomous, with individuals being scored as either normal or affected. Even when the appropriate underlying variables are known, individuals are often still placed into discrete categories, such as high vs. normal blood pressure. We frame our discussion in terms of normal vs. affected character states, although our treatment is general."
+      "content": "Fulker and Cardon (1994) proposed an interval mapping modification that allows separate estimates of QTL effect ( $ \\sigma_{A}^{2} $) and position (c) by considering two linked markers simultaneously. Recall Equation 16.36,",
+      "source_page": 532,
+      "printed_page": 512,
+      "source_block_ids": [
+        "p532:b6"
+      ],
+      "bbox": [
+        125.0,
+        1255.0,
+        1082.0,
+        1358.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "If the disease has a simple Mendelian basis, wherein a single gene underlies the disease and all individuals of a given genotype have the same character state, standard mapping approaches for simple Mendelian genes can be used (reviewed by Ott 1991, Terwilliger and Ott 1994). However, most human diseases have a more complex genetic basis, with no single gene showing perfect segregation with the disease. Even when genetic causes are attributable to a single locus, lack of perfect association can occur for a variety of reasons (Lander and Schork 1994). There can be incomplete penetrance (not all susceptible genotypes show the disease), phenocopies (individuals display the disease for environmental, rather than genetic, reasons) and genetic heterogeneity (multiple alleles at a given locus have different effects on disease susceptibility). Likewise, the disease could have a polygenic basis. All of these factors confound a simple Mendelian analysis, requiring that other methods be used."
+      "content": "[[FORMULA:Genetics_chapter16_formula063]]",
+      "source_page": 532,
+      "printed_page": 512,
+      "source_block_ids": [
+        "p532:b7"
+      ],
+      "bbox": [
+        244.0,
+        1370.0,
+        966.0,
+        1414.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Starting with Penrose (1935, 1954b), human geneticists have developed a variety of methods for mapping DS genes, and these are reviewed by Weiss (1993), Terwilliger and Ott (1994), Lander and Schork (1994), and Weeks and Lathrop (1995). One approach is to modify the likelihood functions constructed for segregation analysis of dichotomous characters (Equation 13.29) to incorporate marker information by using Equation 16.27. For a diallelic QTL, the resulting likelihood function has five unknown parameters: QTL position (c), allele frequency (p), and effects (measured by the penetrances $ \\psi_{1} $, $ \\psi_{2} $, $ \\psi_{3} $ of the three QTL genotypes). Likelihood-ratio tests for linkage follow by comparing the restricted model assuming $ c = 1/2 $ (no linkage) against the full model where c is estimated from the data. Instead of attempting to maximize the entire likelihood over a complex pedigree structure, human geneticists usually further reduce the parameter space by assuming p is known, then performing the likelihood-ratio test for linkage under one or more reduced models where at least one of the penetrances is assigned a fixed value. Typically, it is assumed that the DS locus is either completely dominant or fully recessive, so that if D and N denote the disease and normal alleles at the DS locus, the two models generally considered are"
+      "content": "Fulker and Cardon show that the proportion $ \\pi_{jt} $ of alleles ibd at the trait locus can be estimated by using a regression on $ \\pi_{jm}^{(1)} $ and $ \\pi_{jm}^{(2)} $, the proportion of alleles ibd at two marker loci flanking the QTL, where",
+      "source_page": 532,
+      "printed_page": 512,
+      "source_block_ids": [
+        "p532:b8"
+      ],
+      "bbox": [
+        127.0,
+        1428.0,
+        1084.0,
+        1537.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Dominance model: $$ \\psi_{D D}=\\psi_{D N}=\\psi\\qquad\\psi_{N N}=\\psi_{p} $$"
+      "content": "[[FORMULA:Genetics_chapter16_formula064]]",
+      "source_page": 533,
+      "printed_page": 513,
+      "source_block_ids": [
+        "p533:b2"
+      ],
+      "bbox": [
+        343.0,
+        158.0,
+        786.0,
+        220.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Recessive model: $$ \\psi_{D D}=\\psi_{\\phi}\\quad\\psi_{D N}=\\psi_{N N}=\\psi_{p} $$ where the two parameters to estimate by ML are $\\psi$, the penetrance of a susceptible genotype, and $ \\psi_{p} $, the probability of a phenocopy. Frequently, the model is reduced further by preassigning a value to $ \\psi_{p} $ (most often being set to zero). A serious limitation of this approach is that it is very model-dependent. Using the wrong model can potentially result in reports of false linkage or (more likely) failure to detect a linked QTL (Clerget-Darpoux et al. 1986, Curtis and Stam 1995). Further, likelihood methods can be computationally very intense, especially in complex pedigrees."
+      "content": "and",
+      "source_page": 533,
+      "printed_page": 513,
+      "source_block_ids": [
+        "p533:b4"
+      ],
+      "bbox": [
+        86.0,
+        232.0,
+        143.0,
+        260.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula065]]",
+      "source_page": 533,
+      "printed_page": 513,
+      "source_block_ids": [
+        "p533:b5"
+      ],
+      "bbox": [
+        100.0,
+        284.0,
+        1026.0,
+        357.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Here, as elsewhere, $c_1$ is the recombination frequency between the first marker and the QTL, $c_2$ between the QTL and second marker, and $c$ between markers (assumed known). As in Chapter 15, $c_2$ follows directly from $c_1$ and $c$ under various assumptions about interference (e.g., with complete interference $c_2 = c - c_1$), leaving the $\\beta_i$ as functions of only one unknown parameter, $c_1$. When the markers are reasonably close ($c < 0.2$), these coefficients simplify to $\\beta_{m,1} \\simeq c_2/c$ and $\\beta_{m,2} \\simeq c_1/c$. Substituting into Equation 16.36,",
+      "source_page": 533,
+      "printed_page": 513,
+      "source_block_ids": [
+        "p533:b6"
+      ],
+      "bbox": [
+        84.0,
+        383.0,
+        1046.0,
+        609.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula066]]",
+      "source_page": 533,
+      "printed_page": 513,
+      "source_block_ids": [
+        "p533:b7"
+      ],
+      "bbox": [
+        333.0,
+        636.0,
+        790.0,
+        687.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where",
+      "source_page": 533,
+      "printed_page": 513,
+      "source_block_ids": [
+        "p533:b9"
+      ],
+      "bbox": [
+        81.0,
+        712.0,
+        170.0,
+        743.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula067]]",
+      "source_page": 533,
+      "printed_page": 513,
+      "source_block_ids": [
+        "p533:b10"
+      ],
+      "bbox": [
+        388.0,
+        743.0,
+        732.0,
+        784.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Following the approach of Haley and Knott (1992), Fulker and Cardon compute this regression for each value of $ c_{1} $ ( $ 0 \\leq c_{1} \\leq c $), with that value giving the regression with the largest $ r^{2} $ taken to be the estimate of map position, and $ 2\\sigma_{A}^{2} $ estimated from the associated regression coefficients. This method offers increased power for QTL detection relative to the standard Haseman-Elston method (Fulker and Cardon 1994, Cardon and Fulker 1994). This increase is small when the single-marker power is either very poor or very high, but can be considerable when single-marker power is modest. As with the single-marker regression, selective genotyping further increases power (Cardon and Fulker 1994).",
+      "source_page": 533,
+      "printed_page": 513,
+      "source_block_ids": [
+        "p533:b11"
+      ],
+      "bbox": [
+        80.0,
+        795.0,
+        1041.0,
+        1090.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter16:5]]",
+      "source_page": 533,
+      "source_block_ids": [
+        "p533:b12",
+        "p533:b13",
+        "p534:b2",
+        "p534:b3"
+      ],
+      "bbox": [
+        126.0,
+        1179.0,
+        991.0,
+        1359.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Standard (i.e., two-marker) interval mapping can be extended to multipoint interval mapping by considering all linked markers on a chromosome (Fulker et al. 1995, Kruglyak and Lander 1995b). In the approach of Fulker et al., the two-marker regression estimate of the QTL ibd status (Equation 16.43) is replaced by a multiple regression that incorporates all n linked markers on a chromosome,",
+      "source_page": 534,
+      "printed_page": 514,
+      "source_block_ids": [
+        "p534:b4"
+      ],
+      "bbox": [
+        115.0,
+        1084.0,
+        1077.0,
+        1252.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula068]]",
+      "source_page": 534,
+      "printed_page": 514,
+      "source_block_ids": [
+        "p534:b5"
+      ],
+      "bbox": [
+        469.0,
+        1300.0,
+        725.0,
+        1383.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the fraction $ \\widehat{\\pi}_{jt} $ of ibd QTL alleles for the jth pair is predicted using the fractions $ \\pi_{jm}^{(k)} $ of ibd alleles at each of the n marker loci on the chromosome containing the putative QTL. The $ \\beta_{k} $ are obtained from standard GLS regressions (Chapter",
+      "source_page": 534,
+      "printed_page": 514,
+      "source_block_ids": [
+        "p534:b7"
+      ],
+      "bbox": [
+        119.0,
+        1432.0,
+        1081.0,
+        1540.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "8), where the vector $ \\boldsymbol{\\beta}^{T} = (\\boldsymbol{\\beta}_{1}, \\cdots, \\boldsymbol{\\beta}_{n}) $ satisfies $ \\boldsymbol{\\beta} = \\mathbf{V}^{-1}\\mathbf{C} $, where",
+      "source_page": 535,
+      "printed_page": 515,
+      "source_block_ids": [
+        "p535:b2"
+      ],
+      "bbox": [
+        81.0,
+        131.0,
+        861.0,
+        168.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula069]]",
+      "source_page": 535,
+      "printed_page": 515,
+      "source_block_ids": [
+        "p535:b3"
+      ],
+      "bbox": [
+        99.0,
+        188.0,
+        920.0,
+        296.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and",
+      "source_page": 535,
+      "printed_page": 515,
+      "source_block_ids": [
+        "p535:b5"
+      ],
+      "bbox": [
+        81.0,
+        315.0,
+        136.0,
+        343.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula070]]",
+      "source_page": 535,
+      "printed_page": 515,
+      "source_block_ids": [
+        "p535:b6"
+      ],
+      "bbox": [
+        296.0,
+        336.0,
+        764.0,
+        391.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Here $ \\operatorname{Var}(\\pi_m^{(i)}) $ is the observed sample variance for ibd status at the ith marker (i.e., the sample variance of the $ \\pi_{jm}^{(i)} $ over all included pairs), $ c_{ik} $ is the distance between markers i and k (assumed known), and $ c_i $ is the (unknown) distance between the QTL and marker i.",
+      "source_page": 535,
+      "printed_page": 515,
+      "source_block_ids": [
+        "p535:b8"
+      ],
+      "bbox": [
+        79.0,
+        406.0,
+        1036.0,
+        544.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Again the regression is computed by first assuming a particular position for the QTL along the chromosome, computing $ \\widehat{\\pi}_{jt} $ using Equation 16.45, and substituting this value into the standard Haseman-Elston regression (Equation 16.36). This process is repeated for all possible positions of the QTL along the chromosome, with the estimate of QTL position taken as that which gives the regression with the largest $ r^{2} $ value. (This is equivalent to the regression giving the largest t statistic.) Fulker et al. show that this method offers high precision for mapping and (unlike two-locus interval mapping) accounts for differences in the information content of adjacent markers. When only two markers are used, Fulker et al. show that QTL position is biased towards the more informative marker. Multipoint interval mapping avoids this problem by incorporating all the marker information along the entire chromosome. Since the multipoint regression is easily computed, there is little reason to prefer simple interval mapping (Equation 16.43) over multipoint mapping (Equation 16.45).",
+      "source_page": 535,
+      "printed_page": 515,
+      "source_block_ids": [
+        "p535:b9"
+      ],
+      "bbox": [
+        75.0,
+        544.0,
+        1037.0,
+        992.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "An improved multipoint estimator is given by Kruglyak and Lander (1995b). While Equation 16.45 uses marker information to estimate the mean value of $ \\pi_{jt} $, Kruglyak and Lander use all the marker information to provide an ML estimate at each point along a chromosome of the actual distribution of ibd values (i.e., the probabilities at any particular chromosomal position that the pair shares zero, one, or two ibd alleles). An EM method (Appendix 4) is then used to compute the regression using this distribution, resulting in greater power than in an analysis one based simply on the estimated mean of $ \\pi_{jt} $. As before, regressions are computed at each point along a chromosome, generating a t statistic plot for the regression significance as a function of putative QTL position.",
+      "source_page": 535,
+      "printed_page": 515,
+      "source_block_ids": [
+        "p535:b10"
+      ],
+      "bbox": [
+        72.0,
+        990.0,
+        1035.0,
+        1315.0
+      ]
     }
   ]
 }

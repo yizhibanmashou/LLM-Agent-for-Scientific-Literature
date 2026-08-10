@@ -2,34 +2,234 @@
   "id": "Genetics_chapter15_008",
   "metadata": {
     "chapter": "Genetics_chapter15",
-    "section": "Introduction",
-    "subsections": [
-      "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD",
+    "section": "QTL DETECTION AND ESTIMATION USING LINEAR MODELS",
+    "subsections": [],
+    "section_level_1": "QTL DETECTION AND ESTIMATION USING LINEAR MODELS",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD"
+      "QTL DETECTION AND ESTIMATION USING LINEAR MODELS"
     ],
-    "display_heading": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD"
+    "display_heading": "QTL DETECTION AND ESTIMATION USING LINEAR MODELS",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 456,
+      "printed_page": 436,
+      "source_block_ids": [
+        "p456:b3"
+      ],
+      "bbox": [
+        124.0,
+        576.0,
+        959.0,
+        616.0
+      ],
+      "raw_text": "QTL DETECTION AND ESTIMATION USING LINEAR MODELS"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Maximum likelihood (ML) methods are especially popular in the QTL mapping literature. While linear models use only marker means, ML uses the full information from the marker-trait distribution and, as such, is expected to be more powerful. The tradeoff is that ML is computationally intensive, requiring rather special programs to solve the likelihood equations, while linear model analysis can be performed with almost any standard statistical package. Further, while modifying the basic model (such as adding extra factors) is rather trivial in the linear model framework, with ML new likelihood functions need to be constructed and solved for each variant of the original model. Although writing down a set of likelihood equations for the model of interest is relatively straightforward (e.g., Example 4), obtaining the ML estimates is much more difficult. One approach outlined in Appendix 4 is to use specialized algorithms, of which EM (expectation-maximization) methods have been successfully adapted to many of the mixture-model problems in QTL mapping (e.g., Lander and Botstein 1989; Carbonell and Gerig 1991; Luo and Kearsey 1992; van Ooijen 1992; Carbonell et al. 1992; Luo and Wolliams 1993; Jansen 1992, 1993a, 1994a, 1996; Jansen and Stam 1994). Alternatively, as we discuss later, a creative use of regressions can often provide excellent approximations to ML solutions. For the remainder of this chapter, we assume that the reader has recently read Chapter 13 and Appendix 4, which introduces much of the ML machinery used here."
+      "content": "We now have all of the necessary machinery in place to consider particular estimation methods in greater detail. As noted above, the simplest test for a marker-trait association involves the comparison of the trait means of alternate marker genotypes. This is the basis for linear-model approaches for detecting QTLs. When only two genotypes are compared (such as with single-marker backcross-, RIL-, or DHL-designs), this can be accomplished with a simple t test (e.g., Sokal and Rohlf 1995). Most designs, however, involve more than two marker genotypes. For example, the single-marker $ F_{2} $ design has three marker genotypes: MM, Mm, mm. In such cases, all marker genotypic means (or some subset of them) can be compared by using standard linear-model approaches, such as ANOVA or regression.",
+      "source_page": 456,
+      "printed_page": 436,
+      "source_block_ids": [
+        "p456:b4"
+      ],
+      "bbox": [
+        125.0,
+        641.0,
+        1086.0,
+        1001.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Assuming that the distribution of phenotypes for an individual with QTL genotype $ Q_{k} $ is normal with mean $ \\mu_{Q_{k}} $ and variance $ \\sigma^{2} $, and following the logic of Chapter 13, the likelihood for an individual with phenotypic value z and marker genotype $ M_{j} $ becomes $$ \\ell(z\\mid M_{j})=\\sum_{k=1}^{N}\\varphi(z,\\mu_{Q_{k}},\\sigma^{2})\\Pr(Q_{k}\\mid M_{j}) $$ where $\\varphi(z,\\mu_{Q_k},\\sigma^2)$ denotes the density function for a normal distribution with mean $\\mu_{Q_k}$ and variance $\\sigma^2$, and a total of $N$ QTL genotypes is assumed. This likelihood is a mixture-model distribution (Chapter 13). The mixing proportions, $\\Pr(Q_k|M_j)$, are functions of the genetic map (the position(s) of the QTL(s) with respect to the observed markers) and the experimental design, while the QTL effects enter only though the means $\\mu_{Q_k}$ and variance $\\sigma^2$ of the underlying distributions."
+      "content": "The simplest linear model considers the phenotypic value $ z_{ik} $ of the kth individual of marker genotype i as a mean value $ \\mu $ plus a marker effect $ b_{i} $ and a residual error $ e_{ik} $,",
+      "source_page": 456,
+      "printed_page": 436,
+      "source_block_ids": [
+        "p456:b5"
+      ],
+      "bbox": [
+        130.0,
+        990.0,
+        1086.0,
+        1099.0
+      ]
     },
     {
-      "type": "proposition",
-      "content": "Example 4. Consider the single-marker F₂ design with a single QTL linked to the marker. Making the standard assumption that phenotypes are normally distributed about each QTL genotype, substitution of the F₂ conditional probabilities (Example 1) into Equation 15.15 gives the likelihood functions for the three"
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula039]]",
+      "source_page": 456,
+      "printed_page": 436,
+      "source_block_ids": [
+        "p456:b6"
+      ],
+      "bbox": [
+        502.0,
+        1093.0,
+        715.0,
+        1125.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This is a one-way ANOVA model (Chapter 18), with the presence of a linked QTL being indicated by a significant between-marker variance. Equivalently, we can express this model as a multiple regression, with the phenotypic value for individual j given by",
+      "source_page": 456,
+      "printed_page": 436,
+      "source_block_ids": [
+        "p456:b8"
+      ],
+      "bbox": [
+        131.0,
+        1135.0,
+        1090.0,
+        1275.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula040]]",
+      "source_page": 456,
+      "printed_page": 436,
+      "source_block_ids": [
+        "p456:b9"
+      ],
+      "bbox": [
+        472.0,
+        1267.0,
+        751.0,
+        1351.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the $ x_{ij} $ are n indicator variables (one for each marker genotype),",
+      "source_page": 456,
+      "printed_page": 436,
+      "source_block_ids": [
+        "p456:b11"
+      ],
+      "bbox": [
+        133.0,
+        1359.0,
+        978.0,
+        1402.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula041]]",
+      "source_page": 456,
+      "printed_page": 436,
+      "source_block_ids": [
+        "p456:b12"
+      ],
+      "bbox": [
+        310.0,
+        1418.0,
+        908.0,
+        1500.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The number of marker genotypes (n) in Equations 15.14a,b depend on both the number of marker loci and the type of design being used. With a single marker, n = 2 for a backcross, RIL, or DH design, while n = 3 for an $ F_{2} $ design (using codominant markers). When two or more marker loci are simultaneously considered, $ b_{i} $ corresponds to the effect of a multilocus marker genotype, and n is the number of such genotypes considered in the analysis. In the regression framework, evidence of a linked QTL is provided by a significant $ r^{2} $, which is the fraction of character variance accounted for by the marker genotypes (Chapter 8). Finally, as mentioned above, the presence of a linked QTL can cause different marker genotypes to have different trait variances. If the difference in variance between marker classes is substantial, the standard ANOVA assumption of variance homogeneity is violated and appropriate corrections are required for hypothesis testing (Asins and Carbonell 1988, Xu 1995).",
+      "source_page": 457,
+      "printed_page": 437,
+      "source_block_ids": [
+        "p457:b2"
+      ],
+      "bbox": [
+        80.0,
+        156.0,
+        1042.0,
+        580.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Estimation of dominance requires information on all three genotypes at a marker locus, i.e., an $ F_{2} $, $ F_{t} $, or other design (such as both backcross populations). In these cases, dominance can be estimated using an appropriate function of the marker means (e.g., Equations 15.7b, 15.8b). Epistasis between QTLs can be modeled by including interaction terms. Here, an individual with genotype i at one marker locus and genotype k at a second is modeled as $ z = \\mu + a_{i} + b_{k} + d_{ik} + e $, where a and b denote the single-locus marker effects, and d is the interaction term due to epistasis between QTLs linked to those marker loci. In linear regression form this model becomes",
+      "source_page": 457,
+      "printed_page": 437,
+      "source_block_ids": [
+        "p457:b3"
+      ],
+      "bbox": [
+        73.0,
+        574.0,
+        1036.0,
+        870.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula042]]",
+      "source_page": 457,
+      "printed_page": 437,
+      "source_block_ids": [
+        "p457:b4"
+      ],
+      "bbox": [
+        174.0,
+        924.0,
+        831.0,
+        1016.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ x_{ij} $ and $ y_{kj} $ are indicator variables for two different marker genotypes (with $ n_{1} $ and $ n_{2} $ genotypes, respectively). Significant $ a_{i} $ and / or $ b_{k} $ terms indicate significant effects at the individual marker loci, while significant $ d_{ik} $ terms indicate epistasis between the effects of the two markers.",
+      "source_page": 457,
+      "printed_page": 437,
+      "source_block_ids": [
+        "p457:b6"
+      ],
+      "bbox": [
+        66.0,
+        1076.0,
+        1027.0,
+        1216.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Essentially the same approach can be used to look for genotype × environment interactions when markers are examined in several environments. Here the basic model for an individual with marker genotype i measured in the kth environment is $ z = \\mu + b_i + E_k + I_{ik} + e $, where a significant $ E_k $ indicates an environmental effect, while a significant $ I_{ik} $ implies a marker × environment interaction. For example, if the character has significant sex-specific effects, these can be incorporated by using the model $ z = \\mu + b_i + s_k + I_{ik} + e $ for an individual of marker genotype i and sex k. Here, a significant $ s_k $ implies a significant sex effect, while a significant $ I_{ik} $ implies a significant marker × sex interaction. Long et al. (1995) give an example of the utility of this approach, finding very significant sex-specific effects for bristle number in Drosophila.",
+      "source_page": 457,
+      "printed_page": 437,
+      "source_block_ids": [
+        "p457:b7"
+      ],
+      "bbox": [
+        60.0,
+        1208.0,
+        1024.0,
+        1565.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter15:3]]",
+      "source_page": 458,
+      "source_block_ids": [
+        "p458:b2",
+        "p458:b3",
+        "p458:b4",
+        "p458:b5",
+        "p458:b6"
+      ],
+      "bbox": [
+        168.0,
+        197.0,
+        1033.0,
+        380.0
+      ]
     }
   ]
 }

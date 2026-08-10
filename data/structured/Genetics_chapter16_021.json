@@ -2,34 +2,236 @@
   "id": "Genetics_chapter16_021",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
+    "section": "MAPPING DICHOTOMOUS CHARACTERS",
     "subsections": [
-      "Genomic Scanning"
+      "Power of ASP Tests and Related Issues"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Genomic Scanning",
+    "section_level_1": "MAPPING DICHOTOMOUS CHARACTERS",
+    "section_level_2": "Power of ASP Tests and Related Issues",
     "heading_path": [
-      "Introduction",
-      "Genomic Scanning"
+      "MAPPING DICHOTOMOUS CHARACTERS",
+      "Power of ASP Tests and Related Issues"
     ],
-    "display_heading": "Genomic Scanning"
+    "display_heading": "MAPPING DICHOTOMOUS CHARACTERS / Power of ASP Tests and Related Issues",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 541,
+      "printed_page": 521,
+      "source_block_ids": [
+        "p541:b6"
+      ],
+      "bbox": [
+        78.0,
+        764.0,
+        563.0,
+        795.0
+      ],
+      "raw_text": "Power of ASP Tests and Related Issues"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Given the increasing density of the human genetic map, genomic scans for diseases have become popular. In their simplest form, the investigator computes an ASP test statistic (such as the MLS value) at each of a number of markers, scanning the genome for markers showing linkage to DS genes. Examples include scans for type 1 (Davies et al. 1994) and type 2 (Hanis et al. 1996) diabetes and for multiple sclerosis (Ebers et al. 1996). Lander and Kruglyak's (1995) suggested guidelines (for humans) on the appropriate significance level for such tests have generated much discussion (Witte et al. 1996, Curtis 1996, Lander and Kruglyak 1996, Kruglyak 1996)."
+      "content": "The power of different sib-pair tests has been examined by several authors (Suarez et al. 1978, Blackwelder and Elston 1985, Goldin and Gershon 1988, Risch 1990a–c, Schaid and Nick 1990, Sribney and Swift 1992, Goldin and Weeks 1993, Green and Shah 1993, Shah and Green 1994), who conclude that most of the power resides in doubly affected pairs. Blackwelder and Elston (1985) and Schaid and Nick (1990) compared the performance of tests based on the mean number of ibid alleles with those based on a single ibid frequency class (e.g., Equation 16.50b vs. 16.50a). If dominance is modest or linkage is loose, $ T_{m} $ is a more powerful test than $ T_{2} $. However, with strong dominance and tight linkage, the test based on $ T_{2} $ is slightly more powerful. Sribney and Swift (1992), noting that assortative mating and multiple underlying loci can inflate the number of required sib-pairs to achieve a given power, suggest that the use of discordant sib-trios (two normal and one affected, or vice versa) can offer higher power in these cases.",
+      "source_page": 541,
+      "printed_page": 521,
+      "source_block_ids": [
+        "p541:b7"
+      ],
+      "bbox": [
+        75.0,
+        805.0,
+        1038.0,
+        1221.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A more sophisticated version of genomic scanning has been developed by Kruglyak and Lander (1995b), who used a multipoint method (simultaneously incorporating information from all linked markers) to estimate the ibd distribution at each point along a chromosome. This estimated distribution is then used to compute some ASP statistic for that point. For example, for arbitrary chromosomal map position $c$, Kruglyak and Lander obtain estimates of $\\pi_{20}(c)$, $\\pi_{21}(c)$, and $\\pi_{22}(c)$ — the ibd values at this position in doubly affected sib pairs — which can then be used to compute any ASP statistics, such as MLS. This method allows for a genomic scan of all chromosomal positions, not just those points corresponding to marker loci. As with likelihood maps, estimates of the locations of DS genes are given by local maxima of the test statistic plot, provided they exceed the significance threshold. With the putative DS gene position in hand, estimates of its effect can be obtained by using the estimated ibd distribution at that position. Recall that the effect of a QTL can be expressed in terms of the relative risks in full-sib and parent-offspring pairs ($\\lambda_S$ and $\\lambda_O$). First noting that estimates of $d_{20}$ and $d_{21}$ can be obtained from the estimated ibd values, $\\widehat{d}_{20} = 1/4 - \\widehat{\\pi}_{20}$ and $\\widehat{d}_{21} = 1/2 - \\widehat{\\pi}_{21}$, substitution of these into Equations 16.52b,c (with $c = 0$) and rearranging gives $$ \\widehat{\\lambda}_{S}=\\frac{1}{1-4\\widehat{d}_{20}}=\\frac{1}{4\\widehat{\\pi}_{20}}\\qquad\\mathrm{a n d}\\qquad\\widehat{\\lambda}_{O}=\\frac{1-2\\widehat{d}_{21}}{1-4\\widehat{d}_{20}}=\\frac{\\widehat{\\pi}_{21}}{2\\widehat{\\pi}_{20}} $$"
+      "content": "The ibd distribution for a marker locus linked to a DS gene has been solved for full sibs by Suarez et al. (1978) and for more general pairs of relatives by Risch (1990b). These expressions are useful for both power calculations (Appendix 5; Figure 16.4) and for showing how the DS parameters influence the ibd distribution. Since many tests use only doubly affected full-sib pairs, we restrict attention to this case. It is convenient to express the ibd distribution as the expected frequency under no linkage plus a deviation due to linkage,",
+      "source_page": 541,
+      "printed_page": 521,
+      "source_block_ids": [
+        "p541:b8"
+      ],
+      "bbox": [
+        74.0,
+        1222.0,
+        1037.0,
+        1448.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "If desired, these can be translated into estimates of genetic variances using Equations 16.47b and 16.49b. Kruglyak and Lander (1995a) found that 200 affected pairs are sufficient to localize a gene with effect $ \\lambda_S = \\lambda_O = 5 $ to within 1 cM. Localization of a gene with $ \\lambda_S = 2 $ with the same precision requires 700 pairs."
+      "content": "[[FORMULA:Genetics_chapter16_formula089]]",
+      "source_page": 541,
+      "printed_page": 521,
+      "source_block_ids": [
+        "p541:b9"
+      ],
+      "bbox": [
+        200.0,
+        1459.0,
+        784.0,
+        1522.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:16.4]]",
+      "source_page": 542,
+      "printed_page": 522,
+      "source_block_ids": [
+        "p542:b3"
+      ],
+      "bbox": [
+        172.0,
+        627.0,
+        1035.0,
+        865.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Here, as above, $ p_{2i} $ is the probability that a doubly affected pair shares i ibd marker alleles. If c is the recombination fraction between marker and QTL, these deviations are given by",
+      "source_page": 542,
+      "printed_page": 522,
+      "source_block_ids": [
+        "p542:b4"
+      ],
+      "bbox": [
+        124.0,
+        926.0,
+        1083.0,
+        1023.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula090]]",
+      "source_page": 542,
+      "printed_page": 522,
+      "source_block_ids": [
+        "p542:b5"
+      ],
+      "bbox": [
+        392.0,
+        1055.0,
+        727.0,
+        1089.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula091]]",
+      "source_page": 542,
+      "printed_page": 522,
+      "source_block_ids": [
+        "p542:b7"
+      ],
+      "bbox": [
+        392.0,
+        1094.0,
+        668.0,
+        1128.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula092]]",
+      "source_page": 542,
+      "printed_page": 522,
+      "source_block_ids": [
+        "p542:b9"
+      ],
+      "bbox": [
+        391.0,
+        1134.0,
+        814.0,
+        1170.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "with",
+      "source_page": 542,
+      "printed_page": 522,
+      "source_block_ids": [
+        "p542:b11"
+      ],
+      "bbox": [
+        126.0,
+        1203.0,
+        191.0,
+        1232.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula093]]",
+      "source_page": 542,
+      "printed_page": 522,
+      "source_block_ids": [
+        "p542:b12"
+      ],
+      "bbox": [
+        290.0,
+        1227.0,
+        914.0,
+        1295.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\lambda_{S} $ and $ \\lambda_{O} $ are the relative risks in full-sib and parent-offspring pairs attributable to the DS locus. If there is no dominance at the DS locus ( $ \\lambda_{S} = \\lambda_{O} $ and hence $ \\Delta = 0 $), then $ d_{21} = 0 $, so this class provides no information on linkage. Further, in this case the magnitude of the deviations for $ p_{20} $ and $ p_{22} $ are identical, and hence each class provides the same amount of linkage information. When dominance is present, $ d_{22} > d_{20} $, implying that the $ p_{22} $ class provides the most linkage information. Equation 16.52a assumes that a single linked locus underlies the disease. When multiple loci are involved, the marker ibd distribution is no longer a simple function of the population $ \\lambda_{R} $ values, and can be rather involved (Risch 1990a,b).",
+      "source_page": 542,
+      "printed_page": 522,
+      "source_block_ids": [
+        "p542:b13",
+        "p543:b2"
+      ],
+      "bbox": [
+        124.0,
+        1313.0,
+        1084.0,
+        1509.0
+      ],
+      "source_page_end": 543
+    },
+    {
+      "type": "discussion",
+      "content": "The power using different types of relative pairs has been examined by Risch (1990b,c) and Bishop and Williamson (1990). For diseases with large $ \\lambda_{S} $ values, grandparent-grandchild pairs offer the highest power of detection when tightly linked markers are available. For diseases with smaller $ \\lambda_{S} $ values and/or less tightly linked markers, sibs offer the most power.",
+      "source_page": 543,
+      "printed_page": 523,
+      "source_block_ids": [
+        "p543:b3"
+      ],
+      "bbox": [
+        78.0,
+        263.0,
+        1038.0,
+        422.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "An important issue related to power is the verification of previous linkage claims. Such verification has been especially problematic in studies claiming associations between markers and certain psychiatric disorders (reviewed in Gershon and Cloninger 1994, Risch and Botstein 1996). An analysis of this problem was presented by Suarez et al. (1994), who found that when the character is determined by several QTLs of roughly similar effects, the number of families required to detect the first marker-trait association is much smaller than the number of independent families required to replicate the initial claim (also see Bell and Lathrop 1996). In effect, the waiting time (measured as number of sib pairs that must be sampled) required for replication of a claim is far greater than the waiting time to detect an association. This result occurs because if the trait is determined by n QTLs of equal effect, and if p is the probability of detecting a given QTL (i.e., the power of the design), then there are n chances for detecting significant marker effects (and hence a power of approximately np), but only one chance of replicating the initial observation (with probability p). This waiting time is especially a problem if a number of rare genes of large effect are involved, as affected individuals in one set of families may arise from one gene, while a second set of families involves another QTL and hence does not replicate the original finding.",
+      "source_page": 543,
+      "printed_page": 523,
+      "source_block_ids": [
+        "p543:b4"
+      ],
+      "bbox": [
+        77.0,
+        423.0,
+        1040.0,
+        1000.0
+      ]
     }
   ]
 }

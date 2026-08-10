@@ -2,58 +2,263 @@
   "id": "Genetics_chapter12_005",
   "metadata": {
     "chapter": "Genetics_chapter12",
-    "section": "Introduction",
-    "subsections": [
-      "Estimation from Divergence Experiments"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter12_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Estimation from Divergence Experiments",
+    "section": "THE MUTATIONAL RATE OF PRODUCTION OF QUANTITATIVE VARIATION",
+    "subsections": [],
+    "section_level_1": "THE MUTATIONAL RATE OF PRODUCTION OF QUANTITATIVE VARIATION",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "Estimation from Divergence Experiments"
+      "THE MUTATIONAL RATE OF PRODUCTION OF QUANTITATIVE VARIATION"
     ],
-    "display_heading": "Estimation from Divergence Experiments"
+    "display_heading": "THE MUTATIONAL RATE OF PRODUCTION OF QUANTITATIVE VARIATION",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 342,
+      "printed_page": 322,
+      "source_block_ids": [
+        "p342:b5"
+      ],
+      "bbox": [
+        136.0,
+        1227.0,
+        768.0,
+        1300.0
+      ],
+      "raw_text": "THE MUTATIONAL RATE OF PRODUCTION OF QUANTITATIVE VARIATION"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Estimation of the mutational variance is straightforward, but labor intensive. The simplest approach is a divergence experiment. Replicate lines, extracted from the same ancestral population, are maintained at a small enough size so that the fate of essentially all newly arisen mutations will be determined by random genetic drift. In the cases of selfed lines maintained by single-seed descent and of full-sib mated lines, all but extremely deleterious alleles will be impervious to selection, so that any census of mutational effects will yield nearly unbiased results. Over time, the mean phenotypes of the replicate lines are expected to drift apart as they randomly accumulate unique mutations. If the mutations have directional effects, a shift in the grand mean phenotype (averaged over all lines) is also expected to occur."
+      "content": "Estimates of the rate of production of new quantitative variation by mutation are normally computed on a per character, rather than a per locus, basis. The measure generally sought is the amount of additive genetic variation produced by mutation per generation. This measure compounds three issues: the genic mutation rate, u; the number of loci underlying the character, n; and the mean squared effect of a mutant allele in the heterozygous state. Here, as in Chapter 4, we scale the genotypic values at a locus such that the ancestral homozygous state is 0, the heterozygous state is $ a(1 + k) $, and the homozygous mutant state is 2a. Noting that the frequency of newly arisen mutations at a locus in any generation $ (2u_i) $ is very small so that the change in the mean effect at the locus is negligible, then after summing over all loci, the mutational variance becomes",
+      "source_page": 342,
+      "printed_page": 322,
+      "source_block_ids": [
+        "p342:b6",
+        "p343:b2"
+      ],
+      "bbox": [
+        137.0,
+        1327.0,
+        1100.0,
+        1526.0
+      ],
+      "source_page_end": 343
     },
     {
       "type": "discussion",
-      "content": "Provided that, prior to expansion, the base population is kept at the same size as the derived lines for a long enough period to be in mutation-drift equilibrium, the expected increment in the among-line component of variance per generation is equal to $ 2\\sigma_{m0}^{2} $ (Bailey 1959, Lande 1976, Chakraborty and Nei 1982, Lynch and"
+      "content": "[[FORMULA:Genetics_chapter12_formula001]]",
+      "source_page": 343,
+      "printed_page": 323,
+      "source_block_ids": [
+        "p343:b3"
+      ],
+      "bbox": [
+        378.0,
+        308.0,
+        716.0,
+        435.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Hill 1986). The simplest way to obtain this result is to note from the neutral theory (Kimura 1983) that the expected number of mutational substitutions per locus differentiating two populations separated for $t$ generations is $2u_{i}t$. (Letting $N$ denote the population size, then each generation in each population, an expected $2Nu_{i}$ new mutations arise. Each of these has an ultimate probability of fixation equal to the initial frequency, $1/(2N)$, so that at equilibrium, the expected number of fixations in a pair of populations each generation is $2\\times2Nu_{i}\\times1/(2N)=2u_{i}$ at the $i$th locus.) Upon fixation, each mutation causes an expected increment in the among-population variance of $E[(2a-0)^{2}]/2=2E(a^{2})$. Thus, summing over all loci, the expected among-line variance after $t$ generations of divergence is $$ \\sigma_{B}^{2}(t)=2\\sum_{i=1}^{n}(2u_{i}t)\\cdot E(a^{2})=2\\sigma_{m0}^{2}t $$"
+      "content": "where $ \\sigma_{m0}^{2} = UE(a^{2}), \\sigma_{m1}^{2} = UE(a^{2}k) $, and $ \\sigma_{m2}^{2} = UE(a^{2}k^{2}) $, with $ U = 2 \\sum_{i=1}^{n} u_{i} $ being the zygotic mutation rate for the character (i.e., the expected number of mutations influencing the trait that arise in a newborn each generation), and $ E(x) $ denoting the average value of x. For mutations with purely additive effects $ (k = 0) $, the mutational variance simplifies to",
+      "source_page": 343,
+      "printed_page": 323,
+      "source_block_ids": [
+        "p343:b5"
+      ],
+      "bbox": [
+        66.0,
+        441.0,
+        1028.0,
+        605.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "This is a fairly robust result in that it does not depend on the population size, on the degree of dominance of new mutations, or on the linkage relationships among loci (Lynch and Hill 1986). Dominance has no influence on the rate of divergence because it has a transient effect; once a mutant allele goes to fixation, a permanent shift in the mean phenotype to $ 2a_{i} $ occurs at the locus, regardless of $ k_{i} $. In principle, the asymptotic rate of divergence might accelerate (or decelerate) when mutations have general epistatic effects (Tachida and Cockerham 1990), but the time scale over which such complications would arise is likely to be quite long (dozens to hundreds of generations), and the details of such a model have not yet been worked out."
+      "content": "[[FORMULA:Genetics_chapter12_formula002]]",
+      "source_page": 343,
+      "printed_page": 323,
+      "source_block_ids": [
+        "p343:b6"
+      ],
+      "bbox": [
+        418.0,
+        614.0,
+        672.0,
+        653.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "To summarize, a conceptually simple way to estimate the mutational variance is to perform a long-term divergence experiment with replicate lines kept at small population sizes, extracting the among-line component of variance ($ \\sigma_{B}^{2} $) by analysis of variance. Division of the latter by twice the number of generations of divergence (2t) provides an estimate of $ \\sigma_{m0}^{2} $. These results apply strictly to diploid sexual populations, but only slight modifications are required for other forms of reproduction. For example, for haploid populations (sexual or asexual), the preceding expression becomes $$ \\sigma_{B}^{2}(t)=\\sigma_{m0}^{2}t/2 $$ whereas for diploid asexuals, $$ \\sigma_{B}^{2}(t)=\\sigma_{m}^{2}t $$ where $ \\sigma_{m}^{2} $ is defined as in Equation 12.1a (Lynch 1994). Terms involving dominance arise in the case of diploid asexuals because, in the absence of segregation, mutations are kept permanently in the heterozygous state with effects $ a(1+k) $."
+      "content": "A cautionary note in the interpretation of Equation 12.1a is necessary. Strictly speaking, the mutational variance defined in this expression is nonsegregational mutational variance in that it describes the variance produced by a cohort of new mutations that exist entirely as heterozygotes, rather than at Hardy-Weinberg frequencies where the mutations appear in both heterozygotes and homozygotes. In the case of mutations with additive effects, this definition is not a problem because the variance produced by an allelic effect is independent of the genetic background and uninfluenced by segregation. With completely recessive (k = -1) mutations, however, Equation 12.1a defines the mutational variance to be zero, despite the fact that variation will be exposed once the mutant alleles have segregated into their homozygous states. For autosomal loci, Hardy-Weinberg frequencies are reached in one generation under monoecy and in two generations under dioecy.",
+      "source_page": 343,
+      "printed_page": 323,
+      "source_block_ids": [
+        "p343:b8"
+      ],
+      "bbox": [
+        62.0,
+        663.0,
+        1025.0,
+        1081.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "There are several potential sources of error in the estimation of the mutational variance with a divergence experiment. A common misconception is that estimates of the mutational variance will be upwardly biased by the segregation of genetic variance in the base population if the latter is not 100% homozygous. On the contrary, the expected increase in among-line variance of $ 2\\sigma_{m0}^{2} $ per generation strictly applies to situations in which the base population has been kept at the same size as the descendent lines for about $ 6N_{e} $ or so generations prior to the initiation of a divergence experiment (Lynch and Hill 1986). If the base population is totally homozygous, the rate of divergence will be less than $ 2\\sigma_{m0}^{2} $ during the early generations of the experiment due to the lack of segregating polymorphisms. If the base population contains excess heterozygosity relative to the equilibrium expectations within the descendent lines, the divergence rate will exceed $ 2\\sigma_{m0}^{2} $ in the early generations of the experiment. Eventually, under the neutral model, all lines will asymptotically diverge at the rate $ 2\\sigma_{m0}^{2} $ regardless of the status of the base population."
+      "content": "A reasonable way to define the relevant measure of mutational variance for a segregating population is to consider the situation in which the only determinants of the dynamics of genetic variance are mutation and random genetic drift. Under this neutral model, considered in detail in Lynch and Hill (1986), populations with constant size eventually reach an equilibrium state at which point the input of new variation by mutation is balanced by the loss via random genetic drift. For populations of size one, maintained by self-fertilization and single-seed descent, the equilibrium genetic variance among the progeny is",
+      "source_page": 343,
+      "printed_page": 323,
+      "source_block_ids": [
+        "p343:b9"
+      ],
+      "bbox": [
+        57.0,
+        1079.0,
+        1023.0,
+        1339.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A second potentially serious issue in the analysis of a divergence experiment concerns the possibility that environmental effects artificially inflate the among-line component of variance. To guard against such inflation, a set of control lines should be assayed in parallel with the mutation-accumulation lines whenever possible. The control lines should be genetically identical (and maintained in an evolutionarily inert state by, for example, freezing or seed storage) so that any variance among them can only be attributable to environmental causes. Any variance among control lines can then be subtracted from that observed among the mutation-accumulation lines. Maternal effects can be a significant source of inflation of the among-line variance when all of the progeny assayed within a subline are derived from a single mother. Such problems can be eliminated by deriving all assay individuals from different mothers, as this ensures that any variance associated with maternal effects will contribute to the within-line component of variance (Lynch 1985)."
+      "content": "[[FORMULA:Genetics_chapter12_formula003]]",
+      "source_page": 343,
+      "printed_page": 323,
+      "source_block_ids": [
+        "p343:b10"
+      ],
+      "bbox": [
+        344.0,
+        1344.0,
+        726.0,
+        1416.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Third, contamination events can be a major problem in mutation-accumulation experiments, either deflating estimates of $ \\sigma_{m0}^{2} $ when gene flow accidentally occurs among lines, or inflating it if foreign genotypes immigrate into the experiment. Periodic screening of lines for the genomic distribution of mobile elements or for other informative molecular markers, such as highly mutable microsatellite loci, can provide an excellent control against contamination (Mackay et al. 1992a, Keightley and Hill 1992)."
+      "content": "With full-sib mating, the equilibrium variance is",
+      "source_page": 343,
+      "printed_page": 323,
+      "source_block_ids": [
+        "p343:b12"
+      ],
+      "bbox": [
+        56.0,
+        1420.0,
+        639.0,
+        1458.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Finally, we note that an alternative approach to estimating the mutational variance involves the application of artificial selection to an initially homozygous base population. Recall from Chapter 3 that the single-generation response to selection is equal to $ R = h^{2}S $, where S is the selection differential imposed by the investigator. The idea behind the selection approach to estimating mutational variance is that the standing heritability in a population can be estimated from the ratio of selection response to selection differential, $ \\widehat{h}^{2} = R/S $. As in the case of the neutral model, expressions can be derived for the expected equilibrium heritability of a quantitative trait under truncation selection as a function of the population size and the mutational variance (Hill 1982b,c). Thus, by equating observed and expected heritabilities, an estimate of $\\sigma_{m0}^{2}$ can be obtained."
+      "content": "[[FORMULA:Genetics_chapter12_formula004]]",
+      "source_page": 343,
+      "printed_page": 323,
+      "source_block_ids": [
+        "p343:b13"
+      ],
+      "bbox": [
+        337.0,
+        1468.0,
+        729.0,
+        1540.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and with all larger population sizes (with effective size denoted by $ N_{e} $), it is very close to",
+      "source_page": 344,
+      "printed_page": 324,
+      "source_block_ids": [
+        "p344:b2"
+      ],
+      "bbox": [
+        126.0,
+        134.0,
+        1085.0,
+        200.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter12_formula005]]",
+      "source_page": 344,
+      "printed_page": 324,
+      "source_block_ids": [
+        "p344:b3"
+      ],
+      "bbox": [
+        395.0,
+        193.0,
+        815.0,
+        261.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In this latter case, all of the genetic variance is additive, except for $ 2N_e\\sigma_{m2}^2/3 $, which defines the dominance component of variance (Lynch and Hill 1986). Note that for recessive mutations $ (k < 0) $, which are likely to be the rule (Chapters 4 and 10), $ \\sigma_{m1}^2 $ is negative while $ \\sigma_{m2}^2 $ is positive, so the contributions from these terms partially cancel (completely canceling in the case of fully recessive mutations). Moreover, the absolute values of both terms are necessarily less than that of $ \\sigma_{m0}^2 $. Thus, although not exact in all cases, we may expect the equilibrium level of genetic variance in the absence of selection to be close to $ 2N_e\\sigma_{m0}^2 $ in most cases. This result justifies the reliance on $ \\sigma_{m0}^2 $ as a measure of mutational variance, a useful relationship since, as we will soon see, $ \\sigma_{m0}^2 $ is much easier to estimate than either $ \\sigma_{m1}^2 $ or $ \\sigma_{m2}^2 $.",
+      "source_page": 344,
+      "printed_page": 324,
+      "source_block_ids": [
+        "p344:b5"
+      ],
+      "bbox": [
+        126.0,
+        277.0,
+        1089.0,
+        633.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Estimates of the mutational variance are often scaled by the environmental variance to give the mutational heritability,",
+      "source_page": 344,
+      "printed_page": 324,
+      "source_block_ids": [
+        "p344:b6"
+      ],
+      "bbox": [
+        130.0,
+        629.0,
+        1090.0,
+        698.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter12_formula006]]",
+      "source_page": 344,
+      "printed_page": 324,
+      "source_block_ids": [
+        "p344:b7"
+      ],
+      "bbox": [
+        544.0,
+        724.0,
+        677.0,
+        798.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "a dimensionless measure suitable for comparing different characters. When mutations have additive effects, $ h_{m}^{2} $ approximates the heritability of an initially homozygous population following one generation of mutation. (The fact that the denominator in $ h_{m}^{2} $ is the environmental, rather than the total, variance is not problematical because, as will be shown below, $ \\sigma_{m0}^{2} << \\sigma_{E}^{2} $).",
+      "source_page": 344,
+      "printed_page": 324,
+      "source_block_ids": [
+        "p344:b9"
+      ],
+      "bbox": [
+        132.0,
+        825.0,
+        1095.0,
+        992.0
+      ]
     }
   ]
 }

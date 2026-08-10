@@ -1,0 +1,235 @@
+{
+  "id": "Genetics_appendix1_052",
+  "metadata": {
+    "chapter": "Genetics_appendix1",
+    "section": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
+    "subsections": [
+      "Applications: QTL Detection Tests Using Doubly Affected Sib Pairs"
+    ],
+    "section_level_1": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
+    "section_level_2": "Applications: QTL Detection Tests Using Doubly Affected Sib Pairs",
+    "heading_path": [
+      "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
+      "Applications: QTL Detection Tests Using Doubly Affected Sib Pairs"
+    ],
+    "display_heading": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS / Applications: QTL Detection Tests Using Doubly Affected Sib Pairs",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 888,
+      "printed_page": 868,
+      "source_block_ids": [
+        "p888:b2"
+      ],
+      "bbox": [
+        137.0,
+        136.0,
+        981.0,
+        169.0
+      ],
+      "raw_text": "Applications: QTL Detection Tests Using Doubly Affected Sib Pairs"
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Chapter 16 examines the use of doubly affected full sib pairs to detect QTLs influencing a binary character (typically disease presence/absence, so that both sibs in each pair display the disease). If the marker is linked to a QTL influencing the character, we expect the pair members to share more marker alleles than expected by chance. A number of tests based on the number of ibd (identical by descent) marker alleles shared between pair members have been proposed for detecting a linked QTL. Letting $ p_{2i} $ and $ \\widehat{p}_{2i} $ denote the true and estimated fractions of doubly affected pairs sharing i = 0, 1, 2 ibd marker alleles (the leading 2 in the subscript indicates we are restricting attention to pairs where both sibs are affected), we consider two such tests here. One test statistic, $ T_{2} = \\widehat{p}_{22} $, is based on the fraction of doubly affected pairs sharing 2 ibd alleles. A second test statistic, $ T_{m} = \\widehat{p}_{21}/2 + \\widehat{p}_{22} $, corresponds to the mean number of ibd marker alleles shared by a doubly affected pair. The true ibd frequencies can be expressed as deviations from the values expected with no linked QTL,",
+      "source_page": 888,
+      "printed_page": 868,
+      "source_block_ids": [
+        "p888:b3"
+      ],
+      "bbox": [
+        137.0,
+        180.0,
+        1096.0,
+        625.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula287]]",
+      "source_page": 888,
+      "printed_page": 868,
+      "source_block_ids": [
+        "p888:b4"
+      ],
+      "bbox": [
+        302.0,
+        651.0,
+        928.0,
+        714.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Under the null hypotheses (the marker is unlinked to a QTL), the $ d_{2i} $ are zero, while Equation 16.52 gives their values as functions of the QTL effects and distance from the marker if a QTL is linked to the marker. Note from Equation 16.52 that $ d_{2i} \\geq 0 $ under linkage.",
+      "source_page": 888,
+      "printed_page": 868,
+      "source_block_ids": [
+        "p888:b5"
+      ],
+      "bbox": [
+        137.0,
+        736.0,
+        1094.0,
+        864.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "We examine the power of the test based on $ T_2 = \\widehat{p}_{22} $ first. This test statistic has mean $ p_{22} $ and variance $ p_{22}(1 - p_{22}) / n $, where $ n $ is the number of doubly affected pairs. Expressing the variance of the test statistic as $ \\sigma^2(T) = f^2 / n $, shows that here $ f^2 = p_{22}(1 - p_{22}) $. Under the null hypothesis of no linked QTL, $ p_{22} = 1/4 $, giving the mean and variance as $ \\mu_o = 1/4 $ and $ f_0^2 = (1/4)(3/4) = 3/16 $. When a linked QTL is present, so that $ p_{22} = 1/4 + d_{22} $, the mean and variance become",
+      "source_page": 888,
+      "printed_page": 868,
+      "source_block_ids": [
+        "p888:b6"
+      ],
+      "bbox": [
+        136.0,
+        865.0,
+        1095.0,
+        1058.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula288]]",
+      "source_page": 888,
+      "printed_page": 868,
+      "source_block_ids": [
+        "p888:b7"
+      ],
+      "bbox": [
+        152.0,
+        1082.0,
+        978.0,
+        1145.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, $ (\\mu_1 - \\mu_0)^2 = d_{22}^2 $. The $ T_2 $ test is one-sided, as $ p_{22} > 1/4 $ under linkage to a QTL, and from Equation A5.4b, the required number of doubly affected pairs to have power $ 1 - \\beta $ using a test with significance $ \\alpha $ is",
+      "source_page": 888,
+      "printed_page": 868,
+      "source_block_ids": [
+        "p888:b9"
+      ],
+      "bbox": [
+        138.0,
+        1169.0,
+        1096.0,
+        1269.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula289]]",
+      "source_page": 888,
+      "printed_page": 868,
+      "source_block_ids": [
+        "p888:b10"
+      ],
+      "bbox": [
+        208.0,
+        1296.0,
+        921.0,
+        1383.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In a similar fashion, the expected value for the test statistic $ T_{m} $ is",
+      "source_page": 888,
+      "printed_page": 868,
+      "source_block_ids": [
+        "p888:b12"
+      ],
+      "bbox": [
+        192.0,
+        1410.0,
+        963.0,
+        1442.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula290]]",
+      "source_page": 888,
+      "printed_page": 868,
+      "source_block_ids": [
+        "p888:b13"
+      ],
+      "bbox": [
+        192.0,
+        1469.0,
+        939.0,
+        1537.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "To compute the variance $ \\sigma_{1}^{2} = f_{1}^{2}/n $, let $ x $ denote the fraction of ibd alleles in a randomly chosen individual. Taking expectations gives",
+      "source_page": 889,
+      "printed_page": 869,
+      "source_block_ids": [
+        "p889:b2"
+      ],
+      "bbox": [
+        66.0,
+        126.0,
+        1023.0,
+        211.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula291]]",
+      "source_page": 889,
+      "printed_page": 869,
+      "source_block_ids": [
+        "p889:b3"
+      ],
+      "bbox": [
+        182.0,
+        222.0,
+        900.0,
+        460.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Under the null hypothesis of no linked QTLs, $ d_{21} = d_{22} = 0 $, giving $ \\mu_0 = 1/2 $ and $ f_0^2 = 1/2 $. Again, this is a one-sided test, as $ T_m > 1/2 $ for a marker linked to a QTL. Applying Equation A5.4b gives the required number of doubly affected pairs as",
+      "source_page": 889,
+      "printed_page": 869,
+      "source_block_ids": [
+        "p889:b5"
+      ],
+      "bbox": [
+        55.0,
+        478.0,
+        1017.0,
+        623.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula292]]",
+      "source_page": 889,
+      "printed_page": 869,
+      "source_block_ids": [
+        "p889:b6"
+      ],
+      "bbox": [
+        113.0,
+        646.0,
+        854.0,
+        741.0
+      ]
+    }
+  ]
+}

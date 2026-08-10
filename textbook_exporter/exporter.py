@@ -762,7 +762,7 @@ class TextbookRenderer:
         rows = normalize_table_rows(table.get("rows"))
         resolved_id = clean_ref_id(table.get("id") or table_id)
         override_key = f"{normalize_chapter_id(current_chapter or source.get('chapter') or '')}:{resolved_id}"
-        html = str(table.get("html") or self.raw_table_overrides.get(override_key) or "")
+        html = inline_table_math(str(table.get("html") or self.raw_table_overrides.get(override_key) or ""))
         markdown_body = normalize_latex_for_katex(str(table.get("markdown_body") or "").strip())
         notes = table.get("notes") if isinstance(table.get("notes"), list) else []
         table_type = str(table.get("table_type") or "").strip().lower()
@@ -784,7 +784,7 @@ class TextbookRenderer:
                 self.append_table_payload(
                     lines,
                     rows=normalize_table_rows(part.get("rows")),
-                    html=str(part.get("html") or ""),
+                    html=inline_table_math(str(part.get("html") or "")),
                     notes=part.get("notes") if isinstance(part.get("notes"), list) else [],
                     markdown_body=normalize_latex_for_katex(str(part.get("markdown_body") or "").strip()),
                     table_type=table_type,
@@ -1611,7 +1611,12 @@ def normalize_table_rows(raw_rows: Any) -> list[list[str]]:
 
 
 def markdown_table_cell(value: str) -> str:
-    return normalize_latex_for_katex(str(value)).replace("\n", "<br>").replace("|", r"\|")
+    return inline_table_math(normalize_latex_for_katex(str(value))).replace("\n", "<br>").replace("|", r"\|")
+
+
+def inline_table_math(text: str) -> str:
+    """Keep table-cell math inline; block delimiters are invalid inside one HTML/Markdown row."""
+    return re.sub(r"(?<!\\)\$\$([\s\S]*?)(?<!\\)\$\$", r"$\1$", str(text or ""))
 
 
 def normalize_latex_math(latex: str) -> str:

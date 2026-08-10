@@ -2,42 +2,69 @@
   "id": "Genetics_chapter3_002",
   "metadata": {
     "chapter": "Genetics_chapter3",
-    "section": "Covariance, Regression, and Correlation",
+    "section": "3",
     "subsections": [
-      "JOINTLY DISTRIBUTED RANDOM VARIABLES"
+      "Covariance, Regression, and Correlation"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter3_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Covariance, Regression, and Correlation",
-    "section_level_2": "JOINTLY DISTRIBUTED RANDOM VARIABLES",
+    "section_level_1": "3",
+    "section_level_2": "Covariance, Regression, and Correlation",
     "heading_path": [
-      "Covariance, Regression, and Correlation",
-      "JOINTLY DISTRIBUTED RANDOM VARIABLES"
+      "3",
+      "Covariance, Regression, and Correlation"
     ],
-    "display_heading": "JOINTLY DISTRIBUTED RANDOM VARIABLES"
+    "display_heading": "3 / Covariance, Regression, and Correlation",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 51,
+      "printed_page": 31,
+      "source_block_ids": [
+        "p51:b1"
+      ],
+      "bbox": [
+        93.0,
+        212.0,
+        987.0,
+        283.0
+      ],
+      "raw_text": "Covariance, Regression, and Correlation"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The probability of joint occurrence of a pair of random variables $(x, y)$ is specified by the joint probability density function, $p(x, y)$, where $$ \\mathrm{P}(y_{1}\\leq y\\leq y_{2},x_{1}\\leq x\\leq x_{2})=\\int_{y_{1}}^{y_{2}}\\int_{x_{1}}^{x_{2}}p(x,y)dx dy $$"
+      "content": "In the previous chapter, the variance was introduced as a measure of the dispersion of a univariate distribution. Additional statistics are required to describe the joint distribution of two or more variables. The covariance provides a natural measure of the association between two variables, and it appears in the analysis of many problems in quantitative genetics including the resemblance between relatives, the correlation between characters, and measures of selection.",
+      "source_page": 51,
+      "printed_page": 31,
+      "source_block_ids": [
+        "p51:b2"
+      ],
+      "bbox": [
+        51.0,
+        413.0,
+        1015.0,
+        625.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "We often ask questions of the form: What is the distribution of $y$ given that $x$ equals some specified value? For example, we might want to know the probability that parents whose height is 68 inches have offspring with height exceeding 70 inches. To answer such questions, we use $p(y|x)$, the conditional density of $y$ given $x$, where $$ \\mathrm{P}(y_{1}\\leq y\\leq y_{2}\\mid x)=\\int_{y_{1}}^{y_{2}}p(y\\mid x)dy $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Joint probability density functions, $p(x,y)$, and conditional density functions, $p(y|x)$, are connected by $$ p(x,y)=p(y\\mid x)p(x) $$ where $ p(x) = \\int_{-\\infty}^{+\\infty} p(y \\mid x) \\, dy $ is the marginal (univariate) density of x."
-    },
-    {
-      "type": "discussion",
-      "content": "Two random variables, $x$ and $y$, are said to be independent if $p(x, y)$ can be factored into the product of a function of $x$ only and a function of $y$ only, i.e., $$ p(x,y)=p(x)p(y) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "If $x$ and $y$ are independent, knowledge of $x$ gives no information about the value of $y$. From Equations 3.3a and 3.3b, if $p(x,y)=p(x)\\,p(y)$, then $p(y|x)=p(y)$."
+      "content": "As a prelude to the formal theory of covariance and regression, we first provide a brief review of the theory for the distribution of pairs of random variables. We then give a formal definition of the covariance and its properties. Next, we show how the covariance enters naturally into statistical methods for estimating the linear relationship between two variables (least-squares linear regression) and for estimating the goodness-of-fit of such linear trends (correlation). Finally, we apply the concept of covariance to several problems in quantitative-genetic theory. More advanced topics associated with multivariate distributions involving three or more variables are taken up in Chapter 8.",
+      "source_page": 51,
+      "printed_page": 31,
+      "source_block_ids": [
+        "p51:b3"
+      ],
+      "bbox": [
+        45.0,
+        607.0,
+        1010.0,
+        915.0
+      ]
     }
   ]
 }

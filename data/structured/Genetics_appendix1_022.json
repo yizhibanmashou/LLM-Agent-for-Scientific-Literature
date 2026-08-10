@@ -1,0 +1,322 @@
+{
+  "id": "Genetics_appendix1_022",
+  "metadata": {
+    "chapter": "Genetics_appendix1",
+    "section": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS",
+    "subsections": [
+      "Consistency and Solutions to Consistent Systems"
+    ],
+    "section_level_1": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS",
+    "section_level_2": "Consistency and Solutions to Consistent Systems",
+    "heading_path": [
+      "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS",
+      "Consistency and Solutions to Consistent Systems"
+    ],
+    "display_heading": "GENERALIZED INVERSES AND SOLUTIONS TO SINGULAR SYSTEMS OF EQUATIONS / Consistency and Solutions to Consistent Systems",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b15"
+      ],
+      "bbox": [
+        142.0,
+        1104.0,
+        754.0,
+        1136.0
+      ],
+      "raw_text": "Consistency and Solutions to Consistent Systems"
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "When dealing with linear models for complex designs, it is not immediately clear if the resulting OLS/GLS equations have solutions. Generalized inverses provide a check of consistency, and hence of whether a system of equations has any solutions. A linear system $ \\mathbf{A}\\mathbf{x}=\\mathbf{y} $ is consistent if and only if",
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b16"
+      ],
+      "bbox": [
+        141.0,
+        1145.0,
+        1101.0,
+        1277.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula103]]",
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b17"
+      ],
+      "bbox": [
+        551.0,
+        1298.0,
+        695.0,
+        1332.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Given a consistent system, all solutions have the form",
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b19"
+      ],
+      "bbox": [
+        143.0,
+        1357.0,
+        790.0,
+        1390.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula104]]",
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b20"
+      ],
+      "bbox": [
+        472.0,
+        1413.0,
+        772.0,
+        1447.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where c is an arbitrary $ q \\times 1 $ column vector. For example, taking c = 0 recovers Equation A3.2, while if $ A^{-1} $ exists, then $ I - A^{-1}A = 0 $ and the solution $ x = A^{-1}y $ is unique. To see that any expression of the form of Equation A3.4 is a solution, note that",
+      "source_page": 848,
+      "printed_page": 828,
+      "source_block_ids": [
+        "p848:b22",
+        "p849:b2"
+      ],
+      "bbox": [
+        144.0,
+        1472.0,
+        1101.0,
+        1537.0
+      ],
+      "source_page_end": 849
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula105]]",
+      "source_page": 849,
+      "printed_page": 829,
+      "source_block_ids": [
+        "p849:b3"
+      ],
+      "bbox": [
+        249.0,
+        193.0,
+        827.0,
+        310.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "which follows from Equations A3.3 and A3.1, respectively.",
+      "source_page": 849,
+      "printed_page": 829,
+      "source_block_ids": [
+        "p849:b4"
+      ],
+      "bbox": [
+        58.0,
+        323.0,
+        759.0,
+        357.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_appendix1:1:occ2]]",
+      "source_page": 849,
+      "source_block_ids": [
+        "p849:b5",
+        "p849:b6",
+        "p849:b7",
+        "p849:b8",
+        "p849:b9",
+        "p849:b10",
+        "p849:b11",
+        "p849:b12",
+        "p849:b13",
+        "p849:b14",
+        "p849:b15",
+        "p849:b16",
+        "p849:b17",
+        "p850:b2",
+        "p850:b3",
+        "p850:b4"
+      ],
+      "bbox": [
+        105.0,
+        435.0,
+        730.0,
+        467.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Although an infinite number of solutions exists when A is singular, particular linear combinations (or contrasts) of the elements of x may have unique values. For example, consider the system $ x_{1} + x_{2} = 1 $. Here there are an infinite number of solutions for $ (x_{1}, x_{2}) $, but only a single solution, 1, for the contrast $ x_{1} + x_{2} $.",
+      "source_page": 850,
+      "printed_page": 830,
+      "source_block_ids": [
+        "p850:b5"
+      ],
+      "bbox": [
+        142.0,
+        448.0,
+        1099.0,
+        577.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Consider some linear combination $ \\mathbf{b}^{T}\\mathbf{x} $. If the vector of constants $ \\mathbf{b} $ satisfies",
+      "source_page": 850,
+      "printed_page": 830,
+      "source_block_ids": [
+        "p850:b6"
+      ],
+      "bbox": [
+        193.0,
+        578.0,
+        1096.0,
+        611.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula114]]",
+      "source_page": 850,
+      "printed_page": 830,
+      "source_block_ids": [
+        "p850:b7"
+      ],
+      "bbox": [
+        530.0,
+        637.0,
+        708.0,
+        673.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "then $ b^{T}x $ has a unique solution given by",
+      "source_page": 850,
+      "printed_page": 830,
+      "source_block_ids": [
+        "p850:b9"
+      ],
+      "bbox": [
+        141.0,
+        704.0,
+        630.0,
+        741.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula115]]",
+      "source_page": 850,
+      "printed_page": 830,
+      "source_block_ids": [
+        "p850:b10"
+      ],
+      "bbox": [
+        526.0,
+        769.0,
+        715.0,
+        806.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "To see this, note that Equation A3.4 gives the general solution as",
+      "source_page": 850,
+      "printed_page": 830,
+      "source_block_ids": [
+        "p850:b12"
+      ],
+      "bbox": [
+        143.0,
+        839.0,
+        910.0,
+        872.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula116]]",
+      "source_page": 850,
+      "printed_page": 830,
+      "source_block_ids": [
+        "p850:b13"
+      ],
+      "bbox": [
+        405.0,
+        902.0,
+        835.0,
+        1058.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "which is independent of the arbitrary vector c. Likewise, a vector of contrasts Bx has a unique solution $ \\mathbf{B}\\mathbf{A}^{-}\\mathbf{y} $, provided B satisfies $ \\mathbf{B}\\mathbf{A}^{-}\\mathbf{A}=\\mathbf{B} $",
+      "source_page": 850,
+      "printed_page": 830,
+      "source_block_ids": [
+        "p850:b14"
+      ],
+      "bbox": [
+        143.0,
+        1089.0,
+        1100.0,
+        1156.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_appendix1:2:occ2]]",
+      "source_page": 850,
+      "source_block_ids": [
+        "p850:b15",
+        "p850:b16",
+        "p850:b17",
+        "p850:b18",
+        "p851:b2",
+        "p851:b3",
+        "p851:b4",
+        "p851:b5",
+        "p851:b6",
+        "p851:b7",
+        "p851:b8",
+        "p851:b9",
+        "p851:b10"
+      ],
+      "bbox": [
+        191.0,
+        1250.0,
+        1052.0,
+        1337.0
+      ]
+    }
+  ]
+}

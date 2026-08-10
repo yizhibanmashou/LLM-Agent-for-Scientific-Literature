@@ -2,42 +2,68 @@
   "id": "Genetics_chapter13_007",
   "metadata": {
     "chapter": "Genetics_chapter13",
-    "section": "Introduction",
-    "subsections": [
-      "Nonparametric Line-cross Tests"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Nonparametric Line-cross Tests",
+    "section": "MIXTURE MODELS",
+    "subsections": [],
+    "section_level_1": "MIXTURE MODELS",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "Nonparametric Line-cross Tests"
+      "MIXTURE MODELS"
     ],
-    "display_heading": "Nonparametric Line-cross Tests"
+    "display_heading": "MIXTURE MODELS",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 373,
+      "printed_page": 353,
+      "source_block_ids": [
+        "p373:b8"
+      ],
+      "bbox": [
+        69.0,
+        1025.0,
+        334.0,
+        1056.0
+      ],
+      "raw_text": "MIXTURE MODELS"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Collins (1967, 1968, 1973), Mode and Gasser (1972), and Birnbaum (1972) independently proposed simple line-cross tests to detect major genes. Suppose a character is completely determined by one locus with two alleles, Q and q. Each genotype has an associated distribution of environmental values, which may differ between genotypes, and the phenotypic distribution in the population is a weighted mixture of the distributions associated with the three underlying genotypes, $$ p(z)=p_{Q Q}(z)\\operatorname*{P r}(Q Q)+p_{Q q}(z)\\operatorname*{P r}(Q q)+p_{q q}(z)\\operatorname*{P r}(q q) $$ where $ \\Pr(QQ) $ is the probability that a randomly chosen individual is QQ, and $ p_{QQ}(z) $ is the distribution of environmental values for a QQ individual, with the other terms defined similarly."
+      "content": "Given that rejection of normality, by itself, is not sufficient to imply a major gene, a more powerful approach is to test whether the phenotypic distribution is consistent with a mixing (or commingling) of two or more normals, as would be expected if the distribution of phenotypic values about each major genotype were normal (Tan and Chang 1972, Elston et al. 1974, Boerwinkle et al. 1986, Hoeschele 1988). While this is an improvement over previous methods, such a test is still fraught with a number of potential problems. Even if the phenotypic distribution is consistent with a mixture of normals, there are a variety of explanations other than major genes — for example, the population may be distributed over two or more significantly different environments. Thus, a slightly more powerful approach is to further specify the weights of the underlying normals.",
+      "source_page": 373,
+      "printed_page": 353,
+      "source_block_ids": [
+        "p373:b9"
+      ],
+      "bbox": [
+        67.0,
+        1090.0,
+        1028.0,
+        1441.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Based on this simple relationship, the test proceeds as follows. Consider two parental populations, $ P_1 $ and $ P_2 $, fixed for different alleles (Q and q, respectively). If the outbreak of variation in the $ F_2 $ is entirely due to segregation at a single locus, then the $ F_2 $ distribution is specified exactly by Equation 13.3, with $ p_{Qq}(z) = p_{F_1}(z) $, $ p_{QQ}(z) = p_{P_1}(z) $, $ p_{qq}(z) = p_{P_2}(z) $, $ \\Pr(QQ) = \\Pr(qq) = 1/4 $, and $ \\Pr(Qq) = 1/2 $. giving $$ p_{F_{2}}(z)=\\frac{p_{P_{1}}(z)}{4}+\\frac{p_{F_{1}}(z)}{2}+\\frac{p_{P_{2}}(z)}{4} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Standard goodness-of-fit criteria (such as a Kolmogorov-Smirnov test; Sokal and Rohlf 1995) are then used to compare the observed and expected distributions. Related tests have also been suggested by Elston (1981b) and Stolk et al. (1984), and these were used by Hagger et al. (1995) to reject the hypothesis of a single dominant gene to account for egg weight differences between two inbred lines of chickens."
-    },
-    {
-      "type": "discussion",
-      "content": "This approach can, in theory, be extended to two or more major loci, although tests of more than two loci require an impractical number of crosses. If more than one locus is segregating, knowledge of the parental and $ F_1 $ distributions is generally not sufficient to predict the $ F_2 $ distribution. Additional information, such as phenotypic distributions of certain backcrosses (e.g., the distribution of $ B_1 $, $ B_1 \\times B_2 $, etc.), is required to account for the new $ F_2 $ genotypes generated by segregation (Collins 1967, 1968, 1973)."
-    },
-    {
-      "type": "discussion",
-      "content": "Equation 13.3 provides our first formal introduction to mixture models, where the observed distribution is a weighted mixture of underlying distributions. The approach taken above is nonparametric in that it does not initially assume any particular form for the underlying distributions. While this is an advantage in some cases, it results in a reduction in power relative to parametric tests that incorporate the correct form of the underlying distributions. We now move to considerations of parametric mixture models that assume the underlying distributions to be normal. This class of models forms the basis for much of the analysis over the next four chapters."
+      "content": "If the distribution is consistent with three underlying normals with Hardy-Weinberg weights $ p^{2} $, $ 2p(1 - p) $, and $ (1 - p)^{2} $, where the allele frequency p is estimated from the data by maximum likelihood (see Example 2), then we may have more confidence in a major-locus interpretation. On the other hand, a lack of fit to this model does not necessarily exclude a major gene (e.g., the major gene may not be in Hardy-Weinberg equilibrium or the underlying phenotypic distributions for each major locus genotype may be nonnormal). In the absence of information from linked markers, the most powerful mixture-model tests for major genes use information from relatives to specify the weights of the underlying distributions. Before developing this complex segregation analysis approach, we first review some general features of mixture models.",
+      "source_page": 373,
+      "printed_page": 353,
+      "source_block_ids": [
+        "p373:b10",
+        "p374:b2"
+      ],
+      "bbox": [
+        67.0,
+        1441.0,
+        1025.0,
+        1536.0
+      ],
+      "source_page_end": 374
     }
   ]
 }

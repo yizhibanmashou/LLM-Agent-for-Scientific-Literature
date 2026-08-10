@@ -2,34 +2,195 @@
   "id": "Genetics_chapter26_007",
   "metadata": {
     "chapter": "Genetics_chapter26",
-    "section": "Introduction",
+    "section": "THE GENERAL MIXED MODEL",
     "subsections": [
       "Standard Errors"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
+    "section_level_1": "THE GENERAL MIXED MODEL",
     "section_level_2": "Standard Errors",
     "heading_path": [
-      "Introduction",
+      "THE GENERAL MIXED MODEL",
       "Standard Errors"
     ],
-    "display_heading": "Standard Errors"
+    "display_heading": "THE GENERAL MIXED MODEL / Standard Errors",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 766,
+      "printed_page": 746,
+      "source_block_ids": [
+        "p766:b3"
+      ],
+      "bbox": [
+        142.0,
+        419.0,
+        345.0,
+        454.0
+      ],
+      "raw_text": "Standard Errors"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "A relatively straightforward extension of Henderson's mixed-model equations provides estimates of the standard errors of the fixed and random effects. Let the inverse of the leftmost matrix in Equation 26.5 be $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z}&.\\\\\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}\\end{pmatrix}^{-1}=\\begin{pmatrix}\\mathbf{C}_{11}&\\mathbf{C}_{12}\\\\\\mathbf{C}_{12}^{T}&\\mathbf{C}_{22}\\end{pmatrix} $$ where $C_{11}$, $C_{12}$, and $C_{22}$ are, respectively, $p\\times p$, $p\\times q$, and $q\\times q$ submatrices. Using this notation, Henderson (1975) showed that the sampling covariance matrix for the BLUE of $\\beta$ is given by $$ \\boldsymbol{\\sigma}(\\widehat{\\boldsymbol{\\beta}})=\\mathbf{C}_{11} $$ that the sampling covariance matrix of the prediction errors (u - u) is given by $$ \\boldsymbol{\\sigma}(\\hat{\\mathbf{u}}-\\mathbf{u})=\\mathbf{C}_{22} $$ and that the sampling covariance of estimated effects and prediction errors is given by $$ \\boldsymbol{\\sigma}(\\hat{\\boldsymbol{\\beta}},\\hat{\\mathbf{u}}-\\mathbf{u})=\\mathbf{C}_{12} $$"
+      "content": "A relatively straightforward extension of Henderson’s mixed-model equations provides estimates of the standard errors of the fixed and random effects. Let the inverse of the leftmost matrix in Equation 26.5 be",
+      "source_page": 766,
+      "printed_page": 746,
+      "source_block_ids": [
+        "p766:b4"
+      ],
+      "bbox": [
+        141.0,
+        447.0,
+        1100.0,
+        563.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "(We consider $\\hat{\\mathbf{u}} - \\mathbf{u}$ rather than $\\hat{\\mathbf{u}}$ as the latter includes variance from both the prediction error and the random effects $\\mathbf{u}$ themselves.) The standard errors of the fixed and random effects are obtained, respectively, as the square roots of the diagonal elements of $\\mathbf{C}_{11}$ and $\\mathbf{C}_{22}$. For very large animal breeding designs where the inverse of the MME matrix may be difficult to compute, Meyer (1989a) presents methods for approximating the diagonal elements of the inverse of this matrix (and hence the standard errors). $$ \\begin{pmatrix}4&0&\\vdots&1&2&1\\\\0&2&&\\vdots&1&0&1\\\\\\ddots&\\cdots&&\\ddots&\\ddots&\\\\1&1&&5&0&0\\\\2&0&\\vdots&0&5&0\\\\1&1&&0&0&5\\end{pmatrix}^{-1}=\\frac{1}{270}\\begin{pmatrix}100&25&\\vdots&-25&-40&-25\\\\25&175&\\cdots&-40&-10&-40\\\\ \\cdots&\\cdots&&\\cdots&\\cdots&\\\\ -25&-40&\\cdots&67&10&13\\\\ -40&-10&\\vdots&10&70&10\\\\ -25&-40&&\\cdots&13&10&67\\end{pmatrix} $$"
+      "content": "[[FORMULA:Genetics_chapter26_formula029]]",
+      "source_page": 766,
+      "printed_page": 746,
+      "source_block_ids": [
+        "p766:b5"
+      ],
+      "bbox": [
+        292.0,
+        579.0,
+        956.0,
+        694.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Hence, $$ \\mathbf{C}_{11}=\\frac{1}{270}\\left(\\begin{array}{cc}100&25\\\\ 25&175\\end{array}\\right)\\quad and\\quad\\mathbf{C}_{22}=\\frac{1}{270}\\left(\\begin{array}{ccc}67&10&13\\\\ 10&70&10\\\\ 13&10&67\\end{array}\\right) $$ so that, for example, $$ \\sigma^{2}(\\widehat{\\beta_{1}})=\\frac{100}{270},\\quad\\sigma^{2}(\\widehat{\\beta_{2}})=\\frac{175}{270},\\quad\\sigma(\\widehat{\\beta_{1}},\\widehat{\\beta_{2}})=\\frac{25}{270} $$ and, likewise, $$ \\sigma^{2}(\\widehat{u_{2}}-u_{2})=\\frac{70}{270},\\quad\\sigma(\\widehat{u_{1}}-u_{1},\\widehat{u_{3}}-u_{3})=\\frac{13}{270},\\quad\\mathrm{a n d~s o~o n}. $$"
+      "content": "where $C_{11}$, $C_{12}$, and $C_{22}$ are, respectively, $p \\times p$, $p \\times q$, and $q \\times q$ submatrices. Using this notation, Henderson (1975) showed that the sampling covariance matrix for the BLUE of $\\beta$ is given by",
+      "source_page": 766,
+      "printed_page": 746,
+      "source_block_ids": [
+        "p766:b7"
+      ],
+      "bbox": [
+        146.0,
+        711.0,
+        1106.0,
+        827.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter26_formula030]]",
+      "source_page": 766,
+      "printed_page": 746,
+      "source_block_ids": [
+        "p766:b8"
+      ],
+      "bbox": [
+        549.0,
+        816.0,
+        702.0,
+        857.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "that the sampling covariance matrix of the prediction errors (u - u) is given by",
+      "source_page": 766,
+      "printed_page": 746,
+      "source_block_ids": [
+        "p766:b10"
+      ],
+      "bbox": [
+        150.0,
+        865.0,
+        1093.0,
+        914.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter26_formula031]]",
+      "source_page": 766,
+      "printed_page": 746,
+      "source_block_ids": [
+        "p766:b11"
+      ],
+      "bbox": [
+        525.0,
+        935.0,
+        734.0,
+        972.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and that the sampling covariance of estimated effects and prediction errors is given by",
+      "source_page": 766,
+      "printed_page": 746,
+      "source_block_ids": [
+        "p766:b13"
+      ],
+      "bbox": [
+        151.0,
+        995.0,
+        1109.0,
+        1078.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter26_formula032]]",
+      "source_page": 766,
+      "printed_page": 746,
+      "source_block_ids": [
+        "p766:b14"
+      ],
+      "bbox": [
+        515.0,
+        1068.0,
+        748.0,
+        1108.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(We consider $ \\hat{u} - u $ rather than $ \\hat{u} $ as the latter includes variance from both the prediction error and the random effects u themselves.) The standard errors of the fixed and random effects are obtained, respectively, as the square roots of the diagonal elements of $ C_{11} $ and $ C_{22} $. For very large animal breeding designs where the inverse of the MME matrix may be difficult to compute, Meyer (1989a) presents methods for approximating the diagonal elements of the inverse of this matrix (and hence the standard errors).",
+      "source_page": 766,
+      "printed_page": 746,
+      "source_block_ids": [
+        "p766:b16"
+      ],
+      "bbox": [
+        155.0,
+        1115.0,
+        1117.0,
+        1359.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter26:5]]",
+      "source_page": 766,
+      "source_block_ids": [
+        "p766:b17",
+        "p767:b2",
+        "p767:b3",
+        "p767:b4",
+        "p767:b5",
+        "p767:b6",
+        "p767:b7",
+        "p767:b8"
+      ],
+      "bbox": [
+        208.0,
+        1432.0,
+        1072.0,
+        1537.0
+      ]
     }
   ]
 }

@@ -2,34 +2,264 @@
   "id": "Genetics_chapter3_012",
   "metadata": {
     "chapter": "Genetics_chapter3",
-    "section": "Covariance, Regression, and Correlation",
+    "section": "A TASTE OF QUANTITATIVE-GENETIC THEORY",
     "subsections": [
-      "The Correlation between Genotypic and Phenotypic Values"
+      "Directional Selection Differentials and the Robertson-Price Identity"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter3_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Covariance, Regression, and Correlation",
-    "section_level_2": "The Correlation between Genotypic and Phenotypic Values",
+    "section_level_1": "A TASTE OF QUANTITATIVE-GENETIC THEORY",
+    "section_level_2": "Directional Selection Differentials and the Robertson-Price Identity",
     "heading_path": [
-      "Covariance, Regression, and Correlation",
-      "The Correlation between Genotypic and Phenotypic Values"
+      "A TASTE OF QUANTITATIVE-GENETIC THEORY",
+      "Directional Selection Differentials and the Robertson-Price Identity"
     ],
-    "display_heading": "The Correlation between Genotypic and Phenotypic Values"
+    "display_heading": "A TASTE OF QUANTITATIVE-GENETIC THEORY / Directional Selection Differentials and the Robertson-Price Identity",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 61,
+      "printed_page": 41,
+      "source_block_ids": [
+        "p61:b12"
+      ],
+      "bbox": [
+        32.0,
+        1370.0,
+        874.0,
+        1424.0
+      ],
+      "raw_text": "Directional Selection Differentials and the Robertson-Price Identity"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Equation 3.22 shows that evolution by natural selection requires heritable variation, as no matter how large S is, the response to selection across generations is zero if $ \\beta = 0 $. Quantification of the correspondence between phenotypic and genotypic values is related to one of the central goals of quantitative genetics — the partitioning of the phenotypic variance into genetic and nongenetic components. The standard approach is to consider the phenotypic value of an individual, z, to be the sum of the total effects of all loci on the trait, G (the genotypic value), and an environmental deviation E (analogous to the residual error above), $$ z=G+E $$"
+      "content": "The evolutionary response of a character to selection is a function of the intensity of selection and the fraction of the phenotypic variance attributable to certain genetic effects. As noted at the end of last chapter, the directional selection differential, S, is defined to be the within-generation difference between the mean phenotype",
+      "source_page": 61,
+      "printed_page": 41,
+      "source_block_ids": [
+        "p61:b13"
+      ],
+      "bbox": [
+        31.0,
+        1411.0,
+        994.0,
+        1566.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Using the properties of covariances noted above, the covariance between phenotypic and genotypic values may be written as $$ \\sigma_{z,G}=\\sigma[\\left(G+E\\right),G]=\\sigma_{G}^{2}+\\sigma_{G,E} $$"
+      "content": "$ \\mu_{s} $ after an episode of selection (but before reproduction) and the mean before selection $ \\mu $,",
+      "source_page": 62,
+      "printed_page": 42,
+      "source_block_ids": [
+        "p62:b2"
+      ],
+      "bbox": [
+        136.0,
+        117.0,
+        1094.0,
+        208.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The squared correlation coefficient is therefore $$ \\rho^{2}(G,z)=\\left(\\frac{\\sigma_{G,z}}{\\sigma_{G}\\sigma_{z}}\\right)^{2}=\\frac{(\\sigma_{G}^{2}+\\sigma_{G,E})^{2}}{\\sigma_{G}^{2}\\sigma_{z}^{2}} $$ which simplifies to $$ \\rho^{2}(G,z)=\\frac{\\sigma_{G}^{2}}{\\sigma_{z}^{2}} $$ if there is no genotype-environment covariance, i.e., if $ \\sigma_{G,E} = 0 $. In this special case, $ \\rho^{2}(G,z) $ is simply the proportion of the total phenotypic variance that is genetic. The quantity $ \\sigma_{G}^{2}/\\sigma_{z}^{2} $ is generally referred to as heritability in the broad sense and abbreviated as $ H^{2} $. From Equation 3.23, it can be seen that covariance between genotypic values and environmental deviations causes the genotype-phenotype covariance to deviate from $\\sigma_{G}^{2}$. Negative covariance between $G$ and $E$ causes a reduction in the correlation between phenotypic and genotypic values, and in extreme cases, can cause $\\rho(G, z)$ to become negative. Further details on genotype-environment covariance are covered in Chapters 6 and 22."
+      "content": "[[FORMULA:Genetics_chapter3_formula041]]",
+      "source_page": 62,
+      "printed_page": 42,
+      "source_block_ids": [
+        "p62:b3"
+      ],
+      "bbox": [
+        547.0,
+        197.0,
+        688.0,
+        227.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The degree to which $ \\mu_{s} $ deviates from $ \\mu $ depends on the survivorship and reproductive rates of individuals with different phenotypes. If all individuals have equal fertility and viability, then $ \\mu_{s} = \\mu $, S = 0, and the population mean phenotype is not expected to change between generations. Now, for simplicity, assume that individuals differ only in the probability of survival to maturity, so that fitness, $ W(z) $, is the probability that individuals with phenotype z survive to reproduce. In what follows, no assumptions will be made about the general form of $ W(z) $; it may be a continuous or discontinuous function of z, and it may take on values of 0 for some z. If $ p(z) $ is the density of phenotype z before selection, then the density after selection is",
+      "source_page": 62,
+      "printed_page": 42,
+      "source_block_ids": [
+        "p62:b5"
+      ],
+      "bbox": [
+        139.0,
+        231.0,
+        1105.0,
+        576.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula042]]",
+      "source_page": 62,
+      "printed_page": 42,
+      "source_block_ids": [
+        "p62:b6"
+      ],
+      "bbox": [
+        474.0,
+        583.0,
+        766.0,
+        660.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This expression is obtained by noting that $W(z)$ is a weighting factor for phenotype $z$. The denominator is the mean individual fitness, $\\overline{W}$. Letting the relative fitness of phenotype $z$ be $w(z) = W(z)/\\overline{W}$, Equation 3.19 simplifies to $p_{s}(z) = w(z)p(z)$. It follows that the mean phenotype after selection is",
+      "source_page": 62,
+      "printed_page": 42,
+      "source_block_ids": [
+        "p62:b8"
+      ],
+      "bbox": [
+        149.0,
+        671.0,
+        1109.0,
+        821.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula043]]",
+      "source_page": 62,
+      "printed_page": 42,
+      "source_block_ids": [
+        "p62:b9"
+      ],
+      "bbox": [
+        335.0,
+        830.0,
+        928.0,
+        901.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Note also that",
+      "source_page": 62,
+      "printed_page": 42,
+      "source_block_ids": [
+        "p62:b11"
+      ],
+      "bbox": [
+        156.0,
+        923.0,
+        333.0,
+        956.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula044]]",
+      "source_page": 62,
+      "printed_page": 42,
+      "source_block_ids": [
+        "p62:b12"
+      ],
+      "bbox": [
+        308.0,
+        962.0,
+        962.0,
+        1037.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "i.e., the mean relative fitness in a population is always equal to one, and that since $ \\mu = E(z) \\cdot E(w) = E(z) \\cdot 1 $, the directional selection differential may be rewritten as",
+      "source_page": 62,
+      "printed_page": 42,
+      "source_block_ids": [
+        "p62:b13"
+      ],
+      "bbox": [
+        155.0,
+        1043.0,
+        1118.0,
+        1152.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula045]]",
+      "source_page": 62,
+      "printed_page": 42,
+      "source_block_ids": [
+        "p62:b14"
+      ],
+      "bbox": [
+        337.0,
+        1142.0,
+        942.0,
+        1186.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the directional selection differential is equivalent to the covariance of phenotype and relative fitness. This relationship, first noted by Robertson (1966), was greatly elaborated on by Price (1970, 1972). We refer to this very useful result as the Robertson-Price identity. It applies even when phenotypes vary in reproductive output, provided that the absolute fitnesses, $ W(z) $, are weighted accordingly.",
+      "source_page": 62,
+      "printed_page": 42,
+      "source_block_ids": [
+        "p62:b16"
+      ],
+      "bbox": [
+        161.0,
+        1188.0,
+        1123.0,
+        1365.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The importance of S can be seen by noting that if the regression of offspring phenotype on that of its average parent is linear with slope $ \\beta $ (Figure 1.2), a change in the parental mean phenotype induces an expected change in the mean phenotype across generations equal to",
+      "source_page": 62,
+      "printed_page": 42,
+      "source_block_ids": [
+        "p62:b17"
+      ],
+      "bbox": [
+        163.0,
+        1348.0,
+        1125.0,
+        1497.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula046]]",
+      "source_page": 62,
+      "printed_page": 42,
+      "source_block_ids": [
+        "p62:b18"
+      ],
+      "bbox": [
+        452.0,
+        1502.0,
+        845.0,
+        1543.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\mu_{o} $ is the mean phenotype of the offspring of the selected parents. This fundamental relationship, known as the breeders' equation, combines information on the forces of selection (S) with that on inheritance ( $ \\beta $) to yield a predictive equation for evolutionary change across generations. A genetic interpretation of the regression coefficient $ \\beta $ will be provided in the final example of this chapter.",
+      "source_page": 63,
+      "printed_page": 43,
+      "source_block_ids": [
+        "p63:b2"
+      ],
+      "bbox": [
+        62.0,
+        131.0,
+        1025.0,
+        312.0
+      ]
     }
   ]
 }

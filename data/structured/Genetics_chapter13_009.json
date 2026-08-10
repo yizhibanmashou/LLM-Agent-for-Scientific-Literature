@@ -2,30 +2,144 @@
   "id": "Genetics_chapter13_009",
   "metadata": {
     "chapter": "Genetics_chapter13",
-    "section": "Introduction",
+    "section": "MIXTURE MODELS",
     "subsections": [
-      "The Distribution under a Mixture Model"
+      "Parameter Estimation"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "The Distribution under a Mixture Model",
+    "section_level_1": "MIXTURE MODELS",
+    "section_level_2": "Parameter Estimation",
     "heading_path": [
-      "Introduction",
-      "The Distribution under a Mixture Model"
+      "MIXTURE MODELS",
+      "Parameter Estimation"
     ],
-    "display_heading": "The Distribution under a Mixture Model"
+    "display_heading": "MIXTURE MODELS / Parameter Estimation",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 374,
+      "printed_page": 354,
+      "source_block_ids": [
+        "p374:b12"
+      ],
+      "bbox": [
+        134.0,
+        1240.0,
+        410.0,
+        1271.0
+      ],
+      "raw_text": "Parameter Estimation"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Assume the distribution of interest results from a weighted mixture of several underlying distributions. If there are $ i = 1, \\cdots, n $ underlying distributions, $ p_1(z), \\cdots, p_n(z) $, each with frequency $ \\mathrm{Pr}(i) $, the resulting probability density of an observed variable z is given by a generalization of Equation 13.3, $$ p(z)=\\sum_{i=1}^{n}\\Pr(i)\\cdot p_{i}(z) $$"
+      "content": "Parameters of mixture models are typically estimated by maximum likelihood procedures (Hasselblad 1966, Day 1969, Everitt and Hand 1981, Redner and Walker 1984, Titterington et al. 1985, McLachlan and Basford 1988), in which case Equation 13.5 gives the likelihood function $ \\ell(z) $ of the unknown parameters $ \\Pr(1), \\cdots, \\Pr(n), \\mu_1, \\cdots, \\mu_n, \\sigma_1^2, \\cdots, \\sigma_n^2 $ as a function of the observed value $ z $. As just mentioned, typically one sets most (or all) of the variances equal to each other; one reason for equating variances is that, if they are all free to vary, there can be singularities in the likelihood function.",
+      "source_page": 374,
+      "printed_page": 354,
+      "source_block_ids": [
+        "p374:b13"
+      ],
+      "bbox": [
+        132.0,
+        1283.0,
+        1095.0,
+        1540.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "It is usually assumed that the underlying distributions are normals, so this becomes $$ p(z)=\\sum_{i=1}^{n}\\Pr(i)\\cdot\\varphi(z,\\mu_{i},\\sigma_{i}^{2}) $$ where $$ \\varphi(z,\\mu_{i},\\sigma_{i}^{2})=\\frac{1}{\\sqrt{2\\pi\\sigma_{i}^{2}}}\\exp\\left[-\\frac{(z-\\mu_{i})^{2}}{2\\sigma_{i}^{2}}\\right] $$ is the probability density function for a normally distributed random variable with mean $ \\mu_i $ and variance $ \\sigma_i^2 $. Equation 13.5 has $ 3n - 1 $ parameters to estimate: the $ n - 1 $ mixing proportions $ \\mathrm{Pr}(i) $, and the $ n $ means and variances of the underlying distributions. It is usually assumed that all the variances are equal, reducing the number of unknown parameters to $ 2n $. Various genetic hypotheses allow us to further specify and evaluate the structure of the mixing proportions."
+      "content": "As an example of how likelihood functions are constructed, consider the situation for a random individual drawn from a population with a single segregating diallelic major locus. Indexing the three genotypes by $i$ where $i = QQ$, $Qq$, and $qq$, and assuming that individuals with major-locus genotype $i$ are normally distributed with mean $\\mu_i$ and common variance $\\sigma^2$, the resulting likelihood for the $j$th individual is",
+      "source_page": 375,
+      "printed_page": 355,
+      "source_block_ids": [
+        "p375:b2"
+      ],
+      "bbox": [
+        74.0,
+        161.0,
+        1036.0,
+        356.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula008]]",
+      "source_page": 375,
+      "printed_page": 355,
+      "source_block_ids": [
+        "p375:b3"
+      ],
+      "bbox": [
+        99.0,
+        384.0,
+        1012.0,
+        507.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $z_{j}$ is the character value in the focal individual. The likelihood for an individual is easily generalizable to more complicated genetic models. For example, if there are more than two alleles, or multiple loci, the likelihood has the form of Equation 13.6a with the sum now extending over all $n_{g}$ multilocus genotypes. For $n$ random (unrelated) individuals, denoting the observed phenotypic values by $\\mathbf{z}=(z_{1},z_{2},\\cdots,z_{n})$, the overall likelihood is just the product of the $n$ individual likelihoods,",
+      "source_page": 375,
+      "printed_page": 355,
+      "source_block_ids": [
+        "p375:b4"
+      ],
+      "bbox": [
+        72.0,
+        533.0,
+        1031.0,
+        759.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula009]]",
+      "source_page": 375,
+      "printed_page": 355,
+      "source_block_ids": [
+        "p375:b5"
+      ],
+      "bbox": [
+        347.0,
+        758.0,
+        753.0,
+        843.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming random mating, the Hardy-Weinberg principle describes the frequencies $ \\Pr(\\cdot) $ of the major locus genotypes as a function of p, the frequency of one allele. This leaves five parameters to estimate — $ p, \\sigma^{2}, \\mu_{QQ}, \\mu_{Qq} $, and $ \\mu_{qq} $.",
+      "source_page": 375,
+      "printed_page": 355,
+      "source_block_ids": [
+        "p375:b7"
+      ],
+      "bbox": [
+        71.0,
+        857.0,
+        1029.0,
+        958.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Appendix 4 reviews the basic features of the maximum likelihood approach, and the reader may wish to consult this before continuing (additional features are developed in Chapter 27). Maximum likelihood estimates (MLEs) are those values of the unknown parameters that maximize the likelihood function when treating the observed data $ \\mathbf{z} = (z_1, \\cdots, z_n) $ as fixed constants. Such estimates can be obtained by numerical maximization of the likelihood function (e.g., Gill et al. 1981, Fletcher 1987) or by other iterative approaches. In particular, expectation-maximization (EM) methods are both very powerful and very flexible, accommodating missing or incomplete data (Appendix 4). Sample variances and covariances of MLEs can either be obtained directly from the likelihood functions or via approximation methods (e.g., Meyer and Hill 1992). See Appendix 4 for details.",
+      "source_page": 375,
+      "printed_page": 355,
+      "source_block_ids": [
+        "p375:b8"
+      ],
+      "bbox": [
+        67.0,
+        955.0,
+        1029.0,
+        1313.0
+      ]
     }
   ]
 }

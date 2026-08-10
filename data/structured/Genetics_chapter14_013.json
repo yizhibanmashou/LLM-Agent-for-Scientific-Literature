@@ -2,58 +2,69 @@
   "id": "Genetics_chapter14_013",
   "metadata": {
     "chapter": "Genetics_chapter14",
-    "section": "Introduction",
+    "section": "MARKER-TRAIT ASSOCIATIONS",
     "subsections": [
-      "MARKER-TRAIT ASSOCIATIONS"
+      "Selective Genotyping and Progeny Testing"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter14_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "MARKER-TRAIT ASSOCIATIONS",
+    "section_level_1": "MARKER-TRAIT ASSOCIATIONS",
+    "section_level_2": "Selective Genotyping and Progeny Testing",
     "heading_path": [
-      "Introduction",
-      "MARKER-TRAIT ASSOCIATIONS"
+      "MARKER-TRAIT ASSOCIATIONS",
+      "Selective Genotyping and Progeny Testing"
     ],
-    "display_heading": "MARKER-TRAIT ASSOCIATIONS"
+    "display_heading": "MARKER-TRAIT ASSOCIATIONS / Selective Genotyping and Progeny Testing",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 415,
+      "printed_page": 395,
+      "source_block_ids": [
+        "p415:b2"
+      ],
+      "bbox": [
+        85.0,
+        133.0,
+        620.0,
+        169.0
+      ],
+      "raw_text": "Selective Genotyping and Progeny Testing"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "We now turn our attention to the mapping of individual QTLs. A variety of experimental designs have been proposed, and we consider these in some detail in Chapters 15 (inbred line crosses) and 16 (outbred populations). Since those chapters focus on methods for estimating both QTL effects and map position, we defer further discussion of most statistical issues until then. The remainder of this chapter is concerned with general design strategies for mapping, and eventual cloning, of QTLs. That QTLs, like normal genes, can be mapped (assigned to linkage groups) was first demonstrated by Payne (1918), who found that the X chromosome from selected lines of Drosophila contains multiple factors influencing scutellar bristle number. Over the next two decades, a number of workers found associations between Mendelian markers and quantitative traits in crosses between inbred lines. For example, Sax (1923) crossed two inbred bean lines (Phaseolus vulgaris) differing in seed pigment and weight, with the pigmented parents having heavier seeds than the nonpigmented parents. These crosses demonstrated that seed pigment is determined by a single locus with two alleles, P and p. Among F₂ segregants from this cross, PP and Pp seeds were, respectively, 4.3 ± 0.8 and 1.9 ± 0.6 centigrams heavier than pp seeds. Hence the P allele is linked to a factor (or factors) that act in an additive fashion on seed weight. In a similar manner, Lindstrom (1924) demonstrated linkage between a locus for fruit color and factors for fruit size in tomatoes, while Smith (1937) observed associations between corolla size differences and several independently segregating flower color genes in tobacco. Similar studies were reported in maize (Lindstrom 1931), peas (Rasmusson 1927), barley (Wexelesen 1933, 1934), and mice (Green 1931, 1933)."
+      "content": "Many quantitative traits are less expensive to score than marker genotypes. In such cases, if our interest is in a single trait, it pays to first score a number of individuals for the trait and then genotype only a selected subset of these. Known as selective genotyping, this strategy can result in a large increase in power for the simple reason that much of the linkage information resides in individuals with extreme phenotypes (Lebowitz et al. 1987, Lander and Botstein 1989, Carey and Williamson 1991, Darvasi and Soller 1992). However, while selective genotyping offers increased power to detect a QTL, it also produces biased estimates of their effects. Unbiased estimates can be obtained by maximum likelihood, either using a likelihood function that directly accounts for the sampling bias (Darvasi and Soller 1992) or by treating unscored genotypes as missing values (Lander and Botstein 1989).",
+      "source_page": 415,
+      "printed_page": 395,
+      "source_block_ids": [
+        "p415:b3"
+      ],
+      "bbox": [
+        83.0,
+        176.0,
+        1047.0,
+        562.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "These studies raised the possibility that QTLs could be mapped with some precision, perhaps even allowing for the characterization of individual loci, given a population in linkage disequilibrium with a sufficient number of markers. Disequilibrium is a key feature, as it creates marker-trait associations, with different marker genotypes having different expected values for characters influenced by QTLs linked to these markers. This simple idea is the foundation for QTL mapping."
-    },
-    {
-      "type": "discussion",
-      "content": "Creating populations with linked loci in disequilibrium is straightforward — crosses between inbred lines have this property, as do sibs and other collections of relatives. Other approaches are detailed in Chapters 15 and 16. For mapping purposes, crosses between inbred lines have the fewest complications. The progeny from such crosses display maximum disequilibrium and, being genetically identical, are equally informative as parents. Using such $ F_{1} $ parents, a variety of populations (such as $ F_{2} $s or backcrosses) can be generated."
-    },
-    {
-      "type": "discussion",
-      "content": "A number of problems, which are elaborated on in Chapter 16, conspire to make QTL mapping considerably more difficult in outbred populations than with inbred-line crosses. Not all parents are guaranteed to be informative, as some may be segregating marker alleles, but not linked QTLs, or vice-versa. Further, the marker-QTL linkage phase can differ between different sets of relatives. For example, marker allele M might be associated with QTL allele q in one family, but with Q in another. Thus, marker-trait associations have to be assessed in each set of relatives, rather than (as with inbred-line crosses) averaged over all individuals."
-    },
-    {
-      "type": "discussion",
-      "content": "Example 4. Likelihood functions for QTL mapping follow from standard mixture models (Chapter 13). Consider the simple backcross design, where two completely inbred lines (with marker/QTL genotypes MMQQ and mmqq) are crossed to form an $ F_{1} $ (MQ/mq) which is then backcrossed to the MMQQ population. If c denotes the marker-QTL recombination frequency, then a fraction $ (1 - c) $ of M-bearing $ F_{1} $ gametes contain Q, while c contain q. Likewise $ (1 - c) $ and c of m-bearing gametes contain q and Q, respectively. Because the gamete from the parental population is always MQ, the conditional probabilities of QTL genotypes given marker genotypes are $$ \\Pr(Q Q\\mid M M)=\\Pr(Q q\\mid M m)=1-c $$ $$ \\Pr(Q q\\mid M M)=\\Pr(Q Q\\mid M m)=c $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Hence, if $z_{j}$ is the character value for individual $j$, the likelihood depends on the marker genotype, $$ \\ell(z_{j})=\\left\\{\\begin{array}{ll}(1-c)\\cdot\\varphi(z_{j},\\mu_{QQ},\\sigma^{2})+c\\cdot\\varphi(z_{j},\\mu_{Qq},\\sigma^{2}),&\\text{if marker}=MM\\\\c\\cdot\\varphi(z_{j},\\mu_{QQ},\\sigma^{2})+(1-c)\\cdot\\varphi(z_{j},\\mu_{Qq},\\sigma^{2}),&\\text{if marker}=Mm\\end{array}\\right. $$ As in Chapter 13, we have assumed that phenotypes are normally distributed with potentially different means for each genotype but a common variance, with $ \\varphi(z, \\mu, \\sigma^{2}) $ denoting the density function for a normal distribution with mean $ \\mu $ and variance $ \\sigma^{2} $. The total likelihood for n measured backcross individuals is the product of individual likelihoods, $ \\prod \\ell(z_{j}) $. The maximum-likelihood estimates of the four model parameters ($ \\mu_{QQ} $, $ \\mu_{Qq} $, c, $ \\sigma^{2} $) are obtained by maximizing the likelihood with respect to these variables, treating the observed $ z_{j} $ as fixed constants."
-    },
-    {
-      "type": "discussion",
-      "content": "Hypothesis testing follows by standard likelihood-ratio tests (Chapter 13, Appendix 4). The appropriate test for the presence of a QTL linked to the marker compares the likelihood under the assumed full model with the likelihood under a model of no QTL, in which each individual character value is assumed to be drawn from the same normal with unknown mean $ \\mu $ and variance $ \\sigma^{2} $. The maximum of this restricted likelihood is given by Equation 13.8. The resulting likelihood-ratio test has 4 - 2 = 2 degrees of freedom (four free parameters in the full model; $ \\mu $ and $ \\sigma^{2} $ in the restricted model). Knott and Haley (1992a) show that this test is not biased by the presence of unlinked QTLs. It is, however, biased if one or more additional QTLs are linked to the marker under consideration."
-    },
-    {
-      "type": "discussion",
-      "content": "An observed association between alleles at a polymorphic marker locus and the value of a quantitative trait can result either because of gametic phase disequilibrium between the marker locus and a QTL or because the marker itself has a pleiotropic effect on the trait. A simple test for pleiotropy versus disequilibrium is to examine a marker-trait association over several generations of random mating. An association due to pleiotropy will not decay over time, while one due to linkage alone will. A caveat is that if linkage is very tight, it can take many generations before any substantial decay is observed (Equation 5.13). If one suspects that the marker itself is the QTL, a variety of candidate-locus approaches (to be discussed below) can be used to test this hypothesis."
-    },
-    {
-      "type": "discussion",
-      "content": "Example 5. Following crosses between inbred lines of barley, Powell et al. (1985a,b) found that two loci with recessive dwarfing alleles (ert and denso) were associated with other quantitative traits: ert with reduced seed weight and denso with reduced height. By crossing different lines to produce an $ F_{2} $, it was found that the ert locus accounted for roughly 84% of the additive genetic variation in seed weight after both one and three generations of recombination, suggesting that the association between ert and seed weight is either due to pleiotropy or very tight linkage. In contrast, the denso locus accounted for 58% of the additive genetic variance for height in lines undergoing a single round of recombination but only 35% in lines undergoing three rounds. Hence, for the denso locus, much of the initial association was due to gametic phase disequilibrium."
+      "content": "In those organisms where asexual propagation is possible, progeny testing (or replicated progeny) is another design strategy for increasing power (Cowen 1988, Simpson 1989, Lander and Botstein 1989, Soller and Beckmann 1990, Knapp and Bridges 1990). The idea here is to reduce the effects of environmental variance by asexually replicating each genotype, using the mean values of these replicated progeny in place of individual values. This is an efficient strategy in that if the heritability of the character is small, scoring only a few replicated progeny can result in a significant increase in power. Soller and Beckmann (1990) show that most of the increase in power occurs by measuring 10 or fewer replicated progeny. Besides offering some increase in power, progeny replication allows marker-trait associations to be examined across environments, providing a basis for estimating QTL × environment interactions.",
+      "source_page": 415,
+      "printed_page": 395,
+      "source_block_ids": [
+        "p415:b4"
+      ],
+      "bbox": [
+        80.0,
+        561.0,
+        1045.0,
+        948.0
+      ]
     }
   ]
 }

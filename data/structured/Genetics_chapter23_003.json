@@ -4,94 +4,318 @@
     "chapter": "Genetics_chapter23",
     "section": "COMPONENTS OF VARIANCE AND COVARIANCE",
     "subsections": [],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter23_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "23.1"
-    ],
     "section_level_1": "COMPONENTS OF VARIANCE AND COVARIANCE",
     "section_level_2": null,
     "heading_path": [
       "COMPONENTS OF VARIANCE AND COVARIANCE"
     ],
     "display_heading": "COMPONENTS OF VARIANCE AND COVARIANCE",
-    "table_reference_keys": [
-      "chapter23:23.1"
-    ]
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 701,
+      "printed_page": 681,
+      "source_block_ids": [
+        "p701:b2"
+      ],
+      "bbox": [
+        65.0,
+        135.0,
+        740.0,
+        165.0
+      ],
+      "raw_text": "COMPONENTS OF VARIANCE AND COVARIANCE"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Because the addition of maternal effects doubles the number of factors in the linear model for the phenotype, it greatly increases the number of causal components that potentially contribute to the resemblance between relatives. Consider the phenotypic covariance between two individuals — x with mother w, and y with mother z. Assuming no genotype × environment interaction, there are still eight causal components of covariance, $$ \\begin{aligned}\\sigma_{z}(x,y)=&\\sigma_{G_{o}}(x,y)+\\sigma_{G_{o},G_{m}}(x,z)+\\sigma_{G_{o},G_{m}}(y,w)+\\sigma_{G_{m}}(w,z)\\\\&+\\sigma_{E_{o}}(x,y)+\\sigma_{E_{o},E_{m}}(x,z)+\\sigma_{E_{o},E_{m}}(y,w)+\\sigma_{E_{m}}(w,z)\\end{aligned} $$"
+      "content": "Because the addition of maternal effects doubles the number of factors in the linear model for the phenotype, it greatly increases the number of causal components that potentially contribute to the resemblance between relatives. Consider the phenotypic covariance between two individuals — x with mother w, and y with mother z. Assuming no genotype × environment interaction, there are still eight causal components of covariance,",
+      "source_page": 701,
+      "printed_page": 681,
+      "source_block_ids": [
+        "p701:b3"
+      ],
+      "bbox": [
+        61.0,
+        200.0,
+        1023.0,
+        394.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "We first consider the four sources of environmental covariance given in the second line of this formula: 1. $ \\sigma_{E_o}(x,y) $ is the covariance of the direct effect of the environment on individuals x and y. It will generally be zero, except when x and y are the same individual, in which case it is part of the environmental variance, $ \\sigma_{E_o}^2 $."
+      "content": "[[FORMULA:Genetics_chapter23_formula002]]",
+      "source_page": 701,
+      "printed_page": 681,
+      "source_block_ids": [
+        "p701:b4"
+      ],
+      "bbox": [
+        107.0,
+        413.0,
+        922.0,
+        490.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "2. $\\sigma_{E_o,E_m}(x,z)$ is the covariance of the direct effect of the environment on individual $x$ with the environmental contribution of the maternal effect transmitted by $y$'s mother. It may be of significance in a number of situations. For example, if $x$ is the mother of $y$, then $x = z$, and $\\sigma_{E_o,E_m}(x,z) = \\sigma_{E_o,E_m}(x,x) = \\sigma_{E_o,E_m}$, the covariance between the direct environmental effect on a female and the maternal environmental effect that she contributes to her offspring. As another example, if $x$ and $y$ share the same mother $z$, $\\sigma_{E_o,E_m}(x,z)$ will be unequal to zero if the direct effect of the environment on sib $x$ influences the mother's treatment of sib $y$. Because of symmetry with $\\sigma_{E_o,E_m}(x,z)$, the preceding arguments also apply to $\\sigma_{E_o,E_m}(y,w)$."
+      "content": "We first consider the four sources of environmental covariance given in the second line of this formula:",
+      "source_page": 701,
+      "printed_page": 681,
+      "source_block_ids": [
+        "p701:b6"
+      ],
+      "bbox": [
+        64.0,
+        509.0,
+        1020.0,
+        572.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "3. $\\sigma_{E_m}(w,z)$ is the covariance of the environmental component of the maternal effects on $x$ and $y$. If $x$ and $y$ are the same individual, then $w = z$ and $\\sigma_{E_m}(w,z) = \\sigma_{E_m}^2$, the variance of environmental maternal effects. For other relationships involving direct ancestors, the situation is less clear-cut, but a simple approach suggested by Falconer (1965a) can be utilized as a first approximation. Here it is assumed that the environmental maternal effect transmitted by an individual $x$ consists of two components: a residual fraction $(b)$ of the maternal effect from $x^{\\prime}$'s mother $(bE_{mw})$, and a unique contribution $(E_{mx}^{\\prime})$, so $E_{mx} = bE_{mw} + E_{mx}^{\\prime}$. Suppose, for example, that $x$ is the mother of $y$, then $x = z$, and $\\sigma_{E_m}(w,z) = \\sigma_{E_m}(w,x) = \\sigma[E_{mw}, (bE_{mw} + E_{mx}^{\\prime})] = b\\sigma_{E_m}^2$. In the case of maternal sibs, $w = z$, and if the unique components of $E_{mw}$ transmitted to each offspring are independent, we would expect that $\\sigma_{E_m}(w,z) = b^2\\sigma_{E_m}^2$. However, through sib competition and/or cooperation, the maternal effect transmitted to $x$ may depend on that transmitted to $y$. Thus, a more general approach is to define the covariance of environmental maternal effects on maternal sibs as $(b^2+c)\\sigma_{E_m}^2$, where $c\\sigma_{E_m}^2$ is the covariance of unique maternal environmental effects dispensed on sibs. The quantity $(b^2+c)\\sigma_{E_m}^2$ is equivalent to the variance due to common maternal environment used in previous chapters."
+      "content": "1. $ \\sigma_{E_o}(x,y) $ is the covariance of the direct effect of the environment on individuals x and y. It will generally be zero, except when x and y are the same individual, in which case it is part of the environmental variance, $ \\sigma_{E_o}^2 $.",
+      "source_page": 701,
+      "printed_page": 681,
+      "source_block_ids": [
+        "p701:b7"
+      ],
+      "bbox": [
+        75.0,
+        586.0,
+        988.0,
+        717.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "To obtain a description of the genetic components of covariance between relatives, we will adhere to the usual assumptions of gametic phase equilibrium and random mating. Recalling Equation 7.12, the genetic covariance due to direct effects is $$ \\sigma_{G_{o}}(x,y)=2\\Theta_{x y}\\sigma_{A_{o}}^{2}+\\Delta_{x y}\\sigma_{D_{o}}^{2} $$ where $ \\Theta_{xy} $ and $ \\Delta_{xy} $ are the coefficients of coancestry and fraternity for individuals x and y, and $ \\sigma_{A_{o}}^{2} $ and $ \\sigma_{D_{o}}^{2} $ are the additive and dominance components of variance involving direct genetic effects. The next two genetic covariance terms in Equation 23.2 can be expanded by noting that they involve the direct genetic effects of one individual and the maternal genetic effects contributed by the mother of the second individual, $$ \\sigma_{G_{o},G_{m}}(x,z)=2\\Theta_{x z}\\sigma_{A_{o},A_{m}}+\\Delta_{x z}\\sigma_{D_{o},D_{m}} $$ $$ \\sigma_{G_{o},G_{m}}(y,w)=2\\Theta_{y w}\\sigma_{A_{o},A_{m}}+\\Delta_{y w}\\sigma_{D_{o},D_{m}} $$"
+      "content": "2. $ \\sigma_{E_o,E_m}(x,z) $ is the covariance of the direct effect of the environment on individual x with the environmental contribution of the maternal effect transmitted by y's mother. It may be of significance in a number of situations. For example, if x is the mother of y, then x = z, and $ \\sigma_{E_o,E_m}(x,z) = \\sigma_{E_o,E_m}(x,x) = \\sigma_{E_o,E_m} $, the covariance between the direct environmental effect on a female and the maternal environmental effect that she contributes to her offspring. As another example, if x and y share the same mother z, $ \\sigma_{E_o,E_m}(x,z) $ will be unequal to zero if the direct effect of the environment on sib x influences the mother's treatment of sib y. Because of symmetry with $ \\sigma_{E_o,E_m}(x,z) $, the preceding arguments also apply to $ \\sigma_{E_o,E_m}(y,w) $.",
+      "source_page": 701,
+      "printed_page": 681,
+      "source_block_ids": [
+        "p701:b8"
+      ],
+      "bbox": [
+        74.0,
+        727.0,
+        989.0,
+        1082.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The final genetic term in Equation 23.2 describes the covariance of the maternal genetic effects contributed by the two mothers, $$ \\sigma_{G_{m}}(w,z)=2\\Theta_{w z}\\sigma_{A_{m}}^{2}+\\Delta_{w z}\\sigma_{D_{m}}^{2} $$"
+      "content": "3. $ \\sigma_{E_m}(w,z) $ is the covariance of the environmental component of the maternal effects on x and y. If x and y are the same individual, then w = z and $ \\sigma_{E_m}(w,z) = \\sigma_{E_m}^2 $, the variance of environmental maternal effects. For other relationships involving direct ancestors, the situation is less clear-cut, but a simple approach suggested by Falconer (1965a) can be utilized as a first approximation. Here it is assumed that the environmental maternal effect transmitted by an individual x consists of two components: a residual fraction (b) of the maternal effect from x's mother ( $ bE_{mw} $), and a unique contribution ( $ E'_{mx} $), so $ E_{mx} = bE_{mw} + E'_{mx} $. Suppose, for example, that x is the mother of y, then x = z, and $ \\sigma_{E_m}(w,z) = \\sigma_{E_m}(w,x) = \\sigma[E_{mw}, (bE_{mw} + E'_{mx})] = b\\sigma_{E_m}^2 $. In the case of maternal sibs, w = z, and if the unique components of $ E_{mw} $ transmitted to each offspring are independent, we would expect that $ \\sigma_{E_m}(w,z) = b^2\\sigma_{E_m}^2 $. However, through sib competition and/or cooperation, the maternal effect transmitted to $x$ may depend on that transmitted to $y$. Thus, a more general approach is to define the covariance of environmental maternal effects on maternal sibs as $(b^2 + c)\\sigma_{E_m}^2$, where $c\\sigma_{E_m}^2$ is the covariance of unique maternal environmental effects dispensed on sibs. The quantity $(b^2 + c)\\sigma_{E_m}^2$ is equivalent to the variance due to common maternal environment used in previous chapters.",
+      "source_page": 701,
+      "printed_page": 681,
+      "source_block_ids": [
+        "p701:b9",
+        "p702:b2"
+      ],
+      "bbox": [
+        71.0,
+        1093.0,
+        986.0,
+        1513.0
+      ],
+      "source_page_end": 702
     },
     {
       "type": "discussion",
-      "content": "[[SEE_TABLE:23.1]] summarizes the coefficients for the different causal components of variance and covariance that contribute to the phenotypic covariances between several types of relatives. Expressions for many other kinds of relatives are given by Willham (1963, 1972), Eisen (1967), and Thompson (1976)."
+      "content": "To obtain a description of the genetic components of covariance between relatives, we will adhere to the usual assumptions of gametic phase equilibrium and random mating. Recalling Equation 7.12, the genetic covariance due to direct effects is",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b3"
+      ],
+      "bbox": [
+        136.0,
+        394.0,
+        1097.0,
+        521.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Some interesting and counterintuitive relationships can be seen in [[SEE_TABLE:23.1]]. For example, the presence of maternal effects causes the expected phenotypic covariance between father and offspring to be $ (\\sigma_{A_o}^2/2) + (\\sigma_{A_o,A_m}/4) $ rather than $ (\\sigma_{A_o}^2/2) $. Why should the resemblance between father and offspring be influenced by maternal effects genes? The answer resides in the paternal grandmother's genes. These fully determine the maternal effect on the father's phenotype, and also comprise 25% of the offspring's genome, where their direct effects are expressed. Thus, a genetic correlation between the direct and maternal effects of genes modifies the phenotypic covariance between a male and his descendants. Note further that because $ \\sigma_{A_o,A_m} $ is a covariance, it may be negative."
+      "content": "[[FORMULA:Genetics_chapter23_formula003]]",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b4"
+      ],
+      "bbox": [
+        424.0,
+        519.0,
+        803.0,
+        558.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>$ A_{{o}} $</td><td style='text-align: center; word-wrap: break-word;'>$ D_{{o}} $</td><td style='text-align: center; word-wrap: break-word;'>$ A_{{o}}, A_{{m}} $</td><td style='text-align: center; word-wrap: break-word;'>$ D_{{o}}, D_{{m}} $</td><td style='text-align: center; word-wrap: break-word;'>$ A_{{m}} $</td><td style='text-align: center; word-wrap: break-word;'>$ D_{{m}} $</td><td style='text-align: center; word-wrap: break-word;'>$ E_{{o}} $</td><td style='text-align: center; word-wrap: break-word;'>$ E_{{o}}, E_{{m}} $</td><td style='text-align: center; word-wrap: break-word;'>$ E_{{m}} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Father-offspring</td><td style='text-align: center; word-wrap: break-word;'>1/2</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>1/4</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Mother-offspring</td><td style='text-align: center; word-wrap: break-word;'>1/2</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>5/4</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>1/2</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>b</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Full sibs</td><td style='text-align: center; word-wrap: break-word;'>1/2</td><td style='text-align: center; word-wrap: break-word;'>1/4</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>$ b^{{2}}+ c $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reciprocal full sibs</td><td style='text-align: center; word-wrap: break-word;'>1/2</td><td style='text-align: center; word-wrap: break-word;'>1/4</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Paternal half sibs</td><td style='text-align: center; word-wrap: break-word;'>1/4</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Maternal half sibs</td><td style='text-align: center; word-wrap: break-word;'>1/4</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>2</td><td style='text-align: center; word-wrap: break-word;'>$ b^{{2}}+ c $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Reciprocal half sibs</td><td style='text-align: center; word-wrap: break-word;'>1/4</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>1/2</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MGM-grandchild</td><td style='text-align: center; word-wrap: break-word;'>1/4</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>5/8</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>1/4</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>b</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PGM-grandchild</td><td style='text-align: center; word-wrap: break-word;'>1/4</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>1/8</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MGF-grandchild</td><td style='text-align: center; word-wrap: break-word;'>1/4</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>5/8</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>1/4</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>PGF-grandchild</td><td style='text-align: center; word-wrap: break-word;'>1/4</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>1/8</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr></table>"
+      "content": "where $ \\Theta_{xy} $ and $ \\Delta_{xy} $ are the coefficients of coancestry and fraternity for individuals x and y, and $ \\sigma_{A_o}^2 $ and $ \\sigma_{D_o}^2 $ are the additive and dominance components of variance involving direct genetic effects. The next two genetic covariance terms in Equation 23.2 can be expanded by noting that they involve the direct genetic effects of one individual and the maternal genetic effects contributed by the mother of the second individual,",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b6"
+      ],
+      "bbox": [
+        136.0,
+        572.0,
+        1096.0,
+        767.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note: It is assumed that epistatic sources of genetic variance are absent. b and c are constants. MGM and PGM stand for maternal and paternal grandmothers, MGF and PGF for maternal and paternal grandfathers."
+      "content": "[[FORMULA:Genetics_chapter23_formula004]]",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b7"
+      ],
+      "bbox": [
+        361.0,
+        796.0,
+        863.0,
+        832.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Indeed, if $\\sigma_{A_{o},A_{m}}$ were sufficiently negative, the regression of offspring on father could be negative. Similar arguments apply to the mother-offspring regression. Such negative regressions have been observed on occasion. For example, Gibbs (1988) observed significant negative mother-offspring regressions for clutch size in Darwin's medium ground finches."
+      "content": "[[FORMULA:Genetics_chapter23_formula005]]",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b9"
+      ],
+      "bbox": [
+        357.0,
+        844.0,
+        872.0,
+        880.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 1. Consider the genetic covariance between mother y and offspring x. Since maternal effects are assumed present, we also need to consider the mothers z and w of y and x, respectively. Here y = w, whereas z represents individual x's maternal grandmother (as shown in the left of the accompanying figure on the next page)."
+      "content": "The final genetic term in Equation 23.2 describes the covariance of the maternal genetic effects contributed by the two mothers,",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b11"
+      ],
+      "bbox": [
+        137.0,
+        905.0,
+        1096.0,
+        972.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "For this set of relationships, $ 2\\Theta_{xy} = 1/2 $, $ 2\\Theta_{xz} = 1/4 $, $ 2\\Theta_{wz} = 1/2 $, and since $ w $ and $ y $ represent the same individual, $ 2\\Theta_{yw} = 2\\Theta_{yy} = 1 $. Because an individual inherits only one gene from each parent, $ \\Delta_{xy} = \\Delta_{xz} = \\Delta_{wz} = 0 $, but again, since $ w $ is $ y $, $ \\Delta_{yw} = \\Delta_{yy} = 1 $. Making the appropriate substitutions in"
+      "content": "[[FORMULA:Genetics_chapter23_formula006]]",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b12"
+      ],
+      "bbox": [
+        409.0,
+        997.0,
+        819.0,
+        1038.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Equations 23.3a-d, the genetic covariance between mother and offspring is found to be $$ \\sigma_{G}(M,O)=\\frac{\\sigma_{A_{o}}^{2}}{2}+\\frac{5\\sigma_{A_{o},A_{m}}}{4}+\\sigma_{D_{o},D_{m}}+\\frac{\\sigma_{A_{m}}^{2}}{2} $$ From arguments presented above, the environmental covariance between mother and offspring can be expressed as $$ \\sigma_{E}(M,O)=\\sigma_{E_{o},E_{m}}+b\\sigma_{E_{m}}^{2} $$"
+      "content": "Table 23.1 summarizes the coefficients for the different causal components of variance and covariance that contribute to the phenotypic covariances between several types of relatives. Expressions for many other kinds of relatives are given by Willham (1963, 1972), Eisen (1967), and Thompson (1976).",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b14"
+      ],
+      "bbox": [
+        138.0,
+        1062.0,
+        1097.0,
+        1191.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "On the other hand, a father-offspring relationship can be represented by letting the offspring be $x$, the father be $y$, and the paternal grandmother be $z$ (as shown in the right of the accompanying figure). We then have the coefficients $2\\Theta_{xy} = 1/2$, $2\\Theta_{xz} = 1/4$, and since the father and mother of $x$ are assumed to be unrelated, $2\\Theta_{yw} = 2\\Theta_{wz} = 0$. All of the $\\Delta$ coefficients are also zero in this case. Summing up the terms, $$ \\sigma_{G}(F,O)=\\frac{\\sigma_{A_{o}}^{2}}{2}+\\frac{\\sigma_{A_{o},A_{m}}}{4} $$ As noted above, the second term represents the covariance between the maternal effect expressed in the father (via $z$) and the direct effects of the genes of $z$, one-quarter of which are transmitted to $x$. Assuming the father is derived from a different maternal lineage than its mate, the environmental covariance between father and offspring is zero."
+      "content": "Some interesting and counterintuitive relationships can be seen in Table 23.1. For example, the presence of maternal effects causes the expected phenotypic covariance between father and offspring to be $ (\\sigma_{A_o}^2/2) + (\\sigma_{A_o,A_m}/4) $ rather than $ (\\sigma_{A_o}^2/2) $. Why should the resemblance between father and offspring be influenced by maternal effects genes? The answer resides in the paternal grandmother's genes. These fully determine the maternal effect on the father's phenotype, and also comprise 25% of the offspring's genome, where their direct effects are expressed. Thus, a genetic correlation between the direct and maternal effects of genes modifies the phenotypic covariance between a male and his descendants. Note further that because $ \\sigma_{A_o,A_m} $ is a covariance, it may be negative.",
+      "source_page": 702,
+      "printed_page": 682,
+      "source_block_ids": [
+        "p702:b15"
+      ],
+      "bbox": [
+        137.0,
+        1190.0,
+        1100.0,
+        1513.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:23.1]]",
+      "source_page": 703,
+      "printed_page": 683,
+      "source_block_ids": [
+        "p703:b3"
+      ],
+      "bbox": [
+        64.0,
+        219.0,
+        1034.0,
+        776.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Thus, the expected difference between the mother-offspring and father-offspring covariances is $$ \\left(\\sigma_{A_{o},A_{m}}+\\sigma_{D_{o},D_{m}}+\\sigma_{E_{o},E_{m}}\\right)+\\frac{\\sigma_{A_{m}}^{2}}{2}+b\\sigma_{E_{m}}^{2} $$"
+      "content": "Indeed, if $ \\sigma_{A_{o},A_{m}} $ were sufficiently negative, the regression of offspring on father could be negative. Similar arguments apply to the mother-offspring regression. Such negative regressions have been observed on occasion. For example, Gibbs (1988) observed significant negative mother-offspring regressions for clutch size in Darwin's medium ground finches.",
+      "source_page": 703,
+      "printed_page": 683,
+      "source_block_ids": [
+        "p703:b5"
+      ],
+      "bbox": [
+        61.0,
+        951.0,
+        1024.0,
+        1115.0
+      ]
     },
     {
-      "type": "discussion",
-      "content": "The first term (in parentheses) is the covariance between all of the direct effects on a mother's phenotype and the maternal effect she contributes to her offspring's phenotype. The second term is half the additive genetic variance for maternal effects; it arises because a mother transmits half the genes that determine her maternal effect to her progeny. The third term is the fraction of the environmental maternal effect on the mother that is transmitted to her offspring (through, for example, physiological effects or cultural inheritance)."
-    },
-    {
-      "type": "discussion",
-      "content": "Let the difference between the regressions of offspring on mother and offspring on father be m. Since the final two terms in the preceding equation are necessarily positive, one would ordinarily expect m to be positive. However, the opposite has sometimes been observed. For example, Falconer (1965a) found the difference between regressions to be -0.13 for litter size in mice, and Janssen et al. (1988) obtained a difference of approximately -0.5 for age at maturity in springtails. Such a pronounced reduction of the mother-offspring regression relative to that for father-offspring provides a strong indication that the covariance between direct and maternal effects is negative, i.e., that genes whose direct effects cause an increase in the expression of the trait have an antagonistic effect on the trait's expression through their maternal effects."
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter23:1]]",
+      "source_page": 703,
+      "source_block_ids": [
+        "p703:b6",
+        "p703:b7",
+        "p704:b2",
+        "p704:b3",
+        "p704:b4",
+        "p704:b5",
+        "p704:b6",
+        "p704:b7",
+        "p704:b8",
+        "p704:b9",
+        "p704:b10",
+        "p704:b11",
+        "p704:b12",
+        "p705:b2"
+      ],
+      "bbox": [
+        110.0,
+        1208.0,
+        974.0,
+        1358.0
+      ]
     }
   ]
 }

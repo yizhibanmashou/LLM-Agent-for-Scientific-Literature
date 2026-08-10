@@ -2,46 +2,144 @@
   "id": "Genetics_chapter4_003",
   "metadata": {
     "chapter": "Genetics_chapter4",
-    "section": "Introduction",
-    "subsections": [
-      "Polyploidy"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter4_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Polyploidy",
+    "section": "ALLELE AND GENOTYPE FREQUENCIES",
+    "subsections": [],
+    "section_level_1": "ALLELE AND GENOTYPE FREQUENCIES",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "Polyploidy"
+      "ALLELE AND GENOTYPE FREQUENCIES"
     ],
-    "display_heading": "Polyploidy"
+    "display_heading": "ALLELE AND GENOTYPE FREQUENCIES",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 68,
+      "printed_page": 48,
+      "source_block_ids": [
+        "p68:b5"
+      ],
+      "bbox": [
+        157.0,
+        1157.0,
+        701.0,
+        1198.0
+      ],
+      "raw_text": "ALLELE AND GENOTYPE FREQUENCIES"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Another situation in which the Hardy-Weinberg principle is not met exactly arises in polyploid organisms. Because of the high frequency of polyploidy in plants, this case has been examined extensively by Fisher (1947) and Crow (1954) among others. It will only be considered briefly here for a tetraploid species, individuals of which propagate two genes per locus through gametes. The way in which sets of chromosomes assort during meiosis in polyploids depends on the degree of homology between ancestral chromosomes (Marsden et al. 1987). At one extreme are allopolyploids that originate by interspecific hybridization. In this case, provided the chromosomes of the parental species are sufficiently different, they will not pair. Meiosis is then identical to that for diploid organisms, except for the doubled number of chromosomes. At the other extreme, autopolyploids derive both chromosome sets from the same species."
+      "content": "When denoting the genotype at a single locus, we refer to the pair of alleles that a (diploid) individual carries at the locus. Individuals that have two identical alleles are called homozygotes, whereas those that have different alleles are heterozygotes. If, for example, we denote the alleles at a particular diallelic locus as $ B_{1} $ and $ B_{2} $, there are three possible genotypes: $ B_{1}B_{1} $ and $ B_{2}B_{2} $ homozygotes, and $ B_{1}B_{2} $ heterozygotes. There may, of course, be more than two alleles, and hence more than three genotypes, present at a locus.",
+      "source_page": 68,
+      "printed_page": 48,
+      "source_block_ids": [
+        "p68:b6"
+      ],
+      "bbox": [
+        156.0,
+        1215.0,
+        1118.0,
+        1453.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "For the remainder of our discussion of polyploidy, we will assume that the four sets of chromosomes are sufficiently similar that tetravalents (combinations of four homologues), rather than bivalents, are formed during meiosis. This condition raises the possibility that some gametes will contain two copies of one of the four genes carried by the parent (i.e., a parent with genotype $ B_{1}B_{2}B_{3}B_{4} $ may produce a $ B_{1}B_{1} $ gamete), a result that arises when a crossover (a reciprocal exchange of DNA) occurs between replicated arms of two of the four chromosomes during meiosis. The production of such a gamete is referred to as a double reduction, and we denote its probability by c. Of the $ (1-c) $ gametes that are not doubly reduced, one-third will contain genes that came from the same parent, and the other two-thirds will contain one paternally derived and one maternally derived gene (Figure 4.3)."
+      "content": "Allele frequencies are defined uniquely by genotype frequencies. Suppose that $ P_{11} $, $ P_{12} $, and $ P_{22} $ represent the proportions of the population that are $ B_{1}B_{1} $,",
+      "source_page": 68,
+      "printed_page": 48,
+      "source_block_ids": [
+        "p68:b7"
+      ],
+      "bbox": [
+        163.0,
+        1439.0,
+        1118.0,
+        1521.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Here we assume the presence of only two alleles and random assortment of the four homologues. Letting, $p_{i}$ be the frequency of the $B_{i}$ allele and $p_{ij}(t)$ be the frequency of $B_{ij}$ gametes in generation $t$, then the following dynamic equations hold: $$ p_{ii}(t)=cp_{i}+\\frac{1-c}{3}\\left[p_{ii}(t-1)+2p_{i}^{2}\\right] $$ $$ p_{ij}(t)=\\frac{1-c}{3}\\left[p_{ij}(t-1)+2p_{i}p_{j}\\right] $$"
+      "content": "$ B_{1}B_{2} $, and $ B_{2}B_{2} $. If these are the only possible genotypes at the locus, then by definition, $ P_{11} + P_{12} + P_{22} = 1 $. If there are N individuals in the population, then $ P_{11}N $ individuals contain two $ B_{1} $ alleles and $ P_{12}N $ individuals contain a single $ B_{1} $ allele. Since there are a total of 2N genes in the population for each autosomal locus, the frequency of the $ B_{1} $ allele is simply",
+      "source_page": 69,
+      "printed_page": 49,
+      "source_block_ids": [
+        "p69:b2"
+      ],
+      "bbox": [
+        61.0,
+        119.0,
+        1023.0,
+        307.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "(Crow and Kimura 1970, pp. 52–53). The equilibrium solution to these equations is obtained by setting $p_{ii}(t)=p_{ii}(t-1)$ and $p_{ij}(t)=p_{ij}(t-1)$, $$ p_{ii}=\\left(1-f\\right)p_{i}^{2}+f p_{i} $$ $$ p_{ij}=\\left(1-f\\right)p_{i} p_{j} $$ where $ f = 3c/(2 + c) $. This equilibrium is approached only gradually. The equilibrium genotype frequencies can be obtained as products of the appropriate equilibrium gametic frequencies."
+      "content": "[[FORMULA:Genetics_chapter4_formula001]]",
+      "source_page": 69,
+      "printed_page": 49,
+      "source_block_ids": [
+        "p69:b3"
+      ],
+      "bbox": [
+        313.0,
+        316.0,
+        757.0,
+        394.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In the absence of crossing-over between homologous pairs of chromosomes, $c=0$, $f=0$, and the equilibrium frequency of gamete types is simply equal to the product of the respective allele frequencies. However, if $c>0$, the equilibrium genotype frequencies are not so simple. Consider the extreme case of free"
+      "content": "Thus, the general rule for a diploid, autosomal locus is that the frequency of an allele is estimated by the observed frequency of homozygotes plus one-half the observed frequency of all heterozygotes containing that allele.",
+      "source_page": 69,
+      "printed_page": 49,
+      "source_block_ids": [
+        "p69:b5"
+      ],
+      "bbox": [
+        55.0,
+        398.0,
+        1013.0,
+        519.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:4.3]] recombination. After chromosomal duplication during gametogenesis, eight chromosomes are assorted, two into each of four gametes. Conditional on one of these being transmitted to a gamete, then of the remaining seven possibilities, one will be identical by descent. Thus, for free recombination, $ c = 1/7 $, f = 0.2, and the equilibrium gamete frequencies are $ p_{ii} = 0.2p_i(1 + 4p_i) $ and $ p_{ij} = 0.8p_i p_j $. In essence, if there is any crossing-over, polyploidy results in a sort of “internal in- breeding,\" reducing the frequency of heterozygous gametes. Wricke and Weber (1986) provide a very useful coverage of the many complications that polyploidy introduces in quantitative-genetic formulations."
+      "content": "For complex morphological and behavioral characters influenced by multiple genetic and environmental factors, it is usually impossible to be certain about the genotypic state of any particular locus. In some cases, however, the majority of the genetic variation for a character depends on a single locus with large effects, in which case the allele and genotype frequencies can be estimated directly. This was the fortuitous case in many of Mendel's classic experiments with peas, and some genetic disorders in humans appear to be products of mutant alleles at single loci. Data for a wing-color polymorphism in a British moth are examined in the following example.",
+      "source_page": 69,
+      "printed_page": 49,
+      "source_block_ids": [
+        "p69:b6"
+      ],
+      "bbox": [
+        49.0,
+        496.0,
+        1012.0,
+        813.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter4:1]]",
+      "source_page": 69,
+      "source_block_ids": [
+        "p69:b7",
+        "p69:b8",
+        "p69:b9",
+        "p69:b10",
+        "p69:b11"
+      ],
+      "bbox": [
+        88.0,
+        885.0,
+        954.0,
+        1054.0
+      ]
     }
   ]
 }

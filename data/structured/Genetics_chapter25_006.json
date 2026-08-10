@@ -2,55 +2,252 @@
   "id": "Genetics_chapter25_006",
   "metadata": {
     "chapter": "Genetics_chapter25",
-    "section": "Introduction",
-    "subsections": [
-      "GENETIC CORRELATIONS AMONG THRESHOLD TRAITS"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter25_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "25.2"
-    ],
-    "section_level_1": "Introduction",
-    "section_level_2": "GENETIC CORRELATIONS AMONG THRESHOLD TRAITS",
+    "section": "HERITABILITY ON THE OBSERVED SCALE",
+    "subsections": [],
+    "section_level_1": "HERITABILITY ON THE OBSERVED SCALE",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "GENETIC CORRELATIONS AMONG THRESHOLD TRAITS"
+      "HERITABILITY ON THE OBSERVED SCALE"
     ],
-    "display_heading": "GENETIC CORRELATIONS AMONG THRESHOLD TRAITS",
-    "table_reference_keys": [
-      "chapter25:25.2"
-    ]
+    "display_heading": "HERITABILITY ON THE OBSERVED SCALE",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 753,
+      "printed_page": 733,
+      "source_block_ids": [
+        "p753:b6"
+      ],
+      "bbox": [
+        65.0,
+        1374.0,
+        636.0,
+        1405.0
+      ],
+      "raw_text": "HERITABILITY ON THE OBSERVED SCALE"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The various applications of genetic correlations encountered in previous chapters are useful in many contexts with threshold traits. For example, in insects with wing dimorphisms, wing development is often highly dependent on photoperiod or other environmental conditions (Roff 1986, 1994). Salamanders in the genus Ambystoma may develop cannibalistic morphs or exhibit paedomorphosis under specific environmental conditions. Many species of zooplankton are known to modify their morphologies in the presence of predators (Havel 1987). Situations like these raise questions as to whether the genotypes that respond to one set of environmental cues are the same as those that respond to a second set of stimuli. As noted in Chapter 24, another application of the genetic correlation concerns the expression of characters in the different sexes. For threshold characters, it has often been noted that when the incidence of affected individuals differs between the sexes, the sex with lower incidence has a higher frequency of affected relatives ([[SEE_TABLE:25.2]]). One potential explanation for such a reversal in frequencies is that affected members of the sex with the lower incidence tend to have a higher liability due to a displacement of the threshold to the right of the mean phenotype on the underlying scale."
+      "content": "The question often arises as to why heritabilities of dichotomous characters are measured on an unobservable underlying scale rather than on the directly observed scale. The latter approach was actually taken by most early investigators (Lush et al. 1948, Robertson and Lerner 1949, Dempster and Lerner 1950, VanVleck 1971). Assuming additivity, a simple expression for heritability on the observed scale can be obtained as follows. Suppose the character of interest is survivorship to a certain age. Then all nonsurvivors can be scored as 0 and all survivors as 1. The frequency of survivors in the population is simply the incidence $ \\Phi_{p} $, and the phenotypic variance is the familiar variance of a binomial distribution,",
+      "source_page": 753,
+      "printed_page": 733,
+      "source_block_ids": [
+        "p753:b7",
+        "p754:b2"
+      ],
+      "bbox": [
+        62.0,
+        1438.0,
+        1023.0,
+        1537.0
+      ],
+      "source_page_end": 754
     },
     {
       "type": "discussion",
-      "content": "When separate data are available for the two sexes, four separate regressions can be calculated using Equations 25.1a, 25.2, or 25.3: one for males only $ (b_{MM}) $, <table border=1 style='margin: auto; word-wrap: break-word;'><tr><td rowspan=\"2\">Propositi</td><td rowspan=\"2\">Incidence in Population</td><td colspan=\"2\">Incidence Among First-degree Relatives</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Male</td><td style='text-align: center; word-wrap: break-word;'>Female</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Male</td><td style='text-align: center; word-wrap: break-word;'>0.005</td><td style='text-align: center; word-wrap: break-word;'>0.050</td><td style='text-align: center; word-wrap: break-word;'>0.022</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Female</td><td style='text-align: center; word-wrap: break-word;'>0.001</td><td style='text-align: center; word-wrap: break-word;'>0.171</td><td style='text-align: center; word-wrap: break-word;'>0.066</td></tr><tr><td colspan=\"4\">Source: Carter 1961.</td></tr></table> one for females only $(b_{FF})$, one for male propositi and female relatives $(b_{FM})$, and vice versa $(b_{MF})$. Ignoring nonadditive sources of variance and sex linkage, and assuming an absence of common environmental effects, the male-male and female-female regression coefficients will have expected values $$ \\beta_{M M}=\\frac{2\\Theta\\sigma^{2}(A_{M})}{\\sigma^{2}(z_{M})} $$ $$ \\beta_{F F}=\\frac{2\\Theta\\sigma^{2}(A_{F})}{\\sigma^{2}(z_{F})} $$ where $\\Theta$ is the coefficient of coancestry for the relatives, $\\sigma^{2}(A_{M})$ and $\\sigma^{2}(z_{M})$ are the additive genetic variance and phenotypic variance for males, and $\\sigma^{2}(A_{F})$ and $\\sigma^{2}(z_{F})$ are those for females. The regressions of males on females and females on males have expectations $$ \\beta_{M F}=\\frac{2\\Theta\\sigma^{2}(A_{M},A_{F})}{\\sigma^{2}(z_{F})} $$ $$ \\beta_{F M}=\\frac{2\\Theta\\sigma^{2}(A_{M},A_{F})}{\\sigma^{2}(z_{M})} $$ where $\\sigma^{2}(A_{M}, A_{F})$ is the additive genetic covariance between the sexes. The genetic correlation across the sexes can be estimated as $$ r_{FM}(A)=\\sqrt{\\frac{b_{MF}\\cdot b_{FM}}{b_{MM}\\cdot b_{FF}}} $$"
+      "content": "[[FORMULA:Genetics_chapter25_formula014]]",
+      "source_page": 754,
+      "printed_page": 734,
+      "source_block_ids": [
+        "p754:b3"
+      ],
+      "bbox": [
+        514.0,
+        354.0,
+        718.0,
+        394.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The preceding expressions are completely generalizable. For example, instead of pertaining to the expression of a trait in male and female relatives in the same environment, they may refer to male relatives in two different environments, to female relatives in different environments, or to male and female relatives in different environments. Thus, a formula of the form of Equation 23.6a can be used to estimate the genetic correlation across environments for the expression of a dichotomous trait. Moreover, the same approach can be used to obtain the genetic correlation between two different dichotomous traits, e.g., survivorship and the presence/absence of a morphological trait. For two characters x and y, $$ r_{xy}(A)=\\sqrt{\\frac{b_{xy}\\cdot b_{yx}}{b_{xx}\\cdot b_{yy}}} $$"
-    },
-    {
-      "type": "definition",
-      "content": "Finally, it is relatively straightforward to compute the genetic correlation between a dichotomous and a continuously distributed character. Denoting two such traits as d and c, Equation 25.6b still applies. The regression for the dichotomous character ($ b_{dd} $) can be obtained by the methods discussed earlier in this chapter, while the regression for the continuously distributed trait $(b_{cc})$ can be obtained by conventional methods outlined in previous chapters, e.g., parent-offspring regression. The regression involving the two traits, $b_{cd}$, can be obtained by dividing the deviation of the mean of the continuously distributed trait in relatives of affected individuals from the mean in the population at large $(\\overline{z}_{cr}-\\overline{z}_{cp})$ by the mean of the affected individuals for the dichotomous trait on the underlying scale $(\\overline{z}_{dr}=x_{dp}-x_{do})$, with a similar definition applying to $b_{dc}$."
+      "content": "It follows that the heritability on the observed scale is",
+      "source_page": 754,
+      "printed_page": 734,
+      "source_block_ids": [
+        "p754:b5"
+      ],
+      "bbox": [
+        138.0,
+        414.0,
+        781.0,
+        447.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 3. The application of the preceding ideas will be illustrated with a familiar dichotomy in humans — handedness. The data base consists of responses to questionnaires distributed to college undergraduates and service recruits in Scotland (Annett 1973). The incidences of left-handedness in males and females are 0.118 and 0.114, so at least on the outward scale the two sexes have essentially identical phenotype distributions. In the following analyses, we assume that the variances for both sexes are also equal on the underlying scale. The table summarizes the incidences of left-handedness in brothers and sisters of male and female propositi and the associated probit (x) scores. The regression coefficients are computed by use of Equation 25.3."
+      "content": "[[FORMULA:Genetics_chapter25_formula015]]",
+      "source_page": 754,
+      "printed_page": 734,
+      "source_block_ids": [
+        "p754:b6"
+      ],
+      "bbox": [
+        511.0,
+        471.0,
+        718.0,
+        545.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Propositi</td><td style='text-align: center; word-wrap: break-word;'>Relatives</td><td style='text-align: center; word-wrap: break-word;'>Incidence in Relatives</td><td style='text-align: center; word-wrap: break-word;'>x</td><td style='text-align: center; word-wrap: break-word;'>2b</td><td style='text-align: center; word-wrap: break-word;'>Expectation</td></tr><tr><td rowspan=\"2\">Males</td><td style='text-align: center; word-wrap: break-word;'>Brothers</td><td style='text-align: center; word-wrap: break-word;'>0.143</td><td style='text-align: center; word-wrap: break-word;'>1.067</td><td style='text-align: center; word-wrap: break-word;'>0.15</td><td style='text-align: center; word-wrap: break-word;'>$ h^{2}_{M} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sisters</td><td style='text-align: center; word-wrap: break-word;'>0.114</td><td style='text-align: center; word-wrap: break-word;'>1.208</td><td style='text-align: center; word-wrap: break-word;'>-0.02</td><td style='text-align: center; word-wrap: break-word;'>$ \\rho_{FM}h_{M}h_{F} $</td></tr><tr><td rowspan=\"2\">Females</td><td style='text-align: center; word-wrap: break-word;'>Brothers</td><td style='text-align: center; word-wrap: break-word;'>0.135</td><td style='text-align: center; word-wrap: break-word;'>1.103</td><td style='text-align: center; word-wrap: break-word;'>0.12</td><td style='text-align: center; word-wrap: break-word;'>$ \\rho_{FM}(A)h_{M}h_{F} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sisters</td><td style='text-align: center; word-wrap: break-word;'>0.156</td><td style='text-align: center; word-wrap: break-word;'>1.010</td><td style='text-align: center; word-wrap: break-word;'>0.24</td><td style='text-align: center; word-wrap: break-word;'>$ h^{2}_{F} $</td></tr></table>"
+      "content": "where the subscript $o$ denotes the observed scale, and $\\sigma^{2}(A_{o})$ is the additive genetic variance on the observed scale. In an appendix to Dempster and Lerner (1950), Robertson showed that $\\sigma^{2}(A_{o}) \\simeq [p(x_{p})]^{2}h^{2}$, where $h^{2}$ is the heritability on the unobserved scale of liability. Thus, the relationship between the heritabilities on the underlying and observed scales is",
+      "source_page": 754,
+      "printed_page": 734,
+      "source_block_ids": [
+        "p754:b8"
+      ],
+      "bbox": [
+        138.0,
+        568.0,
+        1095.0,
+        730.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Averaging over the two sexes, the heritability estimate for liability to left-handedness is approximately 0.20. By use of Equation 25.6b, we obtain $ r_{FM}(A) = 0.26 $. Thus, the genetic correlation across the sexes appears to be small. In light of these results and the fact that the study population consisted of full sibs, a reasonable interpretation is that handedness is primarily a chance event of development, with genetics playing a minor role, and perhaps a small contribution of the variance coming from common environmental effects."
+      "content": "[[FORMULA:Genetics_chapter25_formula016]]",
+      "source_page": 754,
+      "printed_page": 734,
+      "source_block_ids": [
+        "p754:b9"
+      ],
+      "bbox": [
+        472.0,
+        752.0,
+        755.0,
+        827.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Examination of this formula reveals several undesirable properties of heritability estimates on the observed scale:",
+      "source_page": 754,
+      "printed_page": 734,
+      "source_block_ids": [
+        "p754:b11"
+      ],
+      "bbox": [
+        137.0,
+        847.0,
+        1094.0,
+        913.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "1. $ h_{o}^{2} $ is a function of the incidence in the population (Figure 25.6). With constant phenotypic variance on the liability scale, $ h_{o}^{2} $ changes with a shift in mean liability because this induces a change in $ \\Phi_{p} $.",
+      "source_page": 754,
+      "printed_page": 734,
+      "source_block_ids": [
+        "p754:b12"
+      ],
+      "bbox": [
+        150.0,
+        935.0,
+        1063.0,
+        1035.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "2. The maximum possible value of $ h_o^2 $ is $ 2/\\pi \\simeq 0.64 $, which arises when $ h^2 = 1 $, $ \\Phi_p = 0.5 $, and $ p(x_p) = (2\\pi)^{-1/2} $. This implies that a substantial proportion of the genetic variance on the observed scale is nonadditive even if all of the genetic variance on the liability scale is additive. The reason for this relationship has been outlined in Figure 25.2 — the regression of risk on liability of genotypes is necessarily nonlinear since the probability of expressing the trait is bounded between 0 and 100%.",
+      "source_page": 754,
+      "printed_page": 734,
+      "source_block_ids": [
+        "p754:b13"
+      ],
+      "bbox": [
+        151.0,
+        1044.0,
+        1064.0,
+        1272.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "3. For this same reason, genotypic values and environmental deviations are not independent on the observed scale.",
+      "source_page": 754,
+      "printed_page": 734,
+      "source_block_ids": [
+        "p754:b14"
+      ],
+      "bbox": [
+        152.0,
+        1281.0,
+        1064.0,
+        1347.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Sometimes it is more practical to initially calculate heritability on the observed scale and then compute $ h^{2} $ indirectly by rearranging Equation 25.8b. Any of the procedures described in earlier chapters can be used for this purpose, applying the analysis to the 0, 1 variables. One problem with this approach, pointed",
+      "source_page": 754,
+      "printed_page": 734,
+      "source_block_ids": [
+        "p754:b15"
+      ],
+      "bbox": [
+        137.0,
+        1377.0,
+        1096.0,
+        1510.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:25.6]]",
+      "source_page": 755,
+      "printed_page": 735,
+      "source_block_ids": [
+        "p755:b3"
+      ],
+      "bbox": [
+        110.0,
+        644.0,
+        970.0,
+        708.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "out by VanVleck (1971), is that the relationship between $ h_{o}^{2} $ and $ h^{2} $ depends on the incidence $ \\Phi_{p} $ in a nonlinear fashion. Consequently, the substitution of sample estimates of $ \\Phi_{p} $ into Equation 25.8b results in a biased conversion between the two heritabilities.",
+      "source_page": 755,
+      "printed_page": 735,
+      "source_block_ids": [
+        "p755:b4"
+      ],
+      "bbox": [
+        62.0,
+        769.0,
+        1023.0,
+        898.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter25:4]]",
+      "source_page": 755,
+      "source_block_ids": [
+        "p755:b5",
+        "p755:b6",
+        "p755:b7",
+        "p756:b2",
+        "p756:b3",
+        "p756:b4"
+      ],
+      "bbox": [
+        109.0,
+        988.0,
+        975.0,
+        1165.0
+      ]
     }
   ]
 }

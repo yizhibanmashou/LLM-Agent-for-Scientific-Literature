@@ -2,46 +2,243 @@
   "id": "Genetics_chapter16_010",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
+    "section": "SIB ANALYSIS: MAXIMUM LIKELIHOOD",
     "subsections": [
-      "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS"
+      "Constructing Likelihood Functions"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS",
+    "section_level_1": "SIB ANALYSIS: MAXIMUM LIKELIHOOD",
+    "section_level_2": "Constructing Likelihood Functions",
     "heading_path": [
-      "Introduction",
-      "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS"
+      "SIB ANALYSIS: MAXIMUM LIKELIHOOD",
+      "Constructing Likelihood Functions"
     ],
-    "display_heading": "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS"
+    "display_heading": "SIB ANALYSIS: MAXIMUM LIKELIHOOD / Constructing Likelihood Functions",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 521,
+      "printed_page": 501,
+      "source_block_ids": [
+        "p521:b4"
+      ],
+      "bbox": [
+        73.0,
+        1055.0,
+        512.0,
+        1092.0
+      ],
+      "raw_text": "Constructing Likelihood Functions"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The above likelihood functions explicitly model the transmission of QTL genotypes from parent to offspring, requiring estimation of QTL allele frequencies and genotype means (as well as assumptions about the number of segregating alleles). While this approach can be extended to multigenerational pedigrees, the number of possible combinations of genotypes for individuals in the entire pedigree increases exponentially with the number of pedigree members, and solving the resulting likelihood functions becomes increasingly more difficult. An alternative is to construct likelihood functions using the variance components associated with a QTL (or linked group of QTLs) in a genetic region of interest, rather than explicitly modeling all of the underlying genetic details. This approach allows for very general and complex pedigrees. The basic idea is to use marker information to compute the fraction of a genetic region of interest that is identical by descent. between two individuals. Recall that two alleles are identical by descent, or ibd, if we can trace them back to a single copy in a common ancestor (Chapter 7)."
+      "content": "Likelihood functions for detecting QTLs using marker information in sets of sibs follow by suitable modifications of those developed for complex segregation analysis (Chapter 13). Recall that to construct the latter, the likelihood for an individual with trait value $ z_{o} $ is computed by first obtaining the likelihood conditional on the QTL genotypes of its parents ( $ Q_{s} $ for the sire and $ Q_{d} $ for the dam),",
+      "source_page": 521,
+      "printed_page": 501,
+      "source_block_ids": [
+        "p521:b5"
+      ],
+      "bbox": [
+        70.0,
+        1096.0,
+        1030.0,
+        1272.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Goldgar (1990) was the first to suggest this approach for QTL mapping. We sketch the basic ideas here and refer the reader to Chapter 27 for a more detailed discussion of the estimation of variance components in a likelihood framework. Consider the simplest case, in which the genetic variance is additive for the QTLs in the region of interest as well as for background QTLs unlinked to this region. Under Goldgar's model, an individual's phenotypic value is decomposed as $$ z_{i}=\\mu+A_{i}+A_{i}^{*}+e_{i} $$ where $\\mu$ is the population mean, $A$ is the contribution from the chromosomal interval being examined, $A^{*}$ is the contribution from QTLs outside this interval, and $e$ is the residual. The random effects $A$, $A^{*}$, and $e$ are assumed to be normally distributed with mean zero and variances $\\sigma_{A}^{2}$, $\\sigma_{A^{*}}^{2}$, and $\\sigma_{e}^{2}$. Here $\\sigma_{A}^{2}$ and $\\sigma_{A^{*}}^{2}$ correspond to the additive variances associated with the chromosomal region of interest and background QTLs in the remaining genome, respectively. We assume that none of these background QTLs are linked to the chromosome region of interest so that $A$ and $A^{*}$ are uncorrelated, and we further assume that the residual $e$ is uncorrelated with $A$ and $A^{*}$. Under these assumptions, the phenotypic variance is $\\sigma_{A}^{2}+\\sigma_{A^{*}}^{2}+\\sigma_{e}^{2}$."
+      "content": "[[FORMULA:Genetics_chapter16_formula035]]",
+      "source_page": 521,
+      "printed_page": 501,
+      "source_block_ids": [
+        "p521:b6"
+      ],
+      "bbox": [
+        258.0,
+        1275.0,
+        836.0,
+        1346.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Assuming no shared environmental effects, from Chapter 7 the phenotypic covariance between two individuals is $$ \\sigma(z_{i},z_{j})=R_{i j}\\sigma_{A}^{2}+2\\Theta_{i j}\\sigma_{A*}^{2} $$ where $ R_{ij} $ is the fraction of the chromosomal region shared ibd between individuals i and j, and $ 2\\Theta_{ij} $ is twice Wright's coefficient of coancestry (i.e., $ 2\\Theta_{ij} = 1/2 $ for full sibs). Note that $ R_{ij} $ is a random variable whose expected value is $ 2\\Theta_{ij} $. Goldgar (1990) and Guo (1994a,b) discuss the estimation of $ R_{ij} $ from flanking marker information. For the special case of a nuclear family, Kruglyak and Lander (1995b) discuss the estimation of $ R_{ij} $ at any point along a chromosome using all marker information (multipoint mapping). Approaches such as genomic mismatch scanning (Chapter 14) can also be used with a very dense genetic map to estimate $ R_{ij} $ with high precision. For a vector z of observations on n individuals, the associated covariance matrix V can be expressed as contributions from the region of interest, from background QTLs, and from residual effects, $$ \\mathbf{V}=\\mathbf{R}\\sigma_{A}^{2}+\\mathbf{A}\\sigma_{A^{*}}^{2}+\\mathbf{I}\\sigma_{e}^{2} $$ where $\\mathbf{I}$ is the $n\\times n$ identity matrix, and $\\mathbf{R}$ and $\\mathbf{A}$ are matrices of known constants, $$ \\mathbf{R}_{i j}=\\left\\{\\begin{matrix}{1}&{\\mathbf{f o r}\\;i=j}\\\\ {\\widehat{R}_{i j}}&{\\mathbf{f o r}\\;i\\neq j}\\\\ \\end{matrix}\\right.,\\qquad\\mathbf{A}_{i j}=\\left\\{\\begin{matrix}{1}&{\\mathbf{f o r}\\;i=j}\\\\ {2\\Theta_{i j}}&{\\mathbf{f o r}\\;i\\neq j}\\\\ \\end{matrix}\\right. $$"
+      "content": "where we make the standard assumption that, conditional on QTL genotype, phenotypes are normally distributed with common variance $ \\sigma^{2} $. This conditioning is removed by averaging over all possible parental values,",
+      "source_page": 521,
+      "printed_page": 501,
+      "source_block_ids": [
+        "p521:b7"
+      ],
+      "bbox": [
+        66.0,
+        1354.0,
+        1025.0,
+        1464.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The elements of R contain the estimates of ibd status for the region of interest based on marker information (see below), while the elements of A are given by the pedigree structure."
+      "content": "[[FORMULA:Genetics_chapter16_formula036]]",
+      "source_page": 521,
+      "printed_page": 501,
+      "source_block_ids": [
+        "p521:b8"
+      ],
+      "bbox": [
+        294.0,
+        1467.0,
+        792.0,
+        1538.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The resulting likelihood is a multivariate normal with mean vector $ \\mu $ (all of whose elements are $ \\mu $) and variance-covariance matrix V. From Equation 8.24, $$ \\ell(\\mathbf{z}|\\mu,\\sigma_{A}^{2},\\sigma_{A^{*}}^{2},\\sigma_{e}^{2})=\\frac{1}{\\sqrt{(2\\pi)^{n}|\\mathbf{V}|}}\\exp\\left[-\\frac{1}{2}(\\mathbf{z}-\\pmb{\\mu})^{T}\\mathbf{V}^{-1}(\\mathbf{z}-\\pmb{\\mu})\\right] $$"
+      "content": "When marker data are present, the likelihood for an individual with marker genotype M is obtained by averaging over the probability of each QTL genotype given the marker genotypes,",
+      "source_page": 522,
+      "printed_page": 502,
+      "source_block_ids": [
+        "p522:b2"
+      ],
+      "bbox": [
+        114.0,
+        147.0,
+        1073.0,
+        250.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "This likelihood has four unknown parameters ($ \\mu $, $ \\sigma_{A}^{2} $, $ \\sigma_{A^{*}}^{2} $, and $ \\sigma_{e}^{2} $). A significant $ \\sigma_{A}^{2} $ indicates the presence of at least one QTL in the interval being considered, while a significant $ \\sigma_{A^{*}}^{2} $ implies background genetic variance contributed from QTLs outside the focal interval. Both of these hypotheses can be tested by likelihood-ratio tests. Using the methodology of Chapters 26 and 27, the simple model given by Equation 16.29 can easily be extended to allow for other genetic effects (such as dominance), multiple chromosomal regions (Schork 1993), shared environmental effects, and any number of fixed effects (such as differences between the sexes, different known environmental effects, and so forth). Incorporation of such additional effects can increase power by reducing the residual variance."
+      "content": "[[FORMULA:Genetics_chapter16_formula037]]",
+      "source_page": 522,
+      "printed_page": 502,
+      "source_block_ids": [
+        "p522:b3"
+      ],
+      "bbox": [
+        324.0,
+        254.0,
+        862.0,
+        370.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the transmission probabilities $ p(Q_o \\mid M_o, M_s, M_d, Q_s, Q_d) $ are functions of the marker genotypes of the offspring $ (M_o) $ and its parents $ (M_s, M_d) $. Averaging over all possible parental genotypes gives",
+      "source_page": 522,
+      "printed_page": 502,
+      "source_block_ids": [
+        "p522:b5"
+      ],
+      "bbox": [
+        118.0,
+        373.0,
+        1076.0,
+        478.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula038]]",
+      "source_page": 522,
+      "printed_page": 502,
+      "source_block_ids": [
+        "p522:b6"
+      ],
+      "bbox": [
+        225.0,
+        481.0,
+        872.0,
+        598.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In a similar fashion, the likelihood function for any pedigree can (in principle) be computed by suitably conditioning on the genotypes of parents and other relatives.",
+      "source_page": 522,
+      "printed_page": 502,
+      "source_block_ids": [
+        "p522:b8"
+      ],
+      "bbox": [
+        120.0,
+        599.0,
+        1077.0,
+        700.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Likelihood functions for half- and full-sib families have been developed for single markers (Risch 1984, Demenais et al. 1988, Weller 1990, Haley 1991, Amos 1994, Le Roy and Elsen 1995, Mackinnon and Weller 1995, Elsen et al. 1997), interval mapping (Knott and Haley 1992b), and multipoint mapping (Georges et al. 1995, Uimari et al. 1996, Knott et al. 1996). A framework for developing likelihood functions that allows for multiple QTLs is given by Stricker et al. (1995b). Hoeschele and VanRaden (1993a,b) and Uimari et al. (1996) discuss Bayesian modifications of the likelihood functions to allow for the incorporation of prior information, such as the number of chromosomes (e.g., Smith 1953, 1959).",
+      "source_page": 522,
+      "printed_page": 502,
+      "source_block_ids": [
+        "p522:b9"
+      ],
+      "bbox": [
+        120.0,
+        696.0,
+        1083.0,
+        994.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter16:3]]",
+      "source_page": 522,
+      "source_block_ids": [
+        "p522:b10",
+        "p522:b11",
+        "p522:b12",
+        "p523:b2",
+        "p523:b3",
+        "p523:b5",
+        "p523:b6",
+        "p523:b7",
+        "p523:b9",
+        "p523:b10",
+        "p523:b11"
+      ],
+      "bbox": [
+        174.0,
+        1080.0,
+        1040.0,
+        1323.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The properties of ML estimates using relatives from outbred populations have not been as extensively examined as have those for line-cross populations. Mackinnon and Weller (1995) examined the accuracy of single-marker ML estimation under the half-sib design, finding that while ML estimates of QTL effects tend to be reasonably accurate, the same is not the case for estimates of QTL position, which have very flat likelihood surfaces. They also observed that estimates of QTL parameters tend to be correlated, so that a poor estimate in one parameter (e.g., map position) can have a detrimental effect on other estimates (e.g., QTL effects). Interval mapping is expected to have a more peaked likelihood surface for QTL position (and a resulting smaller variance), so these concerns may be less important for analysis using multiple markers.",
+      "source_page": 524,
+      "printed_page": 504,
+      "source_block_ids": [
+        "p524:b2"
+      ],
+      "bbox": [
+        108.0,
+        136.0,
+        1067.0,
+        488.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "While marker-based likelihood methods have greater power than segregation analysis (Chapter 13) for detecting QTLs (Goldin et al. 1984, Demenais et al. 1988, Knott and Haley 1992b, Le Roy and Elsen 1995), their power is still poor compared to inbred-line-cross designs. Knott and Haley (1992b) show that the use of flanking markers increases power, as does incorporation of a within-family effect into the likelihood function. Choosing highly polymorphic marker loci further increases power by increasing the frequency of informative sibships. Even with these modifications, however, power remains marginal — with markers at 20 map unit intervals, a QTL whose segregation accounts for 1/3 of the total variance is barely detectable when 250 full-sib families of four individuals each are used. Further, as with segregation analysis, there is a tradeoff between increasing the number of families versus increasing family size. For a fixed total number of progeny, one must sample a sufficient number of families (to ensure that at least one of them is informative) and a sufficient number of individuals within each family (to have power within an informative family).",
+      "source_page": 524,
+      "printed_page": 504,
+      "source_block_ids": [
+        "p524:b3"
+      ],
+      "bbox": [
+        109.0,
+        488.0,
+        1071.0,
+        972.0
+      ]
     }
   ]
 }

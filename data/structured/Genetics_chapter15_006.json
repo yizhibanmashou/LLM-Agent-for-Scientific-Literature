@@ -2,42 +2,279 @@
   "id": "Genetics_chapter15_006",
   "metadata": {
     "chapter": "Genetics_chapter15",
-    "section": "Introduction",
+    "section": "FOUNDATIONS OF LINE-CROSS MAPPING",
     "subsections": [
-      "Overall Significance Level with Multiple Tests"
+      "Marker Variances and Higher-order Moments"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Overall Significance Level with Multiple Tests",
+    "section_level_1": "FOUNDATIONS OF LINE-CROSS MAPPING",
+    "section_level_2": "Marker Variances and Higher-order Moments",
     "heading_path": [
-      "Introduction",
-      "Overall Significance Level with Multiple Tests"
+      "FOUNDATIONS OF LINE-CROSS MAPPING",
+      "Marker Variances and Higher-order Moments"
     ],
-    "display_heading": "Overall Significance Level with Multiple Tests"
+    "display_heading": "FOUNDATIONS OF LINE-CROSS MAPPING / Marker Variances and Higher-order Moments",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 453,
+      "printed_page": 433,
+      "source_block_ids": [
+        "p453:b13"
+      ],
+      "bbox": [
+        60.0,
+        1167.0,
+        629.0,
+        1208.0
+      ],
+      "raw_text": "Marker Variances and Higher-order Moments"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The final statistical issue we need to introduce before exploring specific designs in detail is the problem of the proper significance level for an entire mapping experiment. In each mapping experiment, a large number of tests for marker-trait associations are typically performed. Thus, even if the significance level $ \\alpha $ (the probability of a false positive) for each test is set at a very small value, there is usually a high probability that the entire collection of tests (i.e., the entire mapping experiment) will show at least one false positive. If n independent tests with significance level $ \\alpha $ are conducted, the probability $ \\gamma $ that at least one test shows a false positive is $$ \\gamma=1-\\left(1-\\alpha\\right)^{n} $$"
+      "content": "The same linkage disequilibrium that generates differences in the mean trait values of different marker genotypes can also create differences in the variance and higher moments (e.g., skewness and kurtosis). Such differences are not uncommon. In a cross of tomato species, for example, Weller et al. (1988) found significantly different variances for 28% (40 of 180) of the possible marker-trait associations, while 17% showed significant differences in skewness. In some instances these moments may be of more interest than the mean (Weller and Wyler 1992). For example, a reduction in the variance of flowering time shortens the harvesting window, and by reducing costs this may be more significant than changing mean harvesting time per se.",
+      "source_page": 453,
+      "printed_page": 433,
+      "source_block_ids": [
+        "p453:b14"
+      ],
+      "bbox": [
+        54.0,
+        1208.0,
+        1018.0,
+        1542.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:15.1]]",
+      "source_page": 454,
+      "printed_page": 434,
+      "source_block_ids": [
+        "p454:b3"
+      ],
+      "bbox": [
+        130.0,
+        203.0,
+        1082.0,
+        398.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Setting $ \\alpha = 0.01 $ for each individual test, the probability of at least one false positive in 25 tests is 0.22, which increases to 0.633 for 100 tests, and is essentially one for 500 tests. The latter number of tests is not uncommon in QTL mapping studies. Hence, unless we use a very stringent significance value for each test, we run a very high risk of detecting false associations."
+      "content": "[[FORMULA:Genetics_chapter15_formula030]]",
+      "source_page": 454,
+      "printed_page": 434,
+      "source_block_ids": [
+        "p454:b4"
+      ],
+      "bbox": [
+        427.0,
+        412.0,
+        789.0,
+        451.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Suppose we wish to achieve an overall significance level $ \\gamma $ for the entire experiment. With n independent tests, the standard Bonferroni correction for multiple comparisons, derived by rearranging Equation 15.13a, states that an overall significance level $ \\gamma $ requires that each individual test be based on a significance level of $$ \\alpha=1-(1-\\gamma)^{1/n}\\simeq\\frac{\\gamma}{n} $$"
+      "content": "[[FORMULA:Genetics_chapter15_formula031]]",
+      "source_page": 454,
+      "printed_page": 434,
+      "source_block_ids": [
+        "p454:b5"
+      ],
+      "bbox": [
+        492.0,
+        461.0,
+        725.0,
+        500.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "However, while this correction is appropriate for tests using unlinked markers (such as those on different chromosomes), tests involving linked markers are generally not independent."
+      "content": "[[FORMULA:Genetics_chapter15_formula032]]",
+      "source_page": 454,
+      "printed_page": 434,
+      "source_block_ids": [
+        "p454:b6"
+      ],
+      "bbox": [
+        192.0,
+        507.0,
+        1027.0,
+        555.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A more robust approach for obtaining overall significance levels utilizes resampling procedures such as permutation tests, wherein the original analysis is replicated many times on data sets generated by appropriate reshuffling of the original data (Churchill and Doerge 1994, Doerge and Churchill 1996). Here, one randomly shuffles the observed trait values over individuals (marker genotypes), generating a sample with the original marker information but with trait values randomly assigned over genotypes. The test statistic is then computed on this new sample, and this procedure is repeated many times, generating an empirical distribution of the test under the hypothesis of no marker-trait associations. Churchill and Doerge suggest that 1,000 resamplings is sufficient for a significance level of 5%, but that 10,000 or more resamplings may be required to generate a stable critical value for the 1% level. By keeping the marker information for each individual together, this approach nicely accounts for missing markers, differences in marker densities, and any nonrandom segregation of marker alleles. (The latter is not uncommon in wide line crosses.)"
+      "content": "Note: We assume that the difference in QTL means is $ E(z_{QQ}) - E(z_{qq}) = 2a $ and that the phenotypic distributions conditioned on the QTL genotypes have common (within-line) variance $ \\sigma_{e}^{2} $. Since $ \\sigma(x, z) $ and $ \\sigma^{2}(z) $ are unchanged by a change in the mean of z (Chapter 3), we can arbitrarily set $ E(z_{QQ}) = -E(z_{qq}) = a $. Coded this way, $ E(x) = E(z) = 0 $, simplifying calculation of $ \\sigma(x, z) $ and $ \\sigma^{2}(z) $.",
+      "source_page": 454,
+      "printed_page": 434,
+      "source_block_ids": [
+        "p454:b7"
+      ],
+      "bbox": [
+        132.0,
+        580.0,
+        1090.0,
+        748.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Several workers have suggested the use of these higher-order moments for detection of a linked QTL and estimation of its effects (Zhuchenko et al. 1978, 1979; Korol et al. 1981, 1983, 1987; Ginzburg 1983; Asins and Carbonell 1988; Zhang et al. 1992). One difficulty with this approach is that variances (and higher moments) are estimated with far less precision than means, reducing both the power of detection and the accuracy of estimates. Another complication is that not all designs are capable of revealing significant changes in higher moments (e.g., Asins and Carbonell 1988).",
+      "source_page": 454,
+      "printed_page": 434,
+      "source_block_ids": [
+        "p454:b8"
+      ],
+      "bbox": [
+        135.0,
+        788.0,
+        1098.0,
+        1055.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "RILs and DHLs provide one case where functions of higher-order moments (here, a correlation coefficient) may be of value. Here, single-locus marker information can be used to estimate the recombination frequency c (Hu et al. 1995). As shown in Table 15.1, coding the alternative marker homozygotes as $ x = \\pm 1 $, the expected marker-trait correlation becomes",
+      "source_page": 454,
+      "printed_page": 434,
+      "source_block_ids": [
+        "p454:b9"
+      ],
+      "bbox": [
+        139.0,
+        1043.0,
+        1100.0,
+        1218.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula033]]",
+      "source_page": 454,
+      "printed_page": 434,
+      "source_block_ids": [
+        "p454:b10"
+      ],
+      "bbox": [
+        381.0,
+        1233.0,
+        861.0,
+        1313.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $C = \\sigma_e / a$, with $a$ being the QTL effect and $\\sigma_e^2$ being the within-line variance (see Table 15.1). (The $C$ term was neglected by Hu et al. 1995.) Rearranging and letting $r$ be an estimate of $\\rho$ suggests the estimator",
+      "source_page": 454,
+      "printed_page": 434,
+      "source_block_ids": [
+        "p454:b12"
+      ],
+      "bbox": [
+        143.0,
+        1337.0,
+        1105.0,
+        1449.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula034]]",
+      "source_page": 454,
+      "printed_page": 434,
+      "source_block_ids": [
+        "p454:b13"
+      ],
+      "bbox": [
+        456.0,
+        1468.0,
+        793.0,
+        1538.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "While the value of $C$ is unknown, by ignoring it one can obtain an upwardly biased estimate of $c$ by first taking $\\tilde{c} = (1 - r)/2$ and then using Equation 15.5b to translate this value of $\\tilde{c}$ into $c$. Rearranging Equation 15.10b,",
+      "source_page": 455,
+      "printed_page": 435,
+      "source_block_ids": [
+        "p455:b2"
+      ],
+      "bbox": [
+        84.0,
+        131.0,
+        1043.0,
+        235.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula035]]",
+      "source_page": 455,
+      "printed_page": 435,
+      "source_block_ids": [
+        "p455:b3"
+      ],
+      "bbox": [
+        454.0,
+        261.0,
+        669.0,
+        324.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "which, upon using $ 0 \\leq \\widetilde{c} \\leq (1 - r)/2 $, gives",
+      "source_page": 455,
+      "printed_page": 435,
+      "source_block_ids": [
+        "p455:b5"
+      ],
+      "bbox": [
+        82.0,
+        346.0,
+        601.0,
+        384.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula036]]",
+      "source_page": 455,
+      "printed_page": 435,
+      "source_block_ids": [
+        "p455:b6"
+      ],
+      "bbox": [
+        359.0,
+        410.0,
+        765.0,
+        472.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, the use of both the observed correlation $r$ and the difference in marker means ($\\overline{z}_{MM} - \\overline{z}_{mm}$) allows the estimation of upper bounds for both $c$ and $a$.",
+      "source_page": 455,
+      "printed_page": 435,
+      "source_block_ids": [
+        "p455:b8"
+      ],
+      "bbox": [
+        80.0,
+        491.0,
+        1039.0,
+        563.0
+      ]
     }
   ]
 }

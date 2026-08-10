@@ -1,0 +1,325 @@
+{
+  "id": "Genetics_appendix1_049",
+  "metadata": {
+    "chapter": "Genetics_appendix1",
+    "section": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
+    "subsections": [
+      "One-sided Tests"
+    ],
+    "section_level_1": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
+    "section_level_2": "One-sided Tests",
+    "heading_path": [
+      "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS",
+      "One-sided Tests"
+    ],
+    "display_heading": "POWER OF NORMALLY DISTRIBUTED TEST STATISTICS / One-sided Tests",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 882,
+      "printed_page": 862,
+      "source_block_ids": [
+        "p882:b14"
+      ],
+      "bbox": [
+        140.0,
+        1270.0,
+        345.0,
+        1301.0
+      ],
+      "raw_text": "One-sided Tests"
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Some hypotheses are naturally one-sided. For example, we may wish to test whether heritability $ h^2 $ is significantly different from zero. In this case, true values of $ h^2 < 0 $ cannot occur, so that the alternative to the null hypothesis $ h^2 = 0 $ is $ h^2 > 0 $.",
+      "source_page": 882,
+      "printed_page": 862,
+      "source_block_ids": [
+        "p882:b15"
+      ],
+      "bbox": [
+        137.0,
+        1311.0,
+        1095.0,
+        1437.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Consider the null hypothesis that the test statistic has mean $ \\mu = \\mu_0 $ versus the alternative hypothesis that $ \\mu = \\mu_1 $, where (for example) $ \\mu_1 > \\mu_0 $. Suppose that",
+      "source_page": 882,
+      "printed_page": 862,
+      "source_block_ids": [
+        "p882:b16"
+      ],
+      "bbox": [
+        138.0,
+        1441.0,
+        1097.0,
+        1506.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:A5.2]]",
+      "source_page": 883,
+      "printed_page": 863,
+      "source_block_ids": [
+        "p883:b3"
+      ],
+      "bbox": [
+        109.0,
+        351.0,
+        974.0,
+        412.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "under the null hypothesis, the test statistic $ T \\sim \\mathrm{N}(\\mu_o, \\sigma_o^2) $, so that $ (T - \\mu_o)/\\sigma_o $ is distributed as a unit normal, implying from Equation A5.1b that",
+      "source_page": 883,
+      "printed_page": 863,
+      "source_block_ids": [
+        "p883:b4"
+      ],
+      "bbox": [
+        62.0,
+        473.0,
+        1021.0,
+        539.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula259]]",
+      "source_page": 883,
+      "printed_page": 863,
+      "source_block_ids": [
+        "p883:b5"
+      ],
+      "bbox": [
+        171.0,
+        562.0,
+        824.0,
+        633.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, comparing the observed statistic T with the $ \\alpha $-level critical value, $ T_{c}(\\alpha) $, where",
+      "source_page": 883,
+      "printed_page": 863,
+      "source_block_ids": [
+        "p883:b7"
+      ],
+      "bbox": [
+        61.0,
+        654.0,
+        1017.0,
+        716.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula260]]",
+      "source_page": 883,
+      "printed_page": 863,
+      "source_block_ids": [
+        "p883:b8"
+      ],
+      "bbox": [
+        403.0,
+        720.0,
+        677.0,
+        754.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "gives the one-sided test of significance with probability $ \\alpha $ of a false positive. We reject the null hypothesis when $ T > T_c(\\alpha) $.",
+      "source_page": 883,
+      "printed_page": 863,
+      "source_block_ids": [
+        "p883:b10"
+      ],
+      "bbox": [
+        61.0,
+        767.0,
+        1020.0,
+        831.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Suppose that the alternative hypothesis is correct, so that $ T \\sim \\mathrm{N}(\\mu_1, \\sigma^2) $. What is the probability that the resulting test statistic is significant (and hence a false negative is avoided)? Since it is now $ (T - \\mu_1)/\\sigma_1 $ that follows a unit normal, the probability that the test statistic exceeds the critical value $ T_c(\\alpha) $ given by Equation A5.2b is",
+      "source_page": 883,
+      "printed_page": 863,
+      "source_block_ids": [
+        "p883:b11"
+      ],
+      "bbox": [
+        61.0,
+        831.0,
+        1022.0,
+        992.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula261]]",
+      "source_page": 883,
+      "printed_page": 863,
+      "source_block_ids": [
+        "p883:b12"
+      ],
+      "bbox": [
+        238.0,
+        1013.0,
+        837.0,
+        1174.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $U$ is a unit normal random variable. Noting that $\\Pr(U > z_{(\\beta)}) = 1 - \\beta$ (Equation A5.1b), from Equation A5.3 it immediately follows that for the test to have power $1 - \\beta$ requires",
+      "source_page": 883,
+      "printed_page": 863,
+      "source_block_ids": [
+        "p883:b14"
+      ],
+      "bbox": [
+        60.0,
+        1195.0,
+        1019.0,
+        1293.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula262]]",
+      "source_page": 883,
+      "printed_page": 863,
+      "source_block_ids": [
+        "p883:b15"
+      ],
+      "bbox": [
+        374.0,
+        1316.0,
+        704.0,
+        1381.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Using our notation for writing the variance of the test statistic as a function $f$ divided by the sample size $n$ (i.e., $\\sigma_{i}^{2} = f_{i}^{2}/n$), this becomes",
+      "source_page": 883,
+      "printed_page": 863,
+      "source_block_ids": [
+        "p883:b16"
+      ],
+      "bbox": [
+        60.0,
+        1398.0,
+        1018.0,
+        1465.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula263]]",
+      "source_page": 883,
+      "printed_page": 863,
+      "source_block_ids": [
+        "p883:b17"
+      ],
+      "bbox": [
+        334.0,
+        1486.0,
+        739.0,
+        1556.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Since $ -z_{(\\beta)} = z_{(1-\\beta)} $ (Equation A5.1c), this rearranges to give",
+      "source_page": 884,
+      "printed_page": 864,
+      "source_block_ids": [
+        "p884:b2"
+      ],
+      "bbox": [
+        138.0,
+        155.0,
+        870.0,
+        188.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula264]]",
+      "source_page": 884,
+      "printed_page": 864,
+      "source_block_ids": [
+        "p884:b3"
+      ],
+      "bbox": [
+        386.0,
+        207.0,
+        849.0,
+        281.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula265]]",
+      "source_page": 884,
+      "printed_page": 864,
+      "source_block_ids": [
+        "p884:b5"
+      ],
+      "bbox": [
+        411.0,
+        300.0,
+        751.0,
+        376.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula266]]",
+      "source_page": 884,
+      "printed_page": 864,
+      "source_block_ids": [
+        "p884:b7"
+      ],
+      "bbox": [
+        411.0,
+        394.0,
+        794.0,
+        466.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Equation A5.4c holds when the sample variances under the null hypothesis and true parameter values are approximately equal $ (f_0 \\simeq f_1) $, as is often the case.",
+      "source_page": 884,
+      "printed_page": 864,
+      "source_block_ids": [
+        "p884:b9"
+      ],
+      "bbox": [
+        139.0,
+        478.0,
+        1095.0,
+        544.0
+      ]
+    }
+  ]
+}

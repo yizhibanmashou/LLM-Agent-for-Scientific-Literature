@@ -2,30 +2,304 @@
   "id": "Genetics_chapter8_011",
   "metadata": {
     "chapter": "Genetics_chapter8",
-    "section": "Introduction",
+    "section": "ELEMENTARY MATRIX ALGEBRA",
     "subsections": [
-      "Determinants and Minors"
+      "Inverses and Solutions to Systems of Equations"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Determinants and Minors",
+    "section_level_1": "ELEMENTARY MATRIX ALGEBRA",
+    "section_level_2": "Inverses and Solutions to Systems of Equations",
     "heading_path": [
-      "Introduction",
-      "Determinants and Minors"
+      "ELEMENTARY MATRIX ALGEBRA",
+      "Inverses and Solutions to Systems of Equations"
     ],
-    "display_heading": "Determinants and Minors"
+    "display_heading": "ELEMENTARY MATRIX ALGEBRA / Inverses and Solutions to Systems of Equations",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 203,
+      "printed_page": 183,
+      "source_block_ids": [
+        "p203:b10"
+      ],
+      "bbox": [
+        59.0,
+        834.0,
+        649.0,
+        871.0
+      ],
+      "raw_text": "Inverses and Solutions to Systems of Equations"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "For a $2 \\times 2$ matrix, the quantity $$ \\left|\\mathbf{A}\\right|=A_{11}A_{22}-A_{12}A_{21} $$ is called the determinant, which more generally is denoted by $ \\det(\\mathbf{A}) $ or $ |\\mathbf{A}| $. As with the 2-dimensional case, $ \\mathbf{A}^{-1} $ exists for a square matrix $ \\mathbf{A} $ (of any dimensionality) if and only if $ \\det(\\mathbf{A}) \\neq 0 $. For square matrices with dimensionality greater than two, the determinant is obtained recursively from the general expression $$ |\\mathbf{A}|=\\sum_{j=1}^{n}A_{ij}(-1)^{i+j}|\\mathbf{A}_{ij}| $$ where $i$ is any fixed row of the matrix $\\mathbf{A}$ and $\\mathbf{A}_{ij}$ is a submatrix obtained by deleting the $i$th row and $j$th column from $\\mathbf{A}$. Such a submatrix is known as a minor. In words, each of the $n$ quantities in this equation is the product of three components: the element in the row around which one is working, $-1$ to the $(i+j)$th power, and the determinant of the $ij$th minor. In applying Equation 8.12b, one starts with the original $n\\times n$ matrix and works down until the minors are reduced to $2\\times2$ matrices whose determinants are scalars of the form $A_{11}A_{22}-A_{12}A_{21}$. A useful result is that the determinant of a diagonal matrix is the product of the diagonal elements of that matrix, so that if $$ A_{i j}=\\left\\{\\begin{array}{l l}{a_{i}}&{i=j}\\\\ {0}&{i\\neq j}\\end{array}\\right.\\qquad\\mathrm{t h e n}\\qquad|\\mathbf{A}|=\\prod_{i=1}^{n}a_{i} $$"
+      "content": "While matrix multiplication provides a compact way of writing systems of equations, we also need a compact notation for expressing the solutions of such systems. Such solutions utilize the inverse of a matrix, an operation analogous to scalar division. The essential utility of matrix inversion can be noted by first considering the solution of the simple scalar equation $ax = b$ for $x$. Multiplying both sides by $a^{-1}$, we have $(a^{-1}a)x = 1 \\cdot x = x = a^{-1}b$. Now consider a square matrix A. The inverse of A, denoted $A^{-1}$, satisfies $A^{-1}A = I = AA^{-1}$, where I, the identity matrix, is a square matrix with diagonal elements equal to one and all other elements equal to zero. The identity matrix serves the role that 1 plays in scalar multiplication. Just as $1 \\times a = a \\times 1 = a$ in scalar multiplication, for any matrix A = IA = AI. A matrix is called nonsingular if its inverse exists. Conditions under which this occurs are discussed in the next section. A useful property of inverses is that if the matrix product AB is a square matrix (where A and B are square), then",
+      "source_page": 203,
+      "printed_page": 183,
+      "source_block_ids": [
+        "p203:b11"
+      ],
+      "bbox": [
+        55.0,
+        879.0,
+        1018.0,
+        1326.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The next section shows how determinants are used in the computation of a matrix inverse."
+      "content": "[[FORMULA:Genetics_chapter8_formula039]]",
+      "source_page": 203,
+      "printed_page": 183,
+      "source_block_ids": [
+        "p203:b12"
+      ],
+      "bbox": [
+        412.0,
+        1322.0,
+        653.0,
+        1359.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The fundamental relationship between the inverse of a matrix and the solution of systems of linear equations can be seen as follows. For a square nonsingular matrix A, the unique solution for x in the matrix equation $ \\mathbf{A}\\mathbf{x} = \\mathbf{c} $ is obtained by premultiplying by $ \\mathbf{A}^{-1} $,",
+      "source_page": 203,
+      "printed_page": 183,
+      "source_block_ids": [
+        "p203:b14"
+      ],
+      "bbox": [
+        49.0,
+        1373.0,
+        1012.0,
+        1502.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula040]]",
+      "source_page": 203,
+      "printed_page": 183,
+      "source_block_ids": [
+        "p203:b15"
+      ],
+      "bbox": [
+        400.0,
+        1500.0,
+        658.0,
+        1533.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "When A is either singular or nonsquare, solutions for x can still be obtained using generalized inverses in place of $ A^{-1} $ (Appendix 3), but such solutions are not unique, applying instead to certain linear combinations of the elements of x. (See Appendix 3 for details.) Recalling Equation 8.5, the solution of the multiple regression equation can be expressed as",
+      "source_page": 204,
+      "printed_page": 184,
+      "source_block_ids": [
+        "p204:b2"
+      ],
+      "bbox": [
+        137.0,
+        150.0,
+        1096.0,
+        316.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula041]]",
+      "source_page": 204,
+      "printed_page": 184,
+      "source_block_ids": [
+        "p204:b3"
+      ],
+      "bbox": [
+        552.0,
+        330.0,
+        683.0,
+        366.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, for the Pearson-Lande-Arnold regression giving the best linear predictor of fitness,",
+      "source_page": 204,
+      "printed_page": 184,
+      "source_block_ids": [
+        "p204:b5"
+      ],
+      "bbox": [
+        139.0,
+        388.0,
+        1095.0,
+        455.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula042]]",
+      "source_page": 204,
+      "printed_page": 184,
+      "source_block_ids": [
+        "p204:b6"
+      ],
+      "bbox": [
+        556.0,
+        451.0,
+        682.0,
+        486.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where P is the covariance matrix for phenotypic measures $ z_{1}, \\ldots, z_{n} $, and s is the vector of selection differentials for the n characters.",
+      "source_page": 204,
+      "printed_page": 184,
+      "source_block_ids": [
+        "p204:b8"
+      ],
+      "bbox": [
+        139.0,
+        501.0,
+        1096.0,
+        565.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Before developing the formal method for inverting a matrix, we consider two extreme (but very useful) cases that lead to simple expressions for the inverse. First, if the matrix is diagonal (all off-diagonal elements are zero), then the matrix inverse is also diagonal, with $ \\mathbf{A}_{ii}^{-1} = 1/A_{ii} $. For example,",
+      "source_page": 204,
+      "printed_page": 184,
+      "source_block_ids": [
+        "p204:b9"
+      ],
+      "bbox": [
+        141.0,
+        565.0,
+        1099.0,
+        696.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula043]]",
+      "source_page": 204,
+      "printed_page": 184,
+      "source_block_ids": [
+        "p204:b10"
+      ],
+      "bbox": [
+        238.0,
+        712.0,
+        998.0,
+        818.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Note that if any of the diagonal elements of A are zero, $ A^{-1} $ is not defined, as 1/0 is undefined. Second, for any $ 2 \\times 2 $ matrix A,",
+      "source_page": 204,
+      "printed_page": 184,
+      "source_block_ids": [
+        "p204:b11"
+      ],
+      "bbox": [
+        143.0,
+        836.0,
+        1100.0,
+        906.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula044]]",
+      "source_page": 204,
+      "printed_page": 184,
+      "source_block_ids": [
+        "p204:b12"
+      ],
+      "bbox": [
+        292.0,
+        923.0,
+        949.0,
+        996.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "To check this result, note that",
+      "source_page": 204,
+      "printed_page": 184,
+      "source_block_ids": [
+        "p204:b14"
+      ],
+      "bbox": [
+        145.0,
+        1017.0,
+        501.0,
+        1048.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula045]]",
+      "source_page": 204,
+      "printed_page": 184,
+      "source_block_ids": [
+        "p204:b15"
+      ],
+      "bbox": [
+        369.0,
+        1063.0,
+        879.0,
+        1227.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "If $ ad = bc $, the inverse does not exist, as division by zero is undefined.",
+      "source_page": 204,
+      "printed_page": 184,
+      "source_block_ids": [
+        "p204:b16"
+      ],
+      "bbox": [
+        147.0,
+        1243.0,
+        973.0,
+        1280.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter8:3]]",
+      "source_page": 204,
+      "source_block_ids": [
+        "p204:b17",
+        "p204:b18",
+        "p205:b2",
+        "p205:b3",
+        "p205:b4",
+        "p205:b5",
+        "p205:b6",
+        "p205:b7",
+        "p205:b8",
+        "p205:b9",
+        "p205:b10",
+        "p205:b11"
+      ],
+      "bbox": [
+        196.0,
+        1371.0,
+        1056.0,
+        1435.0
+      ]
     }
   ]
 }

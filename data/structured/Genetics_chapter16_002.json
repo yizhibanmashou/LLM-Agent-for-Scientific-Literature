@@ -2,34 +2,323 @@
   "id": "Genetics_chapter16_002",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
-    "subsections": [
-      "SIB ANALYSIS: LINEAR MODELS"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "SIB ANALYSIS: LINEAR MODELS",
+    "section": "MEASURES OF INFORMATIVENESS",
+    "subsections": [],
+    "section_level_1": "MEASURES OF INFORMATIVENESS",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "SIB ANALYSIS: LINEAR MODELS"
+      "MEASURES OF INFORMATIVENESS"
     ],
-    "display_heading": "SIB ANALYSIS: LINEAR MODELS"
+    "display_heading": "MEASURES OF INFORMATIVENESS",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 506,
+      "printed_page": 486,
+      "source_block_ids": [
+        "p506:b2"
+      ],
+      "bbox": [
+        110.0,
+        137.0,
+        594.0,
+        167.0
+      ],
+      "raw_text": "MEASURES OF INFORMATIVENESS"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "One can use family data to search for QTLs by comparing offspring carrying alternative marker alleles from the same parent. There are a number of ways to accomplish this apparently simple task, and our treatment first considers collections of relatives, such as entire half- or full-sib families."
+      "content": "The major difference between QTL analysis using inbred-line crosses vs. outbred populations is that while the parents in the former are genetically uniform, parents in the latter are genetically variable. This distinction has several consequences. First, only a fraction of the parents from an outbred population are informative. For a parent to provide linkage information, it must be heterozygous at both a marker and a linked QTL, as only in this situation can a marker-trait association be generated in the progeny. Only a fraction of random parents from an outbred population are such double heterozygotes. With inbred lines, $ F_{1} $'s are heterozygous at all loci that differ between the crossed lines, so that all parents are fully informative. Second, there are only two alleles segregating at any locus in an inbred-line cross design, while outbred populations can be segregating any number of alleles. Finally, in an outbred population, individuals can differ in marker-QTL linkage phase, so that an M-bearing gamete might be associated with QTL allele Q in one parent, and with q in another. Thus, with outbred populations, marker-trait associations must be examined separately for each parent. With inbred-line crosses, all $ F_{1} $ parents have identical genotypes (including linkage phase), so one can simply average marker-trait associations over all offspring, regardless of their parents.",
+      "source_page": 506,
+      "printed_page": 486,
+      "source_block_ids": [
+        "p506:b3"
+      ],
+      "bbox": [
+        109.0,
+        202.0,
+        1070.0,
+        751.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Sibship-based methods for detecting linked QTLs historically developed along two different fronts. Animal breeders typically rely on a few large half-sib families, each resulting from a single sire (often via artificial insemination). Human geneticists, on the other hand, rely on a number of small full-sib families. These different designs not only reflect the biological limitations present in different species but also mirror concerns about the tradeoff between number of families (increasing the chance of sampling at least one QTL-informative sibship) and number of sibs per family (increasing the power to detect marker differences, provided the family is QTL-informative). Neither design is necessarily optimal, since the highest power (for a fixed sample size) occurs when a single large informative sibship is used (A. Hill 1975, Weller et al. 1990, Luo 1993). Unfortunately, although we can gauge if a particular parent is marker-informative, we have no way of knowing beforehand whether that parent is also a QTL heterozygote."
+      "content": "Before considering the variety of QTL mapping methods for outbred populations, some comments on the probability that an outbred family is informative are in order. A parent is marker-informative if it is a marker heterozygote, QTL-informative if it is a QTL heterozygote, and simply informative if it is both. Unless both the marker and QTL are highly polymorphic, most parents will not be informative. Given the need to maximize the fraction of marker-informative parents, classes of marker loci successfully used with inbred lines may not be optimal for outbred populations. For example, RFLPs are widely used in inbred lines, but these markers are typically diallelic and hence have modest polymorphism (at best). Microsatellite marker loci (Chapter 14), on the other hand, are highly polymorphic and hence much more likely to yield marker-informative individuals.",
+      "source_page": 506,
+      "printed_page": 486,
+      "source_block_ids": [
+        "p506:b4"
+      ],
+      "bbox": [
+        110.0,
+        752.0,
+        1072.0,
+        1136.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A variety of linear model approaches for dealing with sibship data have been proposed. We start by considering the simplest case of a single half-sib family. Care is required when combining information from several half-sibships, and we examine this issue next. Finally, we consider how half-sib analyses are extended to full sibs. Upon completion of our discussion of linear models, we will provide a broad overview of the maximum likelihood approach to sib analysis."
+      "content": "As shown in Table 16.1, there are three kinds of marker-informative crosses. With a highly polymorphic marker, it may be possible to examine marker-trait associations for both parents. With a fully informative family $ (M_i M_j \\times M_k M_\\ell) $ all parental alleles can be distinguished, and both parents can be examined by comparing the trait values in $ M_i- $ vs. $ M_j- $ offspring and $ M_k- $ vs. $ M_\\ell- $ offspring. With a backcross family $ (M_i M_j \\times M_k M_k) $, only the heterozygous parent can be examined for marker-trait associations. Finally, with an intercross family $ (M_i M_j \\times M_i M_j) $, homozygous offspring $ (M_i M_i, M_j M_j) $ are unambiguous as to the origin of parental alleles, while heterozygotes are ambiguous, because allele $ M_i $ $ (M_j) $ could have come from either parent.",
+      "source_page": 506,
+      "printed_page": 486,
+      "source_block_ids": [
+        "p506:b5"
+      ],
+      "bbox": [
+        114.0,
+        1138.0,
+        1072.0,
+        1458.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In designing experiments, it is useful to estimate the fraction of families",
+      "source_page": 506,
+      "printed_page": 486,
+      "source_block_ids": [
+        "p506:b6"
+      ],
+      "bbox": [
+        168.0,
+        1458.0,
+        1074.0,
+        1492.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:16.1]]",
+      "source_page": 507,
+      "printed_page": 487,
+      "source_block_ids": [
+        "p507:b3"
+      ],
+      "bbox": [
+        87.0,
+        186.0,
+        1038.0,
+        686.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "expected to be marker-informative. One measure of this is the polymorphism information content (Botstein et al. 1980), or PIC, of the marker locus,",
+      "source_page": 507,
+      "printed_page": 487,
+      "source_block_ids": [
+        "p507:b4"
+      ],
+      "bbox": [
+        79.0,
+        748.0,
+        1040.0,
+        818.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula001]]",
+      "source_page": 507,
+      "printed_page": 487,
+      "source_block_ids": [
+        "p507:b5"
+      ],
+      "bbox": [
+        232.0,
+        847.0,
+        882.0,
+        932.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "which is the probability that one parent is a marker heterozygote and its mate has a different genotype (i.e., a backcross or fully informative family, but excluding intercross families). In this case, we can distinguish between the alternative marker alleles of the first parent in all offspring from this cross. The upper bound (given by the right hand side of Equation 16.1) occurs when all marker alleles are equally frequent, $ p_i = 1/n $. The proportion of fully informative matings (PFIM), where marker alleles from both parents can be distinguished in all offspring, is given by",
+      "source_page": 507,
+      "printed_page": 487,
+      "source_block_ids": [
+        "p507:b7"
+      ],
+      "bbox": [
+        77.0,
+        964.0,
+        1041.0,
+        1198.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula002]]",
+      "source_page": 507,
+      "printed_page": 487,
+      "source_block_ids": [
+        "p507:b8"
+      ],
+      "bbox": [
+        214.0,
+        1222.0,
+        891.0,
+        1396.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ i, j, k, $ and $ \\ell $ denote different marker alleles (Götz and Ollivier 1992). Again, the upper bound occurs when all alleles are equally frequent. Figure 16.1 plots the maximum values of both of these measures as a function of the number of marker alleles.",
+      "source_page": 507,
+      "printed_page": 487,
+      "source_block_ids": [
+        "p507:b10"
+      ],
+      "bbox": [
+        73.0,
+        1419.0,
+        1035.0,
+        1547.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:16.1]]",
+      "source_page": 508,
+      "printed_page": 488,
+      "source_block_ids": [
+        "p508:b3"
+      ],
+      "bbox": [
+        168.0,
+        693.0,
+        1034.0,
+        816.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Of course, a marker-informative parent is not necessarily also QTL-informative. For a QTL with $ n_{Q} $ alleles, the ith of which has frequency $ q_{i} $, the probability that a parent is a QTL heterozygote (in a random mating population) is",
+      "source_page": 508,
+      "printed_page": 488,
+      "source_block_ids": [
+        "p508:b4"
+      ],
+      "bbox": [
+        120.0,
+        877.0,
+        1083.0,
+        1006.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula003]]",
+      "source_page": 508,
+      "printed_page": 488,
+      "source_block_ids": [
+        "p508:b5"
+      ],
+      "bbox": [
+        432.0,
+        1003.0,
+        773.0,
+        1090.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "For a population where parents are in linkage equilibrium, the probability that (at least) one parent is a double (QTL/marker) heterozygote and that alternative marker alleles from this parent can unambiguously be distinguished in all offspring is",
+      "source_page": 508,
+      "printed_page": 488,
+      "source_block_ids": [
+        "p508:b7"
+      ],
+      "bbox": [
+        122.0,
+        1107.0,
+        1083.0,
+        1243.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula004]]",
+      "source_page": 508,
+      "printed_page": 488,
+      "source_block_ids": [
+        "p508:b8"
+      ],
+      "bbox": [
+        185.0,
+        1270.0,
+        940.0,
+        1358.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "while the probability that both parents satisfy this condition is",
+      "source_page": 508,
+      "printed_page": 488,
+      "source_block_ids": [
+        "p508:b10"
+      ],
+      "bbox": [
+        126.0,
+        1392.0,
+        873.0,
+        1427.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula005]]",
+      "source_page": 508,
+      "printed_page": 488,
+      "source_block_ids": [
+        "p508:b11"
+      ],
+      "bbox": [
+        202.0,
+        1456.0,
+        926.0,
+        1548.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, under fairly general settings, we expect most parents to be uninformative about a particular QTL/marker combination.",
+      "source_page": 509,
+      "printed_page": 489,
+      "source_block_ids": [
+        "p509:b2"
+      ],
+      "bbox": [
+        95.0,
+        134.0,
+        1053.0,
+        202.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter16:1]]",
+      "source_page": 509,
+      "source_block_ids": [
+        "p509:b3",
+        "p509:b4",
+        "p509:b5",
+        "p509:b6"
+      ],
+      "bbox": [
+        140.0,
+        296.0,
+        1003.0,
+        355.0
+      ]
     }
   ]
 }

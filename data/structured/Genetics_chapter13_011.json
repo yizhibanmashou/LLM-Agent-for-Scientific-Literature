@@ -2,58 +2,130 @@
   "id": "Genetics_chapter13_011",
   "metadata": {
     "chapter": "Genetics_chapter13",
-    "section": "Introduction",
-    "subsections": [
-      "Hypothesis Testing"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Hypothesis Testing",
+    "section": "COMPLEX SEGREGATION ANALYSIS",
+    "subsections": [],
+    "section_level_1": "COMPLEX SEGREGATION ANALYSIS",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "Hypothesis Testing"
+      "COMPLEX SEGREGATION ANALYSIS"
     ],
-    "display_heading": "Hypothesis Testing"
+    "display_heading": "COMPLEX SEGREGATION ANALYSIS",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 378,
+      "printed_page": 358,
+      "source_block_ids": [
+        "p378:b3"
+      ],
+      "bbox": [
+        130.0,
+        452.0,
+        632.0,
+        489.0
+      ],
+      "raw_text": "COMPLEX SEGREGATION ANALYSIS"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "An important issue in tests for major genes is model fitting, i.e., evaluating whether the full model is needed, or if some subset of the model gives essentially the same fit. For example, we might initially assume a mixture of two normals with different means and common variance, so that the full model has parameters $ \\mu_{1}, \\mu_{2}, \\sigma^{2} $, and p. Is the fit using these four parameters significantly better than the fit assuming a single underlying normal with parameters $ \\mu $ and $ \\sigma^{2} $? For large sample sizes, the likelihood ratio (LR) statistic test for whether the full model provides a better fit than a particular subset of the model is $$ \\Lambda(\\mathbf{z})=-2\\ln\\left[\\frac{\\widehat{\\ell}_{r}(\\mathbf{z})}{\\widehat{\\ell}(\\mathbf{z})}\\right]=-2\\left\\{\\ln\\left[\\widehat{\\ell}_{r}(\\mathbf{z})\\right]-\\ln\\left[\\widehat{\\ell}(\\mathbf{z})\\right]\\right\\} $$ where $ \\widehat{\\ell}(\\mathbf{z}) $ is the likelihood function evaluated at the MLE for the full model, and $ \\widehat{\\ell}_{r}(\\mathbf{z}) $ is the maximum of the likelihood function for the restricted model under which r parameters of the full model are assigned fixed values. Under appropriate conditions, the LR test statistic is approximately distributed as $ \\chi_{r}^{2} $, i.e., as a $ \\chi^{2} $ distribution with r degrees of freedom (Wald 1943); see Appendix 4."
+      "content": "Starting with Elston and Stewart (1971) and Morton and MacLean (1974), human population geneticists have developed the method of complex segregation analysis, or CSA, to test between alternative modes of inheritance. As we will see in the next few sections, CSA extends the simple mixture model (Equation 13.6a) by using pedigree information to modify the mixture proportions. Assumptions about the mode of inheritance specify the mixture distribution weights, allowing likelihood-ratio tests for different models of transmission (a single major gene, no major gene but background polygenes, major gene plus background polygenes, and so forth). We illustrate some of these applications below, showing how known relationships among relatives define the transmission probabilities of both major genes and polygenes.",
+      "source_page": 378,
+      "printed_page": 358,
+      "source_block_ids": [
+        "p378:b4"
+      ],
+      "bbox": [
+        129.0,
+        512.0,
+        1094.0,
+        879.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The simplest restricted model assumes no mixture at all, so that the overall distribution is just a single normal distribution with unknown mean and variance. As shown in Appendix 4, the resulting likelihood is just the product of n identical normals with mean $ \\mu $ and variance $ \\sigma^{2} $. The MLEs in this case are the sample mean $ \\bar{z} $ and the uncorrected sample variance $$ \\mathrm{Var}(z)=\\frac{1}{n}\\sum_{j=1}^{n}(z_{j}-\\overline{z})^{2} $$"
+      "content": "The extensive literature on complex segregation analysis is reviewed by Elston and Rao (1978), Boyle and Elston (1979), Elston (1980, 1981a, 1990a), and Morton et al. (1983). While the bulk of the literature deals with human populations, Le Roy et al. (1990) and Knott et al. (1991a,b) examine applications in animal breeding. Tourjee et al. (1995) give an application to plants, examining the genetic basis of flower color in Gerbera jamesonii. Similar likelihood methods for major loci have been developed for F₂ segregation in crosses between inbred lines (Tan and Chang 1972, Elston and Stewart 1973, Tan and D'Angelo 1979, Elston 1984, Janss and Van Der Werf 1992, Loisel et al. 1994, Changjian et al. 1994).",
+      "source_page": 378,
+      "printed_page": 358,
+      "source_block_ids": [
+        "p378:b5"
+      ],
+      "bbox": [
+        138.0,
+        867.0,
+        1100.0,
+        1167.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note that the ML estimate of the variance is slightly different from the unbiased variance estimator, which divides the sum of squares by $n-1$. Substituting the MLEs of $\\sigma^{2}$ and $\\mu$ gives the maximum value of this restricted likelihood as $$ \\widehat{\\ell}_{r}(\\mathbf{z})=\\prod_{j=1}^{n}\\left\\{\\frac{1}{\\sqrt{2\\pi\\operatorname{V a r}(z)}}\\exp\\left[-\\frac{(z_{j}-\\overline{{z}})^{2}}{2\\operatorname{V a r}(z)}\\right]\\right\\} $$"
-    },
-    {
-      "type": "definition",
-      "content": "Taking logarithms and recalling the definition of Var gives $$ -2\\ln\\left[\\widehat{\\ell}_{r}(\\mathbf{z})\\right]=n\\cdot\\left[\\ln\\operatorname{V a r}(z)+\\ln2\\pi+1\\right] $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Example 2. Consider the likelihood-ratio test statistic for whether a diallelic major gene (in Hardy-Weinberg frequencies, with the phenotypes for each major locus genotype normally distributed with constant variance) provides a better fit of the data than a single normal distribution. Assume that the data consist of $n$ (unrelated) individuals, randomly chosen from the population. From Equations 13.7 and 13.8, the likelihood-ratio test statistic is given by $$ \\begin{aligned}\\Lambda(\\mathbf{z})&=-2\\left\\{\\ln\\left[\\widehat{\\ell}_{r}(\\mathbf{z})\\right]-\\ln\\left[\\widehat{\\ell}(\\mathbf{z})\\right]\\right\\}\\\\&=2\\ln\\left[\\widehat{\\ell}(\\mathbf{z})\\right]+n\\cdot[\\ln\\operatorname{Var}(z)+\\ln2\\pi+1]\\end{aligned} $$ where $$ \\widehat{\\ell}(\\mathbf{z})=\\max\\left[\\prod_{j=1}^{n}\\ell(z_{j})\\right] $$ the maximum being taken over all admissible values of $p$ ($0 \\leq p \\leq 1$), $\\mu_{QQ}$, $\\mu_{Qq}$, $\\mu_{qq}(-\\infty < \\mu < \\infty)$, and $\\sigma^{2}(\\sigma^{2} \\geq 0)$ and $$ \\ell(z_{j})=p^{2}\\cdot\\varphi(z_{j},\\mu_{Q Q},\\sigma^{2})+2p(1-p)\\cdot\\varphi(z_{j},\\mu_{Q q},\\sigma^{2})+(1-p)^{2}\\cdot\\varphi(z_{j},\\mu_{q q},\\sigma^{2}) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Since the full model has five unknown parameters while the reduced model has two $(\\mu, \\sigma^{2})$, the test statistic $\\Lambda$ is approximately distributed as $\\chi_{3}^{2}$. Hence $\\Lambda$ values exceeding 7.82 and 11.4 indicate that a mixture of three normals provides a better fit at the 5% and 1% levels of significance, respectively, than a single normal."
-    },
-    {
-      "type": "discussion",
-      "content": "Likelihood-ratio tests require that alternate hypotheses be nested, one model being a subset of the other (i.e., by fixing some parameters of one model we recover the second). If they are not, the large-sample distribution does not necessarily approach a $ \\chi^{2} $. Likelihood functions involving nonnested hypotheses can be compared by using Akaike's (1974) information content (AIC), $$ \\mathrm{A I C}=-2\\ln(\\mathrm{m a x i m u m~l i k e l i h o o d})+2(\\mathrm{n u m b e r~o f~f i t t e d~p a r a m e t e r s}) $$"
+      "content": "While complex segregation analysis is the most assumption-burdened test for detecting major genes, it is also the most powerful of the marker-free methods when the assumptions hold (MacCluer et al. 1983, MacCluer and Kammerer 1984). For example, the commingling tests discussed above (e.g., Example 2) that simply fit a mixture of normals and use no information from relatives can easily miss major genes that segregation analysis can detect (Kwon et al. 1990).",
+      "source_page": 378,
+      "printed_page": 358,
+      "source_block_ids": [
+        "p378:b6"
+      ],
+      "bbox": [
+        144.0,
+        1154.0,
+        1104.0,
+        1360.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The model with the smallest AIC is chosen as the most parsimonious. The AIC is a descriptive statistic only and not a formal hypothesis test, but it provides a useful measure for comparing rather different models. An alternative approach involves the use of resampling methods (Schork and Schork 1989, Churchill and Doerge 1994). Two such methods, permutation tests and bootstrapping, are discussed in Chapter 15."
+      "content": "Complex segregation analysis assumes normality of the underlying distributions, which greatly simplifies the form of the likelihood function. If this assumption is violated, false detection of a major locus can occur (MacLean et al. 1975, Go et al. 1978, Morton 1984). As mentioned above, if the underlying distributions are suspected to be nonnormal, one strategy is to use a likelihood approach that incor- porates a transformation parameter for each underlying distribution. Instead of individually transforming each underlying distribution (through the likelihood function), one could simply apply a single transform to the observed distribution. However, this approach can raise serious issues of interpretation (e.g., Asamoah et al. 1987). While the use of transformations is not a resolved issue, Demenais et al. (1986) suggest that tests that incorporate estimates of transmission probabilities (see Example 4 below) remove the need to transform the data before performing segregation analysis. A final complication is that when significant genotype × environment interaction is present, the power to detect a major gene is greatly reduced (Eaves 1984, Tiret et al. 1993).",
+      "source_page": 378,
+      "printed_page": 358,
+      "source_block_ids": [
+        "p378:b7",
+        "p379:b2"
+      ],
+      "bbox": [
+        148.0,
+        1346.0,
+        1107.0,
+        1522.0
+      ],
+      "source_page_end": 379
     },
     {
       "type": "discussion",
-      "content": "How does one proceed if the underlying distributions of a mixture model are not normal? MacLean et al. (1976), Elston (1984), and Schork and Schork (1988) suggest that the Box-Cox (1964) power transform can be used to normalize each of the underlying distributions. Recall from Chapter 11 that this transformation is described by a single parameter $ \\lambda $, with $ x = (z^{\\lambda} - 1)/\\lambda $ for $ \\lambda \\neq 0 $ and $ x = \\ln z $ for $ \\lambda = 0 $. Hence, in the likelihood function, the $ i $th underlying distribution uses $ x_i = (z^{\\lambda_i} - 1)/\\lambda_i $ in place of $ z $, allowing each underlying distribution to have a different transform. If we assume that an observed distribution is generated by $ k $ underlying distributions that can be transformed to normality by the appropriate Box-Cox transform, the resulting mixture model can be expressed as a mixture of $ k $ normals. The $ i $th normalized underlying distribution has mean $ \\mu_i $, variance $ \\sigma_i^2 $, and transformation parameter $ \\lambda_i $, all of which can be estimated by standard ML methods. This approach offers a test for whether an observed skewed distribution results from a single naturally skewed distribution, from a mixture of underlying normals, or from a mixture of underlying distributions that can be transformed to normality. If the distribution results from a mixture of normals, a standard mixture model should give a significantly better fit than a single transformed distribution (where the transformation parameter $ \\lambda $ is estimated from the data). Whether a mixture model provides a significantly better fit can be evaluated by a likelihood-ratio test. Likewise, the hypothesis that the underlying mixture distributions are themselves skewed can be tested by fitting the $ \\lambda_{i} $ from the data and comparing this to a model with $ \\lambda_{i}=1 $ (no transformation)."
+      "content": "The following sections illustrate some general approaches for constructing likelihood functions for full-sib families under increasingly more general genetic models. We start by assuming only a single diallelic major locus, and then consider separately common family effects and background segregation of polygenic loci. Likelihoods for more complicated pedigrees or other experimental designs (such as inbred-line crosses) follow using similar arguments. Before proceeding, an example will show the types of hypotheses that can be addressed and the types of parameters that need to be incorporated into the likelihood functions underlying complex segregation analysis.",
+      "source_page": 379,
+      "printed_page": 359,
+      "source_block_ids": [
+        "p379:b3"
+      ],
+      "bbox": [
+        73.0,
+        449.0,
+        1035.0,
+        754.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter13:3]]",
+      "source_page": 379,
+      "source_block_ids": [
+        "p379:b4",
+        "p379:b5",
+        "p380:b2",
+        "p380:b3"
+      ],
+      "bbox": [
+        109.0,
+        835.0,
+        980.0,
+        1292.0
+      ]
     }
   ]
 }

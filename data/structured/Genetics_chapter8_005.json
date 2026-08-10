@@ -2,30 +2,99 @@
   "id": "Genetics_chapter8_005",
   "metadata": {
     "chapter": "Genetics_chapter8",
-    "section": "Introduction",
+    "section": "ELEMENTARY MATRIX ALGEBRA",
     "subsections": [
-      "Partitioned Matrices"
+      "Basic Notation"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Partitioned Matrices",
+    "section_level_1": "ELEMENTARY MATRIX ALGEBRA",
+    "section_level_2": "Basic Notation",
     "heading_path": [
-      "Introduction",
-      "Partitioned Matrices"
+      "ELEMENTARY MATRIX ALGEBRA",
+      "Basic Notation"
     ],
-    "display_heading": "Partitioned Matrices"
+    "display_heading": "ELEMENTARY MATRIX ALGEBRA / Basic Notation",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 198,
+      "printed_page": 178,
+      "source_block_ids": [
+        "p198:b6"
+      ],
+      "bbox": [
+        144.0,
+        1079.0,
+        332.0,
+        1111.0
+      ],
+      "raw_text": "Basic Notation"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "It is often useful to work with partitioned matrices wherein each element in a matrix is itself a matrix. There are several ways to partition a matrix. For example, we could write the matrix C above as $$ \\mathbf{C}=\\begin{pmatrix}3&1&2\\\\2&5&4\\\\1&1&2\\end{pmatrix}=\\begin{pmatrix}3&\\vdots&1&2\\\\\\cdots&\\cdots&\\cdots&\\cdots\\\\2&\\vdots&5&4\\\\1&\\vdots&1&2\\end{pmatrix}=\\begin{pmatrix}\\mathbf{a}&\\mathbf{b}\\\\\\mathbf{d}&\\mathbf{B}\\end{pmatrix} $$ where $$ \\mathbf{a}=\\left(3\\right),\\quad\\mathbf{b}=\\left(1\\quad2\\right),\\quad\\mathbf{d}=\\left(2\\atop1\\right),\\quad\\mathbf{B}=\\left(5\\quad4\\atop1\\quad2\\right) $$"
+      "content": "A matrix is simply a rectangular array of numbers. Some examples are:",
+      "source_page": 198,
+      "printed_page": 178,
+      "source_block_ids": [
+        "p198:b7"
+      ],
+      "bbox": [
+        143.0,
+        1118.0,
+        993.0,
+        1155.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Alternatively, we could partition C into a single row vector whose elements are themselves column vectors, $$ \\mathbf{C}=\\left(\\begin{array}{l l l l}{\\mathbf{c}_{1}}&{\\mathbf{c}_{2}}&{\\mathbf{c}_{3}}\\end{array}\\right)\\quad\\text{where}\\quad\\mathbf{c}_{1}=\\left(\\begin{array}{l}{3}\\\\ {2}\\\\ {1}\\end{array}\\right),\\quad\\mathbf{c}_{2}=\\left(\\begin{array}{l}{1}\\\\ {5}\\\\ {1}\\end{array}\\right),\\quad\\mathbf{c}_{3}=\\left(\\begin{array}{l}{2}\\\\ {4}\\\\ {2}\\end{array}\\right) $$ or C could be written as a column vector whose elements are row vectors, $$ \\mathbf{C}=\\left(\\begin{array}{l}{\\mathbf{b_{1}}}\\\\ {\\mathbf{b_{2}}}\\\\ {\\mathbf{b_{3}}}\\end{array}\\right)\\quad\\mathrm{w h e r e}\\quad\\mathbf{b_{1}}=\\left(\\begin{array}{l l l}{3}&{1}&{2}\\end{array}\\right),\\quad\\mathbf{b_{2}}=\\left(\\begin{array}{l l l}{2}&{5}&{4}\\end{array}\\right),\\quad\\mathbf{b_{3}}=\\left(\\begin{array}{l l l}{1}&{1}&{2}\\end{array}\\right) $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula011]]",
+      "source_page": 198,
+      "printed_page": 178,
+      "source_block_ids": [
+        "p198:b8"
+      ],
+      "bbox": [
+        165.0,
+        1177.0,
+        1070.0,
+        1285.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A matrix with $r$ rows and $c$ columns is said to have dimensionality $r \\times c$ (a useful mnemonic for remembering this is railroad car). In the examples above, D has three rows and two columns, and is thus a $3 \\times 2$ matrix. An $r \\times 1$ matrix, such as a, is a column vector, while a $1 \\times c$ matrix, such as b, is a row vector. A matrix in which the number of rows equals the number of columns, such as C, is called a square matrix. Numbers are also matrices (of dimensionality $1 \\times 1$) and are often referred to as scalars.",
+      "source_page": 198,
+      "printed_page": 178,
+      "source_block_ids": [
+        "p198:b9"
+      ],
+      "bbox": [
+        143.0,
+        1308.0,
+        1105.0,
+        1536.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A matrix is completely specified by the elements that comprise it, with $ M_{ij} $ denoting the element in the ith row and jth column of matrix M. Using the sample matrices above, $ C_{23} = 4 $ is the element in the second row and third column of C. Likewise, $ C_{32} = 1 $ is the element in the third row and second column. Two matrices are equal if and only if all of their corresponding elements are equal.",
+      "source_page": 199,
+      "printed_page": 179,
+      "source_block_ids": [
+        "p199:b2"
+      ],
+      "bbox": [
+        62.0,
+        133.0,
+        1025.0,
+        299.0
+      ]
     }
   ]
 }

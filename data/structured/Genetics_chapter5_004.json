@@ -2,70 +2,189 @@
   "id": "Genetics_chapter5_004",
   "metadata": {
     "chapter": "Genetics_chapter5",
-    "section": "Introduction",
+    "section": "A GENERAL LEAST-SQUARES MODEL FOR GENETIC EFFECTS",
     "subsections": [
-      "LINKAGE"
+      "Extension to Haploids and Polyploids"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter5_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "LINKAGE",
+    "section_level_1": "A GENERAL LEAST-SQUARES MODEL FOR GENETIC EFFECTS",
+    "section_level_2": "Extension to Haploids and Polyploids",
     "heading_path": [
-      "Introduction",
-      "LINKAGE"
+      "A GENERAL LEAST-SQUARES MODEL FOR GENETIC EFFECTS",
+      "Extension to Haploids and Polyploids"
     ],
-    "display_heading": "LINKAGE"
+    "display_heading": "A GENERAL LEAST-SQUARES MODEL FOR GENETIC EFFECTS / Extension to Haploids and Polyploids",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 108,
+      "printed_page": 88,
+      "source_block_ids": [
+        "p108:b4"
+      ],
+      "bbox": [
+        143.0,
+        707.0,
+        616.0,
+        748.0
+      ],
+      "raw_text": "Extension to Haploids and Polyploids"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Up to now we have been treating the transmission of genes at different loci as independent events. Such independence is generally true for genes that are on different chromosomes, but when loci are physically linked on the same chromosome, a statistical dependence can exist between the genes incorporated into gametes. Genes that lie on the same chromosome tend to be inherited as a group, a tendency that declines with increasing distance between the loci. Crossing-over is responsible for this decline."
+      "content": "A large fraction of the “lower” organisms, most notably bacteria, fungi, algae, and mosses, have life cycles that are predominantly haploid. A very brief diploid stage occurs when gametes fuse and chromosomes reassort to form variable haploid progeny. Haploid species have long been used as model systems in genetic studies focused on single loci, but they also offer some interesting possibilities for studies on quantitative-genetic variation (Caten and Jinks 1976, Croft and Jinks 1977, Caten 1979). Because haploid organisms have only a single allele at each locus, dominance does not contribute to the genetic variation, so all variance due to nonadditive gene action involves epistasis between additive effects. Therefore, Equation 5.8 simplifies to",
+      "source_page": 108,
+      "printed_page": 88,
+      "source_block_ids": [
+        "p108:b5"
+      ],
+      "bbox": [
+        143.0,
+        741.0,
+        1106.0,
+        1084.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "During the meiotic production of gametes, each chromosome replicates to form two “sister” chromatids. Homologous nonsister chromatids then become intimately associated with each other, forming one or more physical connections known as chiasmata (Figure 5.4). Each chiasma represents a point of prior transfer of genetic information. Usually, the chromosomal material distal to a chiasma is exchanged completely, while that proximal to the centromere remains intact. Such an exchange is referred to as a cross-over."
+      "content": "[[FORMULA:Genetics_chapter5_formula039]]",
+      "source_page": 108,
+      "printed_page": 88,
+      "source_block_ids": [
+        "p108:b6"
+      ],
+      "bbox": [
+        450.0,
+        1101.0,
+        809.0,
+        1147.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Gamete frequencies are the fundamental census units in all considerations of linkage relationships. Consider two diallelic loci, $A$ and $B$, and let the frequencies of the four gamete types be $P_{A_1B_1}$, $P_{A_1B_2}$, $P_{A_2B_1}$, and $P_{A_2B_2}$, and the frequencies of alleles be $p_{A_1}$, $p_{A_2}$, $p_{B_1}$, and $p_{B_2}$. If the allelic state at locus $A$ is completely independent of that at locus $B$, then we expect $P_{A_1B_1} = p_{A_1}p_{B_1}$, $P_{A_1B_2} = p_{A_1}p_{B_2}$, and so on. However, many factors, including natural selection, founder effects, migration, and assortative mating, can cause gamete frequencies to depart from expectations based on allele frequencies. A natural measure of this deviation is the coefficient $$ D_{A_{i}B_{j}}=P_{A_{i}B_{j}}-p_{A_{i}}p_{B_{j}} $$"
+      "content": "Almost all haploid organisms can be propagated vegetatively, and it is a simple matter to test whether genetic variation can be explained by an additive model. When measures are taken on a large number of replicates of the same genotype, the mean of these measures will be a good estimate of the genotypic value under the experimental setting. If there is no epistatic gene action, the mean phenotype of sexually produced progeny should not be significantly different from the average of the parents.",
+      "source_page": 108,
+      "printed_page": 88,
+      "source_block_ids": [
+        "p108:b8"
+      ],
+      "bbox": [
+        151.0,
+        1170.0,
+        1114.0,
+        1411.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The index $D_{A_{i}B_{j}}$ is equivalent to the covariance of the frequencies of “nonalleles” $A_{i}$ and $B_{j}$ in the same gamete. To see this relationship, let $x=1$ if $A_{i}$ is present and $x=0$ otherwise, and let $y=1$ if $B_{j}$ is present and $y=0$ otherwise. Then, $xy=1$ if both $A_{i}$ and $B_{j}$ are present, and $xy=0$ otherwise, so $\\sigma_{A_{i},B_{j}}=E(xy)-E(x)E(y)=P_{A_{i}B_{j}}-p_{A_{i}}p_{B_{j}}$."
+      "content": "Figure 5.3 illustrates two analyses of growth rate resulting from crosses between strains of the bread mold, Aspergillus. In both cases, there is a wide dispersion of offspring phenotypes due to the reassortment of parental genes. The mean offspring phenotype is not significantly different from that of the midparent",
+      "source_page": 108,
+      "printed_page": 88,
+      "source_block_ids": [
+        "p108:b9"
+      ],
+      "bbox": [
+        156.0,
+        1392.0,
+        1119.0,
+        1542.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note that $D_{A_i B_j}$ may be positive or negative depending on whether $A_i$ and $B_j$ are in coupling ($A_i B_j$ gametes are overrepresented) or repulsion ($A_i B_j$ gametes are underrepresented) disequilibrium. $D$ is often referred to as the coefficient of linkage disequilibrium, but since disequilibrium can occur between unlinked genes, many authors prefer to call it the coefficient of gametic phase disequilibrium. Higher-order terms for three or more loci are defined in Bennett (1954), Geiringer (1944), and Slatkin (1972)."
+      "content": "[[FIGURE:5.3]]",
+      "source_page": 109,
+      "printed_page": 89,
+      "source_block_ids": [
+        "p109:b3"
+      ],
+      "bbox": [
+        107.0,
+        584.0,
+        970.0,
+        717.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:5.4]]"
+      "content": "in one case, but in the second case there is a substantial depression in offspring growth rate. In this case, it appears that different combinations of genes with favorable epistatic effects on growth were sorted into the two parental lines. Sexual reproduction resulted in a breakup of these positive gene interactions. This type of result is observed commonly in crosses between fungal lines (Papa 1970, Merrick 1975), and we will consider it in a broader context in Chapter 9.",
+      "source_page": 109,
+      "printed_page": 89,
+      "source_block_ids": [
+        "p109:b4"
+      ],
+      "bbox": [
+        55.0,
+        767.0,
+        1016.0,
+        976.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "There are many ways in which disequilibrium between loci can originate and many ways by which it can be maintained (Felsenstein 1965, 1974; Hill and Robertson 1966, 1968; Nei 1967; Franklin and Lewontin 1970; Barker 1979; Charlesworth and Charlesworth 1979; Feldman et al. 1980). For now, we simply note that, even in the absence of forces that tend to maintain gametic phase disequilibrium (selection, migration, mutation, and drift), once such disequilibrium is present, it may persist for many generations."
+      "content": "Partitioning the genetic variance becomes much more complicated in the case of polyploids because of additional gene effects that need to be taken into account. Consider the effects attributable to single loci. With haploids we need only consider the additive component of variance, while diploid analysis brings in a dominance component to account for diallelic interactions. In the case of a tetraploid with single-locus genotype $ B_{ijkl} $, there are six potential diallelic interactions per locus $ (i \\times j, i \\times k, i \\times l, j \\times k, j \\times l, k \\times l) $, as well as four three-allele interactions $ (i \\times j \\times k, i \\times j \\times l, i \\times k \\times l, j \\times k \\times l) $, and one four-allele interaction $ (i \\times j \\times k \\times l) $. Thus, in the absence of interactions between loci, the total genetic variance of a tetraploid can be written as",
+      "source_page": 109,
+      "printed_page": 89,
+      "source_block_ids": [
+        "p109:b5"
+      ],
+      "bbox": [
+        48.0,
+        961.0,
+        1012.0,
+        1296.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The expected dynamics of gametic phase disequilibrium depend on the recombination fraction between loci, c. This quantity takes on a minimum value of zero when two loci are so tightly linked that they effectively segregate as a single supergene. Free recombination between loci is denoted by c = 0.5. The upper limit is 0.5 rather than 1.0 because crossing-over normally involves one"
+      "content": "[[FORMULA:Genetics_chapter5_formula040]]",
+      "source_page": 109,
+      "printed_page": 89,
+      "source_block_ids": [
+        "p109:b6"
+      ],
+      "bbox": [
+        368.0,
+        1315.0,
+        680.0,
+        1362.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:5.5]] rather than two pairs of nonsister chromatids. In principle, if cross-overs occurred between loci A and B on both pairs of chromatids, the recombination fraction could exceed 0.5, but this has been observed only rarely (Fisher and Mather 1936)."
+      "content": "where $\\sigma_{B}^{2}$, $\\sigma_{T}^{2}$, and $\\sigma_{Q}^{2}$ denote the variances of effects involving bi-, tri-, and quadra-allelic interactions. With epistasis, this expression becomes much more complicated. Even if epistasis only involved pairs of loci, ten terms $(\\sigma_{AA}^{2}, \\sigma_{AB}^{2}, \\sigma_{AT}^{2}, \\sigma_{AQ}^{2}, \\sigma_{BB}^{2}, \\text{etc.})$ would need to be taken into account, compared with three in the case of diploidy. Further information on these matters can be found in",
+      "source_page": 109,
+      "printed_page": 89,
+      "source_block_ids": [
+        "p109:b8"
+      ],
+      "bbox": [
+        42.0,
+        1379.0,
+        1002.0,
+        1560.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Consider the ideal case in which mating occurs randomly in a population that is effectively infinite in size and all systematic forces causing alleles at different loci to become statistically associated are absent. There are two ways to obtain gametes of a particular type: chromosomes of that type may be transmitted intact between generations, or different chromosomes may recombine to form new gene combinations of the appropriate type. If the frequency of gamete type $ A_{i}B_{j} $ in generation t is $ P_{A_{i}B_{j}}(t) $, then $ (1-c)P_{A_{i}B_{j}}(t) $ is the frequency that is passed on without recombination to the next generation. Among the proportion c of new gametes that are recombinants, $ p_{A_{i}}p_{B_{j}} $ must contain both $ A_{i} $ and $ B_{j} $ genes, since under random mating, the maternally derived A gene is distributed independently of the paternally derived B gene. Summing terms, $$ P_{A_{i}B_{j}}(t+1)=(1-c)P_{A_{i}B_{j}}(t)+c p_{A_{i}}p_{B_{j}} $$ and after subtracting $p_{A_{i}}p_{B_{j}}$ from both sides, $$ D_{A_{i}B_{j}}(t+1)=(1-c)D_{A_{i}B_{j}}(t) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "This equation generalizes to $$ D_{A_{i}B_{j}}(t)=(1-c)^{t}D_{A_{i}B_{j}}(0) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The main point of this illustration is that the disequilibrium between loci decays gradually. Even in the case of unlinked genes $(c=0.5)$, only 50% of the disequilibrium is removed each generation. With less frequent recombination, the time to attain gametic phase equilibrium $(D=0)$ can be quite long (Figure 5.5)."
+      "content": "Kempthorne (1957), Killick (1971), and Mather and Jinks (1982). Wricke and Weber (1986) give a particularly lucid review and show how all of the concepts introduced in the previous chapter can be extended to tetraploids.",
+      "source_page": 110,
+      "printed_page": 90,
+      "source_block_ids": [
+        "p110:b2"
+      ],
+      "bbox": [
+        132.0,
+        117.0,
+        1094.0,
+        237.0
+      ]
     }
   ]
 }

@@ -2,46 +2,129 @@
   "id": "Genetics_chapter15_014",
   "metadata": {
     "chapter": "Genetics_chapter15",
-    "section": "Introduction",
+    "section": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD",
     "subsections": [
       "DEALING WITH MULTIPLE QTLs"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
+    "section_level_1": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD",
     "section_level_2": "DEALING WITH MULTIPLE QTLs",
     "heading_path": [
-      "Introduction",
+      "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD",
       "DEALING WITH MULTIPLE QTLs"
     ],
-    "display_heading": "DEALING WITH MULTIPLE QTLs"
+    "display_heading": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD / DEALING WITH MULTIPLE QTLs",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 471,
+      "printed_page": 451,
+      "source_block_ids": [
+        "p471:b3"
+      ],
+      "bbox": [
+        73.0,
+        494.0,
+        520.0,
+        529.0
+      ],
+      "raw_text": "DEALING WITH MULTIPLE QTLs"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "All of the methods discussed so far are best characterized as one-at-a-time approaches for mapping QTLs, as they all assume a single QTL linked to the marker(s) of interest. While such methods can detect the presence of multiple QTLs (e.g., finding marker effects on a number of different chromosomes), they cannot discern whether significant effects at several linked markers/intervals are due to a common QTL or to several linked QTLs. The presence of multiple QTLs also introduces serious biases into estimates of QTL effects and positions derived from one-at-a-time approaches."
+      "content": "All of the methods discussed so far are best characterized as one-at-a-time approaches for mapping QTLs, as they all assume a single QTL linked to the marker(s) of interest. While such methods can detect the presence of multiple QTLs (e.g., finding marker effects on a number of different chromosomes), they cannot discern whether significant effects at several linked markers/intervals are due to a common QTL or to several linked QTLs. The presence of multiple QTLs also introduces serious biases into estimates of QTL effects and positions derived from one-at-a-time approaches.",
+      "source_page": 471,
+      "printed_page": 451,
+      "source_block_ids": [
+        "p471:b4"
+      ],
+      "bbox": [
+        69.0,
+        559.0,
+        1030.0,
+        821.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "For example, while the presence of multiple (significant) peaks on a likelihood map for a given chromosome is generally taken as an indication of multiple QTLs, such peaks do not necessarily correspond to the correct QTL positions (Martínez and Curnow 1992, Haley and Knott 1992). Figure 15.3 gives an example of two linked QTLs embedded within four markers. Using a likelihood function that assumes only a single QTL, interval mapping correctly indicates likelihood peaks in the intervals flanked by $ M_{1}-M_{2} $ and $ M_{3}-M_{4} $. However, the resulting map also shows a much higher peak between $ M_{2}-M_{3} $, incorrectly suggesting the presence of a third QTL in this region. Some programs allow one to “fix” a QTL at the position corresponding to the highest peak of a multiply peaked map, and then search for a second linked QTL. As Figure 15.3 shows, this procedure can introduce serious bias. While specific tests for the presence of linked QTLs in adjacent intervals using sets of three overlapping markers have been suggested (Martínez and Curnow 1992, 1994b; Haley and Knott 1992), these are not without problems (Whittaker et al. 1996)."
+      "content": "For example, while the presence of multiple (significant) peaks on a likelihood map for a given chromosome is generally taken as an indication of multiple QTLs, such peaks do not necessarily correspond to the correct QTL positions (Martínez and Curnow 1992, Haley and Knott 1992). Figure 15.3 gives an example of two linked QTLs embedded within four markers. Using a likelihood function that assumes only a single QTL, interval mapping correctly indicates likelihood peaks in the intervals flanked by $ M_{1}-M_{2} $ and $ M_{3}-M_{4} $. However, the resulting map also shows a much higher peak between $ M_{2}-M_{3} $, incorrectly suggesting the presence of a third QTL in this region. Some programs allow one to “fix” a QTL at the position corresponding to the highest peak of a multiply peaked map, and then search for a second linked QTL. As Figure 15.3 shows, this procedure can introduce serious bias. While specific tests for the presence of linked QTLs in adjacent intervals using sets of three overlapping markers have been suggested (Martínez and Curnow 1992, 1994b; Haley and Knott 1992), these are not without problems (Whittaker et al. 1996).",
+      "source_page": 471,
+      "printed_page": 451,
+      "source_block_ids": [
+        "p471:b5"
+      ],
+      "bbox": [
+        63.0,
+        816.0,
+        1025.0,
+        1300.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Unlinked QTLs also have an effect on one-at-a-time methods (albeit not as dramatic), as segregation at such loci contributes to the phenotypic variance. Reducing or removing this segregation variance reduces the residual variance for the marker/interval under consideration, increasing the power for QTL detection and improving the precision of estimates. Example 8 provides a dramatic illustration."
+      "content": "Unlinked QTLs also have an effect on one-at-a-time methods (albeit not as dramatic), as segregation at such loci contributes to the phenotypic variance. Reducing or removing this segregation variance reduces the residual variance for the marker/interval under consideration, increasing the power for QTL detection and improving the precision of estimates. Example 8 provides a dramatic illustration.",
+      "source_page": 471,
+      "printed_page": 451,
+      "source_block_ids": [
+        "p471:b6"
+      ],
+      "bbox": [
+        60.0,
+        1292.0,
+        1020.0,
+        1491.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:15.3]]"
+      "content": "[[FIGURE:15.3]]",
+      "source_page": 472,
+      "printed_page": 452,
+      "source_block_ids": [
+        "p472:b3"
+      ],
+      "bbox": [
+        174.0,
+        486.0,
+        1035.0,
+        552.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Most of the single-QTL methods developed above can be extended to multiple QTLs by considering additional marker loci and using conditional probabilities for multilocus genotypes. This approach has been used to develop explicit models for two or three linked QTLs (e.g., Knapp 1991, Haley and Knott 1992, Martínez and Curnow 1992, 1994b, Jansen 1996, Satagopan et al. 1996). We focus here on three particularly flexible regression-based approaches. The first is marker-difference regression, which considers all of the markers on one chromosome in a single analysis by using the regression of differences between the mean values of different genotypes. The second is composite interval mapping, which controls for both the effects of linked and unlinked QTLs by using the appropriate marker cofactors. Finally, Wright and Mowers (1994) and Whittaker et al. (1996) have shown how positional information for linked QTLs can be extracted from the regression coefficients of a standard multiple regression incorporating several linked markers."
+      "content": "Most of the single-QTL methods developed above can be extended to multiple QTLs by considering additional marker loci and using conditional probabilities for multilocus genotypes. This approach has been used to develop explicit models for two or three linked QTLs (e.g., Knapp 1991, Haley and Knott 1992, Martínez and Curnow 1992, 1994b, Jansen 1996, Satagopan et al. 1996). We focus here on three particularly flexible regression-based approaches. The first is marker-difference regression, which considers all of the markers on one chromosome in a single analysis by using the regression of differences between the mean values of different genotypes. The second is composite interval mapping, which controls for both the effects of linked and unlinked QTLs by using the appropriate marker cofactors. Finally, Wright and Mowers (1994) and Whittaker et al. (1996) have shown how positional information for linked QTLs can be extracted from the regression coefficients of a standard multiple regression incorporating several linked markers.",
+      "source_page": 472,
+      "printed_page": 452,
+      "source_block_ids": [
+        "p472:b4"
+      ],
+      "bbox": [
+        128.0,
+        610.0,
+        1092.0,
+        1066.0
+      ]
     },
     {
-      "type": "discussion",
-      "content": "Example 8. Lin et al. (1995) examined flowering date through ML interval mapping of 370 $ F_{2} $ individuals from a cross between cultivated and exotic sorghum ($ Sorghum\\ bicolor \\times S.\\ propinquum $). Only a single QTL for flowering date was detected, and this accounted for 85.7% of the total variance. The data were then adjusted to account for the effects of this major gene by using $ (z - b_{i}) $ in place of the trait value z for an individual with genotype i at a marker linked to the major gene. Here, the $ b_{i} $ ($ 1 \\leq i \\leq 3 $) are the regression coefficients generated by a standard marker-trait regression using this marker locus. While the uncorrected $ F_{2} $ phenotypic distribution was clearly bimodal, the adjusted data did not deviate from normality. Using the marker-adjusted data, two additional QTLs for flowering time were found (both unlinked to the original QTL), accounting for an additional 8.3% and 4.2% of the total variance. This example illustrates the potential importance of including additional marker information into the analytical process. sis when multiple QTLs are present. In this case, removing the effects of a major unlinked QTL reduced the residual variance sufficiently to enable detection of additional QTLs."
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter15:8]]",
+      "source_page": 472,
+      "source_block_ids": [
+        "p472:b5",
+        "p473:b2"
+      ],
+      "bbox": [
+        182.0,
+        1147.0,
+        1052.0,
+        1535.0
+      ]
     }
   ]
 }

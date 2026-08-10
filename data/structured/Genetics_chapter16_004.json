@@ -2,82 +2,309 @@
   "id": "Genetics_chapter16_004",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
+    "section": "SIB ANALYSIS: LINEAR MODELS",
     "subsections": [
-      "Several Half-sib Families"
+      "A Single Half-sib Family"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Several Half-sib Families",
+    "section_level_1": "SIB ANALYSIS: LINEAR MODELS",
+    "section_level_2": "A Single Half-sib Family",
     "heading_path": [
-      "Introduction",
-      "Several Half-sib Families"
+      "SIB ANALYSIS: LINEAR MODELS",
+      "A Single Half-sib Family"
     ],
-    "display_heading": "Several Half-sib Families"
+    "display_heading": "SIB ANALYSIS: LINEAR MODELS / A Single Half-sib Family",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 510,
+      "printed_page": 490,
+      "source_block_ids": [
+        "p510:b3"
+      ],
+      "bbox": [
+        109.0,
+        357.0,
+        427.0,
+        390.0
+      ],
+      "raw_text": "A Single Half-sib Family"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Equation 16.10b immediately suggests that one approach for combining information from $N$ (unrelated) half-sib families is to use the sum of the squared $t$ statistics (Equation 16.6) for each (informative) marker contrast, $$ T=\\sum_{i=1}^{N}t_{i}^{2}=\\sum_{i=1}^{N}\\frac{\\mathrm{MC}_{i}^{2}}{\\mathrm{SE}_{i}^{2}} $$ where from Equations 16.10a and 16.10b, $$ E(T)\\simeq N\\frac{E(\\mathrm{M C^{2}})}{E(\\mathrm{S E^{2}})}=N\\left[1+(1-2c)^{2}\\frac{n}{4}\\frac{\\sigma_{A}^{2}}{\\sigma_{e}^{2}}\\right] $$"
+      "content": "Suppose a single sire is crossed to n unrelated dams and a single offspring from each mating is measured. Ideally, this sire should be informative at a number of marker loci covering a significant fraction of the genome (as can be accomplished by using a large number of highly informative markers). While we have much less control over the choice of QTL-informative sires, if a major gene is involved, a pilot segregation analysis with a number of candidate sires can be used to estimate the probability that a particular sire is a QTL heterozygote (e.g., Equation 13.24), and those sires with the highest such probabilities can be used. One might also select those sires showing the greatest offspring variance (the idea being that this variance increases with the number of heterozygous QTLs), but within-family variance can be a poor indicator of sire QTL heterozygosity.",
+      "source_page": 510,
+      "printed_page": 490,
+      "source_block_ids": [
+        "p510:b4"
+      ],
+      "bbox": [
+        109.0,
+        398.0,
+        1070.0,
+        754.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "(We stress that $ \\sigma_{A}^{2} $ is the additive genetic variance accounted for by the QTL, not the trait as a whole.) A value of T significantly greater than N suggests linkage to a QTL. If the sample size within each marker class is sufficiently large, so that the observed value of $ SE^{2} $ can be taken to be very close to the population value of $ \\sigma^{2} $(MC), then the distribution of T is approximately $ \\chi^{2} $ with N degrees of freedom."
+      "content": "Let $ M_{1} $ and $ M_{2} $ denote the alternative sire alleles at a heterozygous marker locus, and let $ z_{ij} $ denote the phenotype of the jth individual with sire marker allele i. The simplest linear model for examining whether this marker is linked to a QTL (heterozygous in the sire) is",
+      "source_page": 510,
+      "printed_page": 490,
+      "source_block_ids": [
+        "p510:b5"
+      ],
+      "bbox": [
+        111.0,
+        752.0,
+        1072.0,
+        885.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Rearranging Equation 16.11b suggests the following method-of-moments estimate of $(1-2c)^{2}\\sigma_{A}^{2}$, $$ \\frac{4\\mathbf{Var}(e)}{n}\\left(\\frac{T}{N}-1\\right) $$ where $ \\mathrm{Var}(e) $ is an estimate of $ \\sigma_{e}^{2} $ (the within-marker class variance). Aspects of this approach are further examined by Geldermann (1975), Weller et al. (1990), and van der Beck et al. (1995)."
+      "content": "[[FORMULA:Genetics_chapter16_formula007]]",
+      "source_page": 510,
+      "printed_page": 490,
+      "source_block_ids": [
+        "p510:b6"
+      ],
+      "bbox": [
+        481.0,
+        896.0,
+        703.0,
+        926.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A closely related, and more widely used, approach is a nested ANOVA (Neimann-Sørensen and Robertson 1961, Lowry and Schultz 1959), which considers marker effects nested within each sibship. We only briefly consider the properties of nested ANOVA here, as these are extensively discussed in Chapter 18 (where effects of dams are nested within those for sires for the different purpose of estimating genetic variance components summed over all loci). The basic linear model is $$ z_{ijk}=\\mu+s_{i}+m_{ij}+e_{ijk} $$ where $z_{ijk}$ denotes the phenotype of the $k$th individual of marker genotype $j$ from sibship $i$, $s_i$ is the effect of sire $i$, $m_{ij}$ is the effect of marker genotype $j$ in sibship $i$, and $e_{ijk}$ is the within-marker, within-sibship residual. It is assumed that $s$, $m$, and $e$ have means equal to zero, are uncorrelated, and are normally distributed with variances $\\sigma_s^2$ (the between-sire variance), $\\sigma_m^2$ (the between-marker, within-sibship variance), and $\\sigma_e^2$ (the residual or within-marker, within-sibship variance). A significant marker variance indicates linkage to a segregating QTL, and is tested by using the statistic $$ F=\\frac{\\mathbf{M}\\mathbf{S}_{m}}{\\mathbf{M}\\mathbf{S}_{e}} $$ where the mean squares are given in [[SEE_TABLE:18.3]]. Assuming normality, Equation 16.14 follows an $F$ distribution under the null hypothesis that $\\sigma_{m}^{2}=0$. Assuming a balanced design with $N$ sires, each with $n/2$ half-sibs in each marker class, Equation 16.14 has $N$ and $N(n-2)$ degrees of freedom. Chapter 18 discusses the appropriate degrees of freedom under an unbalanced design."
+      "content": "where the marker effect $ m_{i} $ is the expected deviation from the mean trait value $ \\mu $, given that an offspring has sire allele $ M_{i} $. Since there are only two marker classes, a t test can be used to determine if offspring with $ M_{1} $ vs. $ M_{2} $ sire alleles have significantly different means,",
+      "source_page": 510,
+      "printed_page": 490,
+      "source_block_ids": [
+        "p510:b8"
+      ],
+      "bbox": [
+        114.0,
+        933.0,
+        1073.0,
+        1067.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 2. Three studies have attempted to map QTLs influencing milk production characters in dairy cows with nested ANOVA, using electrophoretically scored markers to examine half-sibships. The pioneering study of Neimann-Sørensen and Robertson (1961) used six markers and six production characters in Red Danish cattle, with 123 sires and 12 to 13 daughters per sire. None of the 36 possible marker-trait associations were significant at the 1% level, while three were significant at the 5% level. Four production characters in Holsteins (14 markers) and Guernseys (15 markers) were examined by Gonyon et al. (1987) and Haenlein et al. (1987), respectively. In Holsteins, the average number of sires was 181, with an average of 5.3 daughters per sire. Of 56 possible marker-character combinations, six were significant at the 1% level, and another three were significant at the 5% level. The sample sizes were smaller in Guernseys, with an average of 88 sires and 5.4 daughters per sire. None of the resulting 64 marker-character combinations were significant at the 1% level, while three were significant at the 5% level."
+      "content": "[[FORMULA:Genetics_chapter16_formula008]]",
+      "source_page": 510,
+      "printed_page": 490,
+      "source_block_ids": [
+        "p510:b9"
+      ],
+      "bbox": [
+        380.0,
+        1068.0,
+        804.0,
+        1143.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Taking into account the problem of multiple comparisons, the Red Danish data do not show convincing evidence of marker effects, as the probability of finding 3 (or more) of 36 tests significant at the 5% level is 0.10. The same is true for the Guernsey data, as the probability of 3 (or more) out of 64 tests being significant at the 5% level is 0.40. On the other hand, at least some of the Holstein associations are likely to be significant, even after accounting for multiple comparisons."
+      "content": "Here, MC denotes the marker contrast between alternative sire alleles, and SE is the standard error of the marker contrast. A significant t value implies that the marker is linked to a QTL that is heterozygous in the sire. Typically, only those offspring whose sire alleles can be determined are included in this analysis. If the marker locus is not very polymorphic, many offspring will be uninformative. Dentine and Cowan (1990) present a GLS regression method that allows uninformative individuals to be included in the analysis.",
+      "source_page": 510,
+      "printed_page": 490,
+      "source_block_ids": [
+        "p510:b11"
+      ],
+      "bbox": [
+        115.0,
+        1149.0,
+        1076.0,
+        1375.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The connection between sums of squared marker contrasts used in $t$ tests (Equation 16.11) and nested ANOVAs can be seen by considering the marker mean squares, $MS_{m}$, which can be expressed as a function of the marker contrasts, $$ \\mathrm{M S}_{m}=\\frac{1}{N}\\sum_{i=1}^{N}\\frac{n}{2}\\left[\\left(\\overline{z}_{i1}-\\overline{z}_{i.}\\right)^{2}+\\left(\\overline{z}_{i2}-\\overline{z}_{i.}\\right)^{2}\\right]=\\frac{n}{4N}\\sum_{i=1}^{N}\\mathrm{M C}_{i}^{2} $$"
+      "content": "Finally, consider the expected value of the marker contrast, given the sire genotype. Suppose the sire is $ M_{1}Q_{i}/M_{2}Q_{j} $ and that c is the recombination frequency between the marker and the QTL. The conditional probabilities for alternate QTL alleles in gametes carrying a known sire marker allele are",
+      "source_page": 510,
+      "printed_page": 490,
+      "source_block_ids": [
+        "p510:b12"
+      ],
+      "bbox": [
+        117.0,
+        1373.0,
+        1077.0,
+        1505.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The first equality follows from [[SEE_TABLE:18.3]], while the second follows by noting that the mean phenotype of progeny of the ith sire is $ \\overline{z}_{i\\cdot} = (\\overline{z}_{i1} + \\overline{z}_{i2})/2 $, where $ \\overline{z}_{ij} $ is the mean trait value for marker j in family i."
+      "content": "[[FORMULA:Genetics_chapter16_formula009]]",
+      "source_page": 510,
+      "printed_page": 490,
+      "source_block_ids": [
+        "p510:b13"
+      ],
+      "bbox": [
+        132.0,
+        1507.0,
+        1076.0,
+        1547.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Again referring to [[SEE_TABLE:18.3]], we see that for a balanced design the mean squares have expected values of $$ E(\\mathrm{\\bf MS}_{m})=\\sigma_{e}^{2}+n\\sigma_{m}^{2}\\qquad\\mathrm{and}\\qquad E(\\mathrm{\\bf MS}_{e})=\\sigma_{e}^{2} $$"
+      "content": "Suppose there are $n_Q$ QTL alleles $(Q_1, \\cdots, Q_{n_Q})$ with frequencies $q_1, \\cdots, q_{n_Q}$. Following Chapter 4, decompose the mean value of $Q_i Q_j$ as $\\mu_{Q_i Q_j} = \\mu + \\alpha_i + \\alpha_j + \\delta_{ij}$, where the deviation from the population mean is determined by the average effects of both alleles $(\\alpha_i + \\alpha_j)$ plus the dominance deviation $(\\delta_{ij})$. Assuming random mating; the dam contributes an allele at random, giving the expected value in offspring with sire marker $M_1$ as",
+      "source_page": 511,
+      "printed_page": 491,
+      "source_block_ids": [
+        "p511:b2"
+      ],
+      "bbox": [
+        83.0,
+        161.0,
+        1046.0,
+        356.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td rowspan=\"2\">N</td><td colspan=\"2\">$ \\Delta = 0.10 $</td><td colspan=\"2\">$ \\Delta = 0.05 $</td><td colspan=\"2\">$ \\Delta = 0.01 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>n</td><td style='text-align: center; word-wrap: break-word;'>$ N_T $</td><td style='text-align: center; word-wrap: break-word;'>n</td><td style='text-align: center; word-wrap: break-word;'>$ N_T $</td><td style='text-align: center; word-wrap: break-word;'>n</td><td style='text-align: center; word-wrap: break-word;'>$ N_T $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>150 $ ^\\circ $</td><td style='text-align: center; word-wrap: break-word;'>1,505</td><td style='text-align: center; word-wrap: break-word;'>290</td><td style='text-align: center; word-wrap: break-word;'>2,905</td><td style='text-align: center; word-wrap: break-word;'>1450</td><td style='text-align: center; word-wrap: break-word;'>14,505</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>20</td><td style='text-align: center; word-wrap: break-word;'>40</td><td style='text-align: center; word-wrap: break-word;'>1,620</td><td style='text-align: center; word-wrap: break-word;'>110</td><td style='text-align: center; word-wrap: break-word;'>4,420</td><td style='text-align: center; word-wrap: break-word;'>540</td><td style='text-align: center; word-wrap: break-word;'>21,620</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>100</td><td style='text-align: center; word-wrap: break-word;'>22</td><td style='text-align: center; word-wrap: break-word;'>4,500</td><td style='text-align: center; word-wrap: break-word;'>40</td><td style='text-align: center; word-wrap: break-word;'>8,100</td><td style='text-align: center; word-wrap: break-word;'>200</td><td style='text-align: center; word-wrap: break-word;'>40,100</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>200</td><td style='text-align: center; word-wrap: break-word;'>14</td><td style='text-align: center; word-wrap: break-word;'>5,800</td><td style='text-align: center; word-wrap: break-word;'>28</td><td style='text-align: center; word-wrap: break-word;'>11,400</td><td style='text-align: center; word-wrap: break-word;'>132</td><td style='text-align: center; word-wrap: break-word;'>53,000</td></tr></table>"
+      "content": "[[FORMULA:Genetics_chapter16_formula010]]",
+      "source_page": 511,
+      "printed_page": 491,
+      "source_block_ids": [
+        "p511:b3"
+      ],
+      "bbox": [
+        156.0,
+        381.0,
+        972.0,
+        513.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note: The QTL effect is measured by $\\Delta = (1 - 2c)^{2}\\sigma_{A}^{2}/\\sigma_{e}^{2}$, where $c$ is the marker-QTL recombination frequency. Here $\\sigma_{e}^{2}$ is the residual variance, i.e., the variance within half-sib families not accounted for by the marker effects. $N$ and $n$ denote the number of sires and the number of offspring per sire, assuming $n/2$ offspring per marker class per sire. $N_{T} = N(2n + 1)$ is the total number of genotyped individuals (one for each sire, dam, and offspring). All sires are assumed to be marker informative, and we assume that $N$ is sufficiently large that at least one family is QTL-informative. The number $N(\\gamma)$ of random sires required to have probability $\\gamma$ that at least one of them is QTL-informative (for a QTL with $n_{Q}$ alleles with frequencies $q_{1}, \\cdots, q_{n_{Q}}$) satisfies $\\Pr(\\text{none of the } N \\text{ sires are informative}) = \\left(\\sum_{i=1}^{n_{Q}} q_{i}^{2}\\right)^{N(\\gamma)} = 1 - \\gamma$. Solving gives $N(\\gamma) = \\ln(1 - \\gamma)/\\ln\\left(\\sum_{i=1}^{n_{Q}} q_{i}^{2}\\right) \\geq \\gamma/\\ln(n_{Q})$, where the last step follows from $\\sum_{i=1}^{n_{Q}} q_{i}^{2} \\geq 1/n_{Q}$ and $\\ln(1 - \\gamma) \\simeq -\\gamma$. with Equations 16.10b and 16.15 gives, $$ \\sigma_{m}^{2}=\\frac{E(\\mathrm{M S}_{m})-E(\\mathrm{M S}_{e})}{n}=(1-2c)^{2}\\frac{\\sigma_{A}^{2}}{4} $$"
+      "content": "which follows since $ \\sum \\alpha_k q_k = \\sum \\delta_{jk} q_k = 0 $ (Chapter 4). The expected value for the marker contrast from this sire becomes",
+      "source_page": 511,
+      "printed_page": 491,
+      "source_block_ids": [
+        "p511:b5"
+      ],
+      "bbox": [
+        83.0,
+        536.0,
+        1042.0,
+        603.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Thus, an estimate of the QTL effect (measured by its additive variance, scaled by the distance between QTL and marker), can be obtained from the observed mean squares."
+      "content": "[[FORMULA:Genetics_chapter16_formula011]]",
+      "source_page": 511,
+      "printed_page": 491,
+      "source_block_ids": [
+        "p511:b6"
+      ],
+      "bbox": [
+        223.0,
+        631.0,
+        903.0,
+        672.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "One immediate drawback of measuring a QTL effect by its variance in an outbred population is that even a completely linked QTL with a large effect can nonetheless have a small $ \\sigma_{m}^{2} $. Consider a strictly additive diallelic QTL with allele frequency p, where $ \\sigma_{A}^{2}=2a^{2}p(1-p) $. Even if a is large, the additive genetic variance can still be quite small if the QTL allele frequencies are near zero or one. An alternative way of visualizing this relationship is to note that the probability of a QTL-informative sire is $ 2p(1-p) $. If this is small, even if a is large, $ \\sigma_{A}^{2} $ will be small, as most families will not be informative. In those rare informative families, however, the between-marker effect is large. Combining this"
+      "content": "Thus, assuming a single QTL linked to the marker, the expected marker contrast for a given sire is the difference of the average effects of his alleles at this QTL, scaled by the QTL-marker recombination frequency.",
+      "source_page": 511,
+      "printed_page": 491,
+      "source_block_ids": [
+        "p511:b8"
+      ],
+      "bbox": [
+        80.0,
+        696.0,
+        1041.0,
+        795.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:16.2]]"
+      "content": "While a marker contrast may be significantly different from zero within a sibship, the expected value of this contrast across a random collection of sibships is zero for a population in linkage equilibrium, as $ E(\\alpha_x) = 0 $. Thus, one cannot simply combine contrasts across families, as these are expected to cancel. On the other hand, squared marker contrasts have expected values that are a function of the additive variance of the linked QTL. To see this relationship, assume that each sire marker allele has sample size $ n/2 $ and that the within-marker (residual) variance is the same for both marker alleles. Under these assumptions, $ \\sigma^2(\\overline{z}_{M_1}) = \\sigma^2(\\overline{z}_{M_2}) = \\sigma_e^2/(n/2) $, implying that the variance of the observed marker contrast about its expected value within each family is",
+      "source_page": 511,
+      "printed_page": 491,
+      "source_block_ids": [
+        "p511:b9"
+      ],
+      "bbox": [
+        77.0,
+        794.0,
+        1040.0,
+        1118.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Contrast this to the situation with inbred-line crosses, where the QTL effect estimates $ 2a $, since here all families are informative, rather than the fraction $ 2p(1-p) $ seen an outbred population."
+      "content": "[[FORMULA:Genetics_chapter16_formula012]]",
+      "source_page": 511,
+      "printed_page": 491,
+      "source_block_ids": [
+        "p511:b10"
+      ],
+      "bbox": [
+        219.0,
+        1142.0,
+        800.0,
+        1214.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Combining this result with Equation 16.9 gives the expected value of a squared marker contrast as",
+      "source_page": 511,
+      "printed_page": 491,
+      "source_block_ids": [
+        "p511:b12"
+      ],
+      "bbox": [
+        77.0,
+        1234.0,
+        1036.0,
+        1301.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula013]]",
+      "source_page": 511,
+      "printed_page": 491,
+      "source_block_ids": [
+        "p511:b13"
+      ],
+      "bbox": [
+        108.0,
+        1323.0,
+        1008.0,
+        1503.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the last step follows from $ E[\\left(\\alpha_{i}-\\alpha_{j}\\right)^{2}]=2E(\\alpha_{i}^{2})=\\sigma_{A}^{2} $ (Equation 4.23b).",
+      "source_page": 511,
+      "printed_page": 491,
+      "source_block_ids": [
+        "p511:b14"
+      ],
+      "bbox": [
+        73.0,
+        1529.0,
+        1031.0,
+        1573.0
+      ]
     }
   ]
 }

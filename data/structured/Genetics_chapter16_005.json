@@ -2,39 +2,444 @@
   "id": "Genetics_chapter16_005",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
+    "section": "SIB ANALYSIS: LINEAR MODELS",
     "subsections": [
-      "POWER OF NESTED ANOVA DESIGNS"
+      "Several Half-sib Families"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "16.2"
-    ],
-    "section_level_1": "Introduction",
-    "section_level_2": "POWER OF NESTED ANOVA DESIGNS",
+    "section_level_1": "SIB ANALYSIS: LINEAR MODELS",
+    "section_level_2": "Several Half-sib Families",
     "heading_path": [
-      "Introduction",
-      "POWER OF NESTED ANOVA DESIGNS"
+      "SIB ANALYSIS: LINEAR MODELS",
+      "Several Half-sib Families"
     ],
-    "display_heading": "POWER OF NESTED ANOVA DESIGNS",
-    "table_reference_keys": [
-      "chapter16:16.2"
-    ]
+    "display_heading": "SIB ANALYSIS: LINEAR MODELS / Several Half-sib Families",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 512,
+      "printed_page": 492,
+      "source_block_ids": [
+        "p512:b2"
+      ],
+      "bbox": [
+        114.0,
+        136.0,
+        434.0,
+        167.0
+      ],
+      "raw_text": "Several Half-sib Families"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The power of nested ANOVA designs to detect QTLs in a collection of half-sib families has been examined by Soller and Genizi (1978), Weller et al. (1990), Luo (1993), and van der Beck et al. (1995). Details of the power calculations are given in Appendix 5, and some results are presented in [[SEE_TABLE:16.2]]. Inspection of this table shows that increasing the number of sibs per family (n) is more efficient than increasing the number of families (N), as the total number of individuals that must be genotyped ($ N_{T} $) is smaller for small values of N. These power calculations assume that N is sufficiently large so as to include at least one QTL-informative family."
+      "content": "Equation 16.10b immediately suggests that one approach for combining information from N (unrelated) half-sib families is to use the sum of the squared t statistics (Equation 16.6) for each (informative) marker contrast,",
+      "source_page": 512,
+      "printed_page": 492,
+      "source_block_ids": [
+        "p512:b3"
+      ],
+      "bbox": [
+        113.0,
+        177.0,
+        1074.0,
+        277.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "One approach for increasing power is the granddaughter design (Weller et al. 1990), under which each sire produces a number of sons that are genotyped for sire marker alleles (Figure 16.2), and the trait values for each son are taken to be the mean value of the traits in offspring from the son (rather than the direct measures of the son itself). This design was developed for milk-production characters in dairy cows, where the offspring are granddaughters of the original sires. The linear model for this design is $$ z_{i j k\\ell}=\\mu+g_{i}+m_{i j}+s_{i j k}+e_{i j k\\ell} $$ where $g_{i}$ is the effect of grandsire $i$, $m_{ij}$ is the effect of marker allele $j$ (= 1, 2) from the $i$th sire, $s_{ijk}$ is the effect of son $k$ carrying marker allele $j$ from sire $i$, and $e_{ijk\\ell}$ is the residual for the $\\ell$th offspring of this son. Sire marker-allele effects are halved by considering granddaughters (as opposed to daughters), as there is only a 50% chance that the grandsire allele is passed from its son onto its granddaughter. However, this reduction in the expected marker contrast is usually more than countered by the smaller standard error associated with each contrast due to the large number of offspring used to estimate trait value. Van der Beck et al. (1995) examine the power of a number of three-generation designs, concluding that they generally offer more power than two-generation (parent-offspring) designs."
+      "content": "[[FORMULA:Genetics_chapter16_formula014]]",
+      "source_page": 512,
+      "printed_page": 492,
+      "source_block_ids": [
+        "p512:b4"
+      ],
+      "bbox": [
+        449.0,
+        289.0,
+        734.0,
+        380.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Finally, Mackinnon and Georges (1992) show that another factor that can decrease power is selection, which has the effect of reducing the between-marker constraints. Even a small amount of selection acting on the trait of interest can have a large effect on power."
+      "content": "where from Equations 16.10a and 16.10b,",
+      "source_page": 512,
+      "printed_page": 492,
+      "source_block_ids": [
+        "p512:b6"
+      ],
+      "bbox": [
+        115.0,
+        393.0,
+        609.0,
+        425.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula015]]",
+      "source_page": 512,
+      "printed_page": 492,
+      "source_block_ids": [
+        "p512:b7"
+      ],
+      "bbox": [
+        256.0,
+        439.0,
+        831.0,
+        512.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(We stress that $ \\sigma_A^2 $ is the additive genetic variance accounted for by the QTL, not the trait as a whole.) A value of $ T $ significantly greater than $ N $ suggests linkage to a QTL. If the sample size within each marker class is sufficiently large, so that the observed value of $ SE^2 $ can be taken to be very close to the population value of $ \\sigma^2 $(MC), then the distribution of $ T $ is approximately $ \\chi^2 $ with $ N $ degrees of freedom.",
+      "source_page": 512,
+      "printed_page": 492,
+      "source_block_ids": [
+        "p512:b9"
+      ],
+      "bbox": [
+        115.0,
+        527.0,
+        1076.0,
+        718.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Rearranging Equation 16.11b suggests the following method-of-moments estimate of $ (1-2c)^{2}\\sigma_{A}^{2} $,",
+      "source_page": 512,
+      "printed_page": 492,
+      "source_block_ids": [
+        "p512:b10"
+      ],
+      "bbox": [
+        115.0,
+        720.0,
+        1076.0,
+        787.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula016]]",
+      "source_page": 512,
+      "printed_page": 492,
+      "source_block_ids": [
+        "p512:b11"
+      ],
+      "bbox": [
+        483.0,
+        782.0,
+        708.0,
+        852.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\operatorname{Var}(e) $ is an estimate of $ \\sigma_{e}^{2} $ (the within-marker class variance). Aspects of this approach are further examined by Geldermann (1975), Weller et al. (1990), and van der Beck et al. (1995).",
+      "source_page": 512,
+      "printed_page": 492,
+      "source_block_ids": [
+        "p512:b13"
+      ],
+      "bbox": [
+        116.0,
+        862.0,
+        1076.0,
+        960.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A closely related, and more widely used, approach is a nested ANOVA (Neimann-Sørensen and Robertson 1961, Lowry and Schultz 1959), which considers marker effects nested within each sibship. We only briefly consider the properties of nested ANOVA here, as these are extensively discussed in Chapter 18 (where effects of dams are nested within those for sires for the different purpose of estimating genetic variance components summed over all loci). The basic linear model is",
+      "source_page": 512,
+      "printed_page": 492,
+      "source_block_ids": [
+        "p512:b14"
+      ],
+      "bbox": [
+        117.0,
+        960.0,
+        1081.0,
+        1188.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula017]]",
+      "source_page": 512,
+      "printed_page": 492,
+      "source_block_ids": [
+        "p512:b15"
+      ],
+      "bbox": [
+        444.0,
+        1189.0,
+        754.0,
+        1220.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ z_{ijk} $ denotes the phenotype of the kth individual of marker genotype j from sibship $ i, s_i $ is the effect of sire $ i, m_{ij} $ is the effect of marker genotype j in sibship $ i, $ and $ e_{ijk} $ is the within-marker, within-sibship residual. It is assumed that $ s, m, $ and $ e $ have means equal to zero, are uncorrelated, and are normally distributed with variances $ \\sigma_s^2 $ (the between-sire variance), $ \\sigma_m^2 $ (the between-marker, within-sibship variance), and $ \\sigma_e^2 $ (the residual or within-marker, within-sibship variance). A significant marker variance indicates linkage to a segregating QTL, and is tested by using the statistic",
+      "source_page": 512,
+      "printed_page": 492,
+      "source_block_ids": [
+        "p512:b17"
+      ],
+      "bbox": [
+        120.0,
+        1228.0,
+        1082.0,
+        1490.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula018]]",
+      "source_page": 512,
+      "printed_page": 492,
+      "source_block_ids": [
+        "p512:b18"
+      ],
+      "bbox": [
+        535.0,
+        1482.0,
+        665.0,
+        1547.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the mean squares are given in Table 18.3. Assuming normality, Equation 16.14 follows an $F$ distribution under the null hypothesis that $\\sigma_{m}^{2}=0$. Assuming a balanced design with $N$ sires, each with $n/2$ half-sibs in each marker class, Equation 16.14 has $N$ and $N(n-2)$ degrees of freedom. Chapter 18 discusses the appropriate degrees of freedom under an unbalanced design.",
+      "source_page": 513,
+      "printed_page": 493,
+      "source_block_ids": [
+        "p513:b2"
+      ],
+      "bbox": [
+        96.0,
+        153.0,
+        1054.0,
+        320.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter16:2]]",
+      "source_page": 513,
+      "source_block_ids": [
+        "p513:b3",
+        "p513:b4"
+      ],
+      "bbox": [
+        138.0,
+        412.0,
+        1006.0,
+        859.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The connection between sums of squared marker contrasts used in t tests (Equation 16.11) and nested ANOVAs can be seen by considering the marker mean squares, $ MS_{m} $, which can be expressed as a function of the marker contrasts,",
+      "source_page": 513,
+      "printed_page": 493,
+      "source_block_ids": [
+        "p513:b5"
+      ],
+      "bbox": [
+        87.0,
+        1150.0,
+        1048.0,
+        1251.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula019]]",
+      "source_page": 513,
+      "printed_page": 493,
+      "source_block_ids": [
+        "p513:b6"
+      ],
+      "bbox": [
+        159.0,
+        1262.0,
+        892.0,
+        1349.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The first equality follows from Table 18.3, while the second follows by noting that the mean phenotype of progeny of the ith sire is $ \\overline{z}_{i} = (\\overline{z}_{i1} + \\overline{z}_{i2})/2 $, where $ \\overline{z}_{ij} $ is the mean trait value for marker j in family i.",
+      "source_page": 513,
+      "printed_page": 493,
+      "source_block_ids": [
+        "p513:b8"
+      ],
+      "bbox": [
+        86.0,
+        1356.0,
+        1046.0,
+        1451.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Again referring to Table 18.3, we see that for a balanced design the mean squares have expected values of",
+      "source_page": 513,
+      "printed_page": 493,
+      "source_block_ids": [
+        "p513:b9"
+      ],
+      "bbox": [
+        85.0,
+        1454.0,
+        1046.0,
+        1516.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula020]]",
+      "source_page": 513,
+      "printed_page": 493,
+      "source_block_ids": [
+        "p513:b10"
+      ],
+      "bbox": [
+        270.0,
+        1524.0,
+        860.0,
+        1566.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:16.2]]",
+      "source_page": 514,
+      "printed_page": 494,
+      "source_block_ids": [
+        "p514:b3"
+      ],
+      "bbox": [
+        111.0,
+        220.0,
+        1049.0,
+        446.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Note: The QTL effect is measured by $ \\Delta = (1 - 2c)^{2}\\sigma_{A}^{2}/\\sigma_{e}^{2} $, where c is the marker-QTL recombination frequency. Here $ \\sigma_{e}^{2} $ is the residual variance, i.e., the variance within half-sib families not accounted for by the marker effects. N and n denote the number of sires and the number of offspring per sire, assuming n/2 offspring per marker class per sire. $ N_{T} = N(2n + 1) $ is the total number of genotyped individuals (one for each sire, dam, and offspring). All sires are assumed to be marker informative, and we assume that N is sufficiently large that at least one family is QTL-informative. The number $ N(\\gamma) $ of random sires required to have probability $ \\gamma $ that at least one of them is QTL-informative (for a QTL with $ n_{Q} $ alleles with frequencies $ q_{1}, \\cdots, q_{n_{Q}} $) satisfies $ \\Pr(\\text{none of the } N\\text{ sires are informative}) = \\left(\\sum_{i=1}^{n_{Q}} q_{i}^{2}\\right)^{N(\\gamma)} = 1 - \\gamma $. Solving gives $ N(\\gamma) = \\ln(1 - \\gamma)/\\ln\\left(\\sum_{i=1}^{n_{Q}} q_{i}^{2}\\right) \\geq \\gamma/\\ln(n_{Q}) $, where the last step follows from $ \\sum_{i=1}^{n_{Q}} q_{i}^{2} \\geq 1/n_{Q} $ and $ \\ln(1 - \\gamma) \\simeq -\\gamma $.",
+      "source_page": 514,
+      "printed_page": 494,
+      "source_block_ids": [
+        "p514:b4"
+      ],
+      "bbox": [
+        103.0,
+        465.0,
+        1066.0,
+        856.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "with Equations 16.10b and 16.15 gives,",
+      "source_page": 514,
+      "printed_page": 494,
+      "source_block_ids": [
+        "p514:b5"
+      ],
+      "bbox": [
+        108.0,
+        925.0,
+        575.0,
+        961.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula021]]",
+      "source_page": 514,
+      "printed_page": 494,
+      "source_block_ids": [
+        "p514:b6"
+      ],
+      "bbox": [
+        336.0,
+        1010.0,
+        836.0,
+        1079.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, an estimate of the QTL effect (measured by its additive variance, scaled by the distance between QTL and marker), can be obtained from the observed mean squares.",
+      "source_page": 514,
+      "printed_page": 494,
+      "source_block_ids": [
+        "p514:b8"
+      ],
+      "bbox": [
+        109.0,
+        1125.0,
+        1070.0,
+        1225.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "One immediate drawback of measuring a QTL effect by its variance in an outbred population is that even a completely linked QTL with a large effect can nonetheless have a small $ \\sigma_{m}^{2} $. Consider a strictly additive diallelic QTL with allele frequency p, where $ \\sigma_{A}^{2} = 2a^{2}p(1 - p) $. Even if a is large, the additive genetic variance can still be quite small if the QTL allele frequencies are near zero or one. An alternative way of visualizing this relationship is to note that the probability of a QTL-informative sire is $ 2p(1 - p) $. If this is small, even if a is large, $ \\sigma_{A}^{2} $ will be small, as most families will not be informative. In those rare informative families, however, the between-marker effect is large. Combining this",
+      "source_page": 514,
+      "printed_page": 494,
+      "source_block_ids": [
+        "p514:b9"
+      ],
+      "bbox": [
+        108.0,
+        1224.0,
+        1072.0,
+        1516.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:16.2]]",
+      "source_page": 515,
+      "printed_page": 495,
+      "source_block_ids": [
+        "p515:b3"
+      ],
+      "bbox": [
+        142.0,
+        600.0,
+        1006.0,
+        777.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Contrast this to the situation with inbred-line crosses, where the QTL effect estimates 2a, since here all families are informative, rather that the fraction $ 2p(1 - p) $ seen an outbred population.",
+      "source_page": 515,
+      "printed_page": 495,
+      "source_block_ids": [
+        "p515:b4"
+      ],
+      "bbox": [
+        90.0,
+        841.0,
+        1049.0,
+        940.0
+      ]
     }
   ]
 }

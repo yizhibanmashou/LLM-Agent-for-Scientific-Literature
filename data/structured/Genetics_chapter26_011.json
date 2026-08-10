@@ -2,66 +2,286 @@
   "id": "Genetics_chapter26_011",
   "metadata": {
     "chapter": "Genetics_chapter26",
-    "section": "Introduction",
+    "section": "MODELS FOR THE ESTIMATION OF BREEDING VALUES",
     "subsections": [
       "The Reduced Animal Model"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
+    "section_level_1": "MODELS FOR THE ESTIMATION OF BREEDING VALUES",
     "section_level_2": "The Reduced Animal Model",
     "heading_path": [
-      "Introduction",
+      "MODELS FOR THE ESTIMATION OF BREEDING VALUES",
       "The Reduced Animal Model"
     ],
-    "display_heading": "The Reduced Animal Model"
+    "display_heading": "MODELS FOR THE ESTIMATION OF BREEDING VALUES / The Reduced Animal Model",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 771,
+      "printed_page": 751,
+      "source_block_ids": [
+        "p771:b6"
+      ],
+      "bbox": [
+        55.0,
+        527.0,
+        416.0,
+        566.0
+      ],
+      "raw_text": "The Reduced Animal Model"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Quaas and Pollak (1980) combined features of both the animal and gametic model to obtain a reduced animal model (RAM) for large pedigrees that contain only parents and their offspring (i.e., ignoring individuals in the third generation and beyond). Suppose k parents and a total l of their offspring are each measured once. In the reduced animal model, parents are treated as in the full animal model, $ y_i = \\mu + a_i + e_i $, while their offspring are described by the gametic model. Only the k parental additive genetic values are estimated, so that $ \\mathbf{u}^T = (a_1, \\cdots, a_k)^T $. Partitioning the vector of observations y into a $ k \\times 1 $ vector of parental observations ($ \\mathbf{y}_p $) and an $ l \\times 1 $ vector of offspring observations ($ \\mathbf{y}_o $), the reduced animal model can be expressed using the general mixed model (Equation 26.1) by letting $$ \\mathbf{y}=\\left(\\begin{matrix}{\\mathbf{y}_{p}}\\\\ {\\mathbf{y}_{o}}\\\\ \\end{matrix}\\right),\\qquad\\mathbf{Z}=\\left(\\begin{matrix}{\\mathbf{I}_{k}}\\\\ {\\mathbf{Z}^{*}}\\\\ \\end{matrix}\\right),\\qquad\\mathbf{e}=\\left(\\begin{matrix}{\\mathbf{e}_{p}}\\\\ {\\mathbf{e}_{o}}\\\\ \\end{matrix}\\right) $$ giving $$ \\mathbf{y}=\\begin{pmatrix}\\mathbf{y}_{p}\\\\ \\mathbf{y}_{o}\\end{pmatrix}=\\mathbf{X}\\boldsymbol{\\beta}+\\begin{pmatrix}\\mathbf{I}_{k}\\\\ \\mathbf{Z}^{*}\\end{pmatrix}\\mathbf{u}+\\begin{pmatrix}\\mathbf{e}_{p}\\\\ \\mathbf{e}_{o}\\end{pmatrix} $$ where $\\mathbf{I}_k$ is the $k \\times k$ identity matrix, and $\\mathbf{Z}^*$ is the $l \\times k$ incidence matrix, which records the parents of each offspring. Here, in any particular row of $\\mathbf{Z}^*$, the two elements corresponding to the parents of that individual are set equal to 1/2 while all other elements are zero. $\\mathbf{Z}^* \\mathbf{u}$ is then a vector of the expected breeding values of each offspring as given by the average of the parental breeding values. The genetic covariance matrix is $\\mathbf{G} = \\sigma_A^2 \\mathbf{A}$, where $\\mathbf{A}$ is the $k \\times k$ relationship matrix for the parents, while the $(k+l) \\times (k+l)$ covariance matrix for the vector of residuals becomes $$ \\mathbf{R}=\\sigma_{E}^{2}\\left(\\begin{array}{c c}{\\mathbf{I}_{k}}&{\\mathbf{0}}\\\\ {\\mathbf{0}}&{\\mathbf{W}}\\\\ \\end{array}\\right) $$ implying $$ \\mathbf{R}^{-1}=\\sigma_{E}^{-2}\\begin{pmatrix}\\mathbf{I}_{k}&\\mathbf{0}\\\\ \\mathbf{0}&\\mathbf{W}^{-1}\\end{pmatrix} $$ with the offspring submatrix W defined as above (Equation 16.12). Substituting these results into Equation 26.5 and solving gives the BLUE for the vector of fixed effects and the BLUP for the vector of parental breeding values."
+      "content": "Quaas and Pollak (1980) combined features of both the animal and gametic model to obtain a reduced animal model (RAM) for large pedigrees that contain only parents and their offspring (i.e., ignoring individuals in the third generation and beyond). Suppose $k$ parents and a total $l$ of their offspring are each measured once. In the reduced animal model, parents are treated as in the full animal model, $y_i = \\mu + a_i + e_i$, while their offspring are described by the gametic model. Only the $k$ parental additive genetic values are estimated, so that $\\mathbf{u}^T = (a_1, \\cdots, a_k)^T$. Partitioning the vector of observations $y$ into a $k \\times 1$ vector of parental observations $(\\mathbf{y}_p)$ and an $l \\times 1$ vector of offspring observations $(\\mathbf{y}_o)$, the reduced animal model can be expressed using the general mixed model (Equation 26.1) by letting",
+      "source_page": 771,
+      "printed_page": 751,
+      "source_block_ids": [
+        "p771:b7"
+      ],
+      "bbox": [
+        49.0,
+        572.0,
+        1011.0,
+        916.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Quaas and Pollak (1980) show that the offspring breeding values can be obtained from the BLUE estimates of fixed effects and the BLUP estimates of parental breeding values. When estimates of the breeding values of both parents are available ($ \\widehat{a}_{si}, \\widehat{a}_{di} $), the estimate of i's breeding value given its character value $ y_{i} $ is $$ \\widehat{a}_{i}=\\frac{1}{2}\\left[\\widehat{a}_{s i}+\\widehat{a}_{d i}\\right]+\\left[\\frac{\\sigma_{A}^{2}(1-\\overline{{f}}_{i})/2}{\\sigma_{E}^{2}+\\sigma_{A}^{2}(1-\\overline{{f}}_{i})/2}\\right]\\left[y_{i}-\\widehat{\\mu}-\\frac{1}{2}\\left(\\widehat{a}_{s i}+\\widehat{a}_{d i}\\right)\\right] $$"
+      "content": "[[FORMULA:Genetics_chapter26_formula051]]",
+      "source_page": 771,
+      "printed_page": 751,
+      "source_block_ids": [
+        "p771:b8"
+      ],
+      "bbox": [
+        254.0,
+        914.0,
+        792.0,
+        994.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The first term is the predicted breeding value based only on the parental breeding values, while the product of the last two terms provides an estimate of the segregational deviation of the actual breeding value from its expectation. This additional contribution to the predicted offspring breeding value takes advantage of the information implicit in the offspring's phenotype — the first term in parentheses is the ratio of the within-family additive genetic variance to the total within-family variance (the within-family heritability). Equation 26.15 pertains to a model with only a single fixed effect. When multiple fixed effects are present, the appropriate BLUE estimates are also subtracted from each observation."
+      "content": "giving",
+      "source_page": 771,
+      "printed_page": 751,
+      "source_block_ids": [
+        "p771:b10"
+      ],
+      "bbox": [
+        44.0,
+        994.0,
+        133.0,
+        1030.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "At first sight, the reduced animal model seems much more complicated than the animal model, so why might it be preferred? The reason is related to computational efficiency. For very large data sets, solutions to the reduced animal model require only inverses of matrices of the order of the number of parents, while the full animal model requires inverses of the order of the total number of measured individuals."
+      "content": "[[FORMULA:Genetics_chapter26_formula052]]",
+      "source_page": 771,
+      "printed_page": 751,
+      "source_block_ids": [
+        "p771:b11"
+      ],
+      "bbox": [
+        291.0,
+        1030.0,
+        748.0,
+        1109.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 7. We now reconsider Example 6, modeling the data with the reduced animal model. Here, the only genetic parameters to estimate are the three parental breeding values. The resulting model has $\\beta$ and X as in Example 6, but $$ \\mathbf{y}=\\left(\\begin{matrix}{\\mathbf{y}_{p}}\\\\ {\\mathbf{y}_{o}}\\\\ \\end{matrix}\\right)=\\left(\\begin{matrix}{y_{1}}\\\\ {y_{2}}\\\\ {y_{3}}\\\\ {\\cdots}\\\\ {y_{4}}\\\\ {y_{5}}\\\\ \\end{matrix}\\right),\\quad\\mathbf{u}=\\left(\\begin{matrix}{a_{1}}\\\\ {a_{2}}\\\\ {a_{3}}\\\\ \\end{matrix}\\right),\\quad\\mathbf{Z}^{*}=\\left(\\begin{matrix}{1/2}&{1/2}&{0}\\\\ {0}&{1/2}&{1/2}\\\\ \\end{matrix}\\right) $$ giving $$ \\mathbf{Z}=\\left(\\begin{array}{l}{{{\\mathbf{I}}}} \\\\{{{\\mathbf{Z}^{*}}}}\\end{array}\\right)=\\left(\\begin{array}{c c c}{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{1}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{1}}} \\\\{{{1/2}}}&{{{1/2}}}&{{{0}}} \\\\{{{0}}}&{{{1/2}}}&{{{1/2}}}\\end{array}\\right) $$"
+      "content": "where $\\mathbf{I}_k$ is the $k \\times k$ identity matrix, and $\\mathbf{Z}^*$ is the $l \\times k$ incidence matrix, which records the parents of each offspring. Here, in any particular row of $\\mathbf{Z}^*$, the two elements corresponding to the parents of that individual are set equal to 1/2 while all other elements are zero. $\\mathbf{Z}^* \\mathbf{u}$ is then a vector of the expected breeding values of each offspring as given by the average of the parental breeding values. The genetic covariance matrix is $\\mathbf{G} = \\sigma_A^2 \\mathbf{A}$, where $\\mathbf{A}$ is the $k \\times k$ relationship matrix for the parents, while the $(k+l) \\times (k+l)$ covariance matrix for the vector of residuals becomes",
+      "source_page": 771,
+      "printed_page": 751,
+      "source_block_ids": [
+        "p771:b13"
+      ],
+      "bbox": [
+        37.0,
+        1104.0,
+        1001.0,
+        1377.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Since the three parents were assumed to be unrelated and noninbred, $ \\mathbf{G} = \\sigma_{A}^{2} \\mathbf{A} = (\\sigma_{E}^{2}/\\lambda) \\mathbf{A} $, where $$ \\mathbf{A}=\\mathbf{A}^{-1}=\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{1}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{1}}}\\end{pmatrix} $$"
+      "content": "[[FORMULA:Genetics_chapter26_formula053]]",
+      "source_page": 771,
+      "printed_page": 751,
+      "source_block_ids": [
+        "p771:b14"
+      ],
+      "bbox": [
+        390.0,
+        1363.0,
+        633.0,
+        1433.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note that by restricting attention to just the parents, the relationship matrix A is much simpler than that in Example 6 where parents and offspring are considered jointly. Since the parents are assumed to be noninbred, $$ \\mathbf{W}=\\left(1+\\frac{1}{2\\lambda}\\right)\\begin{pmatrix}1&0\\\\ 0&1\\end{pmatrix}=\\left(1+\\frac{1}{2\\lambda}\\right)\\mathbf{I} $$ Because we assumed $ \\lambda = 1 $, $ \\mathbf{R} $ is diagonal with elements $ \\sigma_E^2 \\times (1, 1, 1, 3/2, 3/2) $, so that $ \\mathbf{R}^{-1} $ is diagonal, with elements $ \\sigma_E^{-2} \\times (1, 1, 1, 2/3, 2/3) $. To obtain the mixed-model equations (ignoring the factor $ \\sigma_E^{-2} $ common to all equations), we first obtain $$ \\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}=\\frac{13}{3},\\quad\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}=\\frac{1}{6}\\begin{pmatrix}{{{7}}}&{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{8}}}&{{{1}}} \\\\{{{0}}}&{{{1}}}&{{{7}}}\\end{pmatrix},\\quad\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}=36, $$ $$ (\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z})^{T}=\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}=\\frac{1}{3}\\begin{pmatrix}4\\\\ 5\\\\ 4\\end{pmatrix},\\quad\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}=\\begin{pmatrix}9\\\\ 14\\\\ 13\\end{pmatrix} $$ $$ \\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}=\\frac{1}{6}\\begin{pmatrix}13&1&0\\\\1&14&1\\\\0&1&13\\end{pmatrix} $$ giving the final form of the mixed-model Equation 26.5 as $$ \\begin{pmatrix}13/3&4/3&5/3&4/3\\\\4/3&13/6&1/6&0\\\\5/3&1/6&14/6&1/6\\\\4/3&0&1/6&13/6\\end{pmatrix}\\begin{pmatrix}\\widehat{\\mu}\\\\\\widehat{a}_{1}\\\\\\widehat{a}_{2}\\\\\\widehat{a}_{3}\\end{pmatrix}=\\begin{pmatrix}36\\\\9\\\\14\\\\13\\end{pmatrix} $$ which has solutions $$ \\widehat{\\mu}=\\frac{440}{53},\\qquad\\left(\\begin{matrix}{\\widehat{a}_{1}}\\\\ {\\widehat{a}_{2}}\\\\ {\\widehat{a}_{3}}\\\\ \\end{matrix}\\right)=\\left(\\begin{matrix}{-662/689}\\\\ {4/53}\\\\ {610/689}\\\\ \\end{matrix}\\right) $$"
+      "content": "implying",
+      "source_page": 771,
+      "printed_page": 751,
+      "source_block_ids": [
+        "p771:b16"
+      ],
+      "bbox": [
+        33.0,
+        1427.0,
+        154.0,
+        1465.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "To obtain the estimates of the offspring breeding values by use of Equation 26.15, first note that neither offspring has inbred parents and that $\\lambda = 1$, so that the within-family heritability is $$ \\frac{(1-\\overline{f}_{i})/(2\\lambda)}{1+(1-\\overline{f}_{i})/(2\\lambda)}=\\frac{(1-0)/2}{1+(1-0)/2}=\\frac{1}{3} $$"
+      "content": "[[FORMULA:Genetics_chapter26_formula054]]",
+      "source_page": 771,
+      "printed_page": 751,
+      "source_block_ids": [
+        "p771:b17"
+      ],
+      "bbox": [
+        353.0,
+        1470.0,
+        665.0,
+        1541.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Hence, $$ \\widehat{a}_{i}=\\frac{1}{2}\\left(\\widehat{a}_{s i}+\\widehat{a}_{d i}\\right)+\\left(\\frac{1}{3}\\right)\\left[y_{i}-\\frac{440}{53}-\\frac{1}{2}\\left(\\widehat{a}_{s i}+\\widehat{a}_{d i}\\right)\\right] $$ giving the BLUPs for the offspring breeding values as $$ \\widehat{a}_{4}=\\frac{1}{2}\\left(-\\frac{662}{689}+\\frac{4}{53}\\right)+\\left(\\frac{1}{3}\\right)\\left[6-\\frac{440}{53}-\\frac{1}{2}\\left(-\\frac{662}{689}+\\frac{4}{53}\\right)\\right]=-\\frac{732}{689} $$ $$ \\widehat{a}_{5}=\\frac{1}{2}\\left(\\frac{4}{53}+\\frac{610}{689}\\right)+\\left(\\frac{1}{3}\\right)\\left[6-\\frac{440}{53}-\\frac{1}{2}\\left(\\frac{4}{53}+\\frac{610}{689}\\right)\\right]=\\frac{381}{689} $$"
+      "content": "with the offspring submatrix W defined as above (Equation 16.12). Substituting these results into Equation 26.5 and solving gives the BLUE for the vector of fixed effects and the BLUP for the vector of parental breeding values.",
+      "source_page": 772,
+      "printed_page": 752,
+      "source_block_ids": [
+        "p772:b2"
+      ],
+      "bbox": [
+        131.0,
+        120.0,
+        1090.0,
+        236.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "These estimates are identical to those obtained from the full animal model (Example 6). This result is expected, as the RAM and full models are equivalent (Appendix 3)."
+      "content": "Quaas and Pollak (1980) show that the offspring breeding values can be obtained from the BLUE estimates of fixed effects and the BLUP estimates of parental breeding values. When estimates of the breeding values of both parents are available ( $ \\widehat{a}_{si}, \\widehat{a}_{di} $), the estimate of $ i' $s breeding value given its character value $ y_i $ is",
+      "source_page": 772,
+      "printed_page": 752,
+      "source_block_ids": [
+        "p772:b3"
+      ],
+      "bbox": [
+        132.0,
+        215.0,
+        1095.0,
+        398.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In closing this section, we emphasize several aspects of BLUP (as applied to the animal, gametic, and reduced animal models) that highlight its exceptional degree of flexibility. First, because the relationship matrix A records the flow of genetic information through the pedigree, BLUP provides unbiased estimates of breeding values even in populations under selection, provided the individuals upon which selection operated are included in the analysis (Kennedy and Sorensen 1988). For further information on this subject, including modifications that need to be made when measurements are unavailable for some selected individuals, see Henderson (1975, 1990), Goffinet (1983), Gianola et al. (1988), and Fernando and Gianola (1990). Second, the breeding value estimates from different generations reflect changes in mean phenotypes and additive genetic variances resulting from selection and/or random genetic drift and inbreeding (recall Example 6). Third, because breeding value estimates are conditional expectations given the entire vector of observations (y), the evaluations of individuals are based on weighted information from all measured relatives. Individual evaluations are adjusted for the breeding values of their progeny and mates, thereby accounting for any assortative mating, and as noted in Equation 26.15, the deviation of the individual's own phenotype from its conditional expectation provides an additional bit of information. Further adjustments to the BLUPs can be made for individuals with relatives other than parents and progeny, see Mrode (1996) for examples."
+      "content": "[[FORMULA:Genetics_chapter26_formula055]]",
+      "source_page": 772,
+      "printed_page": 752,
+      "source_block_ids": [
+        "p772:b4"
+      ],
+      "bbox": [
+        174.0,
+        388.0,
+        974.0,
+        475.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The first term is the predicted breeding value based only on the parental breeding values, while the product of the last two terms provides an estimate of the segregational deviation of the actual breeding value from its expectation. This additional contribution to the predicted offspring breeding value takes advantage of the information implicit in the offspring's phenotype — the first term in parentheses is the ratio of the within-family additive genetic variance to the total within-family variance (the within-family heritability). Equation 26.15 pertains to a model with only a single fixed effect. When multiple fixed effects are present, the appropriate BLUE estimates are also subtracted from each observation.",
+      "source_page": 772,
+      "printed_page": 752,
+      "source_block_ids": [
+        "p772:b6"
+      ],
+      "bbox": [
+        139.0,
+        469.0,
+        1104.0,
+        778.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "At first sight, the reduced animal model seems much more complicated than the animal model, so why might it be preferred? The reason is related to computational efficiency. For very large data sets, solutions to the reduced animal model require only inverses of matrices of the order of the number of parents, while the full animal model requires inverses of the order of the total number of measured individuals.",
+      "source_page": 772,
+      "printed_page": 752,
+      "source_block_ids": [
+        "p772:b7"
+      ],
+      "bbox": [
+        145.0,
+        757.0,
+        1107.0,
+        970.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter26:7]]",
+      "source_page": 772,
+      "source_block_ids": [
+        "p772:b8",
+        "p772:b9",
+        "p772:b10",
+        "p772:b11",
+        "p773:b2",
+        "p773:b3",
+        "p773:b4",
+        "p773:b5",
+        "p773:b6",
+        "p773:b7",
+        "p773:b8",
+        "p773:b9",
+        "p773:b10",
+        "p773:b11",
+        "p773:b12",
+        "p773:b13",
+        "p773:b14",
+        "p773:b15",
+        "p774:b2",
+        "p774:b3",
+        "p774:b4",
+        "p774:b5",
+        "p774:b6",
+        "p774:b7"
+      ],
+      "bbox": [
+        199.0,
+        1038.0,
+        1064.0,
+        1146.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In closing this section, we emphasize several aspects of BLUP (as applied to the animal, gametic, and reduced animal models) that highlight its exceptional degree of flexibility. First, because the relationship matrix A records the flow of genetic information through the pedigree, BLUP provides unbiased estimates of breeding values even in populations under selection, provided the individuals upon which selection operated are included in the analysis (Kennedy and Sorensen 1988). For further information on this subject, including modifications that need to be made when measurements are unavailable for some selected individuals, see Henderson (1975, 1990), Goffinet (1983), Gianola et al. (1988), and Fernando and Gianola (1990). Second, the breeding value estimates from different generations reflect changes in mean phenotypes and additive genetic variances resulting from selection and/or random genetic drift and inbreeding (recall Example 6). Third, because breeding value estimates are conditional expectations given the entire vector of observations (y), the evaluations of individuals are based on weighted information from all measured relatives. Individual evaluations are adjusted for the breeding values of their progeny and mates, thereby accounting for any assortative mating, and as noted in Equation 26.15, the deviation of the individual's own phenotype from its conditional expectation provides an additional bit of information. Further adjustments to the BLUPs can be made for individuals with relatives other than parents and progeny, see Mrode (1996) for examples.",
+      "source_page": 774,
+      "printed_page": 754,
+      "source_block_ids": [
+        "p774:b8"
+      ],
+      "bbox": [
+        143.0,
+        658.0,
+        1114.0,
+        1349.0
+      ]
     }
   ]
 }

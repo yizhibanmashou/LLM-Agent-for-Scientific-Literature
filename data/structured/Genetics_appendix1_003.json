@@ -1,0 +1,218 @@
+{
+  "id": "Genetics_appendix1_003",
+  "metadata": {
+    "chapter": "Genetics_appendix1",
+    "section": "THE DELTA METHOD",
+    "subsections": [
+      "Expectations of Complex Variables"
+    ],
+    "section_level_1": "THE DELTA METHOD",
+    "section_level_2": "Expectations of Complex Variables",
+    "heading_path": [
+      "THE DELTA METHOD",
+      "Expectations of Complex Variables"
+    ],
+    "display_heading": "THE DELTA METHOD / Expectations of Complex Variables",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 820,
+      "printed_page": 800,
+      "source_block_ids": [
+        "p820:b4"
+      ],
+      "bbox": [
+        151.0,
+        509.0,
+        587.0,
+        542.0
+      ],
+      "raw_text": "Expectations of Complex Variables"
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As our first example of the utility of the Taylor expansion, consider the case where x is a random variable and we wish to determine the expected value of the function f averaged over all x. Generally speaking, the mean value of a function is only equal to the function evaluated at the mean of x in the special cases in which the function is linear in x or x is a constant. Hence, we cannot just directly substitute the sample mean when trying to evaluate the mean of some function of the data. However, we can get around this problem by expanding f about the mean of x, using Equation A1.1 with $ c = \\mu_x $, and then taking the expectation,",
+      "source_page": 820,
+      "printed_page": 800,
+      "source_block_ids": [
+        "p820:b5"
+      ],
+      "bbox": [
+        150.0,
+        550.0,
+        1110.0,
+        812.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula003]]",
+      "source_page": 820,
+      "printed_page": 800,
+      "source_block_ids": [
+        "p820:b6"
+      ],
+      "bbox": [
+        254.0,
+        834.0,
+        1010.0,
+        995.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The last step follows since the derivative terms, evaluated at $ \\mu_x $, are really just constants. Further simplification is possible since, by the definition of a mean, $ E(x - \\mu_x) = 0 $, and $ E[(x - \\mu_x)^2] $ is the expected variance of $ x $, $ \\sigma^2(x) $. Thus, ignoring third- and higher-order terms,",
+      "source_page": 820,
+      "printed_page": 800,
+      "source_block_ids": [
+        "p820:b8"
+      ],
+      "bbox": [
+        155.0,
+        1016.0,
+        1112.0,
+        1149.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula004]]",
+      "source_page": 820,
+      "printed_page": 800,
+      "source_block_ids": [
+        "p820:b9"
+      ],
+      "bbox": [
+        448.0,
+        1172.0,
+        820.0,
+        1242.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This relationship shows that the expected value of $f$ is a function of both the mean and the variance of $x$ if $f$ is a nonlinear function of $x$. From Example 1, if $f = \\sqrt{x}$, then",
+      "source_page": 820,
+      "printed_page": 800,
+      "source_block_ids": [
+        "p820:b11"
+      ],
+      "bbox": [
+        156.0,
+        1263.0,
+        1111.0,
+        1360.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula005]]",
+      "source_page": 820,
+      "printed_page": 800,
+      "source_block_ids": [
+        "p820:b12"
+      ],
+      "bbox": [
+        505.0,
+        1350.0,
+        765.0,
+        1428.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This same approach can be used to derive expressions for the expectations of functions that depend on more than a single variable. In this case, f must be expanded around the means of each of the component variables. With two component variables, for example, an expansion around $ \\mu_{x} $ and $ \\mu_{y} $ leads (after some algebra) to",
+      "source_page": 820,
+      "printed_page": 800,
+      "source_block_ids": [
+        "p820:b13",
+        "p821:b2"
+      ],
+      "bbox": [
+        157.0,
+        1441.0,
+        1120.0,
+        1539.0
+      ],
+      "source_page_end": 821
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula006]]",
+      "source_page": 821,
+      "printed_page": 801,
+      "source_block_ids": [
+        "p821:b3"
+      ],
+      "bbox": [
+        182.0,
+        258.0,
+        871.0,
+        424.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "When $f$ is a function of $n$ variables, $(x_{1}, x_{2}, \\ldots, x_{n})$, ignoring partials higher than the second order, this generalizes to",
+      "source_page": 821,
+      "printed_page": 801,
+      "source_block_ids": [
+        "p821:b5"
+      ],
+      "bbox": [
+        46.0,
+        447.0,
+        1003.0,
+        519.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula007]]",
+      "source_page": 821,
+      "printed_page": 801,
+      "source_block_ids": [
+        "p821:b6"
+      ],
+      "bbox": [
+        245.0,
+        549.0,
+        802.0,
+        735.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_appendix1:2]]",
+      "source_page": 821,
+      "source_block_ids": [
+        "p821:b8",
+        "p821:b9",
+        "p821:b10",
+        "p821:b11",
+        "p821:b12",
+        "p822:b2",
+        "p822:b3",
+        "p822:b4",
+        "p822:b5",
+        "p822:b6",
+        "p822:b7",
+        "p822:b8",
+        "p822:b10"
+      ],
+      "bbox": [
+        89.0,
+        870.0,
+        953.0,
+        1078.0
+      ]
+    }
+  ]
+}

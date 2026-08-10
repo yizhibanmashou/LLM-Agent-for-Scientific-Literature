@@ -2,26 +2,194 @@
   "id": "Genetics_chapter8_003",
   "metadata": {
     "chapter": "Genetics_chapter8",
-    "section": "Introduction",
+    "section": "MULTIPLE REGRESSION",
     "subsections": [
-      "ELEMENTARY MATRIX ALGEBRA"
+      "An Application to Multivariate Selection"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "ELEMENTARY MATRIX ALGEBRA",
+    "section_level_1": "MULTIPLE REGRESSION",
+    "section_level_2": "An Application to Multivariate Selection",
     "heading_path": [
-      "Introduction",
-      "ELEMENTARY MATRIX ALGEBRA"
+      "MULTIPLE REGRESSION",
+      "An Application to Multivariate Selection"
     ],
-    "display_heading": "ELEMENTARY MATRIX ALGEBRA"
+    "display_heading": "MULTIPLE REGRESSION / An Application to Multivariate Selection",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 196,
+      "printed_page": 176,
+      "source_block_ids": [
+        "p196:b3"
+      ],
+      "bbox": [
+        131.0,
+        388.0,
+        641.0,
+        421.0
+      ],
+      "raw_text": "An Application to Multivariate Selection"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The solutions of systems of linear equations generally involve the use of matrices and vectors of variables. For those with little familiarity with such constructs and their manipulations, the next few pages provide an overview of the basic tools of matrix algebra."
+      "content": "Karl Pearson developed the technique of multiple regression in 1896, although some of the fundamentals can be traced to his predecessors (Pearson 1920, Stigler 1986). Pearson is perhaps best known as one of the founders of statistical methodology, but his intense interest in evolution may have been the primary motivating force underlying many of his theoretical endeavors. Almost all of his major papers, including the one of 1896, contain rigorous analyses of data gathered by his contemporaries on matters such as resemblance between relatives, natural selection, correlation between characters, and assortative mating (recall the assortative mating example in Chapter 7). The foresight of these studies is remarkable considering that they were performed prior to the existence of a genetic interpretation for the expression and inheritance of polygenic traits.",
+      "source_page": 196,
+      "printed_page": 176,
+      "source_block_ids": [
+        "p196:b4"
+      ],
+      "bbox": [
+        131.0,
+        430.0,
+        1090.0,
+        781.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Pearson’s (1896, 1903) invention of multiple regression developed out of the need for a technique to resolve the observed directional selection on a character into its direct and various indirect components. In Chapter 3 we defined the selection differential S (the within-generation change in the mean phenotype due to selection) as a measure of the total directional selection on a character. However, S cannot be considered to be a measure of the direct forces of selection on a character unless that character is uncorrelated with all other selected traits. An unselected character can appear to be under selection if other characters with which it is correlated are under directional selection. Alternatively, a character under strong directional selection may exhibit a negligible selection differential if the indirect effects of selection on correlated traits are sufficiently compensatory.",
+      "source_page": 196,
+      "printed_page": 176,
+      "source_block_ids": [
+        "p196:b5"
+      ],
+      "bbox": [
+        132.0,
+        781.0,
+        1092.0,
+        1132.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Because he did not employ matrix notation, some of the mathematics in Pearson’s papers can be rather difficult to follow. Lande and Arnold (1983) did a great service by extending this work and rephrasing it in matrix notation. Suppose that a large number of individuals in a population have been measured for n characters and for fitness. Individual fitness can then be approximated by the linear model",
+      "source_page": 196,
+      "printed_page": 176,
+      "source_block_ids": [
+        "p196:b6"
+      ],
+      "bbox": [
+        134.0,
+        1133.0,
+        1094.0,
+        1324.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula007]]",
+      "source_page": 196,
+      "printed_page": 176,
+      "source_block_ids": [
+        "p196:b7"
+      ],
+      "bbox": [
+        431.0,
+        1357.0,
+        801.0,
+        1389.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where w is relative fitness (observed fitness divided by the mean fitness in the population), and $ z_{1}, \\ldots, z_{n} $ are the phenotypic measures of the n characters. Recall from Chapter 3 that the selection differential for the ith trait is defined as the covariance between phenotype and relative fitness, $ S_{i} = \\sigma(z_{i}, w) $. Thus, we have",
+      "source_page": 196,
+      "printed_page": 176,
+      "source_block_ids": [
+        "p196:b8",
+        "p197:b2"
+      ],
+      "bbox": [
+        135.0,
+        1438.0,
+        1096.0,
+        1536.0
+      ],
+      "source_page_end": 197
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula008]]",
+      "source_page": 197,
+      "printed_page": 177,
+      "source_block_ids": [
+        "p197:b3"
+      ],
+      "bbox": [
+        215.0,
+        213.0,
+        875.0,
+        295.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Note that this expression is of the same form as Equation 8.3, so that by taking the $ \\beta_{i} $ to be the partial regression coefficients we have $ \\sigma(z_{i}, e) = 0 $. Note also that the selection differential of any trait may be partitioned into a component estimating the direct selection on the character and the sum of components from indirect selection on all correlated characters,",
+      "source_page": 197,
+      "printed_page": 177,
+      "source_block_ids": [
+        "p197:b4"
+      ],
+      "bbox": [
+        65.0,
+        335.0,
+        1025.0,
+        503.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula009]]",
+      "source_page": 197,
+      "printed_page": 177,
+      "source_block_ids": [
+        "p197:b5"
+      ],
+      "bbox": [
+        359.0,
+        539.0,
+        724.0,
+        632.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "It is important to realize that the labels “direct” and “indirect” apply strictly to the specific set of characters included in the analysis; the partial regression coefficients are subject to change if a new analysis includes additional correlated characters that are under selection.",
+      "source_page": 197,
+      "printed_page": 177,
+      "source_block_ids": [
+        "p197:b6"
+      ],
+      "bbox": [
+        61.0,
+        675.0,
+        1020.0,
+        808.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter8:1]]",
+      "source_page": 197,
+      "source_block_ids": [
+        "p197:b7",
+        "p197:b8",
+        "p197:b9",
+        "p198:b2",
+        "p198:b3"
+      ],
+      "bbox": [
+        104.0,
+        894.0,
+        971.0,
+        1194.0
+      ]
     }
   ]
 }

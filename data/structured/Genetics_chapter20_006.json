@@ -2,63 +2,417 @@
   "id": "Genetics_chapter20_006",
   "metadata": {
     "chapter": "Genetics_chapter20",
-    "section": "Introduction",
+    "section": "DIALLELS",
     "subsections": [
-      "Reciprocals, No Self Crosses"
+      "Pooled Reciprocals, No Self Crosses"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter20_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "20.5"
-    ],
-    "section_level_1": "Introduction",
-    "section_level_2": "Reciprocals, No Self Crosses",
+    "section_level_1": "DIALLELS",
+    "section_level_2": "Pooled Reciprocals, No Self Crosses",
     "heading_path": [
-      "Introduction",
-      "Reciprocals, No Self Crosses"
+      "DIALLELS",
+      "Pooled Reciprocals, No Self Crosses"
     ],
-    "display_heading": "Reciprocals, No Self Crosses",
-    "table_reference_keys": [
-      "chapter20:20.5"
-    ]
+    "display_heading": "DIALLELS / Pooled Reciprocals, No Self Crosses",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 622,
+      "printed_page": 602,
+      "source_block_ids": [
+        "p622:b12"
+      ],
+      "bbox": [
+        153.0,
+        1392.0,
+        605.0,
+        1435.0
+      ],
+      "raw_text": "Pooled Reciprocals, No Self Crosses"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "A statistical model for the incomplete diallel with reciprocals was first proposed by Yates (1947). Under this design, all $ N \\times N $ crosses are employed, except those on the diagonals (Figure 20.2, center). As in the case of Design II with reciprocals, this type of diallel yields reciprocal full and half sibs, in addition to paternal half-sib, maternal half-sib, and full-sib families, providing an opportunity to estimate variance components beyond those possible in a design without"
+      "content": "Assuming there are no maternal or paternal effects (aside from direct inheritance) and no significant sex-linked effects, reciprocal crosses are expected to yield",
+      "source_page": 622,
+      "printed_page": 602,
+      "source_block_ids": [
+        "p622:b13"
+      ],
+      "bbox": [
+        153.0,
+        1420.0,
+        1114.0,
+        1510.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Factor</td><td style='text-align: center; word-wrap: break-word;'>df</td><td style='text-align: center; word-wrap: break-word;'>Sums of Squares</td><td style='text-align: center; word-wrap: break-word;'>Expected Mean Squares</td></tr><tr><td rowspan=\"2\">GCA</td><td rowspan=\"2\">N-1</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{n(N-1)^{2}}{2(N-2)}\\sum_{i}(\\bar{z}_{i.}-\\bar{z})^{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{e}^{2}+n\\sigma_{k}^{2}+2n\\sigma_{t}^{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>+(_.i -)^ 2 </td><td style='text-align: center; word-wrap: break-word;'>+ 2 (_ m ^ 2 + _ p ^ 2 +4 _ n ^ 2) $</td></tr><tr><td rowspan=\"2\">SCA</td><td rowspan=\"2\">$ 2 (N-3) $</td><td style='text-align: center; word-wrap: break-word;'>$ 2 _ i<j (_ ij -)^ 2 $</td><td style='text-align: center; word-wrap: break-word;'>$ _ e ^ 2 +n _ k ^ 2 +2n _ t ^ 2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>+(\\bar{z}_{ji}-\\bar{z})^{2}-SS_{GCA}</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RGCA</td><td style='text-align: center; word-wrap: break-word;'>N-1</td><td style='text-align: center; word-wrap: break-word;'>$ 2N _ i (_ i. - _.i)^ 2 $</td><td style='text-align: center; word-wrap: break-word;'>$ _ e ^ 2 +n _ k ^ 2 + 2 (_ m ^ 2 + _ p ^ 2) $</td></tr><tr><td rowspan=\"2\">RSCA</td><td rowspan=\"2\">$ 2 (N-2) $</td><td style='text-align: center; word-wrap: break-word;'>$ 2 _ i<j (_ ij - _ ji)^ 2 $</td><td style='text-align: center; word-wrap: break-word;'>$ _ e ^ 2 +n _ k ^ 2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>-SS_{RGCA}</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Error</td><td style='text-align: center; word-wrap: break-word;'>N(N-1)(n-1)</td><td style='text-align: center; word-wrap: break-word;'>$ i_ $</td><td style='text-align: center; word-wrap: break-word;'>$ _ e ^ 2 $</td></tr></table>"
+      "content": "[[FIGURE:20.2]]",
+      "source_page": 623,
+      "printed_page": 603,
+      "source_block_ids": [
+        "p623:b3"
+      ],
+      "bbox": [
+        114.0,
+        464.0,
+        981.0,
+        605.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note: N is the number of parental lines, and n is the number of progeny evaluated per cross. $ \\bar{z}_{i} $ is the mean phenotype observed for all progeny from mother i, and $ \\bar{z}_{.i} $ for all progeny from father i. $ \\bar{z}_{ij} $ is the mean phenotype of progeny of the mating between the ith dam and the jth sire, and $ \\bar{z}_{ji} $ is the mean of the reciprocal cross. $ z_{ijk} $ is the observed phenotype of the kth offspring of the $ i \\times j $ cross. RGCA and RSCA refer respectively to reciprocal general and specific combining abilities. The expected mean squares are given in terms of variance components associated with the Cockerham-Weir model. reciprocals. Our description will be in terms of the Cockerham-Weir (1977b) model, Equation 20.6a, described above in the context of Design II. The analysis of variance, given in [[SEE_TABLE:20.5]], contains mean squares for reciprocal general (RGCA) and specific (RSCA) combining abilities, in addition to the GCA and SCA terms just described. These are functions of the five causal components of genetic variance associated with the Cockerham-Weir model (see [[SEE_TABLE:20.5]]). With this design, the variances associated with maternal and paternal extranuclear effects, $ \\sigma_{m}^{2} $ and $ \\sigma_{p}^{2} $, always appear together as a sum in the expected mean squares, so the method of moments cannot generate separate estimates of them. To accomplish that, Cockerham and Weir (1977b) proposed the use of the symmetrical products, $$ T_{m}=\\frac{\\sum_{i\\neq j}[(N-1)\\bar{z}_{i.}^{2}-\\bar{z}_{i j}^{2}]}{N(N-1)(N-2)} $$ $$ T_{p}=\\frac{\\sum_{i\\neq j}[(N-1)\\bar{z}_{.i}^{2}-\\bar{z}_{i j}^{2}]}{N(N-1)(N-2)} $$ the expectations of which are $$ E(T_{m})=\\mu^{2}+\\sigma_{n}^{2}+\\sigma_{m}^{2} $$ $$ E(T_{p})=\\mu^{2}+\\sigma_{n}^{2}+\\sigma_{p}^{2} $$"
-    },
-    {
-      "type": "definition",
-      "content": "The difference $T_{m}-T_{p}$ provides an estimate of $\\sigma_{m}^{2}-\\sigma_{p}^{2}$, which when combined with the estimate of $(\\sigma_{m}^{2}+\\sigma_{p}^{2})$ obtained from the analysis of variance, allows the separation of $\\sigma_{m}^{2}$ and $\\sigma_{p}^{2}$. From the standpoint of the estimation of individual effects, the Cockerham-Weir model has some limitations under this design. $ n_{i} $ and $ m_{i} $, and $ n_{i} $ and $ p_{i} $ are confounded, so only $ (2n_{i} + m_{i} + p_{i}) $ and $ (m_{i} - p_{i}) $ are estimable. An alternative approach is the reciprocal-effects model of Griffing (1956), $$ z_{ijk}=\\mu+g_{i}+g_{j}+s_{ij}+r_{ij}+e_{ijk} $$ which is a simple extension of Equation 20.8a. Here, $g_i$ and $s_{ij}$ are equivalent to $n_i$ and $t_{ij}$ in the Cockerham-Weir model, whereas $r_{ij} = p_i + m_j + k_{ij}$ is a composite estimate of the extranuclear effects. The constraint $r_{ij} = -r_{ji}$ arises naturally from the model definition of $\\mu + g_i + g_j + s_{ij}$ as the mean phenotype of offspring from $i \\times j$ and $j \\times i$ matings. The least-squares estimators and standard errors of the effects in Griffing's (1956) model are: $$ \\begin{array}{r l r}&{\\widehat{g}_{i}=\\frac{1}{2N(N-2)}\\left[N\\displaystyle\\sum_{j\\neq i}(\\bar{z}_{i j}+\\bar{z}_{j i})-2\\displaystyle\\sum_{j\\neq k}\\bar{z}_{j k}\\right]}&{\\quad\\mathrm{S E}(\\widehat{g}_{i})=\\sqrt{\\frac{(N-1)\\mathrm{V a r}(e)}{2N n(N-2)}}}\\\\ &{\\widehat{s}_{i j}=\\frac{\\bar{z}_{i j}+\\bar{z}_{j i}}{2}-\\widehat{g}_{i}-\\widehat{g}_{j}-\\frac{1}{N(N-1)}\\displaystyle\\sum_{k\\neq l}\\bar{z}_{k l}}&{\\mathrm{S E}(\\widehat{s}_{i j})=\\sqrt{\\frac{(N-3)\\mathrm{V a r}(e)}{2n(N-1)}}}\\\\ &{\\widehat{r}_{i j}=\\frac{\\bar{z}_{i j}-\\bar{z}_{j i}}{2}}&{\\mathrm{S E}(\\widehat{r}_{i j})=\\sqrt{\\frac{\\mathrm{V a r}(e)}{2n}}\\quad(20.15)}\\end{array} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Still another analytical approach to dialells with reciprocals assumes an absence of paternal, nuclear-extranuclear, and extranuclear-extranuclear effects (i.e., $p_{i}=k_{ij}=0$). This reduces the Cockerham-Weir model to $$ z_{ijk}=\\mu+n_{i}+n_{j}+t_{ij}+m_{i}+e_{ijk} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Example 4. Thomas-Orillard and Jeune (1985) performed all possible reciprocal crosses between six ($N = 6$) strains of $D$. melanogaster (three French and three African) and examined the female progeny for number of ovarioles. ANOVA was performed on means of 50 measures in each of two replicate blocks ($n = 2$). The ANOVA table follows, and from it, the estimated variance components for the Cockerham-Weir model are obtained by setting the observed mean squares equal to their expectations (defined in [[SEE_TABLE:20.5]]). We illustrate the computation of variance components primarily for heuristic purposes, as the lines involved in this experiment can hardly be viewed as a random sample of the species."
-    },
-    {
-      "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Source</td><td style='text-align: center; word-wrap: break-word;'>df</td><td style='text-align: center; word-wrap: break-word;'>Mean Squares</td><td style='text-align: center; word-wrap: break-word;'>Estimates</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>GCA</td><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>59.649</td><td style='text-align: center; word-wrap: break-word;'>$ \\operatorname{Var}(n) = 3.182 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>SCA</td><td style='text-align: center; word-wrap: break-word;'>9</td><td style='text-align: center; word-wrap: break-word;'>9.593</td><td style='text-align: center; word-wrap: break-word;'>$ \\operatorname{Var}(t) = 1.616 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RGCA</td><td style='text-align: center; word-wrap: break-word;'>5</td><td style='text-align: center; word-wrap: break-word;'>1.853</td><td style='text-align: center; word-wrap: break-word;'>$ \\operatorname{Var}(m) + \\operatorname{Var}(p) = -0.213 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>RSCA</td><td style='text-align: center; word-wrap: break-word;'>10</td><td style='text-align: center; word-wrap: break-word;'>3.129</td><td style='text-align: center; word-wrap: break-word;'>$ \\operatorname{Var}(k) = 0.999 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Error</td><td style='text-align: center; word-wrap: break-word;'>30</td><td style='text-align: center; word-wrap: break-word;'>1.130</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table> From the results provided in the original analysis, $ T_{m} $ and $ T_{p} $ are found to be 1,718.958 and 1,720.854, respectively. Setting these equal to their expectations and subtracting $ \\mathrm{Var}(m) - \\mathrm{Var}(p) = -1.896 $, which when combined with the results in the table leads to the estimates $ \\mathrm{Var}(m) = -1.054 $ and $ \\mathrm{Var}(p) = 0.841 $. Using F ratios, the following hypotheses can be tested: <table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Hypothesis</td><td style='text-align: center; word-wrap: break-word;'>Test Statistic</td><td style='text-align: center; word-wrap: break-word;'>Degrees of Freedom</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{n}^{2}=0 $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{{\\text{{MS}}}_{\\text{{GCA}}}}{{\\text{{MS}}}_{\\text{{SCA}}}}+[(N-2){\\text{{MS}}}_{\\text{{RSCA}}}/N] = 5.70 $</td><td style='text-align: center; word-wrap: break-word;'>See remarks below.</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{k}^{2}=0 $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{{\\text{{MS}}}_{\\text{{RSCA}}}}{{\\text{{MS}}}_{\\text{{e}}}}=2.77 $</td><td style='text-align: center; word-wrap: break-word;'>$ (N-1)(N-2)/2, $ $ N(N-1)(n-1) $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{m}^{2}+\\sigma_{p}^{2}=0 $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{{\\text{{MS}}}_{\\text{{RGCA}}}}{{\\text{{MS}}}_{\\text{{RSCA}}}}=0.59 $</td><td style='text-align: center; word-wrap: break-word;'>$ (N-1), $ $ (N-1)(N-2)/2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{t}^{2}=0 $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{{\\text{{MS}}}_{\\text{{SCA}}}}{{\\text{{MS}}}_{\\text{{RSCA}}}}=3.07 $</td><td style='text-align: center; word-wrap: break-word;'>$ N(N-3)/2, $ $ (N-1)(N-2)/2 $</td></tr></table>"
+      "content": "equivalent progeny phenotype distributions. The simplest type of diallel analysis makes this assumption (either pooling progeny from reciprocal crosses or performing crosses in only one direction) and excludes crosses within parental types (Figure 20.2, left). The model to be analyzed is",
+      "source_page": 623,
+      "printed_page": 603,
+      "source_block_ids": [
+        "p623:b4"
+      ],
+      "bbox": [
+        62.0,
+        645.0,
+        1023.0,
+        797.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "(Note that the degrees of freedom for the test of $ \\sigma_{n}^{2}=0 $ are not a simple function of N and n, due to the fact that the numerator and denominator of the test statistic are sums of observed mean squares. For situations like this, the degrees of freedom can be approximated using the method of Satterthwaite (1946), described in Chapter 18. For this particular example, the approximate degrees of freedom are 5 and 11)."
+      "content": "[[FORMULA:Genetics_chapter20_formula028]]",
+      "source_page": 623,
+      "printed_page": 603,
+      "source_block_ids": [
+        "p623:b5"
+      ],
+      "bbox": [
+        359.0,
+        832.0,
+        716.0,
+        872.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The variance of nuclear additive effects $(n)$, nuclear nonadditive effects $(t)$, and extranuclear interaction effects $(k)$ are all significant (at the 0.01, 0.05, and 0.05 levels, respectively), the latter arising despite the fact that the summed variance of the extranuclear effects $(\\sigma_{m}^{2}+\\sigma_{p}^{2})$ is nonsignificant. Nearly half of the observed genetic variance is attributable to nonadditive effects, $\\sigma_{t}^{2}+\\sigma_{k}^{2}$."
+      "content": "where $g_{i}$ and $g_{j}$ are the general combining abilities (GCAs) of parents $i$ and $j$, and $s_{ij}=s_{ji}$ is the specific combining ability (SCA) of $i\\times j$ matings. GCA describes the average performance of a parent in hybrid combination with other genotypes. It is equivalent to the breeding value of an individual. SCA describes the degree to which specific parental combinations lead to deviations in progeny phenotypes from expectations based on average parental performance. These definitions were first elucidated by Sprague and Tatum (1942).",
+      "source_page": 623,
+      "printed_page": 603,
+      "source_block_ids": [
+        "p623:b7"
+      ],
+      "bbox": [
+        51.0,
+        902.0,
+        1016.0,
+        1144.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 20.8a is functionally identical to the model employed in Design II without reciprocals, except that here it is assumed that the sire and dam effects are drawn from the same distribution. In the following discussion of this model, we make the usual assumptions that the effects $ (g, s, \\text{and } e) $ are independently distributed with zero means. Under a random-effects interpretation, the variances of the three effects, $ g, s $, and $ e $, are denoted as $ \\sigma_{GCA}^{2} $, $ \\sigma_{SCA}^{2} $, and $ \\sigma_{e}^{2} $, and the total phenotypic variance is",
+      "source_page": 623,
+      "printed_page": 603,
+      "source_block_ids": [
+        "p623:b8"
+      ],
+      "bbox": [
+        44.0,
+        1121.0,
+        1012.0,
+        1368.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula029]]",
+      "source_page": 623,
+      "printed_page": 603,
+      "source_block_ids": [
+        "p623:b9"
+      ],
+      "bbox": [
+        366.0,
+        1363.0,
+        681.0,
+        1412.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The GCA variance is equivalent to the covariance between half sibs. This equivalency can be seen from Equation 20.8a, since under the assumption that different",
+      "source_page": 623,
+      "printed_page": 603,
+      "source_block_ids": [
+        "p623:b11"
+      ],
+      "bbox": [
+        42.0,
+        1423.0,
+        1002.0,
+        1515.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:20.4]]",
+      "source_page": 624,
+      "printed_page": 604,
+      "source_block_ids": [
+        "p624:b3"
+      ],
+      "bbox": [
+        124.0,
+        229.0,
+        1081.0,
+        619.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "types of effects are uncorrelated in the same individuals, $ \\sigma(\\mathrm{HS}) = \\sigma(z_{ijk}, z_{ij'k'}') = \\sigma^2(g_i) = \\sigma^2_{GCA} $. The SCA variance is equivalent to the covariance between full sibs minus twice $ \\sigma^2_{GCA} $, since $ \\sigma(\\mathrm{FS}) = \\sigma(z_{ijk}, z_{ijk'}') = 2\\sigma^2(g_i) + \\sigma^2(s_{ij}) = 2\\sigma^2_{GCA} + \\sigma^2_{SCA} $.",
+      "source_page": 624,
+      "printed_page": 604,
+      "source_block_ids": [
+        "p624:b5"
+      ],
+      "bbox": [
+        138.0,
+        806.0,
+        1096.0,
+        960.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Diallel analysis is usually as concerned with the estimation of the $g_{i}$ and $s_{ij}$ values for the experimental lines as with the estimation of population components of variance. From Griffing (1956), the least-squares estimators of the effects and their standard errors are:",
+      "source_page": 624,
+      "printed_page": 604,
+      "source_block_ids": [
+        "p624:b6"
+      ],
+      "bbox": [
+        141.0,
+        935.0,
+        1101.0,
+        1084.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula030]]",
+      "source_page": 624,
+      "printed_page": 604,
+      "source_block_ids": [
+        "p624:b7"
+      ],
+      "bbox": [
+        308.0,
+        1092.0,
+        952.0,
+        1278.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where N is the number of parental lines, n is the number of progeny per full-sib family, and $ \\operatorname{Var}(e) $ is an estimate of the variance within full-sib families. With a fixed-effects interpretation, this concludes the analysis.",
+      "source_page": 624,
+      "printed_page": 604,
+      "source_block_ids": [
+        "p624:b9"
+      ],
+      "bbox": [
+        151.0,
+        1293.0,
+        1111.0,
+        1412.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The layout of the analysis of variance under a random-effects interpretation, in which interest is in estimating the variances of effects, is given in Table 20.4. Note that, unlike other two-way ANOVA tables outlined in this chapter, there is only one line for main effects. This is a consequence of our assumption that the distributions of paternal and maternal contributions to progeny are identical. If the experiment is replicated in multiple blocks of N parents, the degrees of freedom and sums of squares are summed over experiments prior to computation of the mean squares, but the definitions of the expected mean squares do not change. Under the usual assumptions of normality, significance of the GCA and SCA components of variance can be evaluated by use of the F ratios MS $ _{GCA} $/MS $ _{SCA} $ and MS $ _{SCA} $/MS $ _{e} $, respectively.",
+      "source_page": 624,
+      "printed_page": 604,
+      "source_block_ids": [
+        "p624:b10",
+        "p625:b2"
+      ],
+      "bbox": [
+        155.0,
+        1390.0,
+        1116.0,
+        1544.0
+      ],
+      "source_page_end": 625
+    },
+    {
+      "type": "discussion",
+      "content": "Diallels are frequently performed on completely inbred parental lines. Assuming such lines are extracted randomly from a random-mating base population and maintained without selection for the character under analysis, they will be in approximate gametic phase equilibrium between loci (each line representing a random gamete), and Hardy-Weinberg equilibria within loci will be restored by a single generation of random mating. There will be no genetic variance within families, so $ \\sigma_{e}^{2} $ is simply the variance due to special environmental effects ( $ \\sigma_{E_{s}}^{2} $), and from Equation 20.8b, $ 2\\sigma_{GCA}^{2} + \\sigma_{SCA}^{2} $ is the total genetic variance. When the parents are completely inbred, the covariance between half sibs is equivalent to a parent-offspring covariance in a random-mating population since as a consequence of both copies in a parent being identical, the half sibs have exactly one gene identical-by-descent at each locus. Therefore, when completely inbred lines are used,",
+      "source_page": 625,
+      "printed_page": 605,
+      "source_block_ids": [
+        "p625:b3"
+      ],
+      "bbox": [
+        61.0,
+        358.0,
+        1028.0,
+        799.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula031]]",
+      "source_page": 625,
+      "printed_page": 605,
+      "source_block_ids": [
+        "p625:b4"
+      ],
+      "bbox": [
+        383.0,
+        778.0,
+        690.0,
+        849.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Subtracting twice this quantity from the total genetic variance, and ignoring all epistatic genetic variance except that due to additive × additive effects,",
+      "source_page": 625,
+      "printed_page": 605,
+      "source_block_ids": [
+        "p625:b6"
+      ],
+      "bbox": [
+        55.0,
+        844.0,
+        1014.0,
+        932.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula032]]",
+      "source_page": 625,
+      "printed_page": 605,
+      "source_block_ids": [
+        "p625:b7"
+      ],
+      "bbox": [
+        382.0,
+        943.0,
+        681.0,
+        1018.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "If, on the other hand, the parents are members of a random-mating population, the within-family variance contains the genetic variance expected to be segregating within full-sib families as well as the environmental variance",
+      "source_page": 625,
+      "printed_page": 605,
+      "source_block_ids": [
+        "p625:b9"
+      ],
+      "bbox": [
+        48.0,
+        1021.0,
+        1011.0,
+        1146.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula033]]",
+      "source_page": 625,
+      "printed_page": 605,
+      "source_block_ids": [
+        "p625:b10"
+      ],
+      "bbox": [
+        302.0,
+        1149.0,
+        746.0,
+        1229.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The GCA variance, again equivalent to the covariance of half sibs, becomes,",
+      "source_page": 625,
+      "printed_page": 605,
+      "source_block_ids": [
+        "p625:b12"
+      ],
+      "bbox": [
+        44.0,
+        1229.0,
+        949.0,
+        1289.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula034]]",
+      "source_page": 625,
+      "printed_page": 605,
+      "source_block_ids": [
+        "p625:b13"
+      ],
+      "bbox": [
+        368.0,
+        1296.0,
+        675.0,
+        1373.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, the variance associated with specific combining ability is",
+      "source_page": 625,
+      "printed_page": 605,
+      "source_block_ids": [
+        "p625:b15"
+      ],
+      "bbox": [
+        41.0,
+        1374.0,
+        815.0,
+        1431.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula035]]",
+      "source_page": 625,
+      "printed_page": 605,
+      "source_block_ids": [
+        "p625:b16"
+      ],
+      "bbox": [
+        257.0,
+        1445.0,
+        778.0,
+        1519.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter20:3]]",
+      "source_page": 626,
+      "source_block_ids": [
+        "p626:b2",
+        "p626:b3",
+        "p626:b4"
+      ],
+      "bbox": [
+        173.0,
+        187.0,
+        1041.0,
+        472.0
+      ]
     }
   ]
 }

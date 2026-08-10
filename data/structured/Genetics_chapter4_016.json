@@ -2,62 +2,137 @@
   "id": "Genetics_chapter4_016",
   "metadata": {
     "chapter": "Genetics_chapter4",
-    "section": "Sources of Genetic Variation for Multilocus Traits",
+    "section": "EXTENSIONS FOR MULTIPLE ALLELES AND NONRANDOM MATING",
     "subsections": [
-      "EPISTASIS"
+      "Average Excess"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter4_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Sources of Genetic Variation for Multilocus Traits",
-    "section_level_2": "EPISTASIS",
+    "section_level_1": "EXTENSIONS FOR MULTIPLE ALLELES AND NONRANDOM MATING",
+    "section_level_2": "Average Excess",
     "heading_path": [
-      "Sources of Genetic Variation for Multilocus Traits",
-      "EPISTASIS"
+      "EXTENSIONS FOR MULTIPLE ALLELES AND NONRANDOM MATING",
+      "Average Excess"
     ],
-    "display_heading": "EPISTASIS"
+    "display_heading": "EXTENSIONS FOR MULTIPLE ALLELES AND NONRANDOM MATING / Average Excess",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 90,
+      "printed_page": 70,
+      "source_block_ids": [
+        "p90:b7"
+      ],
+      "bbox": [
+        166.0,
+        1269.0,
+        362.0,
+        1305.0
+      ],
+      "raw_text": "Average Excess"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "In the preceding chapter, the dominance effect at a locus was defined to be the deviation of the observed genotypic value from the expectation based on additive effects. Viewed in this manner, dominance is a measure of nonadditivity of allelic effects within loci. Epistasis describes the nonadditivity of effects between loci."
+      "content": "When n alleles are present, the average excess, $ \\alpha_{i}^{*} $, for any allele $ B_{i} $ is given by",
+      "source_page": 90,
+      "printed_page": 70,
+      "source_block_ids": [
+        "p90:b8"
+      ],
+      "bbox": [
+        165.0,
+        1293.0,
+        1101.0,
+        1348.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A striking example of epistasis is responsible for a polymorphism in flower morphology in tristylous plants, a group including species of Eichhornia, Lythrum, Oxalis, and Pontederia (Weller 1976, Ganders 1979). Long-style morphs have short-and medium-length stamens, mid-style morphs have short and long stamens, and short-style morphs have medium and long stamens (Figure 5.1). Each morph is incompatible with plants of its own type but can freely cross with members of the other types. The polymorphism is determined by two diallelic loci, short and medium. The presence of an S allele at the first locus results in short-style plants regardless of the genotype at the second locus, whereas ss individuals are mid-styles if they carry an M allele but long-styles if they are mm. Thus, M is dominant to m, but the epistatic interaction of an S allele overrules this relationship."
+      "content": "[[FORMULA:Genetics_chapter4_formula035]]",
+      "source_page": 90,
+      "printed_page": 70,
+      "source_block_ids": [
+        "p90:b9"
+      ],
+      "bbox": [
+        502.0,
+        1374.0,
+        791.0,
+        1463.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "To provide a more quantitative description of epistasis, consider an individual with alleles $A_{i}$ and $A_{j}$ at one locus and $B_{k}$ and $B_{l}$ at another. Expanding from Equation 4.26, the genotypic value, $G_{ijkl}$, can be written as the sum of the effects within loci and a deviation $\\epsilon$ due to interaction between loci, $$ G_{i j k l}=\\mu_{G}+(\\alpha_{i}+\\alpha_{j}+\\delta_{i j})+(\\alpha_{k}+\\alpha_{l}+\\delta_{k l})+\\epsilon_{i j k l} $$"
+      "content": "where $P_{ij|i}$ is the conditional probability of a $B_iB_j$ genotype given that one allele is $ B_{i} $. Under random mating, this reduces to",
+      "source_page": 90,
+      "printed_page": 70,
+      "source_block_ids": [
+        "p90:b11",
+        "p91:b2"
+      ],
+      "bbox": [
+        168.0,
+        1485.0,
+        1130.0,
+        1543.0
+      ],
+      "source_page_end": 91
     },
     {
       "type": "discussion",
-      "content": "When written in this manner, Equation 5.1 glosses over the considerable complexity of epistatic interactions. With only two loci, there are actually three ways in which interactions can arise between loci: additive $ \\times $ additive ($ \\alpha\\alpha $), additive $ \\times $ dominance ($ \\alpha\\delta $), and dominance $ \\times $ dominance ($ \\delta\\delta $). With three loci, there are four additional types of epistasis, ($ \\alpha\\alpha\\alpha $), ($ \\alpha\\alpha\\delta $), ($ \\alpha\\delta\\delta $), and ($ \\delta\\delta\\delta $), and the number steadily grows with additional loci."
+      "content": "[[FORMULA:Genetics_chapter4_formula036]]",
+      "source_page": 91,
+      "printed_page": 71,
+      "source_block_ids": [
+        "p91:b3"
+      ],
+      "bbox": [
+        412.0,
+        179.0,
+        673.0,
+        270.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:5.2]]"
+      "content": "where $ p_{j} $ is the frequency of the jth allele.",
+      "source_page": 91,
+      "printed_page": 71,
+      "source_block_ids": [
+        "p91:b5"
+      ],
+      "bbox": [
+        61.0,
+        270.0,
+        558.0,
+        317.0
+      ]
     },
     {
-      "type": "discussion",
-      "content": "Example 1. As a straightforward numerical example of epistasis, we consider the genotypic values associated with two diallelic loci in an artificially constructed population of teosinte, the presumed wild progenitor of cultivated maize. The two species are fully interfertile, despite their dramatic differences in plant architecture and inflorescence structure (Figure 5.2). Beadle (1939) hypothesized that substitution of as few as five genes may have been responsible for the teosinte-maize transformation. Although this idea has not yet been fully confirmed, recent studies clearly implicate a small number of genes with major effects (Doebley and Stec 1993, Dorweiler et al. 1993, Doebley et al. 1995a,b). For further information, see Chapter 15."
-    },
-    {
-      "type": "discussion",
-      "content": "A number of molecular markers (restriction fragment length polymorphisms) can be used to distinguish maize and teosinte. Through a progressive series of backcrosses and screening of genomic markers, Doebley et al. (1995a) introduced two maize markers, UMC107 and BV302, into a teosinte genetic background. We will refer to the maize “alleles” for these two loci as $ U_{M} $ and $ B_{M} $ and the teosinte “alleles” as $ U_{T} $ and $ B_{T} $. Each of these markers is associated with a tightly linked span of DNA from its parental origin (Chapters 14 and 15). Thus, the $ U_{TT}/B_{TT} $ genotype is essentially pure teosinte, whereas the $ U_{MM}/B_{MM} $ genotype is homozygous for two small stretches of maize DNA on an otherwise pure teosinte background."
-    },
-    {
-      "type": "discussion",
-      "content": "For each of the nine two-locus marker genotypes, Doebley et al. assayed a large number of individuals for several morphological and reproductive traits. The following table gives the results for one such character, the average length of vegetative internodes in the lateral branch (in millimeters). Estimates of the homozygous-effect coefficients (a) and dominance coefficients (k) (defined in Figure 4.4), conditional on the genotypic states of the alternate locus, are given in the last two columns and rows. These are calculated by setting the three genotypes equal to u, u + (1 + k)a, and u + 2a, where u is a scaling factor."
-    },
-    {
-      "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td rowspan=\"2\">BV302</td><td colspan=\"3\">UMC107</td><td rowspan=\"2\">a</td><td rowspan=\"2\">k</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ U_{{MM}} $</td><td style='text-align: center; word-wrap: break-word;'>$ U_{{MT}} $</td><td style='text-align: center; word-wrap: break-word;'>$ U_{{TT}} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ B_{{MM}} $</td><td style='text-align: center; word-wrap: break-word;'>18.0</td><td style='text-align: center; word-wrap: break-word;'>40.9</td><td style='text-align: center; word-wrap: break-word;'>61.1</td><td style='text-align: center; word-wrap: break-word;'>27.0</td><td style='text-align: center; word-wrap: break-word;'>0.33</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ B_{{MT}} $</td><td style='text-align: center; word-wrap: break-word;'>54.6</td><td style='text-align: center; word-wrap: break-word;'>47.6</td><td style='text-align: center; word-wrap: break-word;'>66.5</td><td style='text-align: center; word-wrap: break-word;'>6.0</td><td style='text-align: center; word-wrap: break-word;'>-2.17</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ B_{{TT}} $</td><td style='text-align: center; word-wrap: break-word;'>47.8</td><td style='text-align: center; word-wrap: break-word;'>83.6</td><td style='text-align: center; word-wrap: break-word;'>101.7</td><td style='text-align: center; word-wrap: break-word;'>21.6</td><td style='text-align: center; word-wrap: break-word;'>0.06</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>a</td><td style='text-align: center; word-wrap: break-word;'>14.9</td><td style='text-align: center; word-wrap: break-word;'>21.4</td><td style='text-align: center; word-wrap: break-word;'>20.3</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>k</td><td style='text-align: center; word-wrap: break-word;'>1.46</td><td style='text-align: center; word-wrap: break-word;'>-0.69</td><td style='text-align: center; word-wrap: break-word;'>-0.73</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
-    },
-    {
-      "type": "discussion",
-      "content": "Assuming that the observed mean phenotypes of the different marker classes are accurate estimates of the genotypic values, the fact that both a and k vary dramatically with the genetic background provides strong evidence for epistatic"
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter4:5]]",
+      "source_page": 91,
+      "source_block_ids": [
+        "p91:b6",
+        "p91:b7",
+        "p91:b8",
+        "p91:b9",
+        "p91:b10",
+        "p91:b11",
+        "p91:b13",
+        "p91:b14"
+      ],
+      "bbox": [
+        104.0,
+        401.0,
+        967.0,
+        513.0
+      ]
     }
   ]
 }

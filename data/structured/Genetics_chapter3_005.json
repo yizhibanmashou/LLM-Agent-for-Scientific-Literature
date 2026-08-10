@@ -2,46 +2,186 @@
   "id": "Genetics_chapter3_005",
   "metadata": {
     "chapter": "Genetics_chapter3",
-    "section": "Covariance, Regression, and Correlation",
-    "subsections": [
-      "Useful Identities for Variances and Covariances"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter3_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Covariance, Regression, and Correlation",
-    "section_level_2": "Useful Identities for Variances and Covariances",
+    "section": "COVARIANCE",
+    "subsections": [],
+    "section_level_1": "COVARIANCE",
+    "section_level_2": null,
     "heading_path": [
-      "Covariance, Regression, and Correlation",
-      "Useful Identities for Variances and Covariances"
+      "COVARIANCE"
     ],
-    "display_heading": "Useful Identities for Variances and Covariances"
+    "display_heading": "COVARIANCE",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b21"
+      ],
+      "bbox": [
+        159.0,
+        1254.0,
+        358.0,
+        1289.0
+      ],
+      "raw_text": "COVARIANCE"
+    }
   },
   "blocks": [
     {
-      "type": "definition",
-      "content": "Since $\\sigma(x,y)=\\sigma(y,x)$, covariances are symmetrical. Furthermore, from the definition of the variance and covariance, $$ \\sigma(x,x)=\\sigma^{2}(x) $$ i.e., the covariance of a variable with itself is the variance of that variable. It also follows from Equation 3.8 that, for any constant $a$, $$ \\sigma(a,x)=0 $$ $$ \\sigma(a x,y)=a\\sigma(x,y) $$ and if $b$ is also a constant $$ \\sigma(a x,b y)=a b\\sigma(x,y) $$ From Equations 3.10a and 3.10d, $$ \\sigma^{2}(a x)=a^{2}\\sigma^{2}(x) $$ i.e., the variance of the transformed variable $ax$ is $a^{2}$ times the variance of $x$. Likewise, for any constant $a$, $$ \\sigma[(a+x),y]=\\sigma(x,y) $$ so that simply adding a constant to a variable does not change its covariance with another variable."
+      "type": "discussion",
+      "content": "Consider a set of paired variables, $ (x, y) $. For each pair, subtract the population mean $ \\mu_x $ from the measure of $ x $, and similarly subtract $ \\mu_y $ from $ y $. Finally, for each pair of observations, multiply both of these new measures together to obtain $ (x - \\mu_x)(y - \\mu_y) $. The covariance of $ x $ and $ y $ is defined to be the average of this quantity over all pairs of measures in the population,",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b22"
+      ],
+      "bbox": [
+        157.0,
+        1305.0,
+        1121.0,
+        1485.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Finally, the covariance of two sums can be written as a sum of covariances. $$ \\sigma[(x+y),(w+z)]=\\sigma(x,w)+\\sigma(y,w)+\\sigma(x,z)+\\sigma(y,z) $$"
+      "content": "[[FORMULA:Genetics_chapter3_formula008]]",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b23"
+      ],
+      "bbox": [
+        457.0,
+        1493.0,
+        829.0,
+        1534.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Similarly, the variance of a sum can be expressed as the sum of all possible variances and covariances. From Equations 3.10a and 3.10g, $$ \\sigma^{2}(x+y)=\\sigma^{2}(x)+\\sigma^{2}(y)+2\\sigma(x,y) $$"
+      "content": "[[FIGURE:3.1]]",
+      "source_page": 53,
+      "printed_page": 33,
+      "source_block_ids": [
+        "p53:b6"
+      ],
+      "bbox": [
+        101.0,
+        400.0,
+        970.0,
+        624.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "More generally, $$ \\sigma^{2}\\left(\\sum_{i}^{n}x_{i}\\right)=\\sum_{i}^{n}\\sum_{j}^{n}\\sigma(x_{i},x_{j})=\\sum_{i}^{n}\\sigma^{2}(x_{i})+2\\sum_{i<j}^{n}\\sigma(x_{i},x_{j}) $$"
+      "content": "We often denote covariance by $ \\sigma_{x,y} $. Because $ E(x) = \\mu_{x} $ and $ E(y) = \\mu_{y} $, expansion of the product leads to further simplification,",
+      "source_page": 53,
+      "printed_page": 33,
+      "source_block_ids": [
+        "p53:b7"
+      ],
+      "bbox": [
+        50.0,
+        667.0,
+        1008.0,
+        750.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Thus, the variance of a sum of uncorrelated variables is just the sum of the variances of each variable."
+      "content": "[[FORMULA:Genetics_chapter3_formula009]]",
+      "source_page": 53,
+      "printed_page": 33,
+      "source_block_ids": [
+        "p53:b8"
+      ],
+      "bbox": [
+        253.0,
+        773.0,
+        798.0,
+        943.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "We will make considerable use of the preceding relationships in the remainder of this chapter and in chapters to come. Methods for approximating variances and covariances of more complex functions are outlined in Appendix 1."
+      "content": "In words, the covariance is the mean of the pairwise cross-product $x$ $y$ minus the cross-product of the means. The sampling estimator of $\\sigma(x,y)$ is similar in form to that for a variance,",
+      "source_page": 53,
+      "printed_page": 33,
+      "source_block_ids": [
+        "p53:b10"
+      ],
+      "bbox": [
+        42.0,
+        963.0,
+        1002.0,
+        1080.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula010]]",
+      "source_page": 53,
+      "printed_page": 33,
+      "source_block_ids": [
+        "p53:b11"
+      ],
+      "bbox": [
+        355.0,
+        1071.0,
+        681.0,
+        1141.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where n is the number of pairs of observations, and",
+      "source_page": 53,
+      "printed_page": 33,
+      "source_block_ids": [
+        "p53:b13"
+      ],
+      "bbox": [
+        37.0,
+        1146.0,
+        659.0,
+        1194.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter3_formula011]]",
+      "source_page": 53,
+      "printed_page": 33,
+      "source_block_ids": [
+        "p53:b14"
+      ],
+      "bbox": [
+        412.0,
+        1228.0,
+        615.0,
+        1315.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The covariance is a measure of association between $x$ and $y$ (Figure 3.1). It is positive if $y$ increases with increasing $x$, negative if $y$ decreases as $x$ increases, and zero if there is no linear tendency for $y$ to change with $x$. If $x$ and $y$ are independent, then $\\sigma(x,y) = 0$, but the converse is not true — a covariance of zero does not necessarily imply independence. (We will return to this shortly; see Figure 3.3.)",
+      "source_page": 53,
+      "printed_page": 33,
+      "source_block_ids": [
+        "p53:b15"
+      ],
+      "bbox": [
+        29.0,
+        1334.0,
+        994.0,
+        1548.0
+      ]
     }
   ]
 }

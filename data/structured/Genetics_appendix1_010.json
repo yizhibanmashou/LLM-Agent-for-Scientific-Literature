@@ -1,0 +1,385 @@
+{
+  "id": "Genetics_appendix1_010",
+  "metadata": {
+    "chapter": "Genetics_appendix1",
+    "section": "EXPECTATIONS AND VARIANCES OF RATIOS",
+    "subsections": [
+      "Sampling Variance of a Coefficient of Variation"
+    ],
+    "section_level_1": "EXPECTATIONS AND VARIANCES OF RATIOS",
+    "section_level_2": "Sampling Variance of a Coefficient of Variation",
+    "heading_path": [
+      "EXPECTATIONS AND VARIANCES OF RATIOS",
+      "Sampling Variance of a Coefficient of Variation"
+    ],
+    "display_heading": "EXPECTATIONS AND VARIANCES OF RATIOS / Sampling Variance of a Coefficient of Variation",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 831,
+      "printed_page": 811,
+      "source_block_ids": [
+        "p831:b13"
+      ],
+      "bbox": [
+        48.0,
+        1434.0,
+        636.0,
+        1467.0
+      ],
+      "raw_text": "Sampling Variance of a Coefficient of Variation"
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "As our final example of finding an approximate (large-sample) sampling variance of a ratio, we consider $ \\sigma^{2}[\\mathrm{CV}(x)] $, where the coefficient of variation $ \\mathrm{CV}(x) = $",
+      "source_page": 831,
+      "printed_page": 811,
+      "source_block_ids": [
+        "p831:b14"
+      ],
+      "bbox": [
+        49.0,
+        1475.0,
+        1006.0,
+        1542.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "SD(x)/π. This example shows how the approximations developed above can be successively used for even rather complex functions. As a first step, consider the expectation and variance of SD, the sample estimate of standard deviation. We start with the variance, $ \\sigma^{2}[SD(x)] = \\sigma^{2}[\\sqrt{\\text{Var}(x)}] $. Applying Equation A1.7c (with n = 1 variable), we have",
+      "source_page": 832,
+      "printed_page": 812,
+      "source_block_ids": [
+        "p832:b2"
+      ],
+      "bbox": [
+        148.0,
+        135.0,
+        1108.0,
+        301.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula056]]",
+      "source_page": 832,
+      "printed_page": 812,
+      "source_block_ids": [
+        "p832:b3"
+      ],
+      "bbox": [
+        396.0,
+        327.0,
+        858.0,
+        407.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling that $ \\sigma^{2}[\\mathrm{Var}(x)] = [(\\mu_{4x} - \\sigma^{4}(x)]/n $, and letting $ v = \\mathrm{Var}(x) $, then $ \\mu_{v} = \\sigma^{2}(x) $ and Equation A1.21 gives",
+      "source_page": 832,
+      "printed_page": 812,
+      "source_block_ids": [
+        "p832:b5"
+      ],
+      "bbox": [
+        151.0,
+        436.0,
+        1107.0,
+        503.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula057]]",
+      "source_page": 832,
+      "printed_page": 812,
+      "source_block_ids": [
+        "p832:b6"
+      ],
+      "bbox": [
+        246.0,
+        531.0,
+        922.0,
+        605.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "To compute the approximate expected value of the SD, we apply Equation A1.3,",
+      "source_page": 832,
+      "printed_page": 812,
+      "source_block_ids": [
+        "p832:b8"
+      ],
+      "bbox": [
+        151.0,
+        631.0,
+        1108.0,
+        695.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula058]]",
+      "source_page": 832,
+      "printed_page": 812,
+      "source_block_ids": [
+        "p832:b9"
+      ],
+      "bbox": [
+        454.0,
+        692.0,
+        805.0,
+        763.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Letting $ v = \\mathrm{Var}(x) $, $ \\mu_v = \\sigma^2(x) $ and $ \\sigma^2[\\mathrm{Var}(x)] = [\\mu_{4x} - \\sigma^4(x)]/n $,",
+      "source_page": 832,
+      "printed_page": 812,
+      "source_block_ids": [
+        "p832:b11"
+      ],
+      "bbox": [
+        149.0,
+        776.0,
+        934.0,
+        812.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula059]]",
+      "source_page": 832,
+      "printed_page": 812,
+      "source_block_ids": [
+        "p832:b12"
+      ],
+      "bbox": [
+        359.0,
+        839.0,
+        894.0,
+        911.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Next, consider $\\sigma[\\overline{x}, \\mathrm{SD}(x)]$, the covariance between the standard deviation and the sample mean. Since we know $\\sigma[\\overline{x}, \\mathrm{Var}(x)] \\simeq \\mu_{3x}/n$ (Equation A1.13b), we first use Equation A1.9 to obtain an approximation for $\\sigma[\\overline{x}, \\mathrm{SD}(x)]$ as a function of $\\overline{x}$ and $\\mathrm{Var}(x)$. Letting $f = u$ and $g = \\sqrt{v}$, Equation A1.9 gives",
+      "source_page": 832,
+      "printed_page": 812,
+      "source_block_ids": [
+        "p832:b14"
+      ],
+      "bbox": [
+        150.0,
+        938.0,
+        1108.0,
+        1070.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula060]]",
+      "source_page": 832,
+      "printed_page": 812,
+      "source_block_ids": [
+        "p832:b15"
+      ],
+      "bbox": [
+        271.0,
+        1096.0,
+        989.0,
+        1260.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "For our particular case,",
+      "source_page": 832,
+      "printed_page": 812,
+      "source_block_ids": [
+        "p832:b17"
+      ],
+      "bbox": [
+        154.0,
+        1287.0,
+        438.0,
+        1318.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula061]]",
+      "source_page": 832,
+      "printed_page": 812,
+      "source_block_ids": [
+        "p832:b18"
+      ],
+      "bbox": [
+        317.0,
+        1346.0,
+        951.0,
+        1416.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "so three of the terms in Equation A1.24 are zero, leaving",
+      "source_page": 832,
+      "printed_page": 812,
+      "source_block_ids": [
+        "p832:b19"
+      ],
+      "bbox": [
+        154.0,
+        1446.0,
+        827.0,
+        1478.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula062]]",
+      "source_page": 832,
+      "printed_page": 812,
+      "source_block_ids": [
+        "p832:b20"
+      ],
+      "bbox": [
+        466.0,
+        1507.0,
+        800.0,
+        1542.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, from Equation A1.13b,",
+      "source_page": 833,
+      "printed_page": 813,
+      "source_block_ids": [
+        "p833:b2"
+      ],
+      "bbox": [
+        65.0,
+        135.0,
+        430.0,
+        168.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula063]]",
+      "source_page": 833,
+      "printed_page": 813,
+      "source_block_ids": [
+        "p833:b3"
+      ],
+      "bbox": [
+        306.0,
+        198.0,
+        777.0,
+        270.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Everything is now in place for applying Equation A1.19b to obtain $ \\sigma^2(\\mathrm{SD}(x)/\\overline{x}) $. Let $ u = \\mathrm{SD}(x) = [\\mathrm{Var}(x)]^{1/2} $ and $ v = \\overline{x} $. Hence $ \\mu_v = \\mu_x $, $ \\sigma^2(v) = \\sigma^2(\\overline{x}) = \\sigma^2(x)/n $ (Example 3), and Equations A1.22 and A1.25 provide expressions for $ \\sigma^2(u) $ and $ \\sigma(u, v) $. Substituting these into Equation A1.19b gives",
+      "source_page": 833,
+      "printed_page": 813,
+      "source_block_ids": [
+        "p833:b5"
+      ],
+      "bbox": [
+        63.0,
+        296.0,
+        1023.0,
+        427.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula064]]",
+      "source_page": 833,
+      "printed_page": 813,
+      "source_block_ids": [
+        "p833:b6"
+      ],
+      "bbox": [
+        104.0,
+        455.0,
+        874.0,
+        535.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $\\mu_{\\mathrm{SD}}$ is given by Equation A1.23b. If $x$ is normally distributed, $\\mu_{3x}=0$, $\\mu_{4x}=3\\sigma^{4}(x)$, $\\mu_{\\mathrm{SD}}=\\sigma(x)[1-1/(4n)]$ and further simplification is possible. Ignoring terms of order $n^{2}$ and higher, then",
+      "source_page": 833,
+      "printed_page": 813,
+      "source_block_ids": [
+        "p833:b8"
+      ],
+      "bbox": [
+        61.0,
+        559.0,
+        1018.0,
+        658.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula065]]",
+      "source_page": 833,
+      "printed_page": 813,
+      "source_block_ids": [
+        "p833:b9"
+      ],
+      "bbox": [
+        269.0,
+        684.0,
+        809.0,
+        774.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "in which case an estimate for the large-sample variance of the CV is simply",
+      "source_page": 833,
+      "printed_page": 813,
+      "source_block_ids": [
+        "p833:b11"
+      ],
+      "bbox": [
+        61.0,
+        798.0,
+        957.0,
+        838.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula066]]",
+      "source_page": 833,
+      "printed_page": 813,
+      "source_block_ids": [
+        "p833:b12"
+      ],
+      "bbox": [
+        284.0,
+        862.0,
+        791.0,
+        933.0
+      ]
+    }
+  ]
+}

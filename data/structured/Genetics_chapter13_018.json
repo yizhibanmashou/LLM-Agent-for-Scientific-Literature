@@ -2,38 +2,156 @@
   "id": "Genetics_chapter13_018",
   "metadata": {
     "chapter": "Genetics_chapter13",
-    "section": "Introduction",
-    "subsections": [
-      "Estimating Individual Genotypes"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Estimating Individual Genotypes",
+    "section": "ANALYSIS OF DISCRETE CHARACTERS",
+    "subsections": [],
+    "section_level_1": "ANALYSIS OF DISCRETE CHARACTERS",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "Estimating Individual Genotypes"
+      "ANALYSIS OF DISCRETE CHARACTERS"
     ],
-    "display_heading": "Estimating Individual Genotypes"
+    "display_heading": "ANALYSIS OF DISCRETE CHARACTERS",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 389,
+      "printed_page": 369,
+      "source_block_ids": [
+        "p389:b9"
+      ],
+      "bbox": [
+        70.0,
+        1373.0,
+        605.0,
+        1412.0
+      ],
+      "raw_text": "ANALYSIS OF DISCRETE CHARACTERS"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "When a major locus is indicated, the investigator may wish to estimate the genotypes of particular individuals. For example, when the trait is determined by both a major gene and a polygenic background, extreme individuals in some families result from having extreme major-locus genotypes, while in other families they result from having extreme polygenic values. This is a particular problem with studies of human disease where pedigrees are gathered from very wide sampling on the basis of extreme phenotypes. Obviously, one would like to sort out these different causes before proceeding to detailed molecular analyses. For example, in a study of 70 pedigrees displaying high levels of blood cholesterol, Moll et al. al. (1984) found strong evidence for segregation of a major gene in only three cases, with only polygenic and/or environmental factors influencing cholesterol in the remaining pedigrees. Their strategy was to first fit a mixed (major gene plus background polygene) model to the data, and then use the estimated model parameters to predict the major-locus genotype of each parent, given observed parental and offspring phenotypic values."
-    },
-    {
-      "type": "proposition",
-      "content": "The key to predicting the major-locus genotype is $ \\mathrm{Bayes}^{\\prime} $ $ \\mathrm{theorem} $, which can be used to estimate the probability of each genotype given the phenotypic values and estimates of the major gene parameters obtained from segregation analysis (such as allele frequencies and genotypic means). $ \\mathrm{Bayes}^{\\prime} $ theorem is as follows: suppose there are $ n $ possible outcomes $ (b_1, b_2, \\cdots, b_n) $ of a random variable that we cannot observe. Given the observed outcome of a correlated variable $ A $, what is the probability of $ b_j $? From the definition of a conditional probability, $ \\mathrm{Pr}(b_j | A) = \\mathrm{Pr}(b_j, A)/\\mathrm{Pr}(A) $. We can decompose this further, by noting that $ \\mathrm{Pr}(b_j, A) = \\mathrm{Pr}(b_j) \\mathrm{Pr}(A | b_j) $ and $ \\mathrm{Pr}(A) = \\sum_{i}^{n} \\mathrm{Pr}(b_i) \\mathrm{Pr}(A | b_i) $. Putting these together gives $ \\mathrm{Bayes}^{\\prime} $ theorem, $$ \\Pr(b_{j}\\mid A)=\\frac{\\Pr(b_{j})\\Pr(A\\mid b_{j})}{\\Pr(A)}=\\frac{\\Pr(b_{j})\\Pr(A\\mid b_{j})}{\\displaystyle\\sum_{i=1}^{n}\\Pr(b_{i})\\Pr(A\\mid b_{i})} $$"
+      "content": "The likelihood functions developed above can be easily modified to accommodate complex segregation analysis of dichotomous (binary) characters, such as the presence/absence of a disease (e.g., Elston and Rao 1978). Define the penetrance",
+      "source_page": 389,
+      "printed_page": 369,
+      "source_block_ids": [
+        "p389:b10"
+      ],
+      "bbox": [
+        65.0,
+        1434.0,
+        1026.0,
+        1551.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In particular, the probability that an individual with phenotypic value $z$ has genotype $j$ (for $1 \\leq j \\leq n$) is $$ \\Pr(g_{j}\\mid z)=\\frac{\\Pr(g_{j})\\Pr(z\\mid g_{j})}{\\Pr(z)}=\\frac{\\Pr(g_{j})\\Pr(z\\mid g_{j})}{\\displaystyle\\sum_{i=1}^{n}\\Pr(g_{i})\\Pr(z\\mid g_{i})} $$"
+      "content": "$\\psi_{g}$ of a genotype $g$ as the probability that a random individual of that genotype displays the trait. Coding the character as",
+      "source_page": 390,
+      "printed_page": 370,
+      "source_block_ids": [
+        "p390:b2"
+      ],
+      "bbox": [
+        110.0,
+        129.0,
+        1070.0,
+        207.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note that $ \\Pr(z) $ is simply the distribution of phenotypic values and the probabilities involving $ g_i $ can be computed using the ML estimates of the major gene parameters. More generally, the phenotypes of an individual's offspring and/or additional relatives can be used by replacing the single observation z with a vector z of phenotypes. Computing $ \\Pr(z \\mid g_i) $, the probability of the observed vector z of phenotypes, given that the individual of interest has genotype $ g_i $, is straightforward but can be very tedious (Elston and Stewart 1971, Heuch and Li 1972, van Arendonk et al. 1989, Kinghorn et al. 1993)."
+      "content": "[[FORMULA:Genetics_chapter13_formula044]]",
+      "source_page": 390,
+      "printed_page": 370,
+      "source_block_ids": [
+        "p390:b3"
+      ],
+      "bbox": [
+        377.0,
+        222.0,
+        801.0,
+        303.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "gives the likelihood function for an individual with genotype g as",
+      "source_page": 390,
+      "printed_page": 370,
+      "source_block_ids": [
+        "p390:b5"
+      ],
+      "bbox": [
+        115.0,
+        324.0,
+        904.0,
+        367.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula045]]",
+      "source_page": 390,
+      "printed_page": 370,
+      "source_block_ids": [
+        "p390:b6"
+      ],
+      "bbox": [
+        239.0,
+        381.0,
+        847.0,
+        465.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "More generally, if the character has $n$ discrete states, and $\\psi_{k,g}$ is the probability that an individual of genotype $g$ has character state $k$, the likelihood function becomes",
+      "source_page": 390,
+      "printed_page": 370,
+      "source_block_ids": [
+        "p390:b8"
+      ],
+      "bbox": [
+        118.0,
+        481.0,
+        1077.0,
+        591.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula046]]",
+      "source_page": 390,
+      "printed_page": 370,
+      "source_block_ids": [
+        "p390:b9"
+      ],
+      "bbox": [
+        163.0,
+        602.0,
+        947.0,
+        696.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, our treatment below of dichotomous characters easily extends to polychotomous traits.",
+      "source_page": 390,
+      "printed_page": 370,
+      "source_block_ids": [
+        "p390:b11"
+      ],
+      "bbox": [
+        121.0,
+        711.0,
+        1078.0,
+        789.0
+      ]
     }
   ]
 }

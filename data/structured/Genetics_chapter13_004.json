@@ -2,34 +2,146 @@
   "id": "Genetics_chapter13_004",
   "metadata": {
     "chapter": "Genetics_chapter13",
-    "section": "Introduction",
+    "section": "ELEMENTARY TESTS",
     "subsections": [
-      "Departures from Normality"
+      "Tests Based on Sibship Variances"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Departures from Normality",
+    "section_level_1": "ELEMENTARY TESTS",
+    "section_level_2": "Tests Based on Sibship Variances",
     "heading_path": [
-      "Introduction",
-      "Departures from Normality"
+      "ELEMENTARY TESTS",
+      "Tests Based on Sibship Variances"
     ],
-    "display_heading": "Departures from Normality"
+    "display_heading": "ELEMENTARY TESTS / Tests Based on Sibship Variances",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 369,
+      "printed_page": 349,
+      "source_block_ids": [
+        "p369:b5"
+      ],
+      "bbox": [
+        48.0,
+        1390.0,
+        464.0,
+        1427.0
+      ],
+      "raw_text": "Tests Based on Sibship Variances"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Consider a locus segregating a major allele and assume that the distribution of phenotypes for each of the major-locus genotypes is normal. The resulting distribution, a mixture of normals, is generally not normal. When a major gene is segregating, the phenotypic distribution can exhibit multimodality, skewness, and/or kurtosis. Figure 13.1 shows that when major allele frequencies are intermediate, the resulting phenotypic distribution is platykurtic, being more flatly peaked than a normal. The distribution becomes leptokurtic (more peaked than a normal) and skewed when alleles of large effect are at extreme frequencies, i.e., somewhat near zero or one (Hammond and James 1970, O'Donald 1971). When gene frequencies become very close to zero or one, the distribution again more closely approaches normality, as there is effectively only a single genotype in the population."
+      "content": "The use of collections of known relatives, rather than random individuals, greatly improves the power of tests for major genes. Several simple tests based on sib- ship comparisons have been proposed. The presence of major alleles increases the variance within sibships in which the alleles are segregating. For example, if Q and q denote alternative alleles at a major locus, the expected phenotypic variance among sibs from $ Qq \\times Qq $ parents is greater than for sibs from $ qq \\times qq $ or $ QQ \\times QQ $ parents, reflecting segregation within these families, while sibs from $ QQ \\times Qq $ and $ qq \\times Qq $ parents display intermediate levels of variance. A number of tests for unequal variances among sibships have been suggested, the simplest being Bartlett's test for homogeneity of variances (e.g., Sokal and Rohlf 1995). The difficulty with this approach is that nongenetic causes may underlie differences in sibship variances. Bartlett's test is also rather sensitive to departures from normality. As a way around these problems, Mérat (1968) proposed a test based on the notion that families with significantly elevated variances should also exhibit exceptional platykurtosis and possibly skewness if the inflation of the variance is caused by segregating alleles of large effect.",
+      "source_page": 369,
+      "printed_page": 349,
+      "source_block_ids": [
+        "p369:b6",
+        "p370:b2"
+      ],
+      "bbox": [
+        45.0,
+        1430.0,
+        1006.0,
+        1510.0
+      ],
+      "source_page_end": 370
     },
     {
       "type": "discussion",
-      "content": "A variety of tests for normality have been developed, some of which were discussed in Chapter 11, but none of these is particularly powerful. As a"
+      "content": "Fain (1978) proposed an alternative test that utilizes both the means and variances of sibships. The basis for this test is the observation that, for a character determined by many genes of roughly equal effect, there should be no relationship between the variance of the sibship and the phenotypic value of the parents (Pearson 1904, Penrose 1969, Felsenstein 1973, Stark 1976). If, however, the character is determined by a few genes of large effect, parents with the most extreme phenotypes are likely to be homozygotes, while parents of intermediate phenotypes are more likely to be heterozygotes. This relationship results in a roughly quadratic regression of offspring variance on midparental phenotypic value,",
+      "source_page": 370,
+      "printed_page": 350,
+      "source_block_ids": [
+        "p370:b3"
+      ],
+      "bbox": [
+        139.0,
+        578.0,
+        1102.0,
+        875.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:13.1]] consequence, one must proceed with extreme caution in inferring the absence of major genes from a phenotypic distribution that is not significantly different from normal. As Figure 13.1 shows, the departure from normality can be rather small, requiring very large sample sizes for detection. Thoday and Thompson (1976) found that tests based on kurtosis have poor power for detecting major genes. In their simulations, a character with no environmental variation determined by four additive loci (each with two alleles at frequency 0.5 and relative effects of x, 2x, 3x, and 4x) required a sample of roughly 750 individuals to detect nonnormality, while with three additive loci of equal effect, sample sizes in excess of 1000 were required. Conversely, when the distribution significantly departs from normality, one must be equally cautious in inferring the presence of a major gene without additional support. For example, a phenotypic distribution can display skew in the absence of major genes due to scale effects (Chapter 11). As we discuss shortly, mixture models provide a more sophisticated and powerful approach to major-gene detection, assessing whether the fit of the phenotypic distribution is consistent with a mixture of normals."
+      "content": "[[FORMULA:Genetics_chapter13_formula001]]",
+      "source_page": 370,
+      "printed_page": 350,
+      "source_block_ids": [
+        "p370:b4"
+      ],
+      "bbox": [
+        470.0,
+        889.0,
+        780.0,
+        926.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\operatorname{Var}(z_i) $ is the phenotypic variance within the ith sibship, and $ \\overline{z}_i $ is the midparental value for this sibship. Sibship means replace midparental values when the latter are unknown. A significant value of $ b_2 $ is taken as an indication of a major gene. Due to scaling effects (Chapter 11), the variance often increases linearly with the mean, so a significant $ b_1 $, by itself, does not necessarily indicate a major gene.",
+      "source_page": 370,
+      "printed_page": 350,
+      "source_block_ids": [
+        "p370:b6"
+      ],
+      "bbox": [
+        144.0,
+        948.0,
+        1106.0,
+        1150.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter13:1]]",
+      "source_page": 370,
+      "source_block_ids": [
+        "p370:b7",
+        "p371:b2"
+      ],
+      "bbox": [
+        197.0,
+        1235.0,
+        1065.0,
+        1535.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Our second example of Fain’s test is based on Mitchell-Olds and Bergelson’s (1990) work on the annual plant Impatiens capensis. These authors found that the regression of within-sibship variance on sibship mean usually had significant linear (but not quadratic) terms, suggesting that scale effects are common. However, the regression for germination date also showed a significant quadratic term (Figure 13.2), suggesting the presence of a major gene influencing this character.",
+      "source_page": 371,
+      "printed_page": 351,
+      "source_block_ids": [
+        "p371:b3"
+      ],
+      "bbox": [
+        67.0,
+        290.0,
+        1028.0,
+        482.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The power of different sibship variance tests has been considered by several investigators. MacCluer and Kammerer (1984) concluded that both Bartlett's and Fain's test have low power for detecting a major gene even when 100 nuclear families are used. However, they assumed a small number of sibs per family (3 to 5), as their interest was in human populations. On the positive side, they found that these tests are unlikely to give a false indication of a major gene when none is present (under the simplified assumption of normally distributed environmental effects). Mayo et al. (1980) note that Fain's test is compromised if heterozygotes have lower environmental variances than homozygotes, as this difference partially masks the increased genetic variance in sibships from heterozygous parents.",
+      "source_page": 371,
+      "printed_page": 351,
+      "source_block_ids": [
+        "p371:b4"
+      ],
+      "bbox": [
+        65.0,
+        482.0,
+        1025.0,
+        804.0
+      ]
     }
   ]
 }

@@ -8,6 +8,12 @@ const { tokenizeMath } = require("../study_reader/math_parser.js");
 
 const ROOT = path.resolve(__dirname, "..");
 
+function parseRoot(argv) {
+  const index = argv.indexOf("--root");
+  const raw = index >= 0 ? argv[index + 1] : argv.find((item) => item.startsWith("--root="))?.slice(7);
+  return raw ? path.resolve(raw) : ROOT;
+}
+
 function parseBooks(argv) {
   const index = argv.indexOf("--books");
   const raw = index >= 0 ? argv[index + 1] : argv.find((item) => item.startsWith("--books="))?.slice(8);
@@ -64,23 +70,23 @@ function validateMixedText(text, location, errors, seen, canonical = false) {
   if (canonical) errors.push(...canonicalDisplayErrors(text, location));
 }
 
-function validateBook(book, errors, seen, counts) {
-  const textbookDir = path.join(ROOT, "data", "textbook");
-  const structuredDir = path.join(ROOT, "data", "structured");
-  const generatedDir = path.join(ROOT, "study_reader", "data", "generated", "chapters");
+function validateBook(book, errors, seen, counts, root) {
+  const textbookDir = path.join(root, "data", "textbook");
+  const structuredDir = path.join(root, "data", "structured");
+  const generatedDir = path.join(root, "study_reader", "data", "generated", "chapters");
 
   const markdownFiles = filesMatching(textbookDir, (name) => name.startsWith(`${book}_`) && name.endsWith("_textbook.md"));
   if (!markdownFiles.length) errors.push(`${book}: no textbook Markdown files`);
   markdownFiles.forEach((pathname) => {
     counts.markdown += 1;
-    validateMixedText(fs.readFileSync(pathname, "utf8"), path.relative(ROOT, pathname), errors, seen, true);
+    validateMixedText(fs.readFileSync(pathname, "utf8"), path.relative(root, pathname), errors, seen, true);
   });
 
   filesMatching(structuredDir, (name) => name.startsWith(`${book}_chapter`) && name.endsWith(".json")).forEach((pathname) => {
     const payload = json(pathname);
     (payload.blocks || []).forEach((block, index) => {
       counts.structuredBlocks += 1;
-      validateMixedText(String(block.content || ""), `${path.relative(ROOT, pathname)}:blocks[${index}]`, errors, seen);
+      validateMixedText(String(block.content || ""), `${path.relative(root, pathname)}:blocks[${index}]`, errors, seen);
     });
   });
 
@@ -88,26 +94,28 @@ function validateBook(book, errors, seen, counts) {
   if (!fs.existsSync(formulaLibrary)) errors.push(`${book}: formula library missing`);
   else (json(formulaLibrary).formulas || []).forEach((formula, index) => {
     counts.formulas += 1;
-    validateTeX(formula.latex, `${path.relative(ROOT, formulaLibrary)}:formulas[${index}]`, errors, seen);
+    validateTeX(formula.latex, `${path.relative(root, formulaLibrary)}:formulas[${index}]`, errors, seen);
   });
 
   filesMatching(generatedDir, (name) => name.startsWith(`${book}_`) && name.endsWith(".json")).forEach((pathname) => {
     const payload = json(pathname);
     (payload.assets || []).filter((asset) => asset.kind === "formula").forEach((asset, index) => {
       counts.generatedFormulas += 1;
-      validateTeX(asset.latex_render || asset.latex, `${path.relative(ROOT, pathname)}:formula-assets[${index}]`, errors, seen);
+      validateTeX(asset.latex_render || asset.latex, `${path.relative(root, pathname)}:formula-assets[${index}]`, errors, seen);
     });
   });
 }
 
 function main() {
-  const books = parseBooks(process.argv.slice(2));
+  const argv = process.argv.slice(2);
+  const books = parseBooks(argv);
+  const root = parseRoot(argv);
   if (!books.length) throw new Error("No strict-math books configured or selected");
   const errors = [];
   const seen = new Set();
   const counts = { markdown: 0, structuredBlocks: 0, formulas: 0, generatedFormulas: 0 };
-  books.forEach((book) => validateBook(book, errors, seen, counts));
-  const result = { valid: errors.length === 0, books, counts, error_count: errors.length, errors };
+  books.forEach((book) => validateBook(book, errors, seen, counts, root));
+  const result = { valid: errors.length === 0, root, books, counts, error_count: errors.length, errors };
   process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
   if (errors.length) process.exitCode = 1;
 }

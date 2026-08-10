@@ -2,54 +2,523 @@
   "id": "Genetics_chapter13_012",
   "metadata": {
     "chapter": "Genetics_chapter13",
-    "section": "Introduction",
+    "section": "COMPLEX SEGREGATION ANALYSIS",
     "subsections": [
-      "COMPLEX SEGREGATION ANALYSIS"
+      "Likelihood Functions Assuming a Single Major Gene"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "COMPLEX SEGREGATION ANALYSIS",
+    "section_level_1": "COMPLEX SEGREGATION ANALYSIS",
+    "section_level_2": "Likelihood Functions Assuming a Single Major Gene",
     "heading_path": [
-      "Introduction",
-      "COMPLEX SEGREGATION ANALYSIS"
+      "COMPLEX SEGREGATION ANALYSIS",
+      "Likelihood Functions Assuming a Single Major Gene"
     ],
-    "display_heading": "COMPLEX SEGREGATION ANALYSIS"
+    "display_heading": "COMPLEX SEGREGATION ANALYSIS / Likelihood Functions Assuming a Single Major Gene",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 380,
+      "printed_page": 360,
+      "source_block_ids": [
+        "p380:b4"
+      ],
+      "bbox": [
+        131.0,
+        722.0,
+        796.0,
+        764.0
+      ],
+      "raw_text": "Likelihood Functions Assuming a Single Major Gene"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Starting with Elston and Stewart (1971) and Morton and MacLean (1974), human population geneticists have developed the method of complex segregation analysis, or CSA, to test between alternative modes of inheritance. As we will see in the next few sections, CSA extends the simple mixture model (Equation 13.6a) by using pedigree information to modify the mixture proportions. Assumptions about the mode of inheritance specify the mixture distribution weights, allowing likelihood-ratio tests for different models of transmission (a single major gene, no major gene but background polygenes, major gene plus background polygenes, and so forth). We illustrate some of these applications below, showing how known relationships among relatives define the transmission probabilities of both major genes and polygenes."
+      "content": "We start by computing the likelihood for a single individual, then proceed to an entire family, and finally to the collection of all families in our sample. Assume that a single diallelic locus underlies the character and consider the jth offspring from the ith family, $ o_{ij} $, which has father $ f_i $ and mother $ m_i $ (for notational ease, in the following we use $ f, m $, and $ o_j $, reminding the reader that these, of course, change as we change families). Denote the phenotypic value of this offspring by $ z_{ij} $. Index the major-locus genotypes by g where g = 1 for QQ, g = 2 for Qq, and g = 3 for qq, with $ g_f, g_m $, and $ g_{o_j} $ denoting the genotypes of the parents (father and mother) and their jth offspring. Phenotypic values for each major-locus genotype are assumed to be normally distributed with means $ \\mu_g $ and common variance $ \\sigma^2 $. Finally, let $ \\Pr(g_o \\mid g_f, g_m) $ be the probability that an offspring has genotype $ g_o $ given that its parents have genotypes $ g_f $ and $ g_m $.",
+      "source_page": 380,
+      "printed_page": 360,
+      "source_block_ids": [
+        "p380:b5"
+      ],
+      "bbox": [
+        132.0,
+        760.0,
+        1096.0,
+        1164.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The extensive literature on complex segregation analysis is reviewed by Elston and Rao (1978), Boyle and Elston (1979), Elston (1980, 1981a, 1990a), and Morton et al. (1983). While the bulk of the literature deals with human populations, Le Roy et al. (1990) and Knott et al. (1991a,b) examine applications in animal breeding. Tourjee et al. (1995) give an application to plants, examining the genetic basis of flower color in Gerbera jamesonii. Similar likelihood methods for major loci have been developed for F₂ segregation in crosses between inbred lines (Tan and Chang 1972, Elston and Stewart 1973, Tan and D'Angelo 1979, Elston 1984, Janss and Van Der Werf 1992, Loisel et al. 1994, Changjian et al. 1994)."
-    },
-    {
-      "type": "proposition",
-      "content": "While complex segregation analysis is the most assumption-burdened test for detecting major genes, it is also the most powerful of the marker-free methods when the assumptions hold (MacCluer et al. 1983, MacCluer and Kammerer 1984). For example, the commingling tests discussed above (e.g., Example 2) that simply fit a mixture of normals and use no information from relatives can easily miss major genes that segregation analysis can detect (Kwon et al. 1990)."
-    },
-    {
-      "type": "proposition",
-      "content": "Complex segregation analysis assumes normality of the underlying distributions, which greatly simplifies the form of the likelihood function. If this assumption is violated, false detection of a major locus can occur (MacLean et al. 1975, Go et al. 1978, Morton 1984). As mentioned above, if the underlying distributions are suspected to be nonnormal, one strategy is to use a likelihood approach that incorporates the new information from the data. porates a transformation parameter for each underlying distribution. Instead of individually transforming each underlying distribution (through the likelihood function), one could simply apply a single transform to the observed distribution. However, this approach can raise serious issues of interpretation (e.g., Asamoah et al. 1987). While the use of transformations is not a resolved issue, Demenais et al. (1986) suggest that tests that incorporate estimates of transmission probabilities (see Example 4 below) remove the need to transform the data before performing segregation analysis. A final complication is that when significant genotype $ \\times $ environment interaction is present, the power to detect a major gene is greatly reduced (Eaves 1984, Tiret et al. 1993)."
-    },
-    {
-      "type": "discussion",
-      "content": "The following sections illustrate some general approaches for constructing likelihood functions for full-sib families under increasingly more general genetic models. We start by assuming only a single diallelic major locus, and then consider separately common family effects and background segregation of polygenic loci. Likelihoods for more complicated pedigrees or other experimental designs (such as inbred-line crosses) follow using similar arguments. Before proceeding, an example will show the types of hypotheses that can be addressed and the types of parameters that need to be incorporated into the likelihood functions underlying complex segregation analysis."
-    },
-    {
-      "type": "discussion",
-      "content": "Example 3. Morton and MacLean (1974) consider a model with both a segregating diallelic major gene (alleles Q and q) and a completely additive polygenic background. Conditioned on the genotype at the major locus, the distributions of phenotypic values are assumed to be normally distributed with means $ \\mu_{QQ} $, $ \\mu_{Qq} $, or $ \\mu_{qq} $, and common variance $ \\sigma^{2} = \\sigma_{E}^{2} + \\sigma_{A}^{2} $ (the environmental variance plus the additive genetic variance contributed by the background polygenes). Assuming the major-locus genotypes are in Hardy-Weinberg proportions, this model is described by six parameters: p = frequency of Q, the means of each major-locus genotype ($ \\mu_{QQ} $, $ \\mu_{Qq} $, $ \\mu_{qq} $), the environmental variance $ \\sigma_{E}^{2} $, and the genetic variance from the polygenic contribution $ \\sigma_{A}^{2} $. The resulting likelihood function (see Equations 13.11b and 13.22 below) is complex as it incorporates transmission of both the major alleles and polygenic background from parent to offspring, conditioning over all possible parental genotypes. The amount of support for various genetic hypotheses can be tested using likelihood ratios of appropriate subsets of the full model, as given in the following table: <table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Model</td><td style='text-align: center; word-wrap: break-word;'>Free Parameters</td><td style='text-align: center; word-wrap: break-word;'>Restricted Parameters</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>1. No genetic effects</td><td style='text-align: center; word-wrap: break-word;'>$ \\mu, \\sigma_{E}^{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\mu_{QQ} = \\mu_{Qq} = \\mu_{qq} = \\mu $ $ p = 0, \\sigma_{A}^{2} = 0 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>2. Major gene, no background polygenes</td><td style='text-align: center; word-wrap: break-word;'>$ \\mu_{QQ}, \\mu_{Qq}, \\mu_{qq}, $ $ p, \\sigma_{E}^{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{A}^{2} = 0 $</td></tr></table>"
+      "content": "Conditioned on the parental genotypes, the likelihood for the ijth offspring is",
+      "source_page": 380,
+      "printed_page": 360,
+      "source_block_ids": [
+        "p380:b6"
+      ],
+      "bbox": [
+        139.0,
+        1145.0,
+        1097.0,
+        1221.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Model (Continued)</td><td style='text-align: center; word-wrap: break-word;'>Free Parameters</td><td style='text-align: center; word-wrap: break-word;'>Restricted Parameters</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>3. Background polygenes, no major gene</td><td style='text-align: center; word-wrap: break-word;'>$ \\mu, \\sigma_{E}^{2}, \\sigma_{A}^{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\mu_{QQ} = \\mu_{Qq} = \\mu_{qq} = \\mu $ p = 0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>4. Full model: Major gene, background polygenes</td><td style='text-align: center; word-wrap: break-word;'>$ \\mu_{QQ}, \\mu_{Qq}, \\mu_{qq}, p, \\sigma_{E}^{2}, \\sigma_{A}^{2} $</td><td style='text-align: center; word-wrap: break-word;'>None</td></tr></table>"
+      "content": "[[FORMULA:Genetics_chapter13_formula018]]",
+      "source_page": 380,
+      "printed_page": 360,
+      "source_block_ids": [
+        "p380:b7"
+      ],
+      "bbox": [
+        272.0,
+        1210.0,
+        874.0,
+        1304.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "For example, a test of support for a major gene is given by the likelihood ratio using model 1 (a single normal distribution) as the restricted model and model 2 as the full model. The resulting test statistic has $5 - 2 = 3$ degrees of freedom, with twice the log of the maximum of the restricted likelihood function given by Equation 13.8. If the major-gene model provides a significant improvement, model 4 (major gene plus polygenic background) can next be tested against the major-gene-only model (2), with the test statistic having $6 - 5 = 1$ degree of freedom. More complicated models are analyzed in a similar fashion."
+      "content": "This conditional likelihood is a mixture model with mixing proportions given by Mendelian segregation. For example, if the father and mother have major-locus genotypes QQ and Qq, then $ g_{f} = 1 $ and $ g_{m} = 2 $, and",
+      "source_page": 380,
+      "printed_page": 360,
+      "source_block_ids": [
+        "p380:b9"
+      ],
+      "bbox": [
+        144.0,
+        1301.0,
+        1102.0,
+        1421.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula019]]",
+      "source_page": 380,
+      "printed_page": 360,
+      "source_block_ids": [
+        "p380:b10"
+      ],
+      "bbox": [
+        217.0,
+        1422.0,
+        949.0,
+        1470.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula020]]",
+      "source_page": 380,
+      "printed_page": 360,
+      "source_block_ids": [
+        "p380:b11"
+      ],
+      "bbox": [
+        219.0,
+        1461.0,
+        984.0,
+        1510.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula021]]",
+      "source_page": 380,
+      "printed_page": 360,
+      "source_block_ids": [
+        "p380:b13"
+      ],
+      "bbox": [
+        220.0,
+        1499.0,
+        991.0,
+        1549.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "so that with these parents Equation 13.10a reduces to",
+      "source_page": 381,
+      "printed_page": 361,
+      "source_block_ids": [
+        "p381:b2"
+      ],
+      "bbox": [
+        88.0,
+        144.0,
+        727.0,
+        187.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula022]]",
+      "source_page": 381,
+      "printed_page": 361,
+      "source_block_ids": [
+        "p381:b3"
+      ],
+      "bbox": [
+        185.0,
+        205.0,
+        854.0,
+        282.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Conditioned on parental genotype values, each offspring in a family is independent, implying that the likelihood for a full-sib family of $ n_{i} $ offspring is the product of individual likelihoods, giving the conditional likelihood for the ith family as",
+      "source_page": 381,
+      "printed_page": 361,
+      "source_block_ids": [
+        "p381:b5"
+      ],
+      "bbox": [
+        85.0,
+        291.0,
+        1046.0,
+        410.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula023]]",
+      "source_page": 381,
+      "printed_page": 361,
+      "source_block_ids": [
+        "p381:b6"
+      ],
+      "bbox": [
+        362.0,
+        426.0,
+        761.0,
+        519.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Since we do not know the QTL genotypes of the parents, the unconditional likelihood for the ith family is obtained by summing over all nine possible pairs of parental genotypes,",
+      "source_page": 381,
+      "printed_page": 361,
+      "source_block_ids": [
+        "p381:b8"
+      ],
+      "bbox": [
+        80.0,
+        534.0,
+        1041.0,
+        649.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula024]]",
+      "source_page": 381,
+      "printed_page": 361,
+      "source_block_ids": [
+        "p381:b9"
+      ],
+      "bbox": [
+        304.0,
+        666.0,
+        808.0,
+        765.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming the parents are chosen independently, $ \\Pr(g_f, g_m) = \\Pr(g_f) \\cdot \\Pr(g_m) $. Further, if genotypes are in Hardy-Weinberg proportions, parental genotype frequencies are completely specified by the frequency $ p $ of allele $ Q $, e.g.,",
+      "source_page": 381,
+      "printed_page": 361,
+      "source_block_ids": [
+        "p381:b11"
+      ],
+      "bbox": [
+        73.0,
+        784.0,
+        1033.0,
+        903.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula025]]",
+      "source_page": 381,
+      "printed_page": 361,
+      "source_block_ids": [
+        "p381:b12"
+      ],
+      "bbox": [
+        127.0,
+        912.0,
+        973.0,
+        1012.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "If there are $ n_g > 3 $ major-locus genotypes (either because of multiple alleles at the major locus or because of several major loci), the appropriate likelihood has sums ranging over the $ n_g $ genotypes, and the transmission probabilities are modified to account for the assumed model. Likewise, if the parental phenotypic values ( $ z_f, z_m $) are known, these can also be incorporated into the likelihood. Since $ \\ell(z \\mid g) = \\varphi(z, \\mu_g, \\sigma^2) $, the probability that the genotype is $ g_i $ given the phenotype is $ z $ is",
+      "source_page": 381,
+      "printed_page": 361,
+      "source_block_ids": [
+        "p381:b13"
+      ],
+      "bbox": [
+        66.0,
+        1018.0,
+        1030.0,
+        1265.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula026]]",
+      "source_page": 381,
+      "printed_page": 361,
+      "source_block_ids": [
+        "p381:b14"
+      ],
+      "bbox": [
+        154.0,
+        1270.0,
+        850.0,
+        1399.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ p(z) $ is the phenotypic density function for the entire population. Parental phenotypes are then incorporated by replacing $ \\Pr(g) $ by $ \\Pr(g \\mid z) $. Equation 13.12 follows directly from Bayes' theorem (Equation 13.24), which will be discussed shortly.",
+      "source_page": 381,
+      "printed_page": 361,
+      "source_block_ids": [
+        "p381:b16"
+      ],
+      "bbox": [
+        59.0,
+        1422.0,
+        1019.0,
+        1564.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming different families are unrelated, the total likelihood is the product of the individual likelihoods from the $ n_{f} $ families,",
+      "source_page": 382,
+      "printed_page": 362,
+      "source_block_ids": [
+        "p382:b2"
+      ],
+      "bbox": [
+        113.0,
+        126.0,
+        1072.0,
+        207.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula027]]",
+      "source_page": 382,
+      "printed_page": 362,
+      "source_block_ids": [
+        "p382:b3"
+      ],
+      "bbox": [
+        492.0,
+        223.0,
+        698.0,
+        316.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\ell(z_i) $ is given by Equation 13.11b. Although there are numerous summation and product indices in this likelihood, there are only five unknown parameters: the three genotypic means, the common variance $ \\sigma^2 $, and the QTL allele frequency p.",
+      "source_page": 382,
+      "printed_page": 362,
+      "source_block_ids": [
+        "p382:b5"
+      ],
+      "bbox": [
+        117.0,
+        335.0,
+        1077.0,
+        479.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "While the most obvious test for a major gene compares the full model with the restricted model of a single underlying normal, Elston et al. (1975) suggest that a much more robust approach is to treat the transmission probabilities $ \\Pr(g_o \\mid g_f, g_m) $ as unknown parameters and base hypothesis tests on these. Above, we specified the transmission probabilities based on Mendelian assumptions of inheritance (e.g., Equation 13.10b), but we can also treat them as parameters to be estimated. This is most conveniently done by considering $ \\tau_x $, the probability that genotype x transmits a Q allele. For a diallelic locus, there are three $ \\tau $ values to estimate, one for each genotype. From the definition of $ \\tau $, the transmission probabilities can be expressed as",
+      "source_page": 382,
+      "printed_page": 362,
+      "source_block_ids": [
+        "p382:b6"
+      ],
+      "bbox": [
+        120.0,
+        464.0,
+        1083.0,
+        806.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula028]]",
+      "source_page": 382,
+      "printed_page": 362,
+      "source_block_ids": [
+        "p382:b7"
+      ],
+      "bbox": [
+        324.0,
+        817.0,
+        890.0,
+        945.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "For example, Equations 13.10b become",
+      "source_page": 382,
+      "printed_page": 362,
+      "source_block_ids": [
+        "p382:b9"
+      ],
+      "bbox": [
+        131.0,
+        967.0,
+        600.0,
+        1007.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula029]]",
+      "source_page": 382,
+      "printed_page": 362,
+      "source_block_ids": [
+        "p382:b10"
+      ],
+      "bbox": [
+        235.0,
+        1022.0,
+        962.0,
+        1151.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "so that with these parents, Equation 13.10c becomes",
+      "source_page": 382,
+      "printed_page": 362,
+      "source_block_ids": [
+        "p382:b12"
+      ],
+      "bbox": [
+        135.0,
+        1169.0,
+        759.0,
+        1212.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula030]]",
+      "source_page": 382,
+      "printed_page": 362,
+      "source_block_ids": [
+        "p382:b13"
+      ],
+      "bbox": [
+        215.0,
+        1226.0,
+        1016.0,
+        1362.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Note that this likelihood reduces to Equation 13.10c using Mendelian segregation transmission probabilities ( $ \\tau_{QQ} = 1 $ and $ \\tau_{Qq} = 1/2 $).",
+      "source_page": 382,
+      "printed_page": 362,
+      "source_block_ids": [
+        "p382:b14"
+      ],
+      "bbox": [
+        139.0,
+        1374.0,
+        1098.0,
+        1455.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Elston et al. (1975) suggest that three criteria must be satisfied for acceptance of a major-gene hypothesis: (1) a significantly better overall fit of a mixture model compared with a single normal, (2) failure to reject the hypothesis of Mendelian segregation ( $ \\tau_{QQ} = 1 $, $ \\tau_{Qq} = 1/2 $, $ \\tau_{qq} = 0 $), and (3) rejection of the hypothesis of equal transmission for all genotypes ( $ \\tau_{QQ} = \\tau_{Qq} = \\tau_{qq} $). Criterion (1) reduces false positives due to polygenic background loci, while criteria (2) and (3) offer some robustness against nonnormality of the underlying distributions and resemblance due to common environmental effects (Elston 1981a). While incorporation of transmission-probability criteria into likelihood models decreases the possibility of a false positive (Go et al. 1978, Goldin et al. 1981, Demenais et al. 1986), it does so at a cost of decreased power. Loss of power can be significant if the major gene is recessive (Borecki et al. 1995).",
+      "source_page": 382,
+      "printed_page": 362,
+      "source_block_ids": [
+        "p382:b15",
+        "p383:b2"
+      ],
+      "bbox": [
+        142.0,
+        1438.0,
+        1102.0,
+        1552.0
+      ],
+      "source_page_end": 383
+    },
+    {
+      "type": "discussion",
+      "content": "The fact that not all families are expected to be segregating the major gene has important consequences for the optimal number and size of families for detecting a major gene. Burns et al. (1984) showed that, for a fixed number of individuals, highest power is generally obtained by examining a moderate number of families of moderate size, as opposed to many small families or a few large families. If a small number of large families is chosen, we run the risk that none of the families are segregating the gene. Conversely, with a large number of small families, while some are likely to have the gene segregating, power for detecting a major gene is reduced due to the small sample size in each segregating family.",
+      "source_page": 383,
+      "printed_page": 363,
+      "source_block_ids": [
+        "p383:b3"
+      ],
+      "bbox": [
+        73.0,
+        426.0,
+        1035.0,
+        736.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter13:4]]",
+      "source_page": 383,
+      "source_block_ids": [
+        "p383:b4",
+        "p383:b5",
+        "p383:b6",
+        "p384:b2"
+      ],
+      "bbox": [
+        115.0,
+        810.0,
+        980.0,
+        947.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The general single-locus model gives a significantly better fit than the null (single underlying normal) model, with a likelihood-ratio test statistic of 283.60 – 120.14 = 163.46 (three degrees of freedom). However, since the recessive model gives the same fit with fewer parameters, it is chosen as the standard for further analysis. The recessive model gives a significantly better fit than the equal transmission model (a mixture distribution not incorporating Mendelian segregation). Thus, criteria (1) and (3) for a major gene hold, since a mixture gives a better fit than a single normal, and the hypothesis of equal transmission ( $ \\tau_1 = \\tau_2 = \\tau_3 $) is rejected. However, the general transmission model ( $ \\tau_i $ estimated from the data) gives a significantly better fit than the Mendelian segregation hypothesis ( $ \\tau_1 = 1 $, $ \\tau_2 = 1/2 $, $ \\tau_3 = 0 $), with a likelihood-ratio test statistic of 120.14 – 111.22 = 8.92 with three degrees of freedom (P < 0.03). Thus, these data fail the major-gene criterion (2), as the hypothesis of Mendelian segregation is rejected. Shared environmental effects, rather than major gene effects, likely account for this association between relatives.",
+      "source_page": 384,
+      "printed_page": 364,
+      "source_block_ids": [
+        "p384:b3"
+      ],
+      "bbox": [
+        174.0,
+        553.0,
+        1045.0,
+        1005.0
+      ]
     }
   ]
 }

@@ -1,0 +1,191 @@
+{
+  "id": "Genetics_chapter8_022",
+  "metadata": {
+    "chapter": "Genetics_chapter8",
+    "section": "OVERVIEW OF LINEAR MODELS",
+    "subsections": [
+      "Generalized Least Squares"
+    ],
+    "section_level_1": "OVERVIEW OF LINEAR MODELS",
+    "section_level_2": "Generalized Least Squares",
+    "heading_path": [
+      "OVERVIEW OF LINEAR MODELS",
+      "Generalized Least Squares"
+    ],
+    "display_heading": "OVERVIEW OF LINEAR MODELS / Generalized Least Squares",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 218,
+      "printed_page": 198,
+      "source_block_ids": [
+        "p218:b13"
+      ],
+      "bbox": [
+        160.0,
+        1271.0,
+        495.0,
+        1307.0
+      ],
+      "raw_text": "Generalized Least Squares"
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Under OLS, the unweighted sum of squared residuals is minimized. However, if some residuals are inherently more variable than others (have a higher variance), less weight should be assigned to the more variable data. Correlations between residuals can also influence the weight that should be assigned to each individual, as the data are not independent. Thus, if the residual errors are heteroscedastic and/or correlated, ordinary least-squares estimates of regression parameters and standard errors of these estimates are potentially biased.",
+      "source_page": 218,
+      "printed_page": 198,
+      "source_block_ids": [
+        "p218:b14"
+      ],
+      "bbox": [
+        159.0,
+        1299.0,
+        1121.0,
+        1545.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A more general approach to regression analysis expresses the covariance matrix of the vector of residuals as $ \\sigma_e^2 \\mathbf{R} $, with $ \\sigma(e_i, e_j) = R_{ij} \\sigma_e^2 $. Lack of independence between residuals is indicated by the presence of nonzero off-diagonal elements in $ \\mathbf{R} $, while heteroscedasticity is indicated by differences in the diagonal elements of $ \\mathbf{R} $. Generalized (or weighted) least squares (GLS) takes these complications into account. As shown in Appendix 3, if the linear model is",
+      "source_page": 219,
+      "printed_page": 199,
+      "source_block_ids": [
+        "p219:b2"
+      ],
+      "bbox": [
+        72.0,
+        126.0,
+        1035.0,
+        344.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula127]]",
+      "source_page": 219,
+      "printed_page": 199,
+      "source_block_ids": [
+        "p219:b3"
+      ],
+      "bbox": [
+        336.0,
+        358.0,
+        758.0,
+        404.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "the GLS estimate of $ \\beta $ is",
+      "source_page": 219,
+      "printed_page": 199,
+      "source_block_ids": [
+        "p219:b4"
+      ],
+      "bbox": [
+        68.0,
+        418.0,
+        359.0,
+        458.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula128]]",
+      "source_page": 219,
+      "printed_page": 199,
+      "source_block_ids": [
+        "p219:b5"
+      ],
+      "bbox": [
+        367.0,
+        490.0,
+        722.0,
+        553.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(Aitken 1935). The covariance matrix for the GLS estimates is",
+      "source_page": 219,
+      "printed_page": 199,
+      "source_block_ids": [
+        "p219:b7"
+      ],
+      "bbox": [
+        65.0,
+        569.0,
+        796.0,
+        618.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula129]]",
+      "source_page": 219,
+      "printed_page": 199,
+      "source_block_ids": [
+        "p219:b8"
+      ],
+      "bbox": [
+        391.0,
+        642.0,
+        691.0,
+        706.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "If residuals are independent and homoscedastic, $ \\mathbf{R} = \\mathbf{I} $, and GLS estimates are the same as OLS estimates. If $ \\mathbf{e} \\sim \\text{MVN}(0, \\mathbf{R} \\sigma_e^2) $, the GLS estimate of $ \\beta $ is also the maximum-likelihood estimate.",
+      "source_page": 219,
+      "printed_page": 199,
+      "source_block_ids": [
+        "p219:b10"
+      ],
+      "bbox": [
+        59.0,
+        721.0,
+        1018.0,
+        839.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter8:11]]",
+      "source_page": 219,
+      "source_block_ids": [
+        "p219:b11",
+        "p219:b12",
+        "p219:b13",
+        "p219:b14",
+        "p219:b15",
+        "p219:b16",
+        "p220:b2",
+        "p220:b3",
+        "p220:b4",
+        "p220:b5",
+        "p220:b6",
+        "p220:b7",
+        "p220:b8",
+        "p220:b10",
+        "p220:b12",
+        "p220:b13",
+        "p220:b15",
+        "p220:b17"
+      ],
+      "bbox": [
+        101.0,
+        911.0,
+        965.0,
+        1077.0
+      ]
+    }
+  ]
+}

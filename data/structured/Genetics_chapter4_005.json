@@ -2,42 +2,206 @@
   "id": "Genetics_chapter4_005",
   "metadata": {
     "chapter": "Genetics_chapter4",
-    "section": "Introduction",
+    "section": "THE TRANSMISSION OF GENETIC INFORMATION",
     "subsections": [
-      "Testing for Hardy-Weinberg Proportions"
+      "The Hardy-Weinberg Principle"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter4_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Testing for Hardy-Weinberg Proportions",
+    "section_level_1": "THE TRANSMISSION OF GENETIC INFORMATION",
+    "section_level_2": "The Hardy-Weinberg Principle",
     "heading_path": [
-      "Introduction",
-      "Testing for Hardy-Weinberg Proportions"
+      "THE TRANSMISSION OF GENETIC INFORMATION",
+      "The Hardy-Weinberg Principle"
     ],
-    "display_heading": "Testing for Hardy-Weinberg Proportions"
+    "display_heading": "THE TRANSMISSION OF GENETIC INFORMATION / The Hardy-Weinberg Principle",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 70,
+      "printed_page": 50,
+      "source_block_ids": [
+        "p70:b3"
+      ],
+      "bbox": [
+        142.0,
+        221.0,
+        530.0,
+        259.0
+      ],
+      "raw_text": "The Hardy-Weinberg Principle"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "When data are available on genotype frequencies in a population, it is standard practice to cross-check these with the Hardy-Weinberg expectations. Lack of concordance between the two implies that at least one of the assumptions of the Hardy-Weinberg model is violated and often instigates further investigation. Several different statistical techniques have been proposed (Weir 1996), the most popular by far being the $\\chi^{2}$ (Chi-square) test. However, the likelihood-ratio test is now becoming more common and appears to be at least as reliable as the former. Likelihood-based tests have a number of desirable statistical features (Appendix 4). Letting $N_{ij}$ and $\\hat{N}_{ij}$ be the observed and expected numbers of genotype $B_{i}B_{j}$ in a sample, then the likelihood-ratio test statistic $$ G=-2\\sum_{i=1}^{n}\\sum_{j\\geq i}^{n}N_{ij}\\ln\\left(\\frac{\\widehat{N}_{ij}}{N_{ij}}\\right) $$ has a sampling distribution very similar to the well-known $\\chi^{2}$ distribution. That is, if a population in Hardy-Weinberg equilibrium is sampled many different times and $G$ calculated each time, the frequency distribution of the observed $G$ values will be nearly $\\chi^{2}$ distributed. Thus, the test for Hardy-Weinberg proportions compares the observed statistic $G$ with the cumulative $\\chi^{2}$ distribution. If $G$ exceeds the level at which there is a 5% chance of obtaining a higher $\\chi^{2}$, then one can reject the null hypothesis of Hardy-Weinberg proportions with 95% confidence."
-    },
-    {
-      "type": "proposition",
-      "content": "Regardless of which approach to testing for Hardy-Weinberg frequencies is taken, it should be kept in mind that some of the conditions underlying the Hardy-Weinberg theorem may be violated without causing detectable departures of observations from expectations. For example, if the product of the survivorships of the two homozygotes is equal to the square of the heterozygote survival, the zygotic frequencies after selection will still be in Hardy-Weinberg proportions (Lewontin and Cockerham 1959). Thus, a failure to reject the Hardy-Weinberg model should be interpreted with caution."
+      "content": "From the standpoint of evolutionary analysis, it is crucial to understand how allele and genotype frequencies change from generation to generation. Such changes may result from natural selection, mutation, differential migration, inbreeding, or random drift due to gene sampling in finite populations. All of these forces will be considered in due course, but for now we will restrict our attention to a highly idealized situation — an autosomal locus uninfluenced by selection and mutation. By assuming the population to be effectively infinite in size and randomly mating, we also eliminate the possibility of inbreeding and random drift. We will further assume that generations are discrete and that the population is closed to immigrants.",
+      "source_page": 70,
+      "printed_page": 50,
+      "source_block_ids": [
+        "p70:b4"
+      ],
+      "bbox": [
+        143.0,
+        246.0,
+        1106.0,
+        592.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 2. As an example of the application of Equation 4.4, we return to the data in the table of Example 1."
+      "content": "Although such an idealized situation is never realized perfectly, in many cases it is close enough to the truth for practical purposes. Under the ideal model, simple and predictable relationships emerge between allele and genotype frequencies, within and between generations. It is therefore an essential point of departure, much like the ideal gas laws in physics.",
+      "source_page": 70,
+      "printed_page": 50,
+      "source_block_ids": [
+        "p70:b5"
+      ],
+      "bbox": [
+        150.0,
+        575.0,
+        1111.0,
+        751.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The best estimates for the Hardy-Weinberg expectations are obtained from the observed allele frequencies: $ \\widehat{N}_{11} = p_{1}^{2}N = 905 $, $ \\widehat{N}_{12} = 2p_{1}p_{2}N = 79 $, and $ \\widehat{N}_{22} = p_{2}^{2}N = 2 $. Applying these and the observed values ($ N_{11} $, $ N_{12} $, and $ N_{22} $) from the table, $$ G=-2\\left[905\\ln(905/905)+78\\ln(79/78)+3\\ln(2/3)\\right]=0.446 $$"
+      "content": "In sexual populations, individuals do not necessarily produce offspring whose genotypes match their own. Prior to reproduction, sexual individuals produce haploid gametes by a special form of cell division called meiosis (Figure 4.1). Thus, with respect to a single locus, a $ B_{1}B_{2} $ heterozygote produces two types of gametes — half $ B_{1} $ and half $ B_{2} $. The diploid state is restored when gametes from two parents fuse to form a zygote. Consequently, at a diallelic locus, a heterozygous parent can potentially produce three types of progeny ( $ B_{1}B_{1} $, $ B_{1}B_{2} $, and $ B_{2}B_{2} $), whereas homozygous parents can produce at most two.",
+      "source_page": 70,
+      "printed_page": 50,
+      "source_block_ids": [
+        "p70:b6"
+      ],
+      "bbox": [
+        154.0,
+        736.0,
+        1116.0,
+        1010.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Under the null hypothesis of Hardy-Weinberg frequencies, the sampling distribution of $G$ is a function of the number of degrees of freedom, which in the case of the Hardy-Weinberg test is the number of genotypic classes minus the number of allele frequencies that must be estimated from the data minus one. Here, it was necessary to estimate one parameter $(p_{1})$ from the data, so there is $3-1-1=1$ degree of freedom. Referring to a $\\chi^{2}$ table in any statistics text, it can be found that, with one degree of freedom, $G$ must exceed 3.841 to reject the null hypothesis at the 0.05 probability level. Therefore, the observed data are not significantly different from those expected under the Hardy-Weinberg expectations."
+      "content": "Consider a population consisting of separate sexes (dioecious) with discrete, nonoverlapping generations. We denote the frequencies of $B_{1}$ and $B_{2}$ alleles in females in generation 0 by $p_{1f}(0)$ and $p_{2f}(0)$, and those in males by $p_{1m}(0)$ and $p_{2m}(0)$. Under random mating, the expected genotype frequencies in the next generation are obtained from the products of the respective gamete frequencies. For example, since the probability of drawing a $B_{1}$ female gamete is $p_{1f}(0)$ and that of drawing a $B_{1}$ male gamete is $p_{1m}(0)$, the expected frequency of $B_{1}B_{1}$ zygotes is $p_{1f}(0)p_{1m}(0)$. Similarly, the expected frequencies of $B_{1}B_{2}$ and $B_{2}B_{2}$ zygotes are $p_{1f}(0)p_{2m}(0)+p_{2f}(0)p_{1m}(0)$ and $p_{2f}(0)p_{2m}(0)$, respectively. Provided the locus is autosomal, the frequency of the $B_{1}$ allele will now be the same in both sexes, since the subpopulations of sons and daughters both acquire half their genes from mothers and half from fathers. Substituting into Equation 4.1, the $B_{1}$ allele frequency in generation 1 is",
+      "source_page": 70,
+      "printed_page": 50,
+      "source_block_ids": [
+        "p70:b7"
+      ],
+      "bbox": [
+        161.0,
+        995.0,
+        1125.0,
+        1429.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter4_formula003]]",
+      "source_page": 70,
+      "printed_page": 50,
+      "source_block_ids": [
+        "p70:b8"
+      ],
+      "bbox": [
+        306.0,
+        1430.0,
+        990.0,
+        1561.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:4.1]]",
+      "source_page": 71,
+      "printed_page": 51,
+      "source_block_ids": [
+        "p71:b3"
+      ],
+      "bbox": [
+        97.0,
+        877.0,
+        964.0,
+        1130.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "which is just",
+      "source_page": 71,
+      "printed_page": 51,
+      "source_block_ids": [
+        "p71:b4"
+      ],
+      "bbox": [
+        49.0,
+        1161.0,
+        210.0,
+        1199.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter4_formula004]]",
+      "source_page": 71,
+      "printed_page": 51,
+      "source_block_ids": [
+        "p71:b5"
+      ],
+      "bbox": [
+        394.0,
+        1203.0,
+        657.0,
+        1272.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The new frequency for the $ B_{2} $ allele is $ p_{2}=1-p_{1}=[p_{2f}(0)+p_{2m}(0)]/2 $.",
+      "source_page": 71,
+      "printed_page": 51,
+      "source_block_ids": [
+        "p71:b6"
+      ],
+      "bbox": [
+        49.0,
+        1279.0,
+        916.0,
+        1328.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Under the conditions of our idealized population, in the next generation and in all subsequent generations, the $ B_{1}B_{1} $, $ B_{1}B_{2} $, and $ B_{2}B_{2} $ genotypes will be found in frequencies $ p_{1}^{2} $, $ 2p_{1}p_{2} $, and $ p_{2}^{2} $. Such proportions are known as Hardy-Weinberg frequencies, after the two investigators who first pointed out the above relationship (Hardy 1908, Weinberg 1908). The Hardy-Weinberg frequencies can also be obtained directly by multiplying out the terms of the binomial expansion, $ (p_{1}+p_{2})^{2} $. By this means, the Hardy-Weinberg law can be extended to any number of alleles. Suppose, for example, that four alleles $ (B_1, B_2, B_3, B_4) $ are present at the locus of interest. The Hardy-Weinberg frequencies for the various genotypes are obtained by squaring the quantity $ (p_1 + p_2 + p_3 + p_4) $. The expected frequency of a genotype homozygous for the $ B_i $ allele is $ p_i^2 $, while that for a $ B_i B_j $ heterozygote is $ 2p_i p_j $.",
+      "source_page": 71,
+      "printed_page": 51,
+      "source_block_ids": [
+        "p71:b7",
+        "p72:b2"
+      ],
+      "bbox": [
+        43.0,
+        1314.0,
+        1006.0,
+        1552.0
+      ],
+      "source_page_end": 72
+    },
+    {
+      "type": "discussion",
+      "content": "Provided that all of the assumptions of the Hardy-Weinberg model are met, we can summarize as follows. First, it takes no more than a single generation to equilibrate and stabilize the gene frequencies in the two sexes. Second, only one additional generation is required for the stabilization of the genotype frequencies into the predictable Hardy-Weinberg proportions. These results have obvious implications for the analysis of natural populations. Even if genotype frequencies in a study population are vastly different from Hardy-Weinberg expectations, for example because of natural selection or population subdivision, they can be rendered close to the idealized proportions by imposing an artificial program of random mating for one or two generations.",
+      "source_page": 72,
+      "printed_page": 52,
+      "source_block_ids": [
+        "p72:b3"
+      ],
+      "bbox": [
+        138.0,
+        309.0,
+        1100.0,
+        647.0
+      ]
     }
   ]
 }

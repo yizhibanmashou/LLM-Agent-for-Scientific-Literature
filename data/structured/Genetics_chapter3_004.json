@@ -2,46 +2,144 @@
   "id": "Genetics_chapter3_004",
   "metadata": {
     "chapter": "Genetics_chapter3",
-    "section": "Covariance, Regression, and Correlation",
+    "section": "JOINTLY DISTRIBUTED RANDOM VARIABLES",
     "subsections": [
-      "COVARIANCE"
+      "Expectations of Jointly Distributed Variables"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter3_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Covariance, Regression, and Correlation",
-    "section_level_2": "COVARIANCE",
+    "section_level_1": "JOINTLY DISTRIBUTED RANDOM VARIABLES",
+    "section_level_2": "Expectations of Jointly Distributed Variables",
     "heading_path": [
-      "Covariance, Regression, and Correlation",
-      "COVARIANCE"
+      "JOINTLY DISTRIBUTED RANDOM VARIABLES",
+      "Expectations of Jointly Distributed Variables"
     ],
-    "display_heading": "COVARIANCE"
+    "display_heading": "JOINTLY DISTRIBUTED RANDOM VARIABLES / Expectations of Jointly Distributed Variables",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b10"
+      ],
+      "bbox": [
+        143.0,
+        480.0,
+        701.0,
+        524.0
+      ],
+      "raw_text": "Expectations of Jointly Distributed Variables"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Consider a set of paired variables, $(x, y)$. For each pair, subtract the population mean $\\mu_{x}$ from the measure of $x$, and similarly subtract $\\mu_{y}$ from $y$. Finally, for each pair of observations, multiply both of these new measures together to obtain $(x - \\mu_{x})(y - \\mu_{y})$. The covariance of $x$ and $y$ is defined to be the average of this quantity over all pairs of measures in the population, $$ \\sigma(x,y)=E[\\left(x-\\mu_{x}\\right)\\left(y-\\mu_{y}\\right)] $$"
+      "content": "The expectation of a bivariate function, $f(x,y)$, is determined by the joint probability density",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b11"
+      ],
+      "bbox": [
+        143.0,
+        514.0,
+        1100.0,
+        597.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "(A)"
+      "content": "[[FORMULA:Genetics_chapter3_formula005]]",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b12"
+      ],
+      "bbox": [
+        355.0,
+        583.0,
+        892.0,
+        663.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:3.1]]"
+      "content": "Most of this chapter is focused on conditional expectation, i.e., the expectation of one variable, given information on another. For example, one may know the value of x (perhaps parental height), and wish to compute the expected value of y (offspring height) given x. In general, conditional expectations are computed by using the conditional density",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b14"
+      ],
+      "bbox": [
+        144.0,
+        664.0,
+        1107.0,
+        843.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "We often denote covariance by $\\sigma_{x,y}$. Because $E(x) = \\mu_{x}$ and $E(y) = \\mu_{y}$, expansion of the product leads to further simplification, $$ \\begin{aligned}\\sigma(x,y)&=E[(x-\\mu_{x})\\left(y-\\mu_{y}\\right)]\\\\&=E\\left(xy-\\mu_{y}x-\\mu_{x}y+\\mu_{x}\\mu_{y}\\right)\\\\&=E(x y)-\\mu_{y}E(x)-\\mu_{x}E(y)+\\mu_{x}\\mu_{y}\\\\&=E(x y)-\\mu_{x}\\mu_{y}\\end{aligned} $$"
+      "content": "[[FORMULA:Genetics_chapter3_formula006]]",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b15"
+      ],
+      "bbox": [
+        451.0,
+        851.0,
+        808.0,
+        928.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In words, the covariance is the mean of the pairwise cross-product $x$ $y$ minus the cross-product of the means. The sampling estimator of $\\sigma(x, y)$ is similar in form to that for a variance, $$ \\mathrm{Cov}(x,y)=\\frac{n\\left(\\overline{xy}-\\overline{x}\\cdot\\overline{y}\\right)}{n-1} $$ where $n$ is the number of pairs of observations, and $$ \\overline{xy}=\\frac{1}{n}\\sum_{i=1}^{n}x_{i}y_{i} $$"
+      "content": "If $x$ and $y$ are independent, then $E(y|x) = E(y)$, the unconditional expectation. Otherwise, $E(y|x)$ is a function of the specified $x$ value. For height in humans (Figure 1.1), Galton (1889) observed a linear relationship,",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b17"
+      ],
+      "bbox": [
+        149.0,
+        939.0,
+        1112.0,
+        1056.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The covariance is a measure of association between $x$ and $y$ (Figure 3.1). It is positive if $y$ increases with increasing $x$, negative if $y$ decreases as $x$ increases, and zero if there is no linear tendency for $y$ to change with $x$. If $x$ and $y$ are independent, then $\\sigma(x,y)=0$, but the converse is not true — a covariance of zero does not necessarily imply independence. (We will return to this shortly; see Figure 3.3.)"
+      "content": "[[FORMULA:Genetics_chapter3_formula007]]",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b18"
+      ],
+      "bbox": [
+        522.0,
+        1064.0,
+        747.0,
+        1101.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\alpha $ and $ \\beta $ are constants. Thus, the conditional expectation of height in offspring $ (y) $ is linearly related to the average height of the parents $ (x) $.",
+      "source_page": 52,
+      "printed_page": 32,
+      "source_block_ids": [
+        "p52:b20"
+      ],
+      "bbox": [
+        154.0,
+        1113.0,
+        1114.0,
+        1200.0
+      ]
     }
   ]
 }

@@ -2,54 +2,306 @@
   "id": "Genetics_chapter8_017",
   "metadata": {
     "chapter": "Genetics_chapter8",
-    "section": "Introduction",
-    "subsections": [
-      "THE MULTIVARIATE NORMAL DISTRIBUTION"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "THE MULTIVARIATE NORMAL DISTRIBUTION",
+    "section": "COVARIANCE MATRICES OF TRANSFORMED VECTORS",
+    "subsections": [],
+    "section_level_1": "COVARIANCE MATRICES OF TRANSFORMED VECTORS",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "THE MULTIVARIATE NORMAL DISTRIBUTION"
+      "COVARIANCE MATRICES OF TRANSFORMED VECTORS"
     ],
-    "display_heading": "THE MULTIVARIATE NORMAL DISTRIBUTION"
+    "display_heading": "COVARIANCE MATRICES OF TRANSFORMED VECTORS",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 209,
+      "printed_page": 189,
+      "source_block_ids": [
+        "p209:b5"
+      ],
+      "bbox": [
+        61.0,
+        275.0,
+        821.0,
+        324.0
+      ],
+      "raw_text": "COVARIANCE MATRICES OF TRANSFORMED VECTORS"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "As we have seen above, matrix notation provides a compact way to express vectors of random variables. We now consider the most commonly assumed distribution for such vectors, the multivariate analog of the normal distribution discussed in Chapter 2. Much of the theory for the evolution of quantitative traits is based on this distribution, which we hereafter denote as the MVN."
+      "content": "To develop expressions for variances and covariances of linear combinations of random variables, we must first introduce the concept of quadratic forms. Consider an $ n \\times n $ square matrix A and an $ n \\times 1 $ column vector x. From the rules of matrix multiplication,",
+      "source_page": 209,
+      "printed_page": 189,
+      "source_block_ids": [
+        "p209:b6"
+      ],
+      "bbox": [
+        59.0,
+        341.0,
+        1018.0,
+        489.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Consider the probability density function for $n$ independent normal random variables, where $x_{i}$ is normally distributed with mean $\\mu_{i}$ and variance $\\sigma_{i}^{2}$. In this case, because the variables are independent, the joint probability density function is simply the product of each univariate density, $$ \\begin{aligned}p(\\mathbf{x})&=\\prod_{i=1}^{n}(2\\pi)^{-1/2}\\sigma_{i}^{-1}\\exp\\left(-\\frac{(x_{i}-\\mu_{i})^{2}}{2\\sigma_{i}^{2}}\\right)\\\\&=(2\\pi)^{-n/2}\\left(\\prod_{i=1}^{n}\\sigma_{i}\\right)^{-1}\\exp\\left(-\\sum_{i=1}^{n}\\frac{(x_{i}-\\mu_{i})^{2}}{2\\sigma_{i}^{2}}\\right)\\\\ \\end{aligned} $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula075]]",
+      "source_page": 209,
+      "printed_page": 189,
+      "source_block_ids": [
+        "p209:b7"
+      ],
+      "bbox": [
+        388.0,
+        480.0,
+        681.0,
+        566.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "We can express this equation more compactly in matrix form by defining the matrices $$ \\mathbf{V}=\\begin{pmatrix}\\sigma_{1}^{2}&0&\\cdots&0\\\\0&\\sigma_{2}^{2}&\\cdots&0\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\0&\\cdots&\\cdots&\\sigma_{n}^{2}\\end{pmatrix}\\qquad\\text{and}\\qquad\\boldsymbol{\\mu}=\\begin{pmatrix}\\mu_{1}\\\\\\mu_{2}\\\\\\vdots\\\\\\mu_{n}\\end{pmatrix} $$"
+      "content": "Expressions of this form are called quadratic forms (or quadratic products) and yield a scalar. A generalization of a quadratic form is the bilinear form, $ b^{T} A a $, where b and a are, respectively, $ n \\times 1 $ and $ m \\times 1 $ column vectors and A is an $ n \\times m $ matrix. Indexing the matrices and vectors in this expression by their dimensions, $ b_{1 \\times n}^{T} A_{n \\times m} a_{m \\times 1} $, shows that the resulting matrix product is a $ 1 \\times 1 $ matrix — in other words, a scalar. As scalars, bilinear forms equal their transposes, giving the useful identity",
+      "source_page": 209,
+      "printed_page": 189,
+      "source_block_ids": [
+        "p209:b9"
+      ],
+      "bbox": [
+        50.0,
+        573.0,
+        1013.0,
+        819.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Since V is diagonal, its determinant is simply the product of the diagonal elements $$ |\\mathbf{V}|=\\prod_{i=1}^{n}\\sigma_{i}^{2} $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula076]]",
+      "source_page": 209,
+      "printed_page": 189,
+      "source_block_ids": [
+        "p209:b10"
+      ],
+      "bbox": [
+        345.0,
+        810.0,
+        714.0,
+        873.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Likewise, using quadratic products, note that $$ \\sum_{i=1}^{n}\\frac{(x_{i}-\\mu_{i})^{2}}{\\sigma_{i}^{2}}=(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}(\\mathbf{x}-\\boldsymbol{\\mu}) $$"
+      "content": "Again let x be a column vector of n random variables. A compact way to express the n variances and $ n(n-1)/2 $ covariances associated with the elements of x is the matrix $ \\mathbf{V} $, where $ V_{ij} = \\sigma(x_i, x_j) $ is the covariance between the random variables $ x_i $ and $ x_j $. We will generally refer to V as a covariance matrix, noting that the diagonal elements represent the variances and off-diagonal elements the covariances. The V matrix is symmetric, as",
+      "source_page": 209,
+      "printed_page": 189,
+      "source_block_ids": [
+        "p209:b12"
+      ],
+      "bbox": [
+        48.0,
+        876.0,
+        1008.0,
+        1086.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Putting these together, Equation 8.23 can be rewritten as $$ p(\\mathbf{x})=(2\\pi)^{-n/2}|\\mathbf{V}|^{-1/2}\\exp\\left[-{\\frac{1}{2}}(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V}^{-1}(\\mathbf{x}-\\boldsymbol{\\mu})\\right] $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula077]]",
+      "source_page": 209,
+      "printed_page": 189,
+      "source_block_ids": [
+        "p209:b13"
+      ],
+      "bbox": [
+        332.0,
+        1098.0,
+        719.0,
+        1140.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "We will also write this density as $p(\\mathbf{x}, \\boldsymbol{\\mu}, \\mathbf{V})$ when we wish to stress that it is a function of the mean vector $\\boldsymbol{\\mu}$ and the covariance matrix $\\mathbf{V}$."
+      "content": "Now consider a univariate random variable $ y = \\sum c_k x_k $ generated from a linear combination of the elements of x. In matrix notation, $ y = c^T x $, where c is a column vector of constants. The variance of y can be expressed as a quadratic form involving the covariance matrix V for the elements of x,",
+      "source_page": 209,
+      "printed_page": 189,
+      "source_block_ids": [
+        "p209:b14"
+      ],
+      "bbox": [
+        43.0,
+        1152.0,
+        1005.0,
+        1298.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "More generally, when the elements of x are correlated, Equation 8.24 gives the probability density function for a vector of multivariate normally distributed random variables, with mean vector $ \\mu $ and covariance matrix V. We denote this by $$ \\mathbf{x}\\sim\\mathrm{M V N}_{n}(\\boldsymbol{\\mu},\\mathbf{V}) $$ where the subscript indicating the dimensionality of x is usually omitted. The multivariate normal distribution is also referred to as the Gaussian distribution."
+      "content": "[[FORMULA:Genetics_chapter8_formula078]]",
+      "source_page": 209,
+      "printed_page": 189,
+      "source_block_ids": [
+        "p209:b15"
+      ],
+      "bbox": [
+        183.0,
+        1312.0,
+        856.0,
+        1544.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Likewise, the covariance between two univariate random variables created from different linear combinations of x is given by the bilinear form",
+      "source_page": 210,
+      "printed_page": 190,
+      "source_block_ids": [
+        "p210:b2"
+      ],
+      "bbox": [
+        131.0,
+        123.0,
+        1088.0,
+        205.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula079]]",
+      "source_page": 210,
+      "printed_page": 190,
+      "source_block_ids": [
+        "p210:b3"
+      ],
+      "bbox": [
+        476.0,
+        203.0,
+        749.0,
+        245.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "If we transform x to two new vectors $ \\mathbf{y}_{\\ell \\times 1} = \\mathbf{A}_{\\ell \\times n} \\mathbf{x}_{n \\times 1} $ and $ \\mathbf{z}_{m \\times 1} = \\mathbf{B}_{m \\times n} \\mathbf{x}_{n \\times 1} $, then instead of a single covariance we have an $ \\ell \\times m $ dimensional covariance matrix, denoted $ \\sigma(\\mathbf{y}, \\mathbf{z}) $. Letting $ \\mu_{\\mathbf{y}} = \\mathbf{A} \\mu $ and $ \\mu_{\\mathbf{z}} = \\mathbf{B} \\mu $, with $ E(\\mathbf{x}) = \\mu $, then $ \\sigma(\\mathbf{y}, \\mathbf{z}) $ can be expressed in terms of $ \\mathbf{V} $, the covariance matrix of $ \\mathbf{x} $,",
+      "source_page": 210,
+      "printed_page": 190,
+      "source_block_ids": [
+        "p210:b5"
+      ],
+      "bbox": [
+        133.0,
+        248.0,
+        1094.0,
+        394.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula080]]",
+      "source_page": 210,
+      "printed_page": 190,
+      "source_block_ids": [
+        "p210:b6"
+      ],
+      "bbox": [
+        399.0,
+        393.0,
+        834.0,
+        589.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In particular, the covariance matrix for y = Ax is",
+      "source_page": 210,
+      "printed_page": 190,
+      "source_block_ids": [
+        "p210:b8"
+      ],
+      "bbox": [
+        143.0,
+        599.0,
+        731.0,
+        641.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula081]]",
+      "source_page": 210,
+      "printed_page": 190,
+      "source_block_ids": [
+        "p210:b9"
+      ],
+      "bbox": [
+        511.0,
+        636.0,
+        730.0,
+        678.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "so that the covariance between $y_{i}$ and $y_{j}$ is given by the $ij$th element of the matrix product $\\mathbf{A}\\mathbf{V}\\mathbf{A}^{T}$.",
+      "source_page": 210,
+      "printed_page": 190,
+      "source_block_ids": [
+        "p210:b11"
+      ],
+      "bbox": [
+        143.0,
+        682.0,
+        1100.0,
+        761.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, note that if x is a vector of random variables with expected value $ \\mu $, then the expected value of the scalar quadratic product $ x^{T}Ax $ is",
+      "source_page": 210,
+      "printed_page": 190,
+      "source_block_ids": [
+        "p210:b12"
+      ],
+      "bbox": [
+        144.0,
+        749.0,
+        1100.0,
+        826.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula082]]",
+      "source_page": 210,
+      "printed_page": 190,
+      "source_block_ids": [
+        "p210:b13"
+      ],
+      "bbox": [
+        446.0,
+        825.0,
+        805.0,
+        865.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where V is the covariance matrix for the elements of x, and the trace of a square matrix, $ \\mathrm{tr}(\\mathbf{M}) = \\sum M_{ii} $, is the sum of its diagonal values (Searle 1971).",
+      "source_page": 210,
+      "printed_page": 190,
+      "source_block_ids": [
+        "p210:b15"
+      ],
+      "bbox": [
+        144.0,
+        870.0,
+        1102.0,
+        947.0
+      ]
     }
   ]
 }

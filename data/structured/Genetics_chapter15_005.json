@@ -2,55 +2,352 @@
   "id": "Genetics_chapter15_005",
   "metadata": {
     "chapter": "Genetics_chapter15",
-    "section": "Introduction",
+    "section": "FOUNDATIONS OF LINE-CROSS MAPPING",
     "subsections": [
-      "Marker Variances and Higher-order Moments"
+      "Expected Marker-class Means"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "15.1"
-    ],
-    "section_level_1": "Introduction",
-    "section_level_2": "Marker Variances and Higher-order Moments",
+    "section_level_1": "FOUNDATIONS OF LINE-CROSS MAPPING",
+    "section_level_2": "Expected Marker-class Means",
     "heading_path": [
-      "Introduction",
-      "Marker Variances and Higher-order Moments"
+      "FOUNDATIONS OF LINE-CROSS MAPPING",
+      "Expected Marker-class Means"
     ],
-    "display_heading": "Marker Variances and Higher-order Moments",
-    "table_reference_keys": [
-      "chapter15:15.1"
-    ]
+    "display_heading": "FOUNDATIONS OF LINE-CROSS MAPPING / Expected Marker-class Means",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 451,
+      "printed_page": 431,
+      "source_block_ids": [
+        "p451:b2"
+      ],
+      "bbox": [
+        82.0,
+        128.0,
+        455.0,
+        164.0
+      ],
+      "raw_text": "Expected Marker-class Means"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The same linkage disequilibrium that generates differences in the mean trait values of different marker genotypes can also create differences in the variance and higher moments (e.g., skewness and kurtosis). Such differences are not uncommon. In a cross of tomato species, for example, Weller et al. (1988) found significantly different variances for 28% (40 of 180) of the possible marker-trait associations, while 17% showed significant differences in skewness. In some instances these moments may be of more interest than the mean (Weller and Wyler 1992). For example, a reduction in the variance of flowering time shortens the harvesting window, and by reducing costs this may be more significant than changing mean harvesting time per se."
+      "content": "With these conditional probabilities in hand, the expected trait values for the various marker genotypes follow immediately. Suppose there are $N$ QTL genotypes, $Q_{1},\\cdots,Q_{N}$, where the mean of the $k$th QTL genotype is $\\mu_{Q_{k}}$. The mean value for marker genotype $M_{j}$ is just",
+      "source_page": 451,
+      "printed_page": 431,
+      "source_block_ids": [
+        "p451:b3"
+      ],
+      "bbox": [
+        78.0,
+        168.0,
+        1041.0,
+        310.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Genotype</td><td style='text-align: center; word-wrap: break-word;'>Freq.</td><td style='text-align: center; word-wrap: break-word;'>/</td><td style='text-align: center; word-wrap: break-word;'>x</td><td style='text-align: center; word-wrap: break-word;'>z</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MMQQ</td><td style='text-align: center; word-wrap: break-word;'>$ (1 - \\tilde{c})/2 $</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>z_ QQ </td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>MMqq</td><td style='text-align: center; word-wrap: break-word;'>$ \\tilde{c}/2 $</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>z_ qq </td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>mmQQ</td><td style='text-align: center; word-wrap: break-word;'>$ \\tilde{c}/2 $</td><td style='text-align: center; word-wrap: break-word;'>-1</td><td style='text-align: center; word-wrap: break-word;'>z_ QQ </td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>mmqq</td><td style='text-align: center; word-wrap: break-word;'>$ (1 - \\tilde{c})/2 $</td><td style='text-align: center; word-wrap: break-word;'>-1</td><td style='text-align: center; word-wrap: break-word;'>z_ qq </td><td style='text-align: center; word-wrap: break-word;'></td></tr></table> $$ \\sigma(x,z)=E(x\\cdot z)=a(1-2\\widetilde{c}) $$ $$ \\sigma^{2}(x)=E(x^{2})=1 $$ $$ \\sigma^{2}(z)=E(z^{2})=(1/2)[E(z_{Q Q})^{2}+\\sigma_{e}^{2}]+(1/2)[E(z_{q q})^{2}+\\sigma_{e}^{2}]=a^{2}+\\sigma_{e}^{2} $$"
+      "content": "[[FORMULA:Genetics_chapter15_formula015]]",
+      "source_page": 451,
+      "printed_page": 431,
+      "source_block_ids": [
+        "p451:b4"
+      ],
+      "bbox": [
+        388.0,
+        311.0,
+        724.0,
+        403.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note: We assume that the difference in QTL means is $ E(z_{QQ}) - E(z_{qq}) = 2a $ and that the phenotypic distributions conditioned on the QTL genotypes have common (within-line) variance $ \\sigma_{e}^{2} $. Since $ \\sigma(x, z) $ and $ \\sigma^{2}(z) $ are unchanged by a change in the mean of z (Chapter 3), we can arbitrarily set $ E(z_{QQ}) = -E(z_{qq}) = a $. Coded this way, $ E(x) = E(z) = 0 $, simplifying calculation of $ \\sigma(x, z) $ and $ \\sigma^{2}(z) $."
+      "content": "The QTL effects enter through the $ \\mu_{Q_k} $, while the QTL positions enter through the conditional probabilities $ \\Pr(Q_k \\mid M_j) $. Equation 15.6 is completely general, allowing for multilocus marker genotypes and multiple QTLs.",
+      "source_page": 451,
+      "printed_page": 431,
+      "source_block_ids": [
+        "p451:b6"
+      ],
+      "bbox": [
+        74.0,
+        398.0,
+        1034.0,
+        514.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter15:2]]",
+      "source_page": 451,
+      "source_block_ids": [
+        "p451:b7",
+        "p451:b8",
+        "p451:b9",
+        "p451:b10",
+        "p451:b11",
+        "p451:b12",
+        "p451:b13",
+        "p451:b14",
+        "p451:b16",
+        "p451:b18",
+        "p451:b19",
+        "p452:b2",
+        "p452:b3",
+        "p452:b5",
+        "p452:b7"
+      ],
+      "bbox": [
+        119.0,
+        592.0,
+        983.0,
+        668.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Several workers have suggested the use of these higher-order moments for detection of a linked QTL and estimation of its effects (Zhuchenko et al. 1978, 1979; Korol et al. 1981, 1983, 1987; Ginzburg 1983; Asins and Carbonell 1988; Zhang et al. 1992). One difficulty with this approach is that variances (and higher moments) are estimated with far less precision than means, reducing both the power of detection and the accuracy of estimates. Another complication is that not all designs are capable of revealing significant changes in higher moments (e.g., Asins and Carbonell 1988)."
+      "content": "Marker-class means for other designs follow by applying the appropriate conditional probabilities to Equation 15.6. For example, for the $ B_{1} $ design, from Equation 15.3a,",
+      "source_page": 452,
+      "printed_page": 432,
+      "source_block_ids": [
+        "p452:b8"
+      ],
+      "bbox": [
+        127.0,
+        649.0,
+        1086.0,
+        762.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "RILs and DHLs provide one case where functions of higher-order moments (here, a correlation coefficient) may be of value. Here, single-locus marker information can be used to estimate the recombination frequency $c$ (Hu et al. 1995). As shown in [[SEE_TABLE:15.1]], coding the alternative marker homozygotes as $x=\\pm1$, the expected marker-trait correlation becomes $$ \\rho=\\frac{\\sigma(z,x)}{\\sigma(x)\\sigma(z)}=\\frac{a(1-2\\widetilde{c})}{\\sqrt{a^{2}+\\sigma_{e}^{2}}}=\\frac{1-2\\widetilde{c}}{\\sqrt{1+C^{2}}} $$ where $C=\\sigma_{e}/a$, with $a$ being the QTL effect and $\\sigma_{e}^{2}$ being the within-line variance (see [[SEE_TABLE:15.1]]). (The $C$ term was neglected by Hu et al. 1995.) Rearranging and letting $r$ be an estimate of $\\rho$ suggests the estimator $$ \\widetilde{c}=\\frac{1-r\\sqrt{1+C^{2}}}{2}\\leq\\frac{1-r}{2} $$"
+      "content": "[[FORMULA:Genetics_chapter15_formula024]]",
+      "source_page": 452,
+      "printed_page": 432,
+      "source_block_ids": [
+        "p452:b9"
+      ],
+      "bbox": [
+        233.0,
+        767.0,
+        901.0,
+        814.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "While the value of $C$ is unknown, by ignoring it one can obtain an upwardly biased estimate of $c$ by first taking $\\tilde{c} = (1 - r)/2$ and then using Equation 15.5b to translate this value of $\\tilde{c}$ into $c$. Rearranging Equation 15.10b, $$ a=\\frac{\\mu_{M M}-\\mu_{m m}}{2(1-2\\widetilde{c})} $$ which, upon using $ 0 \\leq \\widetilde{c} \\leq (1 - r)/2 $, gives $$ \\frac{\\mu_{MM}-\\mu_{mm}}{2}\\leq a\\leq\\frac{\\mu_{MM}-\\mu_{mm}}{2r} $$"
+      "content": "Thus, under a backcross design the scaled QTL effects are influenced strongly by the (unknown) degree of dominance k. If Q is completely dominant to q, k = 1, and there is no marker-QTL effect. Conversely, if q is dominant to Q, k = -1 and the scaled effect becomes $ 2a(1 - 2c) $, which is the same as under an $ F_2 $ design. Recalling Equation 15.3b, the reciprocal backcross ( $ B_2 = F_1 \\times P_2 $) yields a similar expression,",
+      "source_page": 452,
+      "printed_page": 432,
+      "source_block_ids": [
+        "p452:b11"
+      ],
+      "bbox": [
+        131.0,
+        820.0,
+        1092.0,
+        1030.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Hence, the use of both the observed correlation $r$ and the difference in marker means $(\\overline{z}_{MM} - \\overline{z}_{mm})$ allows the estimation of upper bounds for both $c$ and $a$."
+      "content": "[[FORMULA:Genetics_chapter15_formula025]]",
+      "source_page": 452,
+      "printed_page": 432,
+      "source_block_ids": [
+        "p452:b12"
+      ],
+      "bbox": [
+        250.0,
+        1035.0,
+        896.0,
+        1081.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the ratio of Equation 15.9a to 15.9b gives $ (1-k)/(1+k) $, so that (provided only a single QTL is linked to the marker) an estimate of k can be obtained if one has access to both backcross populations.",
+      "source_page": 452,
+      "printed_page": 432,
+      "source_block_ids": [
+        "p452:b14"
+      ],
+      "bbox": [
+        137.0,
+        1086.0,
+        1096.0,
+        1197.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The expressions developed in Example 2 for $ F_2 $ analysis hold for an $ F_t $ population, provided $ \\widetilde{c} $ (given by Equation 15.4) replaces $ c $. For example, $ \\mu_{MM} - \\mu_{mm} = 2a(1 - 2\\widetilde{c}) $, and so forth. Since $ (1 - 2c) > (1 - 2\\widetilde{c}) $, AILs have smaller differences between marker means, and hence reduced power of QTL detection, relative to the $ F_2 $ design. Despite this, Darvasi and Soller (1995) advocate the use of AILs for fine-mapping of QTLs, as the expansion of the genetic map offers a higher precision of estimates of QTL position. We expand on this point below.",
+      "source_page": 452,
+      "printed_page": 432,
+      "source_block_ids": [
+        "p452:b15"
+      ],
+      "bbox": [
+        138.0,
+        1182.0,
+        1101.0,
+        1421.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "For RILs and DHLs, the recombination parameter $ \\widetilde{c} $ is given by Equation 15.5b, and from Equations 15.5a and 15.6 it follows that",
+      "source_page": 452,
+      "printed_page": 432,
+      "source_block_ids": [
+        "p452:b16"
+      ],
+      "bbox": [
+        144.0,
+        1406.0,
+        1103.0,
+        1486.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula026]]",
+      "source_page": 452,
+      "printed_page": 432,
+      "source_block_ids": [
+        "p452:b17"
+      ],
+      "bbox": [
+        174.0,
+        1489.0,
+        980.0,
+        1542.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "giving",
+      "source_page": 453,
+      "printed_page": 433,
+      "source_block_ids": [
+        "p453:b2"
+      ],
+      "bbox": [
+        79.0,
+        133.0,
+        167.0,
+        167.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula027]]",
+      "source_page": 453,
+      "printed_page": 433,
+      "source_block_ids": [
+        "p453:b3"
+      ],
+      "bbox": [
+        364.0,
+        168.0,
+        751.0,
+        228.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "again providing an estimate of a composite parameter of the QTL effect (a) and position (c). Because $ \\tilde{c} $ is smallest in DHLs (see Equation 15.5b), the largest marker effect (and greatest power for QTL detection) occurs in this type of line, followed by selfed RILs, and finally by sib-mated RILs.",
+      "source_page": 453,
+      "printed_page": 433,
+      "source_block_ids": [
+        "p453:b5"
+      ],
+      "bbox": [
+        74.0,
+        234.0,
+        1035.0,
+        371.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, note that by considering two-locus (rather than single-locus) marker means, separate estimates of QTL effect and position can be obtained. Taking the genotype at two adjacent marker loci $ (M_{1}/m_{1} $ and $ M_{2}/m_{2}) $ as the unit of analysis, consider the difference between the contrasting double homozygotes in an $ F_{2} $. If the markers flank a QTL, then under the assumption of no interference, Equation 15.2 (and its analog for $ m_{1}m_{1}m_{2}m_{2} $ probabilities) implies",
+      "source_page": 453,
+      "printed_page": 433,
+      "source_block_ids": [
+        "p453:b6"
+      ],
+      "bbox": [
+        73.0,
+        363.0,
+        1034.0,
+        562.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula028]]",
+      "source_page": 453,
+      "printed_page": 433,
+      "source_block_ids": [
+        "p453:b7"
+      ],
+      "bbox": [
+        220.0,
+        581.0,
+        880.0,
+        696.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $c_{1}$ is the $M_{1}$-QTL recombination frequency. Equation 15.11a is essentially equal to $a$ when the distance between flanking markers $c_{12} \\leq 0.20$, as here $(1 - 2c_{1}c_{2}) \\geq 0.98$. Thus, recalling from Equation 15.7a that $\\mu_{M_{1}M_{1}} - \\mu_{m_{1}m_{1}} = 2a(1 - 2c_{1})$, we can obtain estimates of the recombination frequencies by substituting Equation 15.11a for $a$ and rearranging to give",
+      "source_page": 453,
+      "printed_page": 433,
+      "source_block_ids": [
+        "p453:b9"
+      ],
+      "bbox": [
+        66.0,
+        709.0,
+        1028.0,
+        882.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula029]]",
+      "source_page": 453,
+      "printed_page": 433,
+      "source_block_ids": [
+        "p453:b10"
+      ],
+      "bbox": [
+        294.0,
+        897.0,
+        789.0,
+        1068.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Estimates for other flanking-marker designs are given by Knapp et al. (1990), Knapp and Bridges (1990), and Knapp (1991).",
+      "source_page": 453,
+      "printed_page": 433,
+      "source_block_ids": [
+        "p453:b12"
+      ],
+      "bbox": [
+        61.0,
+        1075.0,
+        1018.0,
+        1152.0
+      ]
     }
   ]
 }

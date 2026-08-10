@@ -2,50 +2,256 @@
   "id": "Genetics_chapter26_003",
   "metadata": {
     "chapter": "Genetics_chapter26",
-    "section": "Introduction",
-    "subsections": [
-      "THE GENERAL MIXED MODEL"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "THE GENERAL MIXED MODEL",
+    "section": "THE GENERAL MIXED MODEL",
+    "subsections": [],
+    "section_level_1": "THE GENERAL MIXED MODEL",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
       "THE GENERAL MIXED MODEL"
     ],
-    "display_heading": "THE GENERAL MIXED MODEL"
+    "display_heading": "THE GENERAL MIXED MODEL",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 758,
+      "printed_page": 738,
+      "source_block_ids": [
+        "p758:b4"
+      ],
+      "bbox": [
+        147.0,
+        736.0,
+        563.0,
+        778.0
+      ],
+      "raw_text": "THE GENERAL MIXED MODEL"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Consider a column vector y containing the phenotypic values for a trait measured in n individuals. We assume that these observations are described adequately by a linear model with a $ p \\times 1 $ vector of fixed effects ($ \\beta $) and a $ q \\times 1 $ vector of random effects (u). The first element of the vector $ \\beta $ is typically the population mean, and other factors included may be gender, location, year of birth, experimental treatment, and so on. The elements of the vector u of random effects are usually genetic effects such as additive genetic values. In matrix form, $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{u}+\\mathbf{e} $$ where X and Z are respectively $n\\times p$ and $n\\times q$ incidence matrices (X is also called the design matrix), and e is the $n\\times 1$ column vector of residual deviations assumed to be distributed independently of the random genetic effects. Usually, all of the elements of the incidence matrices are equal to 0 or 1, depending upon whether the relevant effect contributes to the individual's phenotype. Because this model jointly accounts for fixed and random effects, it is generally referred to as a mixed model (Eisenhart 1947). Analysis of Equation 26.1 forms the basis for the remainder of this chapter and the next."
+      "content": "Consider a column vector y containing the phenotypic values for a trait measured in n individuals. We assume that these observations are described adequately by a linear model with a $ p \\times 1 $ vector of fixed effects ( $ \\beta $) and a $ q \\times 1 $ vector of random effects (u). The first element of the vector $ \\beta $ is typically the population mean, and other factors included may be gender, location, year of birth, experimental treatment, and so on. The elements of the vector u of random effects are usually genetic effects such as additive genetic values. In matrix form,",
+      "source_page": 758,
+      "printed_page": 738,
+      "source_block_ids": [
+        "p758:b5"
+      ],
+      "bbox": [
+        145.0,
+        795.0,
+        1108.0,
+        1039.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 1. Suppose that three sires are chosen at random from a population, and each mated to a randomly chosen dam. Two offspring from each mating are evaluated, some in environment 1 and some in environment 2. Let $ y_{ijk} $ denote the phenotypic value of the kth offspring of sire i in environment j. The model is then $$ y_{ijk}=\\beta_{j}+u_{i}+e_{ijk} $$"
-    },
-    {
-      "type": "proposition",
-      "content": "This model has three random effects $(u_{1}, u_{2}, u_{3})$, which measure the contribution from each sire, and two fixed effects $(\\beta_{1}, \\beta_{2})$, which describe the influence of the two environments. The model assumes an absence of sire $\\times$ environment interaction. As noted above, a total of six offspring were measured. One offspring of sire 1 was assigned to environment 1 and had phenotypic value $ y_{1,1,1} = 9 $, while the second offspring was assigned to environment 2 and had phenotypic value $ y_{1,2,1} = 12 $. The two offspring of sire 2 were both assigned to environment 1 and had values of $ y_{2,1,1} = 11 $ and $ y_{2,1,2} = 6 $. One offspring of sire 3 was assigned to environment 1 and had phenotypic value $ y_{3,1,1} = 7 $, while the second offspring was assigned to environment 2 and had phenotypic value $ y_{3,2,1} = 14 $. The resulting vector of observations can be written as $$ \\mathbf{y}=\\begin{pmatrix}y_{1,1,1}\\\\y_{1,2,1}\\\\y_{2,1,1}\\\\y_{2,1,2}\\\\y_{3,1,1}\\\\y_{3,2,1}\\end{pmatrix}=\\begin{pmatrix}9\\\\12\\\\11\\\\6\\\\7\\\\14\\end{pmatrix} $$ giving the mixed model as $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{u}+\\mathbf{e} $$ where the incidence matrices for fixed and random effects and the vectors of these effects are respectively $$ \\mathbf{X}=\\begin{pmatrix}1&0\\\\0&1\\\\1&0\\\\1&0\\\\1&0\\\\0&1\\end{pmatrix},\\qquad\\mathbf{Z}=\\begin{pmatrix}1&0&0\\\\1&0&0\\\\0&1&0\\\\0&1&0\\\\0&0&1\\\\0&0&1\\end{pmatrix},\\qquad\\boldsymbol{\\beta}=\\begin{pmatrix}\\beta_{1}\\\\ \\beta_{2}\\end{pmatrix},\\qquad\\mathbf{u}=\\begin{pmatrix}u_{1}\\\\ u_{2}\\\\ u_{3}\\end{pmatrix} $$ difference among individuals due to fixed effects, from Equation 8.21b and the assumption that u and e are uncorrelated, the covariance matrix for the vector of observations y is $$ \\mathbf{V}=\\mathbf{Z}\\mathbf{G}\\mathbf{Z}^{T}+\\mathbf{R} $$"
+      "content": "[[FORMULA:Genetics_chapter26_formula001]]",
+      "source_page": 758,
+      "printed_page": 738,
+      "source_block_ids": [
+        "p758:b6"
+      ],
+      "bbox": [
+        520.0,
+        1055.0,
+        742.0,
+        1091.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The first term accounts for the contribution from random genetic effects, while the second accounts for the variance due to residual effects. We will generally assume that residual errors have constant variance and are uncorrelated, so that $ \\mathbf{R} $ is a diagonal matrix, with $ \\mathbf{R} = \\sigma_E^2 \\mathbf{I} $."
+      "content": "where X and Z are respectively $ n \\times p $ and $ n \\times q $ incidence matrices (X is also called the design matrix), and e is the $ n \\times 1 $ column vector of residual deviations assumed to be distributed independently of the random genetic effects. Usually, all of the elements of the incidence matrices are equal to 0 or 1, depending upon whether the relevant effect contributes to the individual's phenotype. Because this model jointly accounts for fixed and random effects, it is generally referred to as a mixed model (Eisenhart 1947). Analysis of Equation 26.1 forms the basis for the remainder of this chapter and the next.",
+      "source_page": 758,
+      "printed_page": 738,
+      "source_block_ids": [
+        "p758:b8"
+      ],
+      "bbox": [
+        153.0,
+        1113.0,
+        1114.0,
+        1387.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter26:1]]",
+      "source_page": 758,
+      "source_block_ids": [
+        "p758:b9",
+        "p759:b2",
+        "p759:b3",
+        "p759:b4",
+        "p759:b5",
+        "p759:b6",
+        "p759:b7",
+        "p759:b8",
+        "p759:b9",
+        "p759:b10"
+      ],
+      "bbox": [
+        208.0,
+        1461.0,
+        1071.0,
+        1538.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "We are now in a position to contrast the mixed model and the general linear model. Under the general linear model (Chapter 8), $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{e}^{*}\\qquad\\mathrm{w h e r e}\\quad\\mathbf{e}^{*}\\sim(\\mathbf{0},\\mathbf{V})\\quad\\mathrm{i m p l y i n g}\\quad\\mathbf{y}\\sim(\\mathbf{X}\\boldsymbol{\\beta},\\mathbf{V}) $$ where the notation $\\sim (a,b)$ means that the random variable has mean $a$ and variance $b$. On the other hand, the mixed model partitions the vector of residual effects into two components, with $e^{*}=Z\\mathbf{u}+\\mathbf{e}$, giving $$ \\mathbf{y}=\\mathbf{X}\\mathbf{\\beta}+\\mathbf{Z}\\mathbf{u}+\\mathbf{e}\\qquad\\mathrm{w h e r e}\\quad\\mathbf{u}\\sim(\\mathbf{0},\\mathbf{G})\\mathrm{a n d}\\mathbf{e}\\sim(\\mathbf{0},\\mathbf{R}) $$ $$ \\mathrm{i m p l y i n g}\\mathrm{\\boldmath~y~}\\sim(\\mathbf{X}\\beta,\\mathbf{V})=(\\mathbf{X}\\beta,\\mathbf{Z}\\mathbf{G}\\mathbf{Z}^{T}+\\mathbf{R}) $$"
+      "content": "Now consider the means and variances of the component vectors of the mixed model. Since $ E(\\mathbf{u}) = E(\\mathbf{e}) = \\mathbf{0} $ by definition, $ E(\\mathbf{y}) = \\mathbf{X}\\boldsymbol{\\beta} $. Denote the $ (n \\times n) $ covariance matrix for the vector $ \\mathbf{e} $ of residual errors by $ \\mathbf{R} $ and the $ (q \\times q) $ covariance matrix for the vector $ \\mathbf{u} $ of random genetic effects by $ \\mathbf{G} $. Excluding the difference among individuals due to fixed effects, from Equation 8.21b and the assumption that u and e are uncorrelated, the covariance matrix for the vector of observations y is",
+      "source_page": 759,
+      "printed_page": 739,
+      "source_block_ids": [
+        "p759:b11",
+        "p760:b2"
+      ],
+      "bbox": [
+        42.0,
+        1411.0,
+        1001.0,
+        1558.0
+      ],
+      "source_page_end": 760
     },
     {
       "type": "discussion",
-      "content": "When analyzed in the appropriate way, both formulations yield the same estimate of the vector of fixed effects $\\beta$, while the mixed-model formulation further allows estimates of the vector of random effects u."
+      "content": "[[FORMULA:Genetics_chapter26_formula006]]",
+      "source_page": 760,
+      "printed_page": 740,
+      "source_block_ids": [
+        "p760:b3"
+      ],
+      "bbox": [
+        512.0,
+        224.0,
+        718.0,
+        260.0
+      ]
     },
     {
-      "type": "proposition",
-      "content": "For the mixed model, we observe y, X, and Z, while $\\beta$, u, R, and G are generally unknown. Thus, mixed-model analysis involves two complementary estimation issues: (1) estimation of the vectors of fixed and random effects, $\\beta$ and u, and (2) estimation of the covariance matrices G and R. These covariance matrices are generally assumed to be functions of a few unknown variance components. For the remainder of this chapter, we consider estimators of $\\beta$ and u under the assumption that y, X, Z, G, and R are all known. Estimation of the variance components (and hence R and G) from y, X, and Z is the subject of the next chapter."
+      "type": "discussion",
+      "content": "The first term accounts for the contribution from random genetic effects, while the second accounts for the variance due to residual effects. We will generally assume that residual errors have constant variance and are uncorrelated, so that $ \\mathbf{R} $ is a diagonal matrix, with $ \\mathbf{R} = \\sigma_E^2 \\mathbf{I} $.",
+      "source_page": 760,
+      "printed_page": 740,
+      "source_block_ids": [
+        "p760:b5"
+      ],
+      "bbox": [
+        136.0,
+        275.0,
+        1097.0,
+        414.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "We are now in a position to contrast the mixed model and the general linear model. Under the general linear model (Chapter 8),",
+      "source_page": 760,
+      "printed_page": 740,
+      "source_block_ids": [
+        "p760:b6"
+      ],
+      "bbox": [
+        138.0,
+        403.0,
+        1097.0,
+        481.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter26_formula007]]",
+      "source_page": 760,
+      "printed_page": 740,
+      "source_block_ids": [
+        "p760:b7"
+      ],
+      "bbox": [
+        244.0,
+        501.0,
+        993.0,
+        545.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the notation $\\sim(a,b)$ means that the random variable has mean $a$ and variance $b$. On the other hand, the mixed model partitions the vector of residual effects into two components, with $e^{*}=Z\\mathbf{u}+\\mathbf{e}$, giving",
+      "source_page": 760,
+      "printed_page": 740,
+      "source_block_ids": [
+        "p760:b8"
+      ],
+      "bbox": [
+        142.0,
+        569.0,
+        1100.0,
+        676.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter26_formula008]]",
+      "source_page": 760,
+      "printed_page": 740,
+      "source_block_ids": [
+        "p760:b9"
+      ],
+      "bbox": [
+        278.0,
+        698.0,
+        965.0,
+        741.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter26_formula009]]",
+      "source_page": 760,
+      "printed_page": 740,
+      "source_block_ids": [
+        "p760:b10"
+      ],
+      "bbox": [
+        360.0,
+        763.0,
+        887.0,
+        810.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "When analyzed in the appropriate way, both formulations yield the same estimate of the vector of fixed effects $ \\beta $, while the mixed-model formulation further allows estimates of the vector of random effects u.",
+      "source_page": 760,
+      "printed_page": 740,
+      "source_block_ids": [
+        "p760:b11"
+      ],
+      "bbox": [
+        145.0,
+        819.0,
+        1105.0,
+        922.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "For the mixed model, we observe y, X, and Z, while $ \\beta $, u, R, and G are generally unknown. Thus, mixed-model analysis involves two complementary estimation issues: (1) estimation of the vectors of fixed and random effects, $ \\beta $ and u, and (2) estimation of the covariance matrices G and R. These covariance matrices are generally assumed to be functions of a few unknown variance components. For the remainder of this chapter, we consider estimators of $ \\beta $ and u under the assumption that y, X, Z, G, and R are all known. Estimation of the variance components (and hence R and G) from y, X, and Z is the subject of the next chapter.",
+      "source_page": 760,
+      "printed_page": 740,
+      "source_block_ids": [
+        "p760:b12"
+      ],
+      "bbox": [
+        147.0,
+        914.0,
+        1112.0,
+        1214.0
+      ]
     }
   ]
 }

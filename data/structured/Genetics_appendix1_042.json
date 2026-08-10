@@ -1,0 +1,250 @@
+{
+  "id": "Genetics_appendix1_042",
+  "metadata": {
+    "chapter": "Genetics_appendix1",
+    "section": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
+    "subsections": [
+      "Newton-Raphson Methods"
+    ],
+    "section_level_1": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
+    "section_level_2": "Newton-Raphson Methods",
+    "heading_path": [
+      "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
+      "Newton-Raphson Methods"
+    ],
+    "display_heading": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS / Newton-Raphson Methods",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 873,
+      "printed_page": 853,
+      "source_block_ids": [
+        "p873:b10"
+      ],
+      "bbox": [
+        62.0,
+        1376.0,
+        405.0,
+        1408.0
+      ],
+      "raw_text": "Newton-Raphson Methods"
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Recall from elementary calculus that one can approximate a function $ f(x) $ by expanding it in a power series around a point $ x_{0} $,",
+      "source_page": 873,
+      "printed_page": 853,
+      "source_block_ids": [
+        "p873:b11"
+      ],
+      "bbox": [
+        62.0,
+        1419.0,
+        1019.0,
+        1483.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula234]]",
+      "source_page": 873,
+      "printed_page": 853,
+      "source_block_ids": [
+        "p873:b12"
+      ],
+      "bbox": [
+        359.0,
+        1502.0,
+        722.0,
+        1537.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This suggests one approach for finding roots of the equation $ f(x) = 0 $. Given some initial guess $ x_{0} $, an improved value is obtained by solving",
+      "source_page": 874,
+      "printed_page": 854,
+      "source_block_ids": [
+        "p874:b2"
+      ],
+      "bbox": [
+        141.0,
+        136.0,
+        1100.0,
+        204.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula235]]",
+      "source_page": 874,
+      "printed_page": 854,
+      "source_block_ids": [
+        "p874:b3"
+      ],
+      "bbox": [
+        413.0,
+        234.0,
+        826.0,
+        269.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "for x, or",
+      "source_page": 874,
+      "printed_page": 854,
+      "source_block_ids": [
+        "p874:b4"
+      ],
+      "bbox": [
+        142.0,
+        300.0,
+        248.0,
+        329.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula236]]",
+      "source_page": 874,
+      "printed_page": 854,
+      "source_block_ids": [
+        "p874:b5"
+      ],
+      "bbox": [
+        519.0,
+        329.0,
+        718.0,
+        399.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Noting that the score function is zero at the MLE $ [S(\\hat{\\theta}) = 0] $, this suggests one approach for obtaining an iterative solution of the MLE. Applying Equation A4.15a to the score function, so that $ f = S $ and $ f' = \\partial S(\\theta)/\\partial\\theta = \\partial L^2(\\theta)/\\partial^2\\theta $, an updated estimate, $ \\widehat{\\theta}^{(k+1)} $, of a current estimate $ \\widehat{\\theta}^{(k)} $ is given by",
+      "source_page": 874,
+      "printed_page": 854,
+      "source_block_ids": [
+        "p874:b7"
+      ],
+      "bbox": [
+        140.0,
+        419.0,
+        1098.0,
+        554.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula237]]",
+      "source_page": 874,
+      "printed_page": 854,
+      "source_block_ids": [
+        "p874:b8"
+      ],
+      "bbox": [
+        352.0,
+        584.0,
+        883.0,
+        662.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "which is interated until $ |\\widehat{\\theta}^{(k+1)}-\\widehat{\\theta}^{(k)}| $ is sufficiently small to declare convergence. This is the Newton-Raphson method, a member of a class of quadratic methods. Such methods involve second partial derivatives of the likelihood function and have a quadratic convergence rate. The same logic when applied to a multivariate Taylor series implies that a vector $ \\widehat{\\boldsymbol{\\Theta}}^{(k)} $ of current estimates is updated by using",
+      "source_page": 874,
+      "printed_page": 854,
+      "source_block_ids": [
+        "p874:b10"
+      ],
+      "bbox": [
+        140.0,
+        695.0,
+        1098.0,
+        877.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula238]]",
+      "source_page": 874,
+      "printed_page": 854,
+      "source_block_ids": [
+        "p874:b11"
+      ],
+      "bbox": [
+        388.0,
+        899.0,
+        847.0,
+        950.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where S and H are the vector of scores and the Hessian matrix, respectively, both evaluated at the current estimate.",
+      "source_page": 874,
+      "printed_page": 854,
+      "source_block_ids": [
+        "p874:b13"
+      ],
+      "bbox": [
+        140.0,
+        979.0,
+        1099.0,
+        1043.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "One variant of this approach is Fisher’s scoring, where the Hessian matrix H is replaced by its expected value, the negative of Fisher’s information matrix F (Equation A4.7b),",
+      "source_page": 874,
+      "printed_page": 854,
+      "source_block_ids": [
+        "p874:b14"
+      ],
+      "bbox": [
+        140.0,
+        1044.0,
+        1100.0,
+        1141.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula239]]",
+      "source_page": 874,
+      "printed_page": 854,
+      "source_block_ids": [
+        "p874:b15"
+      ],
+      "bbox": [
+        392.0,
+        1169.0,
+        846.0,
+        1219.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "One advantage of Fisher’s scoring is that F is usually of a simpler form than H, often containing elements equal to zero that are non-zero in H. This can make F easier to compute and invert (e.g., compare Equations 27.34 and 27.35b). Further, Fisher’s scoring appears to be more robust to poor initial starting choices than the strict Newton-Raphson method (Jennrich and Sampson 1986). In addition to the advantage of quadratic convergence, both Newton-Raphson and Fisher’s scoring yield the covariance matrix of MLE estimates from H (or F) using the final interaction values of $ \\Theta $ and applying Equation A4.7. Additional quadratic methods are discussed by Kennedy and Gentle (1980).",
+      "source_page": 874,
+      "printed_page": 854,
+      "source_block_ids": [
+        "p874:b17"
+      ],
+      "bbox": [
+        140.0,
+        1249.0,
+        1102.0,
+        1540.0
+      ]
+    }
+  ]
+}

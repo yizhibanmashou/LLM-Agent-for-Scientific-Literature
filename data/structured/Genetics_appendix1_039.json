@@ -1,0 +1,175 @@
+{
+  "id": "Genetics_appendix1_039",
+  "metadata": {
+    "chapter": "Genetics_appendix1",
+    "section": "LIKELIHOOD-RATIO TESTS",
+    "subsections": [
+      "The G-test"
+    ],
+    "section_level_1": "LIKELIHOOD-RATIO TESTS",
+    "section_level_2": "The G-test",
+    "heading_path": [
+      "LIKELIHOOD-RATIO TESTS",
+      "The G-test"
+    ],
+    "display_heading": "LIKELIHOOD-RATIO TESTS / The G-test",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 871,
+      "printed_page": 851,
+      "source_block_ids": [
+        "p871:b3"
+      ],
+      "bbox": [
+        59.0,
+        296.0,
+        196.0,
+        326.0
+      ],
+      "raw_text": "The G-test"
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "A common likelihood-ratio-based test is the G-test for goodness of fit. Consider $n$ observations that have been apportioned into a set of $N$ different categories, and denote these by the vector $\\mathbf{n} = (n_{1}, n_{2}, \\cdots, n_{N})$. Likewise, let $p_{i}$ represent the true population frequency of the $i$th category and let $\\mathbf{p} = (p_{1}, p_{2}, \\cdots, p_{N})$. From the multinomial distribution, the likelihood of $\\mathbf{p}$ given the observations $\\mathbf{n}$ is",
+      "source_page": 871,
+      "printed_page": 851,
+      "source_block_ids": [
+        "p871:b4"
+      ],
+      "bbox": [
+        56.0,
+        335.0,
+        1018.0,
+        499.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula224]]",
+      "source_page": 871,
+      "printed_page": 851,
+      "source_block_ids": [
+        "p871:b5"
+      ],
+      "bbox": [
+        374.0,
+        524.0,
+        696.0,
+        562.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $k$ is the appropriate multinomial coefficient (which is independent of the $p_i$). It can be shown that the values of $p_i$ that maximize Equation A4.10a (and hence are the MLE's) are $\\widehat{p_i} = n_i/n$. This gives the value of the maximum of the likelihood function as",
+      "source_page": 871,
+      "printed_page": 851,
+      "source_block_ids": [
+        "p871:b7"
+      ],
+      "bbox": [
+        58.0,
+        588.0,
+        1018.0,
+        718.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula225]]",
+      "source_page": 871,
+      "printed_page": 851,
+      "source_block_ids": [
+        "p871:b8"
+      ],
+      "bbox": [
+        296.0,
+        735.0,
+        777.0,
+        798.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In order to test whether the observed data are consistent with a specified vector q of population frequencies, we need the value of the likelihood function under this constraint. Denoting the expected value for the number of individuals in category i by $ \\widehat{n}_{i} = q_{i}n $, we can write $ q_{i} = \\widehat{n}_{i}/n $. Substitution into Equation A4.10a gives the likelihood under q as",
+      "source_page": 871,
+      "printed_page": 851,
+      "source_block_ids": [
+        "p871:b10"
+      ],
+      "bbox": [
+        56.0,
+        821.0,
+        1019.0,
+        983.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula226]]",
+      "source_page": 871,
+      "printed_page": 851,
+      "source_block_ids": [
+        "p871:b11"
+      ],
+      "bbox": [
+        281.0,
+        1005.0,
+        790.0,
+        1082.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Applying Equation A4.9 yields the likelihood-ratio test (in this case, it is also called the G-test, for goodness of fit) that the observed data are consistent with q.",
+      "source_page": 871,
+      "printed_page": 851,
+      "source_block_ids": [
+        "p871:b13"
+      ],
+      "bbox": [
+        58.0,
+        1106.0,
+        1016.0,
+        1173.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula227]]",
+      "source_page": 871,
+      "printed_page": 851,
+      "source_block_ids": [
+        "p871:b14"
+      ],
+      "bbox": [
+        116.0,
+        1201.0,
+        869.0,
+        1285.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Since the $N$ frequencies sum to one, there are $N-1$ unconstrained parameters in the full likelihood, implying that $G$ is asymptotically distributed as a $\\chi_{N-1}^2$ random variable. Since large sample sizes are required to give the likelihood-ratio test a $\\chi^2$ distribution, caution should be exercised in employing this test whenever any expected quantity is less than five (e.g., any $q_i < 5/n$), a problem that can sometimes be avoided by pooling cells. Sokal and Rohlf (1995) provide a thorough overview of these and other matters.",
+      "source_page": 871,
+      "printed_page": 851,
+      "source_block_ids": [
+        "p871:b16"
+      ],
+      "bbox": [
+        56.0,
+        1314.0,
+        1018.0,
+        1539.0
+      ]
+    }
+  ]
+}

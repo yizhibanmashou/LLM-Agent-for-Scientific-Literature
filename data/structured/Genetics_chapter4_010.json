@@ -2,77 +2,127 @@
   "id": "Genetics_chapter4_010",
   "metadata": {
     "chapter": "Genetics_chapter4",
-    "section": "Introduction",
-    "subsections": [
-      "ADDITIVE EFFECTS, AVERAGE EXCESSES, AND BREEDING VALUES"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter4_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "4.1",
-      "4.2"
-    ],
-    "section_level_1": "Introduction",
-    "section_level_2": "ADDITIVE EFFECTS, AVERAGE EXCESSES, AND BREEDING VALUES",
+    "section": "CHARACTERIZING THE INFLUENCE OF A LOCUS ON THE PHENOTYPE",
+    "subsections": [],
+    "section_level_1": "CHARACTERIZING THE INFLUENCE OF A LOCUS ON THE PHENOTYPE",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "ADDITIVE EFFECTS, AVERAGE EXCESSES, AND BREEDING VALUES"
+      "CHARACTERIZING THE INFLUENCE OF A LOCUS ON THE PHENOTYPE"
     ],
-    "display_heading": "ADDITIVE EFFECTS, AVERAGE EXCESSES, AND BREEDING VALUES",
-    "table_reference_keys": [
-      "chapter4:4.1",
-      "chapter4:4.2"
-    ]
+    "display_heading": "CHARACTERIZING THE INFLUENCE OF A LOCUS ON THE PHENOTYPE",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 77,
+      "printed_page": 57,
+      "source_block_ids": [
+        "p77:b8"
+      ],
+      "bbox": [
+        23.0,
+        1330.0,
+        982.0,
+        1394.0
+      ],
+      "raw_text": "CHARACTERIZING THE INFLUENCE OF A LOCUS ON THE PHENOTYPE"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "It may still be unclear why we have gone to the trouble of partitioning the genotypic value into additive and dominance components. Such a distinction is useful because, in randomly mating diploid species, a parent donates only one allele per locus to each of its offspring. The transmitted allele exhibits its additive effect when randomly combined with a gene from other parents. The dominance deviation of a parent, which is a function of the interaction between the two parental genes, is eliminated when gametes are produced. Thus, one can think of $ \\widehat{G} $ and $ \\delta $ as the heritable and nonheritable components of an individual's genotypic value. Before clarifying this concept further, however, we need some formal definitions. Two different measures of the effect of an allele were proposed by Fisher (1918, 1941): the average excess $ \\alpha_{i}^{*} $ and the additive effect $ \\alpha_{i} $. As will be shown below, these two measures are equivalent in a randomly mating population, the first having a simple biological interpretation, the second being defined as a least-squares regression parameter."
-    },
-    {
-      "type": "definition",
-      "content": "The average excess $\\alpha_{2}^{*}$ of allele $B_{2}$ is the difference between the mean genotypic value of individuals carrying at least one copy of $B_{2}$ and the mean genotypic value of a random individual from the entire population, $$ \\alpha_{2}^{*}=\\left(G_{12}P_{12\\mid2}+G_{22}P_{22\\mid2}\\right)-\\mu_{G} $$ where $ P_{ij|i} $ is the conditional probability of a $ B_i B_j $ genotype given that one allele is $ B_i $. This is a completely general definition, but initially we will continue to focus on a diallelic locus under random mating, in which case $ P_{ij|i} = p_j $, with $ p_j $ being the frequency of allele $ B_j $. Under these conditions, Equation 4.13a becomes $$ \\alpha_{2}^{*}=G_{12}p_{1}+G_{22}p_{2}-\\mu_{G} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "This follows since of all individuals receiving a $B_{2}$ allele from one parent, a proportion $p_{2}$ (under random mating) receive another $B_{2}$ allele from the second parent, while a proportion $p_{1}$ receive a $B_{1}$ allele from the second parent. Since the genotypic values in these two cases are respectively $2a$ and $a(1+k)$, subtraction of the population mean $\\mu_{G}$ ([[SEE_TABLE:4.1]]) from the conditional mean yields $$ \\begin{aligned}\\alpha_{2}^{*}&=\\left\\{p_{1}[a(1+k)]+p_{2}(2a)\\right\\}-2a p_{2}\\left(1+p_{1}k\\right)\\\\&=p_{1}a\\left[1+k\\left(p_{1}-p_{2}\\right)\\right]=p_{1}\\alpha\\end{aligned} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "In the same manner, the average excess of allele $B_{1}$ is found to be $$ \\alpha_{1}^{*}=-p_{2}a\\left[1+k\\left(p_{1}-p_{2}\\right)\\right]=-p_{2}\\alpha $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Note that one of the average excesses is positive and the other negative because they are defined as deviations from the population mean genotypic value and hence have expected value zero."
-    },
-    {
-      "type": "definition",
-      "content": "The additive effects, $\\alpha_{i}$, on the other hand, are defined to be the least-squares regression coefficients of genotypic value on gene content. They are obtained by finding the $\\alpha_{1}$ and $\\alpha_{2}$ that minimize the mean-squared residual deviation $$ \\begin{aligned}M&=E(\\delta_{ij}^{2})=E[\\left(G_{ij}-\\mu_{G}-\\alpha_{i}-\\alpha_{j}\\right)^{2}]\\\\&=\\left(G_{11}-\\widehat{G}_{11}\\right)^{2}P_{11}+\\left(G_{12}-\\widehat{G}_{12}\\right)^{2}P_{12}+\\left(G_{22}-\\widehat{G}_{22}\\right)^{2}P_{22}\\end{aligned} $$ where $P_{ij}$ is the frequency of the $ij$th genotype. Again, this is a general definition. For the special case of a randomly mating population (with $P_{11} = p_{1}^{2}$, $P_{12} = 2p_{1}p_{2}$, and $P_{22} = p_{2}^{2}$), setting the partial derivatives of $M$ with respect to $\\alpha_{i}$ equal to zero, and solving gives $$ \\alpha_{2}=p_{1}a\\left[1+k\\left(p_{1}-p_{2}\\right)\\right]=p_{1}\\alpha $$ $$ \\alpha_{1}=-p_{2}a\\left[1+k\\left(p_{1}-p_{2}\\right)\\right]=-p_{2}\\alpha $$"
+      "content": "In Chapter 3, we encountered the concept of partitioning the phenotype (z) of an individual into a genotypic value (G) and an environmental deviation (E),",
+      "source_page": 77,
+      "printed_page": 57,
+      "source_block_ids": [
+        "p77:b9"
+      ],
+      "bbox": [
+        19.0,
+        1395.0,
+        981.0,
+        1490.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Comparing these expressions with Equations 4.14a,b, we find that additive effects are identical to average excesses in randomly mating populations. The $\\alpha_{i}$ are often referred to as $\\text{average effects}$, but we use additive effects to discriminate them from average effects of higher-order gene actions (such as dominance)."
+      "content": "[[FORMULA:Genetics_chapter4_formula014]]",
+      "source_page": 77,
+      "printed_page": 57,
+      "source_block_ids": [
+        "p77:b10"
+      ],
+      "bbox": [
+        430.0,
+        1496.0,
+        566.0,
+        1528.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "An individual's breeding value, hereafter denoted by $A$, is the sum of the additive effects of its genes. In other words, the breeding value of a $B_1B_1$ homozygote is simply $2\\alpha_1$, that of a heterozygote is $(\\alpha_1 + \\alpha_2)$, and that of a $B_2B_2$ individual is $2\\alpha_2$. For random-mating populations, an extremely useful relationship emerges from these definitions for additive effects and breeding values. Consider the expected genotypic values of progeny produced by the parental genotypes. In the case of $B_2B_2$ parents, a proportion $p_2$ of the offspring will also be $B_2B_2$, in which case their genotypic value is $2a$, and a proportion $p_1$ will be $B_1B_2$ with genotypic value $a(1+k)$. The average genotypic value of offspring from a $B_2B_2$ parent is therefore $p_2(2a)+p_1a(1+k)=a[2p_2+p_1(1+k)]$. When the population mean, $\\mu_{G}$, is subtracted, we obtain (after some simplification) $\\alpha_{2}$. Deviations of expected progeny phenotypes from the population mean are given for the other two parental genotypes in [[SEE_TABLE:4.2]]. The results in this table show that when mating is random the breeding value of a genotype is equivalent to twice the expected deviation of its offspring mean phenotype from the population mean. The deviation is multiplied by two because only one of the two parental genes is passed on to each offspring. Thus, we can estimate the breeding value of an individual by mating it to many randomly chosen individuals from the population and taking twice the deviation of its offspring mean from the population mean. Chapter 26 discusses the estimation of breeding values under very general settings."
+      "content": "[[FIGURE:4.4]]",
+      "source_page": 78,
+      "printed_page": 58,
+      "source_block_ids": [
+        "p78:b3"
+      ],
+      "bbox": [
+        190.0,
+        358.0,
+        1006.0,
+        414.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 4. Consider the consequences of the Booroola gene (described in Example 3) in two hypothetical random-mating populations with gene frequencies of 0.5 and 0.1. We assume that the phenotypic means within genotypic classes are known without error, so that they are equivalent to the genotypic values. The additive and dominance genetic variances are, respectively, the mean-squared breeding values and the mean-squared dominance deviations because both types of effects have means equal to zero."
+      "content": "where G is the expected phenotype (for a given genotype) resulting from the joint expression of all of the genes underlying the trait. For a multilocus trait, G is a potentially complicated function. For now, however, we are concerned only with the direct contribution of a single autosomal locus, in which case things are quite tractable. We start with the special case in which there are only two alleles. The three genotypic values can then be represented by the scale at the top of Figure 4.4, with 2a representing the difference between the mean phenotypes of $ B_{2}B_{2} $ and $ B_{1}B_{1} $ homozygotes, and k providing a measure of dominance. Alleles $ B_{1} $ and $ B_{2} $ behave in a completely additive fashion when k = 0, whereas k = +1 implies complete dominance of the $ B_{1} $ allele, and k = -1 implies complete dominance of the $ B_{2} $ allele. If k > 1, the phenotypic expression of the heterozygote exceeds that of both homozygotes, and the locus is said to exhibit overdominance, whereas k < -1 implies underdominance.",
+      "source_page": 78,
+      "printed_page": 58,
+      "source_block_ids": [
+        "p78:b4"
+      ],
+      "bbox": [
+        145.0,
+        452.0,
+        1116.0,
+        894.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"3\">$ p_{B}=0.5 $</td><td colspan=\"3\">$ p_{B}=0.1 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>bb</td><td style='text-align: center; word-wrap: break-word;'>Bb</td><td style='text-align: center; word-wrap: break-word;'>BB</td><td style='text-align: center; word-wrap: break-word;'>bb</td><td style='text-align: center; word-wrap: break-word;'>Bb</td><td style='text-align: center; word-wrap: break-word;'>BB</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Genotypic Value $ (G_{ij}) $</td><td style='text-align: center; word-wrap: break-word;'>1.48</td><td style='text-align: center; word-wrap: break-word;'>2.17</td><td style='text-align: center; word-wrap: break-word;'>2.66</td><td style='text-align: center; word-wrap: break-word;'>1.48</td><td style='text-align: center; word-wrap: break-word;'>2.17</td><td style='text-align: center; word-wrap: break-word;'>2.66</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Genotype Frequency $ (P_{ij}) $</td><td style='text-align: center; word-wrap: break-word;'>0.25</td><td style='text-align: center; word-wrap: break-word;'>0.50</td><td style='text-align: center; word-wrap: break-word;'>0.25</td><td style='text-align: center; word-wrap: break-word;'>0.81</td><td style='text-align: center; word-wrap: break-word;'>0.18</td><td style='text-align: center; word-wrap: break-word;'>0.01</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Mean Genotypic Value</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\mu_{G} = P_{bb}G_{bb} + P_{Bb}G_{Bb} + P_{BB}G_{BB} $</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>2.120</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.616</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Additive Effects</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\alpha_{B} = p_{B}G_{BB} + p_{b}G_{Bb} - \\mu_{G} $</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.295</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.603</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\alpha_{b} = p_{b}G_{bb} + p_{B}G_{Bb} - \\mu_{G} $</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>-0.295</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>-0.067</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Breeding Values</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ A_{ij} = \\alpha_{i} + \\alpha_{j} $</td><td style='text-align: center; word-wrap: break-word;'>-0.59</td><td style='text-align: center; word-wrap: break-word;'>0.00</td><td style='text-align: center; word-wrap: break-word;'>0.59</td><td style='text-align: center; word-wrap: break-word;'>-0.134</td><td style='text-align: center; word-wrap: break-word;'>0.536</td><td style='text-align: center; word-wrap: break-word;'>1.206</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\overline{A} = P_{bb}A_{bb} + P_{Bb}A_{Bb} + P_{BB}A_{BB} $</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.00</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.00</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Dominance Deviations</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\delta_{ij} = G_{ij} - (\\mu_{G} + \\alpha_{i} + \\alpha_{j}) $</td><td style='text-align: center; word-wrap: break-word;'>-0.05</td><td style='text-align: center; word-wrap: break-word;'>0.05</td><td style='text-align: center; word-wrap: break-word;'>-0.05</td><td style='text-align: center; word-wrap: break-word;'>-0.002</td><td style='text-align: center; word-wrap: break-word;'>0.018</td><td style='text-align: center; word-wrap: break-word;'>-0.162</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\overline{\\delta} = P_{bb} \\delta_{bb} + P_{Bb} \\delta_{Bb} + P_{BB} \\delta_{BB} $</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.00</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.00</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Genetic Variance Components</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{A}^{2} = P_{bb} A_{bb}^{2} + P_{Bb} A_{Bb}^{2} + P_{BB} A_{BB}^{2} $</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.1740</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.0808</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{D}^{2} = P_{bb} \\delta_{bb}^{2} + P_{Bb} \\delta_{Bb}^{2} + P_{BB} \\delta_{BB}^{2} $</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.0012</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.0003</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{G}^{2} = \\sigma_{A}^{2} + \\sigma_{D}^{2} $</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.1752</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>0.0811</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
+      "content": "The fact that we have set the genotypic value of the $B_{1}B_{1}$ homozygote equal to zero may seem troublesome, but it is desirable because it leads to some algebraic simplifications. Although phenotypic measures are often performed on scales where zeros are impossible, genotypic values can always be transformed to the above scale by simply subtracting the observed genotypic value of $B_{1}B_{1}$ from each measure. Such a transformation of a linear scale can be illustrated by considering an alternative scheme often used by quantitative geneticists (bottom of Figure 4.4). Although the genotypic values of the two homozygotes are now denoted by $-a$ and $+a$, the difference between them is still $2a$, as in the previous case. The previous scale can be completely recovered by adding $a$ to all three measures on this new scale and letting $d = ak$. Generally, we will adhere to the first of these two scales.",
+      "source_page": 78,
+      "printed_page": 58,
+      "source_block_ids": [
+        "p78:b5"
+      ],
+      "bbox": [
+        158.0,
+        870.0,
+        1126.0,
+        1283.0
+      ]
     },
     {
-      "type": "discussion",
-      "content": "Although this example is somewhat artificial in that we employed arbitrary gene frequencies, the basic approach is now being widely exploited in the analysis of human genetic disorders. Biochemical studies are used to identify candidate loci that are potential contributors to the variation of the trait of interest, and the genotypes of random individuals are identified by use of molecular markers. The average phenotypic values within each genotypic class provide estimates of the genotypic values, which can then be used to estimate the fraction of the total phenotypic variance that is associated with the locus. Details on this measured-genotype approach are presented in Chapter 13."
-    },
-    {
-      "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Parental Genotype</td><td style='text-align: center; word-wrap: break-word;'>Breeding Value</td><td style='text-align: center; word-wrap: break-word;'>Mean Genotypic Value of Progeny</td><td style='text-align: center; word-wrap: break-word;'>Deviation of Expected Progeny Mean from $ \\mu_{G} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ B_{2}B_{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ 2\\alpha_{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ a[2p_{2} + p_{1}(1 + k)] $</td><td style='text-align: center; word-wrap: break-word;'>$ \\alpha_{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ B_{1}B_{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\alpha_{1} + \\alpha_{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ a[p_{2} + (1 + k)/2] $</td><td style='text-align: center; word-wrap: break-word;'>$ (\\alpha_{1} + \\alpha_{2})/2 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ B_{1}B_{1} $</td><td style='text-align: center; word-wrap: break-word;'>$ 2\\alpha_{1} $</td><td style='text-align: center; word-wrap: break-word;'>$ ap_{2}(1 + k) $</td><td style='text-align: center; word-wrap: break-word;'>$ \\alpha_{1} $</td></tr></table>"
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter4:3]]",
+      "source_page": 78,
+      "source_block_ids": [
+        "p78:b6",
+        "p78:b7",
+        "p79:b2"
+      ],
+      "bbox": [
+        221.0,
+        1343.0,
+        1086.0,
+        1457.0
+      ]
     }
   ]
 }

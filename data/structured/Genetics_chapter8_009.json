@@ -2,34 +2,138 @@
   "id": "Genetics_chapter8_009",
   "metadata": {
     "chapter": "Genetics_chapter8",
-    "section": "Introduction",
+    "section": "ELEMENTARY MATRIX ALGEBRA",
     "subsections": [
-      "Transposition"
+      "Multiplication"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Transposition",
+    "section_level_1": "ELEMENTARY MATRIX ALGEBRA",
+    "section_level_2": "Multiplication",
     "heading_path": [
-      "Introduction",
-      "Transposition"
+      "ELEMENTARY MATRIX ALGEBRA",
+      "Multiplication"
     ],
-    "display_heading": "Transposition"
+    "display_heading": "ELEMENTARY MATRIX ALGEBRA / Multiplication",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    }
   },
   "blocks": [
     {
-      "type": "discussion",
-      "content": "Another useful matrix operation is transposition. The transpose of a matrix A is written $ \\mathbf{A}^T $ (while not used in this book, the notation $ \\mathbf{A}' $ is also widely used), and is obtained simply by switching rows and columns of the original matrix. For example, $$ \\begin{pmatrix}{{{3}}}&{{{1}}}&{{{2}}} \\\\{{{2}}}&{{{5}}}&{{{4}}} \\\\{{{1}}}&{{{1}}}&{{{2}}}\\end{pmatrix}^{T}=\\begin{pmatrix}{{{3}}}&{{{2}}}&{{{1}}} \\\\{{{1}}}&{{{5}}}&{{{1}}} \\\\{{{2}}}&{{{4}}}&{{{2}}}\\end{pmatrix} $$ $$ \\begin{pmatrix}7&4&5\\end{pmatrix}^{T}=\\begin{pmatrix}7\\\\ 4\\\\ 5\\end{pmatrix} $$"
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter8:2]]",
+      "source_page": 201,
+      "source_block_ids": [
+        "p201:b6",
+        "p201:b7",
+        "p201:b8",
+        "p201:b9",
+        "p201:b10",
+        "p201:b11",
+        "p201:b12",
+        "p201:b13",
+        "p201:b14",
+        "p201:b15"
+      ],
+      "bbox": [
+        113.0,
+        517.0,
+        684.0,
+        548.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A useful identity for transposition is that $$ \\left(\\mathbf{A}\\mathbf{B}\\right)^{T}=\\mathbf{B}^{T}\\mathbf{A}^{T} $$ which holds for any number of matrices, e.g., $$ (\\mathbf{A}\\mathbf{B}\\mathbf{C})^{T}=\\mathbf{C}^{T}\\mathbf{B}^{T}\\mathbf{A}^{T} $$"
+      "content": "Certain dimensional properties must be satisfied when two matrices are to be multiplied. Specifically, since the dot product is defined only for vectors of the same length, for the matrix product MN to be defined, the number of columns in M must equal the number of rows in N. Thus, while",
+      "source_page": 202,
+      "printed_page": 182,
+      "source_block_ids": [
+        "p202:b2"
+      ],
+      "bbox": [
+        134.0,
+        134.0,
+        1094.0,
+        264.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Vectors of statistics are generally written as column vectors and we follow this convention by using lowercase bold letters, e.g., a, for a column vector and a $ ^{T} $ for the corresponding row vector. With this convention, we distinguish between two vector products, the inner product (the dot product) which yields a scalar and the outer product which yields a matrix. For the two n-dimensional column vectors a and b, $$ \\mathbf{a}=\\left(\\begin{array}{c}{a_{1}}\\\\ {\\vdots}\\\\ {a_{n}}\\end{array}\\right)\\qquad\\mathbf{b}=\\left(\\begin{array}{c}{b_{1}}\\\\ {\\vdots}\\\\ {b_{n}}\\end{array}\\right) $$ the inner product is given by $$ \\left(\\begin{array}{l l l}a_{1}&\\cdots&a_{n}\\end{array}\\right)\\left(\\begin{array}{c}b_{1}\\\\ \\vdots\\\\ b_{n}\\end{array}\\right)=\\mathbf{a}^{T}\\mathbf{b}=\\sum_{i=1}^{n}a_{i}b_{i} $$ while the outer product yields the $ n \\times n $ matrix $$ \\begin{pmatrix}a_{1}\\\\\\vdots\\\\a_{n}\\end{pmatrix}\\begin{pmatrix}b_{1}&\\cdots&b_{n}\\end{pmatrix}=\\mathbf{a}\\mathbf{b}^{T}=\\begin{pmatrix}a_{1}b_{1}&a_{1}b_{2}&\\cdots&a_{1}b_{n}\\\\a_{2}b_{1}&a_{2}b_{2}&\\cdots&a_{2}b_{n}\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\a_{n}b_{1}&a_{n}b_{2}&\\cdots&a_{n}b_{n}\\end{pmatrix} $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula030]]",
+      "source_page": 202,
+      "printed_page": 182,
+      "source_block_ids": [
+        "p202:b3"
+      ],
+      "bbox": [
+        264.0,
+        288.0,
+        782.0,
+        360.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "is undefined.",
+      "source_page": 202,
+      "printed_page": 182,
+      "source_block_ids": [
+        "p202:b4"
+      ],
+      "bbox": [
+        807.0,
+        304.0,
+        969.0,
+        340.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Writing $ \\mathbf{M}_{r \\times c} \\mathbf{N}_{c \\times b} = \\mathbf{L}_{r \\times b} $ shows that the inner indices must match, while the outer indices (r and b) give the number of rows and columns of the resulting matrix. The order in which matrices are multiplied is critical. In general, AB is not equal to BA. For example, when the order of the matrices in Example 2 is reversed,",
+      "source_page": 202,
+      "printed_page": 182,
+      "source_block_ids": [
+        "p202:b5"
+      ],
+      "bbox": [
+        137.0,
+        384.0,
+        1095.0,
+        545.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula031]]",
+      "source_page": 202,
+      "printed_page": 182,
+      "source_block_ids": [
+        "p202:b6"
+      ],
+      "bbox": [
+        299.0,
+        539.0,
+        925.0,
+        641.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Since order is important in matrix multiplication, it has specific terminology. For the product AB, we say that matrix B is premultiplied by the matrix A, or that matrix A is postmultiplied by the matrix B.",
+      "source_page": 202,
+      "printed_page": 182,
+      "source_block_ids": [
+        "p202:b7"
+      ],
+      "bbox": [
+        138.0,
+        653.0,
+        1096.0,
+        754.0
+      ]
     }
   ]
 }

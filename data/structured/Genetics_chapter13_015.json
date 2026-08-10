@@ -2,58 +2,69 @@
   "id": "Genetics_chapter13_015",
   "metadata": {
     "chapter": "Genetics_chapter13",
-    "section": "Introduction",
+    "section": "COMPLEX SEGREGATION ANALYSIS",
     "subsections": [
-      "Polygenic Background"
+      "Other Extensions"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Polygenic Background",
+    "section_level_1": "COMPLEX SEGREGATION ANALYSIS",
+    "section_level_2": "Other Extensions",
     "heading_path": [
-      "Introduction",
-      "Polygenic Background"
+      "COMPLEX SEGREGATION ANALYSIS",
+      "Other Extensions"
     ],
-    "display_heading": "Polygenic Background"
+    "display_heading": "COMPLEX SEGREGATION ANALYSIS / Other Extensions",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 387,
+      "printed_page": 367,
+      "source_block_ids": [
+        "p387:b4"
+      ],
+      "bbox": [
+        79.0,
+        446.0,
+        299.0,
+        478.0
+      ],
+      "raw_text": "Other Extensions"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Our final modification assumes a background of segregating polygenes in addition to the major gene. The resulting likelihood functions are often called mixed models in the human genetics literature, although this is a different usage of the term from its standard linear-model interpretation (Chapter 26). A variety of such “mixed-model” likelihoods have been proposed for full-sib families (Elston and Stewart 1971, Morton and MacLean 1974, Ott 1979, Lalouel and Morton 1981, Lalouel et al. 1983, Demenais and Bonney 1989, Fernando et al. 1994, Stricker et al. 1995b)."
+      "content": "Extensions allowing for multivariate traits (Blangero and Konigsberg 1991) and genotype × environment interaction (e.g., Blangero et al. 1990, Konigsberg et al. 1991) have also been developed. Moreover, as we show in Chapter 26, likelihood functions can be constructed to incorporate any number of fixed effects (e.g., effects due to age, sex, or specific environments) using the general linear mixed model. Removing such fixed effects prior to analysis increases the power of tests of oligogenic models. An alternative formulation for likelihoods in pedigrees has been suggested by Bonney (Bonney 1984, 1992; Bonney et al. 1989; Demenais and Bonney 1989). These regressive models have as their parameters correlations between relatives (i.e., the correlations between parent and offspring and between full sibs), rather than explicit genetic parameters to express these correlations.",
+      "source_page": 387,
+      "printed_page": 367,
+      "source_block_ids": [
+        "p387:b5"
+      ],
+      "bbox": [
+        71.0,
+        490.0,
+        1034.0,
+        855.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "We will consider the background polygenes to be completely additive, and assume that the background genetic value $A$ is normally distributed with mean 0 and variance $\\sigma_{A}^{2}$. The phenotypic value of an individual with major-locus genotype $g$ and background polygenic value $A$ is assumed to be normally distributed with mean $\\mu_{g} + A$ and variance $\\sigma_{E}^{2}$. Ignoring common-family effects, if the $j$th sib has background genetic value $A_{o_{j}}$, the conditional likelihood for the $j$th sib in the ith family becomes $$ \\ell(z_{i j}\\mid g_{f},g_{m},A_{o_{j}})=\\sum_{g_{o_{j}}=1}^{3}\\Pr(g_{o_{j}}\\mid g_{f},g_{m})\\varphi(z_{i j},\\mu_{g_{o_{j}}}+A_{o_{j}},\\sigma_{E}^{2}) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The conditioning on offspring genetic value $A_{o}$ is removed in two stages. First, $A_{o}$ is removed by conditioning on parental polygenic values $(A_{f}, A_{m})$, $$ \\ell(z_{i j}\\mid g_{f},g_{m},A_{f},A_{m})=\\int_{-\\infty}^{\\infty}\\ell(z_{i j}\\mid g_{f},g_{m},A_{o_{j}})p(A_{o_{j}}\\mid A_{f},A_{m})d A_{o_{j}} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The additive genetic value of an offspring is assumed to be normally distributed with mean $(A_{f}+A_{m})/2$ and variance $\\sigma_{A}^{2}/2$, so that the conditional density function is $$ p(A_{o}\\mid A_{f},A_{m})=\\varphi\\left(A_{o},\\frac{A_{f}+A_{m}}{2},\\frac{\\sigma_{A}^{2}}{2}\\right) $$ as developed in Example 7 of Chapter 8. Second, averaging over all possible parental background polygenic values, $A_{f}$ and $A_{m}$, gives a likelihood function for the $i$th family that is conditioned only on the major-locus genotypes of the parents, $$ $$"
-    },
-    {
-      "type": "discussion",
-      "content": "& (z_ i g_ f,g_ m)=\\\\ _ - ^ _ - ^ (A_ f,0, _ A ^ 2) (A_ m,0, _ A ^ 2)dA_ f dA_ m \\\\ & $$ $$"
-    },
-    {
-      "type": "discussion",
-      "content": "This expression assumes that parents are drawn at random, are unrelated, and not inbred, but these restrictions can be removed by averaging over an alternative joint distribution of $A_{f}$, $A_{m}$. Finally, Equation 13.22 is substituted into Equation 13.11b to obtain the unconditional likelihood for the entire family. The resulting likelihood has six unknown parameters: the three major-locus means, allele frequency $p$ (assuming genotypes are in Hardy-Weinberg proportions), $\\sigma_{E}^{2}$, and $\\sigma_{A}^{2}$."
-    },
-    {
-      "type": "discussion",
-      "content": "Under the restricted model of an additive polygenic background but no major-locus or common-family effects, the likelihood of an individual conditioned on the polygenic values of its parents is $$ \\ell(z_{i j}\\mid A_{f},A_{m})=\\int_{-\\infty}^{\\infty}\\varphi(z_{i j},\\mu+A_{o},\\sigma_{E}^{2})\\varphi\\left(A_{o},\\frac{A_{f}+A_{m}}{2},\\frac{\\sigma_{A}^{2}}{2}\\right)d A_{o} $$ giving the unconditional likelihood for the ith family as $ \\ell(z_{i.}) = $ $$ \\int_{-\\infty}^{\\infty}\\int_{-\\infty}^{\\infty}\\left[\\prod_{j=1}^{n_{i}}\\ell(z_{ij}\\mid A_{f},A_{m})\\right]\\varphi(A_{f},0,\\sigma_{A}^{2})\\varphi(A_{m},0,\\sigma_{A}^{2})dA_{f}dA_{m} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Incorporation of a common-family effect into either Equation 13.22 or 13.23 is straightforward and follows the logic leading to Equation 13.16."
-    },
-    {
-      "type": "discussion",
-      "content": "The presence of multiple integrals in the common-family effect and polygenic likelihood functions usually means that considerable computing power is required to obtain the MLEs in even modest pedigrees. Knott et al. (1990, 1991a) provide excellent approximations for these Gaussian integrals, decreasing computational requirements. However, since multiple local maxima can occur on the likelihood surface, care must still be taken in numerically computing the global likelihood (Demenais et al. 1986, Borecki et al. 1995)."
+      "content": "Likelihoods for more general pedigrees follow using the same logic as above — conditioning on all possible genotypes and then averaging over these genotypes to obtain the unconditional likelihood. Several computer packages have been developed for complex segregation analysis in small pedigrees containing on the order of tens of individuals (Elston and Stewart 1971, Hasstedt and Cartwright 1979, Lalouel and Morton 1981, Elston et al. 1986, Lange et al. 1988), which are compared by MacCluer et al. (1983) and Konigsberg et al. (1989). However, while small pedigrees can be handled, the computational requirements for complex multigenerational pedigrees (which are common in human genetics) are extremely demanding, making their analysis by classical methods difficult except in special situations. Starting with Elston and Stewart (1971), a number of approaches and approximations have been suggested (Lange and Elston 1975; Cannings et al. 1976, 1978; Ott 1979; Lange and Boehnke 1983; Schork 1991, 1992; Goradia et al. 1992; Fernando et al. 1993; Stricker et al. 1995a). One exciting new approach is the use of intensive resampling methods, such as the Gibbs sampler (German and German 1984, Gelfand and Smith 1990). Here, one randomly samples a large number of the possible genotypes within a pedigree and uses the conditional likelihoods averaged over this set as an estimate of the unconditional likelihood (Thompson and Guo 1991; Guo and Thompson 1992, 1994; Thompson et al. 1993; Janss et al. 1995).",
+      "source_page": 387,
+      "printed_page": 367,
+      "source_block_ids": [
+        "p387:b6"
+      ],
+      "bbox": [
+        58.0,
+        844.0,
+        1030.0,
+        1494.0
+      ]
     }
   ]
 }

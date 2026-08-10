@@ -2,58 +2,294 @@
   "id": "Genetics_chapter21_012",
   "metadata": {
     "chapter": "Genetics_chapter21",
-    "section": "Introduction",
+    "section": "STATISTICAL ISSUES",
     "subsections": [
-      "Bias Due to Selection"
+      "Standard Errors"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter21_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Bias Due to Selection",
+    "section_level_1": "STATISTICAL ISSUES",
+    "section_level_2": "Standard Errors",
     "heading_path": [
-      "Introduction",
-      "Bias Due to Selection"
+      "STATISTICAL ISSUES",
+      "Standard Errors"
     ],
-    "display_heading": "Bias Due to Selection"
+    "display_heading": "STATISTICAL ISSUES / Standard Errors",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 654,
+      "printed_page": 634,
+      "source_block_ids": [
+        "p654:b2"
+      ],
+      "bbox": [
+        141.0,
+        163.0,
+        343.0,
+        192.0
+      ],
+      "raw_text": "Standard Errors"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Selection in the parental generation on the characters of interest or any other characters correlated with them can lead to biased estimates of the genetic correlation by altering the variances and covariances relative to the expectations prior to selection (Van Vleck 1968, Robertson 1977b, Meyer and Thompson 1984). In principle, this problem can be significant in studies of wild populations exposed to natural selection. Here we consider how serious the bias can be and how it might be corrected for."
-    },
-    {
-      "type": "proposition",
-      "content": "Utilizing an early result of Pearson (1903), Lande and Price (1989) showed how the bias can be eliminated under the assumption that the joint distribution of the characters in parents and offspring is multivariate normal in the absence of selection. Under those conditions, the partial regression coefficients in a multiple regression of offspring on parent characters are unaffected by selection, provided all of the characters under selection are actually included in the analysis. Letting C denote the matrix of covariances between characters in unselected offspring and parents, and P be the phenotypic variance-covariance matrix in the unselected parents, then Pearson's result implies $$ \\mathbf{C}\\mathbf{P}^{-1}=\\mathbf{C}_{s}\\mathbf{P}_{s}^{-1} $$ with the subscript s denoting matrices after selection. (Recall from Chapter 8 that partial regression coefficients are obtained as the product of the covariance matrix involving predictor and response variables and the inverse of the variance-covariance matrix for the predictor variables.) Rearranging, the matrix of covariances between unselected parents and offspring can be expressed as $$ \\mathbf{C}=\\mathbf{C}_{s}\\mathbf{P}_{s}^{-1}\\mathbf{P} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The genetic correlations that we wish to estimate are $ \\rho_{A}(i,j) = C_{ij}/\\sqrt{C_{ii}C_{jj}} $, where $ C_{ij} $ denotes the element in row i and column j of C."
-    },
-    {
-      "type": "discussion",
-      "content": "The above relationship shows that the observed covariances in $ C_{s} $ can be transformed into the desired elements of C if the phenotypic variance-covariance matrices before (P) and after $ (\\mathbf{P}_{s}) $ selection are known. The latter is what we observe from the sampled parents. Lande and Price (1989) suggest that the elements of P might be obtained from the unselected offspring (of the selected parents) since a single generation of selection rarely causes a significant alteration in the phenotypic covariance structure of populations. Obviously, this approach is possible only if the forces of selection operating on the parents can be removed from the offspring, and no new ones are added, and if the sources of environmental variation contributing to P in the offspring generation can be kept the same as those in the parental generation. Such conditions may be difficult to achieve in many empirical settings. As a simple example (from Lande and Price 1989) of the magnitude of bias in the genetic correlation that can be induced by selection, suppose that the variance of the first of two characters under investigation has been reduced by a fraction k by selection such that the phenotypic variance in the observed (selected) parents is $ \\sigma_{s}^{2}(1) = (1 - k)\\sigma_{z}^{2}(1) $, where $ \\sigma_{z}^{2}(1) $ is the phenotypic variance of character 1 before selection. Assume further that selection did not operate on any other correlated traits. Since the regression of character 2 on 1 accounts for a fraction $ \\rho_{z}^{2} $ of the variance of character 2 (Equation 3.17), a change in the variance of character 1 k (Fractional change in variance of trait 1) equal to $ -k\\sigma_{z}^{2}(1) $ must induce a change in the variance of character 2 equal to $ -k\\rho_{z}^{2}\\sigma_{z}^{2}(2) $. Therefore, the phenotypic variance for character 2 in the parents after selection is $ \\sigma_{s}^{2}(2)=(1-k\\rho_{z}^{2})\\sigma_{z}^{2}(2) $. From Pearson’s result, we know that selection does not change the regression coefficient, so if selection reduces the phenotypic variance of character 1 by the factor k, it must reduce the phenotypic covariance by the same factor, i.e., $ \\sigma_{s}(1,2)=(1-k)\\sigma_{z}(1,2) $. Substituting these quantities into $ \\mathbf{P}_{s} $ and solving $ \\mathbf{C}_{s}=\\mathbf{C}\\mathbf{P}^{-1}\\mathbf{P}_{s} $, we obtain the expected covariances between parents (p) and offspring (o) after selection, $$ \\sigma_{s}(z_{1o},z_{1p})=\\frac{\\sigma_{A}^{2}(1)}{2}(1-k) $$ $$ \\sigma_{s}(z_{2o},z_{2p})=\\frac{\\sigma_{A}^{2}(2)}{2}\\left(1-\\frac{k\\rho_{A}\\rho_{z}h_{1}}{h_{2}}\\right) $$ $$ \\sigma_{s}(z_{1o},z_{2p})=\\frac{\\sigma_{A}(1,2)}{2}\\left(1-\\frac{k\\rho_{z}h_{1}}{\\rho_{A}h_{2}}\\right) $$ $$ \\sigma_{s}(z_{2o},z_{1p})=\\frac{\\sigma_{A}(1,2)}{2}(1-k) $$ assuming that additive effects are the only source of covariance between relatives."
-    },
-    {
-      "type": "discussion",
-      "content": "These expressions illustrate several important points about estimates of genetic correlations in selected populations (Figure 21.3). First, selection that causes a change in the phenotypic variance of the parents will usually induce changes in all four of the covariances between parents and offspring."
+      "content": "By Taylor expansion (Appendix 1), Reeve (1955) first obtained an expression for the approximate large-sample variance of $ r_{A} $ for the single parent-offspring regression, and Hammond and Nicholas (1972) subsequently generalized this to include all types of parent-offspring combinations:",
+      "source_page": 654,
+      "printed_page": 634,
+      "source_block_ids": [
+        "p654:b3"
+      ],
+      "bbox": [
+        139.0,
+        203.0,
+        1100.0,
+        333.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Second, selection causes the two covariances between characters 1 and 2 to be unequal, i.e., $ \\sigma_s(z_{1o}, z_{2p}) \\neq \\sigma_s(z_{1p}, z_{2o}) $. In some cases, especially when the heritability of the unselected trait is relatively low, the two measures of genetic covariance may actually differ in sign; this requires that $ \\rho_z h_1 / (\\rho_A h_2) > 1/k $. In principle, this property could provide a way of assessing whether selection has caused a significant bias in the parent sample, provided maternal effects can be ruled out. However, in light of the difficulties in procuring accurate estimates of covariances, such a test is not likely to be very powerful. In general, averaging the two types of covariances (Equations 21.16c and d) does not improve the situation much, since both are often biased in the same direction (Figure 21.3)."
+      "content": "[[FORMULA:Genetics_chapter21_formula026]]",
+      "source_page": 654,
+      "printed_page": 634,
+      "source_block_ids": [
+        "p654:b4"
+      ],
+      "bbox": [
+        155.0,
+        372.0,
+        1088.0,
+        522.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Third, in extreme cases, the expected value of the genetic correlation, as defined by Equation 21.6a, can exceed its theoretical limits of $ \\pm1 $ (Figure 21.3). Combining this problem with the substantial sampling variance of genetic correlations, wildly unrealistic genetic correlations are possible with selected populations."
+      "content": "where $A = 1$ or $2$ for regressions involving midparents or single parents (respectively), $B = [(1/h_{1}^{2})+(1/h_{2}^{2})]/2$, $C = 1/(h_{1}h_{2})$, $N$ is the number of families, $n$ is the number of offspring/dam in each family, and $k$ is the number of offspring/sire in each family. For midparent-offspring regressions, $n = k$ is the family size, whereas in the regression of paternal half-sibs on fathers, $n = 1$ and $k$ is the number of dams/sire. Reeve (1955) provides an expression for $n$ for use in unbalanced designs, and VanVleck and Henderson (1961) present an equation for the case in which only a single character is measured in each individual (such as character 1 in parents and character 2 in offspring).",
+      "source_page": 654,
+      "printed_page": 634,
+      "source_block_ids": [
+        "p654:b5"
+      ],
+      "bbox": [
+        140.0,
+        567.0,
+        1101.0,
+        855.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "If any generalization can be drawn from these results, it is that the direction and magnitude of selection bias on the estimation of $ \\rho_{A} $ is difficult to assess in the absence of prior information on the composite parameter $ k\\rho_{z}h_{1}/h_{2} $ and on $ \\rho_{A} $ itself. (The situation is worse, of course, if selection is acting on both traits and/or on additional correlated traits.) Clearly, in situations where selection is likely to be a problem, application of Equation 21.15b prior to analysis is highly desirable."
+      "content": "The preceding formula serves as a useful guide in choosing an adequate experimental design. If the constraint on the investigator is the total number of individuals that can be measured, $ T = Nk $, then it can be seen that $ \\text{Var}(r_A) $ is minimized by maximizing the number of families $ (N) $. (This approach minimizes the first term in the equation, while the remaining terms, whose denominators are $ T = Nk $, are unaffected.) Thus, the optimal design for estimating a genetic correlation is to measure a single offspring from as many families as possible. This recommendation is similar to that for heritability estimation based on parent-offspring regression (Chapter 17).",
+      "source_page": 654,
+      "printed_page": 634,
+      "source_block_ids": [
+        "p654:b6"
+      ],
+      "bbox": [
+        143.0,
+        854.0,
+        1105.0,
+        1142.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The most feasible way to eliminate selection bias is to assay the study population in a highly protective environment, but this approach raises another fundamental issue. If the characters under investigation are sensitive to genotype $ \\times $ environment interaction (Chapter 22), then a change in environment may induce a real shift in $ \\rho_{A} $, so that one is no longer estimating the correlation of interest. Simons and Roff (1996) found that patterns of genetic correlations among morphological characters in crickets are essentially the same when estimated in constant laboratory vs. variable field conditions, although the correspondence among correlations involving life-history traits is less pronounced. On the other hand, Gebhardt and Stearns (1988) found that the genetic correlation between development time and weight at eclosion in Drosophila mercatorum changed sign from one environment to another. This issue is of special concern when one is most interested in quantifying genetic constraints in harsh environments, where selective mortality may be quite high and genetic constraints may play their most important role. Clearly, more work is needed on the degree to which genetic correlations (and covariances) respond to environmental changes."
+      "content": "VanVleck and Henderson (1961) and Brown (1969) used simulation studies to evaluate the degree of accuracy in using Equation 21.13 to estimate the standard error of a genetic correlation by substituting observed for expected quantities. For N < 100, they found that estimates from Equation 21.13 are biased downwards and may underestimate the true sampling variance by as much as an order of magnitude with appreciable frequency. However, if N is on the order of 1,000, and the true value of $ r_{A} $ is not very nearly $ \\pm 1.0 $, Equation 21.13 is quite accurate.",
+      "source_page": 654,
+      "printed_page": 634,
+      "source_block_ids": [
+        "p654:b7"
+      ],
+      "bbox": [
+        144.0,
+        1141.0,
+        1105.0,
+        1367.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "VanVleck and Henderson (1961) and Brown (1969) also examined the sampling distribution of $ r_A $. Provided gene action is additive, Equation 21.6a appears to yield an unbiased estimate of $ r_A $, and provided the true value $ \\rho_A $ is not very nearly $ \\pm 1.0 $, the sampling distribution of $ r_A $ approximates normality as sample sizes become large. Thus, when $ N $ is large, $ 2\\sqrt{\\mathrm{Var}(r_A)} $ usually can be taken as",
+      "source_page": 654,
+      "printed_page": 634,
+      "source_block_ids": [
+        "p654:b8"
+      ],
+      "bbox": [
+        148.0,
+        1366.0,
+        1107.0,
+        1530.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:21.2]]",
+      "source_page": 655,
+      "printed_page": 635,
+      "source_block_ids": [
+        "p655:b6"
+      ],
+      "bbox": [
+        107.0,
+        825.0,
+        970.0,
+        1004.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "an estimate of the 95% confidence interval for $ r_{A} $. It is clear from Figure 21.2 that unless the number of families analyzed is on the order of 1,000 (for single parent-single offspring regressions), the standard error of $ r_{A} $ will be quite large. Certainly, experiments that involve fewer than several hundred individuals should be avoided if at all possible (see also Klein 1974).",
+      "source_page": 655,
+      "printed_page": 635,
+      "source_block_ids": [
+        "p655:b7"
+      ],
+      "bbox": [
+        58.0,
+        1066.0,
+        1018.0,
+        1224.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Several attempts have also been made to obtain expressions for the large-sample variance of correlation coefficients obtained from nested full-sib, half-sib analyses (Mode and Robinson 1959, Robertson 1959b, Tallis 1959, Scheinberg 1966, Abe 1969, Grossman 1970, Hammond and Nicholas 1972, Grossman and Norton 1974). The algebra is quite tedious, and a number of the early papers contain errors or are rather restrictive in their applicability. The most general expression, derived by Hammond and Nicholas (1972), is rather complex, but can be summarized as",
+      "source_page": 655,
+      "printed_page": 635,
+      "source_block_ids": [
+        "p655:b8"
+      ],
+      "bbox": [
+        55.0,
+        1225.0,
+        1018.0,
+        1450.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter21_formula027]]",
+      "source_page": 655,
+      "printed_page": 635,
+      "source_block_ids": [
+        "p655:b9"
+      ],
+      "bbox": [
+        183.0,
+        1463.0,
+        786.0,
+        1535.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where i denotes z, A, or E depending on which type of correlation is being considered, and $ df_{s} $, $ df_{d} $, and $ df_{w} $ refer to the degrees of freedom at the sire, dam, and progeny levels. The terms S, D, and W are of the form",
+      "source_page": 656,
+      "printed_page": 636,
+      "source_block_ids": [
+        "p656:b2"
+      ],
+      "bbox": [
+        139.0,
+        153.0,
+        1100.0,
+        251.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter21_formula028]]",
+      "source_page": 656,
+      "printed_page": 636,
+      "source_block_ids": [
+        "p656:b3"
+      ],
+      "bbox": [
+        171.0,
+        279.0,
+        975.0,
+        356.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ Z_{1} $, $ Z_{2} $, and $ Z_{1,2} $ refer to the mean squares and cross-products of characters 1 and 2 at the level of sires (when calculating S), dams (when calculating D), and replicates (when calculating W). $ V_{1} $, $ V_{2} $, and $ C_{1,2} $ denote the estimates of the variances and covariances at the phenotypic, genetic, and environmental levels, depending upon which correlation is being dealt with; these estimates are derived by the usual route of the method of moments. Finally, the constants a, b, c, and e depend upon the nature of the correlation as follows:",
+      "source_page": 656,
+      "printed_page": 636,
+      "source_block_ids": [
+        "p656:b5"
+      ],
+      "bbox": [
+        142.0,
+        382.0,
+        1100.0,
+        611.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "<table><tr><td></td><td>a</td><td>b</td><td>c</td><td>e</td></tr><tr><td>Phenotypic</td><td>$ k_{1} $</td><td>$ k_{3}-k_{2} $</td><td>$ k_{2}-k_{1}+k_{3}(k_{1}-1) $</td><td>$ k_{1}k_{3} $</td></tr><tr><td>Genetic</td><td>1</td><td>$ -k_{2}/k_{1} $</td><td>$ (k_{2}-k_{1})/k_{1} $</td><td>$ k_{3}/4 $</td></tr><tr><td>Environmental</td><td>-2</td><td>$ 2k_{2}/k_{1} $</td><td>$ [(k_{1}-k_{2})/k_{1}]+k_{3} $</td><td>$ k_{3} $</td></tr></table>",
+      "source_page": 656,
+      "printed_page": 636,
+      "source_block_ids": [
+        "p656:b6"
+      ],
+      "bbox": [
+        176.0,
+        645.0,
+        1032.0,
+        800.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "with the $ k_{i} $ coefficients being defined in Table 18.3.",
+      "source_page": 656,
+      "printed_page": 636,
+      "source_block_ids": [
+        "p656:b7"
+      ],
+      "bbox": [
+        142.0,
+        842.0,
+        748.0,
+        874.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Robertson (1959b) and Tallis (1959) have considered the optimal design for estimating the genetic correlation from a nested analysis of variance and covariance, concluding that the design that minimizes the sampling variance of the heritabilities also applies to the genetic correlations. Thus, the recommendations of Chapter 18 may be referred to.",
+      "source_page": 656,
+      "printed_page": 636,
+      "source_block_ids": [
+        "p656:b8"
+      ],
+      "bbox": [
+        142.0,
+        874.0,
+        1102.0,
+        1034.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The important message of this section is that attaining a reasonable degree of confidence in any study of genetic correlation requires a very substantial data base. Often, with sample sizes less than a few hundred individuals, the strongest statement that can be made is whether the correlation is significantly positive or negative. The conventional approach in regression analysis, and the one that we focused on in the preceding paragraphs, is to take $ \\rho = 0 $ as the null hypothesis. For genetic studies concerned with constraints on the evolutionary process, an alternative is to let $ \\rho_{A} = \\pm 1 $ be the null hypothesis and to evaluate it against the observed data using resampling procedures.",
+      "source_page": 656,
+      "printed_page": 636,
+      "source_block_ids": [
+        "p656:b9"
+      ],
+      "bbox": [
+        143.0,
+        1035.0,
+        1106.0,
+        1324.0
+      ]
     }
   ]
 }

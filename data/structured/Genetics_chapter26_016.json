@@ -2,74 +2,330 @@
   "id": "Genetics_chapter26_016",
   "metadata": {
     "chapter": "Genetics_chapter26",
-    "section": "Introduction",
+    "section": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS",
     "subsections": [
       "Repeated Records"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
+    "section_level_1": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS",
     "section_level_2": "Repeated Records",
     "heading_path": [
-      "Introduction",
+      "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS",
       "Repeated Records"
     ],
-    "display_heading": "Repeated Records"
+    "display_heading": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS / Repeated Records",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 781,
+      "printed_page": 761,
+      "source_block_ids": [
+        "p781:b11"
+      ],
+      "bbox": [
+        44.0,
+        1294.0,
+        274.0,
+        1328.0
+      ],
+      "raw_text": "Repeated Records"
+    }
   },
   "blocks": [
     {
-      "type": "proposition",
-      "content": "Another situation in which correlations are expected among residual errors arises when multiple observations are made on individuals, a common procedure used to reduce measurement error. Here, assuming dominance is of negligible importance, the residual error can be described as $p + e$, where $p$ is the “permanent” environmental effect common to all observations on the same individual, and $e$ is the residual error between observations of the same individual due, for example, to measurement error and changes in some environmental factors. Recall from Chapter 6 that the repeatability of a character (r) is defined to be the correlation between different measurements in the same individual. If j and k denote different observations on the same individual i, the covariance between repeated measurements is $$ \\begin{aligned}\\sigma(y_{ij},y_{ik})=r\\sigma_{y}^{2}&=\\sigma(a_{i}+p_{i}+e_{ij},a_{i}+p_{i}+e_{ik})\\\\&=\\sigma_{A}^{2}+\\sigma_{P}^{2}\\end{aligned} $$ which follows from the assumption that the residual errors for the same individual are uncorrelated. Assuming purely additive gene action, $ \\sigma_{A}^{2} = h^{2}\\sigma_{y}^{2} $ of the covariance is due to genetic effects, leaving $ (r - h^{2})\\sigma_{y}^{2} = \\sigma_{P}^{2} $ as the covariance due to permanent environmental effects."
+      "type": "discussion",
+      "content": "Another situation in which correlations are expected among residual errors arises when multiple observations are made on individuals, a common procedure used to reduce measurement error. Here, assuming dominance is of negligible importance, the residual error can be described as $ p + e $, where p is the “permanent” environmental effect common to all observations on the same individual, and e is the residual error between observations of the same individual due, for example, to measurement error and changes in some environmental factors. Recall from Chapter 6 that the repeatability of a character (r) is defined to be the correlation between different measurements in the same individual. If j and k denote different observations on the same individual i, the covariance between repeated measurements is",
+      "source_page": 781,
+      "printed_page": 761,
+      "source_block_ids": [
+        "p781:b12",
+        "p782:b2"
+      ],
+      "bbox": [
+        38.0,
+        1335.0,
+        1000.0,
+        1546.0
+      ],
+      "source_page_end": 782
     },
     {
       "type": "discussion",
-      "content": "One approach to estimating breeding values when repeated measures are contained in the data set is to continue to apply the simple animal model (Equation 26.8), with suitable Z to accommodate multiple records, modifying the residual covariance matrix R such that"
+      "content": "[[FORMULA:Genetics_chapter26_formula092]]",
+      "source_page": 782,
+      "printed_page": 762,
+      "source_block_ids": [
+        "p782:b3"
+      ],
+      "bbox": [
+        331.0,
+        334.0,
+        907.0,
+        422.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "$$ R_{j k}=\\left\\{\\begin{array}{l l}{(1-h^{2})\\sigma_{y}^{2}}&{j=k\\mathrm{~(t h e~s a m e~m e a s u r e m e n t~i n~a n~i n d i v i d u a l)}}\\\\ {(r-h^{2})\\sigma_{y}^{2}}&{j\\mathrm{~a n d~}k\\mathrm{~a r e~r e p e a t e d~m e a s u r e s}}\\\\ {0}&{j\\mathrm{~a n d~}k\\mathrm{~a r e~m e a s u r e s~o n~d i f f e r e n t~i n d i v i d u a l s.}}\\end{array}\\right. $$"
+      "content": "which follows from the assumption that the residual errors for the same individual are uncorrelated. Assuming purely additive gene action, $ \\sigma_A^2 = h^2 \\sigma_y^2 $ of the covariance is due to genetic effects, leaving $ (r - h^2) \\sigma_y^2 = \\sigma_P^2 $ as the covariance due to permanent environmental effects.",
+      "source_page": 782,
+      "printed_page": 762,
+      "source_block_ids": [
+        "p782:b4"
+      ],
+      "bbox": [
+        143.0,
+        447.0,
+        1101.0,
+        586.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Since the resulting covariance matrix is not diagonal, it is not always easily inverted, a potentially serious complication for extremely large data sets."
+      "content": "One approach to estimating breeding values when repeated measures are contained in the data set is to continue to apply the simple animal model (Equation 26.8), with suitable Z to accommodate multiple records, modifying the residual covariance matrix R such that",
+      "source_page": 782,
+      "printed_page": 762,
+      "source_block_ids": [
+        "p782:b5"
+      ],
+      "bbox": [
+        143.0,
+        575.0,
+        1103.0,
+        714.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "An alternative approach follows the same rationale as the model incorporating dominance, i.e., explicitly accounting for shared environmental effects (rather than incorporating them into the residual error structure) by introducing a new random factor into the model, such that $$ y_{ij}=\\mu+a_{i}+p_{i}+e_{ij} $$"
+      "content": "[[FORMULA:Genetics_chapter26_formula093]]",
+      "source_page": 782,
+      "printed_page": 762,
+      "source_block_ids": [
+        "p782:b6"
+      ],
+      "bbox": [
+        159.0,
+        726.0,
+        989.0,
+        856.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "(Henderson 1977a). With this structure, all residual effects are again uncorrelated with common variance $ \\sigma_{E}^{2} = (1 - r)\\sigma_{y}^{2} $."
+      "content": "Since the resulting covariance matrix is not diagonal, it is not always easily inverted, a potentially serious complication for extremely large data sets.",
+      "source_page": 782,
+      "printed_page": 762,
+      "source_block_ids": [
+        "p782:b8"
+      ],
+      "bbox": [
+        149.0,
+        874.0,
+        1106.0,
+        951.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Suppose a total of k measurements are made on n individuals (such a balanced design is not essential). We can write this in the general mixed-model framework as $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}(\\mathbf{a}+\\mathbf{p})+\\mathbf{e}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}\\mathbf{a}+\\mathbf{Z}\\mathbf{p}+\\mathbf{e} $$ where $ \\mathbf{a}^{T} = (a_{1}, \\cdots, a_{n})^{T} $ and $ \\mathbf{p}^{T} = (p_{1}, \\cdots, p_{n})^{T} $, and each row of the $ nk \\times n $ incidence matrix Z has all zeros except a one at the position corresponding to the individual measured. This model has the resulting covariance matrices $$ \\sigma(\\mathbf{a},\\mathbf{a})=h^{2}\\sigma_{y}^{2}\\mathbf{A},\\qquad\\sigma(\\mathbf{p},\\mathbf{p})=\\left(r-h^{2}\\right)\\sigma_{y}^{2}\\mathbf{I},\\qquad\\sigma(\\mathbf{e},\\mathbf{e})=\\left(1-r\\right)\\sigma_{y}^{2}\\mathbf{I} $$ with a, p, and e being assumed to be uncorrelated. Applying Equation 26.19b and removing the common factor $\\sigma_{y}^{2}$ from all expressions, the mixed-model equations become $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}&\\mathbf{X}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{A}\\mathbf{A}^{-1}&\\mathbf{Z}^{T}\\mathbf{Z}\\\\\\mathbf{Z}^{T}\\mathbf{X}&\\mathbf{Z}^{T}\\mathbf{Z}&\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{P}\\mathbf{I}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}\\\\\\widehat{\\mathbf{p}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\\\\\mathbf{Z}^{T}\\mathbf{y}\\end{pmatrix} $$ where $$ \\lambda_{A}=\\frac{\\sigma_{E}^{2}}{\\sigma_{A}^{2}}=\\frac{1-r}{h^{2}},\\qquad\\lambda_{P}=\\frac{\\sigma_{E}^{2}}{\\sigma_{P}^{2}}=\\frac{1-r}{r-h^{2}} $$"
+      "content": "An alternative approach follows the same rationale as the model incorporating dominance, i.e., explicitly accounting for shared environmental effects (rather than incorporating them into the residual error structure) by introducing a new random factor into the model, such that",
+      "source_page": 782,
+      "printed_page": 762,
+      "source_block_ids": [
+        "p782:b9"
+      ],
+      "bbox": [
+        150.0,
+        938.0,
+        1109.0,
+        1080.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 10. To compare the two different methods for dealing with repeated records, suppose three unrelated and noninbred individuals are measured, with two observations on individual one ($ y_{1}=7 $, $ y_{2}=8 $), three observations on individual two ($ y_{3}=6 $, $ y_{4}=6 $, $ y_{5}=5 $), and one observation on individual three ($ y_{6}=9 $). Assume that the only fixed factor is the mean and that the character has heritability $ h^{2}=0.4 $ and repeatability r=0.5, giving $ 1-h^{2}=0.6 $ and $ r-h^{2}=0.1 $. For either formulation, we have $$ \\mathbf{y}=\\begin{pmatrix}7\\\\ 8\\\\ 6\\\\ 6\\\\ 5\\\\ 9\\end{pmatrix},\\quad\\boldsymbol{\\beta}=(\\mu),\\quad\\mathbf{X}=\\begin{pmatrix}1\\\\ 1\\\\ 1\\\\ 1\\\\ 1\\end{pmatrix},\\quad\\mathbf{Z}=\\begin{pmatrix}1&0&0\\\\ 1&0&0\\\\ 0&1&0\\\\ 0&1&0\\\\ 0&1&0\\\\ 0&0&1\\end{pmatrix} $$"
+      "content": "[[FORMULA:Genetics_chapter26_formula094]]",
+      "source_page": 782,
+      "printed_page": 762,
+      "source_block_ids": [
+        "p782:b10"
+      ],
+      "bbox": [
+        496.0,
+        1107.0,
+        766.0,
+        1142.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Since all three individuals are assumed to be unrelated, $\\mathbf{A}=\\mathbf{I}$."
+      "content": "(Henderson 1977a). With this structure, all residual effects are again uncorrelated with common variance $ \\sigma_{E}^{2} = (1 - r)\\sigma_{y}^{2} $.",
+      "source_page": 782,
+      "printed_page": 762,
+      "source_block_ids": [
+        "p782:b12"
+      ],
+      "bbox": [
+        155.0,
+        1166.0,
+        1111.0,
+        1241.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "To apply the permanent-effects model $y_{i}=\\mu+a_{i}+p_{i}+e_{i}$, note that $$ \\lambda_{A}=\\frac{1-r}{h^{2}}=\\frac{1-0.5}{0.4}=1.25,\\qquad\\lambda_{P}=\\frac{1-r}{r-h^{2}}=\\frac{1-0.5}{0.5-0.4}=5, $$ $$ \\mathbf{X}^{T}\\mathbf{X}=6,\\qquad\\mathbf{X}^{T}\\mathbf{y}=41, $$ $$ \\mathbf{Z}^{T}\\mathbf{X}=(\\mathbf{X}^{T}\\mathbf{Z})^{T}=\\begin{pmatrix}2\\\\ 3\\\\ 1\\end{pmatrix},\\qquad\\mathbf{Z}^{T}\\mathbf{y}=\\begin{pmatrix}15\\\\ 17\\\\ 9\\end{pmatrix},\\qquad\\mathbf{Z}^{T}\\mathbf{Z}=\\begin{pmatrix}2&0&0\\\\ 0&3&0\\\\ 0&0&1\\end{pmatrix}, $$ $$ \\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{A}\\mathbf{A}^{-1}=\\begin{pmatrix}{{{3.25}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{4.25}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{2.25}}}\\end{pmatrix},\\qquad\\mathbf{Z}^{T}\\mathbf{Z}+\\lambda_{P}\\mathbf{I}=\\begin{pmatrix}{{{7}}}&{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{8}}}&{{{0}}} \\\\{{{0}}}&{{{0}}}&{{{6}}}\\end{pmatrix} $$ giving the MMEs (Equation 26.28a) as $$ \\begin{pmatrix}6&2&3&1&2&3&1\\\\2&3.25&0&0&2&0&0\\\\3&0&4.25&0&0&3&0\\\\1&0&0&2.25&0&0&1\\\\2&2&0&0&7&0&0\\\\3&0&3&0&0&8&0\\\\1&0&0&1&0&0&6\\end{pmatrix}\\begin{pmatrix}\\widehat{\\mu}\\\\\\widehat{a}_{1}\\\\\\widehat{a}_{2}\\\\\\widehat{a}_{3}\\\\\\widehat{p}_{1}\\\\\\widehat{p}_{2}\\\\\\widehat{p}_{3}\\end{pmatrix}=\\begin{pmatrix}41\\\\15\\\\17\\\\9\\\\15\\\\17\\\\9\\end{pmatrix} $$ which has solutions $$ \\widehat{\\mu}\\simeq7.174,\\qquad\\left(\\begin{matrix}{\\widehat{a}_{1}}\\\\ {\\widehat{a}_{2}}\\\\ {\\widehat{a}_{3}}\\\\ \\end{matrix}\\right)\\simeq\\left(\\begin{matrix}{0.174}\\\\ {-0.904}\\\\ {0.730}\\\\ \\end{matrix}\\right),\\qquad\\left(\\begin{matrix}{\\widehat{p}_{1}}\\\\ {\\widehat{p}_{2}}\\\\ {\\widehat{p}_{3}}\\\\ \\end{matrix}\\right)\\simeq\\left(\\begin{matrix}{0.043}\\\\ {-0.226}\\\\ {0.183}\\\\ \\end{matrix}\\right) $$"
+      "content": "Suppose a total of k measurements are made on n individuals (such a balanced design is not essential). We can write this in the general mixed-model framework as",
+      "source_page": 782,
+      "printed_page": 762,
+      "source_block_ids": [
+        "p782:b13"
+      ],
+      "bbox": [
+        155.0,
+        1228.0,
+        1113.0,
+        1338.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Conversely, applying the simple animal model $y_{i}=\\mu+a_{i}+e_{i}$, from Equation 26.25 the covariance matrix for the residual errors becomes $$ \\mathbf{R}=\\sigma_{y}^{2}\\left(\\begin{matrix}{0.5}&{0.1}&{0}&{0}&{0}&{0}\\\\ {0.1}&{0.5}&{0}&{0}&{0}&{0}\\\\ {0}&{0}&{0.5}&{0.1}&{0.1}&{0}\\\\ {0}&{0}&{0.1}&{0.5}&{0.1}&{0}\\\\ {0}&{0}&{0.1}&{0.1}&{0.5}&{0}\\\\ {0}&{0}&{0}&{0}&{0}&{0.5}\\\\ \\end{matrix}\\right) $$"
+      "content": "[[FORMULA:Genetics_chapter26_formula095]]",
+      "source_page": 782,
+      "printed_page": 762,
+      "source_block_ids": [
+        "p782:b14"
+      ],
+      "bbox": [
+        362.0,
+        1330.0,
+        911.0,
+        1369.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Likewise, $\\mathbf{G}=h^{2}\\sigma_{y}^{2}\\mathbf{I}$, and hence $\\mathbf{G}^{-1}=(h^{2}\\sigma_{y}^{2})^{-1}\\mathbf{I}$. Removing the factor $\\sigma_{y}^{2}$ common to all expressions gives $$ \\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\simeq8.27,\\qquad\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{X}=(\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{Z})^{T}\\simeq\\left(\\begin{matrix}{2.86}\\\\ {3.75}\\\\ {1.67}\\\\ \\end{matrix}\\right) $$ $$ \\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\mathbf{G}^{-1}=\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{Z}+\\frac{1}{h^{2}}\\mathbf{I}\\simeq\\begin{pmatrix}5.36&0&0\\\\0&6.25&0\\\\0&0&4.17\\end{pmatrix} $$ $$ \\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}=57.68,\\quad\\mathbf{Z}^{T}\\mathbf{R}^{-1}\\mathbf{y}\\simeq\\begin{pmatrix}21.43\\\\ 21.25\\\\ 15\\end{pmatrix} $$"
+      "content": "where $ \\mathbf{a}^{T} = (a_{1}, \\cdots, a_{n})^{T} $ and $ \\mathbf{p}^{T} = (p_{1}, \\cdots, p_{n})^{T} $, and each row of the $ nk \\times n $ incidence matrix Z has all zeros except a one at the position corresponding to the individual measured. This model has the resulting covariance matrices",
+      "source_page": 782,
+      "printed_page": 762,
+      "source_block_ids": [
+        "p782:b16"
+      ],
+      "bbox": [
+        156.0,
+        1378.0,
+        1118.0,
+        1490.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Substituting into Equation 26.5 gives the MMEs $$ \\begin{pmatrix}{{{8.27}}}&{{{2.86}}}&{{{3.75}}}&{{{1.67}}} \\\\{{{2.86}}}&{{{5.36}}}&{{{0}}}&{{{0}}} \\\\{{{3.75}}}&{{{0}}}&{{{6.25}}}&{{{0}}} \\\\{{{1.67}}}&{{{0}}}&{{{0}}}&{{{4.17}}}\\end{pmatrix}\\begin{pmatrix}{{{\\widehat{\\mu}}}} \\\\{{{\\widehat{a}_{1}}}} \\\\{{{\\widehat{a}_{2}}}} \\\\{{{\\widehat{a}_{3}}}}\\end{pmatrix}=\\begin{pmatrix}{{{57.68}}} \\\\{{{21.43}}} \\\\{{{21.25}}} \\\\{{{15}}}\\end{pmatrix} $$"
+      "content": "[[FORMULA:Genetics_chapter26_formula096]]",
+      "source_page": 782,
+      "printed_page": 762,
+      "source_block_ids": [
+        "p782:b17"
+      ],
+      "bbox": [
+        217.0,
+        1502.0,
+        1062.0,
+        1558.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "with a, p, and e being assumed to be uncorrelated. Applying Equation 26.19b and removing the common factor $ \\sigma_{y}^{2} $ from all expressions, the mixed-model equations become",
+      "source_page": 783,
+      "printed_page": 763,
+      "source_block_ids": [
+        "p783:b2"
+      ],
+      "bbox": [
+        59.0,
+        128.0,
+        1019.0,
+        241.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter26_formula097]]",
+      "source_page": 783,
+      "printed_page": 763,
+      "source_block_ids": [
+        "p783:b3"
+      ],
+      "bbox": [
+        134.0,
+        242.0,
+        848.0,
+        360.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where",
+      "source_page": 783,
+      "printed_page": 763,
+      "source_block_ids": [
+        "p783:b5"
+      ],
+      "bbox": [
+        57.0,
+        373.0,
+        142.0,
+        403.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter26_formula098]]",
+      "source_page": 783,
+      "printed_page": 763,
+      "source_block_ids": [
+        "p783:b6"
+      ],
+      "bbox": [
+        278.0,
+        400.0,
+        787.0,
+        479.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter26:10]]",
+      "source_page": 783,
+      "source_block_ids": [
+        "p783:b8",
+        "p783:b9",
+        "p783:b10",
+        "p783:b11",
+        "p783:b12",
+        "p783:b13",
+        "p783:b14",
+        "p783:b15",
+        "p784:b2",
+        "p784:b3",
+        "p784:b4",
+        "p784:b5",
+        "p784:b6",
+        "p784:b7",
+        "p784:b8",
+        "p784:b9",
+        "p784:b10",
+        "p784:b11",
+        "p784:b12",
+        "p784:b13",
+        "p785:b2"
+      ],
+      "bbox": [
+        95.0,
+        582.0,
+        964.0,
+        798.0
+      ]
     }
   ]
 }

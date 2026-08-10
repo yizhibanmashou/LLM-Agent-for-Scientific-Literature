@@ -2,51 +2,435 @@
   "id": "Genetics_chapter7_009",
   "metadata": {
     "chapter": "Genetics_chapter7",
-    "section": "Introduction",
+    "section": "THE EFFECTS OF LINKAGE AND GAMETIC PHASE DISEQUILIBRIUM",
     "subsections": [
-      "POLYPLOIDY"
+      "Gametic Phase Disequilibrium"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter7_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "7.5"
-    ],
-    "section_level_1": "Introduction",
-    "section_level_2": "POLYPLOIDY",
+    "section_level_1": "THE EFFECTS OF LINKAGE AND GAMETIC PHASE DISEQUILIBRIUM",
+    "section_level_2": "Gametic Phase Disequilibrium",
     "heading_path": [
-      "Introduction",
-      "POLYPLOIDY"
+      "THE EFFECTS OF LINKAGE AND GAMETIC PHASE DISEQUILIBRIUM",
+      "Gametic Phase Disequilibrium"
     ],
-    "display_heading": "POLYPLOIDY",
-    "table_reference_keys": [
-      "chapter7:7.5"
-    ]
+    "display_heading": "THE EFFECTS OF LINKAGE AND GAMETIC PHASE DISEQUILIBRIUM / Gametic Phase Disequilibrium",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 166,
+      "printed_page": 146,
+      "source_block_ids": [
+        "p166:b2"
+      ],
+      "bbox": [
+        148.0,
+        136.0,
+        537.0,
+        167.0
+      ],
+      "raw_text": "Gametic Phase Disequilibrium"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Because of the high incidence of polyploidy in plants, some attention needs to be given to its effects on the covariance between relatives. We will confine our comments to single-locus effects in a randomly mating tetraploid population and assume that the four alleles at each locus assert independently during meiosis. The results for this special case were first worked out by Kempthorne (1953, 1957). As in the case of diploids, the genotypic values of tetraploids can be partitioned into several independent effects defined in a least-squares sense. However, because four alleles are present at each locus, in addition to additive (single-gene) and dominance (gene-pair) effects, triallelic and quadra-allelic effects must be considered (Chapter 5). Thus, the single-locus genotypic value of individual x is written $$ \\begin{aligned}G_{ijkl}(\\boldsymbol{x})&=\\mu_{G}+[\\alpha_{i}^{x}+\\alpha_{j}^{x}+\\alpha_{k}^{x}+\\alpha_{l}^{x}]+[\\delta_{ij}^{x}+\\delta_{ik}^{x}+\\delta_{il}^{x}+\\delta_{jk}^{x}+\\delta_{jl}^{x}+\\delta_{kl}^{x}]\\\\&\\quad+[\\gamma_{ijk}^{x}+\\gamma_{ijl}^{x}+\\gamma_{ikl}^{x}+\\gamma_{jkl}^{x}]+\\tau_{ijkl}^{x}\\end{aligned}\\quad($$ As in the case of diploids, the expected value of each of the effects is zero. Thus, the additive and dominance genetic variances for a locus are defined to be $ \\sigma_{A}^{2} = 4E(\\alpha^{2}) $ and $ \\sigma_{D}^{2} = 6E(\\delta^{2}) $, while the trigenic and quadragenic variances are $ \\sigma_{T}^{2} = 4E(\\gamma^{2}) $ and $ \\sigma_{Q}^{2} = E(\\tau^{2}) $."
+      "content": "Further complications arise when loci are in gametic phase disequilibrium since this can cause a covariance between the effects of genes carried in the same gamete. The problem has been addressed by Weir et al. (1980), who ignored epistasis and assumed random mating, as we do below. In Chapter 5 (Equations 5.16a,b), we saw that in the presence of gametic phase disequilibrium, the total genetic variance can be expressed as",
+      "source_page": 166,
+      "printed_page": 146,
+      "source_block_ids": [
+        "p166:b3"
+      ],
+      "bbox": [
+        145.0,
+        178.0,
+        1106.0,
+        369.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The covariances between tetraploid relatives are obtained in the same manner as in the case of diploids. For example, the additive genetic covariance involves 16 cross-products of additive effects (four in individual $ x \\times $ four in individual $ y $). Each of these cross-products has expectation $ E(\\alpha^2) $ if the two genes are identical by descent, the probability of which is $ \\Theta_{xy} $, and expectation zero otherwise. Thus, the expected additive genetic covariance between relatives is $ 16\\Theta_{xy}E(\\alpha^2) = 4\\Theta_{xy}\\sigma_A^2 $. In the case of digenic interaction, there are 36 cross-products to consider, each of which has expectation $ E(\\delta^2) $ if both members of the pair of alleles in $ x $ are identical by descent with those in the pair from $ y $ (probability $ \\Delta_{xy} $). Therefore, the digenic covariance is $ 36\\Delta_{xy}E(\\delta^2) = 6\\Delta_{xy}\\sigma_D^2 $. Letting $ \\varphi_{xy} $ be the probability that all members of random three-gene sets are identical by descent, and $ \\phi_{xy} $ be"
+      "content": "[[FORMULA:Genetics_chapter7_formula019]]",
+      "source_page": 166,
+      "printed_page": 146,
+      "source_block_ids": [
+        "p166:b4"
+      ],
+      "bbox": [
+        444.0,
+        366.0,
+        805.0,
+        405.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Relationship</td><td style='text-align: center; word-wrap: break-word;'>$ \\Theta_{xy} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\Delta_{xy} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\varphi_{xy} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\phi_{xy} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Parent-offspring</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{8} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{36} $</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Grandparent-grandchild</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{16} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{216} $</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Full sibs, dizygotic twins</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{8} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{27} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{48} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{36} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Half sibs</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{16} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{216} $</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Uncle(aunt)-nephew(neice)</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{16} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{648} $</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Monozygotic twins</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{4} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{6} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{4} $</td><td style='text-align: center; word-wrap: break-word;'>1</td></tr></table>"
+      "content": "where $ \\sigma_{A,A} $ is the contribution due to covariance of additive effects of nonalleles within gametes (the additive disequilibrium covariance), and $ \\sigma_{D,D} $ is the contribution of covariance due to dominance effects of different loci within individuals (the dominance disequilibrium covariance).",
+      "source_page": 166,
+      "printed_page": 146,
+      "source_block_ids": [
+        "p166:b6"
+      ],
+      "bbox": [
+        145.0,
+        418.0,
+        1105.0,
+        545.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Source: Kempthorne 1957. the probability that the complete single-locus tetraploid genotypes of x and y are identical by descent, the trigenic and quadragenic covariances between relatives are $ 4\\varphi_{xy}\\sigma_{T}^{2} $ and $ \\phi_{xy}\\sigma_{Q}^{2} $. Thus, assuming random mating, and no epistasis, linkage, or gametic phase disequilibrium, the covariance between tetraploid relatives can be summarized as $$ \\sigma_{G}(x,y)=4\\Theta_{x y}\\sigma_{A}^{2}+6\\Delta_{x y}\\sigma_{D}^{2}+4\\varphi_{x y}\\sigma_{T}^{2}+\\phi_{x y}\\sigma_{Q}^{2} $$"
+      "content": "We now consider the genetic covariance between relatives derived from a base population displaying gametic phase disequilibria. The covariance between relatives attributable to equilibrium additive and dominance genetic variance ( $ \\sigma_A^2 $ and $ \\sigma_D^2 $) is the same as given above, so it is only necessary to consider the additional contributions resulting from $ \\sigma_{A,A} $ and $ \\sigma_{D,D} $. For situations in which the study population is being maintained in a steady state of disequilibrium from generation to generation (by processes such as natural selection, migration, and/or nonrandom mating), the modifications to the theory are simple — all of the preceding formulations still apply, except that $ (\\sigma_A^2 + \\sigma_{A,A}) $ replaces $ \\sigma_A^2 $, and $ (\\sigma_D^2 + \\sigma_{D,D}) $ replaces $ \\sigma_D^2 $.",
+      "source_page": 166,
+      "printed_page": 146,
+      "source_block_ids": [
+        "p166:b7"
+      ],
+      "bbox": [
+        145.0,
+        547.0,
+        1106.0,
+        868.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The coefficients for a number of common relationships are given in [[SEE_TABLE:7.5]]."
+      "content": "The more interesting situation arises when a study population, initially in gametic phase disequilibrium, is allowed to mate randomly in an environment in which the forces maintaining disequilibria are relaxed. In this case, the covariances between relatives change through time as recombination causes the disequilibrium components of covariance to decay towards zero. In the following, we will consider only the simple (and most common) situation in which the ancestors leading to a relationship are all members of the same generation; more general results can be found in Weir et al. (1980).",
+      "source_page": 166,
+      "printed_page": 146,
+      "source_block_ids": [
+        "p166:b8"
+      ],
+      "bbox": [
+        148.0,
+        868.0,
+        1107.0,
+        1121.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "An interesting consequence of polyploidy is that the covariance between non-collateral relatives (individuals that do not share both parents) can be influenced by dominance. This effect occurs because parents pass two alleles on to their progeny. Thus, the covariance between parent and offspring is $ \\sigma_A^2/2 + \\sigma_D^2/6 $, as compared to $ \\sigma_A^2/2 $ in the case of diploidy. Only the resemblance between collateral relatives is influenced by trigenic and quadragenic variance."
+      "content": "We start by considering the additive component of disequilibrium covariance. Returning to Equation 7.10, we make the distinction that allele i at the first locus and allele k at the second locus are inherited in one gamete, whereas genes j and l are inherited in the other gamete. By using the expression for the variance of a sum, Equation 3.11b, the additive equilibrium genetic variance is defined to be",
+      "source_page": 166,
+      "printed_page": 146,
+      "source_block_ids": [
+        "p166:b9"
+      ],
+      "bbox": [
+        147.0,
+        1123.0,
+        1108.0,
+        1311.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula020]]",
+      "source_page": 166,
+      "printed_page": 146,
+      "source_block_ids": [
+        "p166:b10"
+      ],
+      "bbox": [
+        395.0,
+        1309.0,
+        860.0,
+        1349.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "On the other hand, the additive disequilibrium covariance in the base population is",
+      "source_page": 166,
+      "printed_page": 146,
+      "source_block_ids": [
+        "p166:b12"
+      ],
+      "bbox": [
+        149.0,
+        1360.0,
+        1108.0,
+        1423.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula021]]",
+      "source_page": 166,
+      "printed_page": 146,
+      "source_block_ids": [
+        "p166:b13"
+      ],
+      "bbox": [
+        433.0,
+        1424.0,
+        823.0,
+        1459.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Note that terms involving cross-gamete expectations, e.g., $ E(\\alpha_i\\alpha_j) $ and $ E(\\alpha_i\\alpha_l) $, do not appear in this expression because their expected values are zero under the assumption of random mating (as there is no correlation between gametes). In Chapter 5, we found that in the absence of restoring forces, gametic phase disequilibrium is reduced by a fraction c after each generation of random mating. Thus, the additive disequilibrium covariance remaining after t generations is",
+      "source_page": 166,
+      "printed_page": 146,
+      "source_block_ids": [
+        "p166:b15",
+        "p167:b2"
+      ],
+      "bbox": [
+        150.0,
+        1472.0,
+        1105.0,
+        1539.0
+      ],
+      "source_page_end": 167
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula022]]",
+      "source_page": 167,
+      "printed_page": 147,
+      "source_block_ids": [
+        "p167:b3"
+      ],
+      "bbox": [
+        379.0,
+        318.0,
+        689.0,
+        354.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "To obtain the covariance between relatives associated with the additive equilibrium component of variance, we take expectations of the cross-products of additive effects of genes in two individuals. A similar procedure is followed in obtaining the covariance due to $ \\sigma_{A,A} $, except that we now focus on pairs of genes at different loci, one in each member of the relationship,",
+      "source_page": 167,
+      "printed_page": 147,
+      "source_block_ids": [
+        "p167:b5"
+      ],
+      "bbox": [
+        54.0,
+        385.0,
+        1016.0,
+        546.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula023]]",
+      "source_page": 167,
+      "printed_page": 147,
+      "source_block_ids": [
+        "p167:b6"
+      ],
+      "bbox": [
+        126.0,
+        576.0,
+        887.0,
+        661.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "For any of the terms in this equation to be nonzero, the genes in them must be equivalent by descent. The key to solving Equation 7.15d is the fact that the probability of equivalence by descent for genes at different loci in different gametes is the same as the probability of identity by descent for alleles at the same locus. The reason for this equivalence is that when parents produce a gamete pool, although the two loci (A and B) may be linked, under random mating the gene at the A locus in one parental gamete is independent of the gene at the B locus in a second gamete. Thus, the probability of any term in Equation 7.15d being nonzero is $ \\Theta_{xy} $.",
+      "source_page": 167,
+      "printed_page": 147,
+      "source_block_ids": [
+        "p167:b8"
+      ],
+      "bbox": [
+        54.0,
+        690.0,
+        1013.0,
+        947.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "from Equation 7.15b, we see that nonzero terms of the form $ E(\\alpha_{i}\\alpha_{k}) $ initially have expected values equal to $ \\sigma_{A,A}(0)/4 $. At time t, however, each of the nonzero terms in Equation 7.15d has expected value $ \\sigma_{A,A}(t)/4 $. Because there are eight terms, the covariance between relatives due to additive disequilibrium covariance is $ 8\\Theta_{xy}\\sigma_{A,A}(t)/4 $, or from Equation 7.15c,",
+      "source_page": 167,
+      "printed_page": 147,
+      "source_block_ids": [
+        "p167:b9"
+      ],
+      "bbox": [
+        50.0,
+        946.0,
+        1012.0,
+        1106.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula024]]",
+      "source_page": 167,
+      "printed_page": 147,
+      "source_block_ids": [
+        "p167:b10"
+      ],
+      "bbox": [
+        318.0,
+        1139.0,
+        741.0,
+        1175.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $t$ denotes the number of generations that the common ancestors are removed from the base population. Thus, for example, the parent-offspring covariance (with $\\Theta_{xy} = 1/4$) resulting from additive disequilibrium covariance is $\\sigma_{A,A}(0)/2$ if the parents are members of the base population, $(1 - c)\\sigma_{A,A}(0)/2$ if the parents are second-generation individuals, and $(1 - c)^{2}\\sigma_{A,A}(0)/2$ if they are third-generation individuals.",
+      "source_page": 167,
+      "printed_page": 147,
+      "source_block_ids": [
+        "p167:b12"
+      ],
+      "bbox": [
+        49.0,
+        1207.0,
+        1011.0,
+        1396.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Derivation of the covariance between relatives resulting from dominance disequilibrium covariance follows the same logic just presented. However, in this case, the dominance disequilibrium covariance declines each generation to $ (1 - c)^2 $ of its previous value. This quadratic decline occurs because dominance disequilibria are only maintained if neither of the gametes fusing to form a zygote have undergone recombination. Thus, the dominance disequilibrium covariance is",
+      "source_page": 167,
+      "printed_page": 147,
+      "source_block_ids": [
+        "p167:b13",
+        "p168:b2"
+      ],
+      "bbox": [
+        49.0,
+        1397.0,
+        1010.0,
+        1561.0
+      ],
+      "source_page_end": 168
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula025]]",
+      "source_page": 168,
+      "printed_page": 148,
+      "source_block_ids": [
+        "p168:b3"
+      ],
+      "bbox": [
+        461.0,
+        223.0,
+        789.0,
+        260.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and the covariance between relatives due to this disequilibrium is",
+      "source_page": 168,
+      "printed_page": 148,
+      "source_block_ids": [
+        "p168:b5"
+      ],
+      "bbox": [
+        147.0,
+        302.0,
+        935.0,
+        334.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula026]]",
+      "source_page": 168,
+      "printed_page": 148,
+      "source_block_ids": [
+        "p168:b6"
+      ],
+      "bbox": [
+        411.0,
+        390.0,
+        839.0,
+        426.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "For example, the covariance between full sibs resulting from dominance disequilibrium covariance is $ \\sigma_{D,D}(0)/4 $, $ (1-c)^{2}\\sigma_{D,D}(0)/4 $, and $ (1-c)^{4}\\sigma_{D,D}(0)/4 $, respectively, when the parents are members of the base population, second, and third generations.",
+      "source_page": 168,
+      "printed_page": 148,
+      "source_block_ids": [
+        "p168:b8"
+      ],
+      "bbox": [
+        148.0,
+        482.0,
+        1104.0,
+        609.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The general coefficients for the disequilibrium covariances for common types of relationships, assuming the common ancestor to be a member of generation t (where t = 0 denotes the base population), are given in Table 7.3. Unlike all of the equilibrium components of genetic variance, which always cause positive phenotypic covariance between relatives, the components resulting from disequilibrium covariance may be positive or negative depending upon whether loci are in coupling or repulsion disequilibrium.",
+      "source_page": 168,
+      "printed_page": 148,
+      "source_block_ids": [
+        "p168:b9"
+      ],
+      "bbox": [
+        148.0,
+        611.0,
+        1108.0,
+        834.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Strictly speaking, the modified coefficients in Table 7.3 apply to a single pair of loci with recombination frequency c. These expressions could be refined further to account for the influence of linkage and/or gametic phase disequilibrium of all loci on the covariance between relatives by summing terms over all pairs of loci, weighting each locus by its specific set of variances and covariances. However, without detailed information on the map structure of the constituent loci for a quantitative trait, such refinements would be of little practical value. An alternative approximation can be obtained by assuming that the loci underlying the trait are distributed randomly throughout the genome and using the average recombination frequency $ \\bar{c} $ in place of c. Estimates of $ \\bar{c} $ are given for a number of species in Table 9.2.",
+      "source_page": 168,
+      "printed_page": 148,
+      "source_block_ids": [
+        "p168:b10"
+      ],
+      "bbox": [
+        149.0,
+        835.0,
+        1110.0,
+        1186.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "It may be argued that linkage is of little consequence for the resemblance between relatives in organisms with high chromosome numbers since most pairs of loci will lie on different chromosomes. In this case, $ \\lambda \\simeq 0 $, and there is no inflation of the epistatic components of covariance, regardless of the magnitude of gametic phase disequilibrium. However, regardless of the degree of linkage, gametic phase disequilibrium is of special concern, as theoretical arguments and some empirical data suggest that it may reach significant levels for characters under selection (Chapter 5). In this case, even with free recombination ( $ c = 0.5 $), the contribution of disequilibrium covariance to the resemblance between relatives is nonzero. In the following section, we consider a common situation in which the build-up of positive $ \\sigma_{A,A} $ is inevitable, even with unlinked loci.",
+      "source_page": 168,
+      "printed_page": 148,
+      "source_block_ids": [
+        "p168:b11"
+      ],
+      "bbox": [
+        150.0,
+        1187.0,
+        1112.0,
+        1540.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter7:3]]",
+      "source_page": 169,
+      "source_block_ids": [
+        "p169:b2",
+        "p169:b3",
+        "p169:b4",
+        "p169:b5"
+      ],
+      "bbox": [
+        102.0,
+        198.0,
+        970.0,
+        558.0
+      ]
     }
   ]
 }

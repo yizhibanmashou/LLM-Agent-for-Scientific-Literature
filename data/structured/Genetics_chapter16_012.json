@@ -2,26 +2,84 @@
   "id": "Genetics_chapter16_012",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
+    "section": "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS",
     "subsections": [
-      "THE HASEMAN-ELSTON REGRESSION"
+      "Estimating QTL Position"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "THE HASEMAN-ELSTON REGRESSION",
+    "section_level_1": "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS",
+    "section_level_2": "Estimating QTL Position",
     "heading_path": [
-      "Introduction",
-      "THE HASEMAN-ELSTON REGRESSION"
+      "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS",
+      "Estimating QTL Position"
     ],
-    "display_heading": "THE HASEMAN-ELSTON REGRESSION"
+    "display_heading": "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS / Estimating QTL Position",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 526,
+      "printed_page": 506,
+      "source_block_ids": [
+        "p526:b7"
+      ],
+      "bbox": [
+        116.0,
+        819.0,
+        430.0,
+        851.0
+      ],
+      "raw_text": "Estimating QTL Position"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Starting with Haseman and Elston (1972), human geneticists have developed a number of methods for detecting QTLs using pairs of relatives as the unit of analysis. The idea is to consider the number of alleles identical by descent (ibd) between individuals for a given marker. If a QTL is linked to the marker, pairs sharing ibd marker alleles should also tend to share ibd QTL alleles and hence are expected to be more similar than pairs not sharing ibd marker alleles. This fairly simple idea is the basis for a large number of relative-pair methods (often referred to as allele sharing methods), which we now examine in some detail. We first consider Haseman and Elston's original regression method (and its recent extensions), which deals with continuous characters, and finish by discussing a number of closely related methods that have been developed for dichotomous characters, the latter being motivated by the desire to map human disease genes."
+      "content": "Goldgar's original approach makes no assumptions about how many QTLs a tested chromosomal segment contains. As such, it simply provides a test for detecting the presence of one or more QTLs in a given region, along with providing a composite estimate of their effects as measured by the genetic variance attributable to that region. However, if we are willing to assume that only a single QTL resides in the region, Goldgar's method can be modified to estimate QTL position (Amos 1994, Xu and Atchley 1995). The idea, as used in many previous tests, is that QTL position enters through estimates of $ R_{ij} $. For example, Amos (1994) shows that for a single marker linked to a QTL at recombination frequency c,",
+      "source_page": 526,
+      "printed_page": 506,
+      "source_block_ids": [
+        "p526:b8"
+      ],
+      "bbox": [
+        115.0,
+        860.0,
+        1076.0,
+        1152.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula048]]",
+      "source_page": 526,
+      "printed_page": 506,
+      "source_block_ids": [
+        "p526:b9"
+      ],
+      "bbox": [
+        317.0,
+        1184.0,
+        864.0,
+        1260.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ R_{ij} $ is the estimate of the fraction of QTL alleles ibd between individuals i and j, and $ \\pi_{ij} $ is the proportion of ibd marker alleles (the estimation of which is discussed below). Values for other relatives are given by Amos, allowing most pedigree structures to be easily incorporated. One then proceeds by treating c as a further parameter to estimate, displaying support for a QTL at any particular position by a standard likelihood map. Xu and Atchley (1995) consider multiple markers and QTLs, while Kruglyak and Lander (1995b) present a complete multipoint approach for nuclear families.",
+      "source_page": 526,
+      "printed_page": 506,
+      "source_block_ids": [
+        "p526:b11"
+      ],
+      "bbox": [
+        119.0,
+        1300.0,
+        1081.0,
+        1562.0
+      ]
     }
   ]
 }

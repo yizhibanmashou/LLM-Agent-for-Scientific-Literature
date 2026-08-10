@@ -2,42 +2,366 @@
   "id": "Genetics_chapter8_019",
   "metadata": {
     "chapter": "Genetics_chapter8",
-    "section": "Introduction",
+    "section": "THE MULTIVARIATE NORMAL DISTRIBUTION",
     "subsections": [
-      "OVERVIEW OF LINEAR MODELS"
+      "Properties of the MVN"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "OVERVIEW OF LINEAR MODELS",
+    "section_level_1": "THE MULTIVARIATE NORMAL DISTRIBUTION",
+    "section_level_2": "Properties of the MVN",
     "heading_path": [
-      "Introduction",
-      "OVERVIEW OF LINEAR MODELS"
+      "THE MULTIVARIATE NORMAL DISTRIBUTION",
+      "Properties of the MVN"
     ],
-    "display_heading": "OVERVIEW OF LINEAR MODELS"
+    "display_heading": "THE MULTIVARIATE NORMAL DISTRIBUTION / Properties of the MVN",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b15"
+      ],
+      "bbox": [
+        41.0,
+        1127.0,
+        331.0,
+        1163.0
+      ],
+      "raw_text": "Properties of the MVN"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Linear models form the backbone of most estimation procedures in quantitative genetics and will be extensively used throughout the rest of this book. They are generally structured such that a vector of observations of one variable (y) is modeled as a linear combination of other variables observed along with y. The remainder of this chapter introduces some of the basic tools and key concepts underlying the use of linear models. Advanced topics are examined in detail in Chapters 26 and 27, and further comments are given in Appendix 3."
+      "content": "As in the case of its univariate counterpart, the MVN is expected to arise naturally when the quantities of interest result from a large number of underlying variables. Since this condition seems (at least at first glance) to describe many biological systems, the MVN is a natural starting point in biometrical analysis. Further details on the wide variety of applications of the MVN to multivariate statistics can be found in the introductory texts by Morrison (1976) and Johnson and Wichern (1988) and in the more advanced treatment by Anderson (1984). The MVN has a number of useful properties, which we summarize below.",
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b16"
+      ],
+      "bbox": [
+        33.0,
+        1167.0,
+        999.0,
+        1446.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In multiple regression, the commonest type of linear model, the predictor variables $x_{1},\\cdots,x_{n}$ represent observed values for $n$ traits of interest. More generally, some or all of the predictor variables could be indicator variables, with values of 0 or 1 indicating whether an observation belongs in a particular category or grouping of interest. As an example, consider the half-sib design wherein each of $p$ unrelated sires is mated at random to a number of unrelated dams and a single offspring is measured from each cross. The simplest model for this design is $$ y_{ij}=\\mu+s_{i}+e_{ij} $$ where $y_{ij}$ is the phenotype of the $j$th offspring from sire $i$, $\\mu$ is the population mean, $s_{i}$ is the sire effect, and $e_{ij}$ is the residual error (the “noise” remaining in the data after the sire effect is removed). Although this is clearly a linear model, it differs significantly from the regression model described above in that while there are parameters to estimate (the sire effects $s_{i}$), the only measured values are the $y_{ij}$. Nevertheless, we can express this model in a form that is essentially identical to the standard regression model by using $p$ indicator (i.e., zero or one) variables to classify the sires of the offspring. The resulting linear model becomes $$ y_{ij}=\\mu+\\sum_{k=1}^{p}s_{k}x_{ik}+e_{ij} $$ where $$ x_{ik}=\\left\\{\\begin{aligned}&1&\\text{if}\\operatorname{sire}k=i\\\\ &0&\\text{otherwise}\\end{aligned}\\right. $$"
+      "content": "1. If $\\mathbf{x} \\sim \\text{MVN}$, then the distribution of any subset of the variables in $\\mathbf{x}$ is also MVN. For example, each $x_{i}$ is normally distributed and each pair $(x_{i}, x_{j})$ is bivariate normally distributed.",
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b17"
+      ],
+      "bbox": [
+        46.0,
+        1435.0,
+        957.0,
+        1551.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "By the judicious use of indicator variables, an extremely wide class of problems can be handled by linear models. Models containing only indicator variables are usually termed ANOVA (analysis of variance) models, while regression usually refers to models in which predictor variables can take on a continuous range of values. Both procedures are special cases of the general linear model (GLM), wherein each observation (y) is assumed to be a linear function of p observed and/or indicator variables plus a residual error (e), $$ y_{i}=\\sum_{k=1}^{p}\\beta_{k}x_{ik}+e_{i} $$ where $x_{i1},\\cdots,x_{ip}$ are the values of the $p$ predictor variables for the $i$th individual. For a vector of $n$ observations, the GLM can be written in matrix form as $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{e} $$ where the design or incidence matrix $\\mathbf{X}$ is $n \\times p$, and $e$ is the vector of residual errors. It is important to note that $\\mathbf{y}$ and $\\mathbf{X}$ contain the observed values, while $\\beta$ is a vector of parameters (usually called factors or effects) to be estimated."
+      "content": "2. If $\\mathbf{x} \\sim \\text{MVN}$, then any linear combination of the elements of $\\mathbf{x}$ is also $\\text{MVN}$. Specifically, if $\\mathbf{x} \\sim \\text{MVN}_n(\\boldsymbol{\\mu}, \\mathbf{V})$, a is a vector of constants, and $\\mathbf{A}$ is a matrix of constants, then",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b2"
+      ],
+      "bbox": [
+        144.0,
+        122.0,
+        1059.0,
+        237.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 8. Suppose that three different sires used in the above half-sib design have two, one, and three offspring, respectively. This can be expressed in GLM form, $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{e} $ with $$ \\mathbf{y}=\\begin{pmatrix}y_{11}\\\\y_{12}\\\\y_{21}\\\\y_{31}\\\\y_{32}\\\\y_{33}\\end{pmatrix},\\quad\\mathbf{X}=\\begin{pmatrix}1&1&0&0\\\\1&1&0&0\\\\1&0&1&0\\\\1&0&0&1\\\\1&0&0&1\\\\1&0&0&1\\end{pmatrix},\\quad\\boldsymbol{\\beta}=\\begin{pmatrix}\\mu\\\\s_{1}\\\\s_{2}\\\\s_{3}\\end{pmatrix},\\quad and\\quad\\mathbf{e}=\\begin{pmatrix}e_{11}\\\\e_{12}\\\\e_{21}\\\\e_{31}\\\\e_{32}\\\\e_{33}\\end{pmatrix} $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula089]]",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b3"
+      ],
+      "bbox": [
+        401.0,
+        245.0,
+        906.0,
+        291.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Likewise, the multiple regression $$ y_{i}=\\alpha+\\sum_{j=1}^{p}\\beta_{j}x_{ij}+e_{i} $$ can be written in GLM form with $$ \\mathbf{y}=\\begin{pmatrix}y_{1}\\\\ \\vdots\\\\ y_{n}\\end{pmatrix},\\quad\\mathbf{X}=\\begin{pmatrix}1&x_{11}&\\cdots&x_{1p}\\\\ 1&x_{21}&\\cdots&x_{2p}\\\\ \\vdots&\\vdots&\\ddots&\\vdots\\\\ 1&x_{n1}&\\cdots&x_{np}\\end{pmatrix},\\quad\\boldsymbol{\\beta}=\\begin{pmatrix}\\alpha\\\\ \\beta_{1}\\\\ \\vdots\\\\ \\beta_{p}\\end{pmatrix},\\quad\\mathrm{a n d}\\quad\\mathbf{e}=\\begin{pmatrix}e_{1}\\\\ \\vdots\\\\ e_{n}\\end{pmatrix} $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula090]]",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b5"
+      ],
+      "bbox": [
+        292.0,
+        295.0,
+        882.0,
+        377.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula091]]",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b7"
+      ],
+      "bbox": [
+        429.0,
+        375.0,
+        966.0,
+        435.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "3. Conditional distributions associated with the MVN are also multivariate normal. Consider the partitioning of x into two components, an $ (m \\times 1) $ column vector $ x_1 $ and an $ [(n-m) \\times 1] $ column vector $ x_2 $ of the remaining variables, e.g.,",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b9"
+      ],
+      "bbox": [
+        155.0,
+        461.0,
+        1066.0,
+        610.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula092]]",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b10"
+      ],
+      "bbox": [
+        567.0,
+        594.0,
+        706.0,
+        667.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The mean vector and covariance matrix can be partitioned similarly as",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b11"
+      ],
+      "bbox": [
+        209.0,
+        671.0,
+        1052.0,
+        719.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula093]]",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b12"
+      ],
+      "bbox": [
+        288.0,
+        729.0,
+        922.0,
+        842.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the $ m \\times m $ and $ (n - m) \\times (n - m) $ matrices $ \\mathbf{V}_{\\mathbf{x}_1 \\mathbf{x}_1} $ and $ \\mathbf{V}_{\\mathbf{x}_2 \\mathbf{x}_2} $ are, respectively, the covariance matrices for $ \\mathbf{x}_1 $ and $ \\mathbf{x}_2 $, while the $ m \\times (n - m) $ matrix $ \\mathbf{V}_{\\mathbf{x}_1 \\mathbf{x}_2} $ is the matrix of covariances between the elements of $ \\mathbf{x}_1 $ and $ \\mathbf{x}_2 $. If we condition on $ \\mathbf{x}_2 $, the resulting conditional random variable $ \\mathbf{x}_1 | \\mathbf{x}_2 $ is MVN with $ (m \\times 1) $ mean vector",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b14"
+      ],
+      "bbox": [
+        213.0,
+        854.0,
+        1076.0,
+        1031.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula094]]",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b15"
+      ],
+      "bbox": [
+        412.0,
+        1039.0,
+        881.0,
+        1090.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and $ (m \\times m) $ covariance matrix",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b17"
+      ],
+      "bbox": [
+        218.0,
+        1106.0,
+        598.0,
+        1144.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula095]]",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b18"
+      ],
+      "bbox": [
+        408.0,
+        1154.0,
+        891.0,
+        1203.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A proof can be found in most multivariate statistics texts, e.g., Morrison (1976).",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b20"
+      ],
+      "bbox": [
+        221.0,
+        1213.0,
+        1083.0,
+        1292.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "4. If $\\mathbf{x} \\sim \\text{MVN}$, the regression of any subset of $\\mathbf{x}$ on another subset is linear and homoscedastic. Rewriting Equation 8.27 in terms of a regression of the predicted value of the vector $\\mathbf{x}_{1}$ given an observed value of the vector $\\mathbf{x}_{2}$, we have",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b21"
+      ],
+      "bbox": [
+        173.0,
+        1288.0,
+        1084.0,
+        1436.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula096]]",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b22"
+      ],
+      "bbox": [
+        424.0,
+        1419.0,
+        891.0,
+        1465.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b24"
+      ],
+      "bbox": [
+        227.0,
+        1481.0,
+        313.0,
+        1510.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula097]]",
+      "source_page": 212,
+      "printed_page": 192,
+      "source_block_ids": [
+        "p212:b25"
+      ],
+      "bbox": [
+        513.0,
+        1499.0,
+        801.0,
+        1539.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter8:6]]",
+      "source_page": 213,
+      "source_block_ids": [
+        "p213:b2",
+        "p213:b3",
+        "p213:b4",
+        "p213:b5",
+        "p213:b6",
+        "p213:b7",
+        "p213:b8",
+        "p213:b9",
+        "p213:b11",
+        "p213:b12"
+      ],
+      "bbox": [
+        109.0,
+        195.0,
+        976.0,
+        395.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter8:7]]",
+      "source_page": 214,
+      "source_block_ids": [
+        "p214:b2",
+        "p214:b3",
+        "p214:b4",
+        "p214:b5",
+        "p214:b7",
+        "p214:b8"
+      ],
+      "bbox": [
+        178.0,
+        198.0,
+        1045.0,
+        395.0
+      ]
     }
   ]
 }

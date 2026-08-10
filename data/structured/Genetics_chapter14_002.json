@@ -2,46 +2,84 @@
   "id": "Genetics_chapter14_002",
   "metadata": {
     "chapter": "Genetics_chapter14",
-    "section": "Introduction",
+    "section": "Principles of Marker-based Analysis",
     "subsections": [
-      "Major Gene Plus a Polygenic Background"
+      "Principles of Marker-based Analysis"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter14_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Major Gene Plus a Polygenic Background",
+    "section_level_1": "Principles of Marker-based Analysis",
+    "section_level_2": "Principles of Marker-based Analysis",
     "heading_path": [
-      "Introduction",
-      "Major Gene Plus a Polygenic Background"
+      "Principles of Marker-based Analysis",
+      "Principles of Marker-based Analysis"
     ],
-    "display_heading": "Major Gene Plus a Polygenic Background"
+    "display_heading": "Principles of Marker-based Analysis / Principles of Marker-based Analysis",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 393,
+      "printed_page": 373,
+      "source_block_ids": [
+        "p393:b1"
+      ],
+      "bbox": [
+        155.0,
+        245.0,
+        969.0,
+        306.0
+      ],
+      "raw_text": "Principles of Marker-based Analysis"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The penetrance approach can easily be extended to allow for both a major gene and a polygenic background. For a dichotomous character, the likelihood for an individual with major-locus genotype g and background polygenic value A is $$ \\ell(y\\mid g,A)=[\\psi(g,A)]^{y}[1-\\psi(g,A)]^{1-y} $$ where $\\psi(g, A)$ is the penetrance for an individual with this genotype. Substituting this likelihood into the previous mixed-model likelihoods (Equations 13.19–23) allows them to accommodate binary traits. For example, the likelihood $\\ell(y|g_{f}, g_{m}, A_{f}, A_{m})$ for a particular sib, conditioned on the major-locus genotypes and background polygenic values of its parents is $$ \\sum_{i=1}^{3}\\int_{-\\infty}^{\\infty}\\ell(y\\mid g_{i},A)\\cdot\\Pr(g_{i}\\mid g_{f},g_{m})\\cdot\\Pr(A\\mid A_{f},A_{m})dA $$ where $ \\Pr(A|A_f, A_m) $, given by Equation 13.21, is a function of the additive genetic variance $ \\sigma_A^2 $ of the polygenic values. The conditioning on parental polygenic values is removed by integration, paralleling our development of the mixed-model segregation-analysis likelihood function (Equations 13.19–23). Likewise, common-family environmental effects can be incorporated using an analysis along the lines leading to Equations 13.16–18."
+      "content": "In classical Mendelian analysis, scorable genetic variants are used to map and characterize genes. This analysis requires that individual phenotypes be highly informative about the underlying genotypes. Quantitative genetics deals with the opposite setting wherein the phenotype provides very little information on the underlying genotype. Here the units of analysis are genetic variances rather than the underlying genes themselves. While this approach is sufficient in many settings, we ultimately would like to move away from this strictly statistical framework towards direct examination of effects of individual quantitative-trait loci (QTLs).",
+      "source_page": 393,
+      "printed_page": 373,
+      "source_block_ids": [
+        "p393:b2"
+      ],
+      "bbox": [
+        78.0,
+        438.0,
+        1040.0,
+        704.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The penetrances $\\psi(g, \\hat{A})$ are usually modeled by assuming an underlying liability model. This approach, briefly introduced in Chapter 11 and more fully discussed in Chapter 25, assumes an underlying normal distribution of liability z. One trait value is displayed if the liability exceeds some threshold $T$, while the alternative trait value is displayed if liability lies below the threshold. In this case, $$ \\psi(g,A)=\\Pr(z>T\\mid g,A)=\\int_{T}^{\\infty}\\varphi(z,\\mu_{g}+A,1)dz $$ As is discussed in Chapter 25, the variance of the liability distribution can always be set equal to one. Defining $\\Phi(x) = \\Pr(U \\leq x)$ as the cumulative distribution function for a unit normal $U$, the integral in Equation 13.30 can be written as $$ \\int_{T-(\\mu_{g}+A)}^{\\infty}\\varphi(z,0,1)dz=1-\\int_{-\\infty}^{T-(\\mu_{g}+A)}\\varphi(z,0,1)dz=1-\\Phi(T-\\mu_{g}-A) $$"
+      "content": "As discussed below, there are occasions when one can choose suitable candidate loci based on biological knowledge of the character, but in most situations this is not possible. However, QTLs can be assayed indirectly by using linked marker loci. This indirect approach has long been recognized, but until recently it has been regarded as of minor importance because of the lack of sufficient genetic markers. Thanks to modern molecular biology, this situation has now changed dramatically. The ability to detect genetic variation directly at the DNA level has resulted in an essentially endless supply of markers for any species of interest. It is now routine to use at least 50–200 molecular markers, and often many more, for fine-scale analysis. Not surprisingly, there has been an explosion in the use of marker-based methods in quantitative genetics.",
+      "source_page": 393,
+      "printed_page": 373,
+      "source_block_ids": [
+        "p393:b3"
+      ],
+      "bbox": [
+        74.0,
+        697.0,
+        1036.0,
+        1057.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Using the useful identity $\\Phi(-x)=1-\\Phi(x)$, Equation 13.30 thus becomes $$ \\psi(g,A)=\\Phi(\\mu_{g}+A-T) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Segregation analysis proceeds by substituting this expression into Equation 13.29a. The resulting likelihood for the major-gene-only model has five parameters to estimate: the three major-locus means $\\mu_{g}$, allele frequency $q$, and the threshold value $T$. (Alternatively, one can set $T = 1$ and estimate the variance of the liability function.) Examples of this general approach applied to several different genetic models can be found in Thaller et al. (1996)."
-    },
-    {
-      "type": "discussion",
-      "content": "Finally, we note that alternative approach for computing penetrances that avoids having to evaluate the cumulative normal function involves the use of logistic regressions. The motivation for this approach is that the logistic function $$ f(x)=\\frac{1}{1+e^{-x}} $$ provides a reasonable approximation to the cumulative normal, with $$ \\Phi(x)\\simeq\\frac{1}{1+\\exp(-\\theta\\,x)}=f(\\theta x)\\qquad\\text{where}\\qquad\\theta=\\frac{\\pi}{\\sqrt{3}} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "(Liao 1994). Hence, we can model the penetrance as a logistic function. For example, the penetrance for the major gene and polygenic background becomes $ \\psi(g, A) = f(a + \\alpha_g + \\alpha_A) $ where $ \\alpha_g $ and $ \\alpha_A $ are the effects of the major-locus genotype and polygenic background, and a is a term that accounts (among other things) for the general prevalence of the trait. Likewise, one can incorporate other factors (such as the effect of sex, specific environments, or specific age groups) as extra terms in the argument of logistic function."
+      "content": "This chapter introduces the basics of marker-based mapping, while the next two chapters consider specific refinements for inbred lines (Chapter 15) and outbred populations (Chapter 16). Our discussion is loosely organized by historical developments of marker-based methods. We start by considering classical approaches for quantifying the effects of entire chromosomes (or large chromosomal regions). We then turn to finer genetic resolution, examining a variety of topics concerning markers and genetic maps, including the use of markers to facilitate construction of nearly isogenic lines. We conclude by discussing tests for candidate loci and approaches for cloning individual QTLs.",
+      "source_page": 393,
+      "printed_page": 373,
+      "source_block_ids": [
+        "p393:b4"
+      ],
+      "bbox": [
+        69.0,
+        1048.0,
+        1035.0,
+        1349.0
+      ]
     }
   ]
 }

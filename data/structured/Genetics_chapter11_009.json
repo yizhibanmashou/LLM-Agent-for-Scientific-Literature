@@ -2,70 +2,69 @@
   "id": "Genetics_chapter11_009",
   "metadata": {
     "chapter": "Genetics_chapter11",
-    "section": "Introduction",
+    "section": "STABILIZING THE VARIANCE",
     "subsections": [
-      "The Roginskii-Yablokov Effect"
+      "The Kluge-Kerfoot Phenomenon"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter11_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "The Roginskii-Yablokov Effect",
+    "section_level_1": "STABILIZING THE VARIANCE",
+    "section_level_2": "The Kluge-Kerfoot Phenomenon",
     "heading_path": [
-      "Introduction",
-      "The Roginskii-Yablokov Effect"
+      "STABILIZING THE VARIANCE",
+      "The Kluge-Kerfoot Phenomenon"
     ],
-    "display_heading": "The Roginskii-Yablokov Effect"
+    "display_heading": "STABILIZING THE VARIANCE / The Kluge-Kerfoot Phenomenon",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 319,
+      "printed_page": 299,
+      "source_block_ids": [
+        "p319:b3"
+      ],
+      "bbox": [
+        67.0,
+        350.0,
+        479.0,
+        388.0
+      ],
+      "raw_text": "The Kluge-Kerfoot Phenomenon"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Inverse relationships between the coefficients of variation and means of functionally related traits, and their biological implications, have been discussed by many investigators (Pearson and Davin 1924, Roginskii 1959, Yablokov 1974, Rohlf et al. 1983, Kerfoot 1988). We refer to such a relationship as a Roginskii-Yablokov effect. Whether such a scaling has important biological underpinnings, as opposed to being a simple statistical artifact, merits some scrutiny."
-    },
-    {
-      "type": "definition",
-      "content": "The most obvious problem in attempting to relate coefficients of variation and means is that the former are inverse functions of the latter, since by definition, $ CV(z) = SD(z)/\\overline{z} $. Thus, for the extreme case in which the standard deviation is a constant independent of mean, the expected relationship between the CV and the mean is an inverse hyperbola. On a log-log plot, this is revealed as a linear relationship with a slope of minus one. The data for a number of characters closely approximate this pattern (Figure 11.5), suggesting that in some cases the Roginskii-Yablokov effect is nothing more than a mathematical consequence of the regression of a ratio on its denominator."
-    },
-    {
-      "type": "discussion",
-      "content": "A second statistical artifact that can lead to a Roginskii-Yablokov effect is a standard deviation-mean relationship, such as that pointed out in the previous section. In reality, for characters such as length measurements, which take on only positive values, the SD-mean relationship is constrained to pass through the origin since the standard deviation of measurements must be zero if the mean is zero. However, a linear approximation to the data generally yields positive $y$-intercepts, suggesting that the SD versus mean relationship is slightly bowed upward near the origin. Such behavior can be a simple consequence of measurement error. Suppose that the SD versus mean relationship is adequately described by the function $\\mathrm{SD}(z) = \\sqrt{k^{2} \\cdot \\overline{z}^{2} + V}$, where $k$ is the CV if we measure without error, and $V$ is the additional variance caused by measurement error (assumed to be independent of the mean). With this relationship, the coefficient of variation approaches $k$ as $\\overline{z}$ becomes large, but rapidly increases as $\\overline{z}$ becomes smaller than $\\sqrt{V}/k$. This explanation is probably more relevant to metric characters than"
-    },
-    {
-      "type": "discussion",
-      "content": "[[FIGURE:11.5]] meristic ones. Presumably, as the mean number of counts per individual declines, so does the sampling variance."
-    },
-    {
-      "type": "discussion",
-      "content": "Rohlf et al. (1983) pointed out a third statistical artifact that can lead to a Roginskii-Yablokov effect when the data are log-normally distributed. The discretization of log-normally distributed data into classes (delimited by counts or measurement constraints) leads to a reduction of the mean and an inflation of the variance relative to that expected under a continuous log-normal distribution. This in turn causes an inflation of the CV to a degree that increases with decreasing means. In principle, the bias caused by discretization can be corrected by applications analogous to Sheppard's correction (Chapter 2) with normally distributed data (Thompson 1951), but this has not been done with most published data."
+      "content": "Drawing from morphological data on a number of vertebrates, Kluge and Kerfoot (1973) suggested that traits with high phenotypic variance within populations tend to exhibit high levels of divergence among populations. They argued that this pattern is due, at least in part, to the variance of a trait within a population being inversely proportional to the intensity of stabilizing selection. Their conclusion appears to require the assumption that characters that are under strong stabilizing selection within populations have similar optimal phenotypes in different populations. To support their case, Kluge and Kerfoot plotted for various characters the range of means from different populations against the within-population standard deviation, after first dividing both statistics by the overall population mean.",
+      "source_page": 319,
+      "printed_page": 299,
+      "source_block_ids": [
+        "p319:b4"
+      ],
+      "bbox": [
+        62.0,
+        391.0,
+        1027.0,
+        756.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Despite the numerous statistical artifacts that may be largely (and in some cases, entirely) responsible for observed negative relationships between means and CVs, there are biological reasons for suspecting that Roginskii-Yablokov effects are sometimes real. A simple explanation was offered by Pearson and Davin (1924). Consider a character that can be represented as the sum of n developmental units, $$ Z=z_{1}+z_{2}+\\cdots+z_{n} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "For example, Z could be composed of a number of smaller bones or a number of specific cells. The variance of Z is then $$ \\sigma_{Z}^{2}=\\sigma_{z_{1}}^{2}+\\sigma_{z_{2}}^{2}+\\cdots+\\sigma_{z_{n}}^{2}+2\\sigma_{z_{1},z_{2}}+\\cdots+2\\sigma_{z_{n-1},z_{n}} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Letting $\\overline{\\sigma}_{z_{i},z_{j}}$ be the mean of the covariance terms, the squared coefficient of variation is $$ \\mathrm{CV}_{Z}^{2}=\\frac{\\sigma_{Z}^{2}}{\\mu_{Z}^{2}}=\\frac{\\sum\\limits_{i=1}^{n}\\sigma_{z_{i}}^{2}+n\\left(n-1\\right)\\cdot\\overline{\\sigma}_{z_{i},z_{j}}}{\\left(\\sum\\limits_{i=1}^{n}\\mu_{i}\\right)^{2}} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Now, for simplicity, let each developmental unit share the same mean $(\\mu_{z})$ and variance $(\\sigma_{z}^{2})$. Then $$ \\mathbf{C V}_{Z}^{2}=\\mathbf{C V}_{z}^{2}\\cdot\\left[\\frac{1+\\left(n-1\\right)\\overline{{\\rho}}}{n}\\right] $$ where $CV_{z} = \\sigma_{z}/\\mu_{z}$ is the coefficient of variation for each developmental unit, and $\\overline{\\rho}$ is the mean correlation between units. Except in the unlikely event that all of the component parts are perfectly correlated, the fraction on the right is less than one. Thus, the CV of $Z$ is less than the average CV of the component parts — variation in individual components averages out as the sum increases. Provided that developmental units are similar in size and variance, the Pearson-Davin argument leads to the prediction that the CV of size of a structure is expected to decline as the number of component parts increases."
-    },
-    {
-      "type": "discussion",
-      "content": "The Pearson-Davin argument is supported in a number of cases. Analyzing data of Bader and Hall (1960) on osteometric characters in bats, Lande (1977) found that characters consisting of several bones have CVs of 0.02–0.03, while the individual bones themselves have CVs of around 0.03–0.06. Similarly, Kerfoot (1988) found that while the CV for tail spine length in the cladoceran Bosmina is 0.10, the CV for length of the component cells ranges from 0.28 to 0.36."
-    },
-    {
-      "type": "discussion",
-      "content": "A second, and related, biological explanation for the Roginskii-Yablokov effect applies to analyses that compare the same character in different populations. During development the variance in size of morphological characters often increases initially and then declines as compensatory growth focuses most individuals into a narrow range of phenotypes. This pattern of development, known as targeted growth (Riska et al. 1984), would generate a Roginskii-Yablokov effect if the individuals from different samples varied in average age. Those samples containing the oldest, and presumably largest, individuals would be expected to exhibit the lowest CVs."
-    },
-    {
-      "type": "discussion",
-      "content": "While much work remains to be done before the underlying determinants of the Roginskii-Yablokov effect can be deciphered, if indeed any generalities are possible, its existence has serious implications for the use of scale transformations. If the CV is not independent of the mean, the routine procedure of log-transforming data prior to analysis will not be successful in stabilizing the variance. Rather, it will cause a negative correlation between the mean and variance on the logarithmic scale. Failure to appreciate the importance of such a scaling effect can lead to interpretative difficulties in long-term studies of natural selection, leading, for example, to the conclusion that directional selection for larger size is accompanied by stabilizing selection about the optimum (Halbach and Jacobs 1971)."
+      "content": "As in the case of the Roginskii-Yablokov effect, the Kluge-Kerfoot phenomenon may be largely a statistical artifact (Sokal 1976, Rohlf et al. 1983). The statistics employed by Kluge and Kerfoot are expected to be intrinsically correlated due to the fact that both contain the same variable (the mean) in the denominator. This problem is exacerbated by the fact that the range of population means is positively related to the within-population variance that causes sampling error of the means. In an attempt to eliminate the latter problem, Sokal (1976) employed coefficients of within- and among-population variation extracted by analysis of variance. However, since both CVs still share the same denominator, this procedure has the same problem as Kluge and Kerfoot's analysis. Moreover, as Rohlf et al. (1983) have pointed out, there appears to be a Roginskii-Yablokov effect for the among-population CV just as there is for the within-population CV. Thus, the correlation of within- and among-population variance in many existing studies may be an indirect effect of both measures being correlated with a third (the mean). In a study of morphometric differentiation among house sparrow populations, Baker (1980) showed that the Kluge-Kerfoot phenomenon disappeared after the scaling with the mean was eliminated. Until these numerous statistical problems have been accounted for properly with several independent data sets, the biological and evolutionary significance of the Kluge-Kerfoot phenomenon must remain in doubt.",
+      "source_page": 319,
+      "printed_page": 299,
+      "source_block_ids": [
+        "p319:b5"
+      ],
+      "bbox": [
+        49.0,
+        742.0,
+        1022.0,
+        1398.0
+      ]
     }
   ]
 }

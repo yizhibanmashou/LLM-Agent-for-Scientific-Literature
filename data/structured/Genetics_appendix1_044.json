@@ -1,0 +1,357 @@
+{
+  "id": "Genetics_appendix1_044",
+  "metadata": {
+    "chapter": "Genetics_appendix1",
+    "section": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
+    "subsections": [
+      "EM for Mixture Model Likelihoods"
+    ],
+    "section_level_1": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
+    "section_level_2": "EM for Mixture Model Likelihoods",
+    "heading_path": [
+      "ITERATIVE METHODS FOR SOLVING ML EQUATIONS",
+      "EM for Mixture Model Likelihoods"
+    ],
+    "display_heading": "ITERATIVE METHODS FOR SOLVING ML EQUATIONS / EM for Mixture Model Likelihoods",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 875,
+      "printed_page": 855,
+      "source_block_ids": [
+        "p875:b5"
+      ],
+      "bbox": [
+        61.0,
+        1193.0,
+        503.0,
+        1225.0
+      ],
+      "raw_text": "EM for Mixture Model Likelihoods"
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "Mixture models naturally appear in a number of quantitative-genetic settings, wherein the observed distribution is really a weighted sum of a number of underlying distributions. For example, when a major diallelic locus is segregating in a population, the phenotypic distribution is a weighted sum of the three distributions representing each major locus genotype (Chapter 13). The general likelihood function for a single observation z from the kinds of mixture models considered in this book has the form",
+      "source_page": 875,
+      "printed_page": 855,
+      "source_block_ids": [
+        "p875:b6",
+        "p876:b2"
+      ],
+      "bbox": [
+        59.0,
+        1236.0,
+        1021.0,
+        1430.0
+      ],
+      "source_page_end": 876
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula240]]",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b3"
+      ],
+      "bbox": [
+        442.0,
+        182.0,
+        798.0,
+        269.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the distribution is assumed to result from $N$ underlying normals, the $k$th of which has frequency $\\pi_k$, mean $\\mu_k$, and common variance $\\sigma^2$. We assume that the number $N$ of underlying distributions is known and wish to estimate the $2N \\times 1$ vector $\\Theta$ of the $N$ means, the common variance, and the $N-1$ independent mixing proportions (the $\\pi_k$). With $n$ individuals independently drawn from this distribution, the full likelihood is",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b5"
+      ],
+      "bbox": [
+        142.0,
+        286.0,
+        1101.0,
+        479.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula241]]",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b6"
+      ],
+      "bbox": [
+        486.0,
+        495.0,
+        755.0,
+        577.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "While appearing rather simple, the full likelihood function is complicated to work with analytically, and numerical approaches are usually employed.",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b8"
+      ],
+      "bbox": [
+        143.0,
+        593.0,
+        1100.0,
+        657.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "When we observe a particular value, we don’t know which underlying distribution (or category) it was drawn from. If we knew the category identity for each observation, the ML solutions for the mean and variance of the underlying distributions are easily computed. For example, if a single diallelic QTL is segregating, if we could determine whether individuals had QTL genotype QQ, Qq, or qq, then the mean for each genotype and the common variance could easily be estimated. This is the basis of the EM method. We start with some initial guess as to the category identity of each observation, which then allows us to easily compute an ML estimate of the means and variance of the underlying distribution. This guess is in the form of a weight vector for each individual, whose k element, $ w(k \\mid z) $, is the probability that an individual has the kth QTL genotype given they have trait value z. Using these mean and variance estimates, updated weights can be computed using Bayes’ theorem (Equation 13.24) for conditional probabilities. Since $ w(k \\mid z) = \\Pr(k \\mid z) $, applying Bayes’ theorem gives",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b9"
+      ],
+      "bbox": [
+        143.0,
+        659.0,
+        1102.0,
+        1109.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula242]]",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b10"
+      ],
+      "bbox": [
+        177.0,
+        1121.0,
+        978.0,
+        1248.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "These updated weights are then used to obtain new estimates of the category-specific means and the variance, and this procedure is repeated until convergence. Formally, this EM approach proceeds as follows (Aitkin and Wilson 1980):",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b12"
+      ],
+      "bbox": [
+        144.0,
+        1269.0,
+        1100.0,
+        1370.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(1) Initial step. Choose initial starting values for the MLEs of the variance $ \\widehat{\\sigma}^{2}(0) $ and the vectors of mixture proportions and means,",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b13"
+      ],
+      "bbox": [
+        144.0,
+        1410.0,
+        1101.0,
+        1479.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula243]]",
+      "source_page": 876,
+      "printed_page": 856,
+      "source_block_ids": [
+        "p876:b14"
+      ],
+      "bbox": [
+        277.0,
+        1494.0,
+        881.0,
+        1539.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(2) E-step. Define the weight $ w^{(1)}(k \\mid z_i) $ as the probability that observation $ z_i $ is drawn from distribution $ k $ given the current estimates $ \\widehat{\\sigma}^{2(0)} $, $ \\widehat{\\pi}^{(0)} $, and $ \\widehat{\\mu}^{(0)} $. From Bayes' theorem,",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b2"
+      ],
+      "bbox": [
+        56.0,
+        148.0,
+        1014.0,
+        253.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula244]]",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b3"
+      ],
+      "bbox": [
+        294.0,
+        266.0,
+        776.0,
+        398.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\varphi(z_i, \\widehat{\\mu}_k^{(0)}, \\widehat{\\sigma}^{2(0)}) $ is the normal distribution evaluated at the value $ z_i $ using mean $ \\widehat{\\mu}_k^{(0)} $ and variance $ \\widehat{\\sigma}^{2(0)} $.",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b5"
+      ],
+      "bbox": [
+        58.0,
+        420.0,
+        1015.0,
+        499.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(3) M-step. Assuming these weights are correct, the updated estimates of the MLEs are obtained as follows:",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b6"
+      ],
+      "bbox": [
+        56.0,
+        542.0,
+        1016.0,
+        609.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(a) Mixing proportions: Given by the average probability of being in category $ k $,",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b7"
+      ],
+      "bbox": [
+        56.0,
+        632.0,
+        1016.0,
+        699.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula245]]",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b8"
+      ],
+      "bbox": [
+        345.0,
+        698.0,
+        726.0,
+        778.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(b) Means: Given by the weighted average of the observations,",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b10"
+      ],
+      "bbox": [
+        112.0,
+        799.0,
+        907.0,
+        835.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula246]]",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b11"
+      ],
+      "bbox": [
+        349.0,
+        850.0,
+        717.0,
+        936.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(c) Variance: Given by the weighted variance of the observations,",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b13"
+      ],
+      "bbox": [
+        110.0,
+        947.0,
+        927.0,
+        983.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula247]]",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b14"
+      ],
+      "bbox": [
+        281.0,
+        1000.0,
+        787.0,
+        1085.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "These updated estimates are then used to compute new weights, and the whole procedure continues until the iterations converge.",
+      "source_page": 877,
+      "printed_page": 857,
+      "source_block_ids": [
+        "p877:b16"
+      ],
+      "bbox": [
+        55.0,
+        1098.0,
+        1014.0,
+        1166.0
+      ]
+    }
+  ]
+}

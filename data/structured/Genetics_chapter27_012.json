@@ -2,30 +2,69 @@
   "id": "Genetics_chapter27_012",
   "metadata": {
     "chapter": "Genetics_chapter27",
-    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "section": "SOLVING THE ML/REML EQUATIONS",
     "subsections": [
       "Additional Approaches"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_1": "SOLVING THE ML/REML EQUATIONS",
     "section_level_2": "Additional Approaches",
     "heading_path": [
-      "Variance-Component Estimation with Complex Pedigrees",
+      "SOLVING THE ML/REML EQUATIONS",
       "Additional Approaches"
     ],
-    "display_heading": "Additional Approaches"
+    "display_heading": "SOLVING THE ML/REML EQUATIONS / Additional Approaches",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 811,
+      "printed_page": 791,
+      "source_block_ids": [
+        "p811:b8"
+      ],
+      "bbox": [
+        31.0,
+        729.0,
+        328.0,
+        771.0
+      ],
+      "raw_text": "Additional Approaches"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Aside from its technical complexities, one of the major limitations of the EM algorithm for variance-component estimation is the huge computational demand imposed by the need to invert the V matrix each iteration. Thus, several attempts have been made to develop EM-like algorithms that circumvent the inversion of V. For example, Smith and Graser (1986) and Graser et al. (1987) propose a method wherein $\\lambda = \\sigma_{A}^{2}/\\sigma_{E}^{2}$ is assumed to be fixed and then, conditional on this $\\lambda$, an ML estimate of $\\sigma_{E}^{2}$ is obtained. With this estimate of $\\sigma_{E}^{2}$ in hand, a search is then performed to obtain a new maximum likelihood estimate of $\\lambda$, and the method is repeated until the estimates of $\\lambda$ and $\\sigma_{E}^{2}$ stabilize. Meyer (1991) extends this method to multiple characters by performing a grid search over a larger parameter space."
+      "content": "Aside from its technical complexities, one of the major limitations of the EM algorithm for variance-component estimation is the huge computational demand imposed by the need to invert the V matrix each iteration. Thus, several attempts have been made to develop EM-like algorithms that circumvent the inversion of V. For example, Smith and Graser (1986) and Graser et al. (1987) propose a method wherein $ \\lambda = \\sigma_A^2 / \\sigma_E^2 $ is assumed to be fixed and then, conditional on this $ \\lambda $, an ML estimate of $ \\sigma_E^2 $ is obtained. With this estimate of $ \\sigma_E^2 $ in hand, a search is then performed to obtain a new maximum likelihood estimate of $ \\lambda $, and the method is repeated until the estimates of $ \\lambda $ and $ \\sigma_E^2 $ stabilize. Meyer (1991) extends this method to multiple characters by performing a grid search over a larger parameter space.",
+      "source_page": 811,
+      "printed_page": 791,
+      "source_block_ids": [
+        "p811:b9"
+      ],
+      "bbox": [
+        19.0,
+        786.0,
+        987.0,
+        1162.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "An alternative method was developed by Thompson and Shaw (1990, 1992) for both univariate and multivariate applications of the animal model. Conventional application of the EM algorithm does the equivalent of estimating the breeding values of each individual conditional on the entire set of observations. The key to the Thompson-Shaw method is the computation of expected breeding values, which are taken to be conditional only on local pedigrees (the individual, its parents and offspring, and its mate) and on the variance-component estimates from the previous iteration. With this approach, the V matrix that needs to be inverted for each individual contains only the members of the local pedigree, and this submatrix is diagonal since, within a pedigree containing only parents and offspring, breeding values differ only because of random segregation. Additional simplifications of the EM equations are presented by Thompson and Shaw."
+      "content": "An alternative method was developed by Thompson and Shaw (1990, 1992) for both univariate and multivariate applications of the animal model. Conventional application of the EM algorithm does the equivalent of estimating the breeding values of each individual conditional on the entire set of observations. The key to the Thompson-Shaw method is the computation of expected breeding values, which are taken to be conditional only on local pedigrees (the individual, its parents and offspring, and its mate) and on the variance-component estimates from the previous iteration. With this approach, the V matrix that needs to be inverted for each individual contains only the members of the local pedigree, and this submatrix is diagonal since, within a pedigree containing only parents and offspring, breeding values differ only because of random segregation. Additional simplifications of the EM equations are presented by Thompson and Shaw.",
+      "source_page": 811,
+      "printed_page": 791,
+      "source_block_ids": [
+        "p811:b10"
+      ],
+      "bbox": [
+        7.0,
+        1139.0,
+        975.0,
+        1548.0
+      ]
     }
   ]
 }

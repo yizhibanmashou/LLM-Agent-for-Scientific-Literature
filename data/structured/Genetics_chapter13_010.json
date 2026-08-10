@@ -2,30 +2,258 @@
   "id": "Genetics_chapter13_010",
   "metadata": {
     "chapter": "Genetics_chapter13",
-    "section": "Introduction",
+    "section": "MIXTURE MODELS",
     "subsections": [
-      "Parameter Estimation"
+      "Hypothesis Testing"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Parameter Estimation",
+    "section_level_1": "MIXTURE MODELS",
+    "section_level_2": "Hypothesis Testing",
     "heading_path": [
-      "Introduction",
-      "Parameter Estimation"
+      "MIXTURE MODELS",
+      "Hypothesis Testing"
     ],
-    "display_heading": "Parameter Estimation"
+    "display_heading": "MIXTURE MODELS / Hypothesis Testing",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 375,
+      "printed_page": 355,
+      "source_block_ids": [
+        "p375:b9"
+      ],
+      "bbox": [
+        67.0,
+        1334.0,
+        313.0,
+        1368.0
+      ],
+      "raw_text": "Hypothesis Testing"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Parameters of mixture models are typically estimated by maximum likelihood procedures (Hasselblad 1966, Day 1969, Everitt and Hand 1981, Redner and Walker 1984, Titterington et al. 1985, McLachlan and Basford 1988), in which case Equation 13.5 gives the likelihood function $ \\ell(z) $ of the unknown parameters $ \\Pr(1), \\cdots, \\Pr(n), \\mu_1, \\cdots, \\mu_n, \\sigma_1^2, \\cdots, \\sigma_n^2 $ as a function of the observed value $ z $. As just mentioned, typically one sets most (or all) of the variances equal to each other; one reason for equating variances is that, if they are all free to vary, there can be singularities in the likelihood function. As an example of how likelihood functions are constructed, consider the situation for a random individual drawn from a population with a single segregating diallelic major locus. Indexing the three genotypes by $i$ where $i = QQ$, $Qq$, and $qq$, and assuming that individuals with major-locus genotype $i$ are normally distributed with mean $\\mu_{i}$ and common variance $\\sigma^{2}$, the resulting likelihood for the $j$th individual is $$ \\begin{aligned}\\ell(z_{j})&=\\Pr(QQ)p_{QQ}(z_{j})+\\Pr(Qq)p_{Qq}(z_{j})+\\Pr(qq)p_{qq}(z_{j})&\\quad(13.6a)\\\\ &\\\\&=\\Pr(QQ)\\varphi(z_{j},\\mu_{QQ},\\sigma^{2})+\\Pr(Qq)\\varphi(z_{j},\\mu_{Qq},\\sigma^{2})+\\Pr(qq)\\varphi(z_{j},\\mu_{qq},\\sigma^{2})\\\\ \\end{aligned} $$ where $ z_j $ is the character value in the focal individual. The likelihood for an individual is easily generalizable to more complicated genetic models. For example, if there are more than two alleles, or multiple loci, the likelihood has the form of Equation 13.6a with the sum now extending over all $ n_g $ multilocus genotypes. For $ n $ random (unrelated) individuals, denoting the observed phenotypic values by $ \\mathbf{z} = (z_1, z_2, \\cdots, z_n) $, the overall likelihood is just the product of the $ n $ individual likelihoods, $$ \\ell(\\mathbf{z})=\\ell(z_{1},z_{2},\\cdots,z_{n})=\\prod_{j=1}^{n}\\ell(z_{j}) $$"
+      "content": "An important issue in tests for major genes is model fitting, i.e., evaluating whether the full model is needed, or if some subset of the model gives essentially the same fit. For example, we might initially assume a mixture of two normals with different means and common variance, so that the full model has parameters $ \\mu_1 $, $ \\mu_2 $, $ \\sigma^2 $, and p. Is the fit using these four parameters significantly better than the fit assuming a single underlying normal with parameters $ \\mu $ and $ \\sigma^2 $? For large sample sizes, the likelihood ratio (LR) statistic test for whether the full model provides a better fit than a particular subset of the model is",
+      "source_page": 375,
+      "printed_page": 355,
+      "source_block_ids": [
+        "p375:b10",
+        "p376:b2"
+      ],
+      "bbox": [
+        65.0,
+        1377.0,
+        1025.0,
+        1574.0
+      ],
+      "source_page_end": 376
     },
     {
       "type": "discussion",
-      "content": "Assuming random mating, the Hardy-Weinberg principle describes the frequencies $ \\Pr(\\cdot) $ of the major locus genotypes as a function of p, the frequency of one allele. This leaves five parameters to estimate — $ p, \\sigma^{2}, \\mu_{QQ}, \\mu_{Qq} $, and $ \\mu_{qq} $."
+      "content": "[[FORMULA:Genetics_chapter13_formula010]]",
+      "source_page": 376,
+      "printed_page": 356,
+      "source_block_ids": [
+        "p376:b3"
+      ],
+      "bbox": [
+        273.0,
+        224.0,
+        938.0,
+        301.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\widehat{\\ell}(\\mathbf{z}) $ is the likelihood function evaluated at the MLE for the full model, and $ \\widehat{\\ell}_{r}(\\mathbf{z}) $ is the maximum of the likelihood function for the restricted model under which r parameters of the full model are assigned fixed values. Under appropriate conditions, the LR test statistic is approximately distributed as $ \\chi_{r}^{2} $, i.e., as a $ \\chi^{2} $ distribution with r degrees of freedom (Wald 1943); see Appendix 4.",
+      "source_page": 376,
+      "printed_page": 356,
+      "source_block_ids": [
+        "p376:b5"
+      ],
+      "bbox": [
+        127.0,
+        326.0,
+        1085.0,
+        495.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The simplest restricted model assumes no mixture at all, so that the overall distribution is just a single normal distribution with unknown mean and variance. As shown in Appendix 4, the resulting likelihood is just the product of n identical normals with mean $ \\mu $ and variance $ \\sigma^{2} $. The MLEs in this case are the sample mean $ \\overline{z} $ and the uncorrected sample variance",
+      "source_page": 376,
+      "printed_page": 356,
+      "source_block_ids": [
+        "p376:b6"
+      ],
+      "bbox": [
+        130.0,
+        495.0,
+        1088.0,
+        657.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula011]]",
+      "source_page": 376,
+      "printed_page": 356,
+      "source_block_ids": [
+        "p376:b7"
+      ],
+      "bbox": [
+        455.0,
+        678.0,
+        764.0,
+        760.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Note that the ML estimate of the variance is slightly different from the unbiased variance estimator, which divides the sum of squares by $ n - 1 $. Substituting the MLEs of $ \\sigma^{2} $ and $ \\mu $ gives the maximum value of this restricted likelihood as",
+      "source_page": 376,
+      "printed_page": 356,
+      "source_block_ids": [
+        "p376:b8"
+      ],
+      "bbox": [
+        131.0,
+        782.0,
+        1089.0,
+        884.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula012]]",
+      "source_page": 376,
+      "printed_page": 356,
+      "source_block_ids": [
+        "p376:b9"
+      ],
+      "bbox": [
+        319.0,
+        903.0,
+        899.0,
+        992.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Taking logarithms and recalling the definition of Var gives",
+      "source_page": 376,
+      "printed_page": 356,
+      "source_block_ids": [
+        "p376:b10"
+      ],
+      "bbox": [
+        133.0,
+        1012.0,
+        834.0,
+        1048.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula013]]",
+      "source_page": 376,
+      "printed_page": 356,
+      "source_block_ids": [
+        "p376:b11"
+      ],
+      "bbox": [
+        357.0,
+        1065.0,
+        868.0,
+        1122.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter13:2]]",
+      "source_page": 376,
+      "source_block_ids": [
+        "p376:b13",
+        "p376:b14",
+        "p377:b2",
+        "p377:b3",
+        "p377:b4",
+        "p377:b5",
+        "p377:b6"
+      ],
+      "bbox": [
+        181.0,
+        1238.0,
+        1047.0,
+        1419.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Likelihood-ratio tests require that alternate hypotheses be nested, one model being a subset of the other (i.e., by fixing some parameters of one model we recover the second). If they are not, the large-sample distribution does not necessarily approach a $ \\chi^{2} $. Likelihood functions involving nonnested hypotheses can be compared by using Akaike's (1974) information content (AIC),",
+      "source_page": 377,
+      "printed_page": 357,
+      "source_block_ids": [
+        "p377:b7"
+      ],
+      "bbox": [
+        67.0,
+        638.0,
+        1028.0,
+        815.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula017]]",
+      "source_page": 377,
+      "printed_page": 357,
+      "source_block_ids": [
+        "p377:b8"
+      ],
+      "bbox": [
+        98.0,
+        828.0,
+        922.0,
+        878.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The model with the smallest AIC is chosen as the most parsimonious. The AIC is a descriptive statistic only and not a formal hypothesis test, but it provides a useful measure for comparing rather different models. An alternative approach involves the use of resampling methods (Schork and Schork 1989, Churchill and Doerge 1994). Two such methods, permutation tests and bootstrapping, are discussed in Chapter 15.",
+      "source_page": 377,
+      "printed_page": 357,
+      "source_block_ids": [
+        "p377:b10"
+      ],
+      "bbox": [
+        62.0,
+        892.0,
+        1023.0,
+        1099.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "How does one proceed if the underlying distributions of a mixture model are not normal? MacLean et al. (1976), Elston (1984), and Schork and Schork (1988) suggest that the Box-Cox (1964) power transform can be used to normalize each of the underlying distributions. Recall from Chapter 11 that this transformation is described by a single parameter $ \\lambda $, with $ x = (z^{\\lambda} - 1)/\\lambda $ for $ \\lambda \\neq 0 $ and $ x = \\ln z $ for $ \\lambda = 0 $. Hence, in the likelihood function, the ith underlying distribution uses $ x_i = (z^{\\lambda_i} - 1)/\\lambda_i $ in place of $ z $, allowing each underlying distribution to have a different transform. If we assume that an observed distribution is generated by $ k $ underlying distributions that can be transformed to normality by the appropriate Box-Cox transform, the resulting mixture model can be expressed as a mixture of $ k $ normals. The ith normalized underlying distribution has mean $ \\mu_i $, variance $ \\sigma_i^2 $, and transformation parameter $ \\lambda_i $, all of which can be estimated by standard ML methods. This approach offers a test for whether an observed skewed distribution results from a single naturally skewed distribution, from a mixture of underlying normals, or from a mixture of underlying distributions that can be transformed to normality. If the distribution results from a mixture of normals, a standard mixture model should give a significantly better fit than a single transformed distribution (where the transformation parameter $ \\lambda $ is estimated from the data). Whether a mixture model provides a significantly better fit can be evaluated by a likelihood-ratio test. Likewise, the hypothesis that the underlying mixture distributions are themselves skewed can be tested by fitting the $ \\lambda_{i} $ from the data and comparing this to a model with $ \\lambda_{i}=1 $ (no transformation).",
+      "source_page": 377,
+      "printed_page": 357,
+      "source_block_ids": [
+        "p377:b11",
+        "p378:b2"
+      ],
+      "bbox": [
+        50.0,
+        1086.0,
+        1016.0,
+        1551.0
+      ],
+      "source_page_end": 378
     }
   ]
 }

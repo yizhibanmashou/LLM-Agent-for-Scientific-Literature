@@ -2,65 +2,313 @@
   "id": "Genetics_chapter10_017",
   "metadata": {
     "chapter": "Genetics_chapter10",
-    "section": "Introduction",
+    "section": "THE NUMBER OF LETHAL EQUIVALENTS",
     "subsections": [
       "Estimating the Average Degree of Dominance"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter10_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "10.1",
-      "10.4"
-    ],
-    "section_level_1": "Introduction",
+    "section_level_1": "THE NUMBER OF LETHAL EQUIVALENTS",
     "section_level_2": "Estimating the Average Degree of Dominance",
     "heading_path": [
-      "Introduction",
+      "THE NUMBER OF LETHAL EQUIVALENTS",
       "Estimating the Average Degree of Dominance"
     ],
-    "display_heading": "Estimating the Average Degree of Dominance",
-    "table_reference_keys": [
-      "chapter10:10.1",
-      "chapter10:10.4"
-    ]
+    "display_heading": "THE NUMBER OF LETHAL EQUIVALENTS / Estimating the Average Degree of Dominance",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 298,
+      "printed_page": 278,
+      "source_block_ids": [
+        "p298:b13"
+      ],
+      "bbox": [
+        150.0,
+        1063.0,
+        719.0,
+        1106.0
+      ],
+      "raw_text": "Estimating the Average Degree of Dominance"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Accepting that the linear decline in log fitness in a lethal-equivalent analysis is, in fact, a consequence of multiple partially recessive alleles, then some further inference about the mode of gene action can be made. Using Equations 10.18b,c, it can be shown that $$ \\frac{B}{A+B}\\leq1-\\frac{\\sum2q_{i}s_{i}h_{i}}{\\sum q_{i}s_{i}} $$"
+      "content": "Accepting that the linear decline in log fitness in a lethal-equivalent analysis is, in fact, a consequence of multiple partially recessive alleles, then some further inference about the mode of gene action can be made. Using Equations 10.18b,c, it can be shown that",
+      "source_page": 298,
+      "printed_page": 278,
+      "source_block_ids": [
+        "p298:b14"
+      ],
+      "bbox": [
+        149.0,
+        1095.0,
+        1110.0,
+        1246.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Recalling that under selection-mutation balance, $q_{i}=u_{i}/(h_{i}s_{i})$, and rearranging, Equation 10.26 implies that for a population in equilibrium, $$ \\tilde{h}_{1}=\\frac{\\sum u_{i}}{\\sum(u_{i}/h_{i})}\\leq\\frac{A}{2(A+B)} $$"
+      "content": "[[FORMULA:Genetics_chapter10_formula044]]",
+      "source_page": 298,
+      "printed_page": 278,
+      "source_block_ids": [
+        "p298:b15"
+      ],
+      "bbox": [
+        487.0,
+        1221.0,
+        778.0,
+        1298.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The expression on the left is equal to the harmonic mean of the dominance coefficients among newly arising mutations. An upwardly biased estimate of this quantity is provided by the ratio $ A/[2(A+B)] $, the bias approaching zero as the environmental contribution to mortality becomes negligible. Application of Equation 10.27 to the data in [[SEE_TABLE:10.4]] shows that, in the vast majority of cases, $ \\tilde{h}_{1} $ is in the range of 0.02 to 0.15. It should be kept in mind that $ \\tilde{h}_{1} $ will tend to exceed the average dominance coefficient of segregating deleterious alleles because mutant alleles with higher degrees of expression are more easily removed by selection. However, because a harmonic mean is always less than the arithmetic mean, these two sources of bias may approximately cancel, leaving $ A/[2(A+B)] $ as a reasonable estimator of the arithmetic mean h of segregating alleles. In any event, the data clearly suggest that the majority of deleterious alleles influencing early survival are quite recessive."
-    },
-    {
-      "type": "proposition",
-      "content": "When highly inbred lines are available, less biased methods for estimating the average degree of dominance exist, as pointed out by Mukai et al. (1974). Consider a single diallelic locus with the relative fitnesses of the BB, Bb, and bb genotypes being 1, (1 - hs), and (1 - s). If a randomly mating base population is inbred (through a series of lines) to complete homozygosity, then (from [[SEE_TABLE:10.1]]) a fraction q of the lines will have genotype bb and fitness (1 - s) at the locus, while the remaining fraction p will have genotype BB and fitness 1. Now suppose that the inbred lines are randomly paired and mated. BB × BB matings will then occur with frequency $ p^{2} $, giving rise to BB progeny with fitness 1. Similarly, bb × bb matings will occur with frequency $ q^{2} $, giving rise to bb progeny with fitness (1 - s), and BB × bb matings will occur with frequency 2pq, giving rise to Bb progeny with fitness (1 - hs). Summing over all loci, the genetic variances for log fitness among inbred lines, among midparent values, and among $ F_{1} $ progeny are, respectively, $$ \\sigma^{2}(G_{p})=\\sum p_{i}q_{i}s_{i}^{2} $$ $$ \\sigma^{2}(G_{m p})=\\sum p_{i}q_{i}s_{i}^{2}/2 $$ $$ \\begin{aligned}\\sigma^{2}(G_{o})&=\\sum2p_{i}q_{i}s_{i}^{2}[(1-2p_{i}q_{i})h_{i}^{2}-2q_{i}^{2}h_{i}+q_{i}(1+q_{i})/2]\\\\&\\simeq\\sum2p_{i}q_{i}s_{i}^{2}h_{i}^{2}\\end{aligned} $$ the approximation in Equation 10.28c following from the reasonable assumption that the frequencies of deleterious alleles are kept low by selection, i.e., $ q_i << 1 $. In addition, the covariance among offspring and midparent genotypic values is $$ \\begin{aligned}\\sigma(G_{o},G_{mp})=&\\sum p_{i} q_{i} s_{i}^{2}[h_{i}(1-2q_{i})+q_{i}]\\\\\\simeq&\\sum p_{i} q_{i} s_{i}^{2}h_{i}\\end{aligned} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, half the genetic regression of offspring on midparent values has the expected value $$ \\frac{b(o,mp)}{2}=\\frac{\\sigma(G_{o},G_{mp})}{2\\sigma^{2}(G_{mp})}=\\frac{\\sum p_{i}q_{i}s_{i}^{2}h_{i}}{\\sum p_{i}q_{i}s_{i}^{2}} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Recalling that under selection-mutation balance, $q_i = u_i / (h_i s_i)$ and $p_i \\simeq 1$, this expression reduces to $$ \\frac{b(o,mp)}{2}=\\tilde{h}_{2}\\simeq\\frac{\\sum u_{i}s_{i}}{\\sum u_{i}s_{i}/h_{i}} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Like Equation 10.27, this expression is a harmonic mean estimate of the average degree of dominance. In this case, however, each allele is weighted by $ (u_{i}s_{i}) $, the product of the mutation pressure to the allele and the homozygous mutational effect. If $ s_{i} $ and $ h_{i} $ are uncorrelated, then Equation 10.29b, like 10.27, provides an estimate of the harmonic mean dominance coefficient of new mutations (Watanabe et al. 1976). However, data on newly arisen mutations suggest that such independence is unlikely (Chapter 12)."
+      "content": "Recalling that under selection-mutation balance, $ q_{i} = u_{i}/(h_{i}s_{i}) $, and rearranging, Equation 10.26 implies that for a population in equilibrium,",
+      "source_page": 298,
+      "printed_page": 278,
+      "source_block_ids": [
+        "p298:b17"
+      ],
+      "bbox": [
+        155.0,
+        1295.0,
+        1114.0,
+        1384.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Keeping in mind these interpretative limitations, we now consider the situation for viability in Drosophila. Averaging over four studies for which the appropriate data are available (Tantaway 1957, Dobzhansky et al. 1963, Malogolowkin-Cohen et al. 1964, Garcia et al. 1994), we estimate $ \\tilde{h}_{1} \\leq 0.14 \\pm 0.05 $. Thus, consistent with our broader interpretation of the data in [[SEE_TABLE:10.4]], most deleterious segregating genes that influence viability appear to be quite recessive. On the other hand, three studies with D. melanogaster (Mukai et al. 1972, Mukai and Yamaguchi 1974, Watanabe et al. 1976) yield estimates of $ \\tilde{h}_{2} $ that average $ 0.30 \\pm 0.05 $. Working with the same species, Hughes (1995) obtained estimates of $ \\tilde{h}_{2} $ for additional characters in males: 0.08 for body size, 0.17 for mating ability, 0.14 for mortality rate, and 0.30 for longevity. Finally, data from Wills (1966) and Strickberger (1972) yield estimates of $ \\tilde{h}_{2} = 0.27 $ and 0.18 for viability in D. pseudoobscura. None of these estimates of $ \\tilde{h}_{2} $ are strictly comparable to those for $ \\tilde{h}_{1} $, not only because different weights are employed in the two definitions, but also because all of the studies employing Mukai's regression method have excluded chromosomal lines with highly deleterious effects. Thus, to the extent that lethal or semilethal alleles have lower dominance coefficients than do mildly deleterious alleles, as the data clearly suggest (Chapter 12), $ \\tilde{h}_{2} $ estimates are expected to be higher than those for $ \\tilde{h}_{1} $. Summing up the extensive data for Drosophila, most segregating deleterious mutations appear to be recessive, with the average h for all deleterious alleles being on the order of perhaps 0.1, and that for mildly deleterious alleles being more on the order of 0.15 to 0.3."
+      "content": "[[FORMULA:Genetics_chapter10_formula045]]",
+      "source_page": 298,
+      "printed_page": 278,
+      "source_block_ids": [
+        "p298:b18"
+      ],
+      "bbox": [
+        464.0,
+        1384.0,
+        807.0,
+        1463.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "There is an unfortunate void on information on the average degree of dominance in other organisms. However, the regression technique of Mukai et al. (1974) is easily extended to certain species, most notably those that reproduce in nature by obligate self-fertilization. Individuals within such populations are as close to being completely homozygous as one can get, and provided that forced outcrosses can be implemented, it is possible to use Equation 10.29b to obtain an estimate of the dominance coefficient averaged over the entire genome. Under obligate selfing, most lethal recessives should be purged, leaving most of the deleterious mutation load in the detrimental class. Johnston and Schoen (1995) used the regression method to obtain estimates of the average degree of dominance in four populations of the annual plant Amsinckia. Their average estimates of $ \\tilde{h}_{2} $ are: 0.30 for flower number, 0.36 for survivorship from germination to flowering, 0.10 for seed production, and 0.21 for total fitness. These results are close to those for detrimentals in Drosophila. Additional methods for estimating the average degree of dominance are covered in Chapter 20."
+      "content": "The expression on the left is equal to the harmonic mean of the dominance coefficients among newly arising mutations. An upwardly biased estimate of this quantity is provided by the ratio $ A/[2(A + B)] $, the bias approaching zero as the environmental contribution to mortality becomes negligible. Application of Equation 10.27 to the data in Table 10.4 shows that, in the vast majority of cases, $ \\tilde{h}_{1} $ is in the range of 0.02 to 0.15. It should be kept in mind that $ \\tilde{h}_{1} $ will tend to exceed the average dominance coefficient of segregating deleterious alleles because mutant alleles with higher degrees of expression are more easily removed by selection. However, because a harmonic mean is always less than the arithmetic mean, these two sources of bias may approximately cancel, leaving $ A/[2(A + B)] $ as a reasonable estimator of the arithmetic mean h of segregating alleles. In any event, the data clearly suggest that the majority of deleterious alleles influencing early survival are quite recessive.",
+      "source_page": 298,
+      "printed_page": 278,
+      "source_block_ids": [
+        "p298:b20",
+        "p299:b2"
+      ],
+      "bbox": [
+        161.0,
+        1466.0,
+        1120.0,
+        1550.0
+      ],
+      "source_page_end": 299
+    },
+    {
+      "type": "discussion",
+      "content": "When highly inbred lines are available, less biased methods for estimating the average degree of dominance exist, as pointed out by Mukai et al. (1974). Consider a single diallelic locus with the relative fitnesses of the BB, Bb, and bb genotypes being 1, $ (1 - h_s) $, and $ (1 - s) $. If a randomly mating base population is inbred (through a series of lines) to complete homozygosity, then (from Table 10.1) a fraction q of the lines will have genotype bb and fitness $ (1 - s) $ at the locus, while the remaining fraction p will have genotype BB and fitness 1. Now suppose that the inbred lines are randomly paired and mated. $ BB \\times BB $ matings will then occur with frequency $ p^2 $, giving rise to BB progeny with fitness 1. Similarly, bb × bb matings will occur with frequency $ q^2 $, giving rise to bb progeny with fitness $ (1 - s) $, and $ BB \\times bb $ matings will occur with frequency 2pq, giving rise to Bb progeny with fitness $ (1 - h_s) $. Summing over all loci, the genetic variances for log fitness among inbred lines, among midparent values, and among $ F_1 $ progeny are, respectively,",
+      "source_page": 299,
+      "printed_page": 279,
+      "source_block_ids": [
+        "p299:b3"
+      ],
+      "bbox": [
+        44.0,
+        482.0,
+        1016.0,
+        960.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula046]]",
+      "source_page": 299,
+      "printed_page": 279,
+      "source_block_ids": [
+        "p299:b4"
+      ],
+      "bbox": [
+        186.0,
+        954.0,
+        428.0,
+        1006.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula047]]",
+      "source_page": 299,
+      "printed_page": 279,
+      "source_block_ids": [
+        "p299:b6"
+      ],
+      "bbox": [
+        166.0,
+        1015.0,
+        454.0,
+        1069.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula048]]",
+      "source_page": 299,
+      "printed_page": 279,
+      "source_block_ids": [
+        "p299:b8"
+      ],
+      "bbox": [
+        179.0,
+        1078.0,
+        876.0,
+        1192.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "the approximation in Equation 10.28c following from the reasonable assumption that the frequencies of deleterious alleles are kept low by selection, i.e., $ q_i << 1 $. In addition, the covariance among offspring and midparent genotypic values is",
+      "source_page": 299,
+      "printed_page": 279,
+      "source_block_ids": [
+        "p299:b10"
+      ],
+      "bbox": [
+        35.0,
+        1187.0,
+        993.0,
+        1313.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula049]]",
+      "source_page": 299,
+      "printed_page": 279,
+      "source_block_ids": [
+        "p299:b11"
+      ],
+      "bbox": [
+        265.0,
+        1306.0,
+        758.0,
+        1417.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, half the genetic regression of offspring on midparent values has the expected value",
+      "source_page": 299,
+      "printed_page": 279,
+      "source_block_ids": [
+        "p299:b13"
+      ],
+      "bbox": [
+        29.0,
+        1410.0,
+        988.0,
+        1482.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula050]]",
+      "source_page": 299,
+      "printed_page": 279,
+      "source_block_ids": [
+        "p299:b14"
+      ],
+      "bbox": [
+        281.0,
+        1472.0,
+        733.0,
+        1558.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling that under selection-mutation balance, $ q_i = u_i/(h_i s_i) $ and $ p_i \\simeq 1 $, this expression reduces to",
+      "source_page": 300,
+      "printed_page": 280,
+      "source_block_ids": [
+        "p300:b2"
+      ],
+      "bbox": [
+        132.0,
+        118.0,
+        1092.0,
+        210.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter10_formula051]]",
+      "source_page": 300,
+      "printed_page": 280,
+      "source_block_ids": [
+        "p300:b3"
+      ],
+      "bbox": [
+        450.0,
+        198.0,
+        780.0,
+        275.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Like Equation 10.27, this expression is a harmonic mean estimate of the average degree of dominance. In this case, however, each allele is weighted by $ (u_{i}s_{i}) $, the product of the mutation pressure to the allele and the homozygous mutational effect. If $ s_{i} $ and $ h_{i} $ are uncorrelated, then Equation 10.29b, like 10.27, provides an estimate of the harmonic mean dominance coefficient of new mutations (Watanabe et al. 1976). However, data on newly arisen mutations suggest that such independence is unlikely (Chapter 12).",
+      "source_page": 300,
+      "printed_page": 280,
+      "source_block_ids": [
+        "p300:b5"
+      ],
+      "bbox": [
+        138.0,
+        290.0,
+        1102.0,
+        536.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Keeping in mind these interpretative limitations, we now consider the situation for viability in Drosophila. Averaging over four studies for which the appropriate data are available (Tantaway 1957, Dobzhansky et al. 1963, Malogolowkin-Cohen et al. 1964, Garcia et al. 1994), we estimate $ \\tilde{h}_{1} \\leq 0.14 \\pm 0.05 $. Thus, consistent with our broader interpretation of the data in Table 10.4, most deleterious segregating genes that influence viability appear to be quite recessive. On the other hand, three studies with D. melanogaster (Mukai et al. 1972, Mukai and Yamaguchi 1974, Watanabe et al. 1976) yield estimates of $ \\tilde{h}_{2} $ that average $ 0.30 \\pm 0.05 $. Working with the same species, Hughes (1995) obtained estimates of $ \\tilde{h}_{2} $ for additional characters in males: 0.08 for body size, 0.17 for mating ability, 0.14 for mortality rate, and 0.30 for longevity. Finally, data from Wills (1966) and Strickberger (1972) yield estimates of $ \\tilde{h}_{2} = 0.27 $ and 0.18 for viability in D. pseudoobscura. None of these estimates of $ \\tilde{h}_{2} $ are strictly comparable to those for $ \\tilde{h}_{1} $, not only because different weights are employed in the two definitions, but also because all of the studies employing Mukai's regression method have excluded chromosomal lines with highly deleterious effects. Thus, to the extent that lethal or semilethal alleles have lower dominance coefficients than do mildly deleterious alleles, as the data clearly suggest (Chapter 12), $ \\tilde{h}_{2} $ estimates are expected to be higher than those for $ \\tilde{h}_{1} $. Summing up the extensive data for Drosophila, most segregating deleterious mutations appear to be recessive, with the average h for all deleterious alleles being on the order of perhaps 0.1, and that for mildly deleterious alleles being more on the order of 0.15 to 0.3.",
+      "source_page": 300,
+      "printed_page": 280,
+      "source_block_ids": [
+        "p300:b6"
+      ],
+      "bbox": [
+        146.0,
+        514.0,
+        1121.0,
+        1266.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "There is an unfortunate void on information on the average degree of dominance in other organisms. However, the regression technique of Mukai et al. (1974) is easily extended to certain species, most notably those that reproduce in nature by obligate self-fertilization. Individuals within such populations are as close to being completely homozygous as one can get, and provided that forced outcrosses can be implemented, it is possible to use Equation 10.29b to obtain an estimate of the dominance coefficient averaged over the entire genome. Under obligate selfing, most lethal recessives should be purged, leaving most of the deleterious mutation load in the detrimental class. Johnston and Schoen (1995) used the regression method to obtain estimates of the average degree of dominance in four populations of the annual plant Amsinckia. Their average estimates of $ \\tilde{h}_{2} $ are: 0.30 for flower number, 0.36 for survivorship from germination to flowering, 0.10 for seed production, and 0.21 for total fitness. These results are close to those for detrimentals in Drosophila. Additional methods for estimating the average degree of dominance are covered in Chapter 20.",
+      "source_page": 300,
+      "printed_page": 280,
+      "source_block_ids": [
+        "p300:b7",
+        "p301:b2"
+      ],
+      "bbox": [
+        166.0,
+        1245.0,
+        1134.0,
+        1556.0
+      ],
+      "source_page_end": 301
     }
   ]
 }

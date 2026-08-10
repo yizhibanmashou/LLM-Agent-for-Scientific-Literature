@@ -2,34 +2,99 @@
   "id": "Genetics_chapter27_007",
   "metadata": {
     "chapter": "Genetics_chapter27",
-    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "section": "RESTRICTED MAXIMUM LIKELIHOOD",
     "subsections": [
       "Multivariate Analysis"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_1": "RESTRICTED MAXIMUM LIKELIHOOD",
     "section_level_2": "Multivariate Analysis",
     "heading_path": [
-      "Variance-Component Estimation with Complex Pedigrees",
+      "RESTRICTED MAXIMUM LIKELIHOOD",
       "Multivariate Analysis"
     ],
-    "display_heading": "Multivariate Analysis"
+    "display_heading": "RESTRICTED MAXIMUM LIKELIHOOD / Multivariate Analysis",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 804,
+      "printed_page": 784,
+      "source_block_ids": [
+        "p804:b2"
+      ],
+      "bbox": [
+        142.0,
+        135.0,
+        420.0,
+        173.0
+      ],
+      "raw_text": "Multivariate Analysis"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "When multiple characters are measured in individuals, the most complete analysis includes all characters, even if our interest is only in a subset of them. Aside from the information provided on the genetic covariances among traits, multivariate analysis can improve the accuracy of variance-component estimates for single traits for the simple reason that correlated characters provide information about each other. Balancing these advantages are computational difficulties that increase with the number of characters under consideration."
+      "content": "When multiple characters are measured in individuals, the most complete analysis includes all characters, even if our interest is only in a subset of them. Aside from the information provided on the genetic covariances among traits, multivariate analysis can improve the accuracy of variance-component estimates for single traits for the simple reason that correlated characters provide information about each other. Balancing these advantages are computational difficulties that increase with the number of characters under consideration.",
+      "source_page": 804,
+      "printed_page": 784,
+      "source_block_ids": [
+        "p804:b3"
+      ],
+      "bbox": [
+        143.0,
+        156.0,
+        1106.0,
+        407.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Extension of univariate REML to the analysis of multiple traits is straightforward. Suppose $n$ characters are of interest. From our development of multivariate BLUP in the previous chapter, the variance components for the simple additive model now become the elements of the $n \\times n$ covariance matrices $\\mathbf{C}$ and $\\mathbf{E}$ of additive genetic and environmental effects, whose elements are, respectively, denoted by $\\sigma_A(i,j)$ and $\\sigma_E(i,j)$. Thus, instead of two variances, we are now faced with the estimation of $n(n+1)$ variance-covariance elements. From Chapter 26, for the simple animal model $\\mathbf{G} = \\mathbf{C} \\otimes \\mathbf{A}$ and $\\mathbf{R} = \\mathbf{E} \\otimes \\mathbf{I}$, where $\\otimes$ denotes the Kronecker product, and $\\mathbf{A}$ is the relationship matrix. The log-likelihood function for multiple characters is given by Equation 27.7b, with the design matrix $\\mathbf{X}$ now constructed as in Equation 26.31, and $$ \\mathbf{V}=\\mathbf{G}+\\mathbf{R}=\\mathbf{C}\\otimes\\mathbf{A}+\\mathbf{E}\\otimes\\mathbf{I} $$"
+      "content": "Extension of univariate REML to the analysis of multiple traits is straightforward. Suppose $n$ characters are of interest. From our development of multivariate BLUP in the previous chapter, the variance components for the simple additive model now become the elements of the $n \\times n$ covariance matrices $\\mathbf{C}$ and $\\mathbf{E}$ of additive genetic and environmental effects, whose elements are, respectively, denoted by $\\sigma_A(i,j)$ and $\\sigma_E(i,j)$. Thus, instead of two variances, we are now faced with the estimation of $n(n+1)$ variance-covariance elements. From Chapter 26, for the simple animal model $\\mathbf{G} = \\mathbf{C} \\otimes \\mathbf{A}$ and $\\mathbf{R} = \\mathbf{E} \\otimes \\mathbf{I}$, where $\\otimes$ denotes the Kronecker product, and $\\mathbf{A}$ is the relationship matrix. The log-likelihood function for multiple characters is given by Equation 27.7b, with the design matrix $\\mathbf{X}$ now constructed as in Equation 26.31, and",
+      "source_page": 804,
+      "printed_page": 784,
+      "source_block_ids": [
+        "p804:b4"
+      ],
+      "bbox": [
+        151.0,
+        382.0,
+        1117.0,
+        761.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "While the set of $ n(n+1) $ REML equations can be obtained by differentiating the log-likelihood with respect to each variance/covariance component, the computational demands of multivariate analysis increase rapidly with the number of characters. However, as we saw for multivariate BLUP analysis in Chapter 26, canonical transformation provides an elegant way of reducing an n-dimensional multivariate analysis to n one-dimensional analyses. An additional complexity that arises when this approach is applied to REML is that the transformation matrix Q is a function of C and E, the matrices that we are trying to estimate. As will be seen below, this can generally be accommodated by the iterative procedures that are routinely employed in REML analysis, by starting with some initial estimate of Q, computing C and E by univariate analyses based on this Q, and then using these new estimates to compute a new Q. Further details can be found in Meyer (1985), Schaeffer (1986), Taylor et al. (1985), Jensen and Mao (1988), and Thompson and Hill (1990)."
+      "content": "[[FORMULA:Genetics_chapter27_formula071]]",
+      "source_page": 804,
+      "printed_page": 784,
+      "source_block_ids": [
+        "p804:b5"
+      ],
+      "bbox": [
+        460.0,
+        775.0,
+        825.0,
+        817.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "While the set of $ n(n+1) $ REML equations can be obtained by differentiating the log-likelihood with respect to each variance/covariance component, the computational demands of multivariate analysis increase rapidly with the number of characters. However, as we saw for multivariate BLUP analysis in Chapter 26, canonical transformation provides an elegant way of reducing an n-dimensional multivariate analysis to n one-dimensional analyses. An additional complexity that arises when this approach is applied to REML is that the transformation matrix Q is a function of C and E, the matrices that we are trying to estimate. As will be seen below, this can generally be accommodated by the iterative procedures that are routinely employed in REML analysis, by starting with some initial estimate of Q, computing C and E by univariate analyses based on this Q, and then using these new estimates to compute a new Q. Further details can be found in Meyer (1985), Schaeffer (1986), Taylor et al. (1985), Jensen and Mao (1988), and Thompson and Hill (1990).",
+      "source_page": 804,
+      "printed_page": 784,
+      "source_block_ids": [
+        "p804:b6"
+      ],
+      "bbox": [
+        163.0,
+        841.0,
+        1135.0,
+        1315.0
+      ]
     }
   ]
 }

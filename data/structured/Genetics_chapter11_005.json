@@ -2,67 +2,51 @@
   "id": "Genetics_chapter11_005",
   "metadata": {
     "chapter": "Genetics_chapter11",
-    "section": "Introduction",
-    "subsections": [
-      "of Wetherill (1986) for more advanced methods. Graphical tests for departures from normality are especially informative. For example, a simple frequency histogram may immediately reveal departures from normality, such as multiple peaks or strong asymmetries. If a character is determined by one (or a few) genes of major effect, a bimodal (or multimodal) distribution can sometimes result (CHAPTER 13). Such distributions can also result when a character is strongly influenced by a few distinct environmental effects."
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter11_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "11.1"
-    ],
-    "section_level_1": "Introduction",
-    "section_level_2": "of Wetherill (1986) for more advanced methods. Graphical tests for departures from normality are especially informative. For example, a simple frequency histogram may immediately reveal departures from normality, such as multiple peaks or strong asymmetries. If a character is determined by one (or a few) genes of major effect, a bimodal (or multimodal) distribution can sometimes result (CHAPTER 13). Such distributions can also result when a character is strongly influenced by a few distinct environmental effects.",
+    "section": "STABILIZING THE VARIANCE",
+    "subsections": [],
+    "section_level_1": "STABILIZING THE VARIANCE",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "of Wetherill (1986) for more advanced methods. Graphical tests for departures from normality are especially informative. For example, a simple frequency histogram may immediately reveal departures from normality, such as multiple peaks or strong asymmetries. If a character is determined by one (or a few) genes of major effect, a bimodal (or multimodal) distribution can sometimes result (CHAPTER 13). Such distributions can also result when a character is strongly influenced by a few distinct environmental effects."
+      "STABILIZING THE VARIANCE"
     ],
-    "display_heading": "of Wetherill (1986) for more advanced methods. Graphical tests for departures from normality are especially informative. For example, a simple frequency histogram may immediately reveal departures from normality, such as multiple peaks or strong asymmetries. If a character is determined by one (or a few) genes of major effect, a bimodal (or multimodal) distribution can sometimes result (CHAPTER 13). Such distributions can also result when a character is strongly influenced by a few distinct environmental effects.",
-    "table_reference_keys": [
-      "chapter11:11.1"
-    ]
+    "display_heading": "STABILIZING THE VARIANCE",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 314,
+      "printed_page": 294,
+      "source_block_ids": [
+        "p314:b4"
+      ],
+      "bbox": [
+        137.0,
+        1018.0,
+        541.0,
+        1055.0
+      ],
+      "raw_text": "STABILIZING THE VARIANCE"
+    }
   },
   "blocks": [
     {
-      "type": "proposition",
-      "content": "With only sample moments in hand, deviations from normality are indicated by significant skewness and/or kurtosis. Bowman and Shenton (1975) proposed a joint test of this, employing the statistic $$ S=\\frac{n\\cdot k_{3}^{2}}{6}+\\frac{n\\cdot k_{4}^{2}}{24} $$ where $n$ is the sample size, and from Equations 2.8 and 2.12a, $k_3 = \\mathrm{Skw}(z)/\\mathrm{Var}(z)^{3/2}$ and $k_4 =[\\mathrm{Kur}(z)/\\mathrm{Var}(z)^2] - 3$ are, respectively, the standardized sample skewness and kurtosis, both of which have expected value zero under the assumption of normality. For large sample sizes, $S$ is distributed as a $\\chi^2$ with two degrees of freedom. Thus, the hypothesis that a distribution is normal is rejected at the 5% level if $S > 5.99$ and at the 1% level if $S > 9.21$."
-    },
-    {
       "type": "discussion",
-      "content": "A more powerful approach for evaluating normality involves normal probability plots, which can be generated either by plotting cumulative frequency on special normal probability graph paper or by transforming cumulative frequency to a normal probability (or probit) scale. In Chapter 2, we defined $ \\Phi_{T} $ as the fraction of measures in a distribution that are greater than value T. Here we let $ q = (1 - \\Phi_{T}) $ be the cumulative frequency to point T. A given cumulative frequency is rescaled to a normal probability scale by using the probit transform prb(q), which is defined as the solution of $$ \\Pr[U<\\mathbf{prb}(q)]=q $$ where $U$ is a standardized (or unit) normal random variable with zero mean and unit variance. Given $q$, $\\text{prb}(q)$ is obtained from tables of the unit normal (e.g., Beyer 1968) or from common statistical packages. For example, since $\\text{Pr}(U < -1) = 0.1587$, the normal probability scale value associated with a cumulative frequency of $q = 0.1587$ is $\\text{prb}(0.1587) = -1$. Since $U$ is symmetrically distributed about zero, it follows that $$ -\\mathbf{p r b}(0.5-\\delta)=\\mathbf{p r b}(0.5+\\delta)\\qquad\\mathrm{f o r}\\quad0\\leq\\delta\\leq0.5 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "[[SEE_TABLE:11.1]] gives the normal probability scale measures for different values of $ \\delta $. For example, suppose that only 1.2% of the population is below a given"
-    },
-    {
-      "type": "discussion",
-      "content": "[[FIGURE:11.2]] character value, so that $q=0.012$. Expressing this in the form used by [[SEE_TABLE:11.1]] gives $\\text{prb}(0.012)=\\text{prb}(0.5-0.488)=-\\text{prb}(0.5+0.488)=-2.25$. Zero on the probit scale corresponds to the population median $(q=0.50)$, which is also the mean for a normal. For a normally distributed variable, a unit change on the probit scale corresponds to one standard deviation (Figure 11.2). As shown in Figure 11.2, with a normal distribution, cumulative frequency as a function of $z$ is sigmoidal, but it is linear when transformed to a normal probability scale. Nonnormal distributions deviate from linearity on such plots, <table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>$ \\delta $</td><td style='text-align: center; word-wrap: break-word;'>0.000</td><td style='text-align: center; word-wrap: break-word;'>0.099</td><td style='text-align: center; word-wrap: break-word;'>0.191</td><td style='text-align: center; word-wrap: break-word;'>0.273</td><td style='text-align: center; word-wrap: break-word;'>0.341</td><td style='text-align: center; word-wrap: break-word;'>0.394</td><td style='text-align: center; word-wrap: break-word;'>0.433</td><td style='text-align: center; word-wrap: break-word;'>0.460</td><td style='text-align: center; word-wrap: break-word;'>0.477</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ prb(0.5 + \\delta) $</td><td style='text-align: center; word-wrap: break-word;'>0.000</td><td style='text-align: center; word-wrap: break-word;'>0.250</td><td style='text-align: center; word-wrap: break-word;'>0.500</td><td style='text-align: center; word-wrap: break-word;'>0.750</td><td style='text-align: center; word-wrap: break-word;'>1.000</td><td style='text-align: center; word-wrap: break-word;'>1.250</td><td style='text-align: center; word-wrap: break-word;'>1.500</td><td style='text-align: center; word-wrap: break-word;'>1.750</td><td style='text-align: center; word-wrap: break-word;'>2.000</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ \\delta $</td><td style='text-align: center; word-wrap: break-word;'>0.488</td><td style='text-align: center; word-wrap: break-word;'>0.494</td><td style='text-align: center; word-wrap: break-word;'>0.497</td><td style='text-align: center; word-wrap: break-word;'>0.4987</td><td style='text-align: center; word-wrap: break-word;'>0.4994</td><td style='text-align: center; word-wrap: break-word;'>0.4998</td><td style='text-align: center; word-wrap: break-word;'>0.4999</td><td style='text-align: center; word-wrap: break-word;'>0.5000</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ prb(0.5 + \\delta) $</td><td style='text-align: center; word-wrap: break-word;'>2.250</td><td style='text-align: center; word-wrap: break-word;'>2.500</td><td style='text-align: center; word-wrap: break-word;'>2.750</td><td style='text-align: center; word-wrap: break-word;'>3.0000</td><td style='text-align: center; word-wrap: break-word;'>3.2500</td><td style='text-align: center; word-wrap: break-word;'>3.5000</td><td style='text-align: center; word-wrap: break-word;'>3.7500</td><td style='text-align: center; word-wrap: break-word;'>$ \\infty $</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
-    },
-    {
-      "type": "discussion",
-      "content": "Note: Values of $ \\delta < 0 $ follow from the identity $ \\mathrm{prb}(0.5 - \\delta) = -\\mathrm{prb}(0.5 + \\delta) $."
-    },
-    {
-      "type": "discussion",
-      "content": "[[FIGURE:11.3]] with multimodal, overly peaked, and skewed distributions all exhibiting characteristic departures (Figure 11.3). The normal probability scale forms the basis for the most powerful tests for departures from normality, such as the small-sample W test of Shapiro and Wilk (1965) and the large-sample D test of D'Agostino (1971)."
-    },
-    {
-      "type": "discussion",
-      "content": "Example 1. Fisher (1958) gives the following data set (based on unpublished work of Ford and Bull) on the number of vertebrae in herrings. Ignoring the discrete nature of the data, does the normal distribution give a reasonable fit?"
-    },
-    {
-      "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"6\">Number of vertebrae</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>53</td><td style='text-align: center; word-wrap: break-word;'>54</td><td style='text-align: center; word-wrap: break-word;'>55</td><td style='text-align: center; word-wrap: break-word;'>56</td><td style='text-align: center; word-wrap: break-word;'>57</td><td style='text-align: center; word-wrap: break-word;'>58</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Population frequency (%)</td><td style='text-align: center; word-wrap: break-word;'>0.08</td><td style='text-align: center; word-wrap: break-word;'>1.06</td><td style='text-align: center; word-wrap: break-word;'>28.36</td><td style='text-align: center; word-wrap: break-word;'>61.30</td><td style='text-align: center; word-wrap: break-word;'>8.91</td><td style='text-align: center; word-wrap: break-word;'>0.29</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Cumulative frequency, $ q $ (%)</td><td style='text-align: center; word-wrap: break-word;'>0.08</td><td style='text-align: center; word-wrap: break-word;'>1.14</td><td style='text-align: center; word-wrap: break-word;'>29.50</td><td style='text-align: center; word-wrap: break-word;'>90.80</td><td style='text-align: center; word-wrap: break-word;'>99.71</td><td style='text-align: center; word-wrap: break-word;'>100.00</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>prb($ q $)</td><td style='text-align: center; word-wrap: break-word;'>-3.14</td><td style='text-align: center; word-wrap: break-word;'>-1.22</td><td style='text-align: center; word-wrap: break-word;'>-0.54</td><td style='text-align: center; word-wrap: break-word;'>1.33</td><td style='text-align: center; word-wrap: break-word;'>2.76</td><td style='text-align: center; word-wrap: break-word;'>$ \\infty $</td></tr></table>"
-    },
-    {
-      "type": "discussion",
-      "content": "The cumulative frequency associated with a particular character value is the sum of all frequencies up to that point (e.g., the cumulative frequency associated with 55 vertebrae is $ 0.08 + 1.06 + 28.36 = 29.50% $). Plotting cumulative frequency as a function of vertebrae number gives a sigmoidal plot, as shown in the accompanying figure, suggesting a normal distribution. Using unit normal tables, the cumulative frequencies can be transformed to a normal probability scale. For example, the cumulative frequency associated with 55 vertebrae is q = 0.2950. Interpolating from the normal distribution table, we find that for a unit normal U, $ \\Pr(U < -0.54) = 0.2950 $, so the prb(q) value associated with 55 vertebrae is -0.54 (0.54 standard deviations below the mean assuming a normal distribution). Plotting prb(q) versus vertebrae number gives a good linear relationship (see the following figure), suggesting that the normal distribution provides a reasonable description of the data."
-    },
-    {
-      "type": "discussion",
-      "content": "[[FIGURE:11.4]]"
+      "content": "For studies concerned with relative levels of variation in different populations, it is useful to know whether the observed differences are simply a consequence of scale. For example, it is not uncommon for the variance to increase as the population mean increases (Figure 11.4). By operating on a scale for which there is no discernible relation between the mean and variance, one can be secure that any significant differences in observed levels of variance between samples must be attributable to something other than differences in the mean. Here, we consider the use of variance-stabilizing transformations to render the variance on the transformed scale independent of the mean. Wright (1968, Chapters 10 and 11) gives an excellent discussion of the application of such transformations to distributions of quantitative characters.",
+      "source_page": 314,
+      "printed_page": 294,
+      "source_block_ids": [
+        "p314:b5"
+      ],
+      "bbox": [
+        137.0,
+        1075.0,
+        1101.0,
+        1445.0
+      ]
     }
   ]
 }

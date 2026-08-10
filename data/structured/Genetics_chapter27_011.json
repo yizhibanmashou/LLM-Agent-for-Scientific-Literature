@@ -2,54 +2,346 @@
   "id": "Genetics_chapter27_011",
   "metadata": {
     "chapter": "Genetics_chapter27",
-    "section": "Variance-Component Estimation with Complex Pedigrees",
+    "section": "SOLVING THE ML/REML EQUATIONS",
     "subsections": [
       "EM Methods"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
+    "section_level_1": "SOLVING THE ML/REML EQUATIONS",
     "section_level_2": "EM Methods",
     "heading_path": [
-      "Variance-Component Estimation with Complex Pedigrees",
+      "SOLVING THE ML/REML EQUATIONS",
       "EM Methods"
     ],
-    "display_heading": "EM Methods"
+    "display_heading": "SOLVING THE ML/REML EQUATIONS / EM Methods",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b2"
+      ],
+      "bbox": [
+        49.0,
+        123.0,
+        219.0,
+        158.0
+      ],
+      "raw_text": "EM Methods"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The idea behind the EM (expectation/maximization) algorithm for variance-component analysis is that if we knew the values of the random effects, we could estimate the variances in a simple fashion directly from them. Focusing on the general mixed model defined by Equation 27.8a, the variances of the random and residual effects are defined respectively to be $$ \\sigma_{i}^{2}=\\frac{E[\\mathbf{u}_{i}^{T}\\mathbf{B}_{i}^{-1}\\mathbf{u}_{i}]}{n_{i}} $$ $$ \\sigma_{E}^{2}=\\frac{E[\\mathbf{e}_{i}^{T}\\mathbf{e}_{i}]}{n} $$ where $n$ and $n_i$ are, respectively, the number of elements in $\\mathbf{e}$ and $\\mathbf{u}_i$. Equation 27.36a follows from Equation 8.22, which, since $E[\\mathbf{u}_i] = \\mathbf{0}$, reduces to $$ E[\\mathbf{u}_{i}^{T}\\mathbf{B}_{i}^{-1}\\mathbf{u}_{i}]=\\mathbf{t r}(\\mathbf{B}_{i}^{-1}\\sigma_{i}^{2}\\mathbf{B}_{i})=\\sigma_{i}^{2}\\mathbf{t r}(\\mathbf{I}_{n_{i}})=n_{i}\\sigma_{i}^{2} $$"
+      "content": "The idea behind the EM (expectation/maximization) algorithm for variance-component analysis is that if we knew the values of the random effects, we could estimate the variances in a simple fashion directly from them. Focusing on the general mixed model defined by Equation 27.8a, the variances of the random and residual effects are defined respectively to be",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b3"
+      ],
+      "bbox": [
+        43.0,
+        163.0,
+        1006.0,
+        353.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The last two steps follow from Equations 27.12a and 27.12b, respectively. Equation 27.36b follows in a similar fashion. In actuality, of course, we only know y, not the underlying vectors of random effects ($ u_{i} $) or residual deviations (e)."
+      "content": "[[FORMULA:Genetics_chapter27_formula084]]",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b4"
+      ],
+      "bbox": [
+        400.0,
+        362.0,
+        640.0,
+        442.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Underlying the EM algorithm is the idea, discussed in Chapter 26, that the information in y provides a basis for making predictions about the elements of $ u_{i} $ and e. In the context of variance-component analysis, we need to go a step beyond BLUP estimation of $ u_{i} $ and e, as it is actually the quadratic products of $ u_{i} $ and e in the numerators of Equations 27.36a,b that we need to predict. Here, in the interest of clarity and space, we skip over a number of steps to the final solution (see Searle et al. 1992, pp. 297–304 for a complete derivation). Searle et al. show that the conditional distribution of u given the observed y is MVN, with $$ \\begin{array}{r}{E[\\mathbf{u}_{i}\\mid\\mathbf{y}]=\\sigma_{i}^{2}\\mathbf{Z}_{i}^{T}\\mathbf{V}^{-1}(\\mathbf{y}-\\mathbf{X}\\boldsymbol{\\beta})=\\sigma_{i}^{2}\\mathbf{Z}_{i}^{T}\\mathbf{P}\\mathbf{y}}\\end{array} $$ and $$ \\sigma^{2}(\\mathbf{u}_{i}\\mid\\mathbf{y})=\\sigma_{i}^{2}\\mathbf{I}_{n_{i}}-\\sigma_{i}^{4}\\mathbf{Z}_{i}^{T}\\mathbf{V}^{-1}\\mathbf{Z}_{i} $$"
+      "content": "[[FORMULA:Genetics_chapter27_formula085]]",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b6"
+      ],
+      "bbox": [
+        395.0,
+        445.0,
+        581.0,
+        516.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Substituting into Equation 8.22, after some simplification, the expectation of the quadratic product in Equation 27.36a, conditional on the observed y, becomes $$ E[\\mathbf{u}_{i}^{T}\\mathbf{B}_{i}^{-1}\\mathbf{u}_{i}|\\mathbf{y}]=n_{i}\\sigma_{i}^{2}+\\sigma_{i}^{4}\\left[\\mathbf{y}^{T}\\mathbf{P}\\mathbf{V}_{i}\\mathbf{P}\\mathbf{y}-\\mathbf{t r}(\\mathbf{P}\\mathbf{V}_{i})\\right] $$ where $ \\mathbf{V}_{i}=\\mathbf{Z}_{i}\\mathbf{B}_{i}\\mathbf{Z}_{i}^{T} $ as given by Equation 27.15. Similar logic gives $$ E[\\mathbf{e}^{T}\\mathbf{e}|\\mathbf{y}]=n\\sigma_{E}^{2}+\\sigma_{E}^{4}\\left[\\mathbf{y}^{T}\\mathbf{P}\\mathbf{P}\\mathbf{y}-\\mathbf{t r}(\\mathbf{P})\\right] $$"
-    },
-    {
-      "type": "proposition",
-      "content": "These expressions define expected quadratic values, conditional on the particular set of observations y, under the assumption that the true variance components are known. The astute reader will immediately notice that our problem has hardly been solved, since we are trying to estimate the variance components."
+      "content": "where $n$ and $n_{i}$ are, respectively, the number of elements in e and $\\mathbf{u}_{i}$. Equation 27.36a follows from Equation 8.22, which, since $E[\\mathbf{u}_{i}] = \\mathbf{0}$, reduces to",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b8"
+      ],
+      "bbox": [
+        35.0,
+        520.0,
+        994.0,
+        613.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The EM algorithm (Dempster et al. 1977) attempts to circumvent this problem by starting with some initial estimates of the variance components, and then substituting these as well as y into Equations 27.37a,b to obtain estimates of the quadratic products. These latter estimates are then substituted into Equations 27.36a,b to obtain improved estimates of the variance components, and then the entire process is repeated again and again until satisfactory convergence has been achieved. Defining the quantities estimated by Equations 27.37a,b in the kth iteration as $ \\widehat{q}_i^{(k)} $, and $ \\widehat{q}_E^{(k)} $, the EM algorithm can be summarized as follows: (1) the E step computes the expected quadratic products conditional upon $ \\mathbf{y} $, $ \\widehat{q}_i^{(k)} $, and $ \\widehat{q}_E^{(k)} $ and (2) the M step substitutes these conditional expectations into the maximum likelihood estimators (Equations 27.36a,b) to generate the next round of REML variance-component estimates, $ (\\widehat{\\sigma}_E^2)^{(k+1)} $ and $ (\\widehat{\\sigma}_i^2)^{(k+1)} $, which are then applied to the next E step. The final REML estimates are achieved when $ (\\widehat{\\sigma}_E^2)^{(k)} \\simeq (\\widehat{\\sigma}_E^2)^{(k+1)} $ and $ (\\widehat{\\sigma}_i^2)^{(k)} \\simeq (\\widehat{\\sigma}_i^2)^{(k+1)} $. That estimates obtained via the EM algorithm do indeed correspond to the REML solutions can be seen by recalling the REML Equations 27.30a,b. Upon convergence of the EM algorithm, the terms in brackets on the right sides of Equations 27.37a,b must be equal to zero, which is equivalent to the REML solutions. When convergence is reached, the estimates of the variance components are used to obtain the final estimate of $\\widehat{V}$, and the vector of fixed effects is then estimated by $$ \\hat{\\boldsymbol{\\beta}}=(\\mathbf{X}^{T}\\hat{\\mathbf{V}}^{-1}\\mathbf{X})^{-1}\\mathbf{X}^{T}\\hat{\\mathbf{V}}^{-1}\\mathbf{y} $$"
+      "content": "[[FORMULA:Genetics_chapter27_formula086]]",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b9"
+      ],
+      "bbox": [
+        219.0,
+        613.0,
+        805.0,
+        671.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In general, solutions via the EM algorithm can take considerably more iterations to converge than those via Newton-Raphson iteration, especially when heritabilities are low. Moreover, as with the Newton-Raphson algorithm, the EM algorithm is by no means guaranteed to converge on the REML solution; it sometimes generates multiple solutions for different starting conditions (Groeneveld and Kovac 1990b). Such problems can result from multiple peaks in the likelihood surface. Since the EM method in essence uses the first derivatives of the likelihood function to adjust the variance-component estimates (compare Equation 27.33 and the terms in brackets in Equations 27.37a,b), it can get stuck on inflection points in the likelihood surface as well. Rounding errors can also compromise the iterative solutions (Boichard et al. 1992). As in the case of derivative-based methods, many of these problems can be minimized by performing multiple analyses from different starting points."
+      "content": "The last two steps follow from Equations 27.12a and 27.12b, respectively. Equation 27.36b follows in a similar fashion. In actuality, of course, we only know y, not the underlying vectors of random effects $ (u_i) $ or residual deviations (e).",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b10"
+      ],
+      "bbox": [
+        30.0,
+        670.0,
+        990.0,
+        795.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 5. Consider again the animal model with dominance and a single record per individual, $ \\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{a} + \\mathbf{d} + \\mathbf{e} $. The EM equations for the REML estimates of $\\sigma_{A}^{2}, \\sigma_{D}^{2}$, and $\\sigma_{E}^{2}$ are $$ \\left(\\widehat{\\sigma}_{A}^{2}\\right)^{(k+1)}=\\left(\\widehat{\\sigma}_{A}^{2}\\right)^{(k)}+\\frac{\\left(\\widehat{\\sigma}_{A}^{4}\\right)^{(k)}}{n}\\cdot\\left\\{\\mathbf{y}^{T}\\mathbf{P}^{(k)}\\mathbf{A}\\mathbf{P}^{(k)}\\mathbf{y}-\\operatorname{t r}\\left[\\mathbf{P}^{(k)}\\mathbf{A}\\right]\\right\\} $$ $$ \\left(\\widehat{\\sigma}_{D}^{2}\\right)^{(k+1)}=\\left(\\widehat{\\sigma}_{D}^{2}\\right)^{(k)}+\\frac{\\left(\\widehat{\\sigma}_{D}^{4}\\right)^{(k)}}{n}\\Big\\{\\mathbf{y}^{T}\\mathbf{P}^{(k)}\\mathbf{D P}^{(k)}\\mathbf{y}-\\operatorname{t r}\\left[\\mathbf{P}^{(k)}\\mathbf{D}\\right]\\Big\\} $$ $$ \\left(\\widehat{\\sigma}_{E}^{2}\\right)^{(k+1)}=\\left(\\widehat{\\sigma}_{E}^{2}\\right)^{(k)}+\\frac{\\left(\\widehat{\\sigma}_{E}^{4}\\right)^{(k)}}{n}\\left\\{\\mathbf{y}^{T}\\mathbf{P}^{(k)}\\mathbf{P}^{(k)}\\mathbf{y}-\\mathbf{t r}\\left[\\mathbf{P}^{(k)}\\right]\\right\\} $$ where $ \\mathbf{P}^{(k)} $ is defined by Equation 27.17b using $ \\mathbf{V}^{(k)} $ for V where $$ \\mathbf{V}^{(k)}=(\\widehat{\\sigma}_{A}^{2})^{(k)}\\mathbf{A}+(\\widehat{\\sigma}_{D}^{2})^{(k)}\\mathbf{D}+(\\widehat{\\sigma}_{E}^{2})^{(k)}\\mathbf{I} $$"
+      "content": "Underlying the EM algorithm is the idea, discussed in Chapter 26, that the information in y provides a basis for making predictions about the elements of $ u_{i} $ and e. In the context of variance-component analysis, we need to go a step beyond BLUP estimation of $ u_{i} $ and e, as it is actually the quadratic products of $ u_{i} $ and e in the numerators of Equations 27.36a,b that we need to predict. Here, in the interest of clarity and space, we skip over a number of steps to the final solution (see Searle et al. 1992, pp. 297–304 for a complete derivation). Searle et al. show that the conditional distribution of u given the observed y is MVN, with",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b11"
+      ],
+      "bbox": [
+        21.0,
+        765.0,
+        987.0,
+        1056.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula087]]",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b12"
+      ],
+      "bbox": [
+        240.0,
+        1052.0,
+        756.0,
+        1107.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b13"
+      ],
+      "bbox": [
+        17.0,
+        1109.0,
+        73.0,
+        1139.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula088]]",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b14"
+      ],
+      "bbox": [
+        291.0,
+        1144.0,
+        696.0,
+        1195.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting into Equation 8.22, after some simplification, the expectation of the quadratic product in Equation 27.36a, conditional on the observed y, becomes",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b15"
+      ],
+      "bbox": [
+        12.0,
+        1188.0,
+        972.0,
+        1285.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula089]]",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b16"
+      ],
+      "bbox": [
+        122.0,
+        1277.0,
+        763.0,
+        1340.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\mathbf{V}_i = \\mathbf{Z}_i \\mathbf{B}_i \\mathbf{Z}_i^T $ as given by Equation 27.15. Similar logic gives",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b18"
+      ],
+      "bbox": [
+        7.0,
+        1336.0,
+        824.0,
+        1399.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula090]]",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b19"
+      ],
+      "bbox": [
+        232.0,
+        1400.0,
+        740.0,
+        1457.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "These expressions define expected quadratic values, conditional on the particular set of observations y, under the assumption that the true variance components are known. The astute reader will immediately notice that our problem has hardly been solved, since we are trying to estimate the variance components.",
+      "source_page": 809,
+      "printed_page": 789,
+      "source_block_ids": [
+        "p809:b21",
+        "p810:b2"
+      ],
+      "bbox": [
+        3.0,
+        1454.0,
+        964.0,
+        1553.0
+      ],
+      "source_page_end": 810
+    },
+    {
+      "type": "discussion",
+      "content": "The EM algorithm (Dempster et al. 1977) attempts to circumvent this problem by starting with some initial estimates of the variance components, and then substituting these as well as y into Equations 27.37a,b to obtain estimates of the quadratic products. These latter estimates are then substituted into Equations 27.36a,b to obtain improved estimates of the variance components, and then the entire process is repeated again and again until satisfactory convergence has been achieved. Defining the quantities estimated by Equations 27.37a,b in the kth iteration as $ \\widehat{q}_i^{(k)} $, and $ \\widehat{q}_E^{(k)} $, the EM algorithm can be summarized as follows: (1) the E step computes the expected quadratic products conditional upon $ \\mathbf{y} $, $ \\widehat{q}_i^{(k)} $, and $ \\widehat{q}_E^{(k)} $, and (2) the M step substitutes these conditional expectations into the maximum likelihood estimators (Equations 27.36a,b) to generate the next round of REML variance-component estimates, $ (\\widehat{\\sigma}_E^2)^{(k+1)} $ and $ (\\widehat{\\sigma}_i^2)^{(k+1)} $, which are then applied to the next E step. The final REML estimates are achieved when $ (\\widehat{\\sigma}_E^2)^{(k)} \\simeq (\\widehat{\\sigma}_E^2)^{(k+1)} $ and $ (\\widehat{\\sigma}_i^2)^{(k)} \\simeq (\\widehat{\\sigma}_E^2)^{(k+1)} $.",
+      "source_page": 810,
+      "printed_page": 790,
+      "source_block_ids": [
+        "p810:b3"
+      ],
+      "bbox": [
+        156.0,
+        187.0,
+        1123.0,
+        673.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "That estimates obtained via the EM algorithm do indeed correspond to the REML solutions can be seen by recalling the REML Equations 27.30a,b. Upon convergence of the EM algorithm, the terms in brackets on the right sides of Equations 27.37a,b must be equal to zero, which is equivalent to the REML solutions. When convergence is reached, the estimates of the variance components are used to obtain the final estimate of $ \\widehat{V} $, and the vector of fixed effects is then estimated by",
+      "source_page": 810,
+      "printed_page": 790,
+      "source_block_ids": [
+        "p810:b4"
+      ],
+      "bbox": [
+        167.0,
+        643.0,
+        1131.0,
+        870.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula091]]",
+      "source_page": 810,
+      "printed_page": 790,
+      "source_block_ids": [
+        "p810:b5"
+      ],
+      "bbox": [
+        484.0,
+        879.0,
+        825.0,
+        936.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In general, solutions via the EM algorithm can take considerably more iterations to converge than those via Newton-Raphson iteration, especially when heritabilities are low. Moreover, as with the Newton-Raphson algorithm, the EM algorithm is by no means guaranteed to converge on the REML solution; it sometimes generates multiple solutions for different starting conditions (Groeneveld and Kovac 1990b). Such problems can result from multiple peaks in the likelihood surface. Since the EM method in essence uses the first derivatives of the likelihood function to adjust the variance-component estimates (compare Equation 27.33 and the terms in brackets in Equations 27.37a,b), it can get stuck on inflection points in the likelihood surface as well. Rounding errors can also compromise the iterative solutions (Boichard et al. 1992). As in the case of derivative-based methods, many of these problems can be minimized by performing multiple analyses from different starting points.",
+      "source_page": 810,
+      "printed_page": 790,
+      "source_block_ids": [
+        "p810:b6"
+      ],
+      "bbox": [
+        178.0,
+        952.0,
+        1146.0,
+        1395.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter27:5]]",
+      "source_page": 810,
+      "source_block_ids": [
+        "p810:b7",
+        "p811:b2",
+        "p811:b3",
+        "p811:b4",
+        "p811:b5",
+        "p811:b6",
+        "p811:b7"
+      ],
+      "bbox": [
+        239.0,
+        1460.0,
+        1106.0,
+        1545.0
+      ]
     }
   ]
 }

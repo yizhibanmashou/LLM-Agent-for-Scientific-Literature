@@ -2,30 +2,130 @@
   "id": "Genetics_chapter15_009",
   "metadata": {
     "chapter": "Genetics_chapter15",
-    "section": "Introduction",
-    "subsections": [
-      "different marker genotypes as"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "different marker genotypes as",
+    "section": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD",
+    "subsections": [],
+    "section_level_1": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "different marker genotypes as"
+      "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD"
     ],
-    "display_heading": "different marker genotypes as"
+    "display_heading": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 459,
+      "printed_page": 439,
+      "source_block_ids": [
+        "p459:b2"
+      ],
+      "bbox": [
+        85.0,
+        157.0,
+        982.0,
+        199.0
+      ],
+      "raw_text": "QTL DETECTION AND ESTIMATION VIA MAXIMUM LIKELIHOOD"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "$$ \\begin{aligned}\\ell(\\boldsymbol{z}|MM)&=(1-c)^{2}\\varphi(\\boldsymbol{z},\\mu_{QQ},\\sigma^{2})+2c(1-c)\\varphi(\\boldsymbol{z},\\mu_{Qq},\\sigma^{2})+c^{2}\\varphi(\\boldsymbol{z},\\mu_{qq},\\sigma^{2})\\\\\\ell(\\boldsymbol{z}|Mm)&=c(1-c)\\varphi(\\boldsymbol{z},\\mu_{QQ},\\sigma^{2})+\\left[\\left(1-c\\right)^{2}+c^{2}\\right]\\varphi(\\boldsymbol{z},\\mu_{Qq},\\sigma^{2})\\\\&\\quad+c(1-c)\\varphi(\\boldsymbol{z},\\mu_{qq},\\sigma^{2})\\\\\\ell(\\boldsymbol{z}|mm)&=c^{2}\\varphi(\\boldsymbol{z},\\mu_{QQ},\\sigma^{2})+2c(1-c)\\varphi(\\boldsymbol{z},\\mu_{Qq},\\sigma^{2})+(1-c)^{2}\\varphi(\\boldsymbol{z},\\mu_{qq},\\sigma^{2})\\end{aligned} $$ as obtained by Weller (1986). The total likelihood for $n$ $F_{2}$ individuals is the product of the individual likelihoods, $$ \\ell(\\mathbf{z})=\\prod_{i=1}^{n}\\ell(z_{i}\\mid M_{i}) $$"
+      "content": "Maximum likelihood (ML) methods are especially popular in the QTL mapping literature. While linear models use only marker means, ML uses the full information from the marker-trait distribution and, as such, is expected to be more powerful. The tradeoff is that ML is computationally intensive, requiring rather special programs to solve the likelihood equations, while linear model analysis can be performed with almost any standard statistical package. Further, while modifying the basic model (such as adding extra factors) is rather trivial in the linear model framework, with ML new likelihood functions need to be constructed and solved for each variant of the original model. Although writing down a set of likelihood equations for the model of interest is relatively straightforward (e.g., Example 4), obtaining the ML estimates is much more difficult. One approach outlined in Appendix 4 is to use specialized algorithms, of which EM (expectation-maximization) methods have been successfully adapted to many of the mixture-model problems in QTL mapping (e.g., Lander and Botstein 1989; Carbonell and Gerig 1991; Luo and Kearsey 1992; van Ooijen 1992; Carbonell et al. 1992; Luo and Wolliams 1993; Jansen 1992, 1993a, 1994a, 1996; Jansen and Stam 1994). Alternatively, as we discuss later, a creative use of regressions can often provide excellent approximations to ML solutions. For the remainder of this chapter, we assume that the reader has recently read Chapter 13 and Appendix 4, which introduces much of the ML machinery used here.",
+      "source_page": 459,
+      "printed_page": 439,
+      "source_block_ids": [
+        "p459:b3"
+      ],
+      "bbox": [
+        72.0,
+        225.0,
+        1039.0,
+        870.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "While rather complex, the total likelihood is a function of just five parameters: the QTL position (c), the three QTL means $(\\mu_{QQ}, \\mu_{Qq}, \\mu_{qq})$, and the common variance $(\\sigma^{2})$. As in the case of segregation analysis (Chapter 13), the likelihood equations can be modified to account for dichotomous (binary) and polychotomous (ordinal) characters through the use of logistic regressions and probit scales (Ghosh et al. 1993, Hackett and Weller 1995, Visscher et al. 1996a, Xu and Atchley 1996). Alternatively, one can simply ignore the discrete structure of the data, treating them as if they were continuous (e.g., coding alternative binary characters as 0/1) and applying ML. When flanking markers are used, this approach gives essentially the same power and precision as methods specifically designed for polychotomous traits (Hackett and Weller 1995, Visscher et al. 1996a), but when single markers are used, this approach can give estimates for QTL position that are rather seriously biased (Hackett and Weller 1995). An alternative approach for treating nonnormally distributed characters is given by Kruglyak and Lander (1995c), who develop a nonparametric interval mapping procedure."
+      "content": "Assuming that the distribution of phenotypes for an individual with QTL genotype $ Q_k $ is normal with mean $ \\mu_{Q_k} $ and variance $ \\sigma^2 $, and following the logic of Chapter 13, the likelihood for an individual with phenotypic value $ z $ and marker genotype $ M_j $ becomes",
+      "source_page": 459,
+      "printed_page": 439,
+      "source_block_ids": [
+        "p459:b4"
+      ],
+      "bbox": [
+        71.0,
+        863.0,
+        1031.0,
+        995.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula043]]",
+      "source_page": 459,
+      "printed_page": 439,
+      "source_block_ids": [
+        "p459:b5"
+      ],
+      "bbox": [
+        296.0,
+        1018.0,
+        796.0,
+        1111.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $\\varphi(z,\\mu_{Q_k},\\sigma^2)$ denotes the density function for a normal distribution with mean $\\mu_{Q_k}$ and variance $\\sigma^2$, and a total of $N$ QTL genotypes is assumed. This likelihood is a mixture-model distribution (Chapter 13). The mixing proportions, $\\Pr(Q_k\\mid M_j)$, are functions of the genetic map (the position(s) of the QTL(s) with respect to the observed markers) and the experimental design, while the QTL effects enter only though the means $\\mu_{Q_k}$ and variance $\\sigma^2$ of the underlying distributions.",
+      "source_page": 459,
+      "printed_page": 439,
+      "source_block_ids": [
+        "p459:b7"
+      ],
+      "bbox": [
+        65.0,
+        1126.0,
+        1024.0,
+        1363.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter15:4]]",
+      "source_page": 459,
+      "source_block_ids": [
+        "p459:b8",
+        "p460:b2",
+        "p460:b3",
+        "p460:b4",
+        "p460:b5",
+        "p460:b6"
+      ],
+      "bbox": [
+        108.0,
+        1409.0,
+        971.0,
+        1538.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "As in the case of segregation analysis (Chapter 13), the likelihood equations can be modified to account for dichotomous (binary) and polychotomous (ordinal) characters through the use of logistic regressions and probit scales (Ghosh et al. 1993, Hackett and Weller 1995, Visscher et al. 1996a, Xu and Atchley 1996). Alternatively, one can simply ignore the discrete structure of the data, treating them as if they were continuous (e.g., coding alternative binary characters as 0/1) and applying ML. When flanking markers are used, this approach gives essentially the same power and precision as methods specifically designed for polychotomous traits (Hackett and Weller 1995, Visscher et al. 1996a), but when single markers are used, this approach can give estimates for QTL position that are rather seriously biased (Hackett and Weller 1995). An alternative approach for treating nonnormally distributed characters is given by Kruglyak and Lander (1995c), who develop a nonparametric interval mapping procedure.",
+      "source_page": 460,
+      "printed_page": 440,
+      "source_block_ids": [
+        "p460:b7"
+      ],
+      "bbox": [
+        130.0,
+        805.0,
+        1094.0,
+        1237.0
+      ]
     }
   ]
 }

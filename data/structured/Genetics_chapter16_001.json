@@ -2,71 +2,81 @@
   "id": "Genetics_chapter16_001",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
-    "subsections": [
-      "MEASURES OF INFORMATIVENESS"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "16.1"
-    ],
-    "section_level_1": "Introduction",
-    "section_level_2": "MEASURES OF INFORMATIVENESS",
+    "section": "Mapping and Characterizing QTLs: Outbred Populations",
+    "subsections": [],
+    "section_level_1": "Mapping and Characterizing QTLs: Outbred Populations",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "MEASURES OF INFORMATIVENESS"
+      "Mapping and Characterizing QTLs: Outbred Populations"
     ],
-    "display_heading": "MEASURES OF INFORMATIVENESS",
-    "table_reference_keys": [
-      "chapter16:16.1"
-    ]
+    "display_heading": "Mapping and Characterizing QTLs: Outbred Populations",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 505,
+      "printed_page": 485,
+      "source_block_ids": [
+        "p505:b1"
+      ],
+      "bbox": [
+        174.0,
+        230.0,
+        964.0,
+        359.0
+      ],
+      "raw_text": "Mapping and Characterizing QTLs: Outbred Populations"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The major difference between QTL analysis using inbred-line crosses vs. outbred populations is that while the parents in the former are genetically uniform, parents in the latter are genetically variable. This distinction has several consequences. First, only a fraction of the parents from an outbred population are informative. For a parent to provide linkage information, it must be heterozygous at both a marker and a linked QTL, as only in this situation can a marker-trait association be generated in the progeny. Only a fraction of random parents from an outbred population are such double heterozygotes. With inbred lines, $ F_{1} $'s are heterozygous at all loci that differ between the crossed lines, so that all parents are fully informative. Second, there are only two alleles segregating at any locus in an inbred-line cross design, while outbred populations can be segregating any number of alleles. Finally, in an outbred population, individuals can differ in marker-QTL linkage phase, so that an M-bearing gamete might be associated with QTL allele Q in one parent, and with q in another. Thus, with outbred populations, marker-trait associations must be examined separately for each parent. With inbred-line crosses, all $ F_{1} $ parents have identical genotypes (including linkage phase), so one can simply average marker-trait associations over all offspring, regardless of their parents."
+      "content": "For many species, especially humans, the luxury of manipulatable inbred lines is out of the question, in which case we must resort to outbred populations for QTL mapping. Outbred populations are also of interest for reasons other than experimental constraints. For example, QTLs detected by inbred-line crosses usually represent fixed differences between lines, or even different species, and the relevance of these results to QTLs segregating within populations remains unclear. This fundamental distinction that inbred-line crosses detect QTLs responsible for between-population differences while outbred populations detect QTLs responsible for within-population variation makes these complementary, rather than competing, approaches.",
+      "source_page": 505,
+      "printed_page": 485,
+      "source_block_ids": [
+        "p505:b2"
+      ],
+      "bbox": [
+        86.0,
+        501.0,
+        1048.0,
+        826.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Before considering the variety of QTL mapping methods for outbred populations, some comments on the probability that an outbred family is informative are in order. A parent is marker-informative if it is a marker heterozygote, QTL-informative if it is a QTL heterozygote, and simply informative if it is both. Unless both the marker and QTL are highly polymorphic, most parents will not be informative. Given the need to maximize the fraction of marker-informative parents, classes of marker loci successfully used with inbred lines may not be optimal for outbred populations. For example, RFLPs are widely used in inbred lines, but these markers are typically diallelic and hence have modest polymorphism (at best). Microsatellite marker loci (Chapter 14), on the other hand, are highly polymorphic and hence much more likely to yield marker-informative individuals. As shown in [[SEE_TABLE:16.1]], there are three kinds of marker-informative crosses. With a highly polymorphic marker, it may be possible to examine marker-trait associations for both parents. With a fully informative family $ (M_i M_j \\times M_k M_\\ell) $ all parental alleles can be distinguished, and both parents can be examined by comparing the trait values in $ M_i $- vs. $ M_j $- offspring and $ M_k $- vs. $ M_\\ell $- offspring. With a backcross family $ (M_i M_j \\times M_k M_k) $, only the heterozygous parent can be examined for marker-trait associations. Finally, with an intercross family $ (M_i M_j \\times M_i M_j) $, homozygous offspring $ (M_i M_i, M_j M_j) $ are unambiguous as to the origin of parental alleles, while heterozygotes are ambiguous, because allele $ M_i $ $ (M_j) $ could have come from either parent."
+      "content": "Using within-population variation, as opposed to fixed differences between populations, results in significantly decreased power for QTL detection. With inbred lines, all $ F_{1} $ parents have identical genotypes (including the same linkage phase), so all individuals are informative, and linkage disequilibrium is maximized. Further, QTL effects are expressed as means with inbred lines (the average value of each QTL genotype), but as genetic variances with outbred populations. Since variances are estimated with much less precision than means, estimates from outbred populations are expected to be inherently less precise. All of these complications conspire to make QTL mapping in outbred populations a difficult, but not impossible, enterprise.",
+      "source_page": 505,
+      "printed_page": 485,
+      "source_block_ids": [
+        "p505:b3"
+      ],
+      "bbox": [
+        84.0,
+        826.0,
+        1047.0,
+        1148.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In designing experiments, it is useful to estimate the fraction of families"
-    },
-    {
-      "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Fully informative: $ M_{i}M_{j} \\times M_{k}M_{\\ell} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Parents are different marker heterozygotes.</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>All offspring are informative in distinguishing alternative alleles from both parents.</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Backcross: $ M_{i}M_{j} \\times M_{k}M_{k} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>One parent is a marker heterozygote, the other a marker homozygote.</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>All offspring informative in distinguishing heterozygous parent's alternative alleles.</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Intercross: $ M_{i}M_{j} \\times M_{i}M_{j} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Both parents are the same marker heterozygote.</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Only homozygous offspring informative in distinguishing alternative parental alleles.</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Note: Here i, j, k, and l index different marker alleles.</td></tr></table> expected to be marker-informative. One measure of this is the polymorphism information content (Botstein et al. 1980), or PIC, of the marker locus, $$ \\mathrm{PIC}=1-\\sum_{i=1}^{n}p_{i}^{2}-\\sum_{i=1}^{n-1}\\sum_{j=i+1}^{n}2p_{i}^{2}p_{j}^{2}\\leq\\frac{(n-1)^{2}(n+1)}{n^{3}} $$ which is the probability that one parent is a marker heterozygote and its mate has a different genotype (i.e., a backcross or fully informative family, but excluding intercross families). In this case, we can distinguish between the alternative marker alleles of the first parent in all offspring from this cross. The upper bound (given by the right hand side of Equation 16.1) occurs when all marker alleles are equally frequent, $ p_{i} = 1/n $. The proportion of fully informative matings (PFIM), where marker alleles from both parents can be distinguished in all offspring, is given by $$ \\begin{aligned}\\mathrm{P F I M}=&\\sum_{i=1}^{n-1}\\sum_{j=i+1}^{n}2p_{i}p_{j}\\left[\\left(\\sum_{k=1}^{n-1}\\sum_{\\ell=k+1}^{n}2p_{k}p_{\\ell}\\right)-2p_{i}p_{j}\\right]\\\\ \\leq&\\frac{\\left(n-1\\right)\\left(n-2\\right)\\left(n+1\\right)}{n^{3}}\\end{aligned} $$ where $i, j, k$, and $\\ell$ denote different marker alleles (Götz and Ollivier 1992). Again, the upper bound occurs when all alleles are equally frequent. Figure 16.1 plots the maximum values of both of these measures as a function of the number of marker alleles."
-    },
-    {
-      "type": "discussion",
-      "content": "[[FIGURE:16.1]]"
-    },
-    {
-      "type": "discussion",
-      "content": "Of course, a marker-informative parent is not necessarily also QTL-informative. For a QTL with $n_{Q}$ alleles, the $i$th of which has frequency $q_{i}$, the probability that a parent is a QTL heterozygote (in a random mating population) is $$ \\left(1-\\sum_{i=1}^{n_{Q}}q_{i}^{2}\\right)\\leq\\left(1-\\frac{1}{n_{Q}}\\right) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "For a population where parents are in linkage equilibrium, the probability that (at least) one parent is a double (QTL/marker) heterozygote and that alternative marker alleles from this parent can unambiguously be distinguished in all offspring is $$ \\Pr(\\text{at least one parent fully informative})=PIC\\times\\left(1-\\sum_{i=1}^{n_{Q}}q_{i}^{2}\\right) $$ while the probability that both parents satisfy this condition is $$ \\Pr(\\mathrm{both~parents~fully~informative})=\\mathrm{PFIM}\\times\\left(1-\\sum_{i=1}^{n_{Q}}q_{i}^{2}\\right)^{2} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, under fairly general settings, we expect most parents to be uninformative about a particular QTL/marker combination."
-    },
-    {
-      "type": "discussion",
-      "content": "Example 1. Consider a marker locus segregating five alleles in a population. Here, $$ \\mathrm{PIC}\\leq\\frac{4^{2}\\cdot6}{5^{3}}=0.768\\qquad\\mathrm{and}\\qquad\\mathrm{PFIM}\\leq\\frac{4\\cdot3\\cdot6}{5^{3}}=0.576 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Hence, in order to have 100 families that are marker-informative for at least one parent, 100/0.768 = 130 randomly drawn families must be examined. If one requires these families to be informative for both parents, then 100/0.576 = 174 families must be examined. These are the best-case scenarios for this marker, occurring if all five alleles have equal frequency."
-    },
-    {
-      "type": "discussion",
-      "content": "Now suppose that the marker is linked to a QTL with three alleles whose frequencies are 0.5, 0.3, and 0.2. The probability that an individual is a QTL heterozygote is $ 1 - (0.5^2 + 0.3^2 + 0.2^2) \\simeq 0.62 $. Thus, to have 100 families with one or both parents fully informative requires sampling (at least) $ 130/0.62 \\simeq 210 $ and $ 174/0.62^2 \\simeq 453 $ random families, respectively."
+      "content": "As with inbred lines, a variety of designs have been proposed for obtaining samples with the linkage disequilibrium required for QTL mapping. Although crosses between outbred lines can sometimes generate the required amounts of disequilibrium, collections of relatives are generally relied upon. We start our discussion by reviewing the types of outbred parents that are informative for QTL mapping and then consider analyses using collections of relatives, starting with ANOVA and maximum likelihood methods for family data. We conclude by examining approaches that use comparisons between pairs of relatives, as such comparisons are widely applied in mapping human disease genes.",
+      "source_page": 505,
+      "printed_page": 485,
+      "source_block_ids": [
+        "p505:b4"
+      ],
+      "bbox": [
+        83.0,
+        1148.0,
+        1046.0,
+        1440.0
+      ]
     }
   ]
 }

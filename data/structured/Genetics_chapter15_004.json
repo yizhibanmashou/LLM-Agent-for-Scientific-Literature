@@ -2,78 +2,353 @@
   "id": "Genetics_chapter15_004",
   "metadata": {
     "chapter": "Genetics_chapter15",
-    "section": "Introduction",
+    "section": "FOUNDATIONS OF LINE-CROSS MAPPING",
     "subsections": [
-      "Expected Marker-class Means"
+      "Conditional Probabilities of QTL Genotypes"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter15_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Expected Marker-class Means",
+    "section_level_1": "FOUNDATIONS OF LINE-CROSS MAPPING",
+    "section_level_2": "Conditional Probabilities of QTL Genotypes",
     "heading_path": [
-      "Introduction",
-      "Expected Marker-class Means"
+      "FOUNDATIONS OF LINE-CROSS MAPPING",
+      "Conditional Probabilities of QTL Genotypes"
     ],
-    "display_heading": "Expected Marker-class Means"
+    "display_heading": "FOUNDATIONS OF LINE-CROSS MAPPING / Conditional Probabilities of QTL Genotypes",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 447,
+      "printed_page": 427,
+      "source_block_ids": [
+        "p447:b4"
+      ],
+      "bbox": [
+        46.0,
+        1010.0,
+        603.0,
+        1064.0
+      ],
+      "raw_text": "Conditional Probabilities of QTL Genotypes"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "With these conditional probabilities in hand, the expected trait values for the various marker genotypes follow immediately. Suppose there are $N$ QTL genotypes, $Q_{1}, \\cdots, Q_{N}$, where the mean of the $k$th QTL genotype is $\\mu_{Q_{k}}$. The mean value for marker genotype $M_{j}$ is just $$ \\mu_{M_{j}}=\\sum_{k=1}^{N}\\mu_{Q_{k}}\\mathrm{Pr}(Q_{k}\\mid M_{j}) $$"
+      "content": "The basic element upon which the formal theory of QTL mapping is built is the conditional probability that the QTL genotype is $ Q_k $, given the observed marker genotype is $ M_j $. From the definition of a conditional probability, this is",
+      "source_page": 447,
+      "printed_page": 427,
+      "source_block_ids": [
+        "p447:b5"
+      ],
+      "bbox": [
+        42.0,
+        1051.0,
+        1004.0,
+        1181.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The QTL effects enter through the $\\mu_{Q_k}$, while the QTL positions enter through the conditional probabilities $\\mathrm{Pr}(Q_k|M_j)$. Equation 15.6 is completely general, allowing for multilocus marker genotypes and multiple QTLs."
+      "content": "[[FORMULA:Genetics_chapter15_formula001]]",
+      "source_page": 447,
+      "printed_page": 427,
+      "source_block_ids": [
+        "p447:b6"
+      ],
+      "bbox": [
+        363.0,
+        1167.0,
+        671.0,
+        1248.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 2. Consider the single-marker F$_{2}$ design with a single QTL linked (at recombination frequency $c$) to the marker. Denote the QTL genotypic values by $$ \\mu_{Q Q}=\\mu+2a,\\quad\\mu_{Q q}=\\mu+a(1+k),\\quad\\mathrm{a n d}\\quad\\mu_{q q}=\\mu $$ where a measures the additive value and k the degree of dominance. Applying the conditional probabilities developed in Example 1 to Equation 15.6, the mean values for the marker genotypes are $$ \\mu_{M M}=\\mu+2a(1-c)^{2}+2c(1-c)(1+k)a $$ $$ \\mu_{M m}=\\mu+2a c(1-c)+[1-2c(1-c)](1+k)a $$ $$ \\mu_{m m}=\\mu+2a c^{2}+2c(1-c)(1+k)a $$"
+      "content": "The joint and marginal probabilities, $ \\Pr(Q_k M_j) $ and $ \\Pr(M_j) $, are functions of the experimental design and the linkage map (the position of the putative QTLs with respect to the marker loci). Computing these probabilities is a relatively simple matter of bookkeeping (see Example 1), but can get rather tedious as the number of markers and/or QTLs under consideration increases.",
+      "source_page": 447,
+      "printed_page": 427,
+      "source_block_ids": [
+        "p447:b8"
+      ],
+      "bbox": [
+        33.0,
+        1231.0,
+        999.0,
+        1424.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "If the marker and QTL are unlinked ($c = 1/2$), all markers have the same mean, $\\mu + a[1 + (k/2)]$. Rearranging these equations gives $$ (\\mu_{M M}-\\mu_{m m})/2=a(1-2c)=a^{*} $$ $$ \\frac{\\mu_{Mm}-(\\mu_{MM}+\\mu_{mm})/2}{(\\mu_{MM}-\\mu_{mm})/2}=k(1-2c)=k^{*} $$"
+      "content": "When computing joint probabilities involving more than two loci, one must also account for recombinational interference between loci (Chapter 14). Consider a single QTL flanked by two markers, $ M_{1} $ and $ M_{2} $. The gamete frequencies depend on three parameters: the recombination frequency $ c_{12} $ between markers, the recombination frequency $c_{1}$ between marker $M_{1}$ and the QTL, and the recombination frequency $c_{2}$ between the QTL and marker $M_{2}$. Under the assumption of no interference, $c_{12} = c_{1} + c_{2} - 2c_{1}c_{2}$, while $c_{12} = c_{1} + c_{2}$ under complete interference (Chapter 14). When $c_{12}$ is small, gamete frequencies are essentially identical under either interference assumption. Typically, $c_{12}$ is assumed known, leaving two unknown recombination parameters ($c_{1}$ and $c_{2}$) under general assumptions about interference. In either case, there is only one parameter to estimate, as assuming complete interference $c_{2} = c_{12} - c_{1}$, and assuming no interference $c_{2} = (c_{12} - c_{1}) / (1 - 2c_{1})$. Hence, for flanking-marker analysis, we restrict attention to the single recombination parameter $c_{1}$, the distance from marker locus $M_{1}$ to the QTL. When considering analysis of single-marker loci, for notational ease we drop the subscript, using $c$ in place of $c_{1}$.",
+      "source_page": 447,
+      "printed_page": 427,
+      "source_block_ids": [
+        "p447:b9",
+        "p448:b2"
+      ],
+      "bbox": [
+        27.0,
+        1391.0,
+        992.0,
+        1552.0
+      ],
+      "source_page_end": 448
     },
     {
       "type": "discussion",
-      "content": "Hence, one strategy for detecting QTLs is to test for significant differences between the mean trait values associated with different marker genotypes. This is the basis for QTL detection via regression or ANOVA, which we generically refer to as linear model approaches."
+      "content": "Conditional probabilities involving more than three linked loci are generally dealt with by first assuming an appropriate mapping function on which distances are additive (Chapter 14), and then translating these distances into recombination frequencies. When a large number of markers is considered, missing marker information can become a problem. Many individuals can be left with incomplete multilocus marker genotypes, excluding them from further analysis. Martínez and Curnow (1992) show how information from linked markers can be used to estimate the genotype at missing or incomplete (i.e., dominant) markers.",
+      "source_page": 448,
+      "printed_page": 428,
+      "source_block_ids": [
+        "p448:b3"
+      ],
+      "bbox": [
+        137.0,
+        496.0,
+        1101.0,
+        786.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter15:1]]",
+      "source_page": 448,
+      "source_block_ids": [
+        "p448:b4",
+        "p448:b5",
+        "p448:b6",
+        "p448:b7",
+        "p448:b8",
+        "p448:b9",
+        "p448:b10",
+        "p449:b2",
+        "p449:b3",
+        "p449:b4",
+        "p449:b5",
+        "p449:b6",
+        "p449:b7",
+        "p449:b9"
+      ],
+      "bbox": [
+        195.0,
+        851.0,
+        1060.0,
+        966.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "This example shows that while contrasts of single-marker means can be used to estimate both $a^{*}$ and $k^{*}$, these underestimate the magnitude of $a$ and $k$ by the (unknown) fraction $1 - 2c$. If the marker and QTL are tightly linked, this error is small, but it increases rather dramatically as $c$ approaches $1/2$. A small difference between marker-homozygote means is thus compatible with either a tightly linked QTL of small effect or a loosely linked QTL of large effect. As we will show shortly, when multilocus marker genotypes are considered, the use of appropriate combinations of marker means allows for separate estimates of QTL effect and position."
+      "content": "We now move on to the conditional probabilities for other single-marker line cross designs, starting with backcrosses. For a $ B_{1} $ population, where the $ F_{1} $ is backcrossed to $ P_{1} $ (with genotype MMQQ), one parental gamete is always MQ. Hence, for a single-marker analysis, there are only two marker genotypes, MM and Mm. Using the frequencies for the four possible gametes (Example 1) of the $ F_{1} $ parent gives the following conditional probabilities",
+      "source_page": 449,
+      "printed_page": 429,
+      "source_block_ids": [
+        "p449:b10"
+      ],
+      "bbox": [
+        53.0,
+        1090.0,
+        1013.0,
+        1284.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "If there are $N$ QTLs linked to the marker, the $i$th of which is at recombination frequency $c_{i}$ from the marker and has associated additive and dominance effects $a_{i}$ and $k_{i}$, then (from Edwards et al. 1987), $$ (\\mu_{M M}-\\mu_{m m})/2=\\sum_{i=1}^{N}a_{i}^{*} $$ $$ \\frac{\\mu_{Mm}-(\\mu_{MM}+\\mu_{mm})/2}{(\\mu_{MM}-\\mu_{mm})/2}=\\sum_{i=1}^{N}a_{i}^{*}k_{i}^{*}\\bigg/\\sum_{i=1}^{N}a_{i}^{*} $$ where $ a_{i}^{*} = a_{i}(1 - 2c_{i}) $ and $ k_{i}^{*} = k_{i}(1 - 2c_{i}) $. If some of the linked QTLs have effects of opposite sign, some cancellation occurs, reducing the marker-trait association. Moreover, with multiple linked QTLs, the degrees of dominance ($ k_{i} $) are confounded with the homozygous effects ($ a_{i} $)."
+      "content": "[[FORMULA:Genetics_chapter15_formula009]]",
+      "source_page": 449,
+      "printed_page": 429,
+      "source_block_ids": [
+        "p449:b11"
+      ],
+      "bbox": [
+        234.0,
+        1300.0,
+        833.0,
+        1379.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Marker-class means for other designs follow by applying the appropriate conditional probabilities to Equation 15.6. For example, for the $B_{1}$ design, from Equation 15.3a, $$ \\mu_{M M}-\\mu_{M m}=(\\mu_{Q Q}-\\mu_{Q q})(1-2c)=a(1-k)(1-2c) $$"
+      "content": "Likewise, when backcrossing to the P₂ (mmqq), the two possible single-locus marker genotypes are Mm and mm, and the conditional probabilities become",
+      "source_page": 449,
+      "printed_page": 429,
+      "source_block_ids": [
+        "p449:b13"
+      ],
+      "bbox": [
+        51.0,
+        1394.0,
+        1011.0,
+        1466.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Thus, under a backcross design the scaled QTL effects are influenced strongly by the (unknown) degree of dominance $k$. If $Q$ is completely dominant to $q$, $k = 1$, and there is no marker-QTL effect. Conversely, if $q$ is dominant to $Q$, $k = -1$ and the scaled effect becomes $2a(1 - 2c)$, which is the same as under an $\\mathrm{F}_2$ design. Recalling Equation 15.3b, the reciprocal backcross ($\\mathrm{B}_2 = \\mathrm{F}_1 \\times \\mathrm{P}_2$) yields a similar expression, $$ \\mu_{M m}-\\mu_{m m}=(\\mu_{Q q}-\\mu_{q q})(1-2c)=a(1+k)(1-2c) $$"
+      "content": "[[FORMULA:Genetics_chapter15_formula010]]",
+      "source_page": 449,
+      "printed_page": 429,
+      "source_block_ids": [
+        "p449:b14"
+      ],
+      "bbox": [
+        241.0,
+        1480.0,
+        819.0,
+        1557.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note that the ratio of Equation 15.9a to 15.9b gives $(1-k)/(1+k)$, so that (provided only a single QTL is linked to the marker) an estimate of $k$ can be obtained if one has access to both backcross populations."
+      "content": "For designs involving more than one generation of recombination, the single-generation recombination frequency c is simply replaced by a corrected frequency $ \\tilde{c} $ that is a function of the particular design. We consider three such designs: advanced intercross lines (AILs), recombinant inbred lines (RILs), and double-haploid lines (DHLs).",
+      "source_page": 450,
+      "printed_page": 430,
+      "source_block_ids": [
+        "p450:b2"
+      ],
+      "bbox": [
+        137.0,
+        135.0,
+        1097.0,
+        295.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The expressions developed in Example 2 for $\\mathrm{F}_{2}$ analysis hold for an $\\mathrm{F}_{t}$ population, provided $\\widetilde{c}$ (given by Equation 15.4) replaces $c$. For example, $\\mu_{MM} - \\mu_{mm} = 2a(1-2\\widetilde{c})$, and so forth. Since $(1-2c) > (1-2\\widetilde{c})$, AILs have smaller differences between marker means, and hence reduced power of QTL detection, relative to the $\\mathrm{F}_{2}$ design. Despite this, Darvasi and Soller (1995) advocate the use of AILs for fine-mapping of QTLs, as the expansion of the genetic map offers a higher precision of estimates of QTL position. We expand on this point below."
+      "content": "Advanced intercross lines (Darvasi and Soller 1995) are obtained by crossing two inbred lines, but instead of stopping at the $ F_{2} $, random mating proceeds for t generations, generating an $ F_{t} $. In this case, unlike the strategy used to create RILs (Chapter 14), inbreeding is avoided by keeping the breeding population size large. As the result of the multiple rounds of recombination, markers in an $ F_{t} $ individual show an expansion of the genetic map relative to an $ F_{2} $, with the expected frequency of a recombinant gamete in the $ F_{t} $ for a pair of loci at recombination fraction c being",
+      "source_page": 450,
+      "printed_page": 430,
+      "source_block_ids": [
+        "p450:b3"
+      ],
+      "bbox": [
+        138.0,
+        296.0,
+        1099.0,
+        551.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "For RILs and DHLs, the recombination parameter $ \\tilde{c} $ is given by Equation 15.5b, and from Equations 15.5a and 15.6 it follows that $$ \\mu_{M M}=\\mu_{Q Q}\\left(1-\\widetilde{c}\\right)+\\mu_{q q}\\widetilde{c}\\qquad\\mathrm{a n d}\\qquad\\mu_{m m}=\\mu_{Q Q}\\widetilde{c}+\\mu_{q q}\\left(1-\\widetilde{c}\\right) $$ giving $$ \\frac{\\mu_{M M}-\\mu_{m m}}{2}=a(1-2\\widetilde{c})=a^{*} $$ again providing an estimate of a composite parameter of the QTL effect (a) and position (c). Because $ \\widetilde{c} $ is smallest in DHLs (see Equation 15.5b), the largest marker effect (and greatest power for QTL detection) occurs in this type of line, followed by selfed RILs, and finally by sib-mated RILs."
-    },
-    {
-      "type": "proposition",
-      "content": "Finally, note that by considering two-locus (rather than single-locus) marker means, separate estimates of QTL effect and position can be obtained. Taking the genotype at two adjacent marker loci ($ M_{1}/m_{1} $ and $ M_{2}/m_{2} $) as the unit of analysis, consider the difference between the contrasting double homozygotes in an $ F_{2} $. If the markers flank a QTL, then under the assumption of no interference, Equation 15.2 (and its analog for $ m_{1}m_{1}m_{2}m_{2} $ probabilities) implies $$ \\begin{aligned}\\frac{\\mu_{M_{1}M_{1}M_{2}M_{2}}-\\mu_{m_{1}m_{1}m_{2}m_{2}}}{2}&=a\\left(\\frac{1-c_{1}-c_{2}}{1-c_{1}-c_{2}+2c_{1}c_{2}}\\right)\\\\&\\simeq a\\left(1-2c_{1}c_{2}\\right)\\end{aligned} $$ where $ c_1 $ is the $ M_1 $-QTL recombination frequency. Equation 15.11a is essentially equal to $ a $ when the distance between flanking markers $ c_{12} \\leq 0.20 $, as here $ (1 - 2c_1 c_2) \\geq 0.98 $. Thus, recalling from Equation 15.7a that $ \\mu_{M_1 M_1} - \\mu_{m_1 m_1} = 2a(1 - 2c_1) $, we can obtain estimates of the recombination frequencies by substituting Equation 15.11a for $ a $ and rearranging to give $$ \\begin{aligned}c_{1}&=\\frac{1}{2}\\left(1-\\frac{\\mu_{M_{1}M_{1}}-\\mu_{m_{1}m_{1}}}{2a}\\right)\\\\&\\simeq\\frac{1}{2}\\left(1-\\frac{\\mu_{M_{1}M_{1}}-\\mu_{m_{1}m_{1}}}{\\mu_{M_{1}M_{1}M_{2}M_{2}}-\\mu_{m_{1}m_{1}m_{2}m_{2}}}\\right)\\end{aligned} $$"
+      "content": "[[FORMULA:Genetics_chapter15_formula011]]",
+      "source_page": 450,
+      "printed_page": 430,
+      "source_block_ids": [
+        "p450:b4"
+      ],
+      "bbox": [
+        422.0,
+        563.0,
+        816.0,
+        629.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Estimates for other flanking-marker designs are given by Knapp et al. (1990), Knapp and Bridges (1990), and Knapp (1991)."
+      "content": "where the approximation holds for $ ct << 1 $ (Darvasi and Soller 1995, Liu et al. 1996). For example, if the marker-QTL recombination frequency is $ c = 0.01 $, only 1% of the $ F_2 $ gametes are recombinant ( $ M_q $, $ m_Q $), but this increases to 2.5% in an $ F_5 $ and 9.1% in an $ F_{20} $. The conditional genotype probabilities for an $ F_t $ AIL are given by the $ F_2 $-design expressions in Example 1, with $ \\tilde{c} $ substituted for $ c $.",
+      "source_page": 450,
+      "printed_page": 430,
+      "source_block_ids": [
+        "p450:b6"
+      ],
+      "bbox": [
+        141.0,
+        637.0,
+        1099.0,
+        800.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Recombinant inbred lines (RILs) also involve several generations of recombination, but here genotypes are fixed by inbreeding. Starting with a $ MQ/mq \\, F_1 $ parent, there are only four possible genotypes in the resulting RILs — MMQQ, MMqq, mmQQ, and mmqq. The frequency of recombinant gametes ( $ Mq $, $ mQ $) in RILs approaches a limiting value of $ \\tilde{c} = 2c/(1 + 2c) $ for selfed lines and $ \\tilde{c} = 4c/(1 + 6c) $ for lines formed by brother-sister mating (Haldane and Waddington 1931). Thus, the expected frequencies of genotypes in RILs are",
+      "source_page": 450,
+      "printed_page": 430,
+      "source_block_ids": [
+        "p450:b7"
+      ],
+      "bbox": [
+        141.0,
+        798.0,
+        1101.0,
+        1026.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula012]]",
+      "source_page": 450,
+      "printed_page": 430,
+      "source_block_ids": [
+        "p450:b8"
+      ],
+      "bbox": [
+        422.0,
+        1031.0,
+        923.0,
+        1141.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "While doubled-haploid lines (DHLs) also have only these four genotypes, they are formed by a single generation of meiosis, so that $ \\widetilde{c} = c $. Hence, among either RILs or DHLs, the conditional QTL probabilities are",
+      "source_page": 450,
+      "printed_page": 430,
+      "source_block_ids": [
+        "p450:b9"
+      ],
+      "bbox": [
+        145.0,
+        1149.0,
+        1102.0,
+        1250.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula013]]",
+      "source_page": 450,
+      "printed_page": 430,
+      "source_block_ids": [
+        "p450:b10"
+      ],
+      "bbox": [
+        337.0,
+        1291.0,
+        915.0,
+        1369.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where",
+      "source_page": 450,
+      "printed_page": 430,
+      "source_block_ids": [
+        "p450:b12"
+      ],
+      "bbox": [
+        147.0,
+        1385.0,
+        232.0,
+        1414.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter15_formula014]]",
+      "source_page": 450,
+      "printed_page": 430,
+      "source_block_ids": [
+        "p450:b13"
+      ],
+      "bbox": [
+        216.0,
+        1421.0,
+        950.0,
+        1538.0
+      ]
     }
   ]
 }

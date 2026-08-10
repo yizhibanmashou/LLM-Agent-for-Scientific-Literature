@@ -2,66 +2,261 @@
   "id": "Genetics_chapter8_018",
   "metadata": {
     "chapter": "Genetics_chapter8",
-    "section": "Introduction",
-    "subsections": [
-      "Properties of the MVN"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Properties of the MVN",
+    "section": "THE MULTIVARIATE NORMAL DISTRIBUTION",
+    "subsections": [],
+    "section_level_1": "THE MULTIVARIATE NORMAL DISTRIBUTION",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "Properties of the MVN"
+      "THE MULTIVARIATE NORMAL DISTRIBUTION"
     ],
-    "display_heading": "Properties of the MVN"
+    "display_heading": "THE MULTIVARIATE NORMAL DISTRIBUTION",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 210,
+      "printed_page": 190,
+      "source_block_ids": [
+        "p210:b16"
+      ],
+      "bbox": [
+        148.0,
+        1000.0,
+        781.0,
+        1039.0
+      ],
+      "raw_text": "THE MULTIVARIATE NORMAL DISTRIBUTION"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "As in the case of its univariate counterpart, the MVN is expected to arise naturally when the quantities of interest result from a large number of underlying variables. Since this condition seems (at least at first glance) to describe many biological systems, the MVN is a natural starting point in biometrical analysis. Further details on the wide variety of applications of the MVN to multivariate statistics can be found in the introductory texts by Morrison (1976) and Johnson and Wichern (1988) and in the more advanced treatment by Anderson (1984). The MVN has a number of useful properties, which we summarize below."
+      "content": "As we have seen above, matrix notation provides a compact way to express vectors of random variables. We now consider the most commonly assumed distribution for such vectors, the multivariate analog of the normal distribution discussed in Chapter 2. Much of the theory for the evolution of quantitative traits is based on this distribution, which we hereafter denote as the MVN.",
+      "source_page": 210,
+      "printed_page": 190,
+      "source_block_ids": [
+        "p210:b17"
+      ],
+      "bbox": [
+        149.0,
+        1065.0,
+        1108.0,
+        1234.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "1. If $\\mathbf{x} \\sim \\mathrm{MVN}$, then the distribution of any subset of the variables in $\\mathbf{x}$ is also $\\mathrm{MVN}$. For example, each $x_{i}$ is normally distributed and each pair $(x_{i}, x_{j})$ is bivariate normally distributed."
+      "content": "Consider the probability density function for $n$ independent normal random variables, where $x_{i}$ is normally distributed with mean $\\mu_{i}$ and variance $\\sigma_{i}^{2}$. In this case, because the variables are independent, the joint probability density function is simply the product of each univariate density,",
+      "source_page": 210,
+      "printed_page": 190,
+      "source_block_ids": [
+        "p210:b18"
+      ],
+      "bbox": [
+        150.0,
+        1223.0,
+        1111.0,
+        1366.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "2. If $\\mathbf{x} \\sim \\mathrm{MVN}$, then any linear combination of the elements of $\\mathbf{x}$ is also $\\mathrm{MVN}$. Specifically, if $\\mathbf{x} \\sim \\mathrm{MVN}_{n}(\\boldsymbol{\\mu}, \\mathbf{V})$, a is a vector of constants, and A is a matrix of constants, then $$ \\mathrm{f o r}\\quad\\mathbf{y}=\\mathbf{x}+\\mathbf{a},\\qquad\\mathbf{y}\\sim\\operatorname{M V N}_{n}(\\mu+\\mathbf{a},\\mathbf{V}) $$ $$ \\mathrm{f o r}\\quad\\mathbf{\\textit{y}}=\\mathbf{a}^{T}\\mathbf{x}=\\sum_{k=1}^{n}a_{i}x_{i},\\qquad\\mathbf{\\textit{y}}\\sim\\mathrm{N}(\\mathbf{a}^{T}\\boldsymbol{\\mu},\\mathbf{a}^{T}\\mathbf{V}\\mathbf{a}) $$ $$ \\mathrm{f o r}\\quad\\mathbf{y}=\\mathbf{A x},\\qquad\\mathbf{y}\\sim\\operatorname{M V N}_{m}\\left(\\mathbf{A}\\mu,\\mathbf{A}^{T}\\mathbf{V}\\mathbf{A}\\right) $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula083]]",
+      "source_page": 210,
+      "printed_page": 190,
+      "source_block_ids": [
+        "p210:b19"
+      ],
+      "bbox": [
+        289.0,
+        1364.0,
+        920.0,
+        1551.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "3. Conditional distributions associated with the MVN are also multivariate normal. Consider the partitioning of x into two components, an $(m \\times 1)$ column vector $\\mathbf{x}_1$ and an $[(n-m) \\times 1]$ column vector $\\mathbf{x}_2$ of the remaining variables, e.g., $$ \\mathbf{x}=\\left(\\begin{array}{l}{\\mathbf{x_{1}}}\\\\ {\\mathbf{x_{2}}}\\end{array}\\right) $$"
+      "content": "We can express this equation more compactly in matrix form by defining the matrices",
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b2"
+      ],
+      "bbox": [
+        62.0,
+        126.0,
+        1023.0,
+        213.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The mean vector and covariance matrix can be partitioned similarly as $$ \\mu=\\left(\\begin{matrix}{\\mu_{1}}\\\\ {\\mu_{2}}\\\\ \\end{matrix}\\right)\\qquad\\mathrm{a n d}\\qquad\\mathbf{V}=\\left(\\begin{matrix}{\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{1}}}&{}&{\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}}\\\\ {}&{}&{}\\\\ {\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}^{T}}&{}&{\\mathbf{V}_{\\mathbf{X}_{2}\\mathbf{X}_{2}}}\\\\ \\end{matrix}\\right) $$ where the $m \\times m$ and $(n-m) \\times (n-m)$ matrices $\\mathbf{V}_{\\mathbf{x}_1,\\mathbf{x}_1}$ and $\\mathbf{V}_{\\mathbf{x}_2,\\mathbf{x}_2}$ are, respectively, the covariance matrices for $\\mathbf{x}_1$ and $\\mathbf{x}_2$, while the $m \\times (n-m)$ matrix $\\mathbf{V}_{\\mathbf{x}_1,\\mathbf{x}_2}$ is the matrix of covariances between the elements of $\\mathbf{x}_1$ and $\\mathbf{x}_2$. If we condition on $\\mathbf{x}_2$, the resulting conditional random variable $\\mathbf{x}_1|\\mathbf{x}_2$ is MVN with $(m \\times 1)$ mean vector $$ \\mu_{\\mathbf{X}_{1}|\\mathbf{X}_{2}}=\\mu_{1}+\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}\\mathbf{V}_{\\mathbf{X}_{2}\\mathbf{X}_{2}}^{-1}(\\mathbf{x}_{2}-\\boldsymbol\\mu_{2}) $$ and $(m \\times m)$ covariance matrix $$ \\mathbf{V}_{\\mathbf{X}_{1}|\\mathbf{X}_{2}}=\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{1}}-\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}\\mathbf{V}_{\\mathbf{X}_{2}\\mathbf{X}_{2}}^{-1}\\mathbf{V}_{\\mathbf{X}_{1}\\mathbf{X}_{2}}^{T} $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula084]]",
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b3"
+      ],
+      "bbox": [
+        226.0,
+        186.0,
+        851.0,
+        347.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A proof can be found in most multivariate statistics texts, e.g., Morrison (1976)."
+      "content": "Since V is diagonal, its determinant is simply the product of the diagonal elements",
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b4"
+      ],
+      "bbox": [
+        58.0,
+        339.0,
+        1017.0,
+        396.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "4. If $\\mathbf{x} \\sim \\mathrm{MVN}$, the regression of any subset of $\\mathbf{x}$ on another subset is linear and homoscedastic. Rewriting Equation 8.27 in terms of a regression of the predicted value of the vector $\\mathbf{x}_{1}$ given an observed value of the vector $\\mathbf{x}_{2}$, we have $$ \\mathbf{x_{1}}=\\boldsymbol{\\mu_{1}}+\\mathbf{V}_{\\mathbf{X_{1}X_{2}}}\\mathbf{V}_{\\mathbf{X_{2}X_{2}}}^{-1}(\\mathbf{x_{2}}-\\boldsymbol{\\mu_{2}})+\\mathbf{e} $$ where $$ \\mathbf{e}\\sim\\mathrm{M V N}_{m}\\left(\\mathbf{0},\\mathbf{V}_{\\mathbf{x}_{1}|\\mathbf{x}_{2}}\\right) $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula085]]",
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b5"
+      ],
+      "bbox": [
+        459.0,
+        402.0,
+        613.0,
+        491.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 6. Consider the regression of the phenotypic value of an offspring ($z_{o}$) on that of its parents ($z_{s}$ and $z_{d}$ for sire and dam, respectively). Assume that the joint distribution of $z_{o}$, $z_{s}$, and $z_{d}$ is multivariate normal. For the simplest case of noninbred and unrelated parents, no epistasis or genotype-environment correlation, the covariance matrix can be obtained from the theory of correlation between relatives (Chapter 7), giving the joint distribution as $$ \\left(\\begin{matrix}{z_{o}}\\\\ {z_{s}}\\\\ {z_{d}}\\\\ \\end{matrix}\\right)\\sim\\mathrm{M V N}\\left[\\left(\\begin{matrix}{\\mu_{o}}\\\\ {\\mu_{s}}\\\\ {\\mu_{d}}\\\\ \\end{matrix}\\right),\\sigma_{z}^{2}\\left(\\begin{matrix}{1}&{h^{2}/2}&{h^{2}/2}\\\\ {h^{2}/2}&{1}&{0}\\\\ {h^{2}/2}&{0}&{1}\\\\ \\end{matrix}\\right)\\right] $$"
+      "content": "Likewise, using quadratic products, note that",
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b6"
+      ],
+      "bbox": [
+        55.0,
+        495.0,
+        603.0,
+        541.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Let $$ \\mathbf{x_{1}}=\\left(z_{o}\\right),\\quad\\mathbf{x_{2}}=\\left(\\begin{matrix}z_{s}\\\\ z_{d}\\end{matrix}\\right) $$ giving $$ \\mathbf{V}_{\\mathbf{X_{1}},\\mathbf{X_{1}}}=\\sigma_{z}^{2},\\quad\\mathbf{V}_{\\mathbf{X_{1}},\\mathbf{X_{2}}}=\\frac{h^{2}\\sigma_{z}^{2}}{2}\\left(\\begin{matrix}{1}&{1}\\\\ \\end{matrix}\\right),\\quad\\mathbf{V}_{\\mathbf{X_{2}},\\mathbf{X_{2}}}=\\sigma_{z}^{2}\\left(\\begin{matrix}{1}&{0}\\\\ {0}&{1}\\\\ \\end{matrix}\\right) $$ From Equation 8.29a, the regression of offspring value on parental values is linear and homoscedastic with $$ $$ z_ o &= _ o + h^ 2 _ z ^ 2 2 (1 1) _ z ^ -2 1&0\\\\ 0&1 z_ s - _ s \\\\ z_ d - _ d +e\\\\&= _ o + h^ 2 2 (z_ s - _ s)+ h^ 2 2 (z_ d - _ d)+e $$ $$ where, from Equations 8.28 and 8.29b, the residual error is normally distributed with mean zero and variance $$ \\begin{aligned}\\sigma_{e}^{2}&=\\sigma_{z}^{2}-\\frac{h^{2}\\sigma_{z}^{2}}{2}\\left(1\\quad1\\right)\\sigma_{z}^{-2}\\left(\\begin{matrix}1&0\\\\0&1\\end{matrix}\\right)\\frac{h^{2}\\sigma_{z}^{2}}{2}\\left(\\begin{matrix}1\\\\1\\end{matrix}\\right)\\\\&=\\sigma_{z}^{2}\\left(1-\\frac{h^{4}}{2}\\right)\\end{aligned} $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula086]]",
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b7"
+      ],
+      "bbox": [
+        294.0,
+        555.0,
+        767.0,
+        643.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 7. The previous example dealt with the prediction of the phenotypic value of an offspring given parental phenotypic values. The same approach can be used to predict an offspring's additive genetic value $ A_{o} $ given knowledge of the parental values $ (A_{s}, A_{d}) $. Again assuming that the joint distribution is multivariate normal and that the parents are unrelated and noninbred, the joint distribution can be written as $$ \\left(\\begin{matrix}{A_{o}}\\\\ {A_{s}}\\\\ {A_{d}}\\\\ \\end{matrix}\\right)\\sim\\mathbf{M V N}\\left[\\begin{matrix}{\\left(\\begin{matrix}{\\mu_{o}}\\\\ {\\mu_{s}}\\\\ {\\mu_{d}}\\\\ \\end{matrix}\\right),\\sigma_{A}^{2}\\left(\\begin{matrix}{1}&{1/2}&{1/2}\\\\ {1/2}&{1}&{0}\\\\ {1/2}&{0}&{1}\\\\ \\end{matrix}\\right)}\\\\ \\end{matrix}\\right] $$"
+      "content": "Putting these together, Equation 8.23 can be rewritten as",
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b8"
+      ],
+      "bbox": [
+        50.0,
+        651.0,
+        726.0,
+        699.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Proceeding in the same fashion as in Example 6, the conditional distribution of offspring additive genetic values, given the parental values, is normal, so that the regression of offspring additive genetic value on parental value is linear and homoscedastic with $$ A_{o}=\\mu_{o}+\\frac{A_{s}-\\mu_{s}}{2}+\\frac{A_{d}-\\mu_{d}}{2}+e $$ and $$ e\\sim\\mathbf{N}(0,\\sigma_{A}^{2}/2) $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula087]]",
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b9"
+      ],
+      "bbox": [
+        185.0,
+        709.0,
+        866.0,
+        795.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "We will also write this density as $p(\\mathbf{x}, \\mu, \\mathbf{V})$ when we wish to stress that it is a function of the mean vector $\\mu$ and the covariance matrix $\\mathbf{V}$.",
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b11"
+      ],
+      "bbox": [
+        47.0,
+        795.0,
+        1005.0,
+        878.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "More generally, when the elements of x are correlated, Equation 8.24 gives the probability density function for a vector of multivariate normally distributed random variables, with mean vector $ \\mu $ and covariance matrix V. We denote this by",
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b12"
+      ],
+      "bbox": [
+        42.0,
+        860.0,
+        1006.0,
+        1005.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula088]]",
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b13"
+      ],
+      "bbox": [
+        412.0,
+        996.0,
+        631.0,
+        1034.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the subscript indicating the dimensionality of x is usually omitted. The multivariate normal distribution is also referred to as the Gaussian distribution.",
+      "source_page": 211,
+      "printed_page": 191,
+      "source_block_ids": [
+        "p211:b14"
+      ],
+      "bbox": [
+        41.0,
+        1033.0,
+        1001.0,
+        1121.0
+      ]
     }
   ]
 }

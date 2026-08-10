@@ -2,67 +2,210 @@
   "id": "Genetics_chapter18_010",
   "metadata": {
     "chapter": "Genetics_chapter18",
-    "section": "Introduction",
+    "section": "HALF-SIB ANALYSIS",
     "subsections": [
       "Unbalanced Data"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter18_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "18.1"
-    ],
-    "section_level_1": "Introduction",
+    "section_level_1": "HALF-SIB ANALYSIS",
     "section_level_2": "Unbalanced Data",
     "heading_path": [
-      "Introduction",
+      "HALF-SIB ANALYSIS",
       "Unbalanced Data"
     ],
-    "display_heading": "Unbalanced Data",
-    "table_reference_keys": [
-      "chapter18:18.1"
-    ]
+    "display_heading": "HALF-SIB ANALYSIS / Unbalanced Data",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 580,
+      "printed_page": 560,
+      "source_block_ids": [
+        "p580:b4"
+      ],
+      "bbox": [
+        146.0,
+        1114.0,
+        367.0,
+        1146.0
+      ],
+      "raw_text": "Unbalanced Data"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Accidental losses or natural mortality almost always cause inequities in family sizes in sib analyses. With unbalanced data, estimates of variance components can still be obtained by the method of moments, but this requires that the definitions of the expected mean squares first be modified appropriately ([[SEE_TABLE:18.1]]). All aspects of the unbalanced one-way ANOVA are identical to those outlined for the balanced design, except for the expected among-family mean square, which is no longer $ (\\sigma_{e}^{2}+n\\sigma_{s}^{2}) $, but $ (\\sigma_{e}^{2}+n_{0}\\sigma_{s}^{2}) $, where $ n_{0} $ is a function of the sire-specific family sizes ([[SEE_TABLE:18.1]]). Thus, in obtaining estimates of the variance components by the method of moments, we still use Equations 18.12a,b, substituting $ n_{0} $ for n."
+      "content": "Accidental losses or natural mortality almost always cause inequities in family sizes in sib analyses. With unbalanced data, estimates of variance components can still be obtained by the method of moments, but this requires that the definitions of the expected mean squares first be modified appropriately (Table 18.1). All aspects of the unbalanced one-way ANOVA are identical to those outlined for the balanced design, except for the expected among-family mean square, which is no longer $ (\\sigma_{e}^{2} + n\\sigma_{s}^{2}) $, but $ (\\sigma_{e}^{2} + n_{0}\\sigma_{s}^{2}) $, where $ n_{0} $ is a function of the sire-specific family sizes (Table 18.1). Thus, in obtaining estimates of the variance components by the method of moments, we still use Equations 18.12a,b, substituting $ n_{0} $ for n.",
+      "source_page": 580,
+      "printed_page": 560,
+      "source_block_ids": [
+        "p580:b5"
+      ],
+      "bbox": [
+        145.0,
+        1148.0,
+        1108.0,
+        1448.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Provided the data are normally distributed, the sums of squares obtained from an unbalanced one-way ANOVA are still independent, and expressions for the sampling variances and covariance of the variance components analogous to"
+      "content": "Provided the data are normally distributed, the sums of squares obtained from an unbalanced one-way ANOVA are still independent, and expressions for the sampling variances and covariance of the variance components analogous to",
+      "source_page": 580,
+      "printed_page": 560,
+      "source_block_ids": [
+        "p580:b6"
+      ],
+      "bbox": [
+        151.0,
+        1435.0,
+        1112.0,
+        1542.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Equations 18.20a–d are obtainable, $$ \\mathrm{Var}[\\mathrm{Var}(e)]\\simeq\\frac{2[\\mathrm{Var}(e)]^{2}}{T-N+2} $$ $$ \\begin{aligned}\\operatorname{Var}[\\operatorname{Var}(s)]\\simeq\\frac{2}{n_{0}(N+1)}\\left\\{\\frac{(T-1)[\\operatorname{Var}(e)]^{2}}{n_{0}(T-N)}+2\\operatorname{Var}(e)\\operatorname{Var}(s)\\right.\\\\+\\left.\\frac{\\sum n_{i}^{2}+(\\sum n_{i}^{2}/T)^{2}-2\\sum n_{i}^{3}/T}{n_{0}(N-1)}[\\operatorname{Var}(s)]^{2}\\right\\}\\end{aligned} $$ $$ \\mathrm{Cov}[\\operatorname{Var}(s),\\operatorname{Var}(e)]\\simeq-\\frac{2[\\operatorname{Var}(e)]^{2}}{n_{0}(T-N+2)} $$ $$ \\begin{aligned}\\operatorname{Var}[\\operatorname{Var}(z)]\\simeq\\operatorname{Var}[\\operatorname{Var}(e)]+2\\operatorname{Cov}[\\operatorname{Var}(s),\\operatorname{Var}(e)]\\\\+\\operatorname{Var}[\\operatorname{Var}(s)]\\end{aligned} $$ where the summations in Equation 18.27b are over sires. (These expressions contain corrections to results given in Searle et al. 1992)."
+      "content": "Equations 18.20a–d are obtainable,",
+      "source_page": 581,
+      "printed_page": 561,
+      "source_block_ids": [
+        "p581:b2"
+      ],
+      "bbox": [
+        77.0,
+        145.0,
+        497.0,
+        186.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Comparison of Equation 18.27a with 18.20a shows that the sampling variance of the within-family component of variance is unaffected by lack of balance. In fact, lack of balance does not alter the fact that the within-family sum of squares is $ \\chi^{2} $-distributed. Thus, Equation 18.22 can still be used to obtain confidence intervals for the within-family component of variance. Unfortunately, the situation is not so simple with the among-family statistics. If $ \\sigma_{s}^{2}=0 $, the ratio $ F=MS_{s}/MS_{e} $ still has an F distribution with $ (N-1) $ and $ (T-N) $ degrees of freedom, so even with an unbalanced design, the ratio of mean squares provides a basis for testing the null hypothesis that $ \\sigma_{s}^{2}=0 $. Searle et al. (1992, pp. 76–78) outline procedures for estimating confidence intervals for the among-family variance component and for $ t_{PHS} $, but these procedures are quite complicated."
+      "content": "[[FORMULA:Genetics_chapter18_formula038]]",
+      "source_page": 581,
+      "printed_page": 561,
+      "source_block_ids": [
+        "p581:b3"
+      ],
+      "bbox": [
+        177.0,
+        200.0,
+        493.0,
+        274.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In recent years, maximum likelihood procedures have been developed as an alternative to ANOVA approaches for variance-component estimation. As a consequence of their relative insensitivity to unbalanced designs, these methods have been embraced widely by animal breeders. Unlike ANOVA, maximum likelihood techniques assume normality in both the estimation of parameters and hypothesis testing. A broad overview of the use of maximum likelihood methods in quantitative genetics is given in Chapters 26 and 27. For historical completeness, we note that Smith (1956) long ago introduced a weighted ANOVA procedure for unbalanced data that is closely related to maximum likelihood estimation. For the computation of the among-family sum of squares, he proposed that the family means be weighted by the inverse of their sampling variance. As in the case of weighted regression (discussed in the preceding chapter), the weights turn out to be a function of the variance components to be estimated, so an iterative solution is used in the estimation of the variance components. The weights proposed in Smith's (1956) paper are identical to those used in the maximum likelihood solution to the one-factor model (Searle et al. 1992)."
+      "content": "[[FORMULA:Genetics_chapter18_formula039]]",
+      "source_page": 581,
+      "printed_page": 561,
+      "source_block_ids": [
+        "p581:b5"
+      ],
+      "bbox": [
+        176.0,
+        280.0,
+        912.0,
+        443.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 2. In order to illustrate the application of some of the above techniques, we now consider a specific study, an investigation of the quantitative genetics of chemical, antiherbivore defenses in the wild parsnip Pastinaca sativa (Berenbaum et al. 1986). This example will also highlight some of the interpretative issues that arise in a half-sib analysis."
-    },
-    {
-      "type": "proposition",
-      "content": "In self-incompatible plants such as Pastinaca, it is likely that the ovules produced by an individual are fertilized by pollen from many different sources. If true, this would ensure that a sample of the seeds produced by a particular female will represent a half-sib family to a good approximation. Berenbaum et al. made this assumption in seeking to evaluate whether sufficient genetic variation for chemical defenses exists for Pastinaca to respond evolutionarily to herbivore pressures. We will consider only one of the characters studied — xanthotoxin concentration in the seeds. From each of $N = 20$ wild plants, 10 seeds were randomly collected and grown in a greenhouse. Seed was then collected from the mature plants and analyzed chemically. Prior to analysis, some deaths occurred, necessitating an ANOVA with unbalanced data. At the final analysis, $n_i$ was 10 in 5 cases; 9 in 8 cases; 8 in 4 cases; and 7, 6, and 4 each in one case, giving $T = 171$. Using the definition in [[SEE_TABLE:18.1]], the weighted family size is $n_0 = 8.55$. The within- and among-family mean squares were $MS_e = 0.0370$ and $MS_s = 0.1156$, respectively. Substituting these three values into Equations 18.12a-c, we obtain the variance estimates, $\\mathrm{Var}(s) = 0.0092$, $\\mathrm{Var}(e) = 0.0370$, and $\\mathrm{Var}(z) = 0.0462$. The intraclass correlation is $t = \\mathrm{Var}(s)/\\mathrm{Var}(z) = 0.20$. The heritability is estimated to be $h^2 \\simeq 4t = 0.80$, and using Equation 18.21 (with $n_0$ replacing $n$), the standard error of $h^2$ is approximately $$ \\mathrm{SE}(h^{2})=4\\mathrm{SE}(t)\\simeq4(1-t)[1+(n_{0}-1)t]\\sqrt{2/[N n_{0}(n_{0}-1)]}=0.32 $$"
+      "content": "[[FORMULA:Genetics_chapter18_formula040]]",
+      "source_page": 581,
+      "printed_page": 561,
+      "source_block_ids": [
+        "p581:b7"
+      ],
+      "bbox": [
+        77.0,
+        440.0,
+        556.0,
+        519.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The ratio of observed mean squares is $F = 3.12$. From standard tables for the $F$ distribution, with 19 and 151 degrees of freedom, there is only a 0.01 probability of drawing a value higher than 2.03 by chance. Thus, the among-family component of variance, and hence the heritability estimate, is highly significant. As noted above, the estimation of confidence intervals for $ h^2 $ is rather complicated when family sizes are unequal. However, with only small inequities in family sizes, Equation 18.24 should be adequate for the purposes of this example. Five quantities, $ MS_e $, $ MS_s $, $ n_0 $, $ F_U $, and $ F_L $ are required to solve this equation. For a 95% confidence interval, we obtain from an $ F $-distribution table at the 0.025 level, $ F_L = F_{19,151,0.025} = 1.80 $ and $ F_H = 1/F_{151,19,0.025} = 0.46 $. Making the appropriate substitutions in Equation 18.24, we find the 95% confidence interval for $ h^2 $ to be 0.32 to 1.61. The confidence limits are clearly asymmetrical, and the upper limit substantially exceeds the maximum possible value for $ h^2 $."
+      "content": "[[FORMULA:Genetics_chapter18_formula041]]",
+      "source_page": 581,
+      "printed_page": 561,
+      "source_block_ids": [
+        "p581:b9"
+      ],
+      "bbox": [
+        170.0,
+        519.0,
+        774.0,
+        618.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Two factors could have resulted in an overestimation of $h^{2}$ in this study. First, since the authors employed maternal half-sib families, common maternal effects may have contributed to the phenotypic covariance between sibs. Second, when seeds are taken from naturally pollinated plants, the possibility that a significant proportion of sibs share the same father cannot be ruled out. If, in fact, many members of families are full sibs, then the heritability estimate will be inflated by use of a half-sib model. This inflation would occur because in estimating $h^{2}$ we have multiplied the intraclass correlation by four to get the hypothetical value $\\mathrm{Var}(A)$ in the numerator (ignoring epistatic and common-environment sources of variance). If the families consisted of full sibs with genetic covariance $\\mathrm{Var}(A)/2 + \\mathrm{Var}(D)/4$, multiplying by four would give the quantity $2\\mathrm{Var}(A) + \\mathrm{Var}(D)$ in the numerator of $h^{2}$. Thus, in the extreme case in which family members are all full sibs but mistakenly treated as half sibs, the heritability estimate can be inflated by a factor greater than two, due not only to the fact that $\\mathrm{Var}(A)$ is counted twice but also because of the inclusion of dominance genetic variance (and in this study, perhaps epistatic and common-environment variance as well). Jackson (1983) provides an in-depth analysis of the consequences of the contamination of a half-sib analysis with varying proportions of full sibs. Both sorts of problems might have been avoided by constructing paternal half-sib families by hand-pollination of bagged inflorescences (Mitchell-Olds 1986)."
+      "content": "where the summations in Equation 18.27b are over sires. (These expressions contain corrections to results given in Searle et al. 1992).",
+      "source_page": 581,
+      "printed_page": 561,
+      "source_block_ids": [
+        "p581:b11"
+      ],
+      "bbox": [
+        66.0,
+        623.0,
+        1025.0,
+        704.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "These potential difficulties may not have been of major importance in the Pastinaca study. A second estimate of $ h^{2}(\\pm\\mathrm{SE}) $ obtained by parent-offspring regression is $ 0.65\\pm0.21 $, which is lower than that obtained by sib analysis, but not significantly so. Nevertheless, there is need for caution here, too. Although dominance genetic variance does not contribute to the resemblance between parents and offspring, genetically based maternal effects can (Chapter 23). The authors found substantial heritabilities for several other defense compounds in seeds and in leaves."
+      "content": "Comparison of Equation 18.27a with 18.20a shows that the sampling variance of the within-family component of variance is unaffected by lack of balance. In fact, lack of balance does not alter the fact that the within-family sum of squares is $ \\chi^{2} $-distributed. Thus, Equation 18.22 can still be used to obtain confidence intervals for the within-family component of variance. Unfortunately, the situation is not so simple with the among-family statistics. If $ \\sigma_{s}^{2}=0 $, the ratio $ F=MS_{s}/MS_{e} $ still has an F distribution with $ (N-1) $ and $ (T-N) $ degrees of freedom, so even with an unbalanced design, the ratio of mean squares provides a basis for testing the null hypothesis that $ \\sigma_{s}^{2}=0 $. Searle et al. (1992, pp. 76–78) outline procedures for estimating confidence intervals for the among-family variance component and for $ t_{PHS} $, but these procedures are quite complicated.",
+      "source_page": 581,
+      "printed_page": 561,
+      "source_block_ids": [
+        "p581:b12"
+      ],
+      "bbox": [
+        60.0,
+        689.0,
+        1023.0,
+        1058.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In recent years, maximum likelihood procedures have been developed as an alternative to ANOVA approaches for variance-component estimation. As a consequence of their relative insensitivity to unbalanced designs, these methods have been embraced widely by animal breeders. Unlike ANOVA, maximum likelihood techniques assume normality in both the estimation of parameters and hypothesis testing. A broad overview of the use of maximum likelihood methods in quantitative genetics is given in Chapters 26 and 27. For historical completeness, we note that Smith (1956) long ago introduced a weighted ANOVA procedure for unbalanced data that is closely related to maximum likelihood estimation. For the computation of the among-family sum of squares, he proposed that the family means be weighted by the inverse of their sampling variance. As in the case of weighted regression (discussed in the preceding chapter), the weights turn out to be a function of the variance components to be estimated, so an iterative solution is used in the estimation of the variance components. The weights proposed in Smith's (1956) paper are identical to those used in the maximum likelihood solution to the one-factor model (Searle et al. 1992).",
+      "source_page": 581,
+      "printed_page": 561,
+      "source_block_ids": [
+        "p581:b13"
+      ],
+      "bbox": [
+        48.0,
+        1042.0,
+        1017.0,
+        1565.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter18:2]]",
+      "source_page": 582,
+      "source_block_ids": [
+        "p582:b2",
+        "p582:b3",
+        "p582:b4",
+        "p582:b5",
+        "p582:b6",
+        "p582:b7",
+        "p583:b2",
+        "p583:b3"
+      ],
+      "bbox": [
+        177.0,
+        193.0,
+        1043.0,
+        355.0
+      ]
     }
   ]
 }

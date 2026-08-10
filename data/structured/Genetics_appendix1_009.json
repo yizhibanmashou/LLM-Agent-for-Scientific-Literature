@@ -1,0 +1,161 @@
+{
+  "id": "Genetics_appendix1_009",
+  "metadata": {
+    "chapter": "Genetics_appendix1",
+    "section": "EXPECTATIONS AND VARIANCES OF RATIOS",
+    "subsections": [
+      "Sampling Variances of Regression and Correlation Coefficients"
+    ],
+    "section_level_1": "EXPECTATIONS AND VARIANCES OF RATIOS",
+    "section_level_2": "Sampling Variances of Regression and Correlation Coefficients",
+    "heading_path": [
+      "EXPECTATIONS AND VARIANCES OF RATIOS",
+      "Sampling Variances of Regression and Correlation Coefficients"
+    ],
+    "display_heading": "EXPECTATIONS AND VARIANCES OF RATIOS / Sampling Variances of Regression and Correlation Coefficients",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 830,
+      "printed_page": 810,
+      "source_block_ids": [
+        "p830:b19"
+      ],
+      "bbox": [
+        157.0,
+        1307.0,
+        933.0,
+        1341.0
+      ],
+      "raw_text": "Sampling Variances of Regression and Correlation Coefficients"
+    }
+  },
+  "blocks": [
+    {
+      "type": "discussion",
+      "content": "The least-squares regression coefficient is given by $b = u/v$, where $u = \\text{Cov}(x, y)$ and $v = \\text{Var}(x)$. To apply Equation A1.19b, we need to know $\\mu_u, \\mu_v, \\sigma^2(u), \\sigma^2(v)$, and $\\sigma(u, v)$. Since $\\text{Var}(x)$ and $\\text{Cov}(x, y)$ are unbiased estimators of the variance and covariance, $\\mu_u = \\sigma(x, y)$ and $\\mu_v = \\sigma^2(x)$. Under the assumption that $x$ and $y$ are bivariate normally distributed, we can also use the above results to obtain the variances and covariance of $u$ and $v$: from Equation A1.14, $\\sigma^2(u) =$",
+      "source_page": 830,
+      "printed_page": 810,
+      "source_block_ids": [
+        "p830:b20"
+      ],
+      "bbox": [
+        154.0,
+        1350.0,
+        1114.0,
+        1541.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "$$[\\sigma^{2}(x)\\sigma^{2}(y)+\\sigma^{2}(x,y)]/n; \\text{ from Equation A1.10b, } \\sigma^{2}(v)=2\\sigma^{4}(x)/n; \\text{ and from Equation A1.15, } \\sigma(u,v)=2\\sigma^{2}(x)\\sigma(x,y)/n.$$",
+      "source_page": 831,
+      "printed_page": 811,
+      "source_block_ids": [
+        "p831:b2"
+      ],
+      "bbox": [
+        56.0,
+        134.0,
+        1013.0,
+        201.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting these expressions into Equation A1.19b, we obtain (after some algebra) a result first obtained by Pearson (1896)",
+      "source_page": 831,
+      "printed_page": 811,
+      "source_block_ids": [
+        "p831:b3"
+      ],
+      "bbox": [
+        56.0,
+        201.0,
+        1013.0,
+        266.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula053]]",
+      "source_page": 831,
+      "printed_page": 811,
+      "source_block_ids": [
+        "p831:b4"
+      ],
+      "bbox": [
+        398.0,
+        294.0,
+        666.0,
+        366.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\rho = \\sigma(x, y)/[\\sigma(x)\\sigma(y)] $ is the correlation coefficient. With much additional algebra, it can also be shown that the sampling variance of a correlation coefficient, $ r = \\mathrm{Cov}(x, y)/[\\mathrm{Var}(x)\\mathrm{Var}(y)]^{1/2} $, is",
+      "source_page": 831,
+      "printed_page": 811,
+      "source_block_ids": [
+        "p831:b6"
+      ],
+      "bbox": [
+        54.0,
+        395.0,
+        1012.0,
+        493.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_appendix1_formula054]]",
+      "source_page": 831,
+      "printed_page": 811,
+      "source_block_ids": [
+        "p831:b7"
+      ],
+      "bbox": [
+        424.0,
+        521.0,
+        641.0,
+        591.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Both of these expressions are strictly valid only under the assumption of bivariate normality (Kendall and Stuart 1977; p. 250). In practice, large-sample variances for b and r are estimated by substituting observed for expected variances and covariances in Equations A1.20a,b, and by using $ (n - 2) $ in place of n in the denominator, although this latter modification is usually of trivial importance.",
+      "source_page": 831,
+      "printed_page": 811,
+      "source_block_ids": [
+        "p831:b9"
+      ],
+      "bbox": [
+        54.0,
+        615.0,
+        1013.0,
+        779.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_appendix1:7]]",
+      "source_page": 831,
+      "source_block_ids": [
+        "p831:b10",
+        "p831:b11",
+        "p831:b12"
+      ],
+      "bbox": [
+        98.0,
+        871.0,
+        965.0,
+        1053.0
+      ]
+    }
+  ]
+}

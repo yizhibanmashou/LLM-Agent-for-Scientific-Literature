@@ -2,30 +2,294 @@
   "id": "Genetics_chapter13_020",
   "metadata": {
     "chapter": "Genetics_chapter13",
-    "section": "Introduction",
+    "section": "ANALYSIS OF DISCRETE CHARACTERS",
     "subsections": [
-      "Single-locus Penetrance Model"
+      "Major Gene Plus a Polygenic Background"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Single-locus Penetrance Model",
+    "section_level_1": "ANALYSIS OF DISCRETE CHARACTERS",
+    "section_level_2": "Major Gene Plus a Polygenic Background",
     "heading_path": [
-      "Introduction",
-      "Single-locus Penetrance Model"
+      "ANALYSIS OF DISCRETE CHARACTERS",
+      "Major Gene Plus a Polygenic Background"
     ],
-    "display_heading": "Single-locus Penetrance Model"
+    "display_heading": "ANALYSIS OF DISCRETE CHARACTERS / Major Gene Plus a Polygenic Background",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 391,
+      "printed_page": 371,
+      "source_block_ids": [
+        "p391:b3"
+      ],
+      "bbox": [
+        83.0,
+        245.0,
+        605.0,
+        288.0
+      ],
+      "raw_text": "Major Gene Plus a Polygenic Background"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Assume that a single diallelic locus underlies a dichotomous trait, and denote the penetrances of genotypes QQ, Qq, and qq by $\\psi_{1}$, $\\psi_{2}$, and $\\psi_{3}$, respectively. If allele Q has frequency $p$, under Hardy-Weinberg expectations the population prevalence, $K$, of the trait becomes $$ K=p^{2}\\cdot\\psi_{1}+2p(1-p)\\cdot\\psi_{2}+(1-p)^{2}\\cdot\\psi_{3} $$ As above, likelihood functions are constructed by standard conditioning arguments, using Equation 13.25b. For example, consider a collection of $n$ full sibs from the $i$th family, with trait values $y_{i1},\\cdots,y_{in}$ (taking values of zero or one). The likelihood for the $j$th sib from this family, conditioned on it having parental genotypes $g_{f}$ and $g_{m}$, is $$ \\ell(y_{i j}\\mid g_{f},g_{m})=\\sum_{g_{o}=1}^{3}\\Pr(g_{o}\\mid g_{f},g_{m})(\\psi_{g_{o}})^{y_{i j}}(1-\\psi_{g_{o}})^{1-y_{i j}} $$"
+      "content": "The penetrance approach can easily be extended to allow for both a major gene and a polygenic background. For a dichotomous character, the likelihood for an individual with major-locus genotype g and background polygenic value A is",
+      "source_page": 391,
+      "printed_page": 371,
+      "source_block_ids": [
+        "p391:b4"
+      ],
+      "bbox": [
+        80.0,
+        287.0,
+        1041.0,
+        405.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Using Equations 13.11a,b to average over all possible parental genotypes yields the unconditional likelihood for this family. The resulting likelihood has four unknown parameters: allele frequency $p$, and the gene effects as measured by the three penetrances $\\psi_{i}$. Curtis and Stam (1995) note that this likelihood parameter space can be reduced when an estimate of the population prevalence $K$"
+      "content": "[[FORMULA:Genetics_chapter13_formula049]]",
+      "source_page": 391,
+      "printed_page": 371,
+      "source_block_ids": [
+        "p391:b5"
+      ],
+      "bbox": [
+        313.0,
+        411.0,
+        803.0,
+        457.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\psi(g, A) $ is the penetrance for an individual with this genotype. Substituting this likelihood into the previous mixed-model likelihoods (Equations 13.19–23) allows them to accommodate binary traits. For example, the likelihood $ \\ell(y | g_f, g_m, A_f, A_m) $ for a particular sib, conditioned on the major-locus genotypes and background polygenic values of its parents is",
+      "source_page": 391,
+      "printed_page": 371,
+      "source_block_ids": [
+        "p391:b7"
+      ],
+      "bbox": [
+        77.0,
+        465.0,
+        1036.0,
+        646.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula050]]",
+      "source_page": 391,
+      "printed_page": 371,
+      "source_block_ids": [
+        "p391:b8"
+      ],
+      "bbox": [
+        167.0,
+        653.0,
+        843.0,
+        746.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\Pr(A \\mid A_f, A_m) $, given by Equation 13.21, is a function of the additive genetic variance $ \\sigma_A^2 $ of the polygenic values. The conditioning on parental polygenic values is removed by integration, paralleling our development of the mixed-model segregation-analysis likelihood function (Equations 13.19–23). Likewise, common-family environmental effects can be incorporated using an analysis along the lines leading to Equations 13.16–18.",
+      "source_page": 391,
+      "printed_page": 371,
+      "source_block_ids": [
+        "p391:b10"
+      ],
+      "bbox": [
+        67.0,
+        758.0,
+        1030.0,
+        972.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The penetrances $ \\psi(g, \\hat{A}) $ are usually modeled by assuming an underlying liability model. This approach, briefly introduced in Chapter 11 and more fully discussed in Chapter 25, assumes an underlying normal distribution of liability z. One trait value is displayed if the liability exceeds some threshold T, while the alternative trait value is displayed if liability lies below the threshold. In this case,",
+      "source_page": 391,
+      "printed_page": 371,
+      "source_block_ids": [
+        "p391:b11"
+      ],
+      "bbox": [
+        64.0,
+        952.0,
+        1027.0,
+        1135.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula051]]",
+      "source_page": 391,
+      "printed_page": 371,
+      "source_block_ids": [
+        "p391:b12"
+      ],
+      "bbox": [
+        237.0,
+        1139.0,
+        847.0,
+        1224.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "As is discussed in Chapter 25, the variance of the liability distribution can always be set equal to one. Defining $ \\Phi(x) = \\Pr(U \\leq x) $ as the cumulative distribution function for a unit normal U, the integral in Equation 13.30 can be written as",
+      "source_page": 391,
+      "printed_page": 371,
+      "source_block_ids": [
+        "p391:b14"
+      ],
+      "bbox": [
+        59.0,
+        1223.0,
+        1017.0,
+        1352.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula052]]",
+      "source_page": 391,
+      "printed_page": 371,
+      "source_block_ids": [
+        "p391:b15"
+      ],
+      "bbox": [
+        93.0,
+        1370.0,
+        980.0,
+        1464.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Using the useful identity $ \\Phi(-x) = 1 - \\Phi(x) $, Equation 13.30 thus becomes",
+      "source_page": 391,
+      "printed_page": 371,
+      "source_block_ids": [
+        "p391:b16"
+      ],
+      "bbox": [
+        55.0,
+        1467.0,
+        936.0,
+        1520.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula053]]",
+      "source_page": 391,
+      "printed_page": 371,
+      "source_block_ids": [
+        "p391:b17"
+      ],
+      "bbox": [
+        377.0,
+        1530.0,
+        688.0,
+        1572.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Segregation analysis proceeds by substituting this expression into Equation 13.29a. The resulting likelihood for the major-gene-only model has five parameters to estimate: the three major-locus means $ \\mu_{g} $, allele frequency q, and the threshold value T. (Alternatively, one can set T = 1 and estimate the variance of the liability function.) Examples of this general approach applied to several different genetic models can be found in Thaller et al. (1996).",
+      "source_page": 392,
+      "printed_page": 372,
+      "source_block_ids": [
+        "p392:b2"
+      ],
+      "bbox": [
+        115.0,
+        126.0,
+        1077.0,
+        335.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, we note that alternative approach for computing penetrances that avoids having to evaluate the cumulative normal function involves the use of logistic regressions. The motivation for this approach is that the logistic function",
+      "source_page": 392,
+      "printed_page": 372,
+      "source_block_ids": [
+        "p392:b3"
+      ],
+      "bbox": [
+        119.0,
+        317.0,
+        1079.0,
+        435.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula054]]",
+      "source_page": 392,
+      "printed_page": 372,
+      "source_block_ids": [
+        "p392:b4"
+      ],
+      "bbox": [
+        503.0,
+        448.0,
+        696.0,
+        519.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "provides a reasonable approximation to the cumulative normal, with",
+      "source_page": 392,
+      "printed_page": 372,
+      "source_block_ids": [
+        "p392:b6"
+      ],
+      "bbox": [
+        124.0,
+        536.0,
+        949.0,
+        588.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula055]]",
+      "source_page": 392,
+      "printed_page": 372,
+      "source_block_ids": [
+        "p392:b7"
+      ],
+      "bbox": [
+        240.0,
+        599.0,
+        885.0,
+        678.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "(Liao 1994). Hence, we can model the penetrance as a logistic function. For example, the penetrance for the major gene and polygenic background becomes $ \\psi(g, A) = f(a + \\alpha_g + \\alpha_A) $ where $ \\alpha_g $ and $ \\alpha_A $ are the effects of the major-locus genotype and polygenic background, and a is a term that accounts (among other things) for the general prevalence of the trait. Likewise, one can incorporate other factors (such as the effect of sex, specific environments, or specific age groups) as extra terms in the argument of logistic function.",
+      "source_page": 392,
+      "printed_page": 372,
+      "source_block_ids": [
+        "p392:b9"
+      ],
+      "bbox": [
+        127.0,
+        692.0,
+        1090.0,
+        938.0
+      ]
     }
   ]
 }

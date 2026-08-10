@@ -2,30 +2,174 @@
   "id": "Genetics_chapter13_006",
   "metadata": {
     "chapter": "Genetics_chapter13",
-    "section": "Introduction",
+    "section": "ELEMENTARY TESTS",
     "subsections": [
-      "Major-gene Indices (MGI)"
+      "Nonparametric Line-cross Tests"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Major-gene Indices (MGI)",
+    "section_level_1": "ELEMENTARY TESTS",
+    "section_level_2": "Nonparametric Line-cross Tests",
     "heading_path": [
-      "Introduction",
-      "Major-gene Indices (MGI)"
+      "ELEMENTARY TESTS",
+      "Nonparametric Line-cross Tests"
     ],
-    "display_heading": "Major-gene Indices (MGI)"
+    "display_heading": "ELEMENTARY TESTS / Nonparametric Line-cross Tests",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 372,
+      "printed_page": 352,
+      "source_block_ids": [
+        "p372:b4"
+      ],
+      "bbox": [
+        139.0,
+        919.0,
+        533.0,
+        951.0
+      ],
+      "raw_text": "Nonparametric Line-cross Tests"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Karlin et al. (1979) show that, under polygenic inheritance with additive loci, offspring more closely resemble the average of their parents (the midparent) than either individual parent, whereas the converse is true when a major gene is segregating. Exploiting this relationship, they proposed a class of indices for indicating the presence of major genes, $$ \\mathbf{MGI}(a)=\\frac{E[|z_{o}-(z_{f}+z_{m})/2|^{a}]}{E[(\\left|z_{o}-z_{f}\\right|\\left|z_{o}-z_{m}\\right|)^{a/2}]} $$ where $ z_o $ is the phenotypic value of an offspring whose parents have values $ z_f $ and $ z_m $, and $ a $ is a free parameter set by the investigator. Values of $ a > 1 $ accentuate large deviations between offspring and parents, while values of $ a < 1 $ accentuate small deviations. If the character is entirely determined by segregation of a major allele with no environmental variation, $ MGI(a) > 1 $ for all $ a \\geq 0 $ (independent of the amount of dominance), while if the character is entirely determined by an infinite number of genes of equal effect with a normal distribution of environmental effects, $ MGI(a) < 1 $ for all $ a \\geq 0 $. Karlin et al. recommend evaluation of the index at $ a = 0.5 $, 1, and 2, but this choice of $ a $ values is rather ad hoc. Improvements and embellishments on this test have been suggested by Famula (1986), Carmelli et al. (1979), and Karlin and Williams (1981), but Le Roy and Elsen (1992) found that both the Bartlett and Fain tests are more powerful than MGI-based tests."
+      "content": "Collins (1967, 1968, 1973), Mode and Gasser (1972), and Birnbaum (1972) independently proposed simple line-cross tests to detect major genes. Suppose a character is completely determined by one locus with two alleles, Q and q. Each genotype has an associated distribution of environmental values, which may differ between genotypes, and the phenotypic distribution in the population is a weighted mixture of the distributions associated with the three underlying genotypes,",
+      "source_page": 372,
+      "printed_page": 352,
+      "source_block_ids": [
+        "p372:b5"
+      ],
+      "bbox": [
+        138.0,
+        957.0,
+        1097.0,
+        1155.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:13.2]]"
+      "content": "[[FORMULA:Genetics_chapter13_formula003]]",
+      "source_page": 372,
+      "printed_page": 352,
+      "source_block_ids": [
+        "p372:b6"
+      ],
+      "bbox": [
+        290.0,
+        1197.0,
+        946.0,
+        1234.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\Pr(QQ) $ is the probability that a randomly chosen individual is QQ, and $ p_{QQ}(z) $ is the distribution of environmental values for a QQ individual, with the other terms defined similarly.",
+      "source_page": 372,
+      "printed_page": 352,
+      "source_block_ids": [
+        "p372:b8"
+      ],
+      "bbox": [
+        139.0,
+        1277.0,
+        1099.0,
+        1375.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Based on this simple relationship, the test proceeds as follows. Consider two parental populations, $ P_1 $ and $ P_2 $, fixed for different alleles (Q and q, respectively). If the outbreak of variation in the $ F_2 $ is entirely due to segregation at a single locus, then the $ F_2 $ distribution is specified exactly by Equation 13.3, with $ p_{Qq}(z) = p_{F_1}(z) $, $ p_{QQ}(z) = p_{P_1}(z) $, $ p_{qq}(z) = p_{P_2}(z) $, $ \\Pr(QQ) = \\Pr(qq) = 1/4 $, and $ \\Pr(Qq) = 1/2 $.",
+      "source_page": 372,
+      "printed_page": 352,
+      "source_block_ids": [
+        "p372:b9"
+      ],
+      "bbox": [
+        141.0,
+        1373.0,
+        1098.0,
+        1540.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "giving",
+      "source_page": 373,
+      "printed_page": 353,
+      "source_block_ids": [
+        "p373:b2"
+      ],
+      "bbox": [
+        65.0,
+        141.0,
+        152.0,
+        177.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula004]]",
+      "source_page": 373,
+      "printed_page": 353,
+      "source_block_ids": [
+        "p373:b3"
+      ],
+      "bbox": [
+        329.0,
+        174.0,
+        754.0,
+        241.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Standard goodness-of-fit criteria (such as a Kolmogorov-Smirnov test; Sokal and Rohlf 1995) are then used to compare the observed and expected distributions. Related tests have also been suggested by Elston (1981b) and Stolk et al. (1984), and these were used by Hagger et al. (1995) to reject the hypothesis of a single dominant gene to account for egg weight differences between two inbred lines of chickens.",
+      "source_page": 373,
+      "printed_page": 353,
+      "source_block_ids": [
+        "p373:b5"
+      ],
+      "bbox": [
+        65.0,
+        259.0,
+        1024.0,
+        451.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This approach can, in theory, be extended to two or more major loci, although tests of more than two loci require an impractical number of crosses. If more than one locus is segregating, knowledge of the parental and $ F_{1} $ distributions is generally not sufficient to predict the $ F_{2} $ distribution. Additional information, such as phenotypic distributions of certain backcrosses (e.g., the distribution of $ B_{1} $, $ B_{1} \\times B_{2} $, etc.), is required to account for the new $ F_{2} $ genotypes generated by segregation (Collins 1967, 1968, 1973).",
+      "source_page": 373,
+      "printed_page": 353,
+      "source_block_ids": [
+        "p373:b6"
+      ],
+      "bbox": [
+        66.0,
+        451.0,
+        1025.0,
+        675.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 13.3 provides our first formal introduction to mixture models, where the observed distribution is a weighted mixture of underlying distributions. The approach taken above is nonparametric in that it does not initially assume any particular form for the underlying distributions. While this is an advantage in some cases, it results in a reduction in power relative to parametric tests that incorporate the correct form of the underlying distributions. We now move to considerations of parametric mixture models that assume the underlying distributions to be normal. This class of models forms the basis for much of the analysis over the next four chapters.",
+      "source_page": 373,
+      "printed_page": 353,
+      "source_block_ids": [
+        "p373:b7"
+      ],
+      "bbox": [
+        66.0,
+        675.0,
+        1028.0,
+        966.0
+      ]
     }
   ]
 }

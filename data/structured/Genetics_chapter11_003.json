@@ -2,46 +2,266 @@
   "id": "Genetics_chapter11_003",
   "metadata": {
     "chapter": "Genetics_chapter11",
-    "section": "Introduction",
+    "section": "TRANSFORMATIONS TO ACHIEVE NORMALITY",
     "subsections": [
       "Log-normal Distributions and the Log Transform"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter11_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
+    "section_level_1": "TRANSFORMATIONS TO ACHIEVE NORMALITY",
     "section_level_2": "Log-normal Distributions and the Log Transform",
     "heading_path": [
-      "Introduction",
+      "TRANSFORMATIONS TO ACHIEVE NORMALITY",
       "Log-normal Distributions and the Log Transform"
     ],
-    "display_heading": "Log-normal Distributions and the Log Transform"
+    "display_heading": "TRANSFORMATIONS TO ACHIEVE NORMALITY / Log-normal Distributions and the Log Transform",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 308,
+      "printed_page": 288,
+      "source_block_ids": [
+        "p308:b4"
+      ],
+      "bbox": [
+        138.0,
+        527.0,
+        750.0,
+        575.0
+      ],
+      "raw_text": "Log-normal Distributions and the Log Transform"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "A common departure from normality is positive skewness, such that the tail to the right of the mean is longer than that to the left. Such a pattern is often indicative of a log-normal distribution, in which case a simple logarithmic transformation gives a normal distribution (Figure 11.1)."
+      "content": "A common departure from normality is positive skewness, such that the tail to the right of the mean is longer than that to the left. Such a pattern is often indicative of a log-normal distribution, in which case a simple logarithmic transformation gives a normal distribution (Figure 11.1).",
+      "source_page": 308,
+      "printed_page": 288,
+      "source_block_ids": [
+        "p308:b5"
+      ],
+      "bbox": [
+        139.0,
+        559.0,
+        1101.0,
+        711.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The log-normal distribution adequately describes many biological attributes (Wright 1968) and is worth dwelling upon briefly. Suppose that a variable z is log-normally distributed with mean $ \\mu $ and variance $ \\sigma^{2} $ on the original scale of measurement. It follows that $ y = \\ln(z) $ is normally distributed, and that the moments of y are related directly to the moments of z by $$ \\mu_{y}=\\ln\\mu-\\frac{1}{2}\\ln\\left(1+\\frac{\\sigma^{2}}{\\mu^{2}}\\right) $$ $$ \\sigma_{y}^{2}=\\ln\\left(1+\\frac{\\sigma^{2}}{\\mu^{2}}\\right) $$"
+      "content": "The log-normal distribution adequately describes many biological attributes (Wright 1968) and is worth dwelling upon briefly. Suppose that a variable z is log-normally distributed with mean $ \\mu $ and variance $ \\sigma^{2} $ on the original scale of measurement. It follows that $ y = \\ln(z) $ is normally distributed, and that the moments of y are related directly to the moments of z by",
+      "source_page": 308,
+      "printed_page": 288,
+      "source_block_ids": [
+        "p308:b6"
+      ],
+      "bbox": [
+        143.0,
+        689.0,
+        1107.0,
+        875.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "(Aitchison and Brown 1966). Since $ \\ln(1 + x) \\simeq x $ for $ |x| << 1 $, when the coefficient of variation $ (\\sigma/\\mu) $ is small (less than $ \\sim 0.3 $), these expressions are closely approximated by $$ \\mu_{y}=\\ln\\mu-\\frac{\\sigma^{2}}{2\\mu^{2}} $$ $$ \\sigma_{y}^{2}=\\frac{\\sigma^{2}}{\\mu^{2}} $$"
+      "content": "[[FORMULA:Genetics_chapter11_formula001]]",
+      "source_page": 308,
+      "printed_page": 288,
+      "source_block_ids": [
+        "p308:b7"
+      ],
+      "bbox": [
+        464.0,
+        888.0,
+        785.0,
+        969.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In estimating the moments of a distribution on a log-transformed scale, it is desirable to work directly with the raw data (rather than to simply apply Equations 11.1a,b) because the original distribution may, in fact, not be log-normal. Occasionally, however, one only has recourse to the sample mean, $ \\overline{z} $, and sample standard deviation, $ SD = \\sqrt{\\mathrm{Var}(z)} $, on the original scale. In this case, using a Taylor-series approximation (Appendix 1), we can still approximate the mean and variance of the log-transformed variables by $$ \\overline{y}=\\overline{\\ln z}\\simeq\\ln\\overline{z}-\\frac{1}{2}\\ln\\left(1+CV^{2}\\right)\\simeq\\ln\\overline{z}-\\frac{CV^{2}}{2} $$ $$ \\mathrm{Var}(y)=\\mathrm{Var}(\\ln z)\\simeq\\ln\\left(1+\\mathrm{CV}^{2}\\right)\\simeq\\mathrm{CV}^{2} $$ where CV = SD/$\\bar{z}$ is the estimated coefficient of variation on the original scale. Note that these first-order approximations (identical in form to Equations 11.2a,b) apply to any distribution on the original scale, not just the log-normal. Thus, logarithmic transformation will successfully stabilize the variance (removing its dependence on the mean) under a broad range of distributions on the original scale, provided the coefficients of variation are roughly constant. On the other hand, logarithmic transformation will only normalize the data if the untransformed data are actually log-normally distributed. Methods for testing for normality are discussed below."
-    },
-    {
-      "type": "proposition",
-      "content": "Galton (1879) first pointed out a possible explanation for the commonness of the log-normal distribution. Suppose the phenotype can be represented as a product of a large number of independent factors $ z = x_1 \\cdot x_2 \\cdot x_3 \\cdots x_n $. Upon logarithmic transformation, $ y = \\ln z = \\ln x_1 + \\ln x_2 + \\ln x_3 + \\cdots + \\ln x_n $, and under the central limit theorem, $ \\ln z $ will tend to normality as n becomes large. Thus, a simple explanation for a log-normal distribution is the existence of multiplicative interaction between a large number of factors."
+      "content": "[[FORMULA:Genetics_chapter11_formula002]]",
+      "source_page": 308,
+      "printed_page": 288,
+      "source_block_ids": [
+        "p308:b9"
+      ],
+      "bbox": [
+        467.0,
+        968.0,
+        684.0,
+        1046.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A number of other scale transformations, such as power functions and trigonometric functions, are available if the original data depart from both normality and log-normality (Wright 1968). If, for example, length measures in a population are known to be normally distributed, then it is likely that a cube root transformation would be required to normalize the distribution of weights, since weight is usually proportional to the cube of the length. The Box-Cox transformation, $$ y=\\frac{z^{\\lambda}-1}{\\lambda} $$ provides a fairly general class of transformations for achieving normality, and Box and Cox (1964) developed an approach to find the $ \\lambda $ that gives the best fit to normality. This type of transformation usually deals quite adequately with skewness on the original scale ($ \\lambda = 0 $, for example, is equivalent to the logarithmic transformation), but is less effective with kurtosis. John and Draper (1980) present alternative functions to deal with long tails on symmetrical distributions, and Atkinson (1982) discusses all of these transformations in some detail."
+      "content": "(Aitchison and Brown 1966). Since $ \\ln(1 + x) \\simeq x $ for $ |x| << 1 $, when the coefficient of variation $ (\\sigma/\\mu) $ is small (less than $ \\sim 0.3 $), these expressions are closely approximated by",
+      "source_page": 308,
+      "printed_page": 288,
+      "source_block_ids": [
+        "p308:b11"
+      ],
+      "bbox": [
+        150.0,
+        1063.0,
+        1113.0,
+        1182.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter11_formula003]]",
+      "source_page": 308,
+      "printed_page": 288,
+      "source_block_ids": [
+        "p308:b12"
+      ],
+      "bbox": [
+        533.0,
+        1196.0,
+        732.0,
+        1274.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter11_formula004]]",
+      "source_page": 308,
+      "printed_page": 288,
+      "source_block_ids": [
+        "p308:b14"
+      ],
+      "bbox": [
+        537.0,
+        1273.0,
+        646.0,
+        1349.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In estimating the moments of a distribution on a log-transformed scale, it is desirable to work directly with the raw data (rather than to simply apply Equations 11.1a,b) because the original distribution may, in fact, not be log-normal. Occasionally, however, one only has recourse to the sample mean, $ \\overline{z} $, and sample standard deviation, $ SD = \\sqrt{\\mathrm{Var}(z)} $, on the original scale. In this case, using a Taylor-series approximation (Appendix 1), we can still approximate the mean and variance of the log-transformed variables by",
+      "source_page": 308,
+      "printed_page": 288,
+      "source_block_ids": [
+        "p308:b16",
+        "p309:b2"
+      ],
+      "bbox": [
+        156.0,
+        1367.0,
+        1123.0,
+        1553.0
+      ],
+      "source_page_end": 309
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter11_formula005]]",
+      "source_page": 309,
+      "printed_page": 289,
+      "source_block_ids": [
+        "p309:b3"
+      ],
+      "bbox": [
+        305.0,
+        221.0,
+        874.0,
+        294.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter11_formula006]]",
+      "source_page": 309,
+      "printed_page": 289,
+      "source_block_ids": [
+        "p309:b5"
+      ],
+      "bbox": [
+        246.0,
+        290.0,
+        749.0,
+        340.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where CV = SD/z is the estimated coefficient of variation on the original scale. Note that these first-order approximations (identical in form to Equations 11.2a,b) apply to any distribution on the original scale, not just the log-normal. Thus, logarithmic transformation will successfully stabilize the variance (removing its dependence on the mean) under a broad range of distributions on the original scale, provided the coefficients of variation are roughly constant. On the other hand, logarithmic transformation will only normalize the data if the untransformed data are actually log-normally distributed. Methods for testing for normality are discussed below.",
+      "source_page": 309,
+      "printed_page": 289,
+      "source_block_ids": [
+        "p309:b7"
+      ],
+      "bbox": [
+        73.0,
+        349.0,
+        1035.0,
+        659.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Galton (1879) first pointed out a possible explanation for the commonness of the log-normal distribution. Suppose the phenotype can be represented as a product of a large number of independent factors $ z = x_1 \\cdot x_2 \\cdot x_3 \\cdots x_n $. Upon logarithmic transformation, $ y = \\ln z = \\ln x_1 + \\ln x_2 + \\ln x_3 + \\cdots + \\ln x_n $, and under the central limit theorem, $ \\ln z $ will tend to normality as $ n $ becomes large. Thus, a simple explanation for a log-normal distribution is the existence of multiplicative interaction between a large number of factors.",
+      "source_page": 309,
+      "printed_page": 289,
+      "source_block_ids": [
+        "p309:b8"
+      ],
+      "bbox": [
+        67.0,
+        639.0,
+        1029.0,
+        885.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A number of other scale transformations, such as power functions and trigonometric functions, are available if the original data depart from both normality and log-normality (Wright 1968). If, for example, length measures in a population are known to be normally distributed, then it is likely that a cube root transformation would be required to normalize the distribution of weights, since weight is usually proportional to the cube of the length. The Box-Cox transformation,",
+      "source_page": 309,
+      "printed_page": 289,
+      "source_block_ids": [
+        "p309:b9"
+      ],
+      "bbox": [
+        61.0,
+        868.0,
+        1025.0,
+        1079.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter11_formula007]]",
+      "source_page": 309,
+      "printed_page": 289,
+      "source_block_ids": [
+        "p309:b10"
+      ],
+      "bbox": [
+        468.0,
+        1091.0,
+        607.0,
+        1161.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "provides a fairly general class of transformations for achieving normality, and Box and Cox (1964) developed an approach to find the $ \\lambda $ that gives the best fit to normality. This type of transformation usually deals quite adequately with skewness on the original scale ( $ \\lambda = 0 $, for example, is equivalent to the logarithmic transformation), but is less effective with kurtosis. John and Draper (1980) present alternative functions to deal with long tails on symmetrical distributions, and Atkinson (1982) discusses all of these transformations in some detail.",
+      "source_page": 309,
+      "printed_page": 289,
+      "source_block_ids": [
+        "p309:b12"
+      ],
+      "bbox": [
+        54.0,
+        1170.0,
+        1018.0,
+        1419.0
+      ]
     }
   ]
 }

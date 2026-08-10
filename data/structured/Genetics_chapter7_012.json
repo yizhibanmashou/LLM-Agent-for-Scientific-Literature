@@ -2,46 +2,590 @@
   "id": "Genetics_chapter7_012",
   "metadata": {
     "chapter": "Genetics_chapter7",
-    "section": "Introduction",
-    "subsections": [
-      "Evolvability"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter7_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Evolvability",
+    "section": "ENVIRONMENTAL SOURCES OF COVARIANCE BETWEEN RELATIVES",
+    "subsections": [],
+    "section_level_1": "ENVIRONMENTAL SOURCES OF COVARIANCE BETWEEN RELATIVES",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "Evolvability"
+      "ENVIRONMENTAL SOURCES OF COVARIANCE BETWEEN RELATIVES"
     ],
-    "display_heading": "Evolvability"
+    "display_heading": "ENVIRONMENTAL SOURCES OF COVARIANCE BETWEEN RELATIVES",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 178,
+      "printed_page": 158,
+      "source_block_ids": [
+        "p178:b10"
+      ],
+      "bbox": [
+        144.0,
+        1214.0,
+        1083.0,
+        1245.0
+      ],
+      "raw_text": "ENVIRONMENTAL SOURCES OF COVARIANCE BETWEEN RELATIVES"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "In comparing evolvabilities of different traits/species, it is clearly desirable to use a dimensionless parameter, and one such measure is the heritability. Recall the traditional expression for the rate of evolution of a trait, $$ \\Delta\\mu=h^{2}S $$"
+      "content": "Up to now, we have focused entirely on the genetic causes of resemblance between relatives. There are, however, many circumstances in which the environmental effects on the phenotypes of relatives are correlated. The most obvious situation arises when full sibs are raised in a common familial environment, but the resemblance between other types of relatives can also be modified by shared aspects of the environment. For example, in a spatially heterogeneous environment, the resemblance between parents and offspring may be exaggerated by environmental effects if the latter do not randomly disperse following birth. In humans, and probably in other vertebrates, cultural transmission can create a continuity in the behavioral phenotypes of parents and offspring as well as among more distant relatives. In some circumstances, the environment may actually deflate the resemblance between relatives. Consider, for example, trees with limited seed-dispersal abilities. Parent trees that have grown large due to fortuitous circumstances, such as germination in a light gap, may tend to create relatively poor microhabitats for their offspring as a consequence of shading, attraction of herbivores, and so on.",
+      "source_page": 178,
+      "printed_page": 158,
+      "source_block_ids": [
+        "p178:b11",
+        "p179:b2"
+      ],
+      "bbox": [
+        144.0,
+        1279.0,
+        1106.0,
+        1536.0
+      ],
+      "source_page_end": 179
     },
     {
       "type": "discussion",
-      "content": "This equation neatly separates the forces of selection from the properties of inheritance, such that $ h^{2} $ can be viewed as the efficiency of the response to selection. The change in the mean relative to the phenotypic standard deviation provides another useful descriptor of evolvability, and in this case, $$ \\frac{\\Delta\\mu}{\\sigma_{z}}=h^{2}i $$ where $i = S/\\sigma_{z}$ is the standardized selection differential, i.e., the change in the mean caused by selection in units of phenotypic standard deviations. Again, the heritability provides a measure of the efficiency of response to selection."
+      "content": "In an effort to deal with the complications of cultural transmission, human quantitative geneticists have gone to great extremes to incorporate various types of environmental covariance into expressions for the resemblance between relatives (Rao et al. 1974, Eaves 1976, Cloninger et al. 1979a,b, Eaves et al. 1988). The result is a family of models that contain large numbers of parameters. Since the number of observable relationships must equal or exceed the number of parameters for there to be any hope of estimating the latter, these models are of little practical utility for most organisms. However, in humans the difficulties are not insurmountable. Due to the frequency of divorce, adoption, and fostering by relatives, and to the availability of records on parentage, many kinds of familial relationships are observable.",
+      "source_page": 179,
+      "printed_page": 159,
+      "source_block_ids": [
+        "p179:b3"
+      ],
+      "bbox": [
+        60.0,
+        360.0,
+        1021.0,
+        710.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Houle (1992) has suggested that heritability may not be the best measure of the evolvability of a trait, arguing for the use of the coefficient of additive genetic variation, i.e., $ \\sigma_{A}/\\mu $, where $ \\sigma_{A} $ is the square root of the additive genetic variance and $ \\mu $ is the mean of the trait. Here we show that the utility of this metric is limited to a very special situation. Dividing both sides of Equation 7.31a by the mean phenotype yields an expression for the proportional change of the trait, $$ \\frac{\\Delta\\mu}{\\mu}=\\left(\\frac{\\sigma_{A}^{2}}{\\mu\\sigma_{z}}\\right)i $$"
+      "content": "Here we consider some of the possibilities, under the assumption of additive gene action, and negligible linkage, gametic phase disequilibrium, and inbreeding. To illustrate the major points, we will rely on path analysis (Appendix 2), drawing specifically from examples given in Rao et al. (1974). The basic feature of path analysis that we will exploit is its ability to partition the correlation between any two variables into a series of pathways connecting the two variables through causal components. As noted above with coefficients of coancestry, the proportional contribution of each pathway to the correlation between relatives is simply equal to the product of various path coefficients and correlation coefficients along the pathway. We start by providing some general definitions, and then show, for several types of relationships, how path analysis can yield expressions for the expected phenotypic correlations in terms of causal genetic and environmental components. We then complete our discussion of environmental effects by providing a worked example involving a large data set on human birth weight.",
+      "source_page": 179,
+      "printed_page": 159,
+      "source_block_ids": [
+        "p179:b4"
+      ],
+      "bbox": [
+        56.0,
+        711.0,
+        1018.0,
+        1190.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "This suggests that the dimensionless parameter $ \\sigma_{A}^{2}/(\\mu\\sigma_{z}) $, the ratio of the additive genetic variance to the product of the phenotypic mean and standard deviation, is an appropriate parameter for comparing evolvability when proportional change is the measure of interest. Unlike heritability, this ratio does not have a simple biological interpretation."
-    },
-    {
-      "type": "proposition",
-      "content": "Now consider the special case in which the character is fitness $ (W) $. Recall from Chapter 3 that the selection differential is equivalent to the phenotypic covariance between the character and relative fitness $ (w = W/\\overline{W}) $, i.e., $ S = \\sigma(z, W)/\\overline{W} $, where $ \\overline{W} $ is mean fitness on the absolute scale. If z is fitness, then $ S = \\sigma_z^2(W)/\\overline{W} $, where $ \\sigma_z^2(W) $ is the phenotypic variance of fitness. Equation 7.31c then reduces to $$ \\frac{\\Delta\\overline{W}}{\\overline{W}}=\\frac{\\sigma_{A}^{2}(W)}{\\overline{W}^{2}}=\\sigma_{A}^{2}(w) $$ where $ \\sigma_{A}^{2}(W) $ and $ \\sigma_{A}^{2}(w) $ are the additive genetic variances of absolute and relative fitness. Thus, the proportional rate of evolution in mean fitness is equal to the squared coefficient of additive genetic variation of absolute fitness, or equivalently, to the additive genetic variance of relative fitness. This is Fisher's (1958) fundamental theorem of natural selection."
+      "content": "Before proceeding, we consider how the phenotypic variance can be partitioned in terms of path coefficients. As usual, we consider an individual's phenotype (z) to be the sum of its genotypic value (G), general (shared) environmental effects (E), and special environmental effects (e). However, we now partition G into three quantities: the population mean ( $ \\mu_{G} $), the mean genotypic (breeding) value of the parents ( $ \\bar{A} $), and the deviation of G from $ \\bar{A} $ caused by segregation of parental genes (S). Thus, an individual's phenotypic value is expressed as",
+      "source_page": 179,
+      "printed_page": 159,
+      "source_block_ids": [
+        "p179:b5"
+      ],
+      "bbox": [
+        54.0,
+        1190.0,
+        1016.0,
+        1416.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "These alternative formulations merely serve to illustrate that there are several ways to measure evolvability, each of which has its own merits in particular contexts. All of the measures are interchangeable provided that information is available on the phenotypic variance, additive genetic variance, and mean phenotype. As emphasized by Houle (1992), however, many quantitative-genetic studies simply report the heritability of a trait, with no mention of the mean or variance components. This greatly limits the scope of investigation that can be performed with published data."
+      "content": "[[FORMULA:Genetics_chapter7_formula035]]",
+      "source_page": 179,
+      "printed_page": 159,
+      "source_block_ids": [
+        "p179:b6"
+      ],
+      "bbox": [
+        385.0,
+        1424.0,
+        684.0,
+        1457.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The path coefficients from $ \\bar{A}, S, E, $ and $ e $ to the phenotype are denoted by $ g, s, c, $ and $ d $, respectively (for expected $ \\underline{genotypic} $ value, deviation due to $ \\underline{se} $gregation, common environmental effect, and residual $ \\underline{\\text{deviation}} $. Since S is a random genetic deviation, it is uncorrelated with the other components of Equation 7.23. However, genotype-environment correlation may exist between $ \\underline{A} $ and E when offspring are raised by their own parents, and we denote it by $ \\rho_{GE} $.",
+      "source_page": 179,
+      "printed_page": 159,
+      "source_block_ids": [
+        "p179:b8",
+        "p180:b2"
+      ],
+      "bbox": [
+        54.0,
+        1467.0,
+        1012.0,
+        1536.0
+      ],
+      "source_page_end": 180
+    },
+    {
+      "type": "discussion",
+      "content": "The phenotypic variance among individuals raised by their biological parents is",
+      "source_page": 180,
+      "printed_page": 160,
+      "source_block_ids": [
+        "p180:b3"
+      ],
+      "bbox": [
+        139.0,
+        263.0,
+        1097.0,
+        326.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula036]]",
+      "source_page": 180,
+      "printed_page": 160,
+      "source_block_ids": [
+        "p180:b4"
+      ],
+      "bbox": [
+        419.0,
+        322.0,
+        818.0,
+        363.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Dividing all terms by $ \\sigma_{z}^{2} $ provides an expression for the partitioning of the phe-notypic variance of offspring raised by their own parents,",
+      "source_page": 180,
+      "printed_page": 160,
+      "source_block_ids": [
+        "p180:b6"
+      ],
+      "bbox": [
+        140.0,
+        375.0,
+        1097.0,
+        445.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula037]]",
+      "source_page": 180,
+      "printed_page": 160,
+      "source_block_ids": [
+        "p180:b7"
+      ],
+      "bbox": [
+        430.0,
+        468.0,
+        811.0,
+        505.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In this expression, $ g^2 $, $ s^2 $, $ c^2 $, and $ d^2 $, are the fractions of the phenotypic variance attributable to midparent breeding values, segregational, general and special environmental effects, while $ 2g\\rho_{GE}c = 2\\sigma(G, E)/\\sigma_z^2 $ is the fraction resulting from genotype-environment covariance.",
+      "source_page": 180,
+      "printed_page": 160,
+      "source_block_ids": [
+        "p180:b9"
+      ],
+      "bbox": [
+        143.0,
+        534.0,
+        1100.0,
+        664.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This expression requires modification in the case of progeny raised in adoptive homes. Under the assumption that there is no correlation between offspring genotype and the environment provided by an adoptive home, then $ \\rho_{GE} = 0 $, and the phenotypic variance of adopted children can differ from that of progeny raised by their own parents. For example, if $ \\rho_{GE} > 0 $ in intact families, the variance among adopted children will be reduced. To account for this, Equation 7.24b needs to be modified to ensure that the sum of the various paths is equal to one. For adopted children, the modification is accomplished by letting",
+      "source_page": 180,
+      "printed_page": 160,
+      "source_block_ids": [
+        "p180:b10"
+      ],
+      "bbox": [
+        143.0,
+        664.0,
+        1101.0,
+        923.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula038]]",
+      "source_page": 180,
+      "printed_page": 160,
+      "source_block_ids": [
+        "p180:b11"
+      ],
+      "bbox": [
+        470.0,
+        946.0,
+        774.0,
+        983.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\theta^{2} = 1/(1 - 2g\\rho_{GE}c) $ is the ratio of the phenotypic variances for the two types of offspring. Multiplication by $ \\theta^{2} $ has the effect of dividing each of the causal path contributions by the phenotypic variance of progeny raised in adoptive homes rather than by the phenotypic variance of progeny raised by their biological parents.",
+      "source_page": 180,
+      "printed_page": 160,
+      "source_block_ids": [
+        "p180:b13"
+      ],
+      "bbox": [
+        144.0,
+        1012.0,
+        1102.0,
+        1174.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, we note that it is useful to define",
+      "source_page": 180,
+      "printed_page": 160,
+      "source_block_ids": [
+        "p180:b14"
+      ],
+      "bbox": [
+        199.0,
+        1174.0,
+        689.0,
+        1206.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula039]]",
+      "source_page": 180,
+      "printed_page": 160,
+      "source_block_ids": [
+        "p180:b15"
+      ],
+      "bbox": [
+        546.0,
+        1231.0,
+        702.0,
+        1267.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "as the heritability of the trait, i.e., the fraction of the total phenotypic variance attributable to additive genetic differences among individuals. With assortative mating,",
+      "source_page": 180,
+      "printed_page": 160,
+      "source_block_ids": [
+        "p180:b17"
+      ],
+      "bbox": [
+        145.0,
+        1299.0,
+        1104.0,
+        1398.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula040]]",
+      "source_page": 180,
+      "printed_page": 160,
+      "source_block_ids": [
+        "p180:b18"
+      ],
+      "bbox": [
+        513.0,
+        1428.0,
+        737.0,
+        1480.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula041]]",
+      "source_page": 180,
+      "printed_page": 160,
+      "source_block_ids": [
+        "p180:b20"
+      ],
+      "bbox": [
+        516.0,
+        1489.0,
+        737.0,
+        1537.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:7.8]]",
+      "source_page": 181,
+      "printed_page": 161,
+      "source_block_ids": [
+        "p181:b7"
+      ],
+      "bbox": [
+        107.0,
+        1201.0,
+        970.0,
+        1266.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where, as before, $ \\rho_{g} $ is the genetic correlation between mates. Under random mating, $ g = s = h/\\sqrt{2} $.",
+      "source_page": 181,
+      "printed_page": 161,
+      "source_block_ids": [
+        "p181:b8"
+      ],
+      "bbox": [
+        58.0,
+        1325.0,
+        1015.0,
+        1392.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "To illustrate how these general relationships can be extended to the description of the expected phenotypic correlation between individuals, we now focus on the path diagrams for four specific relationships (Figure 7.8). For simplicity, the diagrams only include those factors that contribute jointly to the phenotypes of both members of a pair of individuals. Thus, the residual environmental deviation (e) never appears, while S (as a random genetic deviation) is only relevant in the case of monozygotic twins.",
+      "source_page": 181,
+      "printed_page": 161,
+      "source_block_ids": [
+        "p181:b9",
+        "p182:b2"
+      ],
+      "bbox": [
+        56.0,
+        1389.0,
+        1016.0,
+        1525.0
+      ],
+      "source_page_end": 182
+    },
+    {
+      "type": "discussion",
+      "content": "Because they are genetically identical, monozygotic twins (or clonemates) raised by their natural parents share the same general environmental effects, midparent value, and segregation deviation. Allowing for genotype-environment covariance, and summing over all pathways between $ z_{x} $ and $ z_{y} $, we obtain the phenotypic correlation,",
+      "source_page": 182,
+      "printed_page": 162,
+      "source_block_ids": [
+        "p182:b3"
+      ],
+      "bbox": [
+        135.0,
+        230.0,
+        1095.0,
+        395.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula042]]",
+      "source_page": 182,
+      "printed_page": 162,
+      "source_block_ids": [
+        "p182:b4"
+      ],
+      "bbox": [
+        300.0,
+        418.0,
+        934.0,
+        455.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the correlation between monozygotic twins raised by their biological parents is not particularly informative, since it is a function of additive genetic variance ( $ h^{2} $), variance due to shared environment ( $ c^{2} $), and genotype-environment correlation $ 2g\\rho_{GEC} $.",
+      "source_page": 182,
+      "printed_page": 162,
+      "source_block_ids": [
+        "p182:b6"
+      ],
+      "bbox": [
+        138.0,
+        483.0,
+        1096.0,
+        611.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Now consider the situation in which monozygotic twins are separated at birth, with each being raised in a different adoptive home. The removal of the common-environment effect eliminates the path $ z_x \\leftarrow E \\rightarrow z_y $ (Figure 7.8), and as noted above, the absence of genotype-environment correlation changes the phenotypic variance in the subpopulation of such twins. Thus, the expected phenotypic correlation between twins raised by different foster parents is $ h^2\\theta^2 $. An estimate of the heritability can be acquired after factoring out $ \\theta^2 $ (the ratio of phenotypic variances, defined above). Expressions for twins living in other combinations of home environments are given in Table 7.6. (Note that when one member of a relationship is living with its parents and the other is living in an adoptive home, the correlation is multiplied by $ \\theta $, rather than $ \\theta^2 $, because only one member of the pair is from a subpopulation with modified variance.) Chapter 19 treats the issue of twin analysis in considerable detail.",
+      "source_page": 182,
+      "printed_page": 162,
+      "source_block_ids": [
+        "p182:b7"
+      ],
+      "bbox": [
+        138.0,
+        612.0,
+        1100.0,
+        1028.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "We next consider the correlation between full sibs. The path diagram in this case is identical to that for monozygotic twins, except that the sibs, being products of different gametes, do not share the segregational deviation (S). Thus, the expected correlation between full sibs raised by their biological parents is",
+      "source_page": 182,
+      "printed_page": 162,
+      "source_block_ids": [
+        "p182:b8"
+      ],
+      "bbox": [
+        141.0,
+        1026.0,
+        1100.0,
+        1158.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula043]]",
+      "source_page": 182,
+      "printed_page": 162,
+      "source_block_ids": [
+        "p182:b9"
+      ],
+      "bbox": [
+        459.0,
+        1182.0,
+        784.0,
+        1220.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "As in the case of monozygotic twins, this expression is simplified in situations where one or both sibs are raised in adoptive environments. For example, suppose one sib is raised by its biological parents, while the other is raised by unrelated foster parents (Figure 7.8). This eliminates the paths $ z_x \\leftarrow E \\rightarrow z_y $ and $ z_x \\leftarrow \\bar{A} \\leftrightarrow E \\rightarrow z_y $. Moreover, since the second sib comes from a segment of the population without genotype-environment correlation, all of the path coefficients leading to it must be multiplied by $ \\theta $. Summing over the two paths between $ x $ and $ y $, the phenotypic correlation becomes $ \\theta(g^2 + g\\rho_{GE}c) $. The issue of sib analysis will be covered in detail in Chapter 18.",
+      "source_page": 182,
+      "printed_page": 162,
+      "source_block_ids": [
+        "p182:b11"
+      ],
+      "bbox": [
+        142.0,
+        1248.0,
+        1102.0,
+        1539.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:7.6]]",
+      "source_page": 183,
+      "printed_page": 163,
+      "source_block_ids": [
+        "p183:b3"
+      ],
+      "bbox": [
+        63.0,
+        177.0,
+        1022.0,
+        1055.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A slight complication arises in the case of half sibs. The correlation between midparent values ( $ \\bar{A}_x $ and $ \\bar{A}_y $) is no longer one, since there is only one common parent. Rao et al. (1974) showed it to be $ \\phi = (1 + 3\\rho_g)/[2(1 + \\rho_g)] $, which reduces to 1/2 under random mating. Summing over all paths between $ z_x $ and $ z_y $ (Figure 7.8), the correlation between half sibs raised by the parent creating the common environmental effect is",
+      "source_page": 183,
+      "printed_page": 163,
+      "source_block_ids": [
+        "p183:b4"
+      ],
+      "bbox": [
+        60.0,
+        1135.0,
+        1022.0,
+        1327.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter7_formula044]]",
+      "source_page": 183,
+      "printed_page": 163,
+      "source_block_ids": [
+        "p183:b5"
+      ],
+      "bbox": [
+        369.0,
+        1348.0,
+        713.0,
+        1387.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Again, various simplifications arise when one or both members of the sib pair are raised by foster parents (Table 7.6). For example, when each sib is raised in a different adoptive environment, the only path between sib phenotypes is $ z_x \\leftarrow \\bar{A}_x \\leftrightarrow \\bar{A}_y \\rightarrow z_y $, so the correlation is simply $ \\phi g^2 \\theta^2 $.",
+      "source_page": 183,
+      "printed_page": 163,
+      "source_block_ids": [
+        "p183:b7"
+      ],
+      "bbox": [
+        60.0,
+        1405.0,
+        1019.0,
+        1536.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, we note that unrelated individuals fostered by the same set of parents can resemble each other as a consequence of the common environment in the adoptive home. The expected phenotypic correlation between such individuals depends on whether the adoptive parents are the biological parents of one of the foster sibs (Figure 7.8, Table 7.6).",
+      "source_page": 184,
+      "printed_page": 164,
+      "source_block_ids": [
+        "p184:b2"
+      ],
+      "bbox": [
+        133.0,
+        136.0,
+        1092.0,
+        295.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Even more complicated scenarios, for additional types of relatives, have been considered by the authors cited above. However, we assume that the basic principles are clear at this point, and will not pursue these any further. One very notable aspect of the models outlined above is their ability to provide estimates of genotype-environment correlation when data are available on sibs raised in various types of home environments. For example, when covariances are observed for monozygotic twins living in the four types of environmental settings outlined in Table 7.6, joint estimates of $ h^{2} $, $ c^{2} $, and $ \\rho_{GE} $ can be obtained by setting the observed correlations equal to their expected values and solving. Modifications of all the expressions in Table 7.6 are necessary, however, in the presence of significant sources of nonadditive genetic variance. We close this section with an example of a character whose expression is strongly influenced by shared environmental effects.",
+      "source_page": 184,
+      "printed_page": 164,
+      "source_block_ids": [
+        "p184:b3"
+      ],
+      "bbox": [
+        133.0,
+        297.0,
+        1093.0,
+        713.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter7:6]]",
+      "source_page": 184,
+      "source_block_ids": [
+        "p184:b4",
+        "p184:b5",
+        "p185:b2",
+        "p185:b3",
+        "p185:b4",
+        "p185:b5",
+        "p185:b6",
+        "p186:b2",
+        "p186:b3",
+        "p186:b4"
+      ],
+      "bbox": [
+        184.0,
+        800.0,
+        1048.0,
+        1155.0
+      ]
     }
   ]
 }

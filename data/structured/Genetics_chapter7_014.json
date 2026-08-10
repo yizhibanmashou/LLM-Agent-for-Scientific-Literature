@@ -2,62 +2,219 @@
   "id": "Genetics_chapter7_014",
   "metadata": {
     "chapter": "Genetics_chapter7",
-    "section": "Introduction to Matrix Algebra and Linear Models",
+    "section": "THE HERITABILITY CONCEPT",
     "subsections": [
-      "MULTIPLE REGRESSION"
+      "Evolvability"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter7_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction to Matrix Algebra and Linear Models",
-    "section_level_2": "MULTIPLE REGRESSION",
+    "section_level_1": "THE HERITABILITY CONCEPT",
+    "section_level_2": "Evolvability",
     "heading_path": [
-      "Introduction to Matrix Algebra and Linear Models",
-      "MULTIPLE REGRESSION"
+      "THE HERITABILITY CONCEPT",
+      "Evolvability"
     ],
-    "display_heading": "MULTIPLE REGRESSION"
+    "display_heading": "THE HERITABILITY CONCEPT / Evolvability",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 191,
+      "printed_page": 171,
+      "source_block_ids": [
+        "p191:b4"
+      ],
+      "bbox": [
+        68.0,
+        768.0,
+        228.0,
+        801.0
+      ],
+      "raw_text": "Evolvability"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "As a point of departure, consider the multiple regression $$ y=\\alpha+\\beta_{1}z_{1}+\\beta_{2}z_{2}+\\cdots+\\beta_{n}z_{n}+e $$ where $y$ is the response variable, and the $z_{i}$ are the predictor (or explanatory) variables used to predict the value of the response variable. This multivariate equation is similar to the expression for a simple linear regression, Equation 3.12a, except that $y$ is now a function of $n$ predictor variables, rather than of one. The variables $y, z_1, \\ldots, z_n$ represent observed measures, whereas $\\alpha$ and $\\beta_1, \\ldots, \\beta_n$ are constants to be estimated. As in the case of simple linear regression, $e$ (the residual error) is the deviation between the observed and fitted value of $y$. Recall that the use of a linear model involves no assumptions regarding the true form of relationship between $y$ and $z_1, \\ldots, z_n$. It simply gives the best linear approximation. Many statistical techniques, including path analysis (Appendix 2) and analysis of variance (Chapter 17), are based on versions of Equation 8.1."
+      "content": "In comparing evolvabilities of different traits/species, it is clearly desirable to use a dimensionless parameter, and one such measure is the heritability. Recall the traditional expression for the rate of evolution of a trait,",
+      "source_page": 191,
+      "printed_page": 171,
+      "source_block_ids": [
+        "p191:b5"
+      ],
+      "bbox": [
+        66.0,
+        812.0,
+        1024.0,
+        910.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The terms $ \\beta_{1}, \\ldots, \\beta_{n} $ are known as partial regression coefficients. Notice that when all but the $ i $th predictor variable are held constant in Equation 8.1, the formula reduces to a univariate model similar to Equation 3.12a but with slope $ \\beta_{i} $. This partial regression coefficient often differs from the simple regression coefficient, $ \\beta_{i} $. Suppose, for example, that a simple regression of $ y $ on $ z_{1} $ has a slope of zero. This might lead to the suggestion that there is no relationship between $ z_{1} $ and $ y $. However, it is conceivable that $ z_{1} $ actually has a strong positive effect on $ y $ that is obscured by positive correlations of $ z_{1} $ with other variables that have negative influences on $ y $. A multiple regression that included the appropriate variables would clarify this situation by yielding a positive $ \\beta_{1} $."
+      "content": "[[FORMULA:Genetics_chapter7_formula046]]",
+      "source_page": 191,
+      "printed_page": 171,
+      "source_block_ids": [
+        "p191:b6"
+      ],
+      "bbox": [
+        481.0,
+        917.0,
+        611.0,
+        951.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Since it is usually impossible for biologists to evaluate partial regression coefficients by empirically imposing constancy on all extraneous variables, we require a more indirect approach to the problem. From Chapter 3, the covariance of y and a predictor variable is $$ $$"
+      "content": "This equation neatly separates the forces of selection from the properties of inheritance, such that $ h^{2} $ can be viewed as the efficiency of the response to selection. The change in the mean relative to the phenotypic standard deviation provides another useful descriptor of evolvability, and in this case,",
+      "source_page": 191,
+      "printed_page": 171,
+      "source_block_ids": [
+        "p191:b8"
+      ],
+      "bbox": [
+        64.0,
+        961.0,
+        1023.0,
+        1093.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "(y,z_ i)&= \\\\&= _ 1 (z_ 1,z_ i)+ _ 2 (z_ 2,z_ i)+ + _ n (z_ n,z_ i)+ (e,z_ i) $$ $$"
+      "content": "[[FORMULA:Genetics_chapter7_formula047]]",
+      "source_page": 191,
+      "printed_page": 171,
+      "source_block_ids": [
+        "p191:b9"
+      ],
+      "bbox": [
+        481.0,
+        1100.0,
+        607.0,
+        1165.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The term $ \\sigma(\\alpha, z_i) $ has dropped out because the covariance of $ z_i $ with a constant $ (\\alpha) $ is zero. By applying Equation 8.2 to each predictor variable, we obtain a set of $ n $ equations in $ n $ unknowns $ (\\beta_1, \\ldots, \\beta_n) $, $$ \\begin{aligned}\\sigma(y,z_{1})&=\\beta_{1}\\sigma^{2}(z_{1})+\\beta_{2}\\sigma(z_{1},z_{2})+\\cdots+\\beta_{n}\\sigma(z_{1},z_{n})+\\sigma(z_{1},e)\\\\\\sigma(y,z_{2})&=\\beta_{1}\\sigma(z_{1},z_{2})+\\beta_{2}\\sigma^{2}(z_{2})+\\cdots+\\beta_{n}\\sigma(z_{2},z_{n})+\\sigma(z_{2},e)\\\\\\vdots&\\quad\\vdots\\quad\\vdots\\quad\\ddots\\quad\\vdots\\quad\\vdots\\\\\\sigma(y,z_{n})&=\\beta_{1}\\sigma(z_{1},z_{n})+\\beta_{2}\\sigma(z_{2},z_{n})+\\cdots+\\beta_{n}\\sigma^{2}(z_{n})+\\sigma(z_{n},e)\\end{aligned} $$ As in univariate regression, our task is to find the set of constants ($ \\alpha $ and the partial regression coefficients $ \\beta_i $) that gives the best linear fit of the conditional expectation of $ y $ given $ z_1, \\cdots, z_n $. Again, the criterion we choose for “best” relies on the least-squares approach, which minimizes the squared differences between observed and expected values. Thus, our task is to find that set of $ \\alpha, \\beta_1, \\cdots, \\beta_n $ giving $ \\widehat{y} = \\alpha + \\sum \\beta_i z_i $ such that $ E[(y - \\widehat{y})^2 | z_1, \\cdots, z_n] $ is minimized. Taking derivatives of this expectation with respect to $ \\alpha $ and the $ \\beta_i $ and setting each equal to zero, it can be shown that the set of equations given by Equation 8.3 is, in fact, the least-squares solution to Equation 8.1. If the appropriate variances and covariances are known, the $ \\beta_{i} $ can be obtained exactly. If these are unknown, as is usually the case, the least-squares estimates $ b_{i} $ are obtained from Equation 8.3 by substituting the observed (estimated) variances and covariances for their (unknown) population values."
+      "content": "where $ i = S/\\sigma_{z} $ is the standardized selection differential, i.e., the change in the mean caused by selection in units of phenotypic standard deviations. Again, the heritability provides a measure of the efficiency of response to selection.",
+      "source_page": 191,
+      "printed_page": 171,
+      "source_block_ids": [
+        "p191:b11"
+      ],
+      "bbox": [
+        61.0,
+        1170.0,
+        1021.0,
+        1270.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The properties of least-squares multiple regression are analogous to those for simple regression. First, the procedure yields a solution such that the average deviation of y from $ \\widehat{y} $, $ E(e) $, is zero. Hence $ E(y) = E(\\widehat{y}) $, implying $$ \\bar{y}=a+b_{1}\\bar{z}_{1}+\\cdots+b_{n}\\bar{z}_{n} $$"
+      "content": "Houle (1992) has suggested that heritability may not be the best measure of the evolvability of a trait, arguing for the use of the coefficient of additive genetic variation, i.e., $ \\sigma_{A}/\\mu $, where $ \\sigma_{A} $ is the square root of the additive genetic variance and $ \\mu $ is the mean of the trait. Here we show that the utility of this metric is limited to a very special situation. Dividing both sides of Equation 7.31a by the mean phenotype yields an expression for the proportional change of the trait,",
+      "source_page": 191,
+      "printed_page": 171,
+      "source_block_ids": [
+        "p191:b12"
+      ],
+      "bbox": [
+        60.0,
+        1267.0,
+        1022.0,
+        1463.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Thus, once the fitted values $b_{1},\\ldots,b_{n}$ are obtained from Equation 8.3, the intercept is defined by $a=\\bar{y}-b_{1}\\bar{z}_{1}-\\cdots-b_{n}\\bar{z}_{n}$. Second, least-squares analysis gives a solution in which the residual errors are uncorrelated with the predictor variables. Thus, the terms $\\sigma(e,z_{i})$ can be dropped from Equation 8.3. Third, the partial regression coefficients are entirely defined by variances and covariances. However, unlike simple regression coefficients, which depend on only a single variance and covariance, each partial regression coefficient is a function of the variances and covariances of all measured variables. Notice that if $n=1$, then $\\sigma(y,z_{1})=\\beta_{1}\\sigma^{2}(z_{1})$, and we recover the univariate solution $\\beta_{1}=\\sigma(y,z_{1})/\\sigma^{2}(z_{1})$."
+      "content": "[[FORMULA:Genetics_chapter7_formula048]]",
+      "source_page": 191,
+      "printed_page": 171,
+      "source_block_ids": [
+        "p191:b13"
+      ],
+      "bbox": [
+        444.0,
+        1467.0,
+        638.0,
+        1540.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A simple pattern exists in each of the $n$ equations in 8.3. The $i$th equation defines the covariance of $y$ and $z_i$ as the sum of two types of quantities: a single term, which is the product of the $i$th partial regression coefficient and the variance of $z_i$, and a set of $(n-1)$ terms, each of which is the product of a partial regression coefficient and the covariance of $z_i$ with the corresponding predictor variable. This general pattern suggests an alternative way of writing Equation 8.3, $$ \\begin{pmatrix}\\sigma^{2}(z_{1})&\\sigma(z_{1},z_{2})&\\cdots&\\sigma(z_{1},z_{n})\\\\\\sigma(z_{1},z_{2})&\\sigma^{2}(z_{2})&\\cdots&\\sigma(z_{2},z_{n})\\\\\\vdots&\\vdots&\\ddots&\\vdots\\\\\\sigma(z_{1},z_{n})&\\sigma(z_{2},z_{n})&\\cdots&\\sigma^{2}(z_{n})\\end{pmatrix}\\begin{pmatrix}\\beta_{1}\\\\\\beta_{2}\\\\\\vdots\\\\\\beta_{n}\\end{pmatrix}=\\begin{pmatrix}\\sigma(y,z_{1})\\\\\\sigma(y,z_{2})\\\\\\vdots\\\\\\sigma(y,z_{n})\\end{pmatrix} $$"
+      "content": "This suggests that the dimensionless parameter $ \\sigma_{A}^{2}/(\\mu\\sigma_{z}) $, the ratio of the additive genetic variance to the product of the phenotypic mean and standard deviation, is an appropriate parameter for comparing evolvability when proportional change is the measure of interest. Unlike heritability, this ratio does not have a simple biological interpretation.",
+      "source_page": 192,
+      "printed_page": 172,
+      "source_block_ids": [
+        "p192:b2"
+      ],
+      "bbox": [
+        131.0,
+        133.0,
+        1089.0,
+        295.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The table of variances and covariances on the left is referred to as a $ \\mathbf{matrix} $, while the columns of partial regression coefficients and of covariances involving y are called $ \\mathbf{vectors} $. If these matrices and vectors are abbreviated as $ \\mathbf{V}, \\beta $, and c, Equation 8.4 can be written even more compactly as $$ \\mathbf{V}\\boldsymbol{\\beta}=\\mathbf{c} $$"
+      "content": "Now consider the special case in which the character is fitness (W). Recall from Chapter 3 that the selection differential is equivalent to the phenotypic covariance between the character and relative fitness (w = W/W), i.e., $ S = \\sigma(z, W)/\\overline{W} $, where $ \\overline{W} $ is mean fitness on the absolute scale. If z is fitness, then $ S = \\sigma_z^2(W)/\\overline{W} $, where $ \\sigma_z^2(W) $ is the phenotypic variance of fitness. Equation 7.31c then reduces to",
+      "source_page": 192,
+      "printed_page": 172,
+      "source_block_ids": [
+        "p192:b3"
+      ],
+      "bbox": [
+        132.0,
+        295.0,
+        1090.0,
+        485.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The standard procedure of denoting matrices as bold capital letters and vectors as bold lowercase letters is adhered to in this book. Notice that V, which is generally called a covariance matrix, is symmetrical about the main diagonal. As we shall see shortly, the $ i $th equation in 8.3 can be recovered from Equation 8.4 by"
+      "content": "[[FORMULA:Genetics_chapter7_formula049]]",
+      "source_page": 192,
+      "printed_page": 172,
+      "source_block_ids": [
+        "p192:b4"
+      ],
+      "bbox": [
+        464.0,
+        478.0,
+        763.0,
+        551.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\sigma_{A}^{2}(W) $ and $ \\sigma_{A}^{2}(w) $ are the additive genetic variances of absolute and relative fitness. Thus, the proportional rate of evolution in mean fitness is equal to the squared coefficient of additive genetic variation of absolute fitness, or equivalently, to the additive genetic variance of relative fitness. This is Fisher's (1958) fundamental theorem of natural selection.",
+      "source_page": 192,
+      "printed_page": 172,
+      "source_block_ids": [
+        "p192:b6"
+      ],
+      "bbox": [
+        133.0,
+        566.0,
+        1093.0,
+        728.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "These alternative formulations merely serve to illustrate that there are several ways to measure evolvability, each of which has its own merits in particular contexts. All of the measures are interchangeable provided that information is available on the phenotypic variance, additive genetic variance, and mean phenotype. As emphasized by Houle (1992), however, many quantitative-genetic studies simply report the heritability of a trait, with no mention of the mean or variance components. This greatly limits the scope of investigation that can be performed with published data.",
+      "source_page": 192,
+      "printed_page": 172,
+      "source_block_ids": [
+        "p192:b7"
+      ],
+      "bbox": [
+        136.0,
+        728.0,
+        1096.0,
+        989.0
+      ]
     }
   ]
 }

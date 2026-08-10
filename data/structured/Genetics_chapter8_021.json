@@ -2,54 +2,250 @@
   "id": "Genetics_chapter8_021",
   "metadata": {
     "chapter": "Genetics_chapter8",
-    "section": "Introduction",
+    "section": "OVERVIEW OF LINEAR MODELS",
     "subsections": [
-      "Generalized Least Squares"
+      "Ordinary Least Squares"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Generalized Least Squares",
+    "section_level_1": "OVERVIEW OF LINEAR MODELS",
+    "section_level_2": "Ordinary Least Squares",
     "heading_path": [
-      "Introduction",
-      "Generalized Least Squares"
+      "OVERVIEW OF LINEAR MODELS",
+      "Ordinary Least Squares"
     ],
-    "display_heading": "Generalized Least Squares"
+    "display_heading": "OVERVIEW OF LINEAR MODELS / Ordinary Least Squares",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 216,
+      "printed_page": 196,
+      "source_block_ids": [
+        "p216:b6"
+      ],
+      "bbox": [
+        148.0,
+        675.0,
+        446.0,
+        711.0
+      ],
+      "raw_text": "Ordinary Least Squares"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Under OLS, the unweighted sum of squared residuals is minimized. However, if some residuals are inherently more variable than others (have a higher variance), less weight should be assigned to the more variable data. Correlations between residuals can also influence the weight that should be assigned to each individual, as the data are not independent. Thus, if the residual errors are heteroscedastic and/or correlated, ordinary least-squares estimates of regression parameters and standard errors of these estimates are potentially biased."
+      "content": "Estimates of the vector $ \\beta $ for the general linear model are usually obtained by the method of least-squares, which uses the observations y and X and makes special assumptions about the covariance structure of the vector of residual errors e. The method of ordinary least squares assumes that the residual errors are homoscedastic and uncorrelated, i.e., $ \\sigma^{2}(e_{i}) = \\sigma_{e}^{2} $ for all i, and $ \\sigma(e_{i}, e_{j}) = 0 $ for $ i \\neq j $.",
+      "source_page": 216,
+      "printed_page": 196,
+      "source_block_ids": [
+        "p216:b7"
+      ],
+      "bbox": [
+        148.0,
+        702.0,
+        1107.0,
+        913.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A more general approach to regression analysis expresses the covariance matrix of the vector of residuals as $\\sigma_{e}^{2}\\mathbf{R}$, with $\\sigma(e_{i},e_{j})=R_{ij}\\sigma_{e}^{2}$. Lack of independence between residuals is indicated by the presence of nonzero off-diagonal elements in $\\mathbf{R}$, while heteroscedasticity is indicated by differences in the diagonal elements of $\\mathbf{R}$. Generalized (or weighted) least squares (GLS) takes these complications into account. As shown in Appendix 3, if the linear model is $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{e}\\qquad\\mathrm{w i t h}\\mathbf{e}\\sim(0,\\mathbf{R}\\sigma_{e}^{2}) $$ the GLS estimate of $ \\beta $ is $$ \\mathbf{b}=\\left(\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y} $$"
+      "content": "Let b be an estimate of $ \\beta $, and denote the vector of y values predicted from this estimate by $ \\hat{y} = Xb $, so that the resulting vector of residual errors is",
+      "source_page": 216,
+      "printed_page": 196,
+      "source_block_ids": [
+        "p216:b8"
+      ],
+      "bbox": [
+        151.0,
+        895.0,
+        1109.0,
+        978.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "(Aitken 1935). The covariance matrix for the GLS estimates is $$ \\mathbf{V_{b}}=\\left(\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}\\right)^{-1}\\sigma_{e}^{2} $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula114]]",
+      "source_page": 216,
+      "printed_page": 196,
+      "source_block_ids": [
+        "p216:b9"
+      ],
+      "bbox": [
+        504.0,
+        998.0,
+        761.0,
+        1037.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "If residuals are independent and homoscedastic, $ \\mathbf{R} = \\mathbf{I} $, and GLS estimates are the same as OLS estimates. If $ e \\sim \\text{MVN}(0, \\mathbf{R}\\sigma_{e}^{2}) $, the GLS estimate of $ \\beta $ is also the maximum-likelihood estimate."
+      "content": "The ordinary least-squares (OLS) estimate of $ \\beta $ is the b vector that minimizes the residual sum of squares,",
+      "source_page": 216,
+      "printed_page": 196,
+      "source_block_ids": [
+        "p216:b10"
+      ],
+      "bbox": [
+        154.0,
+        1058.0,
+        1113.0,
+        1142.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 11. A common situation requiring weighted least-squares analysis occurs when residuals are independent but heteroscedastic with $ \\sigma^{2}(e_{i}) = \\sigma_{e}^{2}/w_{i} $, where $ w_{i} $ are known positive constants. For example, if each observation $ y_{i} $ is the mean of $ n_{i} $ independent observations (each with uncorrelated residuals with variance $ \\sigma_{e}^{2} $), then $ \\sigma^{2}(e_{i}) = \\sigma_{e}^{2}/n_{i} $, and hence $ w_{i} = n_{i} $. Here $$ \\mathbf{R}=\\mathrm{D i a g}(w_{1}^{-1},w_{2}^{-1},\\ldots,w_{n}^{-1}) $$ where Diag denotes a diagonal matrix, giving $$ \\mathbf{R}^{-1}=\\mathbf{D i a g}\\big(w_{1},w_{2},\\ldots,w_{n}\\big) $$ With this residual variance structure, consider the weighted least-squares estimate for the simple univariate regression model $ y = \\alpha + \\beta x + e $. In GLM form, $$ \\mathbf{y}=\\begin{pmatrix}y_{1}\\\\ \\vdots\\\\ y_{n}\\end{pmatrix},\\qquad\\mathbf{X}=\\begin{pmatrix}1&x_{1}\\\\ \\vdots&\\vdots\\\\ 1&x_{n}\\end{pmatrix},\\qquad and\\qquad\\boldsymbol{\\beta}=\\begin{pmatrix}\\alpha\\\\ \\boldsymbol{\\beta}\\end{pmatrix} $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula115]]",
+      "source_page": 216,
+      "printed_page": 196,
+      "source_block_ids": [
+        "p216:b11"
+      ],
+      "bbox": [
+        414.0,
+        1165.0,
+        856.0,
+        1252.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Define the following weighted means and cross products, $$ w=\\sum_{i=1}^{n}w_{i},\\quad\\overline{x}_{w}=\\sum_{i=1}^{n}\\frac{w_{i}x_{i}}{w},\\quad\\overline{x^{2}}_{w}=\\sum_{i=1}^{n}\\frac{w_{i}x_{i}^{2}}{w} $$ $$ \\overline{y}_{w}=\\sum_{i=1}^{n}\\frac{w_{i}y_{i}}{w},\\quad\\overline{x}\\overline{y}_{w}=\\sum_{i=1}^{n}\\frac{w_{i}x_{i}y_{i}}{w} $$ With these definitions, matrix multiplication and a little simplification give $$ \\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{y}=w\\begin{pmatrix}\\overline{y}_{w}\\\\ \\\\ \\overline{x}\\overline{y}_{w}\\end{pmatrix}\\qquad and\\qquad\\mathbf{X}^{T}\\mathbf{R}^{-1}\\mathbf{X}=w\\begin{pmatrix}1&\\overline{x}_{w}\\\\ &\\\\ \\overline{x}_{w}&\\overline{x^{2}}_{w}\\end{pmatrix} $$"
+      "content": "Taking derivatives, it can be shown that our desired estimate satisfies",
+      "source_page": 216,
+      "printed_page": 196,
+      "source_block_ids": [
+        "p216:b12"
+      ],
+      "bbox": [
+        161.0,
+        1269.0,
+        988.0,
+        1318.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Applying Equation 8.34, the GLS estimates of $ \\alpha $ and $ \\beta $ are $$ a=\\overline{y}_{w}-b\\overline{x}_{w} $$ $$ b=\\frac{\\overline{x}\\overline{y}_{w}-\\overline{x}_{w}\\overline{y}_{w}}{\\overline{x^{2}}_{w}-\\overline{x}^{2}_{w}} $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula116]]",
+      "source_page": 216,
+      "printed_page": 196,
+      "source_block_ids": [
+        "p216:b13"
+      ],
+      "bbox": [
+        522.0,
+        1332.0,
+        758.0,
+        1376.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "If all weights are equal ($w_{i}=c$), these expressions reduce to the standard (OLS) least-squares estimators given by Equation 3.14. Applying Equation 8.35, the sampling variances and covariance for these estimates are $$ \\sigma^{2}(a)=\\frac{\\sigma_{e}^{2}\\cdot\\overline{x^{2}}_{w}}{w\\left(\\overline{x^{2}}_{w}-\\overline{x}_{w}^{2}\\right)} $$ $$ \\sigma^{2}(b)=\\frac{\\sigma_{e}^{2}}{w\\left(\\overline{x^{2}}_{w}-\\overline{x}_{w}^{2}\\right)} $$ $$ \\sigma(a,b)=\\frac{-\\sigma_{e}^{2}\\overline{x}_{w}}{w\\left(\\overline{x^{2}}_{w}-\\overline{x}_{w}^{2}\\right)} $$"
+      "content": "Under the assumption that the residual errors are uncorrelated and homoscedastic (i.e., the covariance matrix of the residuals is $ \\sigma_{e}^{2} \\cdot \\mathbf{I} $), the covariance matrix of the elements of b is",
+      "source_page": 216,
+      "printed_page": 196,
+      "source_block_ids": [
+        "p216:b15"
+      ],
+      "bbox": [
+        163.0,
+        1395.0,
+        1122.0,
+        1514.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula117]]",
+      "source_page": 216,
+      "printed_page": 196,
+      "source_block_ids": [
+        "p216:b16"
+      ],
+      "bbox": [
+        529.0,
+        1493.0,
+        759.0,
+        1540.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Hence, the OLS estimator of $ \\beta_{i} $ is the ith element of the column vector b, while the variance of this estimator is the ith diagonal element of the matrix $ V_{b} $. Likewise, the covariance of this estimator with the OLS estimator for $ \\beta_{j} $ is the ijth element of $ V_{b} $.",
+      "source_page": 217,
+      "printed_page": 197,
+      "source_block_ids": [
+        "p217:b2"
+      ],
+      "bbox": [
+        71.0,
+        126.0,
+        1030.0,
+        276.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "If the residuals follow a multivariate normal distribution with $ e \\sim MVN(0, \\sigma_{e}^{2} \\cdot \\mathbf{I}) $, the OLS estimate is also the maximum-likelihood estimate. If $ \\mathbf{X}^{T} \\mathbf{X} $ is singular, Equations 8.33a,b still hold when a generalized inverse is used, although only certain linear combinations of fixed factors can be estimated (see Appendix 3 for details).",
+      "source_page": 217,
+      "printed_page": 197,
+      "source_block_ids": [
+        "p217:b3"
+      ],
+      "bbox": [
+        67.0,
+        254.0,
+        1024.0,
+        442.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter8:9]]",
+      "source_page": 217,
+      "source_block_ids": [
+        "p217:b4",
+        "p217:b5",
+        "p217:b6",
+        "p217:b7",
+        "p217:b8",
+        "p217:b9",
+        "p217:b10"
+      ],
+      "bbox": [
+        108.0,
+        513.0,
+        972.0,
+        622.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter8:10]]",
+      "source_page": 217,
+      "source_block_ids": [
+        "p217:b11",
+        "p217:b12",
+        "p218:b2",
+        "p218:b3",
+        "p218:b4",
+        "p218:b5",
+        "p218:b6",
+        "p218:b7",
+        "p218:b8",
+        "p218:b9",
+        "p218:b10",
+        "p218:b11",
+        "p218:b12"
+      ],
+      "bbox": [
+        90.0,
+        1201.0,
+        957.0,
+        1463.0
+      ]
     }
   ]
 }

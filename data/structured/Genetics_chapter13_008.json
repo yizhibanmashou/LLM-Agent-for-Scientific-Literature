@@ -2,30 +2,144 @@
   "id": "Genetics_chapter13_008",
   "metadata": {
     "chapter": "Genetics_chapter13",
-    "section": "Introduction",
+    "section": "MIXTURE MODELS",
     "subsections": [
-      "MIXTURE MODELS"
+      "The Distribution under a Mixture Model"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "MIXTURE MODELS",
+    "section_level_1": "MIXTURE MODELS",
+    "section_level_2": "The Distribution under a Mixture Model",
     "heading_path": [
-      "Introduction",
-      "MIXTURE MODELS"
+      "MIXTURE MODELS",
+      "The Distribution under a Mixture Model"
     ],
-    "display_heading": "MIXTURE MODELS"
+    "display_heading": "MIXTURE MODELS / The Distribution under a Mixture Model",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 374,
+      "printed_page": 354,
+      "source_block_ids": [
+        "p374:b3"
+      ],
+      "bbox": [
+        137.0,
+        420.0,
+        648.0,
+        454.0
+      ],
+      "raw_text": "The Distribution under a Mixture Model"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Given that rejection of normality, by itself, is not sufficient to imply a major gene, a more powerful approach is to test whether the phenotypic distribution is consistent with a mixing (or commingling) of two or more normals, as would be expected if the distribution of phenotypic values about each major genotype were normal (Tan and Chang 1972, Elston et al. 1974, Boerwinkle et al. 1986, Hoeschele 1988). While this is an improvement over previous methods, such a test is still fraught with a number of potential problems. Even if the phenotypic distribution is consistent with a mixture of normals, there are a variety of explanations other than major genes — for example, the population may be distributed over two or more significantly different environments. Thus, a slightly more powerful approach is to further specify the weights of the underlying normals."
+      "content": "Assume the distribution of interest results from a weighted mixture of several underlying distributions. If there are $ i = 1, \\cdots, n $ underlying distributions, $ p_1(z), \\cdots, p_n(z) $, each with frequency $ \\text{Pr}(i) $, the resulting probability density of an observed variable $ z $ is given by a generalization of Equation 13.3,",
+      "source_page": 374,
+      "printed_page": 354,
+      "source_block_ids": [
+        "p374:b4"
+      ],
+      "bbox": [
+        136.0,
+        463.0,
+        1094.0,
+        597.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "If the distribution is consistent with three underlying normals with Hardy-Weinberg weights $ p^{2} $, $ 2p(1-p) $, and $ (1-p)^{2} $, where the allele frequency p is estimated from the data by maximum likelihood (see Example 2), then we may have more confidence in a major-locus interpretation. On the other hand, a lack of fit to this model does not necessarily exclude a major gene (e.g., the major gene may not be in Hardy-Weinberg equilibrium or the underlying phenotypic distributions for each major locus genotype may be nonnormal). In the absence of information from linked markers, the most powerful mixture-model tests for major genes use information from relatives to specify the weights of the underlying distributions. Before developing this complex segregation analysis approach, we first review some general features of mixture models."
+      "content": "[[FORMULA:Genetics_chapter13_formula005]]",
+      "source_page": 374,
+      "printed_page": 354,
+      "source_block_ids": [
+        "p374:b5"
+      ],
+      "bbox": [
+        473.0,
+        627.0,
+        753.0,
+        711.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "It is usually assumed that the underlying distributions are normals, so this becomes",
+      "source_page": 374,
+      "printed_page": 354,
+      "source_block_ids": [
+        "p374:b6"
+      ],
+      "bbox": [
+        133.0,
+        740.0,
+        1093.0,
+        803.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula006]]",
+      "source_page": 374,
+      "printed_page": 354,
+      "source_block_ids": [
+        "p374:b7"
+      ],
+      "bbox": [
+        436.0,
+        803.0,
+        788.0,
+        883.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where",
+      "source_page": 374,
+      "printed_page": 354,
+      "source_block_ids": [
+        "p374:b9"
+      ],
+      "bbox": [
+        135.0,
+        899.0,
+        221.0,
+        930.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula007]]",
+      "source_page": 374,
+      "printed_page": 354,
+      "source_block_ids": [
+        "p374:b10"
+      ],
+      "bbox": [
+        368.0,
+        927.0,
+        854.0,
+        1004.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "is the probability density function for a normally distributed random variable with mean $ \\mu_i $ and variance $ \\sigma_i^2 $. Equation 13.5 has $ 3n - 1 $ parameters to estimate: the $ n - 1 $ mixing proportions $ \\text{Pr}(i) $, and the $ n $ means and variances of the underlying distributions. It is usually assumed that all the variances are equal, reducing the number of unknown parameters to $ 2n $. Various genetic hypotheses allow us to further specify and evaluate the structure of the mixing proportions.",
+      "source_page": 374,
+      "printed_page": 354,
+      "source_block_ids": [
+        "p374:b11"
+      ],
+      "bbox": [
+        132.0,
+        1021.0,
+        1095.0,
+        1216.0
+      ]
     }
   ]
 }

@@ -2,26 +2,354 @@
   "id": "Genetics_chapter11_004",
   "metadata": {
     "chapter": "Genetics_chapter11",
-    "section": "Introduction",
+    "section": "TRANSFORMATIONS TO ACHIEVE NORMALITY",
     "subsections": [
       "Tests for Normality"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter11_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
+    "section_level_1": "TRANSFORMATIONS TO ACHIEVE NORMALITY",
     "section_level_2": "Tests for Normality",
     "heading_path": [
-      "Introduction",
+      "TRANSFORMATIONS TO ACHIEVE NORMALITY",
       "Tests for Normality"
     ],
-    "display_heading": "Tests for Normality"
+    "display_heading": "TRANSFORMATIONS TO ACHIEVE NORMALITY / Tests for Normality",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 309,
+      "printed_page": 289,
+      "source_block_ids": [
+        "p309:b13"
+      ],
+      "bbox": [
+        53.0,
+        1421.0,
+        301.0,
+        1459.0
+      ],
+      "raw_text": "Tests for Normality"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "There are a variety of methods for determining whether a character is normally distributed — see Chapter 6 of Sokal and Rohlf (1995) for an introduction, and"
+      "content": "There are a variety of methods for determining whether a character is normally distributed — see Chapter 6 of Sokal and Rohlf (1995) for an introduction, and",
+      "source_page": 309,
+      "printed_page": 289,
+      "source_block_ids": [
+        "p309:b14"
+      ],
+      "bbox": [
+        50.0,
+        1461.0,
+        1011.0,
+        1548.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Chapter 8 of Wetherill (1986) for more advanced methods. Graphical tests for departures from normality are especially informative. For example, a simple frequency histogram may immediately reveal departures from normality, such as multiple peaks or strong asymmetries. If a character is determined by one (or a few) genes of major effect, a bimodal (or multimodal) distribution can sometimes result (Chapter 13). Such distributions can also result when a character is strongly influenced by a few distinct environmental effects.",
+      "source_page": 310,
+      "printed_page": 290,
+      "source_block_ids": [
+        "p310:b2"
+      ],
+      "bbox": [
+        119.0,
+        132.0,
+        1082.0,
+        376.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "With only sample moments in hand, deviations from normality are indicated by significant skewness and/or kurtosis. Bowman and Shenton (1975) proposed a joint test of this, employing the statistic",
+      "source_page": 310,
+      "printed_page": 290,
+      "source_block_ids": [
+        "p310:b3"
+      ],
+      "bbox": [
+        123.0,
+        356.0,
+        1084.0,
+        477.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter11_formula008]]",
+      "source_page": 310,
+      "printed_page": 290,
+      "source_block_ids": [
+        "p310:b4"
+      ],
+      "bbox": [
+        489.0,
+        494.0,
+        722.0,
+        568.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $n$ is the sample size, and from Equations 2.8 and 2.12a, $k_3 = Skw(z)/Var(z)^{3/2}$ and $k_4 = [Kur(z)/Var(z)^2] - 3$ are, respectively, the standardized sample skewness and kurtosis, both of which have expected value zero under the assumption of normality. For large sample sizes, $S$ is distributed as a $\\chi^2$ with two degrees of freedom. Thus, the hypothesis that a distribution is normal is rejected at the 5% level if $S > 5.99$ and at the 1% level if $S > 9.21$.",
+      "source_page": 310,
+      "printed_page": 290,
+      "source_block_ids": [
+        "p310:b6"
+      ],
+      "bbox": [
+        131.0,
+        589.0,
+        1090.0,
+        799.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A more powerful approach for evaluating normality involves normal probability plots, which can be generated either by plotting cumulative frequency on special normal probability graph paper or by transforming cumulative frequency to a normal probability (or probit) scale. In Chapter 2, we defined $ \\Phi_{T} $ as the fraction of measures in a distribution that are greater than value T. Here we let $ q = (1 - \\Phi_{T}) $ be the cumulative frequency to point T. A given cumulative frequency is rescaled to a normal probability scale by using the probit transform prb(q), which is defined as the solution of",
+      "source_page": 310,
+      "printed_page": 290,
+      "source_block_ids": [
+        "p310:b7"
+      ],
+      "bbox": [
+        133.0,
+        780.0,
+        1098.0,
+        1061.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter11_formula009]]",
+      "source_page": 310,
+      "printed_page": 290,
+      "source_block_ids": [
+        "p310:b8"
+      ],
+      "bbox": [
+        498.0,
+        1080.0,
+        743.0,
+        1121.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $U$ is a standardized (or unit) normal random variable with zero mean and unit variance. Given $q$, $\\text{prb}(q)$ is obtained from tables of the unit normal (e.g., Beyer 1968) or from common statistical packages. For example, since $\\text{Pr}(U < -1) = 0.1587$, the normal probability scale value associated with a cumulative frequency of $q = 0.1587$ is $\\text{prb}(0.1587) = -1$. Since $U$ is symmetrically distributed about zero, it follows that",
+      "source_page": 310,
+      "printed_page": 290,
+      "source_block_ids": [
+        "p310:b10"
+      ],
+      "bbox": [
+        142.0,
+        1145.0,
+        1106.0,
+        1357.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter11_formula010]]",
+      "source_page": 310,
+      "printed_page": 290,
+      "source_block_ids": [
+        "p310:b11"
+      ],
+      "bbox": [
+        328.0,
+        1375.0,
+        929.0,
+        1424.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Table 11.1 gives the normal probability scale measures for different values of $ \\delta $. For example, suppose that only 1.2% of the population is below a given",
+      "source_page": 310,
+      "printed_page": 290,
+      "source_block_ids": [
+        "p310:b13"
+      ],
+      "bbox": [
+        149.0,
+        1443.0,
+        1111.0,
+        1527.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:11.2]]",
+      "source_page": 311,
+      "printed_page": 291,
+      "source_block_ids": [
+        "p311:b4"
+      ],
+      "bbox": [
+        107.0,
+        498.0,
+        975.0,
+        837.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "character value, so that $q = 0.012$. Expressing this in the form used by Table 11.1 gives prb(0.012) = prb(0.5 - 0.488) = -prb(0.5 + 0.488) = -2.25. Zero on the probit scale corresponds to the population median ($q = 0.50$), which is also the mean for a normal. For a normally distributed variable, a unit change on the probit scale corresponds to one standard deviation (Figure 11.2).",
+      "source_page": 311,
+      "printed_page": 291,
+      "source_block_ids": [
+        "p311:b5"
+      ],
+      "bbox": [
+        53.0,
+        887.0,
+        1017.0,
+        1065.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "As shown in Figure 11.2, with a normal distribution, cumulative frequency as a function of z is sigmoidal, but it is linear when transformed to a normal probability scale. Nonnormal distributions deviate from linearity on such plots,",
+      "source_page": 311,
+      "printed_page": 291,
+      "source_block_ids": [
+        "p311:b6"
+      ],
+      "bbox": [
+        49.0,
+        1046.0,
+        1011.0,
+        1167.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:11.1]]",
+      "source_page": 311,
+      "printed_page": 291,
+      "source_block_ids": [
+        "p311:b8"
+      ],
+      "bbox": [
+        43.0,
+        1212.0,
+        1011.0,
+        1424.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:11.3]]",
+      "source_page": 312,
+      "printed_page": 292,
+      "source_block_ids": [
+        "p312:b8"
+      ],
+      "bbox": [
+        190.0,
+        901.0,
+        1059.0,
+        1180.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "with multimodal, overly peaked, and skewed distributions all exhibiting characteristic departures (Figure 11.3). The normal probability scale forms the basis for the most powerful tests for departures from normality, such as the small-sample W test of Shapiro and Wilk (1965) and the large-sample D test of D'Agostino (1971).",
+      "source_page": 312,
+      "printed_page": 292,
+      "source_block_ids": [
+        "p312:b9"
+      ],
+      "bbox": [
+        150.0,
+        1260.0,
+        1113.0,
+        1439.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter11:1]]",
+      "source_page": 313,
+      "source_block_ids": [
+        "p313:b2",
+        "p313:b3"
+      ],
+      "bbox": [
+        125.0,
+        193.0,
+        993.0,
+        296.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The cumulative frequency associated with a particular character value is the sum of all frequencies up to that point (e.g., the cumulative frequency associated with 55 vertebrae is $ 0.08 + 1.06 + 28.36 = 29.50\\% $). Plotting cumulative frequency as a function of vertebrae number gives a sigmoidal plot, as shown in the accompanying figure, suggesting a normal distribution. Using unit normal tables, the cumulative frequencies can be transformed to a normal probability scale. For example, the cumulative frequency associated with 55 vertebrae is $ q = 0.2950 $. Interpolating from the normal distribution table, we find that for a unit normal U, $ \\Pr(U < -0.54) = 0.2950 $, so the $ \\text{prb}(q) $ value associated with 55 vertebrae is -0.54 (0.54 standard deviations below the mean assuming a normal distribution). Plotting $ \\text{prb}(q) $ versus vertebrae number gives a good linear relationship (see the following figure), suggesting that the normal distribution provides a reasonable description of the data.",
+      "source_page": 313,
+      "printed_page": 293,
+      "source_block_ids": [
+        "p313:b4"
+      ],
+      "bbox": [
+        116.0,
+        557.0,
+        985.0,
+        949.0
+      ]
+    },
+    {
+      "type": "source_image",
+      "content": "![Source illustration p313 b5](figures/examples/Genetics_p313_b5.png)",
+      "source_page": 313,
+      "printed_page": 293,
+      "source_block_ids": [
+        "p313:b5"
+      ],
+      "bbox": [
+        81.0,
+        985.0,
+        521.0,
+        1425.0
+      ]
+    },
+    {
+      "type": "source_image",
+      "content": "![Source illustration p313 b6](figures/examples/Genetics_p313_b6.png)",
+      "source_page": 313,
+      "printed_page": 293,
+      "source_block_ids": [
+        "p313:b6"
+      ],
+      "bbox": [
+        550.0,
+        993.0,
+        997.0,
+        1436.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:11.4]]",
+      "source_page": 314,
+      "printed_page": 294,
+      "source_block_ids": [
+        "p314:b3"
+      ],
+      "bbox": [
+        177.0,
+        741.0,
+        1045.0,
+        960.0
+      ]
     }
   ]
 }

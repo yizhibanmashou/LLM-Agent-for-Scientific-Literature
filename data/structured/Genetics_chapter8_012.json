@@ -2,38 +2,144 @@
   "id": "Genetics_chapter8_012",
   "metadata": {
     "chapter": "Genetics_chapter8",
-    "section": "Introduction",
+    "section": "ELEMENTARY MATRIX ALGEBRA",
     "subsections": [
-      "Example 4. Compute the determinant of"
+      "Determinants and Minors"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Example 4. Compute the determinant of",
+    "section_level_1": "ELEMENTARY MATRIX ALGEBRA",
+    "section_level_2": "Determinants and Minors",
     "heading_path": [
-      "Introduction",
-      "Example 4. Compute the determinant of"
+      "ELEMENTARY MATRIX ALGEBRA",
+      "Determinants and Minors"
     ],
-    "display_heading": "Example 4. Compute the determinant of"
+    "display_heading": "ELEMENTARY MATRIX ALGEBRA / Determinants and Minors",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 205,
+      "printed_page": 185,
+      "source_block_ids": [
+        "p205:b12"
+      ],
+      "bbox": [
+        53.0,
+        1120.0,
+        380.0,
+        1153.0
+      ],
+      "raw_text": "Determinants and Minors"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "$$ \\mathbf{A}=\\left(\\begin{array}{l l l}{1}&{1}&{1}\\\\ {1}&{3}&{2}\\\\ {1}&{2}&{1}\\end{array}\\right) $$"
+      "content": "For a $ 2 \\times 2 $ matrix, the quantity",
+      "source_page": 205,
+      "printed_page": 185,
+      "source_block_ids": [
+        "p205:b13"
+      ],
+      "bbox": [
+        52.0,
+        1161.0,
+        431.0,
+        1198.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Letting $ i = 1 $, i.e., using the elements in the first row of A, $$ \\left|\\mathbf{A}\\right|=1\\cdot(-1)^{1+1}\\left|\\begin{array}{l l}3&2\\\\ 2&1\\end{array}\\right|+1\\cdot(-1)^{1+2}\\left|\\begin{array}{l l}1&2\\\\ 1&1\\end{array}\\right|+1\\cdot(-1)^{1+3}\\left|\\begin{array}{l l}1&3\\\\ 1&2\\end{array}\\right| $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula052]]",
+      "source_page": 205,
+      "printed_page": 185,
+      "source_block_ids": [
+        "p205:b14"
+      ],
+      "bbox": [
+        385.0,
+        1228.0,
+        672.0,
+        1264.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Using Equation 8.12a to obtain the determinants of the $ 2 \\times 2 $ matrices, this simplifies to $$ \\left|\\mathbf{A}\\right|=\\left[1\\times(3-4)\\right]-\\left[1\\times(1-2)\\right]+\\left[1\\times(2-3)\\right]=-1 $$"
+      "content": "is called the \\textit{determinant}, which more generally is denoted by $ \\det(\\mathbf{A}) $ or $ |\\mathbf{A}| $. As with the 2-dimensional case, $ \\mathbf{A}^{-1} $ exists for a square matrix $ \\mathbf{A} $ (of any dimensionality) if and only if $ \\det(\\mathbf{A}) \\neq 0 $. For square matrices with dimensionality greater than two, the determinant is obtained recursively from the general expression",
+      "source_page": 205,
+      "printed_page": 185,
+      "source_block_ids": [
+        "p205:b16"
+      ],
+      "bbox": [
+        49.0,
+        1288.0,
+        1011.0,
+        1429.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The same answer is obtained regardless of which row is used, and expanding around a column, instead of a row, produces the same result. Thus, in order to reduce the number of computations required to obtain a determinant, it is useful to expand using the row or column that contains the most zeros."
+      "content": "[[FORMULA:Genetics_chapter8_formula053]]",
+      "source_page": 205,
+      "printed_page": 185,
+      "source_block_ids": [
+        "p205:b17"
+      ],
+      "bbox": [
+        367.0,
+        1450.0,
+        685.0,
+        1535.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $i$ is any fixed row of the matrix $\\mathbf{A}$ and $\\mathbf{A}_{ij}$ is a submatrix obtained by deleting the $i$th row and $j$th column from $\\mathbf{A}$. Such a submatrix is known as a $\\text{minor}$. In words, each of the $n$ quantities in this equation is the product of three components: the element in the row around which one is working, $-1$ to the $(i+j)$th power, and the determinant of the $ij$th minor. In applying Equation 8.12b, one starts with the original $n \\times n$ matrix and works down until the minors are reduced to $2 \\times 2$ matrices whose determinants are scalars of the form $A_{11}A_{22} - A_{12}A_{21}$. A useful result is that the determinant of a diagonal matrix is the product of the diagonal elements of that matrix, so that if",
+      "source_page": 206,
+      "printed_page": 186,
+      "source_block_ids": [
+        "p206:b2"
+      ],
+      "bbox": [
+        139.0,
+        135.0,
+        1099.0,
+        428.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula054]]",
+      "source_page": 206,
+      "printed_page": 186,
+      "source_block_ids": [
+        "p206:b3"
+      ],
+      "bbox": [
+        353.0,
+        446.0,
+        889.0,
+        527.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The next section shows how determinants are used in the computation of a matrix inverse.",
+      "source_page": 206,
+      "printed_page": 186,
+      "source_block_ids": [
+        "p206:b4"
+      ],
+      "bbox": [
+        143.0,
+        548.0,
+        1100.0,
+        614.0
+      ]
     }
   ]
 }

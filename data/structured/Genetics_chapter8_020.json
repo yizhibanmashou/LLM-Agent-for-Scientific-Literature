@@ -2,70 +2,235 @@
   "id": "Genetics_chapter8_020",
   "metadata": {
     "chapter": "Genetics_chapter8",
-    "section": "Introduction",
-    "subsections": [
-      "Ordinary Least Squares"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Ordinary Least Squares",
+    "section": "OVERVIEW OF LINEAR MODELS",
+    "subsections": [],
+    "section_level_1": "OVERVIEW OF LINEAR MODELS",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "Ordinary Least Squares"
+      "OVERVIEW OF LINEAR MODELS"
     ],
-    "display_heading": "Ordinary Least Squares"
+    "display_heading": "OVERVIEW OF LINEAR MODELS",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 214,
+      "printed_page": 194,
+      "source_block_ids": [
+        "p214:b10"
+      ],
+      "bbox": [
+        151.0,
+        968.0,
+        594.0,
+        1009.0
+      ],
+      "raw_text": "OVERVIEW OF LINEAR MODELS"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Estimates of the vector $\\beta$ for the general linear model are usually obtained by the method of least-squares, which uses the observations y and X and makes special assumptions about the covariance structure of the vector of residual errors e. The method of ordinary least squares assumes that the residual errors are homoscedastic and uncorrelated, i.e., $\\sigma^{2}(e_{i}) = \\sigma_{e}^{2}$ for all $i$, and $\\sigma(e_{i}, e_{j}) = 0$ for $i \\neq j$."
+      "content": "Linear models form the backbone of most estimation procedures in quantitative genetics and will be extensively used throughout the rest of this book. They are generally structured such that a vector of observations of one variable (y) is modeled as a linear combination of other variables observed along with y. The remainder of this chapter introduces some of the basic tools and key concepts underlying the use of linear models. Advanced topics are examined in detail in Chapters 26 and 27, and further comments are given in Appendix 3.",
+      "source_page": 214,
+      "printed_page": 194,
+      "source_block_ids": [
+        "p214:b11"
+      ],
+      "bbox": [
+        151.0,
+        1024.0,
+        1113.0,
+        1268.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Let b be an estimate of $\\beta$, and denote the vector of $y$ values predicted from this estimate by $\\hat{y} = X\\mathbf{b}$, so that the resulting vector of residual errors is $$ \\mathbf{\\hat{e}}=\\mathbf{y}-\\mathbf{\\hat{y}}=\\mathbf{y}-\\mathbf{X}\\mathbf{b} $$"
+      "content": "In multiple regression, the commonest type of linear model, the predictor variables $ x_{1}, \\cdots, x_{n} $ represent observed values for n traits of interest. More generally, some or all of the predictor variables could be indicator variables, with values of 0 or 1 indicating whether an observation belongs in a particular category or grouping of interest. As an example, consider the half-sib design wherein each of p unrelated sires is mated at random to a number of unrelated dams and a single offspring is measured from each cross. The simplest model for this design is",
+      "source_page": 214,
+      "printed_page": 194,
+      "source_block_ids": [
+        "p214:b12"
+      ],
+      "bbox": [
+        155.0,
+        1248.0,
+        1119.0,
+        1520.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The ordinary least-squares (OLS) estimate of $\\beta$ is the b vector that minimizes the residual sum of squares, $$ \\sum_{i=1}^{n}\\widehat{e}_{i}^{2}=\\widehat{\\mathbf{e}}^{T}\\widehat{\\mathbf{e}}=(\\mathbf{y}-\\mathbf{X}\\mathbf{b})^{T}(\\mathbf{y}-\\mathbf{X}\\mathbf{b}) $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula106]]",
+      "source_page": 214,
+      "printed_page": 194,
+      "source_block_ids": [
+        "p214:b13"
+      ],
+      "bbox": [
+        536.0,
+        1513.0,
+        748.0,
+        1548.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Taking derivatives, it can be shown that our desired estimate satisfies $$ \\mathbf{b}=(\\mathbf{X}^{T}\\mathbf{X})^{-1}\\mathbf{X}^{T}\\mathbf{y} $$"
-    },
-    {
-      "type": "proposition",
-      "content": "Under the assumption that the residual errors are uncorrelated and homoscedastic (i.e., the covariance matrix of the residuals is $\\sigma_{e}^{2} \\cdot \\mathbf{I}$), the covariance matrix of the elements of b is $$ \\mathbf{V_{b}}=(\\mathbf{X}^{T}\\mathbf{X})^{-1}\\sigma_{e}^{2} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Hence, the OLS estimator of $ \\beta_{i} $ is the $ i $th element of the column vector $ \\mathbf{b} $, while the variance of this estimator is the $ i $th diagonal element of the matrix $ \\mathbf{V}_{\\mathbf{b}} $. Likewise, the covariance of this estimator with the OLS estimator for $ \\beta_{j} $ is the $ i $th element of $ \\mathbf{V}_{\\mathbf{b}} $."
-    },
-    {
-      "type": "discussion",
-      "content": "If the residuals follow a multivariate normal distribution with $ e \\sim MVN(0, \\sigma_{e}^{2} \\cdot \\mathbf{I}) $, the OLS estimate is also the maximum-likelihood estimate. If $ \\mathbf{X}^{T} \\mathbf{X} $ is singular, Equations 8.33a,b still hold when a generalized inverse is used, although only certain linear combinations of fixed factors can be estimated (see Appendix 3 for details)."
-    },
-    {
-      "type": "discussion",
-      "content": "Example 9. Consider a univariate regression where the predictor and response variable both have expected mean zero, so that the regression passes through the origin. The appropriate model becomes $$ y_{i}=\\beta x_{i}+e_{i} $$ With observations on $n$ individuals, this relationship can be written in GLM form with $\\boldsymbol{\\beta} = \\beta$ and design matrix $\\mathbf{X} = (x_1, x_2, \\cdots x_n)^T$, implying $$ \\mathbf{X}^{T}\\mathbf{X}=\\sum_{i=1}^{n}x_{i}^{2}\\qquad\\mathrm{a n d}\\qquad\\mathbf{X}^{T}\\mathbf{y}=\\sum_{i=1}^{n}x_{i}y_{i} $$"
+      "content": "where $ y_{ij} $ is the phenotype of the jth offspring from sire i, $ \\mu $ is the population mean, $ s_i $ is the sire effect, and $ e_{ij} $ is the residual error (the “noise” remaining in the data after the sire effect is removed). Although this is clearly a linear model, it differs significantly from the regression model described above in that while there are parameters to estimate (the sire effects $ s_i $), the only measured values are the $ y_{ij} $. Nevertheless, we can express this model in a form that is essentially identical to the standard regression model by using p indicator (i.e., zero or one) variables to classify the sires of the offspring. The resulting linear model becomes",
+      "source_page": 215,
+      "printed_page": 195,
+      "source_block_ids": [
+        "p215:b2"
+      ],
+      "bbox": [
+        66.0,
+        126.0,
+        1030.0,
+        405.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Applying Equations 8.33a,b gives the OLS estimate of $\\beta$ and its sample variance (assuming the covariance matrix of e is $\\mathbf{I} \\cdot \\sigma_{e}^{2}$) as $$ b=\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{y}=\\frac{\\sum x_{i}y_{i}}{\\sum x_{i}^{2}},\\qquad\\sigma^{2}(b)=\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\sigma_{e}^{2}=\\frac{\\sigma_{e}^{2}}{\\sum x_{i}^{2}} $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula107]]",
+      "source_page": 215,
+      "printed_page": 195,
+      "source_block_ids": [
+        "p215:b3"
+      ],
+      "bbox": [
+        389.0,
+        402.0,
+        696.0,
+        495.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "This estimate of $\\beta$ differs from the standard univariate regression slope (Equation 3.14b) where the intercept value is not assumed to be equal to zero."
+      "content": "where",
+      "source_page": 215,
+      "printed_page": 195,
+      "source_block_ids": [
+        "p215:b4"
+      ],
+      "bbox": [
+        63.0,
+        485.0,
+        150.0,
+        517.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 10. Recall from Equation 8.10b that the vector of partial regression coefficients for a multivariate regression is defined to be $ \\mathbf{b} = \\mathbf{V}^{-1} \\mathbf{c} $ (where $ \\mathbf{V} $ is the estimated covariance matrix, and $ \\mathbf{c} $ is the vector of estimated covariances between $ \\mathbf{y} $ and $ \\mathbf{z} $). Here we show that this expression is equivalent to the OLS estimator $ \\mathbf{b} = (\\mathbf{X}^T \\mathbf{X})^{-1} \\mathbf{X}^T \\mathbf{y} $. Using the notation from Example 8, for the $ i $th individual we observe $ y_i $ and the values of $ p $ predictor variables, $ z_{i1}, \\cdots, z_{ip} $. Since the regression satisfies $ \\bar{y} = \\alpha + \\beta_1 \\bar{z}_1 + \\cdots + \\beta_p \\bar{z}_p $, subtracting the mean from each observation removes the intercept, with $$ y_{i}^{*}=(\\boldsymbol{y}_{i}-\\bar{\\boldsymbol{y}})=\\beta_{1}(z_{i1}-\\bar{z}_{1})+\\cdots+\\beta_{p}(z_{ip}-\\bar{z}_{p})+e_{i} $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula108]]",
+      "source_page": 215,
+      "printed_page": 195,
+      "source_block_ids": [
+        "p215:b5"
+      ],
+      "bbox": [
+        395.0,
+        517.0,
+        680.0,
+        595.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "For $n$ observations, the resulting linear model $\\mathbf{y}^{*} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{e}$ has $$ \\mathbf{y}^{*}=\\begin{pmatrix}y_{1}-\\overline{y}\\\\\\vdots\\\\y_{n}-\\overline{y}\\end{pmatrix},\\quad\\boldsymbol{\\beta}=\\begin{pmatrix}\\beta_{1}\\\\\\vdots\\\\\\beta_{p}\\end{pmatrix},\\quad\\mathbf{X}=\\begin{pmatrix}(z_{11}-\\bar{z}_{1})&\\cdots&(z_{1p}-\\bar{z}_{p})\\\\\\vdots&\\ddots&\\vdots\\ $ z_{n1}-\\bar{z}_{1})&\\cdots&(z_{np}-\\bar{z}_{p})\\end{pmatrix} $$ where $z_{ij}$ is the value of character $j$ in the $i$th individual. Partitioning the design matrix $\\mathbf{X}$ into $p$ column vectors corresponding to the $n$ observations on each of the $p$ predictor variables gives $$ \\mathbf{X}=\\left(\\mathbf{x}_{1},\\quad\\cdots,\\quad\\mathbf{x}_{p}\\right)\\quad where\\quad\\mathbf{x}_{j}=\\begin{pmatrix}z_{1j}-\\bar{z}_{j}\\\\z_{2j}-\\bar{z}_{j}\\\\\\vdots\\\\z_{nj}-\\bar{z}_{j}\\end{pmatrix} $$ giving the $j$th element of the vector $\\mathbf{X}^{t}\\mathbf{y}^{*}$ as $$ \\left(\\mathbf{X}^{T}\\mathbf{y}^{*}\\right)_{j}=\\mathbf{x}_{j}^{T}\\mathbf{y}^{*}=\\sum_{i=1}^{n}(y_{i}-\\bar{y})(z_{ij}-\\bar{z}_{j})=(n-1)\\mathrm{Cov}(y,z_{j}) $$ and implying $ \\mathbf{X}^T \\mathbf{y}^* = (n - 1) \\mathbf{c} $. Likewise, the $ j $th element of $ \\mathbf{X}^T \\mathbf{X} $ is $$ \\mathbf{x}_{j}^{T}\\mathbf{x}_{k}=\\sum_{i=1}^{n}(z_{ij}-\\bar{z}_{j})(z_{ik}-\\bar{z}_{k})=(n-1)\\mathrm{Cov}(z_{j},z_{k}) $$ implying $ \\mathbf{X}^{T}\\mathbf{X} = (n-1)\\mathbf{V} $. Putting these results together gives $$ (\\mathbf{X}^{T}\\mathbf{X})^{-1}\\mathbf{X}^{T}\\mathbf{y}^{*}=\\mathbf{V}^{-1}\\mathbf{c} $$ showing that Equation 8.10b does indeed give the OLS estimates of the partial regression coefficients."
+      "content": "By the judicious use of indicator variables, an extremely wide class of problems can be handled by linear models. Models containing only indicator variables are usually termed ANOVA (analysis of variance) models, while regression usually refers to models in which predictor variables can take on a continuous range of values. Both procedures are special cases of the general linear model (GLM), wherein each observation (y) is assumed to be a linear function of p observed and/or indicator variables plus a residual error (e),",
+      "source_page": 215,
+      "printed_page": 195,
+      "source_block_ids": [
+        "p215:b6"
+      ],
+      "bbox": [
+        56.0,
+        588.0,
+        1017.0,
+        832.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula109]]",
+      "source_page": 215,
+      "printed_page": 195,
+      "source_block_ids": [
+        "p215:b7"
+      ],
+      "bbox": [
+        411.0,
+        833.0,
+        653.0,
+        921.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ x_{i1}, \\cdots, x_{ip} $ are the values of the p predictor variables for the ith individual. For a vector of n observations, the GLM can be written in matrix form as",
+      "source_page": 215,
+      "printed_page": 195,
+      "source_block_ids": [
+        "p215:b9"
+      ],
+      "bbox": [
+        50.0,
+        917.0,
+        1006.0,
+        1000.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula110]]",
+      "source_page": 215,
+      "printed_page": 195,
+      "source_block_ids": [
+        "p215:b10"
+      ],
+      "bbox": [
+        453.0,
+        1001.0,
+        606.0,
+        1035.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the design or incidence matrix X is $ n \\times p $, and e is the vector of residual errors. It is important to note that y and X contain the observed values, while $ \\beta $ is a vector of parameters (usually called factors or effects) to be estimated.",
+      "source_page": 215,
+      "printed_page": 195,
+      "source_block_ids": [
+        "p215:b12"
+      ],
+      "bbox": [
+        47.0,
+        1033.0,
+        1010.0,
+        1152.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter8:8]]",
+      "source_page": 215,
+      "source_block_ids": [
+        "p215:b13",
+        "p215:b14",
+        "p216:b2",
+        "p216:b3",
+        "p216:b4",
+        "p216:b5"
+      ],
+      "bbox": [
+        91.0,
+        1227.0,
+        954.0,
+        1333.0
+      ]
     }
   ]
 }

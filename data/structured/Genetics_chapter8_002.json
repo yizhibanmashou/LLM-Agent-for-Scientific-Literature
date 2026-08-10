@@ -2,54 +2,297 @@
   "id": "Genetics_chapter8_002",
   "metadata": {
     "chapter": "Genetics_chapter8",
-    "section": "Introduction",
-    "subsections": [
-      "An Application to Multivariate Selection"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter8_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "An Application to Multivariate Selection",
+    "section": "MULTIPLE REGRESSION",
+    "subsections": [],
+    "section_level_1": "MULTIPLE REGRESSION",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "An Application to Multivariate Selection"
+      "MULTIPLE REGRESSION"
     ],
-    "display_heading": "An Application to Multivariate Selection"
+    "display_heading": "MULTIPLE REGRESSION",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 193,
+      "printed_page": 173,
+      "source_block_ids": [
+        "p193:b4"
+      ],
+      "bbox": [
+        64.0,
+        1243.0,
+        400.0,
+        1274.0
+      ],
+      "raw_text": "MULTIPLE REGRESSION"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Karl Pearson developed the technique of multiple regression in 1896, although some of the fundamentals can be traced to his predecessors (Pearson 1920, Stigler 1986). Pearson is perhaps best known as one of the founders of statistical methodology, but his intense interest in evolution may have been the primary motivating force underlying many of his theoretical endeavors. Almost all of his major papers, including the one of 1896, contain rigorous analyses of data gathered by his contemporaries on matters such as resemblance between relatives, natural selection, correlation between characters, and assortative mating (recall the assortative mating example in Chapter 7). The foresight of these studies is remarkable considering that they were performed prior to the existence of a genetic interpretation for the expression and inheritance of polygenic traits."
+      "content": "As a point of departure, consider the multiple regression",
+      "source_page": 193,
+      "printed_page": 173,
+      "source_block_ids": [
+        "p193:b5"
+      ],
+      "bbox": [
+        65.0,
+        1308.0,
+        743.0,
+        1343.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Pearson's (1896, 1903) invention of multiple regression developed out of the need for a technique to resolve the observed directional selection on a character into its direct and various indirect components. In Chapter 3 we defined the selection differential $ S $ (the within-generation change in the mean phenotype due to selection) as a measure of the total directional selection on a character. However, $ S $ cannot be considered to be a measure of the direct forces of selection on a character unless that character is uncorrelated with all other selected traits. An unselected character can appear to be under selection if other characters with which it is correlated are under directional selection. Alternatively, a character under strong directional selection may exhibit a negligible selection differential if the indirect effects of selection on correlated traits are sufficiently compensatory. Because he did not employ matrix notation, some of the mathematics in Pearson's papers can be rather difficult to follow. Lande and Arnold (1983) did a great service by extending this work and rephrasing it in matrix notation. Suppose that a large number of individuals in a population have been measured for n characters and for fitness. Individual fitness can then be approximated by the linear model $$ w=\\alpha+\\beta_{1}z_{1}+\\cdots+\\beta_{n}z_{n}+e $$ where $w$ is relative fitness (observed fitness divided by the mean fitness in the population), and $z_{1}, \\ldots, z_{n}$ are the phenotypic measures of the $n$ characters. Recall from Chapter 3 that the selection differential for the $i$th trait is defined as the covariance between phenotype and relative fitness, $S_{i}=\\sigma(z_{i},w)$. Thus, we have $$ \\begin{aligned}S_{i}=\\sigma(z_{i},w)&=\\sigma(z_{i},\\alpha+\\beta_{1}z_{1}+\\cdots+\\beta_{n}z_{n}+e)\\\\&=\\beta_{1}\\sigma(z_{i},z_{1})+\\cdots+\\beta_{n}\\sigma(z_{i},z_{n})+\\sigma(z_{i},e)\\end{aligned} $$"
+      "content": "[[FORMULA:Genetics_chapter8_formula001]]",
+      "source_page": 193,
+      "printed_page": 173,
+      "source_block_ids": [
+        "p193:b6"
+      ],
+      "bbox": [
+        319.0,
+        1363.0,
+        765.0,
+        1395.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note that this expression is of the same form as Equation 8.3, so that by taking the $ \\beta_{i} $ to be the partial regression coefficients we have $ \\sigma(z_{i}, e) = 0 $. Note also that the selection differential of any trait may be partitioned into a component estimating the direct selection on the character and the sum of components from indirect selection on all correlated characters, $$ S_{i}=\\beta_{i}\\sigma^{2}(z_{i})+\\sum_{j\\neq i}^{n}\\beta_{j}\\sigma(z_{i},z_{j}) $$"
+      "content": "where y is the response variable, and the $ z_{i} $ are the predictor (or explanatory) variables used to predict the value of the response variable. This multivariate equation is similar to the expression for a simple linear regression, Equation 3.12a, except that y is now a function of n predictor variables, rather than of one. The variables $ y, z_{1}, \\ldots, z_{n} $ represent observed measures, whereas $ \\alpha $ and $ \\beta_{1}, \\ldots, \\beta_{n} $ are constants to be estimated. As in the case of simple linear regression, $ e $ (the residual error) is the deviation between the observed and fitted value of $ y $. Recall that the use of a linear model involves no assumptions regarding the true form of relationship between $ y $ and $ z_{1}, \\ldots, z_{n} $. It simply gives the best linear approximation. Many statistical techniques, including path analysis (Appendix 2) and analysis of variance (Chapter 17), are based on versions of Equation 8.1.",
+      "source_page": 193,
+      "printed_page": 173,
+      "source_block_ids": [
+        "p193:b8",
+        "p194:b2"
+      ],
+      "bbox": [
+        61.0,
+        1413.0,
+        1021.0,
+        1478.0
+      ],
+      "source_page_end": 194
     },
     {
       "type": "discussion",
-      "content": "It is important to realize that the labels “direct” and “indirect” apply strictly to the specific set of characters included in the analysis; the partial regression coefficients are subject to change if a new analysis includes additional correlated characters that are under selection."
+      "content": "The terms $ \\beta_{1},\\ldots,\\beta_{n} $ are known as partial regression coefficients. Notice that when all but the ith predictor variable are held constant in Equation 8.1, the formula reduces to a univariate model similar to Equation 3.12a but with slope $ \\beta_{i} $. This partial regression coefficient often differs from the simple regression coefficient, $ \\beta_{i} $. Suppose, for example, that a simple regression of y on $ z_{1} $ has a slope of zero. This might lead to the suggestion that there is no relationship between $ z_{1} $ and y. However, it is conceivable that $ z_{1} $ actually has a strong positive effect on y that is obscured by positive correlations of $ z_{1} $ with other variables that have negative influences on y. A multiple regression that included the appropriate variables would clarify this situation by yielding a positive $ \\beta_{1} $.",
+      "source_page": 194,
+      "printed_page": 174,
+      "source_block_ids": [
+        "p194:b3"
+      ],
+      "bbox": [
+        130.0,
+        424.0,
+        1090.0,
+        743.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 1. A morphological analysis of a pentatomid bug (Euschistus variolarius) population performed by Lande and Arnold (1983) provides a good example of the insight that can be gained from a multivariate approach. The bugs were collected along the shore of Lake Michigan after a storm. Of the 94 individuals that were recovered, 39 were alive. All individuals were measured for four characters: head and thorax width, and scutellum and forewing length. The data were then logarithmically transformed to more closely approximate normality (Chapter 11). All surviving bugs were assumed to have equal fitness (W = 1), and all dead bugs to have zero fitness (W = 0). Hence, mean fitness is the fraction p of individuals that survived, giving relative fitnesses, w = W/W, as $$ w=\\left\\{\\begin{aligned}{}&{{}1/p}&{\\mathrm{i f~t h e~i n d i v i d u a l~s u r v i v e d}}\\\\ {}&{{}0}&{\\mathrm{i f~t h e~i n d i v i d u a l~d i d~n o t~s u r v i v e}}\\\\ \\end{aligned}\\right. $$"
+      "content": "Since it is usually impossible for biologists to evaluate partial regression coefficients by empirically imposing constancy on all extraneous variables, we require a more indirect approach to the problem. From Chapter 3, the covariance of y and a predictor variable is",
+      "source_page": 194,
+      "printed_page": 174,
+      "source_block_ids": [
+        "p194:b4"
+      ],
+      "bbox": [
+        130.0,
+        743.0,
+        1090.0,
+        871.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The selection differential for each of the characters is simply the difference between the mean phenotype of the 39 survivors and the mean of the entire sample. These are reported in units of phenotypic standard deviations in the following table, along with the partial regression coefficients of relative fitness on the four morphological characters. Here * and ** indicate significance at the 5% and 1% levels. All of the phenotypic correlations are highly significant."
+      "content": "[[FORMULA:Genetics_chapter8_formula002]]",
+      "source_page": 194,
+      "printed_page": 174,
+      "source_block_ids": [
+        "p194:b5"
+      ],
+      "bbox": [
+        237.0,
+        897.0,
+        983.0,
+        979.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Character</td><td style='text-align: center; word-wrap: break-word;'>Selection Differential</td><td colspan=\"2\">Partial Regression Coef. of Fitness</td><td colspan=\"4\">Phenotypic Correlations</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ z_i $</td><td style='text-align: center; word-wrap: break-word;'>$ S_i $</td><td style='text-align: center; word-wrap: break-word;'>$ b_i $</td><td style='text-align: center; word-wrap: break-word;'>H</td><td style='text-align: center; word-wrap: break-word;'>T</td><td style='text-align: center; word-wrap: break-word;'>S</td><td style='text-align: center; word-wrap: break-word;'>F</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Head (H)</td><td style='text-align: center; word-wrap: break-word;'>-0.11</td><td style='text-align: center; word-wrap: break-word;'>-0.7</td><td style='text-align: center; word-wrap: break-word;'>1.00</td><td style='text-align: center; word-wrap: break-word;'>0.72</td><td style='text-align: center; word-wrap: break-word;'>0.50</td><td style='text-align: center; word-wrap: break-word;'>0.60</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Thorax (T)</td><td style='text-align: center; word-wrap: break-word;'>-0.06</td><td style='text-align: center; word-wrap: break-word;'>$ 11.6^{{**}} $</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.00</td><td style='text-align: center; word-wrap: break-word;'>0.59</td><td style='text-align: center; word-wrap: break-word;'>0.71</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Scutellum (S)</td><td style='text-align: center; word-wrap: break-word;'>$ -0.28^{{*}} $</td><td style='text-align: center; word-wrap: break-word;'>-2.8</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.00</td><td style='text-align: center; word-wrap: break-word;'>0.62</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Forewing (F)</td><td style='text-align: center; word-wrap: break-word;'>$ -0.43^{{**}} $</td><td style='text-align: center; word-wrap: break-word;'>$ -16.6^{{**}} $</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1.00</td><td style='text-align: center; word-wrap: break-word;'></td></tr></table>"
+      "content": "The term $ \\sigma(\\alpha, z_i) $ has dropped out because the covariance of $ z_i $ with a constant $ (\\alpha) $ is zero. By applying Equation 8.2 to each predictor variable, we obtain a set of $ n $ equations in $ n $ unknowns $ (\\beta_1, \\ldots, \\beta_n) $,",
+      "source_page": 194,
+      "printed_page": 174,
+      "source_block_ids": [
+        "p194:b7"
+      ],
+      "bbox": [
+        133.0,
+        1005.0,
+        1090.0,
+        1102.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The estimates of the partial regression coefficients nicely illustrate two points discussed earlier. First, despite the strong directional selection operating directly on thorax size, the selection differential for thorax size is negligible. This lack of apparent selection results because the positive correlation between thorax width and wing length is coupled with negative forces of selection on the latter character. Second, there is a significant negative selection differential on scutellum length even though there is no significant direct selection on the character. The negative selection differential is largely an indirect consequence of the strong selection for smaller wing length."
+      "content": "[[FORMULA:Genetics_chapter8_formula003]]",
+      "source_page": 194,
+      "printed_page": 174,
+      "source_block_ids": [
+        "p194:b8"
+      ],
+      "bbox": [
+        216.0,
+        1124.0,
+        974.0,
+        1290.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "As in univariate regression, our task is to find the set of constants ( $ \\alpha $ and the partial regression coefficients $ \\beta_i $) that gives the best linear fit of the conditional expectation of $ y $ given $ z_1, \\cdots, z_n $. Again, the criterion we choose for “best” relies on the least-squares approach, which minimizes the squared differences between observed and expected values. Thus, our task is to find that set of $ \\alpha, \\beta_1, \\cdots, \\beta_n $ giving $ \\widehat{y} = \\alpha + \\sum \\beta_i z_i $ such that $ E[(y - \\widehat{y})^2 | z_1, \\cdots, z_n] $ is minimized. Taking derivatives of this expectation with respect to $ \\alpha $ and the $ \\beta_i $ and setting each equal to zero, it can be shown that the set of equations given by Equation 8.3 is, in fact, the least-squares solution to Equation 8.1. If the appropriate variances and covariances are known, the $ \\beta_{i} $ can be obtained exactly. If these are unknown, as is usually the case, the least-squares estimates $ b_{i} $ are obtained from Equation 8.3 by substituting the observed (estimated) variances and covariances for their (unknown) population values.",
+      "source_page": 194,
+      "printed_page": 174,
+      "source_block_ids": [
+        "p194:b10",
+        "p195:b2"
+      ],
+      "bbox": [
+        132.0,
+        1312.0,
+        1091.0,
+        1537.0
+      ],
+      "source_page_end": 195
+    },
+    {
+      "type": "discussion",
+      "content": "The properties of least-squares multiple regression are analogous to those for simple regression. First, the procedure yields a solution such that the average deviation of y from $ \\widehat{y} $, $ E(e) $, is zero. Hence $ E(y) = E(\\widehat{y}) $, implying",
+      "source_page": 195,
+      "printed_page": 175,
+      "source_block_ids": [
+        "p195:b3"
+      ],
+      "bbox": [
+        67.0,
+        325.0,
+        1025.0,
+        428.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula004]]",
+      "source_page": 195,
+      "printed_page": 175,
+      "source_block_ids": [
+        "p195:b4"
+      ],
+      "bbox": [
+        392.0,
+        453.0,
+        697.0,
+        484.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, once the fitted values $ b_1, \\ldots, b_n $ are obtained from Equation 8.3, the intercept is defined by $ a = \\bar{y} - b_1 \\bar{z}_1 - \\cdots - b_n \\bar{z}_n $. Second, least-squares analysis gives a solution in which the residual errors are uncorrelated with the predictor variables. Thus, the terms $ \\sigma(e, z_i) $ can be dropped from Equation 8.3. Third, the partial regression coefficients are entirely defined by variances and covariances. However, unlike simple regression coefficients, which depend on only a single variance and covariance, each partial regression coefficient is a function of the variances and covariances of all measured variables. Notice that if $ n = 1 $, then $ \\sigma(y, z_1) = \\beta_1 \\sigma^2(z_1) $, and we recover the univariate solution $ \\beta_1 = \\sigma(y, z_1) / \\sigma^2(z_1) $.",
+      "source_page": 195,
+      "printed_page": 175,
+      "source_block_ids": [
+        "p195:b5"
+      ],
+      "bbox": [
+        66.0,
+        511.0,
+        1024.0,
+        802.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A simple pattern exists in each of the $n$ equations in 8.3. The $i$th equation defines the covariance of $y$ and $z_i$ as the sum of two types of quantities: a single term, which is the product of the $i$th partial regression coefficient and the variance of $z_i$, and a set of $(n-1)$ terms, each of which is the product of a partial regression coefficient and the covariance of $z_i$ with the corresponding predictor variable. This general pattern suggests an alternative way of writing Equation 8.3,",
+      "source_page": 195,
+      "printed_page": 175,
+      "source_block_ids": [
+        "p195:b6"
+      ],
+      "bbox": [
+        65.0,
+        799.0,
+        1023.0,
+        995.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula005]]",
+      "source_page": 195,
+      "printed_page": 175,
+      "source_block_ids": [
+        "p195:b7"
+      ],
+      "bbox": [
+        145.0,
+        1015.0,
+        886.0,
+        1167.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The table of variances and covariances on the left is referred to as a matrix, while the columns of partial regression coefficients and of covariances involving y are called vectors. If these matrices and vectors are abbreviated as V, $ \\beta $, and c, Equation 8.4 can be written even more compactly as",
+      "source_page": 195,
+      "printed_page": 175,
+      "source_block_ids": [
+        "p195:b9"
+      ],
+      "bbox": [
+        62.0,
+        1188.0,
+        1022.0,
+        1317.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter8_formula006]]",
+      "source_page": 195,
+      "printed_page": 175,
+      "source_block_ids": [
+        "p195:b10"
+      ],
+      "bbox": [
+        490.0,
+        1346.0,
+        592.0,
+        1377.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The standard procedure of denoting matrices as bold capital letters and vectors as bold lowercase letters is adhered to in this book. Notice that V, which is generally called a covariance matrix, is symmetrical about the main diagonal. As we shall see shortly, the ith equation in 8.3 can be recovered from Equation 8.4 by multiplying the elements in $ \\beta $ by the corresponding elements in the $ i $th horizontal row of the matrix V. Although a great deal of notational simplicity has been gained by condensing the system of Equations 8.3 to matrix form, this does not alter the fact that the solution of a large system of simultaneous equations is a tedious task if performed by hand. Today, such solutions are rapidly accomplished on computers. Before considering matrix methods in more detail, we present an application of Equation 8.1 to quantitative genetics.",
+      "source_page": 195,
+      "printed_page": 175,
+      "source_block_ids": [
+        "p195:b12",
+        "p196:b2"
+      ],
+      "bbox": [
+        54.0,
+        1405.0,
+        1019.0,
+        1538.0
+      ],
+      "source_page_end": 196
     }
   ]
 }

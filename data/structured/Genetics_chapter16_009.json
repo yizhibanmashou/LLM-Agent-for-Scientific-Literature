@@ -2,62 +2,111 @@
   "id": "Genetics_chapter16_009",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
-    "subsections": [
-      "Constructing Likelihood Functions"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Constructing Likelihood Functions",
+    "section": "SIB ANALYSIS: MAXIMUM LIKELIHOOD",
+    "subsections": [],
+    "section_level_1": "SIB ANALYSIS: MAXIMUM LIKELIHOOD",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "Constructing Likelihood Functions"
+      "SIB ANALYSIS: MAXIMUM LIKELIHOOD"
     ],
-    "display_heading": "Constructing Likelihood Functions"
+    "display_heading": "SIB ANALYSIS: MAXIMUM LIKELIHOOD",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 519,
+      "printed_page": 499,
+      "source_block_ids": [
+        "p519:b15"
+      ],
+      "bbox": [
+        95.0,
+        1318.0,
+        645.0,
+        1349.0
+      ],
+      "raw_text": "SIB ANALYSIS: MAXIMUM LIKELIHOOD"
+    }
   },
   "blocks": [
     {
-      "type": "proposition",
-      "content": "Likelihood functions for detecting QTLs using marker information in sets of sibs follow by suitable modifications of those developed for complex segregation analysis (Chapter 13). Recall that to construct the latter, the likelihood for an individual with trait value $ z_{o} $ is computed by first obtaining the likelihood conditional on the QTL genotypes of its parents ($ Q_{s} $ for the sire and $ Q_{d} $ for the dam), $$ \\ell(z_{o}\\mid Q_{s},Q_{d})=\\sum_{Q_{o}}\\varphi(z_{o},\\mu_{Q_{o}},\\sigma^{2})p(Q_{o}\\mid Q_{s},Q_{d}) $$ where we make the standard assumption that, conditional on QTL genotype, phenotypes are normally distributed with common variance $\\sigma^{2}$. This conditioning is removed by averaging over all possible parental values, $$ \\ell(z_{o})=\\sum_{Q_{s}}\\sum_{Q_{d}}\\ell(z_{o}\\mid Q_{s},Q_{d})p(Q_{s})p(Q_{d}) $$"
+      "type": "discussion",
+      "content": "ML estimation of QTL position and effects using a set of relatives from an outbred population proceeds as with inbred-line crosses — one constructs an appropriate likelihood function for the assumed model, obtains the parameter values that",
+      "source_page": 519,
+      "printed_page": 499,
+      "source_block_ids": [
+        "p519:b16"
+      ],
+      "bbox": [
+        94.0,
+        1382.0,
+        1054.0,
+        1479.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "When marker data are present, the likelihood for an individual with marker genotype M is obtained by averaging over the probability of each QTL genotype given the marker genotypes, $$ \\begin{aligned}\\ell(\\boldsymbol{z}_{o}|M_{o},M_{s},M_{d},Q_{s},Q_{d})=&\\\\\\sum_{Q_{o}}\\varphi(\\boldsymbol{z}_{o},\\mu_{Q_{o}},\\sigma^{2})p(Q_{o}|M_{o},M_{s},M_{d},Q_{s},Q_{d})\\end{aligned} $$ where the transmission probabilities $p(Q_{o}|M_{o},M_{s},M_{d},Q_{s},Q_{d})$ are functions of the marker genotypes of the offspring $(M_{o})$ and its parents $(M_{s},M_{d})$. Averaging over all possible parental genotypes gives $$ \\begin{aligned}\\ell(\\boldsymbol{z}_{o}|M_{o},M_{s},M_{d})=&\\\\\\sum_{Q_{s}}\\sum_{Q_{d}}\\ell(\\boldsymbol{z}_{o}|M_{o},M_{s},M_{d},Q_{s},Q_{d})p(Q_{s}|M_{s})p(Q_{d}|M_{d})\\end{aligned} $$"
+      "content": "[[FIGURE:16.3]]",
+      "source_page": 520,
+      "printed_page": 500,
+      "source_block_ids": [
+        "p520:b5"
+      ],
+      "bbox": [
+        152.0,
+        928.0,
+        1017.0,
+        1195.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In a similar fashion, the likelihood function for any pedigree can (in principle) be computed by suitably conditioning on the genotypes of parents and other relatives."
+      "content": "maximize this function, and tests alternative hypotheses with likelihood ratios. One subtle difference for outbred parents is that likelihood maps displaying the amount of support for a putative QTL often show discontinuities between adjacent markers (Knott and Haley 1992b); see Figure 16.3. Such discontinuities arise when adjacent loci differ in the fraction of informative individuals in the sample because of between-locus variance in the marker allele frequencies (a situation that does not arise with inbred-line crosses). As Figure 16.3 shows, these discontinuities can be avoided by constructing likelihood functions that use all of the marker information on a chromosome (Georges et al. 1995, Kruglyak and Lander 1995b).",
+      "source_page": 520,
+      "printed_page": 500,
+      "source_block_ids": [
+        "p520:b6"
+      ],
+      "bbox": [
+        103.0,
+        1256.0,
+        1064.0,
+        1546.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Likelihood functions for half- and full-sib families have been developed for single markers (Risch 1984, Demenais et al. 1988, Weller 1990, Haley 1991, Amos 1994, Le Roy and Elsen 1995, Mackinnon and Weller 1995, Elsen et al. 1997), interval mapping (Knott and Haley 1992b), and multipoint mapping (Georges et al. 1995, Uimari et al. 1996, Knott et al. 1996). A framework for developing likelihood functions that allows for multiple QTLs is given by Stricker et al. (1995b). Hoeschele and VanRaden (1993a,b) and Uimari et al. (1996) discuss Bayesian modifications of the likelihood functions to allow for the incorporation of prior information, such as the number of chromosomes (e.g., Smith 1953, 1959)."
+      "content": "The major complication in applying ML methods to outbred populations is that the resulting likelihood functions are much more complex than for inbred-line crosses due to the need to consider all possible genotypes of measured pedigree members. For example, for an inbred-line cross, all $ F_{1} $ parents have the same genotype, say MQ/mq. In contrast, in an outbred population, for a diallelic QTL there are 16 possible genotypes for a pair of parents with marker genotype M/m, as each parent could be QM/Qm, QM/qm, qM/Qm, or qM/qm. The situation is even more complex when more than two alleles are segregating at the QTL or when one considers two (or more) markers simultaneously. For a pedigree with even a modest number of parents, the number of possible genotypes that must be considered is enormous.",
+      "source_page": 521,
+      "printed_page": 501,
+      "source_block_ids": [
+        "p521:b2"
+      ],
+      "bbox": [
+        81.0,
+        132.0,
+        1043.0,
+        490.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 3. Consider Knott and Haley's (1992b) development of a likelihood function for interval mapping in a full-sib family with a segregating diallelic QTL (with alleles Q and q, and Q allele frequency equal to p) flanked by two marker loci, A and B. The transmission probabilities required by Equation 16.27a follow from arguments identical to those used in Chapter 15 and depend on QTL-marker distances and assumptions about interference. For example, if both parents have genotype AQB/aqb, where $ c_{1} $ is the A–Q distance and $ c_{2} $ the Q–B distance, then (assuming no interference) from Example 1 in Chapter 15, $$ \\Pr\\left(o=AQB/AqB\\mid s,d=AQB/aqb\\right)=2\\left\\lceil\\frac{(1-c_{1})(1-c_{2})}{2}\\right\\rceil\\left(\\frac{c_{1}c_{2}}{2}\\right) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The recombination frequency $c$ between these markers is assumed known, in which case $c_{2}$ follows as a function of $c_{1}$ and $c$ (Chapter 15). For a given pair of parental genotypes, many of these parent-offspring conditional probabilities are zero, as usually only a subset of all possible offspring genotypes can occur for a given pair of parental genotypes."
-    },
-    {
-      "type": "discussion",
-      "content": "The likelihood for all n offspring in a family, conditional on parental genotypes, is $$ \\ell\\big(\\mathbf{z}\\mid\\mathbf{M_{o}},M_{s},M_{d},Q_{s},Q_{d}\\big)=\\prod_{j=1}^{n}\\ell(z_{o_{j}}\\mid M_{o_{j}},M_{s},M_{d},Q_{s},Q_{d}) $$ where $ M_{o} $ denotes the vector of the n offspring marker genotypes. As before, the conditioning on the sire and dam QTL genotype (including phase) is removed by averaging over all possible genotypes, giving the unconditional likelihood for the observed markers as $$ \\ell\\bigl(\\mathbf{z}|\\mathbf{M_{o}},M_{s},M_{d}\\bigr)= $$ $$ \\sum_{Q_{s}}\\sum_{Q_{d}}\\ell\\big(\\mathbf{z}|\\mathbf{M_{o}},M_{s},M_{d},Q_{s},Q_{d}\\big)\\cdot\\operatorname*{P r}(Q_{s}|M_{s})\\cdot\\operatorname*{P r}(Q_{d}|M_{d}) $$ where the sum for each parent is over all QTL genotypes and all QTL-marker phases. In $ \\Pr(Q_x|M_x) $, $ Q_x $ denotes both the possible QTL genotype and phase with respect to the observed marker $ M_x $. For an individual of known marker genotype, say $ A_iA_jB_kB_l $ there are two possible marker phases $ (A_iB_k/A_jB_l $ and $ A_jB_k/A_iB_l $), each of which has four possible QTL genotypes $ (Q/Q, Q/q, q/Q, q/q) $, for a total of eight possible marker-QTL phases for each parent. Assuming Hardy-Weinberg proportions hold and that the base population is in linkage equilibrium (so that both marker-QTL phases are equally frequent), the eight possible marker-QTL genotypes for an $ A_iB_k/A_jB_l $ individual have expected frequencies as follows: <table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Marker-QTL Genotype</td><td style='text-align: center; word-wrap: break-word;'>Pr $ Q_x | A_i A_j B_k B_\\ell $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ A_i Q B_k / A_j Q B_\\ell, $</td><td style='text-align: center; word-wrap: break-word;'>$ A_j Q B_k / A_i Q B_\\ell $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ A_i Q B_k / A_j q B_\\ell, $</td><td style='text-align: center; word-wrap: break-word;'>$ A_j Q B_k / A_i q B_\\ell $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ A_i q B_k / A_j Q B_\\ell, $</td><td style='text-align: center; word-wrap: break-word;'>$ A_j q B_k / A_i Q B_\\ell $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>$ A_i q B_k / A_j q B_\\ell, $</td><td style='text-align: center; word-wrap: break-word;'>$ A_j q B_k / A_i q B_\\ell $</td></tr></table>"
-    },
-    {
-      "type": "discussion",
-      "content": "The likelihood can be suitably modified to account for common-family effects (Knott and Haley 1992b) and background (unlinked) polygenes by using arguments identical to those leading to Equations 13.17 and 13.22. The full likelihood over $N$ unrelated families is just the product of the individual family likelihoods. Equation 16.28b has six parameters to estimate (three QTL means, $\\sigma^{2}$, $c_{1}$, and $p$), giving a likelihood-ratio test with four degrees of freedom when compared to the null likelihood of no segregating QTL (Equation 13.8)."
-    },
-    {
-      "type": "discussion",
-      "content": "The properties of ML estimates using relatives from outbred populations have not been as extensively examined as have those for line-cross populations. Mackinnon and Weller (1995) examined the accuracy of single-marker ML estimation under the half-sib design, finding that while ML estimates of QTL effects tend to be reasonably accurate, the same is not the case for estimates of QTL position, which have very flat likelihood surfaces. They also observed that estimates of QTL parameters tend to be correlated, so that a poor estimate in one parameter (e.g., map position) can have a detrimental effect on other estimates (e.g., QTL effects). Interval mapping is expected to have a more peaked likelihood surface for QTL position (and a resulting smaller variance), so these concerns may be less important for analysis using multiple markers."
-    },
-    {
-      "type": "discussion",
-      "content": "While marker-based likelihood methods have greater power than segregation analysis (Chapter 13) for detecting QTLs (Goldin et al. 1984, Demenais et al. 1988, Knott and Haley 1992b, Le Roy and Elsen 1995), their power is still poor compared to inbred-line-cross designs. Knott and Haley (1992b) show that the use of flanking markers increases power, as does incorporation of a within-family effect into the likelihood function. Choosing highly polymorphic marker loci further increases power by increasing the frequency of informative sibships. Even with these modifications, however, power remains marginal — with markers at 20 map unit intervals, a QTL whose segregation accounts for 1/3 of the total variance is barely detectable when 250 full-sib families of four individuals each are used. Further, as with segregation analysis, there is a tradeoff between increasing the number of families versus increasing family size. For a fixed total number of progeny, one must sample a sufficient number of families (to ensure that at least one of them is informative) and a sufficient number of individuals within each family (to have power within an informative family)."
+      "content": "LeRoy and Elsen (1995) show for a single marker that likelihood methods can be considerably more powerful for detecting a QTL in a sib design than linear model-based approaches under loose linkage. However, with multiple markers, Knott et al. (1996) find little difference between linear model and ML approaches. Both studies find these two approaches have the same power when the marker and QTL are completely linked. One likely explanation for the apparent discrepancy under loose linkage is that while Le Roy and Elsen assume only a single QTL is segregating, they do not incorporate a factor into their likelihood function to account for segregation at unlinked sites. Hence, as the marker-QTL recombination frequency approaches 1/2, their likelihood function approaches that for classical segregation analysis (i.e., no marker information, see Chapter 13). Thus, as the marker-QTL linkage becomes looser, the power of the linear model decreases to the significance level of the test, while the ML method approaches the power of classical segregation analysis. A likelihood approach which included a factor for account for between-family differences due to segregation of unlinked background polygenes should give similar power to linear model based approach except when the QTL effect is very large (S. Knott and C. Haley, pers. comm.).",
+      "source_page": 521,
+      "printed_page": 501,
+      "source_block_ids": [
+        "p521:b3"
+      ],
+      "bbox": [
+        74.0,
+        484.0,
+        1039.0,
+        1042.0
+      ]
     }
   ]
 }

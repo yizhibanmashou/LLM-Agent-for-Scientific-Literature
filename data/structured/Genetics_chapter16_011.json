@@ -2,26 +2,261 @@
   "id": "Genetics_chapter16_011",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
-    "subsections": [
-      "Estimating QTL Position"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Estimating QTL Position",
+    "section": "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS",
+    "subsections": [],
+    "section_level_1": "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "Estimating QTL Position"
+      "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS"
     ],
-    "display_heading": "Estimating QTL Position"
+    "display_heading": "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 524,
+      "printed_page": 504,
+      "source_block_ids": [
+        "p524:b4"
+      ],
+      "bbox": [
+        114.0,
+        1030.0,
+        854.0,
+        1101.0
+      ],
+      "raw_text": "MAXIMUM LIKELIHOOD OVER GENERAL PEDIGREES: VARIANCE COMPONENTS"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Goldgar's original approach makes no assumptions about how many QTLs a tested chromosomal segment contains. As such, it simply provides a test for detecting the presence of one or more QTLs in a given region, along with providing a composite estimate of their effects as measured by the genetic variance attributable to that region. However, if we are willing to assume that only a single QTL resides in the region, Goldgar's method can be modified to estimate QTL position (Amos 1994, Xu and Atchley 1995). The idea, as used in many previous tests, is that QTL position enters through estimates of $ R_{ij} $. For example, Amos (1994) shows that for a single marker linked to a QTL at recombination frequency c, $$ \\widehat{R}_{i j}=\\left\\{\\begin{matrix}{1/2+(1-2c)^{2}\\left(\\pi_{i j}-1/2\\right)}&{\\mathrm{f u l l~s i b s}}\\\\ {1/4+(1-2c)^{2}\\left(\\pi_{i j}-1/4\\right)}&{\\mathrm{h a l f~s i b s}}\\\\ \\end{matrix}\\right. $$ where $ R_{ij} $ is the estimate of the fraction of QTL alleles ibd between individuals i and j, and $ \\pi_{ij} $ is the proportion of ibd marker alleles (the estimation of which is discussed below). Values for other relatives are given by Amos, allowing most pedigree structures to be easily incorporated. One then proceeds by treating c as a further parameter to estimate, displaying support for a QTL at any particular position by a standard likelihood map. Xu and Atchley (1995) consider multiple markers and QTLs, while Kruglyak and Lander (1995b) present a complete multipoint approach for nuclear families."
+      "content": "The above likelihood functions explicitly model the transmission of QTL genotypes from parent to offspring, requiring estimation of QTL allele frequencies and genotype means (as well as assumptions about the number of segregating alleles). While this approach can be extended to multigenerational pedigrees, the number of possible combinations of genotypes for individuals in the entire pedigree increases exponentially with the number of pedigree members, and solving the resulting likelihood functions becomes increasingly more difficult. An alternative is to construct likelihood functions using the variance components associated with a QTL (or linked group of QTLs) in a genetic region of interest, rather than explicitly modeling all of the underlying genetic details. This approach allows for very general and complex pedigrees. The basic idea is to use marker information to compute the fraction of a genetic region of interest that is identical by descent.",
+      "source_page": 524,
+      "printed_page": 504,
+      "source_block_ids": [
+        "p524:b5"
+      ],
+      "bbox": [
+        114.0,
+        1131.0,
+        1076.0,
+        1521.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "between two individuals. Recall that two alleles are identical by descent, or ibd, if we can trace them back to a single copy in a common ancestor (Chapter 7).",
+      "source_page": 525,
+      "printed_page": 505,
+      "source_block_ids": [
+        "p525:b2"
+      ],
+      "bbox": [
+        90.0,
+        161.0,
+        1048.0,
+        227.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Goldgar (1990) was the first to suggest this approach for QTL mapping. We sketch the basic ideas here and refer the reader to Chapter 27 for a more detailed discussion of the estimation of variance components in a likelihood framework. Consider the simplest case, in which the genetic variance is additive for the QTLs in the region of interest as well as for background QTLs unlinked to this region. Under Goldgar's model, an individual's phenotypic value is decomposed as",
+      "source_page": 525,
+      "printed_page": 505,
+      "source_block_ids": [
+        "p525:b3"
+      ],
+      "bbox": [
+        89.0,
+        226.0,
+        1049.0,
+        421.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula043]]",
+      "source_page": 525,
+      "printed_page": 505,
+      "source_block_ids": [
+        "p525:b4"
+      ],
+      "bbox": [
+        436.0,
+        449.0,
+        700.0,
+        482.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\mu $ is the population mean, $ A $ is the contribution from the chromosomal interval being examined, $ A^* $ is the contribution from QTLs outside this interval, and $ e $ is the residual. The random effects $ A $, $ A^* $, and $ e $ are assumed to be normally distributed with mean zero and variances $ \\sigma_A^2 $, $ \\sigma_A^* $, and $ \\sigma_e^2 $. Here $ \\sigma_A^2 $ and $ \\sigma_A^* $ correspond to the additive variances associated with the chromosomal region of interest and background QTLs in the remaining genome, respectively. We assume that none of these background QTLs are linked to the chromosome region of interest so that $ A $ and $ A^* $ are uncorrelated, and we further assume that the residual $ e $ is uncorrelated with $ A $ and $ A^* $. Under these assumptions, the phenotypic variance is $ \\sigma_A^2 + \\sigma_A^* + \\sigma_e^2 $.",
+      "source_page": 525,
+      "printed_page": 505,
+      "source_block_ids": [
+        "p525:b6"
+      ],
+      "bbox": [
+        86.0,
+        510.0,
+        1047.0,
+        832.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Assuming no shared environmental effects, from Chapter 7 the phenotypic covariance between two individuals is",
+      "source_page": 525,
+      "printed_page": 505,
+      "source_block_ids": [
+        "p525:b7"
+      ],
+      "bbox": [
+        85.0,
+        832.0,
+        1046.0,
+        895.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula044]]",
+      "source_page": 525,
+      "printed_page": 505,
+      "source_block_ids": [
+        "p525:b8"
+      ],
+      "bbox": [
+        388.0,
+        923.0,
+        737.0,
+        962.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ R_{ij} $ is the fraction of the chromosomal region shared ibd between individuals i and j, and $ 2\\Theta_{ij} $ is twice Wright's coefficient of coancestry (i.e., $ 2\\Theta_{ij} = 1/2 $ for full sibs). Note that $ R_{ij} $ is a random variable whose expected value is $ 2\\Theta_{ij} $. Goldgar (1990) and Guo (1994a,b) discuss the estimation of $ R_{ij} $ from flanking marker information. For the special case of a nuclear family, Kruglyak and Lander (1995b) discuss the estimation of $ R_{ij} $ at any point along a chromosome using all marker information (multipoint mapping). Approaches such as genomic mismatch scanning (Chapter 14) can also be used with a very dense genetic map to estimate $ R_{ij} $ with high precision. For a vector z of observations on n individuals, the associated covariance matrix V can be expressed as contributions from the region of interest, from background QTLs, and from residual effects,",
+      "source_page": 525,
+      "printed_page": 505,
+      "source_block_ids": [
+        "p525:b10"
+      ],
+      "bbox": [
+        83.0,
+        986.0,
+        1043.0,
+        1347.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula045]]",
+      "source_page": 525,
+      "printed_page": 505,
+      "source_block_ids": [
+        "p525:b11"
+      ],
+      "bbox": [
+        404.0,
+        1366.0,
+        717.0,
+        1408.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where I is the $ n \\times n $ identity matrix, and R and A are matrices of known constants,",
+      "source_page": 525,
+      "printed_page": 505,
+      "source_block_ids": [
+        "p525:b13"
+      ],
+      "bbox": [
+        80.0,
+        1430.0,
+        1038.0,
+        1470.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula046]]",
+      "source_page": 525,
+      "printed_page": 505,
+      "source_block_ids": [
+        "p525:b14"
+      ],
+      "bbox": [
+        184.0,
+        1490.0,
+        830.0,
+        1570.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The elements of R contain the estimates of ibd status for the region of interest based on marker information (see below), while the elements of A are given by the pedigree structure.",
+      "source_page": 526,
+      "printed_page": 506,
+      "source_block_ids": [
+        "p526:b2"
+      ],
+      "bbox": [
+        112.0,
+        156.0,
+        1070.0,
+        252.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The resulting likelihood is a multivariate normal with mean vector $ \\mu $ (all of whose elements are $ \\mu $) and variance-covariance matrix V. From Equation 8.24,",
+      "source_page": 526,
+      "printed_page": 506,
+      "source_block_ids": [
+        "p526:b3"
+      ],
+      "bbox": [
+        112.0,
+        253.0,
+        1070.0,
+        318.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula047]]",
+      "source_page": 526,
+      "printed_page": 506,
+      "source_block_ids": [
+        "p526:b4"
+      ],
+      "bbox": [
+        154.0,
+        355.0,
+        948.0,
+        430.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This likelihood has four unknown parameters ( $ \\mu $, $ \\sigma_{A}^{2} $, $ \\sigma_{A}^{2} $, and $ \\sigma_{e}^{2} $). A significant $ \\sigma_{A}^{2} $ indicates the presence of at least one QTL in the interval being considered, while a significant $ \\sigma_{A}^{2} $ implies background genetic variance contributed from QTLs outside the focal interval. Both of these hypotheses can be tested by likelihood-ratio tests. Using the methodology of Chapters 26 and 27, the simple model given by Equation 16.29 can easily be extended to allow for other genetic effects (such as dominance), multiple chromosomal regions (Schork 1993), shared environmental effects, and any number of fixed effects (such as differences between the sexes, different known environmental effects, and so forth). Incorporation of such additional effects can increase power by reducing the residual variance.",
+      "source_page": 526,
+      "printed_page": 506,
+      "source_block_ids": [
+        "p526:b6"
+      ],
+      "bbox": [
+        113.0,
+        466.0,
+        1073.0,
+        792.0
+      ]
     }
   ]
 }

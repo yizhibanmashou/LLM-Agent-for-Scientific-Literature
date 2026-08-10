@@ -2,63 +2,266 @@
   "id": "Genetics_chapter2_003",
   "metadata": {
     "chapter": "Genetics_chapter2",
-    "section": "Properties of Distributions",
-    "subsections": [
-      "THE NORMAL DISTRIBUTION"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter2_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "2.1"
-    ],
-    "section_level_1": "Properties of Distributions",
-    "section_level_2": "THE NORMAL DISTRIBUTION",
+    "section": "THE NORMAL DISTRIBUTION",
+    "subsections": [],
+    "section_level_1": "THE NORMAL DISTRIBUTION",
+    "section_level_2": null,
     "heading_path": [
-      "Properties of Distributions",
       "THE NORMAL DISTRIBUTION"
     ],
     "display_heading": "THE NORMAL DISTRIBUTION",
-    "table_reference_keys": [
-      "chapter2:2.1"
-    ]
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 43,
+      "printed_page": 23,
+      "source_block_ids": [
+        "p43:b9"
+      ],
+      "bbox": [
+        157.0,
+        869.0,
+        574.0,
+        911.0
+      ],
+      "raw_text": "THE NORMAL DISTRIBUTION"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "When large data sets of the type compiled in [[SEE_TABLE:2.1]] are displayed in the form of frequency histograms (Figure 2.1), they often approximate a bell-shaped distribution. Three famous mathematicians, DeMoivre (1738), LaPlace (1778), and Gauss (1809), worked out the properties of a very useful description of this form — the normal distribution, also referred to as the Gaussian distribution. If z is a normally distributed variable, its density function is given by $$ p(z)=(2\\pi\\sigma^{2})^{-1/2}\\exp\\left[-\\frac{(z-\\mu)^{2}}{2\\sigma^{2}}\\right] $$ where $\\exp \\simeq 2.7183$ is the base of natural logarithms, and $\\pi \\simeq 3.1416$. The normal distribution is a function of only two parameters, the population mean ($\\mu$) and variance ($\\sigma^{2}$). The normal density attains a maximum when $z = \\mu$ and declines continuously and symmetrically in both directions as $z$ deviates from $\\mu$ (Figure 2.1). A normally distributed variable with mean $\\mu$ and variance $\\sigma^{2}$ is often denoted by $z \\sim \\mathrm{N}(\\mu, \\sigma^{2})$, where $\\sim$ means “is distributed as.” In discussions in future chapters, we often use the notation $\\varphi(z, \\mu, \\sigma^{2})$ to denote the probability density of a normal, to remind the reader that it is also a function of the mean and variance."
+      "content": "When large data sets of the type compiled in Table 2.1 are displayed in the form of frequency histograms (Figure 2.1), they often approximate a bell-shaped distribution. Three famous mathematicians, DeMoivre (1738), LaPlace (1778), and Gauss (1809), worked out the properties of a very useful description of this form — the normal distribution, also referred to as the Gaussian distribution. If z is a normally distributed variable, its density function is given by",
+      "source_page": 43,
+      "printed_page": 23,
+      "source_block_ids": [
+        "p43:b10"
+      ],
+      "bbox": [
+        157.0,
+        923.0,
+        1119.0,
+        1140.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:2.1]]"
-    },
-    {
-      "type": "proposition",
-      "content": "The normal distribution plays a central role in statistical theory for two reasons. First, the normal probability density function has many simple mathematical features that allow the derivation of practical statistical tests. Second, even when actual distributions of phenotypes are inconsistent with the normal density function, after an appropriate scale transformation (Chapter 11), many can be rendered approximately normal. A general reason why many traits are distributed normally or nearly so is provided by the central limit theorem, which states that the sum of a number of independent random variables approaches normality as the number of variables increases. This is expected to be the case, for example, for a metric character influenced by many environmental factors and a large number of unlinked genes, each with small additive effects. As a consequence, the normal distribution has been relied upon extensively in quantitative genetics. Whenever an assumption regarding the form of a phenotype distribution is necessary, the normal distribution is generally invoked as a first approximation. The normal density function is also often used to define a Gaussian fitness function in the theory of stabilizing selection, the “mean” serving as a measure of the optimum phenotype and the “variance” being inversely related to the intensity of selection (because the fitness function becomes flatter as the width increases)."
-    },
-    {
-      "type": "discussion",
-      "content": "There are, of course, limitations of the normal distribution."
-    },
-    {
-      "type": "discussion",
-      "content": "There are, of course, limitations of the normal density function and of distribution functions in general. For instance, the normal distribution gives small positive values, rather than zero, for negative z, an unrealistic situation for traits such as body size or bone length, which cannot take on negative values. Nevertheless, if the mean of a distribution is sufficiently greater than zero, the theoretical incidence of negative values is minuscule and not problematical. It should also be emphasized that the normal distribution is a continuous function, giving positive values for noninteger values of z. It is, therefore, not strictly applicable to meristic traits such as egg number or spine count, although it provides a close approximation when the number of classes is large."
-    },
-    {
-      "type": "discussion",
-      "content": "It is often convenient to work with a standardized form of Equation 2.10. A standard normal deviate, $ z' = (z - \\mu)/\\sigma $, is the deviation of a measure from the population mean in units of standard deviations. Applying a useful property of distribution theory in the following example, we show that if z is normally distributed with mean $ \\mu $ and variance $ \\sigma^2 $, then $ z' $ is normal with zero mean and unit variance, i.e., $$ p(z^{\\prime})=(2\\pi)^{-1/2}\\exp\\left[-\\frac{(z^{\\prime})^{2}}{2}\\right] $$"
+      "content": "[[FORMULA:Genetics_chapter2_formula024]]",
+      "source_page": 43,
+      "printed_page": 23,
+      "source_block_ids": [
+        "p43:b11"
+      ],
+      "bbox": [
+        428.0,
+        1158.0,
+        853.0,
+        1241.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 4. It is known that if $y$ is a function of $z$, denoted by $f(z)$, then its probability density function is $$ p(y)=\\left|\\frac{df(z)}{dz}\\right|^{-1}p(z) $$ where $ |\\cdots| $ denotes absolute value. This transformation is valid provided that $ df(z)/dz $ exists and is nonzero for all z values for which $ p(z) > 0 $. This criterion is met by the standard normal deviate."
+      "content": "where $ \\exp \\simeq 2.7183 $ is the base of natural logarithms, and $ \\pi \\simeq 3.1416 $. The normal distribution is a function of only two parameters, the population mean ( $ \\mu $) and variance ( $ \\sigma^2 $). The normal density attains a maximum when $ z = \\mu $ and declines continuously and symmetrically in both directions as $ z $ deviates from $ \\mu $ (Figure 2.1). A normally distributed variable with mean $ \\mu $ and variance $ \\sigma^2 $ is often denoted by $ z \\sim \\mathrm{N}(\\mu, \\sigma^2) $, where $ \\sim $ means “is distributed as.” In discussions in future chapters, we often use the notation $ \\varphi(z, \\mu, \\sigma^2) $ to denote the probability density of a normal, to remind the reader that it is also a function of the mean and variance.",
+      "source_page": 43,
+      "printed_page": 23,
+      "source_block_ids": [
+        "p43:b13"
+      ],
+      "bbox": [
+        167.0,
+        1267.0,
+        1131.0,
+        1540.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Letting $z'=f(z)=(z-\\mu)/\\sigma$, then $df(z)/dz=\\sigma^{-1}$. Substituting the normal probability density function for $p(z)$ recovers the standard normal or (unit normal) distribution, $$ p(z^{\\prime})=\\left|\\frac{1}{\\sigma}\\right|^{-1}\\frac{1}{\\sqrt{2\\pi\\sigma^{2}}}\\exp\\left[-\\frac{(z-\\mu)^{2}}{2\\sigma^{2}}\\right]=(2\\pi)^{-1/2}\\exp\\left[-\\frac{(z^{\\prime})^{2}}{2}\\right] $$ Because the normal distribution is symmetrical, the third moment ($ \\mu_{3} $) is equal to zero. The fourth moment has an expected value equal to $ 3\\sigma^{4} $. Thus, if we let Kur(z) be the sample estimate of $ \\mu_{4} $, where Kur denotes kurtosis, the index $$ k_{4}=\\frac{\\mathrm{K u r}(z)-3\\left[\\mathrm{V a r}(z)\\right]^{2}}{\\left[\\mathrm{V a r}(z)\\right]^{2}} $$"
+      "content": "[[FIGURE:2.1]]",
+      "source_page": 44,
+      "printed_page": 24,
+      "source_block_ids": [
+        "p44:b4"
+      ],
+      "bbox": [
+        90.0,
+        777.0,
+        957.0,
+        861.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:2.2]] where $$ \\mathbf{K u r}(z)=\\frac{n^{2}(n+1)(\\overline{z^{4}}-4\\overline{z^{3}}\\bar{z}+6\\overline{z^{2}}\\bar{z}^{2}-3\\bar{z}^{4})}{(n-1)(n-2)(n-3)} $$ provides a measure of the peakedness of a distribution. For a truly normal distribution, $ k_{4} = 0 $. A distribution with a high narrow peak relative to the normal ($ k_{4} > 0 $) is said to be leptokurtic. A broader peak than normal ($ k_{4} < 0 $) is referred to as platykurtic."
+      "content": "The normal distribution plays a central role in statistical theory for two reasons. First, the normal probability density function has many simple mathematical features that allow the derivation of practical statistical tests. Second, even when actual distributions of phenotypes are inconsistent with the normal density function, after an appropriate scale transformation (Chapter 11), many can be rendered approximately normal. A general reason why many traits are distributed normally or nearly so is provided by the central limit theorem, which states that the sum of a number of independent random variables approaches normality as the number of variables increases. This is expected to be the case, for example, for a metric character influenced by many environmental factors and a large number of unlinked genes, each with small additive effects. As a consequence, the normal distribution has been relied upon extensively in quantitative genetics. Whenever an assumption regarding the form of a phenotype distribution is necessary, the normal distribution is generally invoked as a first approximation. The normal density function is also often used to define a Gaussian fitness function in the theory of stabilizing selection, the “mean” serving as a measure of the optimum phenotype and the “variance” being inversely related to the intensity of selection (because the fitness function becomes flatter as the width increases).\nThere are, of course, limitations of the normal distribution.",
+      "source_page": 44,
+      "printed_page": 24,
+      "source_block_ids": [
+        "p44:b5"
+      ],
+      "bbox": [
+        27.0,
+        900.0,
+        999.0,
+        1501.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "There are, of course, limitations of the normal density function and of distribution functions in general. For instance, the normal distribution gives small positive values, rather than zero, for negative z, an unrealistic situation for traits such as body size or bone length, which cannot take on negative values. Nevertheless, if the mean of a distribution is sufficiently greater than zero, the theoretical incidence of negative values is minuscule and not problematical. It should also be emphasized that the normal distribution is a continuous function, giving positive values for noninteger values of z. It is, therefore, not strictly applicable to meristic traits such as egg number or spine count, although it provides a close approximation when the number of classes is large.",
+      "source_page": 44,
+      "printed_page": 24,
+      "source_block_ids": [
+        "p44:b6",
+        "p45:b2"
+      ],
+      "bbox": [
+        25.0,
+        1474.0,
+        986.0,
+        1564.0
+      ],
+      "source_page_end": 45
+    },
+    {
+      "type": "discussion",
+      "content": "It is often convenient to work with a standardized form of Equation 2.10. A standard normal deviate, $ z' = (z - \\mu)/\\sigma $, is the deviation of a measure from the population mean in units of standard deviations. Applying a useful property of distribution theory in the following example, we show that if z is normally distributed with mean $ \\mu $ and variance $ \\sigma^2 $, then $ z' $ is normal with zero mean and unit variance, i.e.,",
+      "source_page": 45,
+      "printed_page": 25,
+      "source_block_ids": [
+        "p45:b3"
+      ],
+      "bbox": [
+        148.0,
+        375.0,
+        1107.0,
+        590.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter2_formula025]]",
+      "source_page": 45,
+      "printed_page": 25,
+      "source_block_ids": [
+        "p45:b4"
+      ],
+      "bbox": [
+        447.0,
+        565.0,
+        810.0,
+        646.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter2:4]]",
+      "source_page": 45,
+      "source_block_ids": [
+        "p45:b6",
+        "p45:b7",
+        "p45:b8",
+        "p45:b9",
+        "p45:b10"
+      ],
+      "bbox": [
+        203.0,
+        744.0,
+        1066.0,
+        828.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Because the normal distribution is symmetrical, the third moment ( $ \\mu_{3} $) is equal to zero. The fourth moment has an expected value equal to $ 3\\sigma^{4} $. Thus, if we let Kur(z) be the sample estimate of $ \\mu_{4} $, where Kur denotes kurtosis, the index",
+      "source_page": 45,
+      "printed_page": 25,
+      "source_block_ids": [
+        "p45:b11"
+      ],
+      "bbox": [
+        171.0,
+        1335.0,
+        1131.0,
+        1455.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter2_formula028]]",
+      "source_page": 45,
+      "printed_page": 25,
+      "source_block_ids": [
+        "p45:b12"
+      ],
+      "bbox": [
+        493.0,
+        1458.0,
+        814.0,
+        1536.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:2.2]]",
+      "source_page": 46,
+      "printed_page": 26,
+      "source_block_ids": [
+        "p46:b3"
+      ],
+      "bbox": [
+        99.0,
+        568.0,
+        965.0,
+        651.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where",
+      "source_page": 46,
+      "printed_page": 26,
+      "source_block_ids": [
+        "p46:b4"
+      ],
+      "bbox": [
+        48.0,
+        690.0,
+        135.0,
+        723.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter2_formula029]]",
+      "source_page": 46,
+      "printed_page": 26,
+      "source_block_ids": [
+        "p46:b5"
+      ],
+      "bbox": [
+        236.0,
+        751.0,
+        811.0,
+        838.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "provides a measure of the peakedness of a distribution. For a truly normal distribution, $ k_{4} = 0 $. A distribution with a high narrow peak relative to the normal $ (k_{4} > 0) $ is said to be leptokurtic. A broader peak than normal $ (k_{4} < 0) $ is referred to as platykurtic.",
+      "source_page": 46,
+      "printed_page": 26,
+      "source_block_ids": [
+        "p46:b7"
+      ],
+      "bbox": [
+        42.0,
+        862.0,
+        1003.0,
+        1013.0
+      ]
     }
   ]
 }

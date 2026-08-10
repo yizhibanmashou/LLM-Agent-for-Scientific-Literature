@@ -2,47 +2,219 @@
   "id": "Genetics_chapter18_013",
   "metadata": {
     "chapter": "Genetics_chapter18",
-    "section": "Introduction",
+    "section": "FULL-SIB ANALYSIS",
     "subsections": [
       "Nested Analysis of Variance"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter18_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "18.3"
-    ],
-    "section_level_1": "Introduction",
+    "section_level_1": "FULL-SIB ANALYSIS",
     "section_level_2": "Nested Analysis of Variance",
     "heading_path": [
-      "Introduction",
+      "FULL-SIB ANALYSIS",
       "Nested Analysis of Variance"
     ],
-    "display_heading": "Nested Analysis of Variance",
-    "table_reference_keys": [
-      "chapter18:18.3"
-    ]
+    "display_heading": "FULL-SIB ANALYSIS / Nested Analysis of Variance",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 587,
+      "printed_page": 567,
+      "source_block_ids": [
+        "p587:b3"
+      ],
+      "bbox": [
+        70.0,
+        340.0,
+        425.0,
+        378.0
+      ],
+      "raw_text": "Nested Analysis of Variance"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "As with one-way ANOVA, estimates of the variance components can be obtained by the method of moments, i.e., by partitioning the total observed sum of squares into components, writing the expected mean squares as linear functions of the variance components, equating the observed mean squares to their expectations, and solving for the variances. Let $ \\overline{z}_{ij} $ be the mean phenotype of full-sib family $ i $, $ \\overline{z}_{i} $ be the mean phenotype of progeny of sire i, and $ \\overline{z} $ be the grand mean of the $ z_{ijk} $. The total sum of squared deviations of the $ z_{ijk} $ from $ \\overline{z} $ can be partitioned into components describing deviations of observed sire means from the grand mean, deviations of the full-sib family means from their sire group means, and deviations of individual measures from their full-sib family means ([[SEE_TABLE:18.3]])."
+      "content": "As with one-way ANOVA, estimates of the variance components can be obtained by the method of moments, i.e., by partitioning the total observed sum of squares into components, writing the expected mean squares as linear functions of the variance components, equating the observed mean squares to their expectations, and solving for the variances. Let $ \\overline{z}_{ij} $ be the mean phenotype of full-sib family $ ij $, $ \\overline{z}_i $ be the mean phenotype of progeny of sire $ i $, and $ \\overline{z} $ be the grand mean of the $ z_{ijk} $. The total sum of squared deviations of the $ z_{ijk} $ from $ \\overline{z} $ can be partitioned into components describing deviations of observed sire means from the grand mean, deviations of the full-sib family means from their sire group means, and deviations of individual measures from their full-sib family means (Table 18.3).",
+      "source_page": 587,
+      "printed_page": 567,
+      "source_block_ids": [
+        "p587:b4"
+      ],
+      "bbox": [
+        61.0,
+        381.0,
+        1024.0,
+        723.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The variance-component estimators are given by, $$ \\mathrm{Var}(s)=\\frac{\\mathrm{MS}_{s}-\\mathrm{MS}_{e}-(k_{2}/k_{1})(\\mathrm{MS}_{d}-\\mathrm{MS}_{e})}{k_{3}} $$ $$ Var(d)=\\frac{MS_{d}-MS_{e}}{k_{1}} $$ $$ Var(e)=MS_{e} $$ where $ k_{1} $, $ k_{2} $, and $ k_{3} $ are functions of the experimental design (equal to n, n, and Mn under a completely balanced design, where n is the number of offspring per full-sib family, and M is the number of dams per sire). [[SEE_TABLE:18.3]] gives the general expressions for these quantities."
+      "content": "The variance-component estimators are given by,",
+      "source_page": 587,
+      "printed_page": 567,
+      "source_block_ids": [
+        "p587:b5"
+      ],
+      "bbox": [
+        114.0,
+        704.0,
+        705.0,
+        751.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "By analogy with Equation 18.13, the intraclass correlations for paternal half sibs and full sibs are $$ t_{\\mathrm{PHS}}=\\frac{\\mathrm{Cov}(\\mathrm{PHS})}{\\mathrm{Var}(z)}=\\frac{\\mathrm{Var}(s)}{\\mathrm{Var}(z)} $$ $$ t_{\\mathrm{FS}}=\\frac{\\mathrm{Cov}(\\mathrm{FS})}{\\mathrm{Var}(z)}=\\frac{\\mathrm{Var}(s)+\\mathrm{Var}(d)}{\\mathrm{Var}(z)} $$ As in the half-sib design, $4t_{\\mathrm{PHS}}$ provides the best estimate of $h^{2}$ since it is not inflated by dominance and/or maternal effects. If, however, $\\mathrm{Var}(s)$ and $\\mathrm{Var}(d)$ are found to be approximately equal, then dominance and maternal effects can be ruled out as significant causal sources of covariance. In that case, the average"
+      "content": "[[FORMULA:Genetics_chapter18_formula054]]",
+      "source_page": 587,
+      "printed_page": 567,
+      "source_block_ids": [
+        "p587:b6"
+      ],
+      "bbox": [
+        269.0,
+        765.0,
+        805.0,
+        841.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Factor</td><td style='text-align: center; word-wrap: break-word;'>df</td><td style='text-align: center; word-wrap: break-word;'>Sums of Squares</td><td style='text-align: center; word-wrap: break-word;'>MS</td><td style='text-align: center; word-wrap: break-word;'>E(MS)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sires</td><td style='text-align: center; word-wrap: break-word;'>N-1</td><td style='text-align: center; word-wrap: break-word;'>$ \\sum_{i=1}^{N}\\sum_{j=1}^{M_{i}}n_{ij}(\\overline{z}_{i}-\\overline{z})^{2} $</td><td style='text-align: center; word-wrap: break-word;'>SS_ s /df_ s </td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{e}^{2}+k_{2}\\sigma_{d}^{2}+k_{3}\\sigma_{s}^{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Dams (sires)</td><td style='text-align: center; word-wrap: break-word;'>N($ \\overline{M} $-1)</td><td style='text-align: center; word-wrap: break-word;'>$ \\sum_{i=1}^{N}\\sum_{j=1}^{M_{i}}n_{ij}(\\overline{z}_{ij}-\\overline{z}_{i})^{2} $</td><td style='text-align: center; word-wrap: break-word;'>SS_ d /df_ d </td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{e}^{2}+k_{1}\\sigma_{d}^{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sibs (dams)</td><td style='text-align: center; word-wrap: break-word;'>T-N $ \\overline{M} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sum_{i=1}^{N}\\sum_{j=1}^{M_{i}}\\sum_{k=1}^{n_{ij}}(z_{ijk}-\\overline{z}_{ij})^{2} $</td><td style='text-align: center; word-wrap: break-word;'>SS_ e /df_ e </td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{e}^{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Total</td><td style='text-align: center; word-wrap: break-word;'>T-1</td><td style='text-align: center; word-wrap: break-word;'>$ \\sum_{i=1}^{N}\\sum_{j=1}^{M_{i}}\\sum_{k=1}^{n_{ij}}(z_{ijk}-\\overline{z})^{2} $</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td colspan=\"4\">$ k_{1}=\\frac{1}{N(\\overline{M}-1)}\\left(T-\\sum_{i=1}^{N}\\frac{\\sum_{j}^{M_{i}}n_{ij}^{2}}{n_{i}}\\right) $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>1</td><td colspan=\"3\">$ \\left(\\sum_{i=1}^{N}\\sum_{j}^{M_{i}}n_{ij}^{2},\\sum_{i=1}^{N}\\sum_{j}^{M_{i}}n_{ij}^{2}\\right) $</td></tr></table> $$ k_{2}=\\frac{1}{N-1}\\left(\\sum_{i=1}^{N}\\frac{\\sum_{j}^{M_{i}}n_{ij}^{2}}{n_{i}}-\\frac{\\sum_{i}^{N}\\sum_{j}^{M_{i}}n_{ij}^{2}}{T}\\right) $$ $$ k_{3}=\\frac{1}{N-1}\\left(T-\\frac{\\sum_{i}^{N}n_{i}^{2}}{N}\\right) $$"
+      "content": "[[FORMULA:Genetics_chapter18_formula055]]",
+      "source_page": 587,
+      "printed_page": 567,
+      "source_block_ids": [
+        "p587:b8"
+      ],
+      "bbox": [
+        266.0,
+        842.0,
+        529.0,
+        917.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note: T is the total number of individuals in the experiment, $\\overline{M}$ is the mean number of dams/sire, and $n_{i}$ is the total number of offspring of the ith sire. MS denotes an observed mean square, $E(\\mathrm{MS})$ denotes its expected value, and df denotes degrees of freedom. of $ \\mathrm{Var}(s) $ and $ \\mathrm{Var}(d) $ provides an estimate of $ \\sigma_{A}^{2}/4 $, and when multiplied by 4/Var(z) provides an estimate of $ h^{2} $. Ideally, such an average should weight the two variance-component estimates by the inverse of their sampling variances (Grossman and Norton 1981)."
+      "content": "[[FORMULA:Genetics_chapter18_formula056]]",
+      "source_page": 587,
+      "printed_page": 567,
+      "source_block_ids": [
+        "p587:b10"
+      ],
+      "bbox": [
+        269.0,
+        920.0,
+        437.0,
+        957.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ k_{1} $, $ k_{2} $, and $ k_{3} $ are functions of the experimental design (equal to n, n, and Mn under a completely balanced design, where n is the number of offspring per full-sib family, and M is the number of dams per sire). Table 18.3 gives the general expressions for these quantities.",
+      "source_page": 587,
+      "printed_page": 567,
+      "source_block_ids": [
+        "p587:b12"
+      ],
+      "bbox": [
+        53.0,
+        976.0,
+        1012.0,
+        1123.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "By analogy with $ \\hat{E} $ equation 18.13, the intraclass correlations for paternal half sibs and full sibs are",
+      "source_page": 587,
+      "printed_page": 567,
+      "source_block_ids": [
+        "p587:b13"
+      ],
+      "bbox": [
+        50.0,
+        1105.0,
+        1011.0,
+        1189.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula057]]",
+      "source_page": 587,
+      "printed_page": 567,
+      "source_block_ids": [
+        "p587:b14"
+      ],
+      "bbox": [
+        311.0,
+        1192.0,
+        657.0,
+        1269.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter18_formula058]]",
+      "source_page": 587,
+      "printed_page": 567,
+      "source_block_ids": [
+        "p587:b16"
+      ],
+      "bbox": [
+        324.0,
+        1272.0,
+        737.0,
+        1353.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "As in the half-sib design, $ 4t_{PHS} $ provides the best estimate of $ h^{2} $ since it is not inflated by dominance and/or maternal effects. If, however, $ \\mathrm{Var}(s) $ and $ \\mathrm{Var}(d) $ are found to be approximately equal, then dominance and maternal effects can be ruled out as significant causal sources of covariance. In that case, the average",
+      "source_page": 587,
+      "printed_page": 567,
+      "source_block_ids": [
+        "p587:b18"
+      ],
+      "bbox": [
+        41.0,
+        1362.0,
+        1004.0,
+        1515.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:18.3]]",
+      "source_page": 588,
+      "printed_page": 568,
+      "source_block_ids": [
+        "p588:b3"
+      ],
+      "bbox": [
+        129.0,
+        199.0,
+        1103.0,
+        868.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "of $ \\operatorname{Var}(s) $ and $ \\operatorname{Var}(d) $ provides an estimate of $ \\sigma_{A}^{2}/4 $, and when multiplied by $ 4/\\operatorname{Var}(z) $ provides an estimate of $ h^{2} $. Ideally, such an average should weight the two variance-component estimates by the inverse of their sampling variances (Grossman and Norton 1981).",
+      "source_page": 588,
+      "printed_page": 568,
+      "source_block_ids": [
+        "p588:b7"
+      ],
+      "bbox": [
+        150.0,
+        1219.0,
+        1113.0,
+        1367.0
+      ]
     }
   ]
 }

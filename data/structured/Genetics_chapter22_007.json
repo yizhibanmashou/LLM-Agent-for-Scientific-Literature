@@ -2,34 +2,421 @@
   "id": "Genetics_chapter22_007",
   "metadata": {
     "chapter": "Genetics_chapter22",
-    "section": "Genotype $ \\times $ Environment Interaction",
+    "section": "FURTHER CHARACTERIZATION OF INTERACTION EFFECTS",
     "subsections": [
-      "Relationship to Falconer's Correlation Across Environments"
+      "Joint-regression Analysis"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter22_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Genotype $ \\times $ Environment Interaction",
-    "section_level_2": "Relationship to Falconer's Correlation Across Environments",
+    "section_level_1": "FURTHER CHARACTERIZATION OF INTERACTION EFFECTS",
+    "section_level_2": "Joint-regression Analysis",
     "heading_path": [
-      "Genotype $ \\times $ Environment Interaction",
-      "Relationship to Falconer's Correlation Across Environments"
+      "FURTHER CHARACTERIZATION OF INTERACTION EFFECTS",
+      "Joint-regression Analysis"
     ],
-    "display_heading": "Relationship to Falconer's Correlation Across Environments"
+    "display_heading": "FURTHER CHARACTERIZATION OF INTERACTION EFFECTS / Joint-regression Analysis",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 684,
+      "printed_page": 664,
+      "source_block_ids": [
+        "p684:b9"
+      ],
+      "bbox": [
+        148.0,
+        1408.0,
+        469.0,
+        1442.0
+      ],
+      "raw_text": "Joint-regression Analysis"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "There is a close relationship between the ANOVA approach to genotype $ \\times $ environment interaction and Falconer's genetic correlation across environments (Robertson 1959b; Dickerson 1962; Yamada 1962, Yamada et al. 1988). Here we show the connection between Falconer's fixed-effects model and the random-effects interpretation (Equation 22.9). For the time being, we assume that the total genetic variance is the same in different environments, so that Falconer's correlation is given by Equation 22.7b, which is expressed in terms of the same variance components that we have used in the mixed model. Substituting from Equations 22.10a,b, the equivalent expression in terms of the random-effects model is $$ \\rho_{\\times}=\\frac{\\sigma_{\\widetilde{G}}^{2}+[(2-N_{E})/N_{E}]\\sigma_{\\widetilde{I}}^{2}}{\\sigma_{\\widetilde{G}}^{2}+\\sigma_{\\widetilde{I}}^{2}} $$ which reduces to $$ \\rho_{\\times}=\\frac{\\sigma_{\\widetilde{G}}^{2}}{\\sigma_{\\widetilde{G}}^{2}+\\sigma_{\\widetilde{I}}^{2}} $$ when there are only two environments. Written in this manner, for analyses involving only two environments, $ \\rho_x $ can be interpreted as an intraclass correlation of genotypic values in the different environments. Thus, a third way of computing the genetic correlation across two environments is to perform a conventional two-way ANOVA on the data, computing the variance components by the method of moments, and substituting the appropriate values into either Equation 22.7b or 22.12b. One advantage of the ANOVA approach is that the $ F $ ratio, $ MS_I/MS_e $, provides an explicit test of the hypothesis of no genotype $ \\times $ environment interaction."
+      "content": "An alternative approach to Equation 22.13a is to let the mean performance of all genotypes serve as a bioassay of the overall suitability of different environments, allowing each genotype's interaction effects to be expressed as a function of average population performance,",
+      "source_page": 684,
+      "printed_page": 664,
+      "source_block_ids": [
+        "p684:b10",
+        "p685:b2"
+      ],
+      "bbox": [
+        149.0,
+        1445.0,
+        1111.0,
+        1546.0
+      ],
+      "source_page_end": 685
     },
     {
       "type": "discussion",
-      "content": "Equation 22.7b, or equivalently Equation 22.12a, can also be used in experiments employing multiple ($ N_{E} > 2 $) environments to estimate the average degree of genetic correlation across all pairs of environments. Following the logic developed above, $ \\rho_{x} $ can be negative, but geometric constraints make the chance of this very small when $ N_{E} $ is large."
+      "content": "[[FORMULA:Genetics_chapter22_formula024]]",
+      "source_page": 685,
+      "printed_page": 665,
+      "source_block_ids": [
+        "p685:b3"
+      ],
+      "bbox": [
+        419.0,
+        195.0,
+        678.0,
+        231.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A slight complication arises when the among-family variance differs among environments, as this causes the interaction variance extracted from two-way ANOVA to be inflated by scale effects. The resultant downward bias in $ \\rho_{x} $ can be corrected by subtracting from the denominator of Equation 22.12a (or 22.7b) the variance of the environment-specific genetic standard deviations (Robertson 1959b, Dickerson 1962, Itoh and Yamada 1990, Muir et al. 1992). To apply this correction, one-way ANOVAs need to be performed on the data for each of the $ N_{E} $ environments. In each case, the among-family component of variance is obtained by the method of moments. Square roots are then taken of each of the $ N_{E} $ estimates, and the variance of the among-family standard deviations is subtracted from the denominator of the preliminary estimate of $ \\rho_{\\times} $ to provide a scale-independent estimate of the correlation across environments."
+      "content": "where $ \\mu_{i} $ is the mean phenotype of all genotypes in environment i. This expression has the advantage that all of the complex (and perhaps unobservable) features of the environment are integrated into a single measure, the average environmental effect $ E_{i} = \\mu_{i} - \\mu $. Recalling Equation 22.1, and substituting observed for expected values, this definition of $ I_{i,i} $ leads to the relationship",
+      "source_page": 685,
+      "printed_page": 665,
+      "source_block_ids": [
+        "p685:b5"
+      ],
+      "bbox": [
+        67.0,
+        254.0,
+        1029.0,
+        417.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter22_formula025]]",
+      "source_page": 685,
+      "printed_page": 665,
+      "source_block_ids": [
+        "p685:b6"
+      ],
+      "bbox": [
+        380.0,
+        443.0,
+        713.0,
+        483.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ \\widehat{E}_i = (\\overline{z}_i - \\overline{z}_..) $. Thus, a regression of environment-specific mean phenotypes for the $ j $th genetic group on the general environmental effects has an intercept equal to $ \\overline{z}_j $ and a slope equal to $ (1 + B_j) $, where $ B_j $ is an estimate of $ \\beta_j $.",
+      "source_page": 685,
+      "printed_page": 665,
+      "source_block_ids": [
+        "p685:b8"
+      ],
+      "bbox": [
+        67.0,
+        506.0,
+        1023.0,
+        610.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "This idea of partitioning genotype-specific interactions into a component explained by mean population performance and a residual component was first suggested by Yates and Cochran (1938). Now known as joint-regression analysis, it was largely neglected until Finlay and Wilkinson (1963) applied it to varieties of barley. Since then it has been used widely in the analysis of crop cultivars. Statistical aspects of this method are covered in Eberhart and Russell (1966), Perkins and Jinks (1968), A. J. Wright (1971; 1976a,b), and Freeman (1973). J. Hill (1975) gives an overview of early applications. For an extension that includes regression on genotypic means $ (G_j) $ as well as on the cross-product $ G_j E_i $ (see A. J. Wright 1971).",
+      "source_page": 685,
+      "printed_page": 665,
+      "source_block_ids": [
+        "p685:b9"
+      ],
+      "bbox": [
+        66.0,
+        608.0,
+        1027.0,
+        926.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Application of Equation 22.14 to all genotypes in a genotype × environment analysis provides a basis for ranking the genotypes with respect to their responsiveness to environmental change. $ B_{j} = 0 $ implies that the average response of genotype j to the environment is the same as the mean response of the population of genotypes in the analysis. $ B_{j} > 0 $ implies a stronger than average response, whereas $ -1 < B_{j} < 0 $ implies a weaker than average response. If $ B_{j} = -1 $, the genotype's mean performance is completely uncorrelated with that of the population mean, and $ B_{j} < -1 $ implies that the genotype tends to respond to environmental change in a direction contrary to the average genotype in the population.",
+      "source_page": 685,
+      "printed_page": 665,
+      "source_block_ids": [
+        "p685:b10"
+      ],
+      "bbox": [
+        64.0,
+        929.0,
+        1025.0,
+        1248.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "It is important to note that $B_j$ is only a measure of a genotype's tendency to respond to environmental change in a manner parallel to the population mean. Two genotypes with identical $B$ coefficients may in fact have rather different sets of $I_{ij}$. For example, the first genotype might perform above average in environments where the second genotype is below average and vice-versa, or the residual variance around the regression ($\\sigma_{\\epsilon j}^2$) might differ between the genotypes. Thus, $\\sigma_{\\epsilon j}^2$ provides additional information about a genotype's response to the environment, a larger value of $\\sigma_{\\epsilon j}^2$ implying that the genotype's performance is only weakly correlated with the overall pattern in the population.",
+      "source_page": 685,
+      "printed_page": 665,
+      "source_block_ids": [
+        "p685:b11"
+      ],
+      "bbox": [
+        61.0,
+        1250.0,
+        1024.0,
+        1544.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:22.2]]",
+      "source_page": 686,
+      "printed_page": 666,
+      "source_block_ids": [
+        "p686:b4"
+      ],
+      "bbox": [
+        179.0,
+        619.0,
+        1040.0,
+        800.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In summary, joint-regression analysis can be used to obtain estimates of three properties of each genetic group in a genotype × environment analysis: a measure of mean performance ( $ \\widehat{G}_{j} = \\overline{z}_{.j} - \\overline{z}_{..} $), a measure of relative responsiveness to environmental change ( $ B_{j} $), and a measure of consistency of response relative to the linear model ( $ \\sigma_{\\epsilon j}^{2} $).",
+      "source_page": 686,
+      "printed_page": 666,
+      "source_block_ids": [
+        "p686:b5"
+      ],
+      "bbox": [
+        132.0,
+        863.0,
+        1090.0,
+        1029.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Finlay and Wilkinson (1963) evaluated the yields of 277 varieties of barley, obtained throughout the world, in seven environments. Figure 22.2 (left) illustrates the joint-regression analyses for four of these varieties on the environment-specific means $ \\overline{z}_{i} $. Variety A responds to environmental change in much the same way as average members of the sample $ (B_{j} = -0.10) $, but produces above average yields in all environments. On the other hand, variety C is nearly unresponsive to environmental change $ (B_{j} = -0.86) $ and has a lower than average yield in benign environments, but a higher than average yield in harsh environments. The joint distribution of genotypic mean performances $ (\\overline{z}_{j}) $ and environmental sensitivity $ (B_{j}) $ for all 277 lines (Figure 22.2, right) shows that: (1) all lines exhibit the same directional response to the environment (all $ B_{j} $ are > -1), and (2) no high performing lines have very high or very low responsiveness to the environment (as $ \\overline{z}_{j} $ becomes high, the range of $ B_{j} $ becomes quite narrow, with a mean B only slightly less than zero). Conversely, low performing lines display a very wide range of responses. Thus, although $ \\overline{z}_{j} $ and $ B_{j} $ are essentially uncorrelated in this study, they are certainly not independent.",
+      "source_page": 686,
+      "printed_page": 666,
+      "source_block_ids": [
+        "p686:b6"
+      ],
+      "bbox": [
+        132.0,
+        1030.0,
+        1094.0,
+        1545.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:22.3]]",
+      "source_page": 687,
+      "printed_page": 667,
+      "source_block_ids": [
+        "p687:b3"
+      ],
+      "bbox": [
+        102.0,
+        861.0,
+        970.0,
+        1158.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Application of joint-regression analysis to other types of organisms has often yielded a positive correlation between mean performance ( $ \\overline{z}_{.j} $) and $ B_{j} $ (Eberhart and Russell 1966, Perkins and Jinks 1968, Fripp and Caten 1973, Jinks and Connolly 1973, J. Hill 1975, Zuberi and Gale 1976, Jinks and Pooni 1982, Garbutt and Zangerl 1983). The existence of a such a genetic correlation between environmental sensitivity and mean performance can have profound evolutionary consequences, as can be seen by referring to Figure 22.3. For example, if directional selection operates in a positive direction in an environment that magnifies the expression of the trait, a steep reaction norm (high phenotypic plasticity) will evolve as a correlated response. A subsequent change of the environment toward poorer conditions would then result in a substantial reduction in the mean phenotype, to levels lower than would be exhibited by the genotype best adapted to the poor environment (but poorly adapted to favorable environments). Simmonds (1981) reviews evidence that improvement of agricultural practices combined with selection in the improved environments has led to the inadvertent selection of genotypes whose phenotypic expression is highly responsive to environmental change.",
+      "source_page": 687,
+      "printed_page": 667,
+      "source_block_ids": [
+        "p687:b4",
+        "p688:b2"
+      ],
+      "bbox": [
+        49.0,
+        1221.0,
+        1016.0,
+        1541.0
+      ],
+      "source_page_end": 688
+    },
+    {
+      "type": "discussion",
+      "content": "The usual approach to estimating the $ \\beta_{j} $ has been to simply perform a least-squares regression of the $ \\overline{z}_{ij} $ on the $ \\overline{z}_{i} $, although this can lead to slightly biased estimates of the regression coefficient $ \\beta_{j} $. Due to the fact that $ (\\overline{z}_{i} - \\overline{z}_{\\cdot}) $ is only an estimate of the true environmental effect $ E_{i} $, the variance of the latter, which appears in the denominator of the regression coefficient $ B_{j} $, is inflated by sampling variance. This source of bias does not influence the rankings of the genotypes with respect to $ B_{j} $, since the covariance is unaffected (Hardwick and Wood 1972). However, somewhat more problematical is the fact that $ \\overline{z}_{i} $. contains a contribution from $ \\overline{z}_{ij} $. This contribution inflates the correlation between the two measures, to a degree that differs from genotype to genotype depending on their contributions to the $ \\overline{z}_{i} $, and it can be of some significance when the number of genetic groups is small.",
+      "source_page": 688,
+      "printed_page": 668,
+      "source_block_ids": [
+        "p688:b3"
+      ],
+      "bbox": [
+        138.0,
+        362.0,
+        1100.0,
+        747.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A modification suggested by A. J. Wright (1976b) eliminates the latter problem by regressing the jth genotypic means on an index of the environment based on the means of the other $ (N_{G}-1) $ genotypes,",
+      "source_page": 688,
+      "printed_page": 668,
+      "source_block_ids": [
+        "p688:b4"
+      ],
+      "bbox": [
+        139.0,
+        747.0,
+        1100.0,
+        847.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter22_formula026]]",
+      "source_page": 688,
+      "printed_page": 668,
+      "source_block_ids": [
+        "p688:b5"
+      ],
+      "bbox": [
+        452.0,
+        893.0,
+        786.0,
+        968.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where",
+      "source_page": 688,
+      "printed_page": 668,
+      "source_block_ids": [
+        "p688:b7"
+      ],
+      "bbox": [
+        143.0,
+        1017.0,
+        228.0,
+        1047.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter22_formula027]]",
+      "source_page": 688,
+      "printed_page": 668,
+      "source_block_ids": [
+        "p688:b8"
+      ],
+      "bbox": [
+        443.0,
+        1058.0,
+        797.0,
+        1128.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "with $ \\text{Var}(\\overline{z}_{ij}) $ being the variance of the environment-specific mean phenotypes for genotype j, $ \\text{Cov}(\\overline{z}_{ij}, \\overline{z}_{i.}) $ being the covariance of the performance of the jth genotype on estimates of the environmental effects based on the remaining ( $ N_G - 1 $) genotypes, and $ \\overline{C} $ being the mean of the $ N_G $ estimates of the $ C_j $. The significance of each regression can be tested by evaluating the correlation",
+      "source_page": 688,
+      "printed_page": 668,
+      "source_block_ids": [
+        "p688:b10"
+      ],
+      "bbox": [
+        142.0,
+        1162.0,
+        1105.0,
+        1327.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter22_formula028]]",
+      "source_page": 688,
+      "printed_page": 668,
+      "source_block_ids": [
+        "p688:b11"
+      ],
+      "bbox": [
+        452.0,
+        1371.0,
+        791.0,
+        1461.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "against its critical value with $ (N_{E}-2) $ degrees of freedom.",
+      "source_page": 688,
+      "printed_page": 668,
+      "source_block_ids": [
+        "p688:b13"
+      ],
+      "bbox": [
+        147.0,
+        1510.0,
+        849.0,
+        1547.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:22.2]]",
+      "source_page": 689,
+      "printed_page": 669,
+      "source_block_ids": [
+        "p689:b3"
+      ],
+      "bbox": [
+        63.0,
+        227.0,
+        1020.0,
+        911.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In effect, joint-regression analysis partitions the interaction sum of squares in a two-way ANOVA into two components — one due to the heterogeneity of regressions (variance of the $ B_j $), and one due to still unexplained interaction variation (variance of the $ \\epsilon_{ij} $) (Table 22.2). This partitioning follows directly from Equation 22.13b and the fact that under a least-squares approach the residual deviations ( $ \\epsilon_{ij} $) are uncorrelated with the environmental effects. There is, of course, no reason for pursuing joint regression if the total interaction variance is not significant, but if the estimate of $ \\sigma_I^2 $ is significant, then one or both of its components must be as well.",
+      "source_page": 689,
+      "printed_page": 669,
+      "source_block_ids": [
+        "p689:b4"
+      ],
+      "bbox": [
+        63.0,
+        969.0,
+        1024.0,
+        1256.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The variance associated with heterogeneity of regressions can be tested for significance by use of the $F$ ratio of the total interaction mean square and the residual interaction mean square, $MS_I/MS_\\epsilon$, as under the null hypothesis $\\sigma_I^2 = \\sigma_\\epsilon^2$ and the expected mean squares are identical. The residual interaction effects can be tested for significance ($\\sigma_\\epsilon^2 > 0$) using the ratio $MS_\\epsilon/MS_e$. If the regression mean square alone is significant, then within the limits of sampling error all of the interaction effects are predicted by linear regressions on the environmental values. If only the residual mean square term is significant, then there is no general linear relationship between the interaction effects and environmental values, and the joint-regression analysis has offered no further insight into the basis of the interaction effects.",
+      "source_page": 689,
+      "printed_page": 669,
+      "source_block_ids": [
+        "p689:b5",
+        "p690:b2"
+      ],
+      "bbox": [
+        61.0,
+        1258.0,
+        1024.0,
+        1523.0
+      ],
+      "source_page_end": 690
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter22:3]]",
+      "source_page": 690,
+      "source_block_ids": [
+        "p690:b3",
+        "p690:b4",
+        "p690:b5"
+      ],
+      "bbox": [
+        179.0,
+        323.0,
+        1042.0,
+        505.0
+      ]
     }
   ]
 }

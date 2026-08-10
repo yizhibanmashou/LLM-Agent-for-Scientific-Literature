@@ -2,38 +2,119 @@
   "id": "Genetics_chapter16_015",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
+    "section": "THE HASEMAN-ELSTON REGRESSION",
     "subsections": [
-      "Power and Improvements"
+      "Estimating the Number of Marker Genes ibd"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Power and Improvements",
+    "section_level_1": "THE HASEMAN-ELSTON REGRESSION",
+    "section_level_2": "Estimating the Number of Marker Genes ibd",
     "heading_path": [
-      "Introduction",
-      "Power and Improvements"
+      "THE HASEMAN-ELSTON REGRESSION",
+      "Estimating the Number of Marker Genes ibd"
     ],
-    "display_heading": "Power and Improvements"
+    "display_heading": "THE HASEMAN-ELSTON REGRESSION / Estimating the Number of Marker Genes ibd",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 530,
+      "printed_page": 510,
+      "source_block_ids": [
+        "p530:b6"
+      ],
+      "bbox": [
+        116.0,
+        820.0,
+        676.0,
+        854.0
+      ],
+      "raw_text": "Estimating the Number of Marker Genes ibd"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "A number of authors have examined the power of the Haseman-Elston test (Robertson 1973; Blackwelder and Elston 1974, 1982; Amos and Elston 1989; Götz and Ollivier 1992), and large-sample approximations for power have been developed by Blackwelder and Elston (1982) and Amos and Elston (1989). The general conclusion from these studies is that the standard Haseman-Elston test has poor power in many settings. For example, Amos and Elston (1989) found that 320 full-sib pairs are required to have a 90% chance of detecting (at significance level"
+      "content": "An obvious question is how to determine the number of alleles that are ibd at a given marker. If both parents are different marker heterozygotes (i.e., the family is fully informative), ibd status can be determined with certainty in all of their offspring. However, other relative pairs are problematic, as ibd status must be estimated rather than determined with certainty. In the absence of pedigree information, Haseman and Elston (1972) and Elston (1990b) suggested the following general estimator of $ \\pi_{jm} $ for any pair of relatives,",
+      "source_page": 530,
+      "printed_page": 510,
+      "source_block_ids": [
+        "p530:b7"
+      ],
+      "bbox": [
+        115.0,
+        861.0,
+        1078.0,
+        1092.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "$ \\alpha = 0.05 $, a major gene with a heritability of 0.5 (hence accounting for 50% of the phenotypic variance) when the marker and major gene are completely linked. This number increases to 778 sib pairs if the marker and major gene are separated by recombination fraction $ c = 0.1 $. The sample size increases as more distant relative pairs are considered, requiring 1,264 grandparent-grandchild pairs; 1,980 half-sib pairs; and 2,445 avuncular pairs. Since these power calculations assume that the fraction $ \\pi_{m} $ of marker alleles ibid is known exactly, in reality, even more pairs are required as marker-uninformative pairs are discarded or $ \\pi_{m} $ is estimated for such pairs."
+      "content": "[[FORMULA:Genetics_chapter16_formula059]]",
+      "source_page": 530,
+      "printed_page": 510,
+      "source_block_ids": [
+        "p530:b8"
+      ],
+      "bbox": [
+        170.0,
+        1114.0,
+        940.0,
+        1187.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "While these numbers look bleak, the situation is not necessarily as bad with large sibships. In a sibship of size $s$, there are $s(s-1)/2$ pairwise comparisons, so that single families of 5, 10, and 25 sibs offer 10, 45, and 325 sib-pairs. The question remains as to whether all pairwise comparisons within a family are independent. There is some dispute on this point, with Hodge (1984) showing that the number of independent sib pairs approaches $(3/2)s-2$ for $s>4$. However, simulation studies have suggested that all pairwise combinations of sibs within a family can often be treated as independent pairs (Blackwelder and Elston 1982, 1985; Amos et al. 1989; Götz and Ollivier 1992; but see Daly and Lander 1996). Wilson and Elston (1993) show that while all pairs can be used, for small sample sizes the appropriate degrees of freedom for a $t$ test for the regression is given by $(\\sum_{i}[s_{i}-1])-2$, rather than $(\\sum_{i}s_{i}[s_{i}-1]/2)-2$, where $s_{i}$ is the number of sibs in family $i$. Thus, the H-E test may not be unreasonable for modest sample sizes, provided one can obtain a few informative families with a large number of sibs."
+      "content": "where $f_{i}$ is the prior probability that the pair of relatives share $i$ genes ibd, and the $\\operatorname{Pr}(M|i)$ are the probabilities of the observed pair $M$ of marker genotypes given that the pair shares $i$ alleles ibd (Table 16.3). While easy to compute, one must exercise caution in the application of Equation 16.42, as it is rather sensitive to errors in the estimated marker allele frequencies (Babron et al. 1993). Risch (1990c) develops alternative ML estimators for $p_{jm}$ based on these probabilities, while Hu et al. (1995) show how to modify Equation 16.42 to accommodate sex-linked markers.",
+      "source_page": 530,
+      "printed_page": 510,
+      "source_block_ids": [
+        "p530:b10"
+      ],
+      "bbox": [
+        119.0,
+        1212.0,
+        1080.0,
+        1470.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Significant power gains are possible through the use of selective genotyping, wherein pairs are chosen based on extreme trait values in at least one member (Boehnke and Moll 1989, Carey and Williamson 1991, Cardon and Fulker 1994). For example, for a locus with associated heritability $ h^{2} = 0.3 $ at recombination frequency c = 0.1 from the marker, simulation studies by Cardon and Fulker (1994) found that the probability of detecting this locus using Haseman-Elston interval mapping (see below) and 250 sib-pairs is 0.28. Under selective genotyping, where the pairs are now chosen by having (at least) one sib with an extreme character value, the power increases to 0.57, 0.65, and 0.84 using 250 pairs with one sib in the uppermost 10%, 5%, and 1%, respectively, of the population."
+      "content": "The probability $ \\Pr(M \\mid i) $ of observing a given pair M of marker genotypes in two relatives given that they share i marker alleles ibd is computed as follows. If the two relatives share no alleles ibd, the frequencies of marker genotype pairs are given by the probability of drawing two such individuals at random. For example, the probability the pair has genotypes $ M_j M_j $ and $ M_j M_k $ is $ 2 \\cdot p_j^2 \\cdot 2 p_j p_k = 4 p_j^3 p_k $. If one allele is ibd between the pair of relatives, the shared allele is chosen at random (say $ M_j $ with probability $ p_j $) while the remaining allele in each relative is chosen at random. For the previous marker pair, the probability becomes $ p_j \\cdot (2 p_j p_k) = 2 p_j^2 p_k $. If both alleles are ibd, marker genotypes are identical and the probability of observing the pair equals the probability of observing one such genotype, i.e., $ p_i^2 $ for $ (M_i M_i, M_i M_i) $, $ 2 p_i p_j $ for $ (M_i M_j, M_i M_j) $. Using this logic, values for the seven different classes of paired marker genotypes can be computed (Table 16.3).",
+      "source_page": 530,
+      "printed_page": 510,
+      "source_block_ids": [
+        "p530:b11",
+        "p531:b2"
+      ],
+      "bbox": [
+        121.0,
+        1468.0,
+        1083.0,
+        1537.0
+      ],
+      "source_page_end": 531
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter16:4]]",
+      "source_page": 531,
+      "source_block_ids": [
+        "p531:b3",
+        "p531:b4",
+        "p531:b5",
+        "p531:b6",
+        "p531:b7"
+      ],
+      "bbox": [
+        121.0,
+        551.0,
+        992.0,
+        731.0
+      ]
     }
   ]
 }

@@ -2,54 +2,341 @@
   "id": "Genetics_chapter26_015",
   "metadata": {
     "chapter": "Genetics_chapter26",
-    "section": "Introduction",
+    "section": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS",
     "subsections": [
       "BLUP Estimates of Dominance Values"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter26_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
+    "section_level_1": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS",
     "section_level_2": "BLUP Estimates of Dominance Values",
     "heading_path": [
-      "Introduction",
+      "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS",
       "BLUP Estimates of Dominance Values"
     ],
-    "display_heading": "BLUP Estimates of Dominance Values"
+    "display_heading": "JOINT ESTIMATION OF SEVERAL VECTORS OF RANDOM EFFECTS / BLUP Estimates of Dominance Values",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 779,
+      "printed_page": 759,
+      "source_block_ids": [
+        "p779:b11"
+      ],
+      "bbox": [
+        38.0,
+        1418.0,
+        515.0,
+        1462.0
+      ],
+      "raw_text": "BLUP Estimates of Dominance Values"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "In animal breeding practices, most attention is generally given to the estimation of additive genetic values (breeding values) of individuals, since nonadditive effects are not transmitted to offspring in noninbreeding populations. However, in certain situations, the total genetic merit (additive plus nonadditive genetic values) can be exploited, as for example, when individuals can be cloned or full-sib families can be reliably reconstituted from frozen embryos."
+      "content": "In animal breeding practices, most attention is generally given to the estimation of additive genetic values (breeding values) of individuals, since nonadditive effects are not transmitted to offspring in noninbreeding populations. However, in certain situations, the total genetic merit (additive plus nonadditive genetic values) can be exploited, as for example, when individuals can be cloned or full-sib families can be reliably reconstituted from frozen embryos.",
+      "source_page": 779,
+      "printed_page": 759,
+      "source_block_ids": [
+        "p779:b12",
+        "p780:b2"
+      ],
+      "bbox": [
+        37.0,
+        1460.0,
+        998.0,
+        1546.0
+      ],
+      "source_page_end": 780
     },
     {
       "type": "discussion",
-      "content": "Here we let $\\mathbf{u}_1 = \\mathbf{a}$ and $\\mathbf{u}_2 = \\mathbf{d}$ represent vectors of additive and dominance genetic values, and we assume an outbred base population, as inbreeding produces a correlation between additive and dominance values. To expand from the purely additive model, the main modification that we require is a means for converting pedigree information into the covariance matrix of dominance effects. This idea has already been covered in Chapter 7, where we found that the covariance of dominance values for two individuals $i$ and $j$ is the product of the dominance genetic variance and the coefficient of fraternity, $\\sigma_D^2 \\Delta_{ij}$. From Equation 7.7, the latter is given by $$ \\Delta_{i j}=\\Theta_{g k}\\Theta_{h l}+\\Theta_{g l}\\Theta_{h k} $$ where $i$'s parents are indexed by $g$ and $h$ and $j$'s by $k$ and $l$, and as above, $\\Theta$ is the coefficient of coancestry. The dominance genetic relationship matrix D contains these coefficients of fraternity for the measured individuals. Recalling that the elements of $\\mathbf{A}$ are $2\\Theta_{ij}$, the off-diagonal elements of D can be computed as $$ D_{ij}=\\frac{A_{gk}A_{hl}+A_{gl}A_{hk}}{4} $$ whereas the diagonal elements are all $D_{ii}=1$."
+      "content": "Here we let $\\mathbf{u}_{1} = \\mathbf{a}$ and $\\mathbf{u}_{2} = \\mathbf{d}$ represent vectors of additive and dominance genetic values, and we assume an outbred base population, as inbreeding produces a correlation between additive and dominance values. To expand from the purely additive model, the main modification that we require is a means for converting pedigree information into the covariance matrix of dominance effects. This idea has already been covered in Chapter 7, where we found that the covariance of dominance values for two individuals $i$ and $j$ is the product of the dominance genetic variance and the coefficient of fraternity, $\\sigma_{D}^{2}\\Delta_{ij}$. From Equation 7.7, the latter is given by",
+      "source_page": 780,
+      "printed_page": 760,
+      "source_block_ids": [
+        "p780:b3"
+      ],
+      "bbox": [
+        140.0,
+        252.0,
+        1102.0,
+        557.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Now we can develop the BLUP estimates for the vectors of additive and dominance genetic values. Assuming that only a single observation is made for each individual, $\\mathbf{Z}_{1}=\\mathbf{Z}_{2}=\\mathbf{I}$, giving the mixed model $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{a}+\\mathbf{d}+\\mathbf{e} $$"
+      "content": "[[FORMULA:Genetics_chapter26_formula085]]",
+      "source_page": 780,
+      "printed_page": 760,
+      "source_block_ids": [
+        "p780:b4"
+      ],
+      "bbox": [
+        474.0,
+        543.0,
+        776.0,
+        582.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The covariance matrices for the random effects are $ \\mathbf{G}_1 = \\sigma(\\mathbf{a}, \\mathbf{a}) = \\sigma_A^2 \\mathbf{A} $ and $ \\mathbf{G}_2 = \\sigma(\\mathbf{d}, \\mathbf{d}) = \\sigma_D^2 \\mathbf{D} $, and the covariance matrix for residual environmental deviations is $ \\mathbf{R} = \\sigma(\\mathbf{e}, \\mathbf{e}) = \\sigma_E^2 \\mathbf{I} $. Assuming that $ \\mathbf{a} $, $ \\mathbf{d} $, and $ \\mathbf{e} $ are uncorrelated, Equation 26.19b reduces to $$ \\left(\\begin{array}{c c c}{\\mathbf{X}^{T}\\mathbf{X}}&{\\mathbf{X}^{T}}&{\\mathbf{X}^{T}}\\\\ {\\mathbf{X}}&{\\mathbf{I}+\\lambda_{A}\\mathbf{A}^{-1}}&{\\mathbf{I}}\\\\ {\\mathbf{X}}&{\\mathbf{I}}&{\\mathbf{I}+\\lambda_{D}\\mathbf{D}^{-1}}\\end{array}\\right)\\left(\\begin{array}{c}{\\widehat{\\boldsymbol{\\beta}}}\\\\ {\\widehat{\\mathbf{a}}}\\\\ {\\widehat{\\mathbf{d}}}\\end{array}\\right)=\\left(\\begin{array}{c}{\\mathbf{X}^{T}\\mathbf{y}}\\\\ {\\mathbf{y}}\\\\ {\\mathbf{y}}\\end{array}\\right) $$ where we have multiplied through by $\\sigma_{E}^{2}$ to simplify the equations, $\\lambda_{A}=\\sigma_{E}^{2}/\\sigma_{A}^{2}$, and $\\lambda_{D}=\\sigma_{E}^{2}/\\sigma_{D}^{2}$."
+      "content": "where $i$'s parents are indexed by $g$ and $h$ and $j'$s by $k$ and $l$, and as above, $\\Theta$ is the coefficient of coancestry. The dominance genetic relationship matrix $\\mathbf{D}$ contains these coefficients of fraternity for the measured individuals. Recalling that the elements of $\\mathbf{A}$ are $2\\Theta_{ij}$, the off-diagonal elements of $\\mathbf{D}$ can be computed as",
+      "source_page": 780,
+      "printed_page": 760,
+      "source_block_ids": [
+        "p780:b6"
+      ],
+      "bbox": [
+        148.0,
+        584.0,
+        1107.0,
+        733.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Henderson (1984a) noted an interesting relationship between the BLUP estimates of additive and dominance values that further simplifies the MMEs. Subtracting the second row from the last in Equation 26.21 and rearranging gives $$ \\mathbf{A}^{-1}\\widehat{\\mathbf{a}}/\\sigma_{A}^{2}=\\mathbf{D}^{-1}\\widehat{\\mathbf{d}}/\\sigma_{D}^{2} $$ implying that $$ \\hat{\\mathbf{d}}=(\\sigma_{D}^{2}/\\sigma_{A}^{2})\\mathbf{D}\\mathbf{A}^{-1}\\hat{\\mathbf{a}} $$"
+      "content": "[[FORMULA:Genetics_chapter26_formula086]]",
+      "source_page": 780,
+      "printed_page": 760,
+      "source_block_ids": [
+        "p780:b7"
+      ],
+      "bbox": [
+        476.0,
+        739.0,
+        780.0,
+        808.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Substituting this expression into Equation 26.21 reduces the mixed-model equations to $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}[\\mathbf{I}+\\left(\\sigma_{D}^{2}/\\sigma_{A}^{2}\\right)\\mathbf{D}\\mathbf{A}^{-1}]\\\\*&*\\\\ \\mathbf{X}&\\mathbf{I}+\\left(\\sigma_{D}^{2}/\\sigma_{A}^{2}\\right)\\mathbf{D}\\mathbf{A}^{-1}+\\left(\\sigma_{E}^{2}/\\sigma_{A}^{2}\\right)\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\*\\\\\\widehat{\\mathbf{a}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\*\\\\\\mathbf{y}\\end{pmatrix} $$ with $ \\widehat{d} $ obtained by using Equation 26.23."
+      "content": "whereas the diagonal elements are all $D_{ii}=1$.",
+      "source_page": 780,
+      "printed_page": 760,
+      "source_block_ids": [
+        "p780:b9"
+      ],
+      "bbox": [
+        152.0,
+        823.0,
+        702.0,
+        864.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The above analysis provides insight into an important issue that applies to the purely additive model. In the presence of nonadditive gene action, application of the conventional expression $ (y = X\\beta + a + e) $ can yield biased estimates of the additive genetic value. The reason for this bias is that the standard applications of the additive model assume that the residual errors are uncorrelated with constant variance, i.e., $ \\mathbf{R} = \\sigma_{E}^{2} \\mathbf{I} $. If dominance genetic variance is present and pairs of individuals with nonzero coefficients of fraternity (such as full sibs and/or double first cousins) are included in the analysis, this simple residual variance structure is no longer correct. Assuming that the environmental values of different individuals are independent and uncorrelated with genetic values, the true residual covariance matrix has the form $ \\mathbf{R} = \\sigma_{E}^{2} \\mathbf{I} + \\sigma_{D}^{2} \\mathbf{D} $ under the animal model, so unless D is zero, using $ \\sigma_{E}^{2} \\mathbf{I} $ for R biases the breeding value estimates. The correct residual covariance structure requires that d be treated as a separate random effect, and even then we assume an absence of higher-order (epistatic) effects."
+      "content": "Now we can develop the BLUP estimates for the vectors of additive and dominance genetic values. Assuming that only a single observation is made for each individual, $ \\mathbf{Z}_{1} = \\mathbf{Z}_{2} = \\mathbf{I} $, giving the mixed model",
+      "source_page": 780,
+      "printed_page": 760,
+      "source_block_ids": [
+        "p780:b10"
+      ],
+      "bbox": [
+        153.0,
+        846.0,
+        1111.0,
+        963.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The above approaches can be extended in a straightforward fashion to the estimation of epistatic effects, provided these are distributed independently of the additive and dominance effects (as expected in a random-mating population) (Henderson 1977a, 1985a,b; Mrode 1996). Smith and Mäki-Tanila (1990) and Uimari and Kennedy (1990) discuss further modifications that are required in inbred populations with nonadditive gene action. However, even for the simplest model with dominance in a random-mating population, rigorous practical applications of BLUP are limited due to difficulties in obtaining accurate estimates of the dominance genetic variance, which are required for the solution of Equation 26.24. We leave it to the interested reader to pursue further issues involving nonadditive genetic values via the references cited above."
+      "content": "[[FORMULA:Genetics_chapter26_formula087]]",
+      "source_page": 780,
+      "printed_page": 760,
+      "source_block_ids": [
+        "p780:b11"
+      ],
+      "bbox": [
+        508.0,
+        976.0,
+        761.0,
+        1011.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The covariance matrices for the random effects are $ \\mathbf{G}_1 = \\sigma(\\mathbf{a}, \\mathbf{a}) = \\sigma_A^2 \\mathbf{A} $ and $ \\mathbf{G}_2 = \\sigma(\\mathbf{d}, \\mathbf{d}) = \\sigma_D^2 \\mathbf{D} $, and the covariance matrix for residual environmental deviations is $ \\mathbf{R} = \\sigma(\\mathbf{e}, \\mathbf{e}) = \\sigma_E^2 \\mathbf{I} $. Assuming that $ \\mathbf{a} $, $ \\mathbf{d} $, and $ \\mathbf{e} $ are uncorrelated, Equation 26.19b reduces to",
+      "source_page": 780,
+      "printed_page": 760,
+      "source_block_ids": [
+        "p780:b12"
+      ],
+      "bbox": [
+        155.0,
+        1023.0,
+        1114.0,
+        1176.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter26_formula088]]",
+      "source_page": 780,
+      "printed_page": 760,
+      "source_block_ids": [
+        "p780:b13"
+      ],
+      "bbox": [
+        270.0,
+        1174.0,
+        930.0,
+        1291.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where we have multiplied through by $ \\sigma_{E}^{2} $ to simplify the equations, $ \\lambda_{A} = \\sigma_{E}^{2} / \\sigma_{A}^{2} $, and $ \\lambda_{D} = \\sigma_{E}^{2} / \\sigma_{D}^{2} $.",
+      "source_page": 780,
+      "printed_page": 760,
+      "source_block_ids": [
+        "p780:b15"
+      ],
+      "bbox": [
+        164.0,
+        1295.0,
+        1116.0,
+        1383.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Henderson (1984a) noted an interesting relationship between the BLUP estimates of additive and dominance values that further simplifies the MMEs. Subtracting the second row from the last in Equation 26.21 and rearranging gives",
+      "source_page": 780,
+      "printed_page": 760,
+      "source_block_ids": [
+        "p780:b16"
+      ],
+      "bbox": [
+        163.0,
+        1363.0,
+        1121.0,
+        1481.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter26_formula089]]",
+      "source_page": 780,
+      "printed_page": 760,
+      "source_block_ids": [
+        "p780:b17"
+      ],
+      "bbox": [
+        508.0,
+        1488.0,
+        784.0,
+        1533.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "implying that",
+      "source_page": 781,
+      "printed_page": 761,
+      "source_block_ids": [
+        "p781:b2"
+      ],
+      "bbox": [
+        64.0,
+        127.0,
+        238.0,
+        164.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter26_formula090]]",
+      "source_page": 781,
+      "printed_page": 761,
+      "source_block_ids": [
+        "p781:b3"
+      ],
+      "bbox": [
+        413.0,
+        162.0,
+        674.0,
+        208.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Substituting this expression into Equation 26.21 reduces the mixed-model equations to",
+      "source_page": 781,
+      "printed_page": 761,
+      "source_block_ids": [
+        "p781:b5"
+      ],
+      "bbox": [
+        62.0,
+        213.0,
+        1020.0,
+        294.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter26_formula091]]",
+      "source_page": 781,
+      "printed_page": 761,
+      "source_block_ids": [
+        "p781:b6"
+      ],
+      "bbox": [
+        106.0,
+        297.0,
+        895.0,
+        418.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "with $ \\hat{d} $ obtained by using Equation 26.23.",
+      "source_page": 781,
+      "printed_page": 761,
+      "source_block_ids": [
+        "p781:b8"
+      ],
+      "bbox": [
+        57.0,
+        431.0,
+        554.0,
+        475.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The above analysis provides insight into an important issue that applies to the purely additive model. In the presence of nonadditive gene action, application of the conventional expression $ (\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\mathbf{a} + \\mathbf{e}) $ can yield biased estimates of the additive genetic value. The reason for this bias is that the standard applications of the additive model assume that the residual errors are uncorrelated with constant variance, i.e., $ \\mathbf{R} = \\sigma_E^2 \\mathbf{I} $. If dominance genetic variance is present and pairs of individuals with nonzero coefficients of fraternity (such as full sibs and/or double first cousins) are included in the analysis, this simple residual variance structure is no longer correct. Assuming that the environmental values of different individuals are independent and uncorrelated with genetic values, the true residual covariance matrix has the form $ \\mathbf{R} = \\sigma_E^2 \\mathbf{I} + \\sigma_D^2 \\mathbf{D} $ under the animal model, so unless $ \\mathbf{D} $ is zero, using $ \\sigma_E^2 \\mathbf{I} $ for $ \\mathbf{R} $ biases the breeding value estimates. The correct residual covariance structure requires that $ \\mathbf{d} $ be treated as a separate random effect, and even then we assume an absence of higher-order (epistatic) effects.",
+      "source_page": 781,
+      "printed_page": 761,
+      "source_block_ids": [
+        "p781:b9"
+      ],
+      "bbox": [
+        50.0,
+        467.0,
+        1017.0,
+        930.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The above approaches can be extended in a straightforward fashion to the estimation of epistatic effects, provided these are distributed independently of the additive and dominance effects (as expected in a random-mating population) (Henderson 1977a, 1985a,b; Mrode 1996). Smith and Maki-Tanila (1990) and Uimari and Kennedy (1990) discuss further modifications that are required in inbred populations with nonadditive gene action. However, even for the simplest model with dominance in a random-mating population, rigorous practical applications of BLUP are limited due to difficulties in obtaining accurate estimates of the dominance genetic variance, which are required for the solution of Equation 26.24. We leave it to the interested reader to pursue further issues involving nonadditive genetic values via the references cited above.",
+      "source_page": 781,
+      "printed_page": 761,
+      "source_block_ids": [
+        "p781:b10"
+      ],
+      "bbox": [
+        44.0,
+        915.0,
+        1010.0,
+        1284.0
+      ]
     }
   ]
 }

@@ -2,70 +2,370 @@
   "id": "Genetics_chapter27_013",
   "metadata": {
     "chapter": "Genetics_chapter27",
-    "section": "Variance-Component Estimation with Complex Pedigrees",
-    "subsections": [
-      "A MOLECULAR-MARKER-BASED METHOD FOR INFERRING VARIANCE COMPONENTS"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter27_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Variance-Component Estimation with Complex Pedigrees",
-    "section_level_2": "A MOLECULAR-MARKER-BASED METHOD FOR INFERRING VARIANCE COMPONENTS",
+    "section": "A MOLECULAR-MARKER-BASED METHOD FOR INFERRING VARIANCE COMPONENTS",
+    "subsections": [],
+    "section_level_1": "A MOLECULAR-MARKER-BASED METHOD FOR INFERRING VARIANCE COMPONENTS",
+    "section_level_2": null,
     "heading_path": [
-      "Variance-Component Estimation with Complex Pedigrees",
       "A MOLECULAR-MARKER-BASED METHOD FOR INFERRING VARIANCE COMPONENTS"
     ],
-    "display_heading": "A MOLECULAR-MARKER-BASED METHOD FOR INFERRING VARIANCE COMPONENTS"
+    "display_heading": "A MOLECULAR-MARKER-BASED METHOD FOR INFERRING VARIANCE COMPONENTS",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 812,
+      "printed_page": 792,
+      "source_block_ids": [
+        "p812:b2"
+      ],
+      "bbox": [
+        149.0,
+        118.0,
+        964.0,
+        211.0
+      ],
+      "raw_text": "A MOLECULAR-MARKER-BASED METHOD FOR INFERRING VARIANCE COMPONENTS"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "One of the greatest technical limitations of all methods for estimating genetic variance components is their requirement for pairs of individuals of known relatedness. Except in humans, some animals in zoological parks, and some domesticated species, relationships of free-ranging individuals are generally unknown, and even in the best situations, paternity is often uncertain. Thus, almost all quantitative-genetic analyses are performed in artificial settings where the investigator has control of matings. When such settings are imposed on progeny of individuals derived from natural populations, uncertainty always remains as to the relevance of the observed results to the field situation, because changes in the environment can induce changes in variance components. As discussed in Chapter 17, some attempts have been made to circumvent this difficulty by comparing the phenotypes of wild-caught parents to those of lab-reared progeny, but such approaches can only be applied to species that can be readily raised in controlled settings, and even in these cases, the results can be biased. The ideal setting for any quantitative-genetic analysis of a natural population is the noninvasive procurement of phenotypic information from random individuals of known relatedness."
+      "content": "One of the greatest technical limitations of all methods for estimating genetic variance components is their requirement for pairs of individuals of known relatedness. Except in humans, some animals in zoological parks, and some domesticated species, relationships of free-ranging individuals are generally unknown, and even in the best situations, paternity is often uncertain. Thus, almost all quantitative-genetic analyses are performed in artificial settings where the investigator has control of matings. When such settings are imposed on progeny of individuals derived from natural populations, uncertainty always remains as to the relevance of the observed results to the field situation, because changes in the environment can induce changes in variance components. As discussed in Chapter 17, some attempts have been made to circumvent this difficulty by comparing the phenotypes of wild-caught parents to those of lab-reared progeny, but such approaches can only be applied to species that can be readily raised in controlled settings, and even in these cases, the results can be biased. The ideal setting for any quantitative-genetic analysis of a natural population is the noninvasive procurement of phenotypic information from random individuals of known relatedness.",
+      "source_page": 812,
+      "printed_page": 792,
+      "source_block_ids": [
+        "p812:b3"
+      ],
+      "bbox": [
+        151.0,
+        220.0,
+        1124.0,
+        756.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In principle, the absence of direct observations on relationships can be overcome by utilizing information recorded from molecular markers. Several methods have been suggested for the estimation of pairwise values of the coefficients of coancestry ($ \\Theta_{ij} $) and fraternity ($ \\Delta_{ij} $) from information on shared alleles at codominant marker loci (Thompson 1975, Lynch 1988c, Queller and Goodnight 1989, Ritland 1996a). These estimators are not necessarily very efficient unless large numbers of polymorphic loci are assayed, but most of them do provide unbiased estimates. Ritland (1996b) made the clever leap of showing how estimates of pairwise relatedness can be combined with estimates of pairwise phenotypic similarity to generate estimates of variance components in undisturbed natural populations. Ritland's method, the fundamentals of which we briefly outline below, is conceptually very simple."
+      "content": "In principle, the absence of direct observations on relationships can be overcome by utilizing information recorded from molecular markers. Several methods have been suggested for the estimation of pairwise values of the coefficients of coancestry ( $ \\Theta_{ij} $) and fraternity ( $ \\Delta_{ij} $) from information on shared alleles at codominant marker loci (Thompson 1975, Lynch 1988c, Queller and Goodnight 1989, Ritland 1996a). These estimators are not necessarily very efficient unless large numbers of polymorphic loci are assayed, but most of them do provide unbiased estimates. Ritland (1996b) made the clever leap of showing how estimates of pairwise relatedness can be combined with estimates of pairwise phenotypic similarity to generate estimates of variance components in undisturbed natural populations. Ritland's method, the fundamentals of which we briefly outline below, is conceptually very simple.",
+      "source_page": 812,
+      "printed_page": 792,
+      "source_block_ids": [
+        "p812:b4"
+      ],
+      "bbox": [
+        168.0,
+        731.0,
+        1136.0,
+        1138.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Recall that the basic premise underlying all conventional methods for estimating the additive genetic variance of a trait is the fact that, for a character with a purely additive-genetic basis, the phenotypic covariance between relatives (i and j) has expected value $ 2\\Theta_{ij}\\sigma_{A}^{2} $. Define the phenotypic similarity of two individuals with phenotypes $ z_{i} $ and $ z_{j} $ to be $$ s_{ij}=(z_{i}-\\bar{z})(z_{j}-\\bar{z}) $$ where $ \\bar{z} $ is the mean phenotype in the population. Since this expression is in the form of a phenotypic covariance, under the purely additive model (assuming random mating and no shared environmental effects, and an accurate estimate of $ \\bar{z} $), the expected value of $ s_{ij} $ is simply $ 2\\Theta_{ij}\\sigma_{A}^{2} $. Thus, with a collection of individuals, the observed phenotypic similarity can be written in the form of a linear model, $$ s_{i j}=2\\widehat{\\Theta}_{i j}\\sigma_{A}^{2}+e_{i j} $$ where $\\widehat{\\Theta}_{i,j}$ is the estimated value of $\\Theta_{i,j}$ for the two individuals, and $e_{i,j}$ is the residual deviation of the observed similarity from its expectation. This expression assumes that the marker loci are in gametic phase equilibrium with the loci underlying the quantitative trait."
+      "content": "Recall that the basic premise underlying all conventional methods for estimating the additive genetic variance of a trait is the fact that, for a character with a purely additive-genetic basis, the phenotypic covariance between relatives (i and j) has expected value $ 2\\Theta_{ij}\\sigma_{A}^{2} $. Define the phenotypic similarity of two individuals with phenotypes $ z_{i} $ and $ z_{j} $ to be",
+      "source_page": 812,
+      "printed_page": 792,
+      "source_block_ids": [
+        "p812:b5"
+      ],
+      "bbox": [
+        180.0,
+        1110.0,
+        1142.0,
+        1300.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Equation 27.39 suggests that an estimate of the narrow-sense heritability, $\\sigma_{A}^{2}/\\sigma_{z}^{2}$, can be procured by regressing pairwise measures of phenotypic similarity on estimates of the coefficient of coancestry (with half the slope providing the estimate of $\\sigma_{A}^{2}$, and the observed phenotypic variance in the population Var(z) providing the estimate of $\\sigma_{z}^{2}$). This idea is closely related to the logic underlying the Haseman-Elston regression in QTL analysis (Chapter 16). Because the $\\widehat{\\Theta}_{ij}$ are only estimates (and often rather inaccurate ones), a conventional least-squares analysis would lead to downwardly biased estimates of $\\sigma_{A}^{2}$ as a consequence of the inflated estimate of the variance of relatedness. Ritland (1996b) outlines a method that provides an estimate of $\\sigma_{\\Theta}^{2}$, the actual variance of relatedness, which excludes the sampling variance resulting from the use of a finite number of marker loci. Letting $\\mathrm{Var}(\\Theta)$ be the estimated actual variance of relatedness and $\\mathrm{Cov}(s,\\widehat{\\Theta})$ be the covariance of phenotypic similarity and estimated relatedness, the heritability can be estimated by $$ \\widehat{h}^{2}=\\frac{\\operatorname{Cov}(s,\\widehat{\\Theta})}{2\\operatorname{Var}(\\Theta)\\operatorname{Var}(z)} $$ under the assumptions of the ideal additive model."
+      "content": "[[FORMULA:Genetics_chapter27_formula096]]",
+      "source_page": 812,
+      "printed_page": 792,
+      "source_block_ids": [
+        "p812:b6"
+      ],
+      "bbox": [
+        538.0,
+        1320.0,
+        795.0,
+        1364.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "This general strategy can be easily extended to the estimation of genetic correlations among traits. For two characters (x and y), the analog of phenotypic similarity is $$ s_{xy,ij}=\\frac{(z_{x,i}-\\bar{z}_{x})(z_{y,j}-\\bar{z}_{y})+(z_{y,i}-\\bar{z}_{y})(z_{x,j}-\\bar{z}_{x})}{2} $$ which has the same form as a phenotypic covariance between traits. An estimate of the additive genetic covariance can be obtained by the regression of the $ s_{xy,ij} $ on $ \\widehat{\\Theta}_{ij} $. Letting the regression slopes involving the $ s_{xy,ij} $, $ s_{xx,ij} $, and $ s_{yy,ij} $, be $ b_{xy} $, $ b_x $, and $ b_y $, respectively, the additive genetic correlation is then estimated by $$ r_{A}=\\frac{b_{xy}}{\\sqrt{b_{x}b_{y}}} $$"
+      "content": "where $ \\bar{z} $ is the mean phenotype in the population. Since this expression is in the form of a phenotypic covariance, under the purely additive model (assuming random mating and no shared environmental effects, and an accurate estimate of $ \\bar{z} $), the expected value of $ s_{ij} $ is simply $ 2\\Theta_{ij}\\sigma_{A}^{2} $. Thus, with a collection of individuals, the observed phenotypic similarity can be written in the form of a linear model,",
+      "source_page": 812,
+      "printed_page": 792,
+      "source_block_ids": [
+        "p812:b8",
+        "p813:b2"
+      ],
+      "bbox": [
+        190.0,
+        1386.0,
+        1149.0,
+        1543.0
+      ],
+      "source_page_end": 813
     },
     {
       "type": "discussion",
-      "content": "A useful feature of this approach is that, unlike the situation with heritability estimation, a corrected estimate of the variance of relatedness is not required."
+      "content": "[[FORMULA:Genetics_chapter27_formula097]]",
+      "source_page": 813,
+      "printed_page": 793,
+      "source_block_ids": [
+        "p813:b3"
+      ],
+      "bbox": [
+        417.0,
+        200.0,
+        645.0,
+        250.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Although the three raw regression coefficients are biased, the proportional bias is identical for all three and cancels out in Equation 27.42."
+      "content": "where $ \\widehat{\\Theta}_{ij} $ is the estimated value of $ \\Theta_{ij} $ for the two individuals, and $ e_{ij} $ is the residual deviation of the observed similarity from its expectation. This expression assumes that the marker loci are in gametic phase equilibrium with the loci underlying the quantitative trait.",
+      "source_page": 813,
+      "printed_page": 793,
+      "source_block_ids": [
+        "p813:b5"
+      ],
+      "bbox": [
+        46.0,
+        253.0,
+        1007.0,
+        420.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Ritland's method provides an exciting potential framework for the quantitative-genetic analysis of natural populations, especially for species that are difficult to perform controlled matings on and/or to raise in the lab. In preliminary applications with two populations of the yellow monkeyflower (Mimulus guttatus), with 300 individuals assayed per population at 10 polymorphic loci, significant heritabilities and strong positive genetic correlations were obtained for a variety of characters associated with fitness (Ritland and Ritland 1996). Interestingly, lab-based estimates of $ h^{2} $ using individuals of known relatedness were often substantially lower than those obtained in the field with the marker-based technique. This suggests that heritabilities in the wild are not always depressed, contrary to the conventional wisdom."
+      "content": "Equation 27.39 suggests that an estimate of the narrow-sense heritability, $ \\sigma_{A}^{2}/\\sigma_{z}^{2} $, can be procured by regressing pairwise measures of phenotypic similarity on estimates of the coefficient of coancestry (with half the slope providing the estimate of $ \\sigma_{A}^{2} $, and the observed phenotypic variance in the population Var(z) providing the estimate of $ \\sigma_{z}^{2} $). This idea is closely related to the logic underlying the Haseman-Elston regression in QTL analysis (Chapter 16).",
+      "source_page": 813,
+      "printed_page": 793,
+      "source_block_ids": [
+        "p813:b6"
+      ],
+      "bbox": [
+        39.0,
+        386.0,
+        1000.0,
+        615.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A number of important technical aspects of this technique remain to be explored. First, there is the practical issue of the spatial scale on which to sample individuals. Successful application of the technique requires the presence of adequate variance of actual relatedness among pairs of sampled individuals. With too large an average distance between sampled individuals, nearly all individuals will be essentially unrelated, and the marker-based approach will have no power. The scale beyond which this becomes important will depend on the average dispersal distances of individuals in the species under consideration. For this reason, the technique will presumably prove much more useful with sedentary plants than with mobile animals. On the other hand, with too small a spatial scale of sampling, some phenotypic similarity is likely to arise from the sharing of common environments. Ritland (1996b) outlines how the inclusion of geographic distance between individuals in the model can allow for the factoring out of phenotypic covariance due to shared environments."
+      "content": "Because the $ \\widehat{\\Theta}_{ij} $ are only estimates (and often rather inaccurate ones), a conventional least-squares analysis would lead to downwardly biased estimates of $ \\sigma_{A}^{2} $ as a consequence of the inflated estimate of the variance of relatedness. Rit-land (1996b) outlines a method that provides an estimate of $ \\sigma_{\\Theta}^{2} $, the actual variance of relatedness, which excludes the sampling variance resulting from the use of a finite number of marker loci. Letting $ \\operatorname{Var}(\\Theta) $ be the estimated actual variance of relatedness and $ \\operatorname{Cov}(s, \\widehat{\\Theta}) $ be the covariance of phenotypic similarity and estimated relatedness, the heritability can be estimated by",
+      "source_page": 813,
+      "printed_page": 793,
+      "source_block_ids": [
+        "p813:b7"
+      ],
+      "bbox": [
+        28.0,
+        578.0,
+        995.0,
+        876.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Second, as outlined above, the model ignores the contribution of nonadditive gene action to phenotypic similarity. However, Ritland (1996b) shows how the model can be readily extended to the joint estimation of additive and dominance genetic variances, using the simple idea that in the presence of dominance, the genetic covariance between individuals is $ 2\\Theta_{ij}\\sigma_{A}^{2}+\\Delta_{ij}\\sigma_{D}^{2} $. Applications of the model with dominance involve the regression of phenotypic similarity on estimates of both $ \\Theta_{ij} $ and $ \\Delta_{ij} $."
+      "content": "[[FORMULA:Genetics_chapter27_formula098]]",
+      "source_page": 813,
+      "printed_page": 793,
+      "source_block_ids": [
+        "p813:b8"
+      ],
+      "bbox": [
+        375.0,
+        882.0,
+        629.0,
+        963.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Third, the marker-based approach to variance-component analysis raises a number of basic statistical issues. The linear modeling approach taken by Ritland (1996b) would appear to be only one of several alternative estimation methods. In the context of all of the other methods outlined for complex-pedigree analysis in this chapter, Ritland's method is equivalent to partitioning all pairs of measured individuals into discrete classes based on $ \\Theta_{ij} $, and then simply regressing phenotypic similarity on $ \\Theta $, ignoring the nonindependence of the data (the very complexity that REML is designed to deal with). However, rather than transforming the phenotypic data to pairwise measures of similarity prior to analysis, one could conceivably work directly with the individual data in a REML-like framework, as described above. In this case, the elements of the relationship matrix A would be estimates rather than actual measures of relatedness. This alternative approach would partially account for the nonindependence of data, which might in turn lead to more efficient estimators for the variance components. On the other hand, it is unclear how sampling variance of relatedness, assumed to be zero in conventional REML analysis, would influence the parameter estimates. The central point is that there seem to be underlying similarities between the statistical issues raised with Ritland's method and with REML analysis as conventionally applied by animal breeders."
+      "content": "under the assumptions of the ideal additive model.",
+      "source_page": 813,
+      "printed_page": 793,
+      "source_block_ids": [
+        "p813:b10"
+      ],
+      "bbox": [
+        23.0,
+        966.0,
+        636.0,
+        1017.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Finally, it is unclear how sensitive the results from Ritland's method are to the presence of linkage between QTLs and marker loci. Even if all loci are in gametic phase equilibrium in the survey population, unless they are unlinked, they will be nonindependent in restricted regions of the pedigree (Chapters 14–16). This suggests that the residual errors in estimates of $ \\Theta_{ij} $ will not be independent of those in $ s_{ij} $ if the marker loci are linked to QTLs influencing the trait. An interesting avenue for future investigation is whether the joint distribution of molecular-marker and phenotype information can be used to partition the total genetic variance into components associated with linked vs. unlinked QTLs."
+      "content": "This general strategy can be easily extended to the estimation of genetic correlations among traits. For two characters (x and y), the analog of phenotypic similarity is",
+      "source_page": 813,
+      "printed_page": 793,
+      "source_block_ids": [
+        "p813:b11"
+      ],
+      "bbox": [
+        18.0,
+        997.0,
+        981.0,
+        1127.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula099]]",
+      "source_page": 813,
+      "printed_page": 793,
+      "source_block_ids": [
+        "p813:b12"
+      ],
+      "bbox": [
+        180.0,
+        1123.0,
+        807.0,
+        1210.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "which has the same form as a phenotypic covariance between traits. An estimate of the additive genetic covariance can be obtained by the regression of the $ s_{xy,ij} $ on $ \\widehat{\\Theta}_{ij} $. Letting the regression slopes involving the $ s_{xy,ij} $, $ s_{xx,ij} $, and $ s_{yy,ij} $, be $ b_{xy} $, $ b_{x} $, and $ b_{y} $, respectively, the additive genetic correlation is then estimated by",
+      "source_page": 813,
+      "printed_page": 793,
+      "source_block_ids": [
+        "p813:b14"
+      ],
+      "bbox": [
+        12.0,
+        1203.0,
+        970.0,
+        1379.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter27_formula100]]",
+      "source_page": 813,
+      "printed_page": 793,
+      "source_block_ids": [
+        "p813:b15"
+      ],
+      "bbox": [
+        403.0,
+        1377.0,
+        562.0,
+        1458.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A useful feature of this approach is that, unlike the situation with heritability estimation, a corrected estimate of the variance of relatedness is not required.",
+      "source_page": 813,
+      "printed_page": 793,
+      "source_block_ids": [
+        "p813:b17"
+      ],
+      "bbox": [
+        2.0,
+        1458.0,
+        960.0,
+        1562.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Although the three raw regression coefficients are biased, the proportional bias is identical for all three and cancels out in Equation 27.42.",
+      "source_page": 814,
+      "printed_page": 794,
+      "source_block_ids": [
+        "p814:b2"
+      ],
+      "bbox": [
+        146.0,
+        113.0,
+        1104.0,
+        207.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Ritland’s method provides an exciting potential framework for the quantitative-genetic analysis of natural populations, especially for species that are difficult to perform controlled matings on and/or to raise in the lab. In preliminary applications with two populations of the yellow monkeyflower (Mimulus guttatus), with 300 individuals assayed per population at 10 polymorphic loci, significant heritabilities and strong positive genetic correlations were obtained for a variety of characters associated with fitness (Ritland and Ritland 1996). Interestingly, lab-based estimates of $ h^{2} $ using individuals of known relatedness were often substantially lower than those obtained in the field with the marker-based technique. This suggests that heritabilities in the wild are not always depressed, contrary to the conventional wisdom.",
+      "source_page": 814,
+      "printed_page": 794,
+      "source_block_ids": [
+        "p814:b3"
+      ],
+      "bbox": [
+        149.0,
+        178.0,
+        1117.0,
+        558.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A number of important technical aspects of this technique remain to be explored. First, there is the practical issue of the spatial scale on which to sample individuals. Successful application of the technique requires the presence of adequate variance of actual relatedness among pairs of sampled individuals. With too large an average distance between sampled individuals, nearly all individuals will be essentially unrelated, and the marker-based approach will have no power. The scale beyond which this becomes important will depend on the average dispersal distances of individuals in the species under consideration. For this reason, the technique will presumably prove much more useful with sedentary plants than with mobile animals. On the other hand, with too small a spatial scale of sampling, some phenotypic similarity is likely to arise from the sharing of common environments. Ritland (1996b) outlines how the inclusion of geographic distance between individuals in the model can allow for the factoring out of phenotypic covariance due to shared environments.",
+      "source_page": 814,
+      "printed_page": 794,
+      "source_block_ids": [
+        "p814:b4"
+      ],
+      "bbox": [
+        162.0,
+        531.0,
+        1134.0,
+        1004.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Second, as outlined above, the model ignores the contribution of nonadditive gene action to phenotypic similarity. However, Ritland (1996b) shows how the model can be readily extended to the joint estimation of additive and dominance genetic variances, using the simple idea that in the presence of dominance, the genetic covariance between individuals is $ 2\\Theta_{ij}\\sigma_{A}^{2}+\\Delta_{ij}\\sigma_{D}^{2} $. Applications of the model with dominance involve the regression of phenotypic similarity on estimates of both $ \\Theta_{ij} $ and $ \\Delta_{ij} $.",
+      "source_page": 814,
+      "printed_page": 794,
+      "source_block_ids": [
+        "p814:b5"
+      ],
+      "bbox": [
+        178.0,
+        974.0,
+        1142.0,
+        1228.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Third, the marker-based approach to variance-component analysis raises a number of basic statistical issues. The linear modeling approach taken by Ritland (1996b) would appear to be only one of several alternative estimation methods. In the context of all of the other methods outlined for complex-pedigree analysis in this chapter, Ritland’s method is equivalent to partitioning all pairs of measured individuals into discrete classes based on $ \\Theta_{ij} $, and then simply regressing phenotypic similarity on $ \\Theta $, ignoring the nonindependence of the data (the very complexity that REML is designed to deal with). However, rather than transforming the phenotypic data to pairwise measures of similarity prior to analysis, one could conceivably work directly with the individual data in a REML-like framework, as described above. In this case, the elements of the relationship matrix A would be estimates rather than actual measures of relatedness. This alternative approach would partially account for the nonindependence of data, which might in turn lead to more efficient estimators for the variance components. On the other hand, it is unclear how sampling variance of relatedness, assumed to be zero in conventional REML analysis, would influence the parameter estimates. The central point is that there seem to be underlying similarities between the statistical issues raised with Ritland's method and with REML analysis as conventionally applied by animal breeders.",
+      "source_page": 814,
+      "printed_page": 794,
+      "source_block_ids": [
+        "p814:b6",
+        "p815:b2"
+      ],
+      "bbox": [
+        186.0,
+        1197.0,
+        1154.0,
+        1518.0
+      ],
+      "source_page_end": 815
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, it is unclear how sensitive the results from Ritland’s method are to the presence of linkage between QTLs and marker loci. Even if all loci are in gametic phase equilibrium in the survey population, unless they are unlinked, they will be nonindependent in restricted regions of the pedigree (Chapters 14–16). This suggests that the residual errors in estimates of $ \\Theta_{ij} $ will not be independent of those in $ s_{ij} $ if the marker loci are linked to QTLs influencing the trait. An interesting avenue for future investigation is whether the joint distribution of molecular-marker and phenotype information can be used to partition the total genetic variance into components associated with linked vs. unlinked QTLs.",
+      "source_page": 815,
+      "printed_page": 795,
+      "source_block_ids": [
+        "p815:b3"
+      ],
+      "bbox": [
+        32.0,
+        430.0,
+        1005.0,
+        779.0
+      ]
     }
   ]
 }

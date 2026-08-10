@@ -2,83 +2,655 @@
   "id": "Genetics_chapter20_010",
   "metadata": {
     "chapter": "Genetics_chapter20",
-    "section": "Introduction",
-    "subsections": [
-      "HAYMAN-JINKS ANALYSIS"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter20_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "20.6"
-    ],
-    "section_level_1": "Introduction",
-    "section_level_2": "HAYMAN-JINKS ANALYSIS",
+    "section": "HAYMAN-JINKS ANALYSIS",
+    "subsections": [],
+    "section_level_1": "HAYMAN-JINKS ANALYSIS",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
       "HAYMAN-JINKS ANALYSIS"
     ],
     "display_heading": "HAYMAN-JINKS ANALYSIS",
-    "table_reference_keys": [
-      "chapter20:20.6"
-    ]
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 631,
+      "printed_page": 611,
+      "source_block_ids": [
+        "p631:b5"
+      ],
+      "bbox": [
+        56.0,
+        902.0,
+        430.0,
+        940.0
+      ],
+      "raw_text": "HAYMAN-JINKS ANALYSIS"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "3. $\\overline{\\sigma}_{r}^{2}$, the average variance of family means around their array means, is obtained by averaging the $N$ variance estimates for means within rows and their $N$ complementary estimates for means within columns of the diallel table. For example, for row $i$, $\\sigma_{r}^{2}(i)$ is based on the means $(\\overline{z}_{i1},\\overline{z}_{i2},\\ldots,\\overline{z}_{iN})$. This computation is made for all rows and then for all columns, and the $2N$ variance estimates are averaged to give an estimate of $\\overline{\\sigma}_{r}^{2}$."
+      "content": "Our preceding discussion has mostly focused on the estimation of properties of individuals and populations. Diallel analysis can also provide insight into the mode of gene action. In particular, for the special case in which there are only two alleles per segregating locus (as when all parental lines are derived from a cross between two inbred lines), useful inferences about the degree of dominance can be made from the distribution of mean phenotypes in a complete diallel. The essential relationships were first pointed out by Hayman (1954) and Jinks (1954) for the case in which the parental lines are completely inbred. These were generalized later to arbitrary parental genotypes by Dickinson and Jinks (1956). A broad overview of the theory is given in Mather and Jinks (1982).",
+      "source_page": 631,
+      "printed_page": 611,
+      "source_block_ids": [
+        "p631:b6"
+      ],
+      "bbox": [
+        49.0,
+        965.0,
+        1015.0,
+        1302.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "4. $\\overline{\\sigma}_{P_{1},r}$, the covariance of family means in arrays with the phenotypes of their nonrecurrent parents, is also obtained by averaging over rows and columns. For example, for the ith row, $\\sigma_{P_{1},r}(i)$ is the covariance of the elements in the vectors $(\\overline{z}_{1},\\overline{z}_{2},\\ldots,\\overline{z}_{N})$ and $(\\overline{z}_{i1},\\overline{z}_{i2},\\ldots,\\overline{z}_{iN})$. This computation is made for all rows and then for all columns, and the $2N$ covariance estimates are averaged to give an estimate of $\\overline{\\sigma}_{P_{1},r}$. $\\overline{\\sigma}_{P_{2},r}$ is obtained in the same manner as $\\overline{\\sigma}_{P_{1},r}$, but through the use of $P_{2}$ rather than $P_{1}$ measures."
+      "content": "Let $ \\overline{z}_i $ be the mean phenotype of the ith parent (often estimated by a single individual, unless the genotype can be cloned), $ \\overline{z}_{ii} $ be the mean phenotype of its offspring obtained by selfing, and $ \\overline{z}_{ij} $ be the mean phenotype of progeny from the $ i \\times j $ and $ j \\times i $ crosses (i.e., the pooled means of reciprocal crosses). Further let $ \\overline{z}_i $ be the (marginal) mean phenotype of all families having $ i $ as the mother (including the $ i \\times i $ cross), and let $ \\overline{z}_i $ denote the same type of marginal mean indexed on father $ i $. From these phenotypic measures, we can estimate several phenotypic variances and covariances that are useful in evaluating the dominance properties of segregating alleles:",
+      "source_page": 631,
+      "printed_page": 611,
+      "source_block_ids": [
+        "p631:b7",
+        "p632:b2"
+      ],
+      "bbox": [
+        42.0,
+        1286.0,
+        1005.0,
+        1536.0
+      ],
+      "source_page_end": 632
     },
     {
       "type": "discussion",
-      "content": "5. $\\sigma_{P_{1},P_{2}}$, the covariance of parents and their selfed family means, involves the vectors $(\\overline{z}_{1},\\overline{z}_{2},\\ldots,\\overline{z}_{N})$ and $(\\overline{z}_{11},\\overline{z}_{22},\\ldots,\\overline{z}_{NN})$."
+      "content": "1. $ \\sigma_{P_1}^2 $, the variance among the actual parents of the diallel $ (\\overline{z}_1, \\overline{z}_2, \\ldots, \\overline{z}_N) $, and $ \\sigma_{P_2}^2 $, the variance of the family means obtained by selfing the parents $ (\\overline{z}_{11}, \\overline{z}_{22}, \\ldots, \\overline{z}_{NN}) $. These two variance estimates are unlikely to be equal — the genetic contributions to $ \\sigma_{P_1}^2 $ and $ \\sigma_{P_2}^2 $ will be identical only if the parents are completely inbred, and the sampling variances contributing to both terms will usually be unequal since the $ P_1 $ and $ P_2 $ phenotypes are normally based on single and multiple measures, respectively.",
+      "source_page": 632,
+      "printed_page": 612,
+      "source_block_ids": [
+        "p632:b3"
+      ],
+      "bbox": [
+        142.0,
+        230.0,
+        1059.0,
+        472.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Expectations of all of the preceding quantities can be expressed in terms of gene frequencies and homozygous and dominance effects. The final expressions are summarized most easily by using the composite parameters defined in [[SEE_TABLE:20.6]]. $$ \\sigma_{P_{1}}^{2}=D+H_{3}-4G_{2}+\\sigma^{2}(\\overline{P}_{1}) $$ $$ \\sigma_{P_{2}}^{2}=D+\\frac{H_{3}}{4}-2G_{2}+\\sigma^{2}(\\overline{P}_{2}) $$ $$ \\overline{\\sigma}_{r}^{2}=\\frac{D}{4}+H_{1}-G_{1}+\\frac{(N-1)\\sigma^{2}(\\overline{F}_{1})+\\sigma^{2}(\\overline{P}_{2})}{N} $$"
+      "content": "2. $ \\sigma_{\\overline{r}}^{2} $, the variance of marginal means, is the average of the variance among the N paternal means $ (\\overline{z}_{\\cdot1}, \\overline{z}_{\\cdot2}, \\ldots, \\overline{z}_{\\cdot N}) $, and the variance among the N maternal means $ (\\overline{z}_{1}, \\overline{z}_{2}, \\ldots, \\overline{z}_{N}) $.",
+      "source_page": 632,
+      "printed_page": 612,
+      "source_block_ids": [
+        "p632:b4"
+      ],
+      "bbox": [
+        147.0,
+        468.0,
+        1059.0,
+        580.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td rowspan=\"2\"></td><td rowspan=\"2\">Arbitrary Gene Frequencies</td><td colspan=\"2\">$ \\frac{p_l = q_l = 0.5}{f = 0} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>f=0</td><td style='text-align: center; word-wrap: break-word;'>f=1</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>D</td><td style='text-align: center; word-wrap: break-word;'>2∑p_lqi(1+f)a_l^2</td><td style='text-align: center; word-wrap: break-word;'>∑a_l^2/2</td><td style='text-align: center; word-wrap: break-word;'>∑a_l^2</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>H_1</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{2}\\sum p_lq_l[1-2p_lq_l(1-f)](1+f)(a_l k_l)^2 $</td><td style='text-align: center; word-wrap: break-word;'>∑(a_lkl)^2/16</td><td style='text-align: center; word-wrap: break-word;'>∑(a_lkl)^2/4</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>H_2</td><td style='text-align: center; word-wrap: break-word;'>∑[p_lq(1+f)a_lkl]^2</td><td style='text-align: center; word-wrap: break-word;'>∑(a_lkl)^2/16</td><td style='text-align: center; word-wrap: break-word;'>∑(a_lkl)^2/4</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>H_3</td><td style='text-align: center; word-wrap: break-word;'>2∑p_lq[1-2p_lq(1-f)](1-f)(a_lkl)^2</td><td style='text-align: center; word-wrap: break-word;'>∑(a_lkl)^2/4</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>H_4</td><td style='text-align: center; word-wrap: break-word;'>2∑(1-f)(1+f)(p_lq(a_lkl)^2)</td><td style='text-align: center; word-wrap: break-word;'>∑(a_lkl)^2/8</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>G_1</td><td style='text-align: center; word-wrap: break-word;'>∑p_lq(p_l-q_l)(1+f)a_l^2k_l</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>G_2</td><td style='text-align: center; word-wrap: break-word;'>∑p_lq(p_l-q_l)(1-f)a_l^2k_l</td><td style='text-align: center; word-wrap: break-word;'>0</td><td style='text-align: center; word-wrap: break-word;'>0</td></tr></table>"
+      "content": "3. $ \\overline{\\sigma}_{r}^{2} $, the average variance of family means around their array means, is obtained by averaging the N variance estimates for means within rows and their N complementary estimates for means within columns of the diallel table. For example, for row i, $ \\sigma_{r}^{2}(i) $ is based on the means $ (\\overline{z}_{i1}, \\overline{z}_{i2}, \\ldots, \\overline{z}_{iN}) $. This computation is made for all rows and then for all columns, and the 2N variance estimates are averaged to give an estimate of $ \\overline{\\sigma}_{r}^{2} $.",
+      "source_page": 632,
+      "printed_page": 612,
+      "source_block_ids": [
+        "p632:b5"
+      ],
+      "bbox": [
+        150.0,
+        579.0,
+        1066.0,
+        817.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Note: $f$ refers to the level of inbreeding in the parents. The columns labeled $f = 0$ and $f = 1$ refer to the special cases in which the two genes per heterozygous locus are in equal frequencies $p_{l} = q_{l} = 0.5$, as would be the case when all parents are descended from a cross between two inbred lines. $$ \\sigma_{\\overline{r}}^{\\underline{2}}=\\frac{D}{4}+H_{1}-H_{2}-G_{1} $$ $$ \\overline{\\sigma}_{P_{1},r}=\\frac{D}{2}+\\frac{H_{3}}{2}-H_{4}-G_{1}-G_{2} $$ $$ \\overline{\\sigma}_{P_{2},r}=\\frac{D}{2}+\\frac{H_{3}}{4}+\\frac{H_{4}}{2}-G_{1}-\\frac{G_{2}}{2}+\\frac{\\sigma^{2}(\\overline{P}_{2})}{N} $$ $$ \\sigma_{P_{1},P_{2}}=D+\\frac{H_{3}}{2}-3G_{2} $$"
+      "content": "4. $ \\overline{\\sigma}_{P_{1},r} $, the covariance of family means in arrays with the phenotypes of their nonrecurrent parents, is also obtained by averaging over rows and columns. For example, for the ith row, $ \\sigma_{P_{1},r}(i) $ is the covariance of the elements in the vectors $ (\\overline{z}_{1},\\overline{z}_{2},\\ldots,\\overline{z}_{N}) $ and $ (\\overline{z}_{i1},\\overline{z}_{i2},\\ldots,\\overline{z}_{iN}) $. This computation is made for all rows and then for all columns, and the 2N covariance estimates are averaged to give an estimate of $ \\overline{\\sigma}_{P_{1},r} $. $ \\overline{\\sigma}_{P_{2},r} $ is obtained in the same manner as $ \\overline{\\sigma}_{P_{1},r} $, but through the use of $ P_{2} $ rather than $ P_{1} $ measures.",
+      "source_page": 632,
+      "printed_page": 612,
+      "source_block_ids": [
+        "p632:b6"
+      ],
+      "bbox": [
+        156.0,
+        813.0,
+        1072.0,
+        1084.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The terms $ \\sigma^{2}(\\overline{P}_{1}) $, $ \\sigma^{2}(\\overline{P}_{2}) $, and $ \\sigma^{2}(\\overline{F}_{1}) $ are the expected sampling variances of $ P_{1} $, $ P_{2} $, and $ F_{1} $ family means, estimates of which can be obtained from single plots by dividing the within-family variance by the sample size, or from variances among replicate plot means. In the following, we assume that the contributions of sampling variance to the preceding expressions have been eliminated (e.g., by subtracting the sampling variance of the mean), so that the quantities of interest have a purely genetic interpretation (solely a function of the quantities in [[SEE_TABLE:20.6]])."
+      "content": "5. $ \\sigma_{P_{1},P_{2}} $, the covariance of parents and their selfed family means, involves the vectors $ (\\overline{z}_{1},\\overline{z}_{2},\\ldots,\\overline{z}_{N}) $ and $ (\\overline{z}_{11},\\overline{z}_{22},\\ldots,\\overline{z}_{NN}) $.",
+      "source_page": 632,
+      "printed_page": 612,
+      "source_block_ids": [
+        "p632:b7"
+      ],
+      "bbox": [
+        163.0,
+        1078.0,
+        1074.0,
+        1163.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Letting the appropriately subscribed V and C denote estimates of the preceding variances (Equations 20.17a–d) and covariances (Equations 20.17e–g) after removal of the sampling variance contributions, estimators for the composite genetic parameters in [[SEE_TABLE:20.6]] are found by rearranging Equations 20.17a-g to give $$ \\widehat{D}=V_{P_{1}}+4V_{P_{2}}-4C_{P_{1},P_{2}} $$ $$ \\widehat{H}_{1}=\\frac{V_{P_{1}}}{4}+V_{P_{2}}+\\overline{V}_{r}+\\overline{C}_{P_{1},r}-2\\overline{C}_{P_{2},r}-C_{P_{1},P_{2}} $$ $$ \\widehat{H}_{2}=\\overline{V}_{r}-V_{\\overline{r}} $$ $$ \\widehat{H}_{3}=4V_{P_{1}}+4V_{P_{2}}-8C_{P_{1},P_{2}} $$ $$ \\widehat{H}_{4}=V_{P_{1}}-2\\overline{{C}}_{P_{1},r}+2\\overline{{C}}_{P_{2},r}-C_{P_{1},P_{2}} $$ $$ \\widehat{G}_{1}=\\frac{V_{P_{1}}}{2}+2V_{P_{2}}+\\overline{{C}}_{P_{1},r}-2\\overline{{C}}_{P_{2},r}-2C_{P_{1},P_{2}} $$ $$ \\widehat{G}_{2}=V_{P_{1}}+2V_{P_{2}}-3C_{P_{1},P_{2}} $$"
+      "content": "Expectations of all of the preceding quantities can be expressed in terms of gene frequencies and homozygous and dominance effects. The final expressions are summarized most easily by using the composite parameters defined in Table 20.6,",
+      "source_page": 632,
+      "printed_page": 612,
+      "source_block_ids": [
+        "p632:b8"
+      ],
+      "bbox": [
+        152.0,
+        1174.0,
+        1113.0,
+        1323.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "When parents are completely inbred, these expressions can be simplified by letting $ V_{P_1} = V_{P_2} = C_{P_1,P_2} $, and $ \\overline{C}_{P_1,r} = \\overline{C}_{P_2,r} $. As shown in [[SEE_TABLE:20.6]], all seven of these composite parameters are defined by gene frequencies and gene effects. Functions of these quantities can yield considerable insight into the mechanistic basis of genetic variation. For example, the quantity $ 2(2H_1 + H_4)/D $ is equal to $ \\sum p_l q_l a_l^2 k_l^2 / \\sum p_l q_l a_l^2 $. Thus, $$ \\widetilde{D}^{\\prime}=\\frac{2(2\\widehat{H}_{1}+\\widehat{H}_{4})}{\\widehat{D}} $$ provides a weighted estimate of the average value of $ k^2 $, with the weighting in favor of loci with large effects $ |a| $ and/or high heterozygosities. For the special case in which $ p_l = q_l = 0.5 $, the weighting involves only the squared homozygous effects, since $ 2(2H_1 + H_4)/D = \\sum a_l^2 k_l^2 / \\sum a_l^2 $. In that case, $ \\widetilde{D}' $ is identical to the quantity estimated by Comstock and Robinson's (1952) $ \\widetilde{D} $, Equation 20.5."
+      "content": "[[FORMULA:Genetics_chapter20_formula043]]",
+      "source_page": 632,
+      "printed_page": 612,
+      "source_block_ids": [
+        "p632:b9"
+      ],
+      "bbox": [
+        347.0,
+        1315.0,
+        716.0,
+        1362.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "When the parental lines $(i=1,\\ldots,N)$ are completely inbred, there are three ways in which further insight into the dominance properties of quantitative-trait loci can be acquired from the relationship between the expected array covariances, $\\sigma_{P_{2},r}(i)$, and variances, $\\sigma_{r}^{2}(i)$. First, an additional weighted estimate of the average degree of dominance can be acquired in the following manner. If the environmental contributions to $\\sigma_{P_{2},r}(i)$ and $\\sigma_{r}^{2}(i)$ are removed, the expected values of these quantities can be expressed in terms of the frequencies and effects of alleles in the entire collection of lines, $$ \\sigma_{r}^{2}(i)=\\sum p_{l}q_{l}a_{l}^{2}(1-\\delta_{il}k_{l})^{2} $$ $$ \\sigma_{P_{2},r}(i)=2\\sum p_{l}q_{l}a_{l}^{2}(1-\\delta_{i l}k_{l}) $$ where the summation is over all variable loci, indexed by $l$, and $\\delta_{il}$ equals +1 or -1 depending on whether the line is fixed for the dominant or recessive allele at"
+      "content": "[[FORMULA:Genetics_chapter20_formula044]]",
+      "source_page": 632,
+      "printed_page": 612,
+      "source_block_ids": [
+        "p632:b11"
+      ],
+      "bbox": [
+        349.0,
+        1371.0,
+        723.0,
+        1435.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:20.4]] the $l$th locus. These two quantities are related as $$ \\sigma_{P_{2},r}(i)=\\sigma_{r}^{2}(i)+\\sum p_{l}q_{l}a_{l}^{2}(1-k_{l}^{2}) $$ Thus, provided the environmental contributions to the observed statistics $C_{P_{2},r}(i)$ and $V_{r}(i)$ have been removed, the regression of $C_{P_{2},r}(i)$ on $V_{r}(i)$ has an expected slope equal to one and an expected intercept, $\\alpha_{r}$, equal to $\\sum p_{l}q_{l}a_{l}^{2}(1-k_{l}^{2})$. Note also that when the parents are completely inbred, as we are assuming, $\\sigma_{P_{2}}^{2}=4\\sum p_{l}q_{l}a_{l}^{2}$. Hence, an average value of $k^{2}$ (again, using the $p_{l}q_{l}a_{l}^{2}$ as weights) is obtained from using the estimated intercept $\\widehat{\\alpha}_{r}$, $$ \\tilde{D}^{\\prime\\prime}=\\frac{V_{P_{2}}-4\\hat{\\alpha}_{r}}{V_{P_{2}}} $$"
+      "content": "[[FORMULA:Genetics_chapter20_formula045]]",
+      "source_page": 632,
+      "printed_page": 612,
+      "source_block_ids": [
+        "p632:b13"
+      ],
+      "bbox": [
+        360.0,
+        1434.0,
+        924.0,
+        1515.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:20.6]]",
+      "source_page": 633,
+      "printed_page": 613,
+      "source_block_ids": [
+        "p633:b3"
+      ],
+      "bbox": [
+        73.0,
+        202.0,
+        1034.0,
+        625.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Second, inferences can be made regarding the relative numbers of dominant alleles carried in different inbred lines. The geometric relationship between the"
+      "content": "[[FORMULA:Genetics_chapter20_formula046]]",
+      "source_page": 633,
+      "printed_page": 613,
+      "source_block_ids": [
+        "p633:b5"
+      ],
+      "bbox": [
+        311.0,
+        829.0,
+        617.0,
+        899.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "$\\sigma_{P_{2},r}(i)$ and their corresponding $\\sigma_{r}^{2}(i)$ is shown in Figure 20.4. Due to sampling error, the data points from an actual analysis will not all fall exactly on a straight line, but the regression coefficient is not expected to be significantly different from one unless the parental lines are harboring significant heterozygosity or there is significant epistatic variance. Since the absolute value of a correlation coefficient cannot exceed one, $|\\sigma_{P_{2},r}(i)|\\leq\\sigma_{P_{2}}\\cdot\\sigma_{r}(i)$, so the data are expected to be confined to a parabola defined by $\\sigma_{P_{2}}$. Any parental line that is homozygous for all of the dominant alleles will produce an array with minimal variance and covariance, yielding a point on the parabola close to the origin. (In the case of complete dominance, such a parental line will exhibit no genetic variance among its $F_{1}$ families and will fall at the origin.) On the other hand, a line fixed for all of the recessive alleles yields the maximum array variance and covariance, and falls on the point where the regression line intersects the upper end of the parabola. Thus, in general, the relative positions of the points on the regression line indicate the relative numbers of dominant genes in the parental lines. For the special case of additivity, all of the observations are expected to fall at a single point on the limiting parabola."
+      "content": "[[FORMULA:Genetics_chapter20_formula047]]",
+      "source_page": 633,
+      "printed_page": 613,
+      "source_block_ids": [
+        "p633:b7"
+      ],
+      "bbox": [
+        278.0,
+        902.0,
+        689.0,
+        976.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Third, elaborating further on the pattern just noted for pure parental lines, the expected sum of the covariance and variance involving the $i$th array is $\\sigma_{P_2,r}(i) + \\sigma_r^2(i) = [(3D/4) + H_1] - 4\\sum\\delta_{il}p_{l}q_{l}a_l^2k_l$. This quantity is expected to increase linearly with the number of recessive alleles in the parental line, i.e., with the number of negative $\\delta_{il}$. Thus, by regressing the index $\\widetilde{R} = C_{P_2,r}(i) + V_r(i)$ on $\\overline{z}_{ii}$, it is possible to evaluate whether the number of dominant alleles in a parental line is correlated with its mean phenotype. Such a comparison was made for mean flowering time in Nicotiana rustica by Mather and Jinks (1982) (Figure 20.5). In general, later flowering lines had higher values of $\\widetilde{R}$, suggesting that they carried more recessive genes. However, the line with the earliest flowering time had an intermediate value of $\\widetilde{R}$ (point 8 in Figure 20.5), suggesting that not all of the alleles for early flowering are dominant."
+      "content": "[[FORMULA:Genetics_chapter20_formula048]]",
+      "source_page": 633,
+      "printed_page": 613,
+      "source_block_ids": [
+        "p633:b9"
+      ],
+      "bbox": [
+        276.0,
+        978.0,
+        820.0,
+        1058.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula049]]",
+      "source_page": 633,
+      "printed_page": 613,
+      "source_block_ids": [
+        "p633:b11"
+      ],
+      "bbox": [
+        264.0,
+        1055.0,
+        560.0,
+        1125.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The terms $ \\sigma^{2}(\\overline{P}_{1}) $, $ \\sigma^{2}(\\overline{P}_{2}) $, and $ \\sigma^{2}(\\overline{F}_{1}) $ are the expected sampling variances of $ P_{1} $, $ P_{2} $, and $ F_{1} $ family means, estimates of which can be obtained from single plots by dividing the within-family variance by the sample size, or from variances among replicate plot means. In the following, we assume that the contributions of sampling variance to the preceding expressions have been eliminated (e.g., by subtracting the sampling variance of the mean), so that the quantities of interest have a purely genetic interpretation (solely a function of the quantities in Table 20.6).",
+      "source_page": 633,
+      "printed_page": 613,
+      "source_block_ids": [
+        "p633:b13"
+      ],
+      "bbox": [
+        54.0,
+        1138.0,
+        1019.0,
+        1416.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Letting the appropriately subscripted V and C denote estimates of the preceding variances (Equations 20.17a–d) and covariances (Equations 20.17e–g) after removal of the sampling variance contributions, estimators for the composite genetic parameters in Table 20.6 are found by rearranging Equations 20.17a-g to give",
+      "source_page": 633,
+      "printed_page": 613,
+      "source_block_ids": [
+        "p633:b14",
+        "p634:b2"
+      ],
+      "bbox": [
+        50.0,
+        1392.0,
+        1011.0,
+        1516.0
+      ],
+      "source_page_end": 634
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula050]]",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b3"
+      ],
+      "bbox": [
+        317.0,
+        240.0,
+        636.0,
+        281.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula051]]",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b5"
+      ],
+      "bbox": [
+        309.0,
+        283.0,
+        888.0,
+        345.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula052]]",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b7"
+      ],
+      "bbox": [
+        312.0,
+        350.0,
+        486.0,
+        389.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula053]]",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b9"
+      ],
+      "bbox": [
+        313.0,
+        393.0,
+        654.0,
+        432.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula054]]",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b11"
+      ],
+      "bbox": [
+        313.0,
+        433.0,
+        759.0,
+        478.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula055]]",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b13"
+      ],
+      "bbox": [
+        314.0,
+        481.0,
+        854.0,
+        543.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula056]]",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b15"
+      ],
+      "bbox": [
+        316.0,
+        545.0,
+        644.0,
+        587.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "When parents are completely inbred, these expressions can be simplified by letting $ V_{P_1} = V_{P_2} = C_{P_1, P_2} $, and $ \\overline{C}_{P_1, r} = \\overline{C}_{P_2, r} $.",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b17"
+      ],
+      "bbox": [
+        127.0,
+        589.0,
+        1085.0,
+        676.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "As shown in Table 20.6, all seven of these composite parameters are defined by gene frequencies and gene effects. Functions of these quantities can yield considerable insight into the mechanistic basis of genetic variation. For example, the quantity $ 2(2H_1 + H_4)/D $ is equal to $ \\sum p_l q_l a_l^2 k_l^2 / \\sum p_l q_l a_l^2 $. Thus,",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b18"
+      ],
+      "bbox": [
+        130.0,
+        652.0,
+        1090.0,
+        807.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula057]]",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b19"
+      ],
+      "bbox": [
+        496.0,
+        806.0,
+        725.0,
+        885.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "provides a weighted estimate of the average value of $ k^2 $, with the weighting in favor of loci with large effects $ |a| $ and/or high heterozygosities. For the special case in which $ p_l = q_l = 0.5 $, the weighting involves only the squared homozygous effects, since $ 2(2H_1 + H_4)/D = \\sum a_l^2 k_l^2 / \\sum a_l^2 $. In that case, $ \\widetilde{D}' $ is identical to the quantity estimated by Comstock and Robinson's (1952) $ \\widetilde{D} $, Equation 20.5.",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b21"
+      ],
+      "bbox": [
+        137.0,
+        891.0,
+        1096.0,
+        1081.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "When the parental lines $(i=1,\\ldots,N)$ are completely inbred, there are three ways in which further insight into the dominance properties of quantitative-trait loci can be acquired from the relationship between the expected array covariances, $\\sigma_{P_{2},r}(i)$, and variances, $\\sigma_{r}^{2}(i)$. First, an additional weighted estimate of the average degree of dominance can be acquired in the following manner. If the environmental contributions to $\\sigma_{P_{2},r}(i)$ and $\\sigma_{r}^{2}(i)$ are removed, the expected values of these quantities can be expressed in terms of the frequencies and effects of alleles in the entire collection of lines,",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b22"
+      ],
+      "bbox": [
+        138.0,
+        1061.0,
+        1102.0,
+        1337.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula058]]",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b23"
+      ],
+      "bbox": [
+        464.0,
+        1336.0,
+        809.0,
+        1387.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula059]]",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b25"
+      ],
+      "bbox": [
+        438.0,
+        1391.0,
+        816.0,
+        1442.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the summation is over all variable loci, indexed by $ l $, and $ \\delta_{il} $ equals +1 or -1 depending on whether the line is fixed for the dominant or recessive allele at",
+      "source_page": 634,
+      "printed_page": 614,
+      "source_block_ids": [
+        "p634:b27"
+      ],
+      "bbox": [
+        149.0,
+        1445.0,
+        1109.0,
+        1533.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:20.4]]",
+      "source_page": 635,
+      "printed_page": 615,
+      "source_block_ids": [
+        "p635:b3"
+      ],
+      "bbox": [
+        113.0,
+        727.0,
+        982.0,
+        1024.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "the lth locus. These two quantities are related as",
+      "source_page": 635,
+      "printed_page": 615,
+      "source_block_ids": [
+        "p635:b4"
+      ],
+      "bbox": [
+        60.0,
+        1065.0,
+        639.0,
+        1111.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula060]]",
+      "source_page": 635,
+      "printed_page": 615,
+      "source_block_ids": [
+        "p635:b5"
+      ],
+      "bbox": [
+        322.0,
+        1122.0,
+        753.0,
+        1173.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, provided the environmental contributions to the observed statistics $ C_{P_2,r}(i) $ and $ V_r(i) $ have been removed, the regression of $ C_{P_2,r}(i) $ on $ V_r(i) $ has an expected slope equal to one and an expected intercept, $ \\alpha_r $, equal to $ \\sum p_{l}q_{l}a_l^2(1 - k_l^2) $. Note also that when the parents are completely inbred, as we are assuming, $ \\sigma_{P_2}^2 = 4 \\sum p_{l}q_{l}a_l^2 $. Hence, an average value of $ k^2 $ (again, using the $ p_{l}q_{l}a_l^2 $ as weights) is obtained from using the estimated intercept $ \\widehat{\\alpha}_r $,",
+      "source_page": 635,
+      "printed_page": 615,
+      "source_block_ids": [
+        "p635:b7"
+      ],
+      "bbox": [
+        52.0,
+        1172.0,
+        1018.0,
+        1386.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter20_formula061]]",
+      "source_page": 635,
+      "printed_page": 615,
+      "source_block_ids": [
+        "p635:b8"
+      ],
+      "bbox": [
+        428.0,
+        1386.0,
+        633.0,
+        1460.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Second, inferences can be made regarding the relative numbers of dominant alleles carried in different inbred lines. The geometric relationship between the",
+      "source_page": 635,
+      "printed_page": 615,
+      "source_block_ids": [
+        "p635:b10"
+      ],
+      "bbox": [
+        50.0,
+        1455.0,
+        1012.0,
+        1545.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "$ \\sigma_{P_{2},r}(i) $ and their corresponding $ \\sigma_{r}^{2}(i) $ is shown in Figure 20.4. Due to sampling error, the data points from an actual analysis will not all fall exactly on a straight line, but the regression coefficient is not expected to be significantly different from one unless the parental lines are harboring significant heterozygosity or there is significant epistatic variance. Since the absolute value of a correlation coefficient cannot exceed one, $ |\\sigma_{P_{2},r}(i)| \\leq \\sigma_{P_{2}} \\cdot \\sigma_{r}(i) $, so the data are expected to be confined to a parabola defined by $ \\sigma_{P_{2}} $. Any parental line that is homozygous for all of the dominant alleles will produce an array with minimal variance and covariance, yielding a point on the parabola close to the origin. (In the case of complete dominance, such a parental line will exhibit no genetic variance among its $ F_{1} $ families and will fall at the origin.) On the other hand, a line fixed for all of the recessive alleles yields the maximum array variance and covariance, and falls on the point where the regression line intersects the upper end of the parabola. Thus, in general, the relative positions of the points on the regression line indicate the relative numbers of dominant genes in the parental lines. For the special case of additivity, all of the observations are expected to fall at a single point on the limiting parabola.",
+      "source_page": 636,
+      "printed_page": 616,
+      "source_block_ids": [
+        "p636:b2"
+      ],
+      "bbox": [
+        119.0,
+        127.0,
+        1087.0,
+        680.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Third, elaborating further on the pattern just noted for pure parental lines, the expected sum of the covariance and variance involving the ith array is $ \\sigma_{P_2,r}(i) + \\sigma_r^2(i) = [(3D/4) + H_1] - 4 \\sum \\delta_{il}p_{l}q_{l}a_l^2k_l $. This quantity is expected to increase linearly with the number of recessive alleles in the parental line, i.e., with the number of negative $ \\delta_{il} $. Thus, by regressing the index $ \\widetilde{R} = C_{P_2,r}(i) + V_r(i) $ on $ \\overline{z}_{ii} $, it is possible to evaluate whether the number of dominant alleles in a parental line is correlated with its mean phenotype. Such a comparison was made for mean flowering time in Nicotiana rustica by Mather and Jinks (1982) (Figure 20.5). In general, later flowering lines had higher values of $ \\widetilde{R} $, suggesting that they carried more recessive genes. However, the line with the earliest flowering time had an intermediate value of $ \\widetilde{R} $ (point 8 in Figure 20.5), suggesting that not all of the alleles for early flowering are dominant.",
+      "source_page": 636,
+      "printed_page": 616,
+      "source_block_ids": [
+        "p636:b3"
+      ],
+      "bbox": [
+        131.0,
+        669.0,
+        1099.0,
+        1079.0
+      ]
     }
   ]
 }

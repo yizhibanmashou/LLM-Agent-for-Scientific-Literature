@@ -2,54 +2,416 @@
   "id": "Genetics_chapter25_003",
   "metadata": {
     "chapter": "Genetics_chapter25",
-    "section": "Introduction",
-    "subsections": [
-      "Threshold Characters"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter25_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Threshold Characters",
+    "section": "HERITABILITY ON THE UNDERLYING SCALE",
+    "subsections": [],
+    "section_level_1": "HERITABILITY ON THE UNDERLYING SCALE",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "Threshold Characters"
+      "HERITABILITY ON THE UNDERLYING SCALE"
     ],
-    "display_heading": "Threshold Characters"
+    "display_heading": "HERITABILITY ON THE UNDERLYING SCALE",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 742,
+      "printed_page": 722,
+      "source_block_ids": [
+        "p742:b4"
+      ],
+      "bbox": [
+        143.0,
+        807.0,
+        753.0,
+        837.0
+      ],
+      "raw_text": "HERITABILITY ON THE UNDERLYING SCALE"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "While the analytical procedures discussed in previous chapters are applicable to essentially all continuously distributed traits, the states of many characters fall into discrete categories. Important “all-or-none” or dichotomous characters include survivorship and the expression of congenital malformations. Polychotomous traits, meristic traits that can be partitioned into more than two discrete classes, include numbers of reproductive events, numbers of vertebrae or other skeletal parts, and so forth. Although the expression of some discrete traits, such as gender, may be a consequence of the expression of a single segregating factor, multiple loci are often involved. Thus, general genetic models for discrete phenotypic states need to be consistent with an underlying multifactorial basis for the character of interest."
+      "content": "If the phenotype distribution on the underlying scale is treated as a standard normal (with mean = 0 and variance = 1), a relatively simple approach is available for estimating heritability on the underlying scale. The technique was independently developed by Crittenden (1961) and Falconer (1965b), both of whom saw an analogy between the phenotypes of affected parents and the response of a population to truncation selection. Both authors were concerned with the inheritance of genetic disorders in humans. For that reason, Falconer (1965b) called the underlying scale liability and the affected individuals propositi. For reference, we refer to the grand mean for liability in the base population as $ \\mu_{p} = 0 $ and the mean liability of propositi as $ \\mu_{w} $ (Figure 25.3). For the most part, for simplicity, we assume the propositi to be parents and their relatives to be offspring. However, the following analysis can be readily extended to any degree of relatedness.",
+      "source_page": 742,
+      "printed_page": 722,
+      "source_block_ids": [
+        "p742:b5"
+      ],
+      "bbox": [
+        143.0,
+        872.0,
+        1102.0,
+        1254.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The incidence of a character among the relatives of individuals expressing a trait relative to the incidence in the entire population is generally referred to as the relative recurrence risk (Chapter 16). For a character with no heritable basis, we expect this ratio to be equal to one. As the relative recurrence risk increases, it becomes more plausible that the variance of the character has a genetic basis. But how can such information be translated into a more conventional estimate of heritability?"
+      "content": "As for any quantitative trait, the unobserved underlying character (liability) can be treated as the sum of a genotypic value and an environmental deviation, and assuming that it is normally distributed, the regression for liability in different sets of relatives will be linear. Further assuming that there is no change in the mean environmental contribution to liability between generations and no selection, the mean liability among all offspring will equal that for the base population ( $ \\mu_{p} $). This value provides one point on the expected parent-offspring regression. Now suppose that affected parents (with mean liability $ \\mu_{w} $) produce offspring with",
+      "source_page": 742,
+      "printed_page": 722,
+      "source_block_ids": [
+        "p742:b6"
+      ],
+      "bbox": [
+        143.0,
+        1256.0,
+        1101.0,
+        1514.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "A possible solution to this problem was first offered by Wright (1934c,d) in a study on digit number in guinea pigs. While guinea pigs normally have only three hind toes, four-toed (polydactylous) individuals occasionally appear in laboratory stocks, and the incidence of the trait can be increased to 100% by selection and inbreeding (Castle 1906). Through a carefully designed breeding program with initially homozygous strains, Wright rejected the hypothesis that polydactyly has a simple genetic basis. The most compelling evidence came from the observation that when different strains that bred true for the three-toed condition were mated to the same pure four-toed strain, very different proportions of four-toed progeny were obtained. These results and other oddities were shown to be consistent with a model in which the development of a fourth toe depends on the level of a continuously distributed underlying trait. Wright suggested that the four-toed condition would only arise if the total contribution of genes and environment to the underlying trait exceeded a certain threshold (Figure 25.1)."
+      "content": "[[FIGURE:25.3]]",
+      "source_page": 743,
+      "printed_page": 723,
+      "source_block_ids": [
+        "p743:b3"
+      ],
+      "bbox": [
+        103.0,
+        911.0,
+        972.0,
+        1150.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Attributes that are categorical on an outward (observed) scale but believed to be continuous on an underlying (unobserved) scale are known as threshold (Wright 1934c,d) or quasi-continuous (Grüneberg 1952) characters. The threshold"
+      "content": "expected liability $\\mu_o$. These values provide a second point on the regression. It follows that the slope of the parent-offspring regression is $\\beta_{op} = (\\mu_o - \\mu_p)/(\\mu_w - \\mu_p)$, which reduces further to $\\beta_{op} = \\mu_o/\\mu_w$ since we have scaled the distribution of liability in the base population such that $\\mu_p = 0$. This definition of $\\beta_{op}$ has the usual interpretation of a regression between parents and offspring. That is, $2\\beta_{op} = [\\sigma_A^2 + (\\sigma_{AA}^2/2) + \\cdots]/\\sigma_z^2$.",
+      "source_page": 743,
+      "printed_page": 723,
+      "source_block_ids": [
+        "p743:b4"
+      ],
+      "bbox": [
+        55.0,
+        1210.0,
+        1013.0,
+        1404.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:25.1]] model assumes a stepwise risk function for phenotypes on the underlying scale (Figure 25.2). All individuals with underlying phenotypic values above the threshold exhibit the trait; all those below it do not. A stepwise risk function on the underlying phenotypic scale implies a sigmoid risk function on the underlying genotypic scale, provided the environmental deviations on this scale are normally distributed (Smith 1971, Curnow 1972, Mendell and Elston 1974). Individuals with genotypic values above the threshold are at less than 100% risk because some of them have underlying phenotypes below the threshold. Likewise, some individuals with genotypic values below the threshold have phenotypic values above it. The greater the environmental contribution to the variance of the trait, the more gradual the risk function on the genotypic scale (Figure 25.2)."
+      "content": "Thus, the problem of estimating heritability on the underlying scale reduces to obtaining estimates of the mean liabilities in affected parents and their offspring, $ \\mu_{w} $ and $ \\mu_{o} $. Neither of these is directly observable, but from the properties of a normal distribution, estimates of them are obtainable from the incidence of the disorder in the population ( $ \\Phi_p $) and the proportion of offspring of propositi that are affected ( $ \\Phi_o $). First, we note that the estimated mean $ \\overline{z}_o $ can also be written as $ (x_p - x_o) $, where $ x_p $ and $ x_o $ are the estimated distances of the threshold from the mean liability in the two samples (Figure 25.3). Given the observations $ \\Phi_p $ and $ \\Phi_o $, values for $ x_p $ and $ x_o $ are readily obtained from a table of the standard normal distribution (Chapter 2). These values are in units of phenotypic standard deviations on the underlying scale of liability. Second, the mean liability of affected members of the base population, $ \\overline{z}_w $, can be determined by use of the equation for the mean of the tail of a normal distribution. From Equation 2.15, $ \\overline{z}_w = p(x_p) / \\Phi_p $, where $ p(x_p) = (2\\pi)^{-1/2} \\exp(-x_p^2/2) $ is the height of the standardized normal distribution at the threshold in the base population. Thus, the estimated parent-offspring regression on the underlying scale is",
+      "source_page": 743,
+      "printed_page": 723,
+      "source_block_ids": [
+        "p743:b5",
+        "p744:b2"
+      ],
+      "bbox": [
+        53.0,
+        1404.0,
+        1014.0,
+        1531.0
+      ],
+      "source_page_end": 744
     },
     {
       "type": "discussion",
-      "content": "Since the nature of the underlying trait is almost always unknown, the interpretation of categorical data with a threshold model may appear to require an extreme act of faith. However, there are a number of ways to test the general validity"
+      "content": "[[FORMULA:Genetics_chapter25_formula001]]",
+      "source_page": 744,
+      "printed_page": 724,
+      "source_block_ids": [
+        "p744:b3"
+      ],
+      "bbox": [
+        466.0,
+        537.0,
+        767.0,
+        609.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "[[FIGURE:25.2]] of the model. In Chapter 11, for example, we showed how threshold developmental maps provide plausible models for phenomena ranging from canalization to genetic assimilation. Moreover, in certain situations, the underlying determinant of character expression may be revealed through careful experimentation. For example, Alberch and Gale (1985) suggested that the number of primordial cells in the amphibian limb bud determines the digital structure. Through the use of mitotic inhibitors and promoters, they showed that below a certain threshold number of cells, complete loss of a digit may occur. A similar mechanism may have been operating in Wright's guinea pigs. Finally, as will be demonstrated below, the validity of a threshold model can be evaluated through the comparison of phenotypes of various types of relatives."
+      "content": "Note that this expression generalizes to any set of relatives $ (r) $ by writing",
+      "source_page": 744,
+      "printed_page": 724,
+      "source_block_ids": [
+        "p744:b5"
+      ],
+      "bbox": [
+        138.0,
+        623.0,
+        1015.0,
+        658.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Threshold models are used extensively in genetic counseling to predict the risk of congenital malformations and psychiatric disorders in offspring of affected relatives (Carter 1965, 1969; James 1971; Smith 1971; Gershon et al. 1976). General mathematical/statistical reviews of the theory have been written by Curnow and Smith (1975) and Gianola (1982). Evolutionary problems that have recently been investigated with threshold models include limb loss in tetrapods (Lande 1978), environmental sex determination (Bulmer and Bull 1982), and mating preference (O'Donald and Majerus 1985)."
+      "content": "[[FORMULA:Genetics_chapter25_formula002]]",
+      "source_page": 744,
+      "printed_page": 724,
+      "source_block_ids": [
+        "p744:b6"
+      ],
+      "bbox": [
+        504.0,
+        672.0,
+        729.0,
+        743.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The large-sample variance estimate for $ b_{op} $, derived by Taylor expansion, is",
+      "source_page": 744,
+      "printed_page": 724,
+      "source_block_ids": [
+        "p744:b8"
+      ],
+      "bbox": [
+        139.0,
+        757.0,
+        1036.0,
+        791.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter25_formula003]]",
+      "source_page": 744,
+      "printed_page": 724,
+      "source_block_ids": [
+        "p744:b9"
+      ],
+      "bbox": [
+        199.0,
+        809.0,
+        955.0,
+        886.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ N_{p} $ and $ N_{o} $ are, respectively, the sample sizes for total individuals in the parental generation and offspring of affected individuals.",
+      "source_page": 744,
+      "printed_page": 724,
+      "source_block_ids": [
+        "p744:b11"
+      ],
+      "bbox": [
+        138.0,
+        898.0,
+        1098.0,
+        963.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Because of its elegance and simplicity, the Crittenden-Falconer technique has been utilized widely. However, the reader should be aware of two assumptions made in the preceding derivation. First, in relying on a linear model, we assumed implicitly that the distribution of liability is normal in both the affected parents and their offspring. Clearly, this is not true for the affected parents, which are a truncated sample from a normal distribution (Figure 25.3), nor is it likely to be exactly true for their offspring. The second simplifying assumption is that both the base population and the relatives of propositi have unit variance for liability. However, if the character is heritable, the variance of liability in offspring of affected parents will be less than one since they represent only a subset of the population.",
+      "source_page": 744,
+      "printed_page": 724,
+      "source_block_ids": [
+        "p744:b12"
+      ],
+      "bbox": [
+        139.0,
+        963.0,
+        1101.0,
+        1314.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Although Crittenden (1961) and Falconer (1965b) were aware of these difficulties, they left their solution to later investigators. Utilizing statistical theory that had been developed much earlier by Pearson (1900) and Everitt (1910), Edwards (1969) and Smith (1970) showed how the preceding problems can be eliminated by considering all possible pairs of parents and offspring rather than just affected",
+      "source_page": 744,
+      "printed_page": 724,
+      "source_block_ids": [
+        "p744:b13"
+      ],
+      "bbox": [
+        139.0,
+        1312.0,
+        1102.0,
+        1476.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FIGURE:25.4]]",
+      "source_page": 745,
+      "printed_page": 725,
+      "source_block_ids": [
+        "p745:b3"
+      ],
+      "bbox": [
+        108.0,
+        723.0,
+        975.0,
+        930.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "parents. This allows the entire joint distribution of parents and offspring to be partitioned into four types of pairs: both affected, both unaffected, parents affected but offspring unaffected, and vice versa (Figure 25.4). Given this information, the exact phenotypic correlation between parents and offspring on the underlying standard bivariate normal scale can be extracted from tables provided by Pearson (1900) and Everitt (1910) or from integral equations derived by Curnow (1972). Both procedures are a bit tedious, but a useful approximation has been given by Edwards (1969),",
+      "source_page": 745,
+      "printed_page": 725,
+      "source_block_ids": [
+        "p745:b4"
+      ],
+      "bbox": [
+        59.0,
+        979.0,
+        1020.0,
+        1236.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter25_formula004]]",
+      "source_page": 745,
+      "printed_page": 725,
+      "source_block_ids": [
+        "p745:b5"
+      ],
+      "bbox": [
+        259.0,
+        1241.0,
+        815.0,
+        1307.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where $ k = \\Phi_{o}/\\Phi_{p} $. An analytical approximation that accounts for the change in variance across generations but not for the nonnormality of the affected parents was derived by Reich et al. (1972),",
+      "source_page": 745,
+      "printed_page": 725,
+      "source_block_ids": [
+        "p745:b7"
+      ],
+      "bbox": [
+        58.0,
+        1313.0,
+        1019.0,
+        1409.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter25_formula005]]",
+      "source_page": 745,
+      "printed_page": 725,
+      "source_block_ids": [
+        "p745:b8"
+      ],
+      "bbox": [
+        258.0,
+        1420.0,
+        813.0,
+        1497.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where again $ \\overline{z}_{w}=p(x_{p})/\\Phi_{p} $.",
+      "source_page": 745,
+      "printed_page": 725,
+      "source_block_ids": [
+        "p745:b9"
+      ],
+      "bbox": [
+        58.0,
+        1500.0,
+        397.0,
+        1535.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:25.1]]",
+      "source_page": 746,
+      "printed_page": 726,
+      "source_block_ids": [
+        "p746:b3"
+      ],
+      "bbox": [
+        138.0,
+        247.0,
+        1094.0,
+        873.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The degree of inaccuracy that results from the use of the Crittenden-Falconer equation can be seen in Table 25.1, where the heritabilities of three human disorders are calculated using Equations 25.1–3. For each attribute, data are available for several degrees of relationship and sample sizes are large (several hundreds to thousands). There is no strong evidence for dominance genetic variance for these traits, so different types of relatives of the same degree have been pooled.",
+      "source_page": 746,
+      "printed_page": 726,
+      "source_block_ids": [
+        "p746:b5"
+      ],
+      "bbox": [
+        137.0,
+        1202.0,
+        1097.0,
+        1394.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Three important observations can be gleaned from this table. First, for all three traits, the incidence in affected relatives ( $ \\Phi_{r} $) is substantially higher than that in the population at large ( $ \\Phi_{p} $). Thus, regardless of the model or the class of relatives employed in the computation of $ h^{2} $, it is clear that the variable expression of these traits has a genetic basis. Second, the high estimates of $ h^{2} $, all in excess of 0.5, arise despite the fact that the incidences of the disorders in the population are very low. Thus, the incidence of a trait in a population provides no information about its heritability. Third, the equation of Reich et al. (1972) produces results that are essentially the same as those of Edwards (1969) formula, indicating that the nonnormality correction is of negligible significance. More remarkable is the excellent agreement between the results of the Crittenden-Falconer model and those from the more exact treatments. In no case do the estimates differ by more than 10%.",
+      "source_page": 746,
+      "printed_page": 726,
+      "source_block_ids": [
+        "p746:b6",
+        "p747:b2"
+      ],
+      "bbox": [
+        137.0,
+        1394.0,
+        1100.0,
+        1524.0
+      ],
+      "source_page_end": 747
+    },
+    {
+      "type": "discussion",
+      "content": "Less clear is why all three approaches yield lower heritability estimates with increasing distance of relationship. One possibility is that significant sources of epistatic variance contribute to the expression of these traits. All components of epistatic genetic variance are completely confounded with the additive genetic variance in the case of monozygotic twins (Chapter 19), i.e., the heritability estimate derived for monozygotic twins is more appropriately described as a broad-sense heritability. However, epistatic components of variance make diminishingly smaller contributions to the covariance between relatives as the coefficient of coancestry declines (Chapter 7; also see Equation 16.49d). Another potential explanation is that shared environmental effects contribute disproportionately to the resemblance between close relatives. Still a third possibility is that relationships in humans (other than twins) are sometimes less than expected due to uncertain paternity.",
+      "source_page": 747,
+      "printed_page": 727,
+      "source_block_ids": [
+        "p747:b3"
+      ],
+      "bbox": [
+        60.0,
+        424.0,
+        1018.0,
+        840.0
+      ]
+    },
+    {
+      "type": "example",
+      "content": "[[EXAMPLE:Genetics_chapter25:1]]",
+      "source_page": 747,
+      "source_block_ids": [
+        "p747:b4"
+      ],
+      "bbox": [
+        104.0,
+        935.0,
+        971.0,
+        1288.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "As in all attempts to estimate heritability from the resemblance between relatives, an important assumption of the above procedures is that selection does not alter the relative incidence of the trait in different pairs of relatives (i.e., the values of a, b, c, and d in Figure 25.4) prior to their assessment. Selection may be a serious source of bias for certain types of relatives and characters. In the case of human genetic disorders, for example, affected individuals may fail to reproduce for physiological reasons or, as a response to genetic counseling, may differentially abort affected fetuses. Comparisons of full sibs do not necessarily provide a solution to such problems. For example, individuals whose first offspring is affected may tend to decide against having future offspring, in which case they would be eliminated from the analysis. With appropriate medical records, correction might be made for such bias, but it would not be a trivial task.",
+      "source_page": 747,
+      "printed_page": 727,
+      "source_block_ids": [
+        "p747:b5",
+        "p748:b2"
+      ],
+      "bbox": [
+        55.0,
+        1381.0,
+        1017.0,
+        1509.0
+      ],
+      "source_page_end": 748
     }
   ]
 }

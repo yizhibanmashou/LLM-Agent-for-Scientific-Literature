@@ -2,54 +2,413 @@
   "id": "Genetics_chapter19_002",
   "metadata": {
     "chapter": "Genetics_chapter19",
-    "section": "Introduction",
-    "subsections": [
-      "Optimal Design"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter19_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Optimal Design",
+    "section": "THE CLASSICAL APPROACH",
+    "subsections": [],
+    "section_level_1": "THE CLASSICAL APPROACH",
+    "section_level_2": null,
     "heading_path": [
-      "Introduction",
-      "Optimal Design"
+      "THE CLASSICAL APPROACH"
     ],
-    "display_heading": "Optimal Design"
+    "display_heading": "THE CLASSICAL APPROACH",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 595,
+      "printed_page": 575,
+      "source_block_ids": [
+        "p595:b5"
+      ],
+      "bbox": [
+        130.0,
+        776.0,
+        525.0,
+        815.0
+      ],
+      "raw_text": "THE CLASSICAL APPROACH"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "In the now familiar fashion, the optimal design for a nested analysis of variance is defined to be the combination of $N$, $M$, and $n$, subject to some constraint, that minimizes the sampling variance of the intraclass correlation of interest. Since $4t_{\\mathrm{PHS}}$ provides the most reliable estimate of $h^{2}$, it will generally be most desirable to minimize $\\mathrm{Var}(t_{\\mathrm{PHS}})$ as defined in Equation 18.37a, but the solution is quite complicated, as it depends upon both $t_{\\mathrm{PHS}}$ and $t_{\\mathrm{FS}}$. Some feeling for the best design and the sensitivity of $\\mathrm{Var}(t_{\\mathrm{PHS}})$ to nonoptimal designs can be achieved by substituting different values for the design parameters $(N, M, n)$ and for the possible values of $t_{\\mathrm{PHS}}$ and $t_{\\mathrm{FS}}$."
+      "content": "The most commonly used methodology for twin analysis relies on the simple one-way analysis of variance (Kempthorne and Osborne 1961, Haseman and Elston 1970, Christian et al. 1974, Kang et al. 1974, Eaves et al. 1978, Martin et al. 1978). Separate analyses are performed for monozygotic and dizygotic twins using the layout given in Table 19.1. Since twin groups always consist of two individuals, this is one of the few designs in quantitative-genetic analysis that is always perfectly balanced.",
+      "source_page": 595,
+      "printed_page": 575,
+      "source_block_ids": [
+        "p595:b6"
+      ],
+      "bbox": [
+        131.0,
+        831.0,
+        1093.0,
+        1074.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Robertson (1959a) has shown that when dominance and common environmental effects are absent, the preferred design for estimating $t_{\\mathrm{PHS}}$ is to use full-sib families of only single individuals, i.e., to rely on the pure half-sib analysis outlined in the previous section. If on the other hand, one desires approximately equal precision in the estimates of $t_{\\mathrm{PHS}}$ and $t_{\\mathrm{FS}}$, it is advisable to allocate at least 3 to 4 females/male and to maintain full-sib families of $\\sim 1/(2t_{\\mathrm{PHS}})$ (but no less than 2) progeny/female."
+      "content": "For both types of twins, we start with the simple linear model",
+      "source_page": 595,
+      "printed_page": 575,
+      "source_block_ids": [
+        "p595:b7"
+      ],
+      "bbox": [
+        189.0,
+        1057.0,
+        931.0,
+        1103.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Bridges and Knapp (1987) performed simulation studies to evaluate the probability of obtaining negative estimates for $\\sigma_{A}^{2}$ and $\\sigma_{D}^{2}$ under the nested design."
+      "content": "[[FORMULA:Genetics_chapter19_formula001]]",
+      "source_page": 595,
+      "printed_page": 575,
+      "source_block_ids": [
+        "p595:b8"
+      ],
+      "bbox": [
+        511.0,
+        1123.0,
+        720.0,
+        1159.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Assuming no epistatic or common environmental effects, with designs of moderate size, the probability of obtaining a negative estimate of the additive genetic variance is usually on the order of only a few percent. However, the probability of obtaining a negative estimate of $ \\sigma_{D}^{2} $ is typically about an order of magnitude higher. Thus, although the nested design is often relied on as a means for detecting dominance, it is not particularly powerful in this regard."
+      "content": "where $ z_{ij} $ is the phenotype of the jth member (j = 1 or 2) of the ith pair, $ b_i $ is the effect of the ith pair, and $ e_{ij} $ is the residual error resulting from segregation (in the case of dizygotic twins) and environmental variance. As usual, we assume that the $ e_{ij} $ have zero expectations, are uncorrelated with each other, and have common variance within each family, $ \\sigma_e^2 $. The twin pairs within each analysis are also assumed to be a random sample of the entire population so that $ E(b_i) = 0 $. For monozygotic and dizygotic twin analyses respectively, we denote the variance among pairs by $ \\sigma_b^2(MZ) $ and $ \\sigma_b^2(DZ) $ and the variance within pairs by $ \\sigma_e^2(MZ) $ and $ \\sigma_e^2(DZ) $.",
+      "source_page": 595,
+      "printed_page": 575,
+      "source_block_ids": [
+        "p595:b10"
+      ],
+      "bbox": [
+        137.0,
+        1171.0,
+        1101.0,
+        1482.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 3. To evaluate the causal sources of variation in developmental rate in the flour beetle Tribolium castaneum, Dawson (1965) estimated the covariances between several types of relatives. Here we focus on the results from a nested design in which 30 males were each mated to three different females, with the goal of assaying 10 progeny per female. Some mortality among the dams and the offspring induced slight inequalities in family sizes, resulting in $ k_{1} = k_{2} = 9.1 $ and $ k_{3} = 25.7 $. Following the layout in [[SEE_TABLE:18.3]], the degrees of freedom and observed and expected mean squares for the nested ANOVA are: <table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Factor</td><td style='text-align: center; word-wrap: break-word;'>df</td><td style='text-align: center; word-wrap: break-word;'>Mean squares</td><td style='text-align: center; word-wrap: break-word;'>E(MS)</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sires</td><td style='text-align: center; word-wrap: break-word;'>29</td><td style='text-align: center; word-wrap: break-word;'>5.949</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{{e}}^{2} + 9.1\\sigma_{{d}}^{2} + 25.7\\sigma_{{s}}^{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Dams within sires</td><td style='text-align: center; word-wrap: break-word;'>56</td><td style='text-align: center; word-wrap: break-word;'>3.925</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{{e}}^{2} + 9.1\\sigma_{{d}}^{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sibs within dams</td><td style='text-align: center; word-wrap: break-word;'>695</td><td style='text-align: center; word-wrap: break-word;'>1.314</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{{e}}^{2} $</td></tr></table> From Equations 18.32a–c, the estimated variance components for sires, dams within sires, and sibs within dams are $ \\mathrm{Var}(s) = 0.079 $, $ \\mathrm{Var}(d) = 0.288 $, and $ \\mathrm{Var}(e) = 1.314 $. From Equations 18.33a,b, the intraclass correlations for paternal half sibs and full sibs are $ t_{PHS} = 0.047 $ and $ t_{FS} = 0.218 $. If all of the resemblance between relatives were due to additive genetic variance, we would expect $ t_{FS} \\simeq 2t_{PHS} $. The fact that $ t_{FS} $ is nearly five times $ t_{PHS} $ immediately suggests that dominance and/or common maternal effects may be contributing to the covariance between full sibs."
+      "content": "As in the case of sib analysis (Chapter 18), estimates of the within- and among-pair components of variance are obtained by setting the observed mean squares equal to their expectations and solving. The observed variance components can, in turn, be used to derive inferences about causal sources of phenotypic variance. From Equation 19.1, it can be seen that under the assumption of independent residuals, the expected among-pair variance is equivalent to the covariance of members of the same pair, $ \\sigma(z_{i1}, z_{i2}) = \\sigma(b_i, b_i) = \\sigma_b^2 $. In causal terms, for monozygotic twins, this is equivalent to",
+      "source_page": 595,
+      "printed_page": 575,
+      "source_block_ids": [
+        "p595:b11",
+        "p596:b2"
+      ],
+      "bbox": [
+        144.0,
+        1461.0,
+        1105.0,
+        1545.0
+      ],
+      "source_page_end": 596
     },
     {
       "type": "discussion",
-      "content": "How much confidence can we have in these intraclass correlations? To evaluate the significance of the sire component of variance, we compute $ F = 5.949/3.925 = 1.52 $. Using an $ F $-distribution table, for 29 and 56 degrees of freedom, we find that there is a 5% chance of observing an $ F $ as large as 1.68 by chance. Thus, the hypothesis that $ \\sigma_{s}^{2} = 0 $ cannot be rejected at this level. On the other hand, for the dam component of variance, $ F = 3.925/1.314 = 2.99 $, which is well above the critical 0.1% value for 56 and 695 degrees of freedom (1.70), implying that a significant fraction of the total variation in developmental rate is attributable to dams."
+      "content": "[[FORMULA:Genetics_chapter19_formula002]]",
+      "source_page": 596,
+      "printed_page": 576,
+      "source_block_ids": [
+        "p596:b3"
+      ],
+      "bbox": [
+        398.0,
+        343.0,
+        710.0,
+        392.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Approximate standard errors can be obtained for the two intraclass correlations using Equations 18.38a,b. After the appropriate substitutions, we find $ \\mathrm{Var}(t_{\\mathrm{PHS}}) \\simeq 0.0098 $ and $ \\mathrm{Var}(t_{\\mathrm{FS}}) \\simeq 0.0127 $. Taking square roots, we arrive at the standard errors SE($ t_{PHS} $) ≃ 0.099 and SE($ t_{FS} $) ≃ 0.113. As noted in the text, Equations 18.38a,b generally yield conservative (upwardly biased) estimates of the standard errors. When the more precise Equations 18.37a,b are used, we obtain SE($ t_{PHS} $) ≃ 0.038 and SE($ t_{FS} $) ≃ 0.037. When compared with the estimates $ t_{PHS} $ and $ t_{FS} $, these results are consistent with our conclusion that the dam component of variance is much more significant than the sire component. The heritability of developmental rate is estimated as four times $ t_{PHS} $, and its standard error is four times SE($ t_{PHS} $). Thus, Dawson's results yield the estimate $ h^{2} \\simeq 0.19 $, but with a standard error of 0.15."
+      "content": "where $ \\sigma_{G}^{2} $ is the total genetic variance, and $ \\sigma_{E_{c}}^{2} $ (MZ) is the variance due to common familial environment. The genetic covariance between monozygotic twins is equal to the total genetic variance because of the complete genetic identity of the individuals involved. For dizygotic twins,",
+      "source_page": 596,
+      "printed_page": 576,
+      "source_block_ids": [
+        "p596:b5"
+      ],
+      "bbox": [
+        72.0,
+        398.0,
+        1034.0,
+        551.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Were these the only available data, we would have difficulty accepting the idea that developmental rate in Tribolium castaneum exhibits heritable (additive genetic) variation. However, additional data shed further light on the issue. Using twice the regression between parents and offspring, Dawson estimated the heritability to be 0.12 with paternal data and 0.30 with maternal data. He also performed a diallel analysis (Chapter 20), which generated both paternal and maternal half sibs. In this case, he estimated the heritability to be 0.13 with paternal half-sib data (similar to the nested design result of 0.19) and 0.41 with maternal half-sib data. thus, we see that the heritability estimates based on paternal half sibs and on the paternal-offspring regression are quite consistent, averaging about 0.15. The fact that maternal half sibs are much more similar than paternal half sibs, and that offspring are much more similar to mothers than to fathers, suggests that maternal effects are a significant source of variation. In the absence of significant epistatic sources of variation, the covariance between maternal half sibs is $ \\sigma_{A}^{2}/4 + \\sigma_{E_{c}}^{2} $. Thus, multiplying the maternal half-sib correlation by four inflates the heritability estimate by $ 4\\sigma_{E_{c}}^{2}/\\sigma_{z}^{2} $. This suggests that the fraction of the phenotypic variance that is due to variation in maternal effects is approximately $ (0.41 - 0.15)/4 = 0.06 $. Finally, we recall that twice the intraclass correlation between full sibs (0.436) actually estimates $ [\\sigma_{A}^{2} + (\\sigma_{D}^{2}/2) + 2\\sigma_{E_{c}}^{2}]/\\sigma_{z}^{2} $. Thus, with our previous results, the contribution to the phenotypic variance from dominance can be estimated as $ 2[0.436 - 0.15 - (2 \\times 0.06)] \\simeq 0.33 $. In summary, assuming that epistasis is of negligible importance, these results suggest that the variance in developmental rate is approximately partitioned as: 15% additive genetic variance, 33% dominance genetic variance, 7% maternal-effects variance, and 45% unobserved causes (presumably special environmental effects)."
+      "content": "[[FORMULA:Genetics_chapter19_formula003]]",
+      "source_page": 596,
+      "printed_page": 576,
+      "source_block_ids": [
+        "p596:b6"
+      ],
+      "bbox": [
+        260.0,
+        559.0,
+        836.0,
+        633.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Separate notation is needed for the variance due to common familial environment because it is not necessarily the same in the two types of twins. Since $ \\sigma_{z}^{2} = \\sigma_{b}^{2} + \\sigma_{e}^{2} $, it follows that the remainder of the phenotypic variance is in the within-pair component. Therefore,",
+      "source_page": 596,
+      "printed_page": 576,
+      "source_block_ids": [
+        "p596:b8"
+      ],
+      "bbox": [
+        65.0,
+        639.0,
+        1025.0,
+        784.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter19_formula004]]",
+      "source_page": 596,
+      "printed_page": 576,
+      "source_block_ids": [
+        "p596:b9"
+      ],
+      "bbox": [
+        419.0,
+        771.0,
+        666.0,
+        818.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and",
+      "source_page": 596,
+      "printed_page": 576,
+      "source_block_ids": [
+        "p596:b11"
+      ],
+      "bbox": [
+        63.0,
+        817.0,
+        119.0,
+        847.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter19_formula005]]",
+      "source_page": 596,
+      "printed_page": 576,
+      "source_block_ids": [
+        "p596:b12"
+      ],
+      "bbox": [
+        252.0,
+        845.0,
+        828.0,
+        917.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the terms $ \\sigma_{E_{s}}^{2} $ (MZ) and $ \\sigma_{E_{s}}^{2} $ (DZ) refer to the residual environmental variance, i.e., environmental variance not attributable to common familial effects (Chapter 6).",
+      "source_page": 596,
+      "printed_page": 576,
+      "source_block_ids": [
+        "p596:b14"
+      ],
+      "bbox": [
+        59.0,
+        913.0,
+        1018.0,
+        1031.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "All of the procedures outlined in Chapter 18 for the one-way analysis of variance of sibs apply to twin analysis. From Table 19.1, it can be seen that the among-pair variance is estimated by",
+      "source_page": 596,
+      "printed_page": 576,
+      "source_block_ids": [
+        "p596:b15"
+      ],
+      "bbox": [
+        55.0,
+        1009.0,
+        1018.0,
+        1128.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter19_formula006]]",
+      "source_page": 596,
+      "printed_page": 576,
+      "source_block_ids": [
+        "p596:b16"
+      ],
+      "bbox": [
+        402.0,
+        1138.0,
+        661.0,
+        1210.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Taking the sampling variance of the mean squares to be approximately $ 2(\\text{MS})^{2}/N $ (from Equation 18.19), and recalling that the mean squares are distributed independently under a balanced design, the large-sample variance of $ \\text{Var}(b) $ is",
+      "source_page": 596,
+      "printed_page": 576,
+      "source_block_ids": [
+        "p596:b18"
+      ],
+      "bbox": [
+        50.0,
+        1218.0,
+        1009.0,
+        1340.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter19_formula007]]",
+      "source_page": 596,
+      "printed_page": 576,
+      "source_block_ids": [
+        "p596:b19"
+      ],
+      "bbox": [
+        138.0,
+        1343.0,
+        831.0,
+        1427.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The within-pair variance is approximated by",
+      "source_page": 596,
+      "printed_page": 576,
+      "source_block_ids": [
+        "p596:b21"
+      ],
+      "bbox": [
+        44.0,
+        1427.0,
+        588.0,
+        1474.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter19_formula008]]",
+      "source_page": 596,
+      "printed_page": 576,
+      "source_block_ids": [
+        "p596:b22"
+      ],
+      "bbox": [
+        437.0,
+        1496.0,
+        606.0,
+        1534.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "and its large-sample variance is",
+      "source_page": 597,
+      "printed_page": 577,
+      "source_block_ids": [
+        "p597:b2"
+      ],
+      "bbox": [
+        120.0,
+        152.0,
+        505.0,
+        193.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter19_formula009]]",
+      "source_page": 597,
+      "printed_page": 577,
+      "source_block_ids": [
+        "p597:b3"
+      ],
+      "bbox": [
+        440.0,
+        204.0,
+        760.0,
+        251.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Combining the estimators for $ \\sigma_{b}^{2} $ and $ \\sigma_{e}^{2} $, we obtain",
+      "source_page": 597,
+      "printed_page": 577,
+      "source_block_ids": [
+        "p597:b5"
+      ],
+      "bbox": [
+        124.0,
+        272.0,
+        735.0,
+        321.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter19_formula010]]",
+      "source_page": 597,
+      "printed_page": 577,
+      "source_block_ids": [
+        "p597:b6"
+      ],
+      "bbox": [
+        472.0,
+        330.0,
+        733.0,
+        404.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "as the estimator of $ \\sigma_{z}^{2} $. Its large-sample variance estimator is identical to that of $ \\mathrm{Var}(b) $. Confidence intervals for the within- and among-pair components of variance can be obtained by using Equations 18.22 and 18.23.",
+      "source_page": 597,
+      "printed_page": 577,
+      "source_block_ids": [
+        "p597:b8"
+      ],
+      "bbox": [
+        127.0,
+        417.0,
+        1088.0,
+        536.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Recalling the arguments laid out in Chapter 18, the ratio of mean squares, $ F = MS_{b}/MS_{e} $, provides a test statistic for evaluating the significance of the among-pair component of variance. The null hypothesis of no pair effects is tested by referring to standard $ F $-distribution tables and comparing the observed $ F $ with the 5% or 1% critical values associated with $ (N - 1) $ and $ N $ degrees of freedom.",
+      "source_page": 597,
+      "printed_page": 577,
+      "source_block_ids": [
+        "p597:b9"
+      ],
+      "bbox": [
+        131.0,
+        514.0,
+        1090.0,
+        698.0
+      ]
     }
   ]
 }

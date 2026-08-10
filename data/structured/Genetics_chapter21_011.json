@@ -2,54 +2,84 @@
   "id": "Genetics_chapter21_011",
   "metadata": {
     "chapter": "Genetics_chapter21",
-    "section": "Introduction",
+    "section": "STATISTICAL ISSUES",
     "subsections": [
-      "Standard Errors"
+      "Hypothesis Tests"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter21_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Standard Errors",
+    "section_level_1": "STATISTICAL ISSUES",
+    "section_level_2": "Hypothesis Tests",
     "heading_path": [
-      "Introduction",
-      "Standard Errors"
+      "STATISTICAL ISSUES",
+      "Hypothesis Tests"
     ],
-    "display_heading": "Standard Errors"
+    "display_heading": "STATISTICAL ISSUES / Hypothesis Tests",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 653,
+      "printed_page": 633,
+      "source_block_ids": [
+        "p653:b2"
+      ],
+      "bbox": [
+        60.0,
+        135.0,
+        278.0,
+        166.0
+      ],
+      "raw_text": "Hypothesis Tests"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "By Taylor expansion (Appendix 1), Reeve (1955) first obtained an expression for the approximate large-sample variance of $ r_{A} $ for the single parent-offspring regression, and Hammond and Nicholas (1972) subsequently generalized this to include all types of parent-offspring combinations: $$ \\begin{aligned}\\operatorname{Var}(r_{A})\\simeq\\frac{1}{N}\\left[\\frac{(1-r_{A}^{2})^{2}}{2}+\\frac{A(n+k)(1-r_{A}^{2})(B-C r_{z}r_{A})}{4k}+\\frac{2A(B r_{A}-C r_{z})^{2}}{k}\\right.\\\\\\left.+\\frac{A[C^{2}(1-r_{A}^{2})(1-r_{z}^{2})-(B/2)+(C r_{A}r_{z}/2)]}{k}\\right]\\quad(21.13)\\end{aligned} $$ where $A = 1$ or $2$ for regressions involving midparents or single parents (respectively), $B = [(1/h_{1}^{2})+(1/h_{2}^{2})]/2$, $C = 1/(h_{1}h_{2})$, $N$ is the number of families, $n$ is the number of offspring/dam in each family, and $k$ is the number of offspring/sire in each family. For midparent-offspring regressions, $n = k$ is the family size, whereas in the regression of paternal half-sibs on fathers, $n = 1$ and $k$ is the number of dams/sire. Reeve (1955) provides an expression for $n$ for use in unbalanced designs, and VanVleck and Henderson (1961) present an equation for the case in which only a single character is measured in each individual (such as character 1 in parents and character 2 in offspring)."
+      "content": "Testing for a significant phenotypic correlation is straightforward, as it is a conventional product-moment correlation, which can be evaluated against critical values widely available in tables in statistics texts. For genetic correlations, the simplest option for testing the hypothesis that $ \\rho_{A}=0 $ is based on the principle that significant genetic covariance between two traits implies a significant genetic correlation. With the pairwise-comparison method, the significance of the regression of character 2 in set y on character 1 in set x, and vice versa, can be evaluated by the standard test for a regression slope.",
+      "source_page": 653,
+      "printed_page": 633,
+      "source_block_ids": [
+        "p653:b3"
+      ],
+      "bbox": [
+        57.0,
+        178.0,
+        1020.0,
+        432.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The preceding formula serves as a useful guide in choosing an adequate experimental design. If the constraint on the investigator is the total number of individuals that can be measured, $T = Nk$, then it can be seen that $\\mathrm{Var}(r_{A})$ is minimized by maximizing the number of families (N). (This approach minimizes the first term in the equation, while the remaining terms, whose denominators are $T = Nk$, are unaffected.) Thus, the optimal design for estimating a genetic correlation is to measure a single offspring from as many families as possible. This recommendation is similar to that for heritability estimation based on parent-offspring regression (Chapter 17)."
+      "content": "Methods for evaluating the significance of an environmental correlation are less well developed. However, with the nearly universal availability of high-speed computers, a simple procedure enables simultaneous tests for all three types of correlation ( $ r_{z} $, $ r_{A} $, and $ r_{E} $). Bootstrapping and jackknifing over families (Chapter 18) are being relied upon increasingly to generate empirically derived sampling distributions of the desired statistics (Dorn and Mitchell-Olds 1991, Brodie 1993, Paulsen 1994, Roff and Preziosi 1994). For each quasisample of the data set, the estimates $ r_{z} $ and $ r_{A} $ are computed directly, and then $ r_{E} $ is obtained by use of Equation 21.11. After randomly generating numerous sets of such estimates, one can construct confidence intervals for the three parameters from their observed sampling distributions. With the paired-comparison method, an alternative procedure is to randomize members of the set y with respect to those of set x, evaluating the probability (under the null hypothesis of no correlation) of obtaining a correlation coefficient as extreme as that observed with the true data set. A similar approach can be applied to the nested design, by randomizing full-sib families with respect to sires and dams.",
+      "source_page": 653,
+      "printed_page": 633,
+      "source_block_ids": [
+        "p653:b4"
+      ],
+      "bbox": [
+        55.0,
+        433.0,
+        1018.0,
+        941.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "VanVleck and Henderson (1961) and Brown (1969) used simulation studies to evaluate the degree of accuracy in using Equation 21.13 to estimate the standard error of a genetic correlation by substituting observed for expected quantities. For $N < 100$, they found that estimates from Equation 21.13 are biased downwards and may underestimate the true sampling variance by as much as an order of magnitude with appreciable frequency. However, if $N$ is on the order of 1,000, and the true value of $r_{A}$ is not very nearly $\\pm 1.0$, Equation 21.13 is quite accurate."
-    },
-    {
-      "type": "discussion",
-      "content": "VanVleck and Henderson (1961) and Brown (1969) also examined the sampling distribution of $ r_A $. Provided gene action is additive, Equation 21.6a appears to yield an unbiased estimate of $ r_A $, and provided the true value $ \\rho_A $ is not very nearly $ \\pm 1.0 $, the sampling distribution of $ r_A $ approximates normality as sample sizes become large. Thus, when N is large, $ 2\\sqrt{\\text{Var}(r_A)} $ usually can be taken as"
-    },
-    {
-      "type": "discussion",
-      "content": "[[FIGURE:21.2]] an estimate of the 95% confidence interval for $ r_{A} $. It is clear from Figure 21.2 that unless the number of families analyzed is on the order of 1,000 (for single parent-single offspring regressions), the standard error of $ r_{A} $ will be quite large. Certainly, experiments that involve fewer than several hundred individuals should be avoided if at all possible (see also Klein 1974)."
-    },
-    {
-      "type": "discussion",
-      "content": "Several attempts have also been made to obtain expressions for the large-sample variance of correlation coefficients obtained from nested full-sib, half-sib analyses (Mode and Robinson 1959, Robertson 1959b, Tallis 1959, Scheinberg 1966, Abe 1969, Grossman 1970, Hammond and Nicholas 1972, Grossman and Norton 1974). The algebra is quite tedious, and a number of the early papers contain errors or are rather restrictive in their applicability. The most general expression, derived by Hammond and Nicholas (1972), is rather complex, but can be summarized as $$ \\mathrm{Var}(r_{i})\\simeq2\\left(\\frac{r_{i}}{e}\\right)^{2}\\left(\\frac{a^{2}S}{\\mathrm{df}_{s}+2}+\\frac{b^{2}D}{\\mathrm{df}_{d}+2}+\\frac{c^{2}W}{\\mathrm{df}_{w}+2}\\right) $$ where i denotes $z$, $A$, or $E$ depending on which type of correlation is being considered, and $\\mathrm{df}_{s}$, $\\mathrm{df}_{d}$, and $\\mathrm{df}_{w}$ refer to the degrees of freedom at the sire, dam, and progeny levels. The terms $S$, $D$, and $W$ are of the form $$ \\left(\\frac{Z_{1}}{V_{1}}-\\frac{Z_{1,2}}{C_{1,2}}\\right)^{2}+\\left(\\frac{Z_{2}}{V_{2}}-\\frac{Z_{1,2}}{C_{1,2}}\\right)^{2}+2\\left(\\frac{Z_{1,2}}{V_{1}}-\\frac{Z_{2}}{C_{1,2}}\\right)\\left(\\frac{Z_{1,2}}{V_{2}}-\\frac{Z_{1}}{C_{1,2}}\\right) $$ where $ Z_{1} $, $ Z_{2} $, and $ Z_{1,2} $ refer to the mean squares and cross-products of characters 1 and 2 at the level of sires (when calculating S), dams (when calculating D), and replicates (when calculating W). $ V_{1} $, $ V_{2} $, and $ C_{1,2} $ denote the estimates of the variances and covariances at the phenotypic, genetic, and environmental levels, depending upon which correlation is being dealt with; these estimates are derived by the usual route of the method of moments. Finally, the constants a, b, c, and e depend upon the nature of the correlation as follows: <table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'>a</td><td style='text-align: center; word-wrap: break-word;'>b</td><td style='text-align: center; word-wrap: break-word;'>c</td><td style='text-align: center; word-wrap: break-word;'>e</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Phenotypic</td><td style='text-align: center; word-wrap: break-word;'>$ k_{1} $</td><td style='text-align: center; word-wrap: break-word;'>$ k_{3} - k_{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ k_{2} - k_{1} + k_{3} (k_{1} - 1) $</td><td style='text-align: center; word-wrap: break-word;'>$ k_{1} k_{3} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Genetic</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>$ -k_{2}/k_{1} $</td><td style='text-align: center; word-wrap: break-word;'>$ (k_{2} - k_{1})/k_{1} $</td><td style='text-align: center; word-wrap: break-word;'>$ k_{3}/4 $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Environmental</td><td style='text-align: center; word-wrap: break-word;'>-2</td><td style='text-align: center; word-wrap: break-word;'>$ 2k_{2}/k_{1} $</td><td style='text-align: center; word-wrap: break-word;'>$ [(k_{1} - k_{2})/k_{1}] + k_{3} $</td><td style='text-align: center; word-wrap: break-word;'>$ k_{3} $</td></tr></table> with the $k_{i}$ coefficients being defined in [[SEE_TABLE:18.3]]."
-    },
-    {
-      "type": "discussion",
-      "content": "Robertson (1959b) and Tallis (1959) have considered the optimal design for estimating the genetic correlation from a nested analysis of variance and covariance, concluding that the design that minimizes the sampling variance of the heritabilities also applies to the genetic correlations. Thus, the recommendations of Chapter 18 may be referred to."
-    },
-    {
-      "type": "discussion",
-      "content": "The important message of this section is that attaining a reasonable degree of confidence in any study of genetic correlation requires a very substantial data base. Often, with sample sizes less than a few hundred individuals, the strongest statement that can be made is whether the correlation is significantly positive or negative. The conventional approach in regression analysis, and the one that we focused on in the preceding paragraphs, is to take $ \\rho = 0 $ as the null hypothesis. For genetic studies concerned with constraints on the evolutionary process, an alternative is to let $ \\rho_{A} = \\pm 1 $ be the null hypothesis and to evaluate it against the observed data using resampling procedures."
+      "content": "Finally, we note that studies of genetic correlation usually involve the simultaneous analysis of several characters, not just two, resulting in tables of correlations between all possible pairs of characters. Care then needs to be taken so as not to overinterpret the significance levels attached to single correlations. For example, suppose that one were studying a set of $N$ traits, none of which are actually correlated. The probability that none of the $N(N-1)/2$ observed correlations is significant (at level $\\alpha$) is $(1-\\alpha)^{N(N-1)/2}$. The probability that at least one correlation would appear, by chance, to be significant at the level $\\alpha$ or smaller is one minus this quantity. This probability can be substantial — if $N=7$, there is a 0.19 probability that at least one of the 21 correlations will spuriously appear to be significant at the $P=0.01$ level, and a 0.66 probability at the $\\alpha=0.05$ level. Adjusting significance tests to account for multiple comparisons is straightforward when the different tests involve independent data (Rice 1989; see Chapter 14). However, in the analysis of correlated characters, the nonindependence of data renders conventional multiple-comparison procedures invalid, and to our knowledge no satisfactory solution to the problem exists.",
+      "source_page": 653,
+      "printed_page": 633,
+      "source_block_ids": [
+        "p653:b5"
+      ],
+      "bbox": [
+        49.0,
+        945.0,
+        1015.0,
+        1453.0
+      ]
     }
   ]
 }

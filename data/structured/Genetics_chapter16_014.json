@@ -2,43 +2,429 @@
   "id": "Genetics_chapter16_014",
   "metadata": {
     "chapter": "Genetics_chapter16",
-    "section": "Introduction",
+    "section": "THE HASEMAN-ELSTON REGRESSION",
     "subsections": [
-      "Estimating the Number of Marker Genes ibd"
+      "Derivation of the Haseman-Elston Regression"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter16_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "16.3"
-    ],
-    "section_level_1": "Introduction",
-    "section_level_2": "Estimating the Number of Marker Genes ibd",
+    "section_level_1": "THE HASEMAN-ELSTON REGRESSION",
+    "section_level_2": "Derivation of the Haseman-Elston Regression",
     "heading_path": [
-      "Introduction",
-      "Estimating the Number of Marker Genes ibd"
+      "THE HASEMAN-ELSTON REGRESSION",
+      "Derivation of the Haseman-Elston Regression"
     ],
-    "display_heading": "Estimating the Number of Marker Genes ibd",
-    "table_reference_keys": [
-      "chapter16:16.3"
-    ]
+    "display_heading": "THE HASEMAN-ELSTON REGRESSION / Derivation of the Haseman-Elston Regression",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 527,
+      "printed_page": 507,
+      "source_block_ids": [
+        "p527:b4"
+      ],
+      "bbox": [
+        89.0,
+        608.0,
+        660.0,
+        642.0
+      ],
+      "raw_text": "Derivation of the Haseman-Elston Regression"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "An obvious question is how to determine the number of alleles that are ibd at a given marker. If both parents are different marker heterozygotes (i.e., the family is fully informative), ibd status can be determined with certainty in all of their offspring. However, other relative pairs are problematic, as ibd status must be estimated rather than determined with certainty. In the absence of pedigree information, Haseman and Elston (1972) and Elston (1990b) suggested the following general estimator of $ \\pi_{jm} $ for any pair of relatives, $$ p_{jm}=\\frac{f_{2}\\cdot\\Pr(M\\mid i=2)+(f_{1}/2)\\cdot\\Pr(M\\mid i=1)}{f_{2}\\cdot\\Pr(M\\mid i=2)+f_{1}\\cdot\\Pr(M\\mid i=1)+f_{0}\\cdot\\Pr(M\\mid i=0)} $$ where $f_{i}$ is the prior probability that the pair of relatives share $i$ genes ibd, and the $\\mathrm{Pr}(M|i)$ are the probabilities of the observed pair $M$ of marker genotypes given that the pair shares $i$ alleles ibd ([[SEE_TABLE:16.3]]). While easy to compute, one must exercise caution in the application of Equation 16.42, as it is rather sensitive to errors in the estimated marker allele frequencies (Babron et al. 1993). Risch (1990c) develops alternative ML estimators for $p_{jm}$ based on these probabilities, while Hu et al. (1995) show how to modify Equation 16.42 to accommodate sex-linked markers."
+      "content": "If a marker locus is linked to a QTL, the difference in character values between two relatives is expected to decrease as they share more marker alleles ibd. This is the basis for the Haseman-Elston regression (1972, generalized by Amos and Elston 1989, Amos et al. 1990, Elston 1990b), which regresses the squared difference in character value between a pair of relatives on the proportion of ibd marker alleles for that pair.",
+      "source_page": 527,
+      "printed_page": 507,
+      "source_block_ids": [
+        "p527:b5"
+      ],
+      "bbox": [
+        87.0,
+        651.0,
+        1048.0,
+        843.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The probability $\\mathrm{Pr}(M|i)$ of observing a given pair $M$ of marker genotypes in two relatives given that they share $i$ marker alleles ibid is computed as follows. If the two relatives share no alleles ibd, the frequencies of marker genotype pairs are given by the probability of drawing two such individuals at random. For example, the probability the pair has genotypes $ M_j M_j $ and $ M_j M_k $ is $ 2 \\cdot p_j^2 \\cdot 2 p_j p_k = 4 p_j^3 p_k $. If one allele is ibd between the pair of relatives, the shared allele is chosen at random (say $ M_j $ with probability $ p_j $) while the remaining allele in each relative is chosen at random. For the previous marker pair, the probability becomes $ p_j \\cdot (2 p_j p_k) = 2 p_j^2 p_k $. If both alleles are ibd, marker genotypes are identical and the probability of observing the pair equals the probability of observing one such genotype, i.e., $ p_i^2 $ for $ (M_i M_i, M_i M_i) $, $ 2 p_i p_j $ for $ (M_i M_j, M_i M_j) $. Using this logic, values for the seven different classes of paired marker genotypes can be computed ([[SEE_TABLE:16.3]])."
+      "content": "To formally develop the Haseman-Elston (H-E) test, consider a QTL with no dominance. Suppose there are n pairs of relatives (all of the same type, such as all full- or all half-sibs), and denote the character values for the jth pair by $ z_{1j} $ and $ z_{2i} $. The model assumed is",
+      "source_page": 527,
+      "printed_page": 507,
+      "source_block_ids": [
+        "p527:b6"
+      ],
+      "bbox": [
+        85.0,
+        844.0,
+        1048.0,
+        973.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 4. Suppose a marker has four alleles with frequencies $p_{1} = 0.5$, $p_{2} = 0.25$, $p_{3} = 0.15$, and $p_{4} = 0.1$. The marker genotypes for three independent pairs of full sibs were found to be: Pair $1 = (M_{1}M_{1}, M_{1}M_{1})$; Pair $2 = (M_{3}M_{4}, M_{3}M_{4})$; Pair $3 = (M_{4}M_{4}, M_{4}M_{4})$. Recall from Chapter 7 that for full sibs, $f_{0} = f_{2} = 1/4$, $f_{1} = 1/2$. Applying Equation 16.42 and using [[SEE_TABLE:16.3]], the estimated proportions of ibid marker alleles for these three pairs are $$ p_{1m}=\\frac{\\left(1/4\\right)p_{1}^{2}+\\left[\\left(1/2\\right)/2\\right]p_{1}^{3}}{\\left(1/4\\right)p_{1}^{2}+\\left(1/2\\right)p_{1}^{3}+\\left(1/4\\right)p_{1}^{4}}\\simeq0.67 $$ $$ p_{2m}=\\frac{(1/4)2p_{3}p_{4}+[(1/2)/2]p_{3}p_{4}\\left(p_{3}+p_{4}\\right)}{(1/4)2p_{3}p_{4}+(1/2)p_{3}p_{4}\\left(p_{3}+p_{4}\\right)+(1/4)4p_{3}^{2}p_{4}^{2}}\\simeq0.88 $$ $$ p_{3m}=\\frac{\\left(1/4\\right)p_{4}^{2}+\\left[\\left(1/2\\right)/2\\right]p_{4}^{3}}{\\left(1/4\\right)p_{4}^{2}+\\left(1/2\\right)p_{4}^{3}+\\left(1/4\\right)p_{4}^{4}}\\simeq0.91 $$"
+      "content": "[[FORMULA:Genetics_chapter16_formula049]]",
+      "source_page": 527,
+      "printed_page": 507,
+      "source_block_ids": [
+        "p527:b7"
+      ],
+      "bbox": [
+        451.0,
+        1004.0,
+        679.0,
+        1037.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "These values are substituted in place of $\\pi_{jm}$ when computing the H-E regression. By comparing the first and third pairs, it can be seen that rarer alleles are more informative as to ibd status."
+      "content": "where $A$ is the QTL effect (with mean zero and additive genetic variance $\\sigma_{A}^{2}$), and $e$ is the residual value. The latter includes all effects not accounted for by the QTL of interest, including environmental effects and contributions from other QTLs unlinked to the marker. The difference in residual values for the $j$th pair, $e_{j} = e_{1j} - e_{2j}$, is assumed to have mean zero, variance $\\sigma_{e}^{2}$, and to be uncorrelated with $(A_{1j} - A_{2j})$. Note that the difference between pairs has the especially nice feature of accounting for shared environmental factors, as effects common to both relatives (such as family effects) subtract out. The squared difference for each pair $Y_{j} = (z_{1j} - z_{2j})^{2}$ has expected value",
+      "source_page": 527,
+      "printed_page": 507,
+      "source_block_ids": [
+        "p527:b9"
+      ],
+      "bbox": [
+        83.0,
+        1061.0,
+        1047.0,
+        1357.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula050]]",
+      "source_page": 527,
+      "printed_page": 507,
+      "source_block_ids": [
+        "p527:b10"
+      ],
+      "bbox": [
+        324.0,
+        1381.0,
+        795.0,
+        1537.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "From Chapter 7, $ \\sigma(A_{1j}, A_{2j}) = \\sigma_A^2 \\cdot \\pi_{jt} $, where $ \\pi_{jt} (=0, 1/2, \\text{or } 1) $ is the proportion of alleles ibd at the QTL. (In what follows, we use the subscripts $ t $ and $ m $ to distinguish trait vs. marker loci.) Hence, the expectation of $ Y $ conditional on the proportion of QTL alleles ibd is",
+      "source_page": 528,
+      "printed_page": 508,
+      "source_block_ids": [
+        "p528:b2"
+      ],
+      "bbox": [
+        108.0,
+        136.0,
+        1066.0,
+        267.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula051]]",
+      "source_page": 528,
+      "printed_page": 508,
+      "source_block_ids": [
+        "p528:b3"
+      ],
+      "bbox": [
+        355.0,
+        293.0,
+        819.0,
+        333.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "As expected, if $ \\sigma_{A}^{2} > 0 $, the regression of $ Y_{j} $ on the proportion $ \\pi_{jt} $ of trait alleles ibd has a negative slope.",
+      "source_page": 528,
+      "printed_page": 508,
+      "source_block_ids": [
+        "p528:b5"
+      ],
+      "bbox": [
+        110.0,
+        363.0,
+        1065.0,
+        427.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "While we do not know $ \\pi_{jt} $, we can estimate it using $ \\pi_{jm} $, the proportion of alleles ibd at a linked marker locus. (We detail shortly how to estimate $ \\pi_{jm} $ using the observed marker information.) Conditioning on the number $ (i = 0, 1, \\text{or } 2) $ of marker alleles ibd gives",
+      "source_page": 528,
+      "printed_page": 508,
+      "source_block_ids": [
+        "p528:b6"
+      ],
+      "bbox": [
+        109.0,
+        428.0,
+        1067.0,
+        557.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula052]]",
+      "source_page": 528,
+      "printed_page": 508,
+      "source_block_ids": [
+        "p528:b7"
+      ],
+      "bbox": [
+        202.0,
+        591.0,
+        891.0,
+        672.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The second term in the summation is the conditional probability for the proportion of QTL alleles ibd given the fraction of marker alleles ibd. These are functions of the type of relatives being considered and the recombination fraction c between the marker and QTL, and are obtained in a similar fashion to the conditional probabilities obtained in Example 1 in Chapter 15. Values of $ \\Pr(\\pi_t \\mid \\pi_m) $ for many common types of relative pairs are given by Bishop and Williamson (1990) and Risch (1990b). Substituting these into Equation 16.37 gives the regression of the squared difference $ Y_j $ on the proportion $ \\pi_{jm} $ of marker alleles ibd as",
+      "source_page": 528,
+      "printed_page": 508,
+      "source_block_ids": [
+        "p528:b9"
+      ],
+      "bbox": [
+        109.0,
+        703.0,
+        1071.0,
+        967.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula053]]",
+      "source_page": 528,
+      "printed_page": 508,
+      "source_block_ids": [
+        "p528:b10"
+      ],
+      "bbox": [
+        432.0,
+        993.0,
+        749.0,
+        1028.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where the slope $ \\beta $ and intercept $ \\alpha $ depend on the type of relatives and the recombination fraction c. For full sibs, substituting the appropriate values of $ \\Pr(\\pi_{jt} \\mid \\pi_{jm}) $ into Equation 16.37 gives (Haseman and Elston 1972),",
+      "source_page": 528,
+      "printed_page": 508,
+      "source_block_ids": [
+        "p528:b12"
+      ],
+      "bbox": [
+        113.0,
+        1057.0,
+        1071.0,
+        1159.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula054]]",
+      "source_page": 528,
+      "printed_page": 508,
+      "source_block_ids": [
+        "p528:b13"
+      ],
+      "bbox": [
+        168.0,
+        1181.0,
+        922.0,
+        1224.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "A significant negative slope provides evidence of a QTL linked to the marker, with the power of this test scaling with $ (1 - 2c)^{2} $ and $ \\sigma_{A}^{2} $. The expected slopes for other pairs of relatives are similarly found to be",
+      "source_page": 528,
+      "printed_page": 508,
+      "source_block_ids": [
+        "p528:b15"
+      ],
+      "bbox": [
+        114.0,
+        1251.0,
+        1072.0,
+        1354.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula055]]",
+      "source_page": 528,
+      "printed_page": 508,
+      "source_block_ids": [
+        "p528:b16"
+      ],
+      "bbox": [
+        147.0,
+        1381.0,
+        951.0,
+        1500.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, the Haseman-Elston test is quite simple: for n pairs of the same type of relatives, one regresses the squared difference of each pair on the fraction of alleles ibd at the marker locus. A significant negative slope for the resulting regression indicates linkage to a QTL. This is a one-sided test, as the null hypothesis (no linkage) is $ \\beta = 0 $ versus the alternative $ \\beta < 0 $.",
+      "source_page": 529,
+      "printed_page": 509,
+      "source_block_ids": [
+        "p529:b2"
+      ],
+      "bbox": [
+        85.0,
+        135.0,
+        1047.0,
+        294.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "There are several caveats with this general approach. First, different types of relatives cannot be mixed in the standard H-E test, requiring separate regressions for each type of relative pair. This procedure can be avoided by modifying the test by using an appropriately weighted multiple regression (Olson and Wijsman 1993, Olson 1994). A related issue is that (even when using the same type of relatives), the residuals of the H-E regression are heteroscedastic, as the variance in phenotype varies with the number of QTL alleles ibd. A weighted regression can account for this problem, and results in a slight increase in power (Amos et al. 1989). Second, parents and their offspring share exactly one allele ibd and hence cannot be used to estimate this regression, as there is no variability in the predictor variable (Elston 1990b). Finally, QTL position (c) and effect ( $ \\sigma_{A}^{2} $) are confounded and cannot be separately estimated from the regression slope $ \\beta $. Thus, in its simplest form, the H-E method is a detection test rather than an estimation procedure. This conclusion is not surprising, given that the H-E method is closely related to the single-marker linear model. As we discuss shortly, estimation of c and $ \\sigma_{A}^{2} $ is possible by extending the H-E regression by using ibd status of two (or more) linked marker loci to estimate $ \\pi_{jt} $.",
+      "source_page": 529,
+      "printed_page": 509,
+      "source_block_ids": [
+        "p529:b3"
+      ],
+      "bbox": [
+        81.0,
+        293.0,
+        1046.0,
+        838.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Turning to a QTL with dominance, the resulting model becomes",
+      "source_page": 529,
+      "printed_page": 509,
+      "source_block_ids": [
+        "p529:b4"
+      ],
+      "bbox": [
+        136.0,
+        836.0,
+        905.0,
+        871.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula056]]",
+      "source_page": 529,
+      "printed_page": 509,
+      "source_block_ids": [
+        "p529:b5"
+      ],
+      "bbox": [
+        408.0,
+        914.0,
+        712.0,
+        950.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Dominance only causes a departure from the additive model when both QTL alleles are ibd (such as can occur with full sibs) and hence does not influence most types of relative pairs. Define the indicator variables $ f_{1,jm} $ and $ f_{2,jm} $, where $ f_{i,jm} = 1 $ if the jth pair share i marker alleles ibd, else it is zero, so that $ \\pi_{jm} = f_{2,jm} + f_{1,jm}/2 $. For full sibs, Blackwelder and Elston (1982) show that",
+      "source_page": 529,
+      "printed_page": 509,
+      "source_block_ids": [
+        "p529:b7"
+      ],
+      "bbox": [
+        78.0,
+        987.0,
+        1039.0,
+        1152.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula057]]",
+      "source_page": 529,
+      "printed_page": 509,
+      "source_block_ids": [
+        "p529:b8"
+      ],
+      "bbox": [
+        291.0,
+        1190.0,
+        824.0,
+        1230.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "where",
+      "source_page": 529,
+      "printed_page": 509,
+      "source_block_ids": [
+        "p529:b10"
+      ],
+      "bbox": [
+        78.0,
+        1252.0,
+        164.0,
+        1281.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter16_formula058]]",
+      "source_page": 529,
+      "printed_page": 509,
+      "source_block_ids": [
+        "p529:b11"
+      ],
+      "bbox": [
+        156.0,
+        1324.0,
+        860.0,
+        1368.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "For full sibs with known parental marker genotypes, Amos et al. (1989) show that ignoring the $ \\gamma $ term in Equation 16.41a and simply using $ \\alpha + \\beta \\pi_{jm} $ yields an unbiased estimator of $ \\beta $. Hence, if our goal is simply QTL detection, we can ignore the effects of dominance with full-sib analysis.",
+      "source_page": 529,
+      "printed_page": 509,
+      "source_block_ids": [
+        "p529:b13"
+      ],
+      "bbox": [
+        73.0,
+        1403.0,
+        1035.0,
+        1534.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:16.3]]",
+      "source_page": 530,
+      "printed_page": 510,
+      "source_block_ids": [
+        "p530:b3"
+      ],
+      "bbox": [
+        116.0,
+        209.0,
+        1064.0,
+        591.0
+      ]
     }
   ]
 }

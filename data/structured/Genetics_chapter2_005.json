@@ -2,42 +2,141 @@
   "id": "Genetics_chapter2_005",
   "metadata": {
     "chapter": "Genetics_chapter2",
-    "section": "Properties of Distributions",
-    "subsections": [
-      "CONFIDENCE INTERVALS"
-    ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter2_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Properties of Distributions",
-    "section_level_2": "CONFIDENCE INTERVALS",
+    "section": "CONFIDENCE INTERVALS",
+    "subsections": [],
+    "section_level_1": "CONFIDENCE INTERVALS",
+    "section_level_2": null,
     "heading_path": [
-      "Properties of Distributions",
       "CONFIDENCE INTERVALS"
     ],
-    "display_heading": "CONFIDENCE INTERVALS"
+    "display_heading": "CONFIDENCE INTERVALS",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 49,
+      "printed_page": 29,
+      "source_block_ids": [
+        "p49:b4"
+      ],
+      "bbox": [
+        152.0,
+        706.0,
+        510.0,
+        743.0
+      ],
+      "raw_text": "CONFIDENCE INTERVALS"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Estimates such as $ \\bar{z} $ and $ \\mathrm{Var}(z) $ vary from one sample to the next because of sampling error, so it is useful to know how far an observed statistic is likely to deviate from the true parameter that is being estimated. Although the true values are unknown, if something is known about the sampling error of the estimate, it is possible to evaluate the probability that the observed value lies within a specific range of the true value. Generally, we do not estimate the sampling error of statistics by sampling populations over and over again, but by using known algebraic expressions that themselves depend on sample statistics. As an example, consider an estimate $ \\bar{z} $ of the mean of a distribution. An important issue here is the probability $ \\alpha $ that the parameter $ \\mu $ is within a certain range $ \\bar{z} \\pm \\Delta $. By symmetry, this is the same as the probability that $ \\bar{z} $ lies within the range $ \\mu \\pm \\Delta $. Transforming to standardized variables by letting $ z' = (\\bar{z} - \\mu)/\\sigma(\\bar{z}) $, where $ \\sigma(\\bar{z}) $ is the sampling variance of the mean, then the probability of interest is defined to be $$ \\alpha=P[(\\bar{z}-\\Delta)\\leq\\mu\\leq(\\bar{z}+\\Delta)]=\\int_{-\\Delta/\\sigma(\\bar{z})}^{+\\Delta/\\sigma(\\bar{z})}p(z^{\\prime})dz^{\\prime} $$"
+      "content": "Estimates such as $ \\bar{z} $ and $ \\operatorname{Var}(z) $ vary from one sample to the next because of sampling error, so it is useful to know how far an observed statistic is likely to deviate from the true parameter that is being estimated. Although the true values are unknown, if something is known about the sampling error of the estimate, it is possible to evaluate the probability that the observed value lies within a specific range of the true value. Generally, we do not estimate the sampling error of statistics by sampling populations over and over again, but by using known algebraic expressions that themselves depend on sample statistics.",
+      "source_page": 49,
+      "printed_page": 29,
+      "source_block_ids": [
+        "p49:b5"
+      ],
+      "bbox": [
+        152.0,
+        761.0,
+        1116.0,
+        1032.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The range $ \\bar{z} \\pm \\Delta $ defines the confidence limits or interval for the mean associated with the $ \\alpha $ probability level. In applications of Equation 2.16, it is generally assumed that the statistic is unbiased (so that the expected value of the statistic equals the true parameter value) and normally distributed. In the case of the mean, this implies that replicate estimates of the mean ($ \\bar{z} $) should be normally distributed about the parametric value ($ \\mu $) with sampling variance $ \\sigma^{2}(\\bar{z}) $. Equation 2.16 is then simply an integration over the standardized normal density."
+      "content": "As an example, consider an estimate $ \\bar{z} $ of the mean of a distribution. An important issue here is the probability $ \\alpha $ that the parameter $ \\mu $ is within a certain range $ \\bar{z} \\pm \\Delta $. By symmetry, this is the same as the probability that $ \\bar{z} $ lies within the range $ \\mu \\pm \\Delta $. Transforming to standardized variables by letting $ z' = (\\bar{z} - \\mu)/\\sigma(\\bar{z}) $, where $ \\sigma(\\bar{z}) $ is the sampling variance of the mean, then the probability of interest is defined to be",
+      "source_page": 49,
+      "printed_page": 29,
+      "source_block_ids": [
+        "p49:b6"
+      ],
+      "bbox": [
+        156.0,
+        1018.0,
+        1117.0,
+        1224.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Although Equation 2.16 cannot be integrated directly, tables relating the standardized limits $(\\Delta/\\sigma)$ to $\\alpha$ are provided in most statistics texts. The quantity $\\Delta/\\sigma$, usually denoted as $t$, defines the distance (in standard errors) that the deviation between observed statistic and parametric value will lie with probability $\\alpha$. (Whereas the standard deviation is a measure of the dispersion of individual measures, the term $\\text{standard error}$ is usually reserved as a measure of the dispersion of statistics.) For any particular probability level, $t$ decreases with increasing sample size, asymptotically approaching a constant. For sample sizes exceeding $50$ or so, $t \\simeq 1.96$ for $\\alpha = 0.95$, and $t \\simeq 2.58$ for $\\alpha = 0.99$."
+      "content": "[[FORMULA:Genetics_chapter2_formula035]]",
+      "source_page": 49,
+      "printed_page": 29,
+      "source_block_ids": [
+        "p49:b7"
+      ],
+      "bbox": [
+        332.0,
+        1214.0,
+        954.0,
+        1298.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "The remaining problem is to obtain an estimate of the sampling variance of the statistic (the square of the standard error). In the case of the mean, it is well known that an unbiased estimator of the sampling variance is $ \\text{Var}(z)/n $, where $ \\text{Var}(z) $ is the variance of individual measures, and $ n $ is the number of measures (Appendix 1). Thus, the 95% confidence interval for the mean is approximately $ \\bar{z} \\pm 1.96[\\text{Var}(z)/n]^{1/2} $."
+      "content": "The range $ \\bar{z} \\pm \\Delta $ defines the confidence limits or interval for the mean associated with the $ \\alpha $ probability level. In applications of Equation 2.16, it is generally assumed that the statistic is unbiased (so that the expected value of the statistic equals the true parameter value) and normally distributed. In the case of the mean, this implies that replicate estimates of the mean ( $ \\bar{z} $) should be normally distributed about the parametric value ( $ \\mu $) with sampling variance $ \\sigma^{2}(\\bar{z}) $. Equation 2.16 is then simply an integration over the standardized normal density.",
+      "source_page": 49,
+      "printed_page": 29,
+      "source_block_ids": [
+        "p49:b9"
+      ],
+      "bbox": [
+        164.0,
+        1302.0,
+        1127.0,
+        1540.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Unfortunately, expressions for the sampling variances of other statistics (such as the variance, higher-order moments, coefficients of variation, etc.) are usually much more complicated than those for the mean. Appendix 1 outlines procedures that have been used extensively in quantitative genetics to obtain expressions for sampling variances for such statistics. These expressions are usually referred to as large-sample variance estimators because they are functions of observed statistics whose reliability increases with increasing sample size. A common procedure in statistics is to use twice the square root of the large-sample variance as a crude estimate of the 95% confidence limit. We emphasize that this assumes that the statistic has a sampling distribution that is close to normal, that the estimator is unbiased, and that the sample size is large enough that the large-sample variance (itself and the estimate) is reasonably reliable."
+      "content": "Although Equation 2.16 cannot be integrated directly, tables relating the standardized limits ( $ \\Delta/\\sigma $) to $ \\alpha $ are provided in most statistics texts. The quantity $ \\Delta/\\sigma $, usually denoted as $ t $, defines the distance (in standard errors) that the deviation between observed statistic and parametric value will lie with probability $ \\alpha $. (Whereas the standard deviation is a measure of the dispersion of individual measures, the term standard error is usually reserved as a measure of the dispersion of statistics.) For any particular probability level, $ t $ decreases with increasing sample size, asymptotically approaching a constant. For sample sizes exceeding 50 or so, $ t \\simeq 1.96 $ for $ \\alpha = 0.95 $, and $ t \\simeq 2.58 $ for $ \\alpha = 0.99 $.",
+      "source_page": 50,
+      "printed_page": 30,
+      "source_block_ids": [
+        "p50:b2"
+      ],
+      "bbox": [
+        56.0,
+        128.0,
+        1018.0,
+        430.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "The remaining problem is to obtain an estimate of the sampling variance of the statistic (the square of the standard error). In the case of the mean, it is well known that an unbiased estimator of the sampling variance is $ \\text{Var}(z)/n $, where $ \\text{Var}(z) $ is the variance of individual measures, and $ n $ is the number of measures (Appendix 1). Thus, the 95% confidence interval for the mean is approximately $ \\bar{z} \\pm 1.96[\\text{Var}(z)/n]^{1/2} $.",
+      "source_page": 50,
+      "printed_page": 30,
+      "source_block_ids": [
+        "p50:b3"
+      ],
+      "bbox": [
+        53.0,
+        415.0,
+        1012.0,
+        621.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Unfortunately, expressions for the sampling variances of other statistics (such as the variance, higher-order moments, coefficients of variation, etc.) are usually much more complicated than those for the mean. Appendix 1 outlines procedures that have been used extensively in quantitative genetics to obtain expressions for sampling variances for such statistics. These expressions are usually referred to as large-sample variance estimators because they are functions of observed statistics whose reliability increases with increasing sample size. A common procedure in statistics is to use twice the square root of the large-sample variance as a crude estimate of the 95% confidence limit. We emphasize that this assumes that the statistic has a sampling distribution that is close to normal, that the estimator is unbiased, and that the sample size is large enough that the large-sample variance (itself an estimate) is reasonably reliable.",
+      "source_page": 50,
+      "printed_page": 30,
+      "source_block_ids": [
+        "p50:b4"
+      ],
+      "bbox": [
+        45.0,
+        608.0,
+        1010.0,
+        1008.0
+      ]
     }
   ]
 }

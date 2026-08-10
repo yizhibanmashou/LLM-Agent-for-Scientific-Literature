@@ -2,125 +2,236 @@
   "id": "Genetics_chapter7_008",
   "metadata": {
     "chapter": "Genetics_chapter7",
-    "section": "Introduction",
+    "section": "THE EFFECTS OF LINKAGE AND GAMETIC PHASE DISEQUILIBRIUM",
     "subsections": [
-      "ASSORTATIVE MATING"
+      "Linkage"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter7_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [
-      "7.2",
-      "7.4"
-    ],
-    "section_level_1": "Introduction",
-    "section_level_2": "ASSORTATIVE MATING",
+    "section_level_1": "THE EFFECTS OF LINKAGE AND GAMETIC PHASE DISEQUILIBRIUM",
+    "section_level_2": "Linkage",
     "heading_path": [
-      "Introduction",
-      "ASSORTATIVE MATING"
+      "THE EFFECTS OF LINKAGE AND GAMETIC PHASE DISEQUILIBRIUM",
+      "Linkage"
     ],
-    "display_heading": "ASSORTATIVE MATING",
-    "table_reference_keys": [
-      "chapter7:7.2",
-      "chapter7:7.4"
-    ]
+    "display_heading": "THE EFFECTS OF LINKAGE AND GAMETIC PHASE DISEQUILIBRIUM / Linkage",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 162,
+      "printed_page": 142,
+      "source_block_ids": [
+        "p162:b5"
+      ],
+      "bbox": [
+        148.0,
+        759.0,
+        257.0,
+        791.0
+      ],
+      "raw_text": "Linkage"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Although we have assumed a randomly mating population though this chapter, it is not unusual for mate choice to be based on aspects of the phenotype. Often, individuals will choose mates whose phenotype resembles their own (positive assortative mating). In humans, for example, there is significant correlation between mates with respect to height, skin color, IQ, social status, religion, and some conditions such as deafness (Spuhler 1968, Vandenberg 1972). In plants, assortative mating based on flowering time is common since individuals often produce viable pollen for only short periods of time. Negative or disassortative mating is less common."
+      "content": "Under the assumption of gametic phase equilibrium, linkage influences only the epistatic components of genetic covariance, which depend upon the multilocus gene combinations inherited through gametes. Recall that in Equation 7.12, each component of epistatic variance is weighted by a coefficient of the form $ (2\\Theta_{xy})^{n}\\Delta_{xy}^{m} $. The term $ \\Theta_{xy}^{n} $ is the probability that randomly drawn pairs of genes (one from x and one from y) will be simultaneously identical by descent at n loci, the $ 2^{n} $ coming in because of diploidy. Similarly, $ \\Delta_{xy}^{m} $ is the probability that the genotypes of x and y are simultaneously identical by descent at m loci. These definitions of the joint probability of events at multiple loci as the products of probabilities at individual loci assume that identity by descent is distributed independently among loci. However, for linked loci, identity by descent is expected to be positively correlated since the genes at such loci tend to be inherited together. Thus, for linked loci, we can anticipate that the multilocus coefficients $ (2\\Theta_{xy})^{n}\\Delta_{xy}^{m} $ must be too low, to a degree depending on the recombination frequency.",
+      "source_page": 162,
+      "printed_page": 142,
+      "source_block_ids": [
+        "p162:b6"
+      ],
+      "bbox": [
+        148.0,
+        799.0,
+        1108.0,
+        1248.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Many assortative mating systems are selective, such that some phenotypes of one or both sexes have a greater ability to attract mates than others (discussed in our next volume). For the time being, however, we will confine our attention to nonselective assortative mating, i.e., we assume that all individuals have an equal opportunity to reproduce, the phenotypic distribution of their available mates being the only limitation. This is the type of assortative mating that Fisher (1918) and Wright (1921d) had in mind when they first attacked the problem from a quantitative-genetic perspective. Almost all of the basic results of the theory were produced by these two men. Fisher's (1918) elaborate treatment of the subject is notoriously difficult, and some uncertainty still exists as to exactly what he meant to say (Moran and Smith 1966, Wilson 1973, Vetta and Smith 1974)."
+      "content": "A general solution to this problem requires the use of digenic descent coefficients, which define the probability that two nonalleles (genes from different loci) are copies of genes that were originally contained in the same gamete. Such a condition is known as equivalence by descent. The formal theory of digenic descent, developed in great detail by Cockerham and Weir (1968, 1973, 1977a) and Weir and Cockerham (1968, 1969, 1973, 1974, 1977), is algebraically and notationally complex. We will rely upon an approach that is less general but more transparent (Schnell 1961, 1963, Van Aarde 1975). There is no easy entry into this field, but for the adventuresome we suggest the reviews of Weir and Cockerham (1977, 1989) as a starting point.",
+      "source_page": 162,
+      "printed_page": 142,
+      "source_block_ids": [
+        "p162:b7",
+        "p163:b2"
+      ],
+      "bbox": [
+        149.0,
+        1249.0,
+        1111.0,
+        1537.0
+      ],
+      "source_page_end": 163
     },
     {
       "type": "discussion",
-      "content": "In some ways, positive assortative mating is like inbreeding, but in other ways it is very different. A simple way to discriminate between the two is to note that inbreeding is choice of mates based on similar genotypes, while assortative mating is based on phenotypes. If there is genetic variance for the characters that are the targets of mate choice, then positive assortative mating must cause identical alleles to come together more often than in the case of random mating. This will cause an increase in the homozygosity of the population, just as inbreeding does. However, while prolonged inbreeding can result in a completely homozygous population, positive assortative mating will not generally induce such an extreme genetic structure. It definitely will not if there are many loci underlying the character upon which mate choice depends, if there is any variation for the trait due to things other than additive genetic variance, or if the correlation between mates is less than perfect."
+      "content": "For our purposes, it will suffice to examine an arbitrary pair of loci, $A$ and $B$. Consider an individual whose two-locus genotype resulted from the fusion of $A_m B_m$ and $A_f B_f$ gametes ($m$ for mother, $f$ for father). If the recombination fraction for the two loci is $c$, then this individual will produce gametes in frequencies: $p(A_m B_m) = p(A_f B_f) = (1 - c)/2$ and $p(A_m B_f) = p(A_f B_m) = c/2$. Two gametes randomly drawn from this individual can have four possible identity-by-descent relationships. Identity exists at both loci with probability $p(A, B) = p^2(A_m B_m) + p^2(A_f B_f) + p^2(A_m B_f) + p^2(A_f B_m)$, at neither locus with probability $p(0, 0) = 2p(A_m B_m)p(A_f B_f) + 2p(A_m B_f)p(A_f B_m)$, at only the $A$ locus with probability $p(A, 0) = 2p(A_m B_m)p(A_f B_f) + 2p(A_f B_m)p(A_f B_f)$, and at only the $B$ locus with probability $p(0, B) = 2p(A_f B_f)p(A_m B_f) + 2p(A_f B_m)p(A_m B_m)$. Letting $\\lambda = (1 - 2c)^2$, these gametic-identity probabilities simplify to",
+      "source_page": 163,
+      "printed_page": 143,
+      "source_block_ids": [
+        "p163:b3"
+      ],
+      "bbox": [
+        58.0,
+        166.0,
+        1017.0,
+        555.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "It was shown in Chapter 4 (Equation 4.23c) that inbreeding can inflate the genetic variance of a population up to twofold in the absence of epistasis. Strong positive assortative mating has the potential to cause an even greater inflation, while disassortative mating induces a reduction of the genetic variance. The change in variance brought about by assortative mating is primarily a consequence of a directional build-up of gametic phase disequilibria. Positive assortative mating increases the coupling of genes with similar effects, i.e., induces a positive covariance between allelic effects at different loci, while disassortative mating leads to the proliferation of repulsion gametes, in which positive effects at one locus are balanced by negative effects at another. Inbreeding also causes a build-up of gametic phase disequilibrium, but there is no tendency for extreme gamete types to be formed at the expense of balanced ones, or vice versa."
+      "content": "[[FORMULA:Genetics_chapter7_formula017]]",
+      "source_page": 163,
+      "printed_page": 143,
+      "source_block_ids": [
+        "p163:b4"
+      ],
+      "bbox": [
+        373.0,
+        577.0,
+        686.0,
+        642.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "We now take a more quantitative look at these matters, starting with the consequences of assortative mating for the additive genetic variance. We will restrict our attention to the situation in which interactions between loci are additive, since epistasis has not yet been incorporated into the theory. We define $ \\rho_{z} $ and $ \\rho_{g} $ to be the phenotypic and genetic correlations between mates and assume that the regression of phenotypes of mates is linear. We also suppose that there are n loci, each contributing equally to the genetic variance of the trait, and define the parameter $ \\gamma = 1 - [1/(2n)] $."
+      "content": "[[FORMULA:Genetics_chapter7_formula018]]",
+      "source_page": 163,
+      "printed_page": 143,
+      "source_block_ids": [
+        "p163:b6"
+      ],
+      "bbox": [
+        379.0,
+        651.0,
+        693.0,
+        716.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Starting from a random-mating base population in gametic phase equilibrium with additive genetic variance $\\sigma_{A}^{2}$, a single generation of assortative mating will shift the additive genetic variance to $$ \\sigma_{A}^{2}(1)=\\left(1+\\frac{\\rho_{z}h^{2}}{2}\\right)\\sigma_{A}^{2} $$ where $ h^{2}=\\sigma_{A}^{2}/\\sigma_{z}^{2} $ (Crow and Kimura 1970). With continued assortative mating, [[FIGURE:7.7]] the variance asymptotically approaches the equilibrium $$ \\widehat{\\sigma}_{A}^{2}=\\frac{\\sigma_{A}^{2}}{1-\\gamma\\widehat{\\rho}_{g}} $$ where $ \\widehat{\\rho}_{g} = \\rho_{z}\\widehat{\\sigma}_{A}^{2}/\\widehat{\\sigma}_{z}^{2} $ is the equilibrium genetic correlation between mates. This solution was first obtained by Wright (1921d) for unlinked loci with equivalent effects. Later, Crow and Felsenstein (1968), Bulmer (1980), and Nagylaki (1982) showed that the same result holds with linked loci with arbitrary effects, as long as n is replaced by $ n_{e} $, the effective number of loci. Thus, the general form of Equation 7.19a holds regardless of the map structure of loci. Gimelfarb (1984) proved that the equilibrium is stable. Equation 7.19a can be rewritten as $$ \\frac{\\widehat{\\sigma}_{A}^{2}}{\\sigma_{A}^{2}}=\\frac{2+\\left[\\sqrt{1-4\\gamma\\rho_{z}h^{2}(1-h^{2})}-1\\right]/h^{2}}{2(1-\\gamma\\rho_{z})} $$ which gives the inflation of the additive equilibrium genetic variance relative to that in the random-mating base population (Figure 7.7). The difference $ \\widehat{\\sigma}_{A}^{2}-\\sigma_{A}^{2} $ is the additive disequilibrium covariance, $ \\sigma_{A,A} $, maintained by assortative mating."
+      "content": "all of which reduce to 1/4 with free recombination (c = 0.5).",
+      "source_page": 163,
+      "printed_page": 143,
+      "source_block_ids": [
+        "p163:b8"
+      ],
+      "bbox": [
+        54.0,
+        734.0,
+        768.0,
+        770.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Three points can be gleaned from Figure 7.7. First, there is an asymmetry in the response to positive and negative assortative mating. Very strong positive assortative mating can inflate the additive genetic variance to nearly $ 2n_e\\sigma_A^2 $ if $ h^2 $ is also very high. However, negative assortative mating can depress the variance to no less than $ \\sigma_A^2/2 $. The little empirical work that has been done in this area is qualitatively consistent with this expectation (Breese 1956, McBride and Robertson 1963; see also the following example). Second, assortative mating must be fairly strong ($ \\rho_z^2 \\geq 0.2 $) and combined with high $ h^2 $ to induce much change in the variance. Third, the effective number of loci has a negligible effect unless it is very small."
+      "content": "As a specific application of gametic identity probabilities, we will consider the case of full sibs, first evaluating the covariance caused by additive × additive epistasis. As noted previously, for each pair of loci, the genotypic value of each sib contains four ( $ \\alpha\\alpha $) terms, so there are 16 combinations of these terms between individuals. For each of the 16 combinations, the quantity of interest is the joint probability that randomly drawn A genes (one from each sib) are identical by descent and that randomly drawn B genes (one from each sib) are identical by descent. We first draw a random A gene from the two sibs. As noted earlier, these are identical by descent with probability 1/4. Given that identity by descent was obtained at the A locus, we now draw the B genes (again, one from each sib). These genes may be identical by descent through two routes — they may both derive from the parent from which the A genes were drawn (with probability 1/4) or both from the opposite parent (with probability 1/4). If they come from the same parent as the A gene, the B genes will be identical by descent with conditional probability $ p(A, B)/[p(A, B) + p(A, 0)] = (1 + \\lambda)/2 $. If they come from the opposite parent, they are identical by descent with probability 1/2. Summing up, the probability of digenic identity by descent for two full sibs is $ 1/4 \\cdot 1/4 \\cdot [(1 + \\lambda)/2 + 1/2] = (2 + \\lambda)/32 $. Given such identity, the contribution to the genetic covariance is $ E[(\\alpha\\alpha)^2] $, which is equivalent to one-fourth of the additive × additive genetic variance. Thus, after taking account of all 16 pairs of additive × additive effects, the covariance between full sibs resulting from additive × additive epistasis is $ 16 \\cdot [(2 + \\lambda)/32] \\cdot [\\sigma_{AA}^2/4] = (2 + \\lambda)\\sigma_{AA}^2/8 $. With free recombination ( $ \\lambda = 0 $), this reduces to $ \\sigma_{AA}^2/4 $, our previous result (Table 7.2). Linkage ( $ \\lambda > 0 $) causes the additive × additive genetic variance to be inflated.",
+      "source_page": 163,
+      "printed_page": 143,
+      "source_block_ids": [
+        "p163:b9"
+      ],
+      "bbox": [
+        46.0,
+        769.0,
+        1012.0,
+        1540.0
+      ]
+    },
+    {
+      "type": "table",
+      "content": "[[TABLE:7.3]]",
+      "source_page": 164,
+      "printed_page": 144,
+      "source_block_ids": [
+        "p164:b3"
+      ],
+      "bbox": [
+        146.0,
+        245.0,
+        1105.0,
+        779.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Example 4. Gimelfarb (1984) performed an experiment in which lines of Drosophila melanogaster were artificially maintained under an absolute regimen of positive and negative assortative mating ($ \\rho_{z} \\simeq \\pm 1.0 $). Each generation, 300 male and 300 female flies from each line were scored for abdominal bristle number, and the line was then propagated by performing 300 rank-ordered matings. The change in the phenotypic variance of abdominal bristle number over an eight generation period is shown in the following figure."
+      "content": "We next consider the additive × dominance covariance between full sibs. Again, from Equation 7.10, for any pair of loci, there are 16 combinations of (αδ) terms in the two sibs. If the two individuals possess an additive × dominance effect that is identical by descent, the contribution to the genetic covariance will be σ²_AD/4. To evaluate the probability of such an event, we need to determine the joint probability of drawing single genes that are identical by descent at one locus and genotypes that are identical by descent at the second locus. Such identity is only possible in the eight comparisons for which the additive effects involve the same locus in x and y. As usual with full sibs, the probability of drawing two genes (one from each sib) that are identical by descent is 1/4. Also as noted above, given that the genes drawn at one locus are identical by descent, the genes for the second locus that descended from gametes from the same parent are identical by descent with probability (1 + λ)/2. The other pair of genes at the second locus are identical by descent with probability 1/2. Summing up, the additive × dominance covariance becomes 8 · (1/4) · [(1 + λ)/2] · (1/2) · (σ²_AD/4) = (1 + λ)σ²_AD/8, which reduces to σ²_AD/8 with free recombination.",
+      "source_page": 164,
+      "printed_page": 144,
+      "source_block_ids": [
+        "p164:b5"
+      ],
+      "bbox": [
+        149.0,
+        936.0,
+        1111.0,
+        1449.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "To what extent can these results be reconciled with the theory? Abdominal bristle number in $D$. melanogaster has been the subject of many quantitative-genetic studies. It appears to be nearly completely lacking in nonadditive genetic variance, and random-mating laboratory populations generally exhibit heritabilities of approximately $h^2 = \\sigma_A^2 / (\\sigma_A^2 + \\sigma_e^2) = 0.5$. Assuming that the effective number of loci underlying the trait is at least five or so, then $\\gamma \\simeq 1$, and Equation 7.19b predicts that complete negative assortative mating should ultimately reduce the additive genetic variance to approximately 70% of the level in the base population. Thus, scaling the original phenotypic variance to be one so that $\\sigma_A^2 = \\sigma_e^2 = 0.50$, we expect complete negative assortative mating to depress the additive genetic variance to approximately $\\widehat{\\sigma}_{A}^{2}=0.70\\times0.50=0.35$. From the figure, it can be seen that the phenotypic variance declined to approximately 90% of the level in the base population. This is close to the theoretical expectation that the phenotypic variance should be 85% of the base-population level, $\\widehat{\\sigma}_{z}^{2}/\\sigma_{z}^{2}=(\\widehat{\\sigma}_{A}^{2}+\\sigma_{e}^{2})/(\\sigma_{A}^{2}+\\sigma_{e}^{2})=(0.35+0.50)/(0.50+0.50)=0.85$."
+      "content": "Finally, we note that covariance between the single ( $ \\delta\\delta $) term for a pair of loci requires that both sibs inherit maternal gametes that are identical by descent at",
+      "source_page": 164,
+      "printed_page": 144,
+      "source_block_ids": [
+        "p164:b6"
+      ],
+      "bbox": [
+        155.0,
+        1446.0,
+        1114.0,
+        1516.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Such an analysis cannot be performed for the line under positive assortative mating because it is less clear that an equilibrium phenotypic variance had been obtained. Nevertheless, a simple expectation can be pointed out for an experiment of this type. With absolute positive assortative mating, $ \\rho_z = 1.0 $, and a heritability of 0.5, the expected inflation of the additive genetic variance predicted by Equation 7.19b is simply $ (2n_e)^{1/2} $. Thus, if this experiment had been carried out to the point at which $ \\widehat{\\sigma}_z^2 $ had stabilized, an estimate of the effective number of factors for abdominal bristle number would have been possible."
+      "content": "[[FIGURE:7.6]]",
+      "source_page": 165,
+      "printed_page": 145,
+      "source_block_ids": [
+        "p165:b3"
+      ],
+      "bbox": [
+        103.0,
+        778.0,
+        966.0,
+        839.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "To this point, we have said nothing about the dominance component of variance. When only two loci contribute to the trait, $ \\sigma_{D}^{2} $ can change with assortative mating (Reeve 1961). However, Fisher (1918) argued that if the number of loci is even moderate, the effect will be negligible, and this was later confirmed by Vetta (1976). Thus, for all practical purposes, we can assume that the dominance genetic variance is unaltered by assortative mating."
+      "content": "both loci, and similarly for the paternal gametes. Each of these events occurs with probability $ p(A, B) $. Therefore, the dominance $ \\times $ dominance covariance between full sibs is $ p^2(A, B)\\sigma_{DD}^2 = (1 + \\lambda)^2\\sigma_{DD}^2/16 $.",
+      "source_page": 165,
+      "printed_page": 145,
+      "source_block_ids": [
+        "p165:b4"
+      ],
+      "bbox": [
+        54.0,
+        926.0,
+        1013.0,
+        1022.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In addition to creating gametic phase disequilibrium, assortative mating causes the genotype frequencies for the selected trait to deviate from Hardy-Weinberg expectations. Positive assortative mating leads to a heterozygote deficit, while negative assortative mating leads to a heterozygote excess. Wright (1921d) and Nagylaki (1982) showed that if the effective number of loci is large, Hardy-Weinberg deviations will be minor unless both the phenotypic correlation between mates and $ h^{2} $ are very large. This implies that the vast majority of the change in genetic variance induced by assortative mating is a consequence of gametic phase disequilibrium rather than Hardy-Weinberg disequilibrium, i.e., of allelic associations within rather than between gametes."
-    },
-    {
-      "type": "discussion",
-      "content": "The covariance between relatives in a population undergoing assortative mating has been considered by Fisher (1918), Crow and Felsenstein (1968), and Gimelfarb (1981). Nagylaki (1978) uses path analysis to yield a particularly lucid overview for the case of additive gene action. The coefficients of the additive and dominance components of covariance are given for common types of relationships in [[SEE_TABLE:7.4]]. Positive assortative mating inflates the additive genetic covariance between all types of relatives, while disassortative mating depresses it. Moreover, for some types of relationships (uncle-nephew, first and second cousins), assortative mating induces dominance genetic covariance where there otherwise would be none. We emphasize that the additive variance appearing in the resemblance"
-    },
-    {
-      "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Relationship</td><td style='text-align: center; word-wrap: break-word;'>$ \\widehat{\\sigma}_{A}^{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\sigma_{D}^{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Parent-offspring</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{2}(1 + \\rho_{z}) $</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Grandparent-grandchild</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{4}(1 + \\rho_{z})(1 + \\rho_{z}\\widehat{h}^{2}) $</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Great grandparent-great grandchild</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{8}(1 + \\rho_{z})(1 + \\rho_{z}\\widehat{h}^{2})^{2} $</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Half sibs</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{4}(1 + 2\\rho_{z}\\widehat{h}^{2} + \\rho_{z}^{2}\\widehat{h}^{2}) $</td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Full sibs, dizygotic twins</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{2}(1 + \\rho_{z}\\widehat{h}^{2}) $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{4} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Uncle(aunt)-nephew(niece)</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{4}(1 + \\rho_{z}\\widehat{h}^{2})^{2} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{8}\\rho_{z}\\widehat{h}^{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>First cousins</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{8}(1 + \\rho_{z}\\widehat{h}^{2})^{3} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{16}(\\rho_{z}\\widehat{h}^{2})^{2} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Double first cousins</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{4}(1 + 3\\rho_{z}\\widehat{h}^{2}) $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{16} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Second cousins</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{32}(1 + \\rho_{z}\\widehat{h}^{2})^{5} $</td><td style='text-align: center; word-wrap: break-word;'>$ \\frac{1}{64}(\\rho_{z}\\widehat{h}^{2})^{4} $</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Monozygotic twins</td><td style='text-align: center; word-wrap: break-word;'>1</td><td style='text-align: center; word-wrap: break-word;'>1</td></tr></table>"
-    },
-    {
-      "type": "discussion",
-      "content": "Note: The equilibrium heritability is $ \\hat{h}^{2} = \\widehat{\\sigma}_{A}^{2}/\\widehat{\\sigma}_{z}^{2} $. In the absence of assortative mating, $ \\rho_{z} = 0 $, and all coefficients reduce to those in [[SEE_TABLE:7.2]]. between relatives is $\\widehat{\\sigma}_{A}^{2}$, the variance in the current assortatively mating population, not $\\sigma_{A}^{2}$, the variance that would exist in a random-mating population. The latter can always be obtained by rearranging Equation 7.19a. Assuming large $n_{e}$. $$ \\sigma_{A}^{2}=\\left(1-\\frac{\\rho_{z}\\widehat{\\sigma}_{A}^{2}}{\\widehat{\\sigma}_{z}^{2}}\\right)\\widehat{\\sigma}_{A}^{2} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Example 5. As an example of the application of the preceding theory, we consider an early data set on height in British families (Pearson and Lee 1903). Pearson recruited college students to obtain data from approximately 1300 families, recording whenever possible the stature of father, mother, and eldest son and daughter (ignoring offspring less than 18 years of age). This was a very large data set for the precomputer era, and it took two years to calculate the statistics by hand. The data are remarkable for their essentially normal distribution and for the linearity of the regressions between relatives."
-    },
-    {
-      "type": "discussion",
-      "content": "In the figure on the left, the histogram gives the observed data for maternal height, while the smooth curve is the fitted normal distribution. On the right, the straight line is the least-squares regression of sons' height on paternal height, the data having been pooled into one-inch size classes for paternal height."
-    },
-    {
-      "type": "discussion",
-      "content": "Pearson and Lee do not report the covariances between relatives, but rather the correlations, but this turns out to be quite convenient for the following analysis. The variance of height tends to be larger for males than for females, and this may be expected to influence the regressions depending upon which sexes are involved. However, since a correlation coefficient is equivalent to the covariance between two standardized variables (each with unit variance), we can ignore this problem. The data in the following table indicate that the phenotypic correlations for all four sex-specific parent-offspring combinations are quite consistent, yielding a pooled value of $ 0.506 \\pm 0.011 $. The three full-sib correlations are also consistent with each other and give the pooled value of $ 0.534 \\pm 0.019 $. Finally, we note that there is highly significant assortative mating for height, the estimated value of $ \\rho_{z} $ being $ 0.280 \\pm 0.028 $."
-    },
-    {
-      "type": "discussion",
-      "content": "<table border=1 style='margin: auto; word-wrap: break-word;'><tr><td style='text-align: center; word-wrap: break-word;'>Relationship</td><td style='text-align: center; word-wrap: break-word;'>r</td><td style='text-align: center; word-wrap: break-word;'>SE</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Parent-offspring:</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Father-son</td><td style='text-align: center; word-wrap: break-word;'>0.514</td><td style='text-align: center; word-wrap: break-word;'>0.022</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Father-daughter</td><td style='text-align: center; word-wrap: break-word;'>0.510</td><td style='text-align: center; word-wrap: break-word;'>0.019</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Mother-son</td><td style='text-align: center; word-wrap: break-word;'>0.494</td><td style='text-align: center; word-wrap: break-word;'>0.024</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Mother-daughter</td><td style='text-align: center; word-wrap: break-word;'>0.507</td><td style='text-align: center; word-wrap: break-word;'>0.021</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Full sibs:</td><td style='text-align: center; word-wrap: break-word;'></td><td style='text-align: center; word-wrap: break-word;'></td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Brother-brother</td><td style='text-align: center; word-wrap: break-word;'>0.511</td><td style='text-align: center; word-wrap: break-word;'>0.042</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Brother-sister</td><td style='text-align: center; word-wrap: break-word;'>0.553</td><td style='text-align: center; word-wrap: break-word;'>0.019</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Sister-sister</td><td style='text-align: center; word-wrap: break-word;'>0.537</td><td style='text-align: center; word-wrap: break-word;'>0.033</td></tr><tr><td style='text-align: center; word-wrap: break-word;'>Husband-wife</td><td style='text-align: center; word-wrap: break-word;'>0.280</td><td style='text-align: center; word-wrap: break-word;'>0.028</td></tr></table>"
-    },
-    {
-      "type": "discussion",
-      "content": "We first consider the additive genetic variance in the population. Recall that $ \\widehat{\\sigma}_{z}^{2} = 1 $ on the scale of analysis. From [[SEE_TABLE:7.4]], we see that the expected covariance between parent and offspring is $ (1 + \\rho_{z})\\widehat{\\sigma}_{A}^{2}/2 $. Setting this quantity equal to 0.506, substituting 0.280 for $ \\rho_{z} $, and rearranging, we obtain an estimate for $ \\widehat{\\sigma}_{A}^{2} $ of $ 0.791 \\pm 0.024 $ (the standard error being obtained by the Taylor expansion method, Appendix 1). Thus, unless epistasis is very strong (we have assumed it to be equal to zero), it appears that approximately 80% of the variance in human height is attributable to additive gene action."
-    },
-    {
-      "type": "discussion",
-      "content": "Suppose assortative mating were to be eliminated. What is the expected equilibrium value of the additive genetic variance? Assuming a large effective number of loci ($ \\gamma \\simeq 1 $), and substituting the estimates of $ \\widehat{\\sigma}_{A}^{2} $ and $ \\rho_{z} $ into Equation 7.20, we obtain $ \\sigma_{A}^{2} \\simeq 0.616 $. The additive disequilibrium covariance for height is estimated as $ 0.791 - 0.616 = 0.175 $, showing that through the creation of gametic phase disequilibrium, assortative mating has induced an approximately 28% increase in the additive genetic variance."
-    },
-    {
-      "type": "discussion",
-      "content": "We now consider whether the full-sib data are consistent with an additive genetic model. Again from [[SEE_TABLE:7.4]], we see that in the absence of dominance, the covariance between full sibs has an expected value of $ \\widehat{\\sigma}_{A}^{2}(1 + \\rho_{z}\\widehat{h}^{2})/2 $. Since we are operating on a scale for which $ \\widehat{\\sigma}_{z}^{2} = 1 $, this value is also the expected correlation coefficient. Substituting 0.280 for $ \\rho_{z} $ and 0.791 for $ \\widehat{\\sigma}_{A}^{2} $, we obtain the expectation $ 0.483 \\pm 0.024 $. The difference between the observed and expected value $ (0.534 - 0.483 = 0.051) $ has a standard error equal to $ [(0.024)^{2} + (0.019)^{2}]^{1/2} = 0.031 $ and cannot be considered to be significant. Thus, on the basis of the existing data, there are no grounds for rejecting the purely additive model."
-    },
-    {
-      "type": "discussion",
-      "content": "In a more recent study, Roberts et al. (1978) performed a census of adult heights in families of a West African population, where assortative mating by height is relatively weak, $ \\rho_z \\simeq 0.10 \\pm 0.10 $. The correlations between parents and offspring, $ (0.434 \\pm 0.015) $, and between full sibs, $ (0.378 \\pm 0.048) $, are somewhat lower than those observed in the study of Pearson and Lee. Using the procedures outlined above, these data yield estimates of $ \\widehat{\\sigma}_A^2 \\simeq 0.789 $ and $ \\sigma_A^2 = 0.727 $. Thus, the expressed additive genetic variances in the two populations are very similar, although a smaller fraction is associated with disequilibrium covariance in the West African population. Roberts et al. (1978) also report a half-sib correlation equal to $ 0.198 \\pm 0.059 $, which can be used to provide a further check on the theory. Substituting the estimate of $ \\rho_z $ and $ \\widehat{h}^2 = 0.789 $ into the half-sib expression in [[SEE_TABLE:7.4]], the predicted correlation is 0.229, which is not significantly different from the observed value."
-    },
-    {
-      "type": "discussion",
-      "content": "There is an interesting historical note regarding the data of Pearson and Lee. Fisher's (1918) demonstration that the data were quite consistent with a Mendelian hypothesis flew in the face of Pearson's notorious non-Mendelian philosophy. Fisher also extended the analyses to other types of relatives, illustrating their consistency with resemblances between first cousins and between grandparents and their grandchildren. However, the literature that Fisher cites for the latter correlations actually involves characters other than height (in one case, eye color)! Thus, at the time, Fisher apparently believed that there was a universal correlation for all characters within a species. This is an interesting twist since Pearson had similar feelings, as amply documented in Pearson and Lee (1903, p. 379): “Thus for most practical purposes we may assume parental heredity for all species and all characters to be approximately represented by a correlation of 0.5.” We now know that this is far from the truth."
+      "content": "The coefficients for full sibs and for other common relationships are summarized in Table 7.3. The main conclusion to be drawn from these results is that except for parent-offspring and monozygotic twin relationships, linkage inflates the covariance between relatives, unless there are no epistatic sources of genetic variance. Linkage has no influence on the parent-offspring covariance because the two individuals always have exactly one gene identical by descent at each locus, and therefore share exactly one of the four additive × additive effects. For grandparent-grandchild and half-sib relations, relative to the situation with free recombination, the additive × additive covariance can be inflated as much as twofold with completely linked loci (λ = 1), whereas with full sibs the inflation can be no greater than 50% (Figure 7.6). It is of interest to note that whereas the expressions for the covariance of half sibs and for grandparent-grandchild are identical under free recombination, the latter is inflated to a greater degree by linkage unless linkage is complete (λ = 1). Thus, at least in principle, a comparison of these two types of covariance may shed some light on the presence of linkage for quantitative-trait loci.",
+      "source_page": 165,
+      "printed_page": 145,
+      "source_block_ids": [
+        "p165:b5"
+      ],
+      "bbox": [
+        50.0,
+        1024.0,
+        1012.0,
+        1502.0
+      ]
     }
   ]
 }

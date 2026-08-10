@@ -2,38 +2,144 @@
   "id": "Genetics_chapter13_017",
   "metadata": {
     "chapter": "Genetics_chapter13",
-    "section": "Introduction",
+    "section": "COMPLEX SEGREGATION ANALYSIS",
     "subsections": [
-      "Ascertainment Bias"
+      "Estimating Individual Genotypes"
     ],
-    "source_file": "tmp\\genetics_process_input\\Genetics_chapter13_full\\main.tex",
-    "source_title": "Genetics and Analysis of Quantitative Traits",
-    "formula_references": [],
-    "table_references": [],
-    "section_level_1": "Introduction",
-    "section_level_2": "Ascertainment Bias",
+    "section_level_1": "COMPLEX SEGREGATION ANALYSIS",
+    "section_level_2": "Estimating Individual Genotypes",
     "heading_path": [
-      "Introduction",
-      "Ascertainment Bias"
+      "COMPLEX SEGREGATION ANALYSIS",
+      "Estimating Individual Genotypes"
     ],
-    "display_heading": "Ascertainment Bias"
+    "display_heading": "COMPLEX SEGREGATION ANALYSIS / Estimating Individual Genotypes",
+    "source_file": "",
+    "source_pdf": "data/背景资料/Genetics.pdf",
+    "source_title": "Genetics and Analysis of Quantitative Traits",
+    "rebuild_provenance": {
+      "method": "paddle_layout_block_rebuild",
+      "remote_llm_calls": 0
+    },
+    "heading_source": {
+      "source_page": 388,
+      "printed_page": 368,
+      "source_block_ids": [
+        "p388:b8"
+      ],
+      "bbox": [
+        141.0,
+        1214.0,
+        560.0,
+        1251.0
+      ],
+      "raw_text": "Estimating Individual Genotypes"
+    }
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "The preceding likelihood functions assume that families (or more generally, pedigrees) are chosen at random from the population as a whole. In many cases nonrandom sampling is much more efficient, as even a large random sample can miss pedigrees segregating a rare major gene. When pedigrees are not chosen at random, the likelihood function must be modified to account for how the observed pedigrees were sampled (ascertained). Pedigrees are ascertained through probands, individuals who cause a particular pedigree to enter the sample. As first noted by Weinberg (1927), failure to account for how probands are ascertained can bias the analysis."
+      "content": "When a major locus is indicated, the investigator may wish to estimate the genotypes of particular individuals. For example, when the trait is determined by both a major gene and a polygenic background, extreme individuals in some families result from having extreme major-locus genotypes, while in other families they result from having extreme polygenic values. This is a particular problem with studies of human disease where pedigrees are gathered from very wide sampling on the basis of extreme phenotypes. Obviously, one would like to sort out these different causes before proceeding to detailed molecular analyses. For example, in a study of 70 pedigrees displaying high levels of blood cholesterol, Moll et al.",
+      "source_page": 388,
+      "printed_page": 368,
+      "source_block_ids": [
+        "p388:b9"
+      ],
+      "bbox": [
+        141.0,
+        1248.0,
+        1105.0,
+        1550.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "To see the importance of correctly accounting for the sampling scheme, let $ \\ell(z_{i\\cdot} \\mid g_{f}, g_{m}) $ denote the likelihood function for the $ i $th family, conditioned on the major-locus genotypes of the parents (Equation 13.11a). To obtain the unconditional likelihood, we compute the expectation of this likelihood over all possible parental genotypes giving Equation 13.11b, $$ \\ell(z_{i\\cdot})=\\sum_{g_{f},g_{m}}\\ell(z_{i\\cdot}\\mid g_{f},g_{m})\\operatorname*{P r}(g_{f},g_{m}) $$"
+      "content": "al. (1984) found strong evidence for segregation of a major gene in only three cases, with only polygenic and/or environmental factors influencing cholesterol in the remaining pedigrees. Their strategy was to first fit a mixed (major gene plus background polygene) model to the data, and then use the estimated model parameters to predict the major-locus genotype of each parent, given observed parental and offspring phenotypic values.",
+      "source_page": 389,
+      "printed_page": 369,
+      "source_block_ids": [
+        "p389:b2"
+      ],
+      "bbox": [
+        90.0,
+        128.0,
+        1051.0,
+        331.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "In our previous treatment, we assumed that parents are chosen at random, so that (for a random-mating population) $ \\Pr(g_f, g_m) $ is entirely determined by p, the frequency of allele Q. However, if parents are not chosen at random, $ \\Pr(g_f, g_m) $ is no longer just a function of p, but also of how the parents were sampled."
+      "content": "The key to predicting the major-locus genotype is $ \\text{Bayes' theorem} $, which can be used to estimate the probability of each genotype given the phenotypic values and estimates of the major gene parameters obtained from segregation analysis (such as allele frequencies and genotypic means). $ \\text{Bayes' theorem} $ is as follows: suppose there are $ n $ possible outcomes $ (b_1, b_2, \\cdots, b_n) $ of a random variable that we cannot observe. Given the observed outcome of a correlated variable $ A $, what is the probability of $ b_j $? From the definition of a conditional probability, $ \\text{Pr}(b_j \\mid A) = \\text{Pr}(b_j, A)/\\text{Pr}(A) $. We can decompose this further, by noting that $ \\text{Pr}(b_j, A) = \\text{Pr}(b_j) \\text{Pr}(A \\mid b_j) $ and $ \\text{Pr}(A) = \\sum_i^n \\text{Pr}(b_i) \\text{Pr}(A \\mid b_i) $. Putting these together gives $ \\text{Bayes' theorem} $,",
+      "source_page": 389,
+      "printed_page": 369,
+      "source_block_ids": [
+        "p389:b3"
+      ],
+      "bbox": [
+        85.0,
+        324.0,
+        1047.0,
+        655.0
+      ]
     },
     {
       "type": "discussion",
-      "content": "Unfortunately, using an incorrect model of ascertainment can create as much bias as performing an analysis without considering ascertainment problems. As certain correction is a very complicated subject, the details of which we will not pursue further. Some basic concepts are reviewed by Morton (1959), Cavalli-Sforza and Bodmer (1971, see their Appendix II), and Elston (1980, 1981a). Recent important papers include Cannings and Thompson (1977), Elston and Sobel (1979), Ewens and Shute (1986), Shute and Ewens (1988a,b), Hodge (1988), and Vieland and Hodge (1995). A nice discussion of some of the subtleties inherent in defining ascertainment schemes is given by Greenberg (1986)."
+      "content": "[[FORMULA:Genetics_chapter13_formula042]]",
+      "source_page": 389,
+      "printed_page": 369,
+      "source_block_ids": [
+        "p389:b4"
+      ],
+      "bbox": [
+        250.0,
+        670.0,
+        868.0,
+        799.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "In particular, the probability that an individual with phenotypic value $z$ has genotype $j$ (for $1 \\leq j \\leq n$) is",
+      "source_page": 389,
+      "printed_page": 369,
+      "source_block_ids": [
+        "p389:b6"
+      ],
+      "bbox": [
+        78.0,
+        817.0,
+        1036.0,
+        891.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "[[FORMULA:Genetics_chapter13_formula043]]",
+      "source_page": 389,
+      "printed_page": 369,
+      "source_block_ids": [
+        "p389:b7"
+      ],
+      "bbox": [
+        252.0,
+        908.0,
+        856.0,
+        1037.0
+      ]
+    },
+    {
+      "type": "discussion",
+      "content": "Note that $ \\Pr(z) $ is simply the distribution of phenotypic values and the probabilities involving $ g_i $ can be computed using the ML estimates of the major gene parameters. More generally, the phenotypes of an individual's offspring and/or additional relatives can be used by replacing the single observation z with a vector z of phenotypes. Computing $ \\Pr(\\mathbf{z} \\mid g_i) $, the probability of the observed vector z of phenotypes, given that the individual of interest has genotype $ g_i $, is straightforward but can be very tedious (Elston and Stewart 1971, Heuch and Li 1972, van Arendonk et al. 1989, Kinghorn et al. 1993).",
+      "source_page": 389,
+      "printed_page": 369,
+      "source_block_ids": [
+        "p389:b8"
+      ],
+      "bbox": [
+        71.0,
+        1052.0,
+        1035.0,
+        1327.0
+      ]
     }
   ]
 }
