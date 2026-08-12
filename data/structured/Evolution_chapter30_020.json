@@ -26,27 +26,151 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Schluter and Nychka (1994) extended Schluter's (1988) cubic spline univariate regressions (Chapter 29) to a vector of traits by using projection-pursuit regression (PPR; Friedman and Stuetzle 1981). The basic idea behind PPR is to approximate some complex function, $ f(\\mathbf{z}) $, with a series of projection vectors, $ a_i $, and associated ridge functions, $ f_i $, $$ \\begin{aligned}f(\\mathbf{z})&\\simeq f_{1}(\\mathbf{a}_{1}^{T}\\mathbf{z})+f_{2}(\\mathbf{a}_{2}^{T}\\mathbf{z})+\\cdots+f_{k}(\\mathbf{a}_{k}^{T}\\mathbf{z})\\\\&=f_{1}(x_{1})+f_{x}(x_{2})+\\cdots+f_{k}(x_{k})\\end{aligned} $$"
+      "content": "Schluter and Nychka (1994) extended Schluter's (1988) cubic spline univariate regressions (Chapter 29) to a vector of traits by using projection-pursuit regression (PPR; Friedman and Stuetzle 1981). The basic idea behind PPR is to approximate some complex function, $ f(\\mathbf{z}) $, with a series of projection vectors, $ a_i $, and associated ridge functions, $ f_i $, $$ \\begin{aligned}f(\\mathbf{z})&\\simeq f_{1}(\\mathbf{a}_{1}^{T}\\mathbf{z})+f_{2}(\\mathbf{a}_{2}^{T}\\mathbf{z})+\\cdots+f_{k}(\\mathbf{a}_{k}^{T}\\mathbf{z})\\\\&=f_{1}(x_{1})+f_{x}(x_{2})+\\cdots+f_{k}(x_{k})\\end{aligned} $$",
+      "source_page": 1137,
+      "source_pages": [
+        1137
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p024:b2",
+        "Evolution_chapter30:p024:b3",
+        "Evolution_chapter30:p024:b4"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          206.0,
+          766.0,
+          231.0
+        ],
+        [
+          287.0,
+          236.0,
+          1059.0,
+          332.0
+        ],
+        [
+          494.0,
+          345.0,
+          854.0,
+          403.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ea0f94932e40c3d03daaaca530ac1d12fa7d06b10a95fd3c1931137ca68f1607"
     },
     {
       "type": "proposition",
-      "content": "Solutions require two numerically intensive steps: estimation of the best-fitting projection vectors $ (a_1, \\cdots, a_k) $, and then estimation of their associated ridge functions (Schluter and Nychka used cubic splines for the latter). Thus, one chooses optimality and smoothing criteria and then obtains the first projection vector while fitting a cubic spline to the data along this projection. One then moves on to fitting the second projection vector, and so on. The assumption is that a rather low-dimensional space captures most of the structure of the fitness surface, so the first few projection vectors are sufficient to approximate individual fitness. As with the eigenvectors of $ \\gamma $ in a quadratic regression, the projection vectors $ (a_i) $ are those trait combinations (indices of trait values) that experience the strongest nonlinear selection. Visualization of the resulting complex surface is attempted by considering the pairwise projections on the first few projection vectors (Example 30.7 and Figure 30.4)."
+      "content": "Solutions require two numerically intensive steps: estimation of the best-fitting projection vectors $ (a_1, \\cdots, a_k) $, and then estimation of their associated ridge functions (Schluter and Nychka used cubic splines for the latter). Thus, one chooses optimality and smoothing criteria and then obtains the first projection vector while fitting a cubic spline to the data along this projection. One then moves on to fitting the second projection vector, and so on. The assumption is that a rather low-dimensional space captures most of the structure of the fitness surface, so the first few projection vectors are sufficient to approximate individual fitness. As with the eigenvectors of $ \\gamma $ in a quadratic regression, the projection vectors $ (a_i) $ are those trait combinations (indices of trait values) that experience the strongest nonlinear selection. Visualization of the resulting complex surface is attempted by considering the pairwise projections on the first few projection vectors (Example 30.7 and Figure 30.4).",
+      "source_page": 1137,
+      "source_pages": [
+        1137
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p024:b6"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          420.0,
+          1059.0,
+          674.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "82941b11588367ae9b6c0d80458504eb7d0cc12cf4614efba13939628a5ee1f8"
     },
     {
       "type": "proposition",
-      "content": "It is important to note that the projection vectors for a PPR do not necessarily correspond to the canonical axis of the $ \\gamma $ matrix from a quadratic regression (Example 30.7). They do, however, correspond to the trait combinations under the strongest selection, but without the assumption of a quadratic fitness surface. As such, they represent a more general, and potentially natural, geometry for the axes of selection (Morrissey 2014b)."
+      "content": "It is important to note that the projection vectors for a PPR do not necessarily correspond to the canonical axis of the $ \\gamma $ matrix from a quadratic regression (Example 30.7). They do, however, correspond to the trait combinations under the strongest selection, but without the assumption of a quadratic fitness surface. As such, they represent a more general, and potentially natural, geometry for the axes of selection (Morrissey 2014b).",
+      "source_page": 1137,
+      "source_pages": [
+        1137
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p024:b7"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          674.0,
+          1059.0,
+          789.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3d917e5dcd7753f6c01689fa860d93a3f09f94975e9dc4044f77ce7de32c6057"
     },
     {
       "type": "discussion",
-      "content": "Another nonparametric approach is thin-plate splines, which are the two dimensional analog of univariate cubic splines. Using a projection onto two trait axes, thin-plate splines can be used to find the best-fitting 3-D surface on this reduced set of axes, thus employing another approach for visualizing complex surfaces."
+      "content": "Another nonparametric approach is thin-plate splines, which are the two dimensional analog of univariate cubic splines. Using a projection onto two trait axes, thin-plate splines can be used to find the best-fitting 3-D surface on this reduced set of axes, thus employing another approach for visualizing complex surfaces.",
+      "source_page": 1137,
+      "source_pages": [
+        1137
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p024:b8"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          789.0,
+          1059.0,
+          880.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ccca2bf01fa0d4cced1539d6935451d86640c7181ca317bac3b6ef7224617f71"
     },
     {
       "type": "discussion",
-      "content": "The importance of allowing for more general fitness functions is highlighted by the work of Martin and Wainwright (2013), who examined fitness surfaces for a nascent adaptive radiation in a Bahamian clade of pupfish in the genus Cyprinodon. Using thin-plate splines, they found a fitness surface with multiple peaks, which corresponded to the morphology of existing populations in this radiation. Fitting the same data with a quadratic regression would have only resulted in a single peak (at most), which would have completely obscured important biological conclusions."
+      "content": "The importance of allowing for more general fitness functions is highlighted by the work of Martin and Wainwright (2013), who examined fitness surfaces for a nascent adaptive radiation in a Bahamian clade of pupfish in the genus Cyprinodon. Using thin-plate splines, they found a fitness surface with multiple peaks, which corresponded to the morphology of existing populations in this radiation. Fitting the same data with a quadratic regression would have only resulted in a single peak (at most), which would have completely obscured important biological conclusions.",
+      "source_page": 1137,
+      "source_pages": [
+        1137
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p024:b9"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          879.0,
+          1060.0,
+          1044.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "73cc43fb31e41faa82105bd4d2ee1bf8f7ccd5ccc0eafa33a5b401f771e9dd4e"
     },
     {
       "type": "discussion",
-      "content": "Note that these two sets of projection vectors from the different regressions are rather distinct. If we apply Equation A5.2b, the angle between $ e_1 $ and $ a_1 $ will be $ 88^\\circ $, while the angle between $\\mathbf{e}_2$ and $\\mathbf{a}_2$ will be $87.5^\\circ$. Thus, the major axes of the fitness surface are different (here, they are essentially orthogonal) if one uses a quadratic approximation as opposed to a projection-pursuit regression approximation. As Figure 30.4A shows, the best-fitting quadratic regression using $\\mathbf{e}_1$ and $\\mathbf{e}_2$ (where $y_1 = \\mathbf{e}_1^T \\mathbf{z}$ and $y_2 = \\mathbf{e}_2^T \\mathbf{z}$ are the trait values on this fitness surface for an individual with a trait vector, $\\mathbf{z}$) shows disruptive selection, with fitness rising in all directions from a central minimum. If one uses these axes but then fits the data using thin-plate splines, the result is a rather different-looking fitness function (Figure 30.4B), but one that also shows multiple peaks corresponding to different combinations of the traits that females find attractive. When projection-pursuit regression is used (Figure 30.4C), the fitness surface (in rough appearance) is similar to that for thin-plate splines using the quadratic axes ($\\mathbf{e}_1$, $\\mathbf{e}_2$). However, because the values for the two sets of axes ($x_1 = \\mathbf{a}_1^T \\mathbf{z}$, $x_2 = \\mathbf{a}_2^T \\mathbf{z}$ versus $y_1 = \\mathbf{e}_1^T \\mathbf{z}$, $y_2 = \\mathbf{e}_2^T \\mathbf{z}$) are rather different, this superficial visual appearance must be mapped into trait values (as indicated in Figure 30.4). Again, the result is that the fitness surface has multiple peaks."
+      "content": "Note that these two sets of projection vectors from the different regressions are rather distinct. If we apply Equation A5.2b, the angle between $ e_1 $ and $ a_1 $ will be $ 88^\\circ $, while the angle between $\\mathbf{e}_2$ and $\\mathbf{a}_2$ will be $87.5^\\circ$. Thus, the major axes of the fitness surface are different (here, they are essentially orthogonal) if one uses a quadratic approximation as opposed to a projection-pursuit regression approximation. As Figure 30.4A shows, the best-fitting quadratic regression using $\\mathbf{e}_1$ and $\\mathbf{e}_2$ (where $y_1 = \\mathbf{e}_1^T \\mathbf{z}$ and $y_2 = \\mathbf{e}_2^T \\mathbf{z}$ are the trait values on this fitness surface for an individual with a trait vector, $\\mathbf{z}$) shows disruptive selection, with fitness rising in all directions from a central minimum. If one uses these axes but then fits the data using thin-plate splines, the result is a rather different-looking fitness function (Figure 30.4B), but one that also shows multiple peaks corresponding to different combinations of the traits that females find attractive. When projection-pursuit regression is used (Figure 30.4C), the fitness surface (in rough appearance) is similar to that for thin-plate splines using the quadratic axes ($\\mathbf{e}_1$, $\\mathbf{e}_2$). However, because the values for the two sets of axes ($x_1 = \\mathbf{a}_1^T \\mathbf{z}$, $x_2 = \\mathbf{a}_2^T \\mathbf{z}$ versus $y_1 = \\mathbf{e}_1^T \\mathbf{z}$, $y_2 = \\mathbf{e}_2^T \\mathbf{z}$) are rather different, this superficial visual appearance must be mapped into trait values (as indicated in Figure 30.4). Again, the result is that the fitness surface has multiple peaks.",
+      "source_page": 1137,
+      "source_pages": [
+        1137,
+        1138
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p024:b12",
+        "Evolution_chapter30:p025:b2"
+      ],
+      "source_bboxes": [
+        [
+          323.0,
+          1426.0,
+          1036.0,
+          1470.0
+        ],
+        [
+          167.0,
+          207.0,
+          882.0,
+          507.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d940c8ab7ec7957cf0353632693d95e358019d51dd51fe4f096993ae1c745806"
     }
   ]
 }

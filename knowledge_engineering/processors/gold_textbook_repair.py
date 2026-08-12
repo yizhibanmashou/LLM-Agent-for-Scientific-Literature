@@ -10,13 +10,11 @@ source of stable unit ids.
 from __future__ import annotations
 
 import argparse
-from collections import defaultdict
+import re
 from dataclasses import dataclass
 from difflib import SequenceMatcher
-import json
-import re
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 from knowledge_engineering.core.common import (
     read_json,
@@ -26,7 +24,6 @@ from knowledge_engineering.core.common import (
     utc_now_iso,
     write_json,
 )
-
 
 CHUNK_FILE_RE = re.compile(r"^((?:chapter|appendix)\d+)_(\d+)\.json$", re.IGNORECASE)
 HEADING_RE = re.compile(r"^##\s+(?P<unit>\S+)\s+[·路]\s+(?P<heading>.+?)\s*$")

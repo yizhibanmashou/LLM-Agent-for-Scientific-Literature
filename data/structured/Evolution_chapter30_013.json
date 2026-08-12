@@ -21,31 +21,213 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "We need some additional machinery on the geometry of matrices (from Appendix 5) to further our discussion of the geometry of the quadratic fitness surface. Matrix transformations (multiplying a vector by a matrix) consist of two basic operations: rotations (changes in the direction of the vector) and scalings (changes in its length). A transformation can be partitioned into these two basic operations by using orthonormal matrices. If we write a square matrix as $ \\mathbf{U} = (\\mathbf{u}_1, \\mathbf{u}_2, \\cdots, \\mathbf{u}_n) $, where each $ \\mathbf{u}_i $ is an $ n $-dimensional column vector, $ \\mathbf{U} $ is said to be orthonormal if $$ \\mathbf{u}_{i}^{T}\\mathbf{u}_{j}=\\left\\{\\begin{aligned}1&\\quad if i=j\\\\ 0&\\quad if i\\neq j\\end{aligned}\\right. $$"
+      "content": "We need some additional machinery on the geometry of matrices (from Appendix 5) to further our discussion of the geometry of the quadratic fitness surface. Matrix transformations (multiplying a vector by a matrix) consist of two basic operations: rotations (changes in the direction of the vector) and scalings (changes in its length). A transformation can be partitioned into these two basic operations by using orthonormal matrices. If we write a square matrix as $ \\mathbf{U} = (\\mathbf{u}_1, \\mathbf{u}_2, \\cdots, \\mathbf{u}_n) $, where each $ \\mathbf{u}_i $ is an $ n $-dimensional column vector, $ \\mathbf{U} $ is said to be orthonormal if $$ \\mathbf{u}_{i}^{T}\\mathbf{u}_{j}=\\left\\{\\begin{aligned}1&\\quad if i=j\\\\ 0&\\quad if i\\neq j\\end{aligned}\\right. $$",
+      "source_page": 1128,
+      "source_pages": [
+        1128
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p015:b4",
+        "Evolution_chapter30:p015:b5",
+        "Evolution_chapter30:p015:b6"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          457.0,
+          674.0,
+          480.0
+        ],
+        [
+          133.0,
+          487.0,
+          905.0,
+          646.0
+        ],
+        [
+          420.0,
+          642.0,
+          613.0,
+          694.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ba0204a46feaae092384c695a8a246015ee028edc865995de1d4a022884a81f6"
     },
     {
       "type": "discussion",
-      "content": "In other words, each column of U is independent from every other column and has unit length. Matrices with this property are also referred to as $ \\text{unitary} $ and $ \\text{satisfy} \\mathbf{U}^T = \\mathbf{U}^{-1} $, so $$ \\mathbf{U}^{T}\\mathbf{U}=\\mathbf{U}\\mathbf{U}^{T}=\\mathbf{I} $$"
+      "content": "In other words, each column of U is independent from every other column and has unit length. Matrices with this property are also referred to as $ \\text{unitary} $ and $ \\text{satisfy} \\mathbf{U}^T = \\mathbf{U}^{-1} $, so $$ \\mathbf{U}^{T}\\mathbf{U}=\\mathbf{U}\\mathbf{U}^{T}=\\mathbf{I} $$",
+      "source_page": 1128,
+      "source_pages": [
+        1128
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p015:b7",
+        "Evolution_chapter30:p015:b8"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          703.0,
+          902.0,
+          751.0
+        ],
+        [
+          435.0,
+          765.0,
+          603.0,
+          791.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3d22523a0ab6c054bab53301ce77f142a3a1729dcf4c5f84bb22292fd67c71e3"
     },
     {
       "type": "discussion",
-      "content": "The transformation induced by an orthonormal matrix has a very simple geometric interpretation in that it is a rigid rotation of the original coordinate system—all axes of the original coordinates are simply rotated by the same angle to create the new coordinate system (Appendix 5). The angle between any two vectors remains unchanged following their transformation by the same orthonormal matrix. If the angle between the vectors $ x_1 $ and $ x_2 $ is $ \\theta $, then the angle between the transformed vectors $ y_1 = Ux_1 $ and $ y_2 = Ux_2 $ is also $ \\theta $ (Equation A5.5d)."
+      "content": "The transformation induced by an orthonormal matrix has a very simple geometric interpretation in that it is a rigid rotation of the original coordinate system—all axes of the original coordinates are simply rotated by the same angle to create the new coordinate system (Appendix 5). The angle between any two vectors remains unchanged following their transformation by the same orthonormal matrix. If the angle between the vectors $ x_1 $ and $ x_2 $ is $ \\theta $, then the angle between the transformed vectors $ y_1 = Ux_1 $ and $ y_2 = Ux_2 $ is also $ \\theta $ (Equation A5.5d).",
+      "source_page": 1128,
+      "source_pages": [
+        1128
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p015:b10"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          813.0,
+          905.0,
+          972.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "68e09c01f48e2884e63fa8bc111a882051911fa28eefacc30f90017fa4577a73"
     },
     {
       "type": "discussion",
-      "content": "A symmetric matrix A (such as a variance-covariance matrix) can be diagonalized as $$ \\mathbf{A}=\\mathbf{U}\\mathbf{A}\\mathbf{U}^{T} $$ where $ \\mathbf{A} $ is a diagonal matrix and $ \\mathbf{U} $ is an orthonormal matrix $ (\\mathbf{U}^{-1} = \\mathbf{U}^T) $. If $ \\lambda_i $ and $ \\mathbf{e}_i $, respectively, denote the $ i $th eigenvalue and its associated unit-length eigenvector of $ \\mathbf{A} $, then $$ \\boldsymbol{A}=diag(\\lambda_{1},\\lambda_{2},\\cdots,\\lambda_{n})=\\begin{pmatrix}{{{\\lambda_{1}}}}&{{{0}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{0}}}&{{{\\lambda_{2}}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{\\vdots}}}&{{{\\ddots}}}&{{{\\vdots}}} \\\\{{{0}}}&{{{\\cdots}}}&{{{\\cdots}}}&{{{\\lambda_{n}}}}\\end{pmatrix} $$ and $$ \\mathbf{U}=\\left(\\mathbf{e}_{1},\\mathbf{e}_{2},\\cdots,\\mathbf{e}_{n}\\right) $$"
+      "content": "A symmetric matrix A (such as a variance-covariance matrix) can be diagonalized as $$ \\mathbf{A}=\\mathbf{U}\\mathbf{A}\\mathbf{U}^{T} $$ where $ \\mathbf{A} $ is a diagonal matrix and $ \\mathbf{U} $ is an orthonormal matrix $ (\\mathbf{U}^{-1} = \\mathbf{U}^T) $. If $ \\lambda_i $ and $ \\mathbf{e}_i $, respectively, denote the $ i $th eigenvalue and its associated unit-length eigenvector of $ \\mathbf{A} $, then $$ \\boldsymbol{A}=diag(\\lambda_{1},\\lambda_{2},\\cdots,\\lambda_{n})=\\begin{pmatrix}{{{\\lambda_{1}}}}&{{{0}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{0}}}&{{{\\lambda_{2}}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{\\vdots}}}&{{{\\ddots}}}&{{{\\vdots}}} \\\\{{{0}}}&{{{\\cdots}}}&{{{\\cdots}}}&{{{\\lambda_{n}}}}\\end{pmatrix} $$ and $$ \\mathbf{U}=\\left(\\mathbf{e}_{1},\\mathbf{e}_{2},\\cdots,\\mathbf{e}_{n}\\right) $$",
+      "source_page": 1128,
+      "source_pages": [
+        1128
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p015:b11",
+        "Evolution_chapter30:p015:b12",
+        "Evolution_chapter30:p015:b14",
+        "Evolution_chapter30:p015:b15",
+        "Evolution_chapter30:p015:b17",
+        "Evolution_chapter30:p015:b18"
+      ],
+      "source_bboxes": [
+        [
+          170.0,
+          974.0,
+          900.0,
+          998.0
+        ],
+        [
+          463.0,
+          1014.0,
+          573.0,
+          1039.0
+        ],
+        [
+          132.0,
+          1059.0,
+          902.0,
+          1109.0
+        ],
+        [
+          306.0,
+          1126.0,
+          726.0,
+          1227.0
+        ],
+        [
+          133.0,
+          1247.0,
+          175.0,
+          1268.0
+        ],
+        [
+          428.0,
+          1269.0,
+          608.0,
+          1294.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "35922c89946aaba31d903cc6d8602d0d4a77e76807d56155dc72bb9a8935415a"
     },
     {
       "type": "discussion",
-      "content": "Geometrically, U describes a rigid rotation of the original coordinate system while A shows the amounts that unit lengths in the original coordinate system are scaled in the transformed system. Using the unitary property of U, premultiplying A by $ U^{T} $ and then postmultiplying by U results in a diagonal matrix whose elements are the eigenvalues of A, $$ \\begin{aligned}\\mathbf{U}^{T}\\mathbf{A}\\mathbf{U}&=\\mathbf{U}^{T}(\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T})\\mathbf{U}=(\\mathbf{U}^{T}\\mathbf{U})\\boldsymbol{\\Lambda}(\\mathbf{U}^{T}\\mathbf{U})\\\\&=\\boldsymbol{\\Lambda}\\end{aligned} $$"
+      "content": "Geometrically, U describes a rigid rotation of the original coordinate system while A shows the amounts that unit lengths in the original coordinate system are scaled in the transformed system. Using the unitary property of U, premultiplying A by $ U^{T} $ and then postmultiplying by U results in a diagonal matrix whose elements are the eigenvalues of A, $$ \\begin{aligned}\\mathbf{U}^{T}\\mathbf{A}\\mathbf{U}&=\\mathbf{U}^{T}(\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T})\\mathbf{U}=(\\mathbf{U}^{T}\\mathbf{U})\\boldsymbol{\\Lambda}(\\mathbf{U}^{T}\\mathbf{U})\\\\&=\\boldsymbol{\\Lambda}\\end{aligned} $$",
+      "source_page": 1128,
+      "source_pages": [
+        1128
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p015:b20",
+        "Evolution_chapter30:p015:b21"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1304.0,
+          904.0,
+          1398.0
+        ],
+        [
+          326.0,
+          1412.0,
+          710.0,
+          1467.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4ea80650814ff33c50163388f83e72f110bb1499e591a6c6536b4ccbe0df92e5"
     },
     {
       "type": "discussion",
-      "content": "The effect of using such a transformation is that (on this new scale) we remove all cross-product terms in a quadratic product (i.e., the $ z_i z_j $ terms for $ i \\neq j $ in Equation 30.19 are absent). Put another way, on this new scale, there is no correlational selection, as $ \\gamma_{ij} = 0 $ for $ i \\neq j $. A few very useful results immediately follow from Equation 30.25. For $ \\mathbf{A}^{1/2} $ and $ \\mathbf{A}^{-1} $, the $ \\mathbf{U} $ matrix is unchanged, while the diagonal elements in the associated $ \\mathbf{A} $ matrix are given by the square root or inverse, respectively. Thus, $ \\mathbf{A} $, $ \\mathbf{A}^{1/2} $, and $ \\mathbf{A}^{-1} $ (provided the latter exists; i.e., no there are zero eigenvalues) all have the same eigenvectors and their eigenvalues are related as $ \\lambda_i $, $ \\lambda_i^{1/2} $, and $ \\lambda_i^{-1} $, respectively."
+      "content": "The effect of using such a transformation is that (on this new scale) we remove all cross-product terms in a quadratic product (i.e., the $ z_i z_j $ terms for $ i \\neq j $ in Equation 30.19 are absent). Put another way, on this new scale, there is no correlational selection, as $ \\gamma_{ij} = 0 $ for $ i \\neq j $. A few very useful results immediately follow from Equation 30.25. For $ \\mathbf{A}^{1/2} $ and $ \\mathbf{A}^{-1} $, the $ \\mathbf{U} $ matrix is unchanged, while the diagonal elements in the associated $ \\mathbf{A} $ matrix are given by the square root or inverse, respectively. Thus, $ \\mathbf{A} $, $ \\mathbf{A}^{1/2} $, and $ \\mathbf{A}^{-1} $ (provided the latter exists; i.e., no there are zero eigenvalues) all have the same eigenvectors and their eigenvalues are related as $ \\lambda_i $, $ \\lambda_i^{1/2} $, and $ \\lambda_i^{-1} $, respectively.",
+      "source_page": 1129,
+      "source_pages": [
+        1129
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p016:b2"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          206.0,
+          1059.0,
+          405.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "82efea44f9a006682f34ca8c846439c743fd6004f7714c1e5fab216924011ea2"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:30.4]]"
+      "content": "[[SEE_EXAMPLE:30.4]]",
+      "source_page": 1129,
+      "source_pages": [
+        1129
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p016:b3"
+      ],
+      "source_bboxes": [
+        [
+          322.0,
+          475.0,
+          1036.0,
+          900.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6a26ed015d81e963270e9c74d38d0909100bd68ae76f70d9a752626d5e77bf53"
     }
   ]
 }

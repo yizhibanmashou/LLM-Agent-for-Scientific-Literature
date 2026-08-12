@@ -14,7 +14,6 @@ import re
 from pathlib import Path
 from typing import Any
 
-
 SECTION_RE = re.compile(r"(?m)^\\section\{(?P<title>[^{}]+)\}")
 SUBSECTION_RE = re.compile(r"(?m)^\\subsection\{(?P<title>[^{}]+)\}")
 CHAPTER_RE = re.compile(r"(?m)^\\chapter\*?\{(?P<title>[^{}]+)\}")

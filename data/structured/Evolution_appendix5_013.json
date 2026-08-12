@@ -21,31 +21,193 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "We are often interested in how the variance of a random vector can be decomposed into independent components. For example, even though we may be measuring n variables, only one or two of these may account for the majority of the variation. If this is the case, we may wish to exclude those variables contributing very little variation from further analysis. More generally, if random variables are correlated, then certain linear combinations of the elements of x may account for most of the variance. The procedure of principal component analysis (PCA) extracts these combinations by decomposing the variance of x into the contributions from a series of orthogonal vectors, the first of which explains the most variation possible for any single vector, the second the next possible amount, and so on until we account for the entire variance of x."
+      "content": "We are often interested in how the variance of a random vector can be decomposed into independent components. For example, even though we may be measuring n variables, only one or two of these may account for the majority of the variation. If this is the case, we may wish to exclude those variables contributing very little variation from further analysis. More generally, if random variables are correlated, then certain linear combinations of the elements of x may account for most of the variance. The procedure of principal component analysis (PCA) extracts these combinations by decomposing the variance of x into the contributions from a series of orthogonal vectors, the first of which explains the most variation possible for any single vector, the second the next possible amount, and so on until we account for the entire variance of x.",
+      "source_page": 1275,
+      "source_pages": [
+        1275
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p015:b16",
+        "Evolution_appendix5:p015:b17"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          796.0,
+          643.0,
+          819.0
+        ],
+        [
+          132.0,
+          826.0,
+          905.0,
+          1056.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5346582fca05b5c220a8911a07547e173f6101e862f42c705be4332f0e1c7163"
     },
     {
       "type": "discussion",
-      "content": "Consider Figure A5.5. Because the set of points comprising the ellipse represents the set of linear combinations (i.e., the set of weights) of the random variables of z that yield equal variance, a little thought shows that the closer a point on this curve is to the origin, the more variance there is in that direction. The points closest to the origin are those that lie along the axis defined by e₁, while those furthest away lie along the axis defined by e₂. Here e₁ and e₂ are the principal components of G, with the first principal component accounting for most of the variation of G. In particular, the ratio of additive variances for the characters y₁ = e₁ᴬᴬ and y₂ = e₂ᴬᴬʳ²(y₁)/σ²(y₂) = σ²(e₁ᴬᴬ) / σ²(e₂ᴬᴬ) = e₁ᴬᴬG e₁/e₂ᴬᴬG e₂ = λ₁/λ₂ ≈ 5.241/0.765 ≈ 6.85, so that a character in the direction of e₁ has almost seven times as much additive variance as a character lying in the direction of e₂."
+      "content": "Consider Figure A5.5. Because the set of points comprising the ellipse represents the set of linear combinations (i.e., the set of weights) of the random variables of z that yield equal variance, a little thought shows that the closer a point on this curve is to the origin, the more variance there is in that direction. The points closest to the origin are those that lie along the axis defined by e₁, while those furthest away lie along the axis defined by e₂. Here e₁ and e₂ are the principal components of G, with the first principal component accounting for most of the variation of G. In particular, the ratio of additive variances for the characters y₁ = e₁ᴬᴬ and y₂ = e₂ᴬᴬʳ²(y₁)/σ²(y₂) = σ²(e₁ᴬᴬ) / σ²(e₂ᴬᴬ) = e₁ᴬᴬG e₁/e₂ᴬᴬG e₂ = λ₁/λ₂ ≈ 5.241/0.765 ≈ 6.85, so that a character in the direction of e₁ has almost seven times as much additive variance as a character lying in the direction of e₂.",
+      "source_page": 1275,
+      "source_pages": [
+        1275
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p015:b18"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          1056.0,
+          904.0,
+          1284.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0920701681cf44b0c79689790eeb51065b47778fe91cfef75fa9515929b56027"
     },
     {
       "type": "discussion",
-      "content": "In general, suppose we have an $n$-dimensional covariance matrix, $\\mathbf{V}_{\\mathbf{x}}$. If we order the eigenvalues of $\\mathbf{V}_{\\mathbf{x}}$ as $\\lambda_{1} \\geq \\lambda_{2} \\geq \\cdots \\geq \\lambda_{n}$, then Equation A5.13b gives the maximum variance for any linear combination of the elements of $\\mathbf{x}$ ($y = \\mathbf{c}_{1}^{T} \\mathbf{x}$, subject to the constraint that $|\\mathbf{c}_{1}| = 1$), as $$ \\max\\sigma^{2}(y)=\\max_{||\\mathbf{c}_{1}||=1}\\sigma^{2}(\\mathbf{c}_{1}^{T}\\mathbf{x})=\\mathbf{c}_{1}^{T}\\mathbf{V}_{\\mathbf{x}}\\mathbf{c}_{1}=\\lambda_{1} $$ which occurs when $ \\mathbf{c}_1 = \\mathbf{e}_1 $ (the normalized eigenvector associated with the leading eigenvalue $ \\lambda_1 $). This vector is the first principal component (often abbreviated as $ \\mathbf{PC1} $), and accounts for the fraction $ \\lambda_1/\\text{tr}(\\mathbf{V}_\\mathbf{x}) $ of the total variation in $ \\mathbf{x} $. We can partition the remaining variance in $ \\mathbf{x} $ after the removal of PC1 in a similar fashion. For example, the vector $ \\mathbf{c}_2 $, that is orthogonal to PC1 ($ \\mathbf{c}_2^T \\mathbf{c}_1 = 0 $) and maximizes the remaining variance can be shown to be $ \\mathbf{e}_2 $, which accounts for a fraction $ \\lambda_2/\\text{tr}(\\mathbf{V}_\\mathbf{x}) $ of the total variation in $ \\mathbf{x} $ (e.g., Morrison 1976; Johnson and Wichern 1988). By proceeding in this fashion, we can see that the $ i $th PC is given by $ \\mathbf{e}_i $, and that the amount of variation it accounts for is $$ \\lambda_{i}\\bigg/\\sum_{k=1}^{n}\\lambda_{k}=\\frac{\\lambda_{i}}{\\mathrm{tr}(\\mathbf{V_{x}})} $$ Hence $ \\sum \\lambda_i = \\text{tr}(\\mathbf{V}_\\mathbf{x}) $ is the total variance of the vector $ \\mathbf{x} $, while $ \\lambda_i/\\text{tr}(\\mathbf{V}_\\mathbf{x}) $ is the fraction of that total variance explained by the linear combination $ \\mathbf{e}_i^T \\mathbf{x} $."
+      "content": "In general, suppose we have an $n$-dimensional covariance matrix, $\\mathbf{V}_{\\mathbf{x}}$. If we order the eigenvalues of $\\mathbf{V}_{\\mathbf{x}}$ as $\\lambda_{1} \\geq \\lambda_{2} \\geq \\cdots \\geq \\lambda_{n}$, then Equation A5.13b gives the maximum variance for any linear combination of the elements of $\\mathbf{x}$ ($y = \\mathbf{c}_{1}^{T} \\mathbf{x}$, subject to the constraint that $|\\mathbf{c}_{1}| = 1$), as $$ \\max\\sigma^{2}(y)=\\max_{||\\mathbf{c}_{1}||=1}\\sigma^{2}(\\mathbf{c}_{1}^{T}\\mathbf{x})=\\mathbf{c}_{1}^{T}\\mathbf{V}_{\\mathbf{x}}\\mathbf{c}_{1}=\\lambda_{1} $$ which occurs when $ \\mathbf{c}_1 = \\mathbf{e}_1 $ (the normalized eigenvector associated with the leading eigenvalue $ \\lambda_1 $). This vector is the first principal component (often abbreviated as $ \\mathbf{PC1} $), and accounts for the fraction $ \\lambda_1/\\text{tr}(\\mathbf{V}_\\mathbf{x}) $ of the total variation in $ \\mathbf{x} $. We can partition the remaining variance in $ \\mathbf{x} $ after the removal of PC1 in a similar fashion. For example, the vector $ \\mathbf{c}_2 $, that is orthogonal to PC1 ($ \\mathbf{c}_2^T \\mathbf{c}_1 = 0 $) and maximizes the remaining variance can be shown to be $ \\mathbf{e}_2 $, which accounts for a fraction $ \\lambda_2/\\text{tr}(\\mathbf{V}_\\mathbf{x}) $ of the total variation in $ \\mathbf{x} $ (e.g., Morrison 1976; Johnson and Wichern 1988). By proceeding in this fashion, we can see that the $ i $th PC is given by $ \\mathbf{e}_i $, and that the amount of variation it accounts for is $$ \\lambda_{i}\\bigg/\\sum_{k=1}^{n}\\lambda_{k}=\\frac{\\lambda_{i}}{\\mathrm{tr}(\\mathbf{V_{x}})} $$ Hence $ \\sum \\lambda_i = \\text{tr}(\\mathbf{V}_\\mathbf{x}) $ is the total variance of the vector $ \\mathbf{x} $, while $ \\lambda_i/\\text{tr}(\\mathbf{V}_\\mathbf{x}) $ is the fraction of that total variance explained by the linear combination $ \\mathbf{e}_i^T \\mathbf{x} $.",
+      "source_page": 1275,
+      "source_pages": [
+        1275,
+        1276
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p015:b19",
+        "Evolution_appendix5:p015:b20",
+        "Evolution_appendix5:p015:b21",
+        "Evolution_appendix5:p016:b2",
+        "Evolution_appendix5:p016:b3",
+        "Evolution_appendix5:p016:b5"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1286.0,
+          904.0,
+          1378.0
+        ],
+        [
+          321.0,
+          1373.0,
+          712.0,
+          1412.0
+        ],
+        [
+          132.0,
+          1423.0,
+          904.0,
+          1471.0
+        ],
+        [
+          287.0,
+          206.0,
+          1058.0,
+          347.0
+        ],
+        [
+          575.0,
+          358.0,
+          769.0,
+          415.0
+        ],
+        [
+          287.0,
+          426.0,
+          1059.0,
+          475.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e49e8139bd89ca677bcdd2d80226f31253bf568bd9fafd1fd1ad1372fe80222e"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A5.6]]"
+      "content": "[[SEE_EXAMPLE:A5.6]]",
+      "source_page": 1276,
+      "source_pages": [
+        1276
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p016:b6"
+      ],
+      "source_bboxes": [
+        [
+          321.0,
+          542.0,
+          1035.0,
+          735.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3089c52f25d77872a87511568f2d8d03de6020d658802d84d7d8036c480015e9"
     },
     {
       "type": "discussion",
-      "content": "Example A5.7 serves as a brief introduction to the important field of morphometrics, which is concerned with quantification and comparison of sizes and shapes of organisms. The reader is referred to Pimentel (1979), Reyment et al. (1984), Elewa (2004), Claude (2008) and especially Bookstein et al. (1985), Rohlf and Bookstein (1990), Reyment (1991), Bookstein (1997), Slice (2005), and Zelditch et al. (2012) for detailed treatments."
+      "content": "Example A5.7 serves as a brief introduction to the important field of morphometrics, which is concerned with quantification and comparison of sizes and shapes of organisms. The reader is referred to Pimentel (1979), Reyment et al. (1984), Elewa (2004), Claude (2008) and especially Bookstein et al. (1985), Rohlf and Bookstein (1990), Reyment (1991), Bookstein (1997), Slice (2005), and Zelditch et al. (2012) for detailed treatments.",
+      "source_page": 1276,
+      "source_pages": [
+        1276
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p016:b7"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          799.0,
+          1058.0,
+          916.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a2304617a67778289aa252e2cdfa7a8dcdc75a64d985af00603d7d41d745981e"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A5.7]]"
+      "content": "[[SEE_EXAMPLE:A5.7]]",
+      "source_page": 1276,
+      "source_pages": [
+        1276
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p016:b7"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          799.0,
+          1058.0,
+          916.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c8d443e71996438c9ee28c11581ecc81bd6deeb780f363ac5fc83e1e461b1782"
     },
     {
       "type": "discussion",
-      "content": "This example points out some of the advantages, and possible pitfalls, of using principal component analysis for dimensional reduction of the data. Namely, replacing the $n$-component vector $\\mathbf{z}$ by an $m < n$ component vector $\\mathbf{y}$ composed of linear combinations of the $\\mathbf{z}$, i.e., $\\mathbf{y}_{m \\times 1} = \\mathbf{M}_{m \\times n} \\mathbf{z}_{n \\times 1}$, where $\\mathbf{M} = (\\mathbf{e}_{1}, \\cdots, \\mathbf{e}_{m})^{T}$, with $y_{i} = \\mathbf{e}_{i}^{T} \\mathbf{z}$. Essentially all (over 97%) of the variance in the three measured characters is accounted for by variation in overall size, with the remaining variation accounted for by differences in shape. While the temptation is strong to simply consider overall size and ignore all shape information, it might be the case that selection is largely ignoring variation in size and instead focusing on (size-independent) shape differences. In this case, an analysis ignoring shape (as would occur if only the new character generated by PC1 were considered) would be very misleading. A further complication with principal component analysis is that it can often be difficult to give biological interpretations to the new characters resulting from the rotation of the coordinate system."
+      "content": "This example points out some of the advantages, and possible pitfalls, of using principal component analysis for dimensional reduction of the data. Namely, replacing the $n$-component vector $\\mathbf{z}$ by an $m < n$ component vector $\\mathbf{y}$ composed of linear combinations of the $\\mathbf{z}$, i.e., $\\mathbf{y}_{m \\times 1} = \\mathbf{M}_{m \\times n} \\mathbf{z}_{n \\times 1}$, where $\\mathbf{M} = (\\mathbf{e}_{1}, \\cdots, \\mathbf{e}_{m})^{T}$, with $y_{i} = \\mathbf{e}_{i}^{T} \\mathbf{z}$. Essentially all (over 97%) of the variance in the three measured characters is accounted for by variation in overall size, with the remaining variation accounted for by differences in shape. While the temptation is strong to simply consider overall size and ignore all shape information, it might be the case that selection is largely ignoring variation in size and instead focusing on (size-independent) shape differences. In this case, an analysis ignoring shape (as would occur if only the new character generated by PC1 were considered) would be very misleading. A further complication with principal component analysis is that it can often be difficult to give biological interpretations to the new characters resulting from the rotation of the coordinate system.",
+      "source_page": 1277,
+      "source_pages": [
+        1277
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p017:b6"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          553.0,
+          905.0,
+          855.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0249768420935b4dc7e63827748b679d076008e05c86a798a5464e267a6f46f8"
     }
   ]
 }

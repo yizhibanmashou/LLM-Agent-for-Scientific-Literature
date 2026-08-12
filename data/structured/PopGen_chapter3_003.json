@@ -24,14 +24,67 @@
       "content": "The model of random genetic drift with binomial sampling described in Equation 3.1 is known as the Wright-Fisher model because Fisher (1930) and Wright (1931) derived the expected distribution of allele frequencies among subpopulations. Although neither author formulated the problem in the manner used here, our approach makes the problem much simpler and gives the same results. If a population contains 2N alleles among which two alleles A and a may be present, then the state of the population can be described by the number of A alleles in the population. The possible states are then 0, 1, 2,... 2N. The states 0 and 2N are special in that these are fixation states, and once the population get into either of these states, it cannot leave unless there is a new mutation (and for the moment we exclude this possibility). The states 0 and 2N are called absorbing states. From any nonfixed allele frequency, it is possible for the population to drift to any other allele frequency. However, the population is more likely to remain close to its present state than to take a large jump. To use an example from Figure 3.4, if 2N = 32, then the chance of drifting from 30 copies of gene A to 29 copies in one generation is 0.186, whereas the chance of drifting to 27 copies is 0.033. The probability of the population drifting from a state having i copies to j copies of allele A is known as the transition probability. The transition probability for the Wright-Fisher model is obtained directly from the binomial distribution (see Equation 3.1). In particular, if a population has i copies of allele A and 2N - i copies of allele a, then the transition probability, $ T_{ij} $, of going from i copies of A to j copies of A in one generation of random genetic drift is given by $$ T_{ij}=\\binom{2N}{j}\\left(\\frac{i}{2N}\\right)^{j}\\left(\\frac{2N-i}{2N}\\right)^{2N-j}=\\frac{(2N)!}{j!(2N-j)!}p^{j}q^{2N-j} $$ where $p = i/2N$ is the initial allele frequency of $A$ and $q = (2N - i)/2N$ is the initial allele frequency of $a$.",
       "source_page": 116,
       "source_pages": [
-        116
+        116,
+        119,
+        126,
+        133,
+        137
       ],
       "source_block_ids": [
+        "PopGen_chapter3:p018:b3",
+        "PopGen_chapter3:p018:b5",
+        "PopGen_chapter3:p025:b8",
+        "PopGen_chapter3:p025:b10",
+        "PopGen_chapter3:p029:b4",
+        "PopGen_chapter3:p008:b2",
+        "PopGen_chapter3:p011:b6",
         "PopGen_chapter3:p008:b3",
         "PopGen_chapter3:p008:b4",
         "PopGen_chapter3:p008:b6"
       ],
       "source_bboxes": [
+        [
+          526.0,
+          201.0,
+          913.0,
+          251.0
+        ],
+        [
+          526.0,
+          278.0,
+          915.0,
+          438.0
+        ],
+        [
+          518.0,
+          917.0,
+          907.0,
+          966.0
+        ],
+        [
+          515.0,
+          989.0,
+          908.0,
+          1171.0
+        ],
+        [
+          522.0,
+          536.0,
+          907.0,
+          583.0
+        ],
+        [
+          223.0,
+          190.0,
+          736.0,
+          245.0
+        ],
+        [
+          505.0,
+          666.0,
+          896.0,
+          915.0
+        ],
         [
           223.0,
           256.0,
@@ -80,7 +133,7 @@
           1172.0
         ]
       ],
-      "provenance_score": 0.696429,
+      "provenance_score": 1.0,
       "content_sha256": "d45fa8694bc5fb0e42693e70a787c30f3a130eb54b4a6ab32bfaef6845e7fb10"
     },
     {

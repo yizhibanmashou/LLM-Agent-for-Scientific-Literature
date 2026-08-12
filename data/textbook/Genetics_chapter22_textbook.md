@@ -167,17 +167,7 @@ where $ \phi = 2\Theta(n - 1) $, and $ h_1^2 = \sigma_A^2(1)/\sigma_z^2(1) $ and
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter22:1` · source: `Genetics_chapter22_003.json` · blocks 6–10
->
-> Example 1. In an attempt to determine whether cowpea weevils (Callosobruchus maculatus) exhibit variance in their relative performances on alternative hosts, Fox (1993) raised members of full-sib families ( $ \Theta = 0.25 $ and $ n = 5 $) on both cowpea and azuki beans. The correlations between family means (and their standard errors obtained by bootstrapping over families) are given for development time and three morphological characters in the following table. (Data are for females only.) Note that the family-mean correlations $ r(\overline{z}_{1j}, \overline{z}_{2j}) $ for all four characters are well over three standard errors below +1, suggesting significant genotype × environment interaction.
-> 
-> <table><tr><td>Character</td><td>$ r(\overline{z}_{1j}, \overline{z}_{2j}) $</td><td>$ h^{2} $</td><td>$ \frac{2\Theta nh^{2}}{\phi h^{2}+1} $</td><td>$ r_{x} $</td></tr><tr><td>Development time</td><td>0.24 (0.16)</td><td>0.68</td><td>0.72</td><td>0.33 (0.22)</td></tr><tr><td>Pronotum width</td><td>0.30 (0.14)</td><td>0.50</td><td>0.62</td><td>0.48 (0.25)</td></tr><tr><td>Elytron length</td><td>0.33 (0.14)</td><td>0.48</td><td>0.61</td><td>0.54 (0.23)</td></tr><tr><td>Emergence weight</td><td>0.36 (0.17)</td><td>0.30</td><td>0.46</td><td>0.78 (0.37)</td></tr></table>
-> 
-> The author provides data that yield the average heritability estimates given in the table. Using these as well as the values of $ \Theta $ and n given above, the quantity in the large brackets in Equation 22.8 can be estimated for each character. These bias estimates, which appear in the fourth column of the table, give the expected degree to which the correlation between family means underestimates the true correlation across environments; a value of one implies there is no bias. Division of the correlations between family means by their respective biases yields the estimates of $ \rho_{\times} $ given in the final column. The corrected standard errors reported in the table were obtained in the same manner, i.e., by dividing the previous standard errors by the bias. However, this procedure must lead to the standard errors being downwardly biased since it does not account for sampling error associated with the heritability estimates.
-> 
-> All of the estimates of the correlation across environments $ (r_{\times}) $ are substantially higher than those for the correlation between family means, $ [r(\overline{z}_{1j}, \overline{z}_{2j})] $. That for emergence weight is clearly not significantly different from +1, while those for pronotum width and elytron length are of questionable significance. Thus, the correlation between family means substantially inflates the confidence that should be attached to the hypothesis of genotype $ \times $ environment interaction.
-> 
-> Several other studies have used correlations of family means across environments to test for local adaptation of insect pests to different host plants. Full-sib families of leaf miners and pea aphids have been found to have significantly negative genetic correlations for fitness-related characters when raised on different crops (Via 1984, 1991), suggesting the potential for evolutionary specialization to local host plants. In this case, it is unlikely that a reanalysis of the data would lead to a change in interpretation; since the correlation between family means yields a downwardly biased estimate of the absolute value of $ \rho_{x} $, the true values of the genetic correlations are probably more negative than Via's estimates. Thus, Via's study populations appear to exhibit a real genetic tradeoff in performance on alternative hosts. On the other hand, several other studies have found positive correlations between family mean performances on different hosts (Rausher 1984, Futuyma and Phillipi 1987, Takano et al. 1987, Karowe 1990). Although such results imply an absence of tradeoffs, as in the case of Fox's analysis, they are less clear with respect to genotype × environment interaction (see also Fry 1993).
+> **[UNRESOLVED EXAMPLE: Genetics_chapter22:1]**
 
 
 ---
@@ -248,13 +238,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter22:2` · source: `Genetics_chapter22_004.json` · blocks 20–22
->
-> Example 2. A highly informative, although labor-intensive, approach to ascertaining the degree of genotype × environment interaction in nature is to trans- plant clonal replicates to various positions in a natural landscape. In one of the few experiments of this type, Stratton (1994) assayed the performance of three genotypes of the asexual annual plant Erigeron annuus at 630 locations in an 0.5 hectare old field. As can be seen in the following contour map of total seed production, average performance varied dramatically across the landscape.
-> 
-> ![Source illustration p682 b3](figures/examples/Genetics_p682_b3.png)
-> 
-> Stratton distributed his plants over the landscape in a hierarchical design: sections separated by distances > 25 m, clusters within sections separated by 3 to 25 m, plots within clusters separated by 0.5 to 1.0 m, and subplots within plots with individuals separated by 10 cm. Significant genotype × environment interaction was detected in this study, but 78% of it was at the level of subplots, i.e., at a spatial scale of 10 cm or less. Seed dispersal experiments indicated that almost all seeds disperse much farther from their parents than 10 cm, implying that the relevant measure of heritability for this population is given by Equation 22.11b. With only three clones in the experiment, the results can hardly be viewed as giving reliable heritability estimates, and we simply point them out for heuristic purposes. The vast majority of the variance for lifetime fitness (70%) appears at the level of replicate plants within subplots. Such variance is potentially a consequence of microenvironmental variation occurring at scales less than 10 cm and of developmental noise. The phenotypic variance attributable to differences among all higher levels of spatial scale is 22%, that attributable to genotype $ \times $ environment interaction is 8%, and that associated with genotypes is only 0.3%. Thus, the broadsense heritability for total fitness in this population (0.003) is essentially zero.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter22:2]**
 
 
 > **Table 22.1** · `22.1` · page 679 · source: `Genetics_chapter22_004`
@@ -392,13 +376,7 @@ The variance associated with heterogeneity of regressions can be tested for sign
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter22:3` · source: `Genetics_chapter22_007.json` · blocks 24–26
->
-> Example 3. The following table summarizes the results from the experiment of Finlay and Wilkinson (1963) mentioned above (Figure 22.2). Each of the $ N_G = 277 $ barley varieties was grown in $ N_E = 7 $ environments in $ n = 3 $ replicates. By use of $ F $ tests, the authors found all of the sources of variance to be significant. Our purpose is to quantify their relative contributions to the total phenotypic variance using the relationships given in Table 22.2.
-> 
-> <table><tr><td>Source of Variation</td><td>df</td><td>Mean Squares</td><td>Variance Estimates</td></tr><tr><td>Environments</td><td>6</td><td>125.5803</td><td>0.1510</td></tr><tr><td>Genotypes</td><td>276</td><td>0.5618</td><td>0.0235</td></tr><tr><td>Genotype $ \times $ Environment</td><td>1,656</td><td>0.0616</td><td>0.0160</td></tr><tr><td>Regressions</td><td>276</td><td>0.2227</td><td>0.0130</td></tr><tr><td>Deviations from regressions</td><td>1,380</td><td>0.0294</td><td>0.0030</td></tr><tr><td>Error</td><td>3,878</td><td>0.0205</td><td>0.0205</td></tr></table>
-> 
-> Equating the observed mean squares with their expected values (Table 22.2), by the method of moments, we obtain the total interaction variance as $ \text{Var}(I) = N_E(\text{MS}_I - \text{MS}_e)/[n(N_E - 1)] = 0.0160 $, using the relationship in Equation 22.10a. Similarly, the variance due to deviations around the regressions is estimated by $ \text{Var}(\epsilon) = (\text{MS}_\epsilon - \text{MS}_e)/n = 0.0030 $. The remaining interaction variance, 0.016 - 0.003 = 0.013, is explained by the joint-regression analysis. The components of variance due to the main effects are estimated in a similar way. Since 67% (0.1510/0.2270) of the total variation is explained by macroenvironmental differences ( $ \sigma_E^2 $), and 10% (0.0205/0.2270) by microenvironmental variation ( $ \sigma_e^2 $), variation among growing sites has a substantial impact on the performance of most varieties. Of the variation attributable to genotypes (0.0235 + 0.0160), 40% involves genotype × environment interaction. Only about 1% of the total phenotypic variance is due to deviations around the regressions, while about 6% is accounted for by the regressions.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter22:3]**
 
 
 > **Table 22.2** · `22.2` · page 689 · source: `Genetics_chapter22_007`
@@ -439,9 +417,7 @@ where $ \delta_{i} = 1 $ when the difference within parentheses is positive and 
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter22:4` · source: `Genetics_chapter22_008.json` · blocks 7–7
->
-> Example 4. Baker (1988) reports differences in mean grain yield (g/m²) between two cultivars of wheat grown under nine different conditions (combinations of sites and years). On five occasions, the first cultivar outperformed the second: $ \overline{z}_{i1} - \overline{z}_{i2} = 20 $, 17, 84, 22, and 84. On four occasions, the second cultivar outperformed the first: $ \overline{z}_{i1} - \overline{z}_{i2} = -12 $, -43, -78, and -21. The standard errors of the differences between means were fairly similar under all nine conditions, averaging 15.3. We will use the square of this value, 235.1, as a general estimate of $ [\mathrm{Var}(\overline{z}_{i1}) + \mathrm{Var}(\overline{z}_{i2})] $. Squaring the differences between means, and substituting into Equations 22.16a,b, $ Q^{+} = 65.0 $ and $ Q^{-} = 36.2 $. The minimum of these values substantially exceeds the 0.001 critical value (19.9) for nine environments given in Table 1 of Gail and Simon (1985). Thus, it can be concluded that significant cross-over interactions exist between the two cultivars.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter22:4]**
 
 
 ---

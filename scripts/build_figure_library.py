@@ -20,6 +20,10 @@ FIGURE_CAPTION_RE = re.compile(
     r"^\s*(?:Figure|Fig\.)\s+(?P<id>(?:A\d+|\d+)\.\d+[a-z]?)\b(?P<caption>.*)",
     re.IGNORECASE,
 )
+BARE_FIGURE_CAPTION_RE = re.compile(
+    r"^\s*(?P<id>(?:A\d+|\d+)\.\d+[a-z]?)\b(?P<caption>.*)",
+    re.IGNORECASE,
+)
 PANEL_LABEL_RE = re.compile(r"^\s*\(?[A-Z]\)(?:\s+.+)?\s*$")
 BODY_LABELS = {"image", "chart", "display_formula"}
 FALLBACK_BODY_LABELS = {"paragraph_title", "table", "text"}
@@ -145,9 +149,11 @@ def page_rows(page: dict[str, Any], page_number: int) -> list[RawRow]:
 
 
 def is_figure_caption(row: RawRow) -> re.Match[str] | None:
-    if row.label != "figure_title":
-        return None
-    return FIGURE_CAPTION_RE.match(row.content)
+    if row.label == "figure_title":
+        return FIGURE_CAPTION_RE.match(row.content) or BARE_FIGURE_CAPTION_RE.match(row.content)
+    if row.content.lstrip().startswith(("FIGURE ", "FIG. ")):
+        return FIGURE_CAPTION_RE.match(row.content)
+    return None
 
 
 def is_previous_figure_boundary(row: RawRow) -> bool:
@@ -243,6 +249,32 @@ def find_fallback_body_rows(rows: list[RawRow], caption_index: int) -> list[RawR
     return selected
 
 
+def find_overlapping_body_rows(rows: list[RawRow], caption_index: int) -> list[RawRow]:
+    """Find a figure body placed beside or underneath its caption.
+
+    Scanned textbooks commonly use a two-column figure layout where the image
+    and caption share the same vertical band.  Such a body is neither strictly
+    before nor after the caption in reading order, so the preceding-block
+    strategy cannot see it.  Table-labelled blocks are included because Paddle
+    sometimes classifies Punnett squares and other grid diagrams as tables.
+    """
+    caption = rows[caption_index]
+    candidates: list[tuple[float, RawRow]] = []
+    for index, row in enumerate(rows):
+        if index == caption_index or row.label not in BODY_LABELS | {"table"}:
+            continue
+        vertical_overlap = min(row.bottom, caption.bottom) - max(row.top, caption.top)
+        if vertical_overlap <= 8:
+            continue
+        row_center = (row.top + row.bottom) / 2
+        caption_center = (caption.top + caption.bottom) / 2
+        candidates.append((abs(row_center - caption_center), row))
+    if not candidates:
+        return []
+    _, nearest = min(candidates, key=lambda item: (item[0], item[1].left, item[1].index))
+    return [nearest]
+
+
 def find_body_rows(rows: list[RawRow], caption_index: int) -> BodyMatch | None:
     caption = rows[caption_index]
     selected: list[RawRow] = []
@@ -273,6 +305,14 @@ def find_body_rows(rows: list[RawRow], caption_index: int) -> BodyMatch | None:
             bbox_rows=bbox_rows,
             bbox_source="union of preceding figure body blocks",
             confidence=0.95,
+        )
+    overlapping_rows = find_overlapping_body_rows(rows, caption_index)
+    if overlapping_rows:
+        return BodyMatch(
+            rows=overlapping_rows,
+            bbox_rows=overlapping_rows,
+            bbox_source="nearest vertically overlapping figure body block",
+            confidence=0.92,
         )
     fallback_rows = find_fallback_body_rows(rows, caption_index)
     if fallback_rows:

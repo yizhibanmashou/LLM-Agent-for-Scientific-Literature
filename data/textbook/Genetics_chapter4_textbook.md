@@ -36,20 +36,7 @@ For complex morphological and behavioral characters influenced by multiple genet
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter4:1` · source: `Genetics_chapter4_002.json` · blocks 6–10
->
-> Example 1. Fisher and Ford (1947) were able to distinguish three wing-color patterns in the moth Panaxia dominula, and through breeding experiments, the polymorphism was found to result from two alleles segregating at a single locus. The following table summarizes the distribution of genotype frequencies observed in a population in 1946.
-> 
-> <table><tr><td>Color Pattern</td><td>dominula</td><td>medionigra</td><td>bimacula</td><td>Total</td></tr><tr><td>Genotype</td><td>$ B_{1}B_{1} $</td><td>$ B_{1}B_{2} $</td><td>$ B_{2}B_{2} $</td><td rowspan="2">N = 986</td></tr><tr><td>Sample Size ( $ N_{ij} $)</td><td>905</td><td>78</td><td>3</td></tr><tr><td>Frequency ( $ P_{ij} $)</td><td>0.918</td><td>0.079</td><td>0.003</td><td>1.000</td></tr></table>
-> 
-> What are the estimated frequencies of the two alleles? Using Equation 4.1, the frequency of the $ B_{1} $ allele is found to be
-> 
-> $$
-> p_{1}=0.918+\frac{0.079}{2}=0.958
-> $$
-> 
-> 
-> and since there are only two alleles, the frequency of $ B_{2} $ is $ p_{2}=1-p_{1}=0.041 $.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter4:1]**
 
 
 ---
@@ -203,18 +190,7 @@ Regardless of which approach to testing for Hardy-Weinberg frequencies is taken,
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter4:2` · source: `Genetics_chapter4_007.json` · blocks 4–7
->
-> Example 2. As an example of the application of Equation 4.4, we return to the data in the table of Example 1.
-> 
-> The best estimates for the Hardy-Weinberg expectations are obtained from the observed allele frequencies: $ \widehat{N}_{11} = p_{1}^{2}N = 905 $, $ \widehat{N}_{12} = 2p_{1}p_{2}N = 79 $, and $ \widehat{N}_{22} = p_{2}^{2}N = 2 $. Applying these and the observed values ( $ N_{11} $, $ N_{12} $, and $ N_{22} $) from the table,
-> 
-> $$
-> G=-2\left[905\ln(905/905)+78\ln(79/78)+3\ln(2/3)\right]=0.446
-> $$
-> 
-> 
-> Under the null hypothesis of Hardy-Weinberg frequencies, the sampling distribution of G is a function of the number of degrees of freedom, which in the case of the Hardy-Weinberg test is the number of genotypic classes minus the number of allele frequencies that must be estimated from the data minus one. Here, it was necessary to estimate one parameter $ (p_{1}) $ from the data, so there is 3 - 1 - 1 = 1 degree of freedom. Referring to a $ \chi^{2} $ table in any statistics text, it can be found that, with one degree of freedom, G must exceed 3.841 to reject the null hypothesis at the 0.05 probability level. Therefore, the observed data are not significantly different from those expected under the Hardy-Weinberg expectations.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter4:2]**
 
 
 ---
@@ -241,13 +217,7 @@ The fact that we have set the genotypic value of the $B_{1}B_{1}$ homozygote equ
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter4:3` · source: `Genetics_chapter4_008.json` · blocks 5–7
->
-> Example 3. The scaling of genotypic values may be clarified by reference to a particular example — the Booroola (B) gene that influences fecundity in the Merino sheep of Australia (Piper and Bindon 1988).
-> 
-> Litter size in sheep has a polygenic basis, but in this particular breed, it is determined largely by a single polymorphic locus. The mean litter sizes for the bb,
-> 
-> Bb, and BB genotypes based on 685 total records are 1.48, 2.17, and 2.66, respectively. Taking these to be estimates of the genotypic values $ (G_{bb}, G_{Bb}, \text{and } G_{BB}) $, the homozygous effect of the B allele is estimated by $ a = (2.66 - 1.48)/2 = 0.59 $. The dominance coefficient is estimated by taking the difference between bb and Bb genotypes, $ a(1 + k) = 0.69 $, substituting a = 0.59, and rearranging to obtain k = 0.17. This suggests slight dominance of the Booroola gene, but great confidence cannot be placed on this conclusion. Since the standard errors of the mean genotypic values are approximately 0.09, the midpoint between the two homozygotes, 2.07, is not significantly different from 2.17.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter4:3]**
 
 
 ---
@@ -496,11 +466,7 @@ An individual’s breeding value, hereafter denoted by A, is the sum of the addi
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter4:4` · source: `Genetics_chapter4_012.json` · blocks 17–18
->
-> Example 4. Consider the consequences of the Booroola gene (described in Example 3) in two hypothetical random-mating populations with gene frequencies of 0.5 and 0.1. We assume that the phenotypic means within genotypic classes are known without error, so that they are equivalent to the genotypic values. The additive and dominance genetic variances are, respectively, the mean-squared breeding values and the mean-squared dominance deviations because both types of effects have means equal to zero.
-> 
-> <table><tr><td></td><td colspan="3">$ p_{B}=0.5 $</td><td colspan="3">$ p_{B}=0.1 $</td></tr><tr><td></td><td>$ bb $</td><td>$ Bb $</td><td>$ BB $</td><td>$ bb $</td><td>$ Bb $</td><td>$ BB $</td></tr><tr><td>Genotypic Value ( $ G_{ij} $)</td><td>1.48</td><td>2.17</td><td>2.66</td><td>1.48</td><td>2.17</td><td>2.66</td></tr><tr><td>Genotype Frequency ( $ P_{ij} $)</td><td>0.25</td><td>0.50</td><td>0.25</td><td>0.81</td><td>0.18</td><td>0.01</td></tr><tr><td>Mean Genotypic Value</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>$ \mu_{G}=P_{bb}G_{bb}+P_{Bb}G_{Bb}+P_{BB}G_{BB} $</td><td></td><td>2.120</td><td></td><td>1.616</td><td></td><td></td></tr><tr><td>Additive Effects</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>$ \alpha_{B}=p_{B}G_{BB}+p_{b}G_{Bb}-\mu_{G} $</td><td></td><td>0.295</td><td></td><td>0.603</td><td></td><td></td></tr><tr><td>$ \alpha_{b}=p_{b}G_{bb}+p_{B}G_{Bb}-\mu_{G} $</td><td></td><td>-0.295</td><td></td><td>-0.067</td><td></td><td></td></tr><tr><td>Breeding Values</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>$ A_{ij}=\alpha_{i}+\alpha_{j} $</td><td>-0.59</td><td>0.00</td><td>0.59</td><td>-0.134</td><td>0.536</td><td>1.206</td></tr><tr><td>$ \overline{A}=P_{bb}A_{bb}+P_{Bb}A_{Bb}+P_{BB}A_{BB} $</td><td></td><td>0.00</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Dominance Deviations</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>$ \delta_{ij}=G_{ij}-(\mu_{G}+\alpha_{i}+\alpha_{j}) $</td><td>-0.05</td><td>0.05</td><td>-0.05</td><td>-0.002</td><td>0.018</td><td>-0.162</td></tr><tr><td>$ \overline{\delta}=P_{bb}\delta_{bb}+P_{Bb}\delta_{Bb}+P_{BB}\delta_{BB} $</td><td></td><td>0.00</td><td></td><td>0.00</td><td></td><td></td></tr><tr><td>Genetic Variance Components</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>$ \sigma_{A}^{2}=P_{bb}A_{bb}^{2}+P_{Bb}A_{Bb}^{2}+P_{BB}A_{BB}^{2} $</td><td></td><td>0.1740</td><td></td><td>0.0808</td><td></td><td></td></tr><tr><td>$ \sigma_{D}^{2}=P_{bb}\delta_{bb}^{2}+P_{Bb}\delta_{Bb}^{2}+P_{BB}\delta_{BB}^{2} $</td><td></td><td>0.0012</td><td></td><td>0.0003</td><td></td><td></td></tr><tr><td>$ \sigma_{G}^{2}=\sigma_{A}^{2}+\sigma_{D}^{2} $</td><td></td><td>0.1752</td><td></td><td>0.0811</td><td></td><td></td></tr></table>
+> **[UNRESOLVED EXAMPLE: Genetics_chapter4:4]**
 
 
 Although this example is somewhat artificial in that we employed arbitrary gene frequencies, the basic approach is now being widely exploited in the analysis of human genetic disorders. Biochemical studies are used to identify candidate loci that are potential contributors to the variation of the trait of interest, and the genotypes of random individuals are identified by use of molecular markers. The average phenotypic values within each genotypic class provide estimates of the genotypic values, which can then be used to estimate the fraction of the total phenotypic variance that is associated with the locus. Details on this measured-genotype approach are presented in Chapter 13.
@@ -548,34 +514,7 @@ where $ p_{j} $ is the frequency of the jth allele.
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_chapter4:5` · source: `Genetics_chapter4_014.json` · blocks 5–12
->
-> Example 5. Here we show how the average excess $ \alpha_{i}^{*} $ of an allele i can be related to $ \sigma(G, N_{i}) $, the covariance between genotypic value and the number of copies of that allele. This result will be useful in the following sections.
-> 
-> To compute $ \sigma(G, N_i) = E(G \cdot N_i) - E(N_i) \cdot E(G) $, we start with the fact that $ E(G) = \mu_G $, so we merely require expressions for $ E(N_i) $ and $ E(G \cdot N_i) $. The mean number of alleles of type $ i $ at the locus, $ E(N_i) $, is straightforward. Since there are two genes at each locus, and the frequency of allele $ i $ is $ p_i $, $ E(N_i) = 2p_i $.
-> 
-> To obtain $ E(G \cdot N_i) $, we use ordered-genotype notation, where $ P_{ij(o)} $ is the probability of getting allele i from the mother and allele j from the father. We assume that $ P_{ij(o)} = P_{ji(o)} $, so $ P_{ij} = 2P_{ij(o)} $ when $ i \neq j $. Because the variable $ N_i $ takes on only two nonzero values, two and one, the expected cross-product is
-> 
-> $$
-> E(G\cdot N_{i})=(G_{ii}\cdot2)\cdot P_{ii(o)}+\sum_{j\neq i}^{n}(G_{ij}\cdot1)\cdot2P_{ij(o)}=2p_{i}\sum_{j=1}^{n}P_{ij|i}G_{ij}
-> $$
-> 
-> 
-> where the last step follows from the definition of a conditional genotype probability as $ P_{ij|i} = P_{ij(o)}/p_i $. Putting the above results together, and recalling Equation 4.16a,
-> 
-> $$
-> \sigma(G,N_{i})=2p_{i}\left[\sum_{j=1}^{n}P_{i j|i}G_{i j}-\mu_{G}\right]=2p_{i}\alpha_{i}^{*}
-> \tag{4.17a}
-> $$
-> 
-> 
-> Under the assumption of random mating, average excesses are identical to additive effects, and
-> 
-> $$
-> \sigma(G,N_{i})=2p_{i}\alpha_{i}
-> \tag{4.17b}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter4:5]**
 
 
 ---

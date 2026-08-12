@@ -24,31 +24,7 @@ Each of these components may have subcomponents. For example, from Equation 5.7,
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter6:1` · source: `Genetics_chapter6_002.json` · blocks 3–11
->
-> Example 1. As an example of computing genotypic and environmental values, we consider a small data set from Strauss and Karban (1994) on three lines of thrips (Apterothrix apteris) grown on three clones of their host plant, the sea-side daisy (Erigeron glaucus). The following table gives the mean performance of thrips, measured as population density after eight generations of growth, in the nine genotype-environment combinations (the thrips lines being denoted as I, II, and III, and the three environments (plant clones) as 1, 2, and 3). All nine treatments were replicated; the standard errors of the measures are small and are ignored in the following.
-> 
-> <table><tr><td rowspan="2">Plant</td><td colspan="3">Thrips Line</td><td rowspan="2">E</td></tr><tr><td>I</td><td>II</td><td>III</td></tr><tr><td>1</td><td>77</td><td>34</td><td>47</td><td>$ -19.22 = E_{1} $</td></tr><tr><td>2</td><td>61</td><td>159</td><td>51</td><td>$ 18.44 = E_{2} $</td></tr><tr><td>3</td><td>40</td><td>71</td><td>107</td><td>$ 0.78 = E_{3} $</td></tr><tr><td>G</td><td>59.33</td><td>88.00</td><td>68.33</td><td></td></tr></table>
-> 
-> Assuming an equal weight for each cell, and averaging over all nine cells, the mean character value is found to be $ \mu_{G} = 71.89 $. The genotypic values of the thrips lines, obtained by averaging the elements within columns, are given in the bottom row of the table. The average environmental effects, each defined as the mean performance of all thrips lines in a specific environment (the average within rows) minus the grand mean $ (\mu_{G}) $, are given in the final column. For example, $ E_{1} = [(77 + 34 + 47)/3] - 71.89 $. Note that the three values of E average to zero.
-> 
-> To obtain the interaction effects, we rearrange Equation 6.1 to
-> 
-> $$
-> I_{ij}=\bar{z}_{ij}-G_{i}-E_{j}
-> $$
-> 
-> 
-> where i and j denote the thrips line and the daisy clone, and $ \bar{z}_{ij} $ is the entry in the ith column and jth row of the table. The residual deviation drops out because we have assumed the data to have been obtained without error. Substituting into this equation,
-> 
-> $$
-> \begin{array}{lllllll} I_{I,1}&=&36.89& & &I_{II,1}&=-34.78& &I_{III,1}&=-2.11\\ I_{I,2}&=-16.78& & &I_{II,2}&=&52.56& &I_{III,2}&=-35.78\\ I_{I,3}&=-20.11& & &I_{II,3}&=-17.78& &I_{III,3}&=&37.89 \end{array}
-> $$
-> 
-> 
-> The interaction effects average to zero both within rows and within columns. Note also that the magnitudes of the interaction effects tend to be much greater than the magnitudes of the environmental effects, indicating strong genotype $ \times $ environment interaction.
-> 
-> This study also provides strong evidence of genotype-environment covariance. In nature, thrips line I was found living on plant clone 1, line II on clone 2, and line III on clone 3. Thus, the individual clones were associated with the plants on which they best performed.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter6:1]**
 
 
 Since I and e are uncorrelated with the other variables (by construction), using the formula for the variance of a sum (Equation 3.11b), the total phenotypic variance of a population can be written as
@@ -69,15 +45,7 @@ Whereas methods exist for the detection of genotype × environment interaction (
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter6:2` · source: `Genetics_chapter6_002.json` · blocks 18–21
->
-> Example 2. The results of an experiment with a clonal plant will help clarify the preceding concepts. The salt marsh cord grass (Spartina patens) occurs along much of the Atlantic coast on sand dunes, śwale grasslands, and marshes. Silander (1985) removed plants from these three environments and clonally propagated them via rhizomes in the greenhouse. After two years, sufficient material was available to perform a reciprocal transplant experiment in the field. Replicate progeny from each clone were grown at each of three sites — dune, swale, and marsh. A large number of vegetative and reproductive traits were measured, and the data were analyzed by two-way ANOVA (Chapter 20) with clone and site serving as the main factors.
-> 
-> <table><tr><td>Trait</td><td>Var(G)</td><td>Var(E)</td><td>Var(I)</td><td>Var(e)</td></tr><tr><td>Tillers/clone</td><td>0.2</td><td>34.2</td><td>19.9</td><td>45.8</td></tr><tr><td>Culm height</td><td>12.0</td><td>56.6</td><td>7.0</td><td>24.5</td></tr><tr><td>Leaves/culm</td><td>11.2</td><td>19.4</td><td>8.4</td><td>61.0</td></tr><tr><td>Culm diameter</td><td>20.6</td><td>4.7</td><td>0.0</td><td>74.7</td></tr><tr><td>Longest leaf length</td><td>26.7</td><td>29.5</td><td>6.1</td><td>37.7</td></tr><tr><td>Longest leaf width</td><td>27.5</td><td>7.8</td><td>3.6</td><td>61.3</td></tr><tr><td>Third leaf length</td><td>25.2</td><td>0.0</td><td>10.2</td><td>64.6</td></tr><tr><td>Third leaf width</td><td>23.4</td><td>3.4</td><td>3.6</td><td>69.7</td></tr></table>
-> 
-> The observed components of variance, given in the above table as percentages of the total phenotypic variance, can be interpreted as follows: the among-clone variance is an estimate of the total genetic variance $ \sigma_G^2 $; the variance among the three sites is an estimate of the general environmental effects variance $ \sigma_E^2 $; the variance within sites (more specifically, among members of the same clone within sites) is an estimate of $ \sigma_e^2 $; and the clone × site variance is an estimate of $ \sigma_T^2 $. Conceivably, some of the observed phenotypic variance may have been caused by maternal effects, but since all members of a clone had the same mother, any variance caused by such effects is compounded with the estimate of $ \sigma_G^2 $. In this experiment, $ \sigma_G, E $ can be assumed to be zero because individual plants were distributed randomly within treatments.
-> 
-> When averages are taken over all of the traits in the study (including those not in the table), the vast majority (60%) of the phenotypic variance is found to be attributable to special environmental effects ( $ \sigma_e^2 $). Genotype accounts for an additional 19% of the variance, whereas general environmental effects and genotype × environment interactions account for 6 and 5%, respectively. These results indicate that Spartina growth characters are relatively insensitive to what appear to be major changes in habitat.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter6:2]**
 
 
 ---
@@ -229,11 +197,7 @@ However, because the variance resulting from measurement error is contained in t
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter6:3` · source: `Genetics_chapter6_006.json` · blocks 11–12
->
-> Example 3. In an attempt to determine the reliability of single measures of sprint speed as an assessment of performance, Huey and Dunham (1987) looked at the correlation between measures (Falconer's method) on wild-caught lizards (Sceloporus merriami) in two consecutive years. The repeatability was quite high ( $ r_{F} \simeq 0.70 $), despite injuries and changes in reproductive condition of the animals between years. Thus, since measurement error could deflate this estimate, 70% or more of the phenotypic variance in running speed in the study population could be a consequence of genetic differences among individuals.
-> 
-> On the other hand, in the sagebrush lizard (Sceloporus graciosus), repeatabilities of various aspects of push-up and head-bob displays average only 0.16 (Martins 1991). In this study, ten or more measures were made on each individual over a period of five weeks, and $ \mathrm{Var}(G)_{max} $ was estimated by analysis of variance, as the among-individual component of variance. Assuming that measurement error is of minor importance in this study, and noting that the within-individual variance is likely to be greater over longer time spans such that $ \mathrm{Var}(z) $ is underestimated, these behavioral traits cannot have very high broad-sense heritabilities.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter6:3]**
 
 
 ---

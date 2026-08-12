@@ -21,15 +21,165 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Ordinary least-squares regression assumes that the residuals are homoscedastic and uncorrelated, yielding a covariance matrix for the vector of residuals, e, as $ \\operatorname{Var}(e) = \\sigma_e^2 \\cdot \\mathbf{I} $ (LW Chapter 8). Genetic drift causes the residual covariance structure of the regression given by Equation 18.13 to depart significantly from this simple form. In particular, the residual variance increases with time (Equation 18.8) and residuals from different generations within a given line are correlated (Equation 18.9). Thus, $ \\operatorname{Var}(e) $ is not simply $ \\sigma_e^2 \\cdot \\mathbf{I} $, and generalized least-squares (GLS) must be used to account for the overall covariance structure. From LW Equation 8.34, the GLS estimator of the regression slope is given by $$ \\widehat{b}_{C}(\\mathrm{GLS})=(\\mathbf{S}^{T}\\mathbf{V}^{-1}\\mathbf{S})^{-1}\\mathbf{S}^{T}\\mathbf{V}^{-1}\\mathbf{R} $$ where V is the variance-covariance matrix associated with selection response, with elements $$ V_{ij}=\\sigma_{e}(i,j)=\\sigma\\left[R_{C}(i),R_{C}(j)\\right] $$"
+      "content": "Ordinary least-squares regression assumes that the residuals are homoscedastic and uncorrelated, yielding a covariance matrix for the vector of residuals, e, as $ \\operatorname{Var}(e) = \\sigma_e^2 \\cdot \\mathbf{I} $ (LW Chapter 8). Genetic drift causes the residual covariance structure of the regression given by Equation 18.13 to depart significantly from this simple form. In particular, the residual variance increases with time (Equation 18.8) and residuals from different generations within a given line are correlated (Equation 18.9). Thus, $ \\operatorname{Var}(e) $ is not simply $ \\sigma_e^2 \\cdot \\mathbf{I} $, and generalized least-squares (GLS) must be used to account for the overall covariance structure. From LW Equation 8.34, the GLS estimator of the regression slope is given by $$ \\widehat{b}_{C}(\\mathrm{GLS})=(\\mathbf{S}^{T}\\mathbf{V}^{-1}\\mathbf{S})^{-1}\\mathbf{S}^{T}\\mathbf{V}^{-1}\\mathbf{R} $$ where V is the variance-covariance matrix associated with selection response, with elements $$ V_{ij}=\\sigma_{e}(i,j)=\\sigma\\left[R_{C}(i),R_{C}(j)\\right] $$",
+      "source_page": 584,
+      "source_pages": [
+        584,
+        585
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p008:b8",
+        "Evolution_chapter18:p008:b9",
+        "Evolution_chapter18:p008:b10",
+        "Evolution_chapter18:p009:b2",
+        "Evolution_chapter18:p009:b3"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1216.0,
+          806.0,
+          1241.0
+        ],
+        [
+          287.0,
+          1247.0,
+          1060.0,
+          1435.0
+        ],
+        [
+          524.0,
+          1441.0,
+          823.0,
+          1469.0
+        ],
+        [
+          132.0,
+          207.0,
+          904.0,
+          230.0
+        ],
+        [
+          378.0,
+          250.0,
+          659.0,
+          277.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "68ed17a3f944131ba13c9c60167bca1d664517586f347b93acdb129ee9fa69bb"
     },
     {
       "type": "discussion",
-      "content": "The elements of V can be obtained from the pure-drift approximation, with the variances, $ V_{ii} $, given by Equation 18.8 and the covariances, $ V_{ij} $, by Equation 18.9, yielding $$ V_{ij}=\\left\\{\\begin{array}{ll}\\left(\\frac{1}{M_{0}}+2f_{i}\\right)h^{2}\\sigma_{z}^{2}+\\sigma_{z}^{2}/M_{i}&for i=j\\\\\\left(\\frac{1}{M_{0}}+2f_{i}\\right)h^{2}\\sigma_{z}^{2}&for i<j\\end{array}\\right. $$ where $ 2f_i \\simeq i/N_e $ (Equation 18.5). If differences in environmental values across generations are not accommodated for by the design, then $ V_{ii} $ has an additional term, $ \\sigma_b^2 $, reflecting random changes in the environment that influence the mean trait value (as discussed below, the use of control lines can often remove this term). Even though OLS assumes an incorrect residual structure, it still provides an unbiased estimate of $ b_C $. However, OLS significantly underestimates the standard error of $ b_C $, and it is for this reason that GLS estimators should be used whenever possible (Hill 1971, 1972c, 1972d, 1974b, 1977a, 1980, 1986)."
+      "content": "The elements of V can be obtained from the pure-drift approximation, with the variances, $ V_{ii} $, given by Equation 18.8 and the covariances, $ V_{ij} $, by Equation 18.9, yielding $$ V_{ij}=\\left\\{\\begin{array}{ll}\\left(\\frac{1}{M_{0}}+2f_{i}\\right)h^{2}\\sigma_{z}^{2}+\\sigma_{z}^{2}/M_{i}&for i=j\\\\\\left(\\frac{1}{M_{0}}+2f_{i}\\right)h^{2}\\sigma_{z}^{2}&for i<j\\end{array}\\right. $$ where $ 2f_i \\simeq i/N_e $ (Equation 18.5). If differences in environmental values across generations are not accommodated for by the design, then $ V_{ii} $ has an additional term, $ \\sigma_b^2 $, reflecting random changes in the environment that influence the mean trait value (as discussed below, the use of control lines can often remove this term). Even though OLS assumes an incorrect residual structure, it still provides an unbiased estimate of $ b_C $. However, OLS significantly underestimates the standard error of $ b_C $, and it is for this reason that GLS estimators should be used whenever possible (Hill 1971, 1972c, 1972d, 1974b, 1977a, 1980, 1986).",
+      "source_page": 585,
+      "source_pages": [
+        585
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p009:b5",
+        "Evolution_chapter18:p009:b6",
+        "Evolution_chapter18:p009:b8"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          295.0,
+          903.0,
+          344.0
+        ],
+        [
+          322.0,
+          361.0,
+          711.0,
+          441.0
+        ],
+        [
+          132.0,
+          458.0,
+          903.0,
+          622.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "169f719c982e18a949daf9bc5fe891a79326150d20034e9958856aed9e8ddb2e"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:18.3]]"
+      "content": "[[SEE_EXAMPLE:18.3]]",
+      "source_page": 585,
+      "source_pages": [
+        585
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p009:b10",
+        "Evolution_chapter18:p009:b11",
+        "Evolution_chapter18:p009:b12",
+        "Evolution_chapter18:p009:b13",
+        "Evolution_chapter18:p009:b14",
+        "Evolution_chapter18:p009:b15",
+        "Evolution_chapter18:p009:b16",
+        "Evolution_chapter18:p009:b17",
+        "Evolution_chapter18:p009:b9"
+      ],
+      "source_bboxes": [
+        [
+          210.0,
+          856.0,
+          835.0,
+          906.0
+        ],
+        [
+          166.0,
+          925.0,
+          766.0,
+          948.0
+        ],
+        [
+          329.0,
+          966.0,
+          718.0,
+          1017.0
+        ],
+        [
+          169.0,
+          1035.0,
+          488.0,
+          1057.0
+        ],
+        [
+          221.0,
+          1073.0,
+          820.0,
+          1191.0
+        ],
+        [
+          167.0,
+          1224.0,
+          880.0,
+          1312.0
+        ],
+        [
+          323.0,
+          1329.0,
+          724.0,
+          1358.0
+        ],
+        [
+          167.0,
+          1378.0,
+          879.0,
+          1426.0
+        ],
+        [
+          167.0,
+          688.0,
+          881.0,
+          839.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "29023738d253310057e92d7ab5b7d5d122f44b57d6dd104549bf24ccbfd8e617"
     }
   ]
 }

@@ -7,15 +7,62 @@ import json
 import re
 import shutil
 import subprocess
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
-
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 READER_DIR = REPO_ROOT / "study_reader"
 OUTPUT_DIR = REPO_ROOT / ".cloudflare-assets"
 GENERATED_DIR = READER_DIR / "data" / "generated"
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\((?P<path>[^)]+)\)")
+REMOTE_URL_RE = re.compile(r"(?:https?:)?//", re.IGNORECASE)
+REMOTE_RUNTIME_RE = re.compile(
+    r"(?:src|href)\s*=\s*['\"](?:https?:)?//|"
+    r"\b(?:fetch|importScripts|Worker)\s*\(\s*['\"](?:https?:)?//",
+    re.IGNORECASE,
+)
+TABLE_TAGS = {
+    "table", "thead", "tbody", "tfoot", "tr", "th", "td", "caption",
+    "colgroup", "col", "span", "sup", "sub", "strong", "em", "br",
+}
+TABLE_ATTRIBUTES = {"rowspan", "colspan", "scope"}
+
+
+class TableHtmlValidator(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.errors: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag.lower() not in TABLE_TAGS:
+            self.errors.append(f"disallowed tag: {tag}")
+        for name, value in attrs:
+            lowered = name.lower()
+            if lowered.startswith("on") or lowered not in TABLE_ATTRIBUTES:
+                self.errors.append(f"disallowed attribute: {name}")
+            if value and REMOTE_URL_RE.search(value):
+                self.errors.append(f"dangerous URL attribute: {name}")
+
+
+def validate_table_html(value: str) -> list[str]:
+    parser = TableHtmlValidator()
+    parser.feed(value)
+    return parser.errors
+
+
+def table_html_values(value: Any) -> list[str]:
+    found: list[str] = []
+    if isinstance(value, dict):
+        for key, child in value.items():
+            if key in {"html", "html_table", "htmlTable"} and isinstance(child, str) and "<" in child:
+                found.append(child)
+            else:
+                found.extend(table_html_values(child))
+    elif isinstance(value, list):
+        for child in value:
+            found.extend(table_html_values(child))
+    return found
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -83,7 +130,11 @@ def build() -> dict[str, Any]:
 
     for filename in ("index.html", "math_parser.js", "app.js", "styles.css"):
         copy_file(READER_DIR / filename, OUTPUT_DIR / filename)
-    for filename in ("study_dataset.json", "prerequisite_audit.json"):
+    katex_dist = REPO_ROOT / "node_modules" / "katex" / "dist"
+    if not katex_dist.is_dir():
+        raise FileNotFoundError("KaTeX distribution missing; run npm ci before building Study Reader assets")
+    shutil.copytree(katex_dist, OUTPUT_DIR / "vendor" / "katex")
+    for filename in ("study_dataset.json", "prerequisite_audit.json", "build_provenance.json"):
         copy_file(GENERATED_DIR / filename, OUTPUT_DIR / "data" / "generated" / filename)
 
     copied_images: set[Path] = set()
@@ -93,6 +144,10 @@ def build() -> dict[str, Any]:
         data_target = OUTPUT_DIR / "data" / "generated" / "chapters" / data_source.name
         copy_file(data_source, data_target)
         payload = read_json(data_source)
+        for html_value in table_html_values(payload):
+            html_errors = validate_table_html(html_value)
+            if html_errors:
+                raise ValueError(f"Unsafe table HTML in {data_source.name}: {sorted(set(html_errors))}")
 
         markdown_source = REPO_ROOT / str(chapter.get("markdown_path") or "").lstrip("/")
         markdown_target = OUTPUT_DIR / "data" / "textbook" / markdown_source.name
@@ -106,6 +161,17 @@ def build() -> dict[str, Any]:
                 copied_images.add(target)
 
     files = sorted(path for path in OUTPUT_DIR.rglob("*") if path.is_file())
+    closure_files = {
+        "index.html", "app.js", "styles.css", "math_parser.js",
+        "vendor/katex/katex.min.css",
+    }
+    for path in files:
+        relative_path = path.relative_to(OUTPUT_DIR).as_posix()
+        if relative_path not in closure_files:
+            continue
+        content = path.read_text(encoding="utf-8-sig", errors="replace")
+        if REMOTE_RUNTIME_RE.search(content):
+            raise ValueError(f"External runtime URL remains in static closure: {relative_path}")
     manifest = {
         "schema": "study_reader_assets.v1",
         "books": [book.get("id") for book in dataset.get("books", [])],

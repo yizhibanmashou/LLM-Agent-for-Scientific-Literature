@@ -21,7 +21,97 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "In addition to providing a quick visual check as to whether the $p$ values follow a uniform, Schweder and Spjøtvoll suggest that these plots can also estimate $n_{0}$. One fits the best straight line until the upturn (i.e., inflection point) near one appears, extrapolating this line to obtain the $n$ value for $1 - p = 1$ estimates the number of true null hypotheses, $n_{0}$. As shown in Figure A4.1, this gives a value very close to 80 (for the open circles), the correct number of true nulls used to generate this figure."
+      "content": "Testing for an excessive number of significant tests is a rather crude indicator of the actual number ($n 0$) of the $n$ tests that are true nulls. It is very possible that $n 0 < n$ and yet we would not detect an excess of significant tests by the above method. Likewise, if an excessive number is detected, what really can we say about $n 0$ other than $n 0 < n$? For instance, Example A4.5 shows an excess of 9 significant tests (observed 15, expected 6), but clearly assuming $n 0 = n - 9$ is a bit naive. Finally, the outcome varies with our choice of $\\alpha$. One could easily imagine an excess of significant tests using $\\alpha = 0.05$, but not when using $\\alpha = 0.01$. Ideally, we would like to have an estimate for $n 0$ that is independent of the choice of $\\alpha$.",
+      "source_page": 1238,
+      "source_pages": [
+        1238
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p009:b6",
+        "Evolution_appendix4:p009:b3"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          680.0,
+          363.0,
+          704.0
+        ],
+        [
+          131.0,
+          361.0,
+          905.0,
+          566.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "d81727e52fe12f1b91bceaca9143352bf191c52298834c98be4365100aaaddd3"
+    },
+    {
+      "type": "discussion",
+      "content": "Such estimators readily follow from one of the key ideas in this Appendix, namely that if the null is correct, random draws of p values follow a uniform distribution over $ (0,1) $. A more careful examination of the empirical distribution of p values over our sample of tests, rather than simply how many we declare significant, is the key to obtaining estimates of $ n {0} $.",
+      "source_page": 1238,
+      "source_pages": [
+        1238
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p009:b4"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          568.0,
+          904.0,
+          663.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "60bbbe9414df5195fde98cb947b721013173ab2c64a0e1a782d88234c81d3e63"
+    },
+    {
+      "type": "discussion",
+      "content": "A simple graphical approach using the empirical distribution of $p$ values was suggested by Schweder and Spjøtvoll (1982). If one rank-orders the $p$ values from the smallest $p(1)$ to the largest $p(n)$, a plot of $p(i)$ versus $i$ is a straight line under a uniform. Because our interest is usually in detecting an excessive number of small $p$ values (as would be expected if $n 0 < n$), Schweder and Spjøtvoll suggest plotting $1 - p(i)$ values on the horizontal axis, and the ranks of these values (which are the reverse of the ranks of the $p[i]$) on the vertical axis. For example, the first point is $(1 - p[n], 1)$, the second $(1 - p[n-1], 2)$, $\\cdots$, and the $n$th $(1 - p[1], n)$. If all of the $p$ values are indeed generated from null hypotheses, then these are drawn from a uniform, and the resulting plot will be a straight line (the solid triangles in Figure A4.1). Conversely, if some of the $p$ values are drawn from hypotheses where the null is false, we expect an excess of small $p$ values, and hence an over-abundance of $1 - p$ values near one (the open circles in Figure A4.1).",
+      "source_page": 1238,
+      "source_pages": [
+        1238
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p009:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          710.0,
+          905.0,
+          986.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "b28bb910ad12534e802f630ff9ca5be3baf272c52fbb393b471f4749a5d18881"
+    },
+    {
+      "type": "discussion",
+      "content": "In addition to providing a quick visual check as to whether the $p$ values follow a uniform, Schweder and Spjøtvoll suggest that these plots can also estimate $n_{0}$. One fits the best straight line until the upturn (i.e., inflection point) near one appears, extrapolating this line to obtain the $n$ value for $1 - p = 1$ estimates the number of true null hypotheses, $n_{0}$. As shown in Figure A4.1, this gives a value very close to 80 (for the open circles), the correct number of true nulls used to generate this figure.",
+      "source_page": 1238,
+      "source_pages": [
+        1238
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p009:b7"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          986.0,
+          905.0,
+          1125.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "092cf49264d3af6b629f2b7b3472dec65384bb4da9a65e9f53a9d4cad3ef4a0a"
     }
   ]
 }

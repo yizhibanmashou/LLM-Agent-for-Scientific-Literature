@@ -10,9 +10,7 @@ from pathlib import Path
 from typing import Any
 
 import fitz
-
 from build_book_asset_libraries import genetics_api_formulas, genetics_api_tables
-
 
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURED = ROOT / "data" / "structured"
@@ -173,7 +171,7 @@ def main() -> None:
     summary = [
         "# Genetics 书籍独立资产库与公式编号审计",
         "",
-        f"- 章节覆盖：27 / 27",
+        "- 章节覆盖：27 / 27",
         f"- 公式库记录：{len(formulas)}；PaddleOCR API 编号 / Markdown 编号：{len(api_numbers)} / {len(rendered_set)}",
         f"- 表格库记录：{len(tables)}；图片库记录：{len(figures)}",
         f"- 问题数：{len(issues)}",

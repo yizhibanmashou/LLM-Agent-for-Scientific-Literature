@@ -26,23 +26,145 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "While bottleneck approaches are elegant, they ignore any information from the expected spatial pattern of variation across a chromosomal region, for example, the functional form of the expected decrease in variation as one moves closer to the site of selection. Further, they require samples from two (or more) populations, which may be impractical. Kim and Stephan (2002) proposed a likelihood-based test using the positional pattern of variation from a single population, which not only detects a sweep, but to also localizes its position and estimates its strength of selection. A similar regression-based approach was suggested by Wiener and Pong-Wong (2011)."
+      "content": "While bottleneck approaches are elegant, they ignore any information from the expected spatial pattern of variation across a chromosomal region, for example, the functional form of the expected decrease in variation as one moves closer to the site of selection. Further, they require samples from two (or more) populations, which may be impractical. Kim and Stephan (2002) proposed a likelihood-based test using the positional pattern of variation from a single population, which not only detects a sweep, but to also localizes its position and estimates its strength of selection. A similar regression-based approach was suggested by Wiener and Pong-Wong (2011).",
+      "source_page": 286,
+      "source_pages": [
+        286
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p029:b10",
+        "Evolution_chapter9:p029:b11"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          828.0,
+          735.0,
+          853.0
+        ],
+        [
+          132.0,
+          860.0,
+          903.0,
+          1042.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4c92cac7104666dcc5a9254f027273bfe014d95e4260332f36f313ea88b71817"
     },
     {
       "type": "discussion",
-      "content": "The basic structure of their test (and several extensions) is as follows. Suppose $m$ linked segregating sites from a local chromosomal region of interest are scored in a sample of $n$ chromosomes. Using an outgroup, we can polarize any segregating alleles, determining which are derived. The resulting data are the number, $k_i$, of copies of the derived alleles at a segregating site, $i$, where $1 \\leq k_i \\leq n - 1$. Building on Equation 2.36c, the probability of observing $k_i$ given the sample size $n$ and the vector $\\Theta$ of model parameters is simply $$ \\Pr(k_{i}\\mid n,\\boldsymbol{\\Theta})=\\binom{n}{k_{i}}\\int_{1/(2N)}^{1-1/(2N)}x^{k_{i}}(1-x)^{n-k_{i}}\\phi_{i}(x\\mid\\boldsymbol{\\Theta})dx $$ where $ \\phi_i(x | \\boldsymbol{\\Theta}) $ is the frequency spectrum for site $ i $ under the model (specified by the distribution parameter vector, $ \\boldsymbol{\\Theta} $) of interest. Equation 9.16a is also the likelihood for $ \\boldsymbol{\\Theta} $ given the data, $ L(\\boldsymbol{\\Theta} \\mid k_i, n) $. Under the equilibrium neutral model, the Watterson distribution (Equation 2.34a) is used for $ \\phi_i $, where the vector of distribution parameters, $ \\boldsymbol{\\Theta} $, is just a scalar, as $ \\boldsymbol{\\Theta} = (\\theta_i) = (4N_e \\mu_i) $, the scaled mutation rate for site $ i $. If one starts with a Watterson distribution and then has a sweep at a linked site, $ \\phi_i $ is now given by Equation 8.13, with parameters $ \\boldsymbol{\\Theta} = (\\theta_i, f_{s,i}) $, where $ f_{s,i} $ measures the strength of the sweep at site $ i $. From [[SEE_TABLE:8.1]] $$ f_{s,i}=(4N_{e}s)^{-c_{i}/(2h s)}=e^{-c_{i}\\lambda} $$ with $ \\lambda = (1/2hs) \\ln(4N_e s) $, and $ c_i $ representing the recombination fraction between site $ i $ and the site of the sweep. Usually one assumes that $ \\theta_i = \\theta $ is the same for all sites, in which case, under the null model, all sites follow the same Watterson distribution (with no expected position-specific genomic pattern). Because Equation 9.16a gives a proper likelihood for each site, one might imagine that the total likelihood $ L(\\boldsymbol{\\Theta} \\mid \\mathbf{k}, n) $, given the vector $ \\mathbf{k} $ of the $ k_i $ values for each site, is simply the product of the site-specific likelihoods over all $ m $ sites $$ L(\\boldsymbol{\\Theta}\\mid\\mathbf{k},n)=\\prod_{i=1}^{m}L(\\boldsymbol{\\Theta}\\mid k_{i},n) $$ with the MLE for $ \\Theta $ being the value that maximizes $ L(\\Theta|\\mathbf{k},n) $. However, this product is not a proper likelihood, as adjacent sites are correlated (due to shared history). The product of the site likelihoods (Equation 9.16c) is thus a composite likelihood (also called a quasi-maximum likelihood or pseudo-likelihood), which is an approximation of the total likelihood. Wiuf (2006) showed that the composite and true likelihoods are usually consistent for many population-genetic problems. Kim and Stephan (2002) contrasted the maximum value of this composite likelihood under the Watterson distribution (using Equation 2.34a for $ \\phi $) with the maximum obtained under a sweep model (using Equation 8.13 for $ \\phi $). Because $ f_s $ changes with distance $ c_i $ from any particular site (Equation 9.16b), the location giving the maximum value of $ f_s $ corresponds with the estimated position of the selected site. Kim and Stephan compared the ratio of the two composite likelihoods, $ L_{sweep}/L_{neutral} $, corresponding to $$ \\Lambda_{CLR}=\\frac{\\max L(\\theta,f_{s}(\\lambda,c_{i})\\mid\\mathbf{k})}{\\max L(\\theta,f_{s}=0\\mid\\mathbf{k})} $$ and called this approach the CLR test (or CLRT), for composite-likelihood ratio test. Because this is not a strict likelihood ratio, large-sample approximations (LW Appendix 4) for its distribution are not valid, and the critical values must be obtained by simulation. Boitard et al. (2009; also see Kern and Haussler 2010) proposed the use of hidden Markov models to account for the correlations among markers that are ignored under a composite-likelihood framework. Li and Stephan (2005, 2006) developed a true maximum-likelihood method that uses only a subset of the frequency spectrum (the compact frequency spectrum, recording the number of singletons, doubletons, and sites greater than two) to estimate the position of the sweep."
-    },
-    {
-      "type": "discussion",
-      "content": "Jensen et al. (2005) found that the CLR test is not robust to population structure or recent bottlenecks. While neither of these demographic features is expected to generate the same spatial pattern as seen under a sweep, they can generate an excess of sites segregating rare derived alleles, so that some aspects of the frequency spectrum can be similar to a sweep, and this in turn could improve the fit relative to a model assuming the equilibrium Watterson distribution. To distinguish sweeps from false signals generated by demography and population structure, Jensen et al. proposed that any significant CLR result be subjected to an additional goodness-of-fit (GOF) test to see how well it fits a sweep model (Example 9.8). Again, the key is that a sweep is expected to generate a specific spatial pattern of variation, which will be absent under neutrality even if the site-frequency spectrum is shifted because the population is not at equilibrium."
-    },
-    {
-      "type": "discussion",
-      "content": "Kim and Nielsen (2004) extended the CLRT to include information on linkage disequilibrium using their $ \\omega $ statistic (Equation 9.37), which contrasts measures of LD among all pairs of loci on the same side of a putative sweep with those for pairs of loci on opposite sides of the sweep. While incorporation of this LD information did improve estimation, the gain was rather modest. Finally, Meiklejohn et al (2004) and Vy and Kim (2015) have extended the CLRT for detecting incomplete sweeps. The basic logic is as above, but with only a partial shift in the frequency of the selected allele (as it is still on its sojourn to fixation)."
+      "content": "The basic structure of their test (and several extensions) is as follows. Suppose $m$ linked segregating sites from a local chromosomal region of interest are scored in a sample of $n$ chromosomes. Using an outgroup, we can polarize any segregating alleles, determining which are derived. The resulting data are the number, $k_i$, of copies of the derived alleles at a segregating site, $i$, where $1 \\leq k_i \\leq n - 1$. Building on Equation 2.36c, the probability of observing $k_i$ given the sample size $n$ and the vector $\\Theta$ of model parameters is simply $$ \\Pr(k_{i}\\mid n,\\boldsymbol{\\Theta})=\\binom{n}{k_{i}}\\int_{1/(2N)}^{1-1/(2N)}x^{k_{i}}(1-x)^{n-k_{i}}\\phi_{i}(x\\mid\\boldsymbol{\\Theta})dx $$ where $ \\phi_i(x | \\boldsymbol{\\Theta}) $ is the frequency spectrum for site $ i $ under the model (specified by the distribution parameter vector, $ \\boldsymbol{\\Theta} $) of interest. Equation 9.16a is also the likelihood for $ \\boldsymbol{\\Theta} $ given the data, $ L(\\boldsymbol{\\Theta} \\mid k_i, n) $. Under the equilibrium neutral model, the Watterson distribution (Equation 2.34a) is used for $ \\phi_i $, where the vector of distribution parameters, $ \\boldsymbol{\\Theta} $, is just a scalar, as $ \\boldsymbol{\\Theta} = (\\theta_i) = (4N_e \\mu_i) $, the scaled mutation rate for site $ i $. If one starts with a Watterson distribution and then has a sweep at a linked site, $ \\phi_i $ is now given by Equation 8.13, with parameters $ \\boldsymbol{\\Theta} = (\\theta_i, f_{s,i}) $, where $ f_{s,i} $ measures the strength of the sweep at site $ i $. From [[SEE_TABLE:8.1]] $$ f_{s,i}=(4N_{e}s)^{-c_{i}/(2h s)}=e^{-c_{i}\\lambda} $$ with $ \\lambda = (1/2hs) \\ln(4N_e s) $, and $ c_i $ representing the recombination fraction between site $ i $ and the site of the sweep. Usually one assumes that $ \\theta_i = \\theta $ is the same for all sites, in which case, under the null model, all sites follow the same Watterson distribution (with no expected position-specific genomic pattern). Because Equation 9.16a gives a proper likelihood for each site, one might imagine that the total likelihood $ L(\\boldsymbol{\\Theta} \\mid \\mathbf{k}, n) $, given the vector $ \\mathbf{k} $ of the $ k_i $ values for each site, is simply the product of the site-specific likelihoods over all $ m $ sites $$ L(\\boldsymbol{\\Theta}\\mid\\mathbf{k},n)=\\prod_{i=1}^{m}L(\\boldsymbol{\\Theta}\\mid k_{i},n) $$ with the MLE for $ \\Theta $ being the value that maximizes $ L(\\Theta|\\mathbf{k},n) $. However, this product is not a proper likelihood, as adjacent sites are correlated (due to shared history). The product of the site likelihoods (Equation 9.16c) is thus a composite likelihood (also called a quasi-maximum likelihood or pseudo-likelihood), which is an approximation of the total likelihood. Wiuf (2006) showed that the composite and true likelihoods are usually consistent for many population-genetic problems. Kim and Stephan (2002) contrasted the maximum value of this composite likelihood under the Watterson distribution (using Equation 2.34a for $ \\phi $) with the maximum obtained under a sweep model (using Equation 8.13 for $ \\phi $). Because $ f_s $ changes with distance $ c_i $ from any particular site (Equation 9.16b), the location giving the maximum value of $ f_s $ corresponds with the estimated position of the selected site. Kim and Stephan compared the ratio of the two composite likelihoods, $ L_{sweep}/L_{neutral} $, corresponding to $$ \\Lambda_{CLR}=\\frac{\\max L(\\theta,f_{s}(\\lambda,c_{i})\\mid\\mathbf{k})}{\\max L(\\theta,f_{s}=0\\mid\\mathbf{k})} $$ and called this approach the CLR test (or CLRT), for composite-likelihood ratio test. Because this is not a strict likelihood ratio, large-sample approximations (LW Appendix 4) for its distribution are not valid, and the critical values must be obtained by simulation. Boitard et al. (2009; also see Kern and Haussler 2010) proposed the use of hidden Markov models to account for the correlations among markers that are ignored under a composite-likelihood framework. Li and Stephan (2005, 2006) developed a true maximum-likelihood method that uses only a subset of the frequency spectrum (the compact frequency spectrum, recording the number of singletons, doubletons, and sites greater than two) to estimate the position of the sweep.",
+      "source_page": 222,
+      "source_pages": [
+        222,
+        286,
+        287
+      ],
+      "source_block_ids": [
+        "Evolution_chapter8:p022:b2",
+        "Evolution_chapter9:p029:b12",
+        "Evolution_chapter9:p029:b13",
+        "Evolution_chapter9:p029:b15",
+        "Evolution_chapter9:p029:b16",
+        "Evolution_chapter9:p030:b2",
+        "Evolution_chapter9:p030:b3",
+        "Evolution_chapter9:p030:b4",
+        "Evolution_chapter9:p030:b6",
+        "Evolution_chapter9:p030:b7",
+        "Evolution_chapter9:p030:b9"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          207.0,
+          1057.0,
+          339.0
+        ],
+        [
+          132.0,
+          1043.0,
+          905.0,
+          1183.0
+        ],
+        [
+          271.0,
+          1194.0,
+          765.0,
+          1249.0
+        ],
+        [
+          132.0,
+          1261.0,
+          904.0,
+          1443.0
+        ],
+        [
+          388.0,
+          1443.0,
+          649.0,
+          1470.0
+        ],
+        [
+          287.0,
+          207.0,
+          1059.0,
+          299.0
+        ],
+        [
+          287.0,
+          299.0,
+          1060.0,
+          370.0
+        ],
+        [
+          552.0,
+          401.0,
+          795.0,
+          461.0
+        ],
+        [
+          287.0,
+          492.0,
+          1060.0,
+          771.0
+        ],
+        [
+          542.0,
+          777.0,
+          802.0,
+          829.0
+        ],
+        [
+          287.0,
+          848.0,
+          1060.0,
+          1056.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "fb5463849006447d5228037ec3fa1e683ac1f1eb67eb78170836e0f85d732deb"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:9.8]]"
+      "content": "[[SEE_EXAMPLE:9.8]]",
+      "source_page": 287,
+      "source_pages": [
+        287
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p030:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1056.0,
+          1060.0,
+          1309.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5175da9d46d3b33171181d4e7e79bc0cd06bf8362cac3df901361604ed6b8a7d"
     }
   ]
 }

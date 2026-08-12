@@ -21,11 +21,133 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "In his classic paper, Muir (2005) not only laid out the approach for incorporating social effects into a mixed-model framework, but also directly tested this method by examining the response to selection based entirely on the estimated breeding values (EBVs) obtained from the model. Muir selected on six-week weight in Japanese quail (Coturnix coturnix japonica), which are aggressive and cannibalistic. Groups were formed with 16 birds per cage, with each group consisting of several half-sib families. Banding of the birds allowed the pedigree of individuals to be followed through the 23 hatches of the experiment. As Example 22.4 showed, due to a negative covariance between associative and direct effects, individual selection is expected to produce a reversed response when using a group of unrelated individuals."
+      "content": "The results in the above example are fairly typical of the published results from the animal-breeding literature. Often the estimates of $ \\sigma(A d, A s) $ and $ \\sigma^2(A s) $ are quite small relative to $ \\sigma^2(A d) $, but because terms involving social effects are scaled by roughly $ n $ or $ n^2 $ (for the covariance and variance, respectively), their contributions can be considerable. For example, a series of eight (mostly growth) traits in cattle, pigs, and chicken, $ (n-1)\\sigma(A d, A s) $ was between 5 and 40% of $ \\sigma^2(A d) $, with an average value of 24% (Van Vleck et al. 2007; Chen et al. 2008, 2009; Hsu et al. 2010).",
+      "source_page": 782,
+      "source_pages": [
+        782
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p032:b7",
+        "Evolution_chapter22:p032:b4"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1168.0,
+          764.0,
+          1192.0
+        ],
+        [
+          286.0,
+          642.0,
+          1058.0,
+          802.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "fc1ab0146c0232c5b403850ac22aaf2ad455272c1ad2ff16f831bdfb8c216ab3"
     },
     {
       "type": "discussion",
-      "content": "Rather than select using individual phenotype or group means, Muir used BLUP selection (Chapters 13 and 19), wherein a mixed model is used to estimate the breeding values, and those individuals with the largest EBVs are chosen. Starting with the same base population, two lines were selected using different BLUP criteria. For both lines, the mixed model allowing for both direct and social effects was fitted, using REML estimates of the variances to obtain BLUPs for the desired breeding values. In the D-BLUP line, individuals with the largest EBVs of $ A_d $ (direct effects) were selected. In the C-BLUP line, those individuals with the largest EBVs of $ A_T $, namely $ EBV(A_d) + (16 - 1)EBV(A_s) $, were selected. Figure 22.4A shows the results through 23 hatches (cycles of selection). Under BLUP-D selection, the mean six-week weight decreased (slightly, but not significantly), while it significantly increased under C-BLUP. Both D-BLUP and C-BLUP increased the mean of direct effects, although the response under D-BLUP was about twice as great. As further shown in Figure 22.4B, the reason for the decrease in mean weight in the D-BLUP line was that the mean associative effect increased under C-BLUP (i.e., became more favorable toward others in the group), but as expected given the negative correlation between $ A_d $ and $ A_s $, it decreased under D-BLUP (became less favorable). Two other improvements were observed in the C-BLUP line. Mortality increased significantly in the D-BLUP line, while it decreased slightly (but not significantly) in the C-BLUP line. conversion was also better in the C-BLUP line, requiring 6.65 grams of feed per gram of gain, versus 7.26 in the D-BLUP line. Clearly, selection based on the mixed-model estimates of total breeding value resulted in significantly better results than lines selected by a more conventional (i.e., D-BLUP) approach."
+      "content": "As discussed in Chapter 19, one could use a Bayesian analysis of a mixed model instead of BLUP estimates of the random effects and REML estimates of the variance. Recall that a BLUP/REML analysis returns point estimates and associated confidence intervals for variables of interest, while a Bayesian analysis returns the whole posterior distribution of potential values given the data (Chapter 19; Appendices 2 and 3). Arora and Lahiri (1997) showed for mixed models that “empirical BLUP,” namely using REML estimates of variance components to solve the mixed-model equations, generally gives the same average value as a Bayesian analysis, but that the latter returns a smaller mean-squared error and hence offers more precision. Cappa and Cantet (2006, 2008) developed a Gibbs sampler (Appendix 3) for the mixed model with associative effects.",
+      "source_page": 782,
+      "source_pages": [
+        782
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p032:b5"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          804.0,
+          1060.0,
+          1033.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "d1ce60b3f19f8ebc38f421f4aeb536dd1c2dac1ba18e5ed73b6cfa4d36bb0c30"
+    },
+    {
+      "type": "discussion",
+      "content": "One of the strengths of mixed models is their flexibility. The basic model shown by Equation 22.38c, which allows for direct and associative effects, can easily be extended. For example, Bouwmann et al. (2010) included a separate maternal genetic effect, distinct from social effects, while Alemu et al. (2014) modified associative effects to allow kin and nonkin interactions to differ.",
+      "source_page": 782,
+      "source_pages": [
+        782
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p032:b6"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1033.0,
+          1060.0,
+          1149.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "16c225494ea4e3a571e7bcc7339db757aa890b262dfbee857d8a0cb16b17cb17"
+    },
+    {
+      "type": "discussion",
+      "content": "In his classic paper, Muir (2005) not only laid out the approach for incorporating social effects into a mixed-model framework, but also directly tested this method by examining the response to selection based entirely on the estimated breeding values (EBVs) obtained from the model. Muir selected on six-week weight in Japanese quail (Coturnix coturnix japonica), which are aggressive and cannibalistic. Groups were formed with 16 birds per cage, with each group consisting of several half-sib families. Banding of the birds allowed the pedigree of individuals to be followed through the 23 hatches of the experiment. As Example 22.4 showed, due to a negative covariance between associative and direct effects, individual selection is expected to produce a reversed response when using a group of unrelated individuals.",
+      "source_page": 782,
+      "source_pages": [
+        782
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p032:b8"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1198.0,
+          1060.0,
+          1429.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "258f53d4adfb90b2693fc35dfd0770086547434875c252928b7e6b31958c7e50"
+    },
+    {
+      "type": "discussion",
+      "content": "Rather than select using individual phenotype or group means, Muir used BLUP selection (Chapters 13 and 19), wherein a mixed model is used to estimate the breeding values, and those individuals with the largest EBVs are chosen. Starting with the same base population, two lines were selected using different BLUP criteria. For both lines, the mixed model allowing for both direct and social effects was fitted, using REML estimates of the variances to obtain BLUPs for the desired breeding values. In the D-BLUP line, individuals with the largest EBVs of $ A_d $ (direct effects) were selected. In the C-BLUP line, those individuals with the largest EBVs of $ A_T $, namely $ EBV(A_d) + (16 - 1)EBV(A_s) $, were selected. Figure 22.4A shows the results through 23 hatches (cycles of selection). Under BLUP-D selection, the mean six-week weight decreased (slightly, but not significantly), while it significantly increased under C-BLUP. Both D-BLUP and C-BLUP increased the mean of direct effects, although the response under D-BLUP was about twice as great. As further shown in Figure 22.4B, the reason for the decrease in mean weight in the D-BLUP line was that the mean associative effect increased under C-BLUP (i.e., became more favorable toward others in the group), but as expected given the negative correlation between $ A_d $ and $ A_s $, it decreased under D-BLUP (became less favorable). Two other improvements were observed in the C-BLUP line. Mortality increased significantly in the D-BLUP line, while it decreased slightly (but not significantly) in the C-BLUP line. conversion was also better in the C-BLUP line, requiring 6.65 grams of feed per gram of gain, versus 7.26 in the D-BLUP line. Clearly, selection based on the mixed-model estimates of total breeding value resulted in significantly better results than lines selected by a more conventional (i.e., D-BLUP) approach.",
+      "source_page": 783,
+      "source_pages": [
+        783,
+        784
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p033:b4",
+        "Evolution_chapter22:p033:b5",
+        "Evolution_chapter22:p034:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1036.0,
+          905.0,
+          1312.0
+        ],
+        [
+          132.0,
+          1312.0,
+          905.0,
+          1451.0
+        ],
+        [
+          287.0,
+          206.0,
+          1060.0,
+          301.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a61f1d0a0bd41746f8eede444d5063317e9aaf35944b830f639b6198585ecdcf"
     }
   ]
 }

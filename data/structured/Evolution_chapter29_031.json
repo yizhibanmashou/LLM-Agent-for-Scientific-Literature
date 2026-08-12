@@ -21,27 +21,165 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "While there is a large body of theory for testing the significance of regression coefficients, much of it assumes homoscedastic and normally distributed residuals, $ e_w \\sim N(0, \\sigma_{e_w}^2) $, where the residual variance ($ \\sigma_{e_w}^2 $) is a constant (i.e., independent of $ z $). As mentioned above, these two assumptions are almost always violated with fitness data, invalidating standard tests for significance (Mitchell-Olds and Shaw 1987). Fortunately, a variety of resampling methods available for hypothesis testing are robust to heteroscedasticity and nonnormal residuals, and we briefly mention three of these procedures: jackknife confidence intervals, randomization tests of significance, and cross-validation. A fair amount of this material is presented for historical reasons, as the aster-model framework discussed at the end of the chapter provides a more statistically rigorous approach than the resampling approximations presented here."
+      "content": "While there is a large body of theory for testing the significance of regression coefficients, much of it assumes homoscedastic and normally distributed residuals, $ e_w \\sim N(0, \\sigma_{e_w}^2) $, where the residual variance ($ \\sigma_{e_w}^2 $) is a constant (i.e., independent of $ z $). As mentioned above, these two assumptions are almost always violated with fitness data, invalidating standard tests for significance (Mitchell-Olds and Shaw 1987). Fortunately, a variety of resampling methods available for hypothesis testing are robust to heteroscedasticity and nonnormal residuals, and we briefly mention three of these procedures: jackknife confidence intervals, randomization tests of significance, and cross-validation. A fair amount of this material is presented for historical reasons, as the aster-model framework discussed at the end of the chapter provides a more statistically rigorous approach than the resampling approximations presented here.",
+      "source_page": 1096,
+      "source_pages": [
+        1096
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p040:b13",
+        "Evolution_chapter29:p040:b14"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1186.0,
+          977.0,
+          1211.0
+        ],
+        [
+          287.0,
+          1217.0,
+          1060.0,
+          1472.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "edd8ca841d1036ad72a714bb176bf618071b9b076b9f91c5b8f65b9160b36d36"
     },
     {
       "type": "discussion",
-      "content": "Jackknife estimates were introduced by Tukey (1958) as a generalized statistical tool; see Miller (1974), Wu (1986), Shao and Tu (1996), and Manly (1997) for reviews, and Mitchell-Olds and Shaw (1987) and Mitchell-Olds and Bergelson (1990) for applications to fitness regressions. The idea is simple, resampling. Namely, base parameter estimates on the behavior of the distribution of estimates from subsamples of the original data. Consider the estimator of $ \\beta $ for the linear regression given by Equation 29.25a. Denote by $ \\widehat{\\beta} $ the standard least-squares estimate of $ \\beta $ using the full dataset of n individuals, and we let $ \\widehat{\\beta}_{i} $ denote the estimator using the complete dataset minus data for the ith individual. The resulting jackknife estimator is $$ \\widehat{\\beta}_{j a c k}=\\frac{1}{n}\\sum_{i=1}^{n}\\phi_{i}=\\overline{\\phi}\\quad\\mathrm{w h e r e}\\quad\\phi_{i}=n\\widehat{\\beta}-(n-1)\\widehat{\\beta}_{i} $$ which has an approximate large-sample variance of $$ \\mathrm{Var}\\left(\\widehat{\\beta}_{jack}\\right)\\simeq\\frac{1}{n(n-1)}\\sum_{i=1}^{n}(\\phi_{i}-\\overline{\\phi})^{2} $$"
+      "content": "Jackknife estimates were introduced by Tukey (1958) as a generalized statistical tool; see Miller (1974), Wu (1986), Shao and Tu (1996), and Manly (1997) for reviews, and Mitchell-Olds and Shaw (1987) and Mitchell-Olds and Bergelson (1990) for applications to fitness regressions. The idea is simple, resampling. Namely, base parameter estimates on the behavior of the distribution of estimates from subsamples of the original data. Consider the estimator of $ \\beta $ for the linear regression given by Equation 29.25a. Denote by $ \\widehat{\\beta} $ the standard least-squares estimate of $ \\beta $ using the full dataset of n individuals, and we let $ \\widehat{\\beta}_{i} $ denote the estimator using the complete dataset minus data for the ith individual. The resulting jackknife estimator is $$ \\widehat{\\beta}_{j a c k}=\\frac{1}{n}\\sum_{i=1}^{n}\\phi_{i}=\\overline{\\phi}\\quad\\mathrm{w h e r e}\\quad\\phi_{i}=n\\widehat{\\beta}-(n-1)\\widehat{\\beta}_{i} $$ which has an approximate large-sample variance of $$ \\mathrm{Var}\\left(\\widehat{\\beta}_{jack}\\right)\\simeq\\frac{1}{n(n-1)}\\sum_{i=1}^{n}(\\phi_{i}-\\overline{\\phi})^{2} $$",
+      "source_page": 1097,
+      "source_pages": [
+        1097
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p041:b2",
+        "Evolution_chapter29:p041:b3",
+        "Evolution_chapter29:p041:b5",
+        "Evolution_chapter29:p041:b6"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          207.0,
+          905.0,
+          423.0
+        ],
+        [
+          295.0,
+          440.0,
+          741.0,
+          497.0
+        ],
+        [
+          133.0,
+          513.0,
+          582.0,
+          538.0
+        ],
+        [
+          357.0,
+          555.0,
+          679.0,
+          614.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a3dc69c04539004f271a50b1ef9550f2f83ac10b7ac7bb0d8ff7c1e8ede5a953"
     },
     {
       "type": "discussion",
-      "content": "Approximate large-sample confidence intervals follow using Equation 29.31b and the fact that $ \\beta_{jack} $ is approximately t-distributed with n-1 degrees of freedom. The jackknife estimator and its sampling variance are well behaved even when the residuals are heteroscedastic, thus allowing for valid hypothesis testing (Wu 1986). Wu presented a slightly improved jackknife estimator by weighting the $ \\phi_i $ values, but the difference between the weighted and unweighted estimates is usually small for large sample sizes."
+      "content": "Approximate large-sample confidence intervals follow using Equation 29.31b and the fact that $ \\beta_{jack} $ is approximately t-distributed with n-1 degrees of freedom. The jackknife estimator and its sampling variance are well behaved even when the residuals are heteroscedastic, thus allowing for valid hypothesis testing (Wu 1986). Wu presented a slightly improved jackknife estimator by weighting the $ \\phi_i $ values, but the difference between the weighted and unweighted estimates is usually small for large sample sizes.",
+      "source_page": 1097,
+      "source_pages": [
+        1097
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p041:b8"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          628.0,
+          904.0,
+          771.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a355d1d10bf8499631e53b71946bf48cb4d6ce73f819fbca23d5b5808d168eb0"
     },
     {
       "type": "discussion",
-      "content": "Another resampling approach involves randomization tests for the significance of a regression. Again, the idea behind this class of tests is simple. A value of $ \\widehat{\\beta} $ under the hypothesis of no association between fitness and trait value (z) is generated by assigning the n individual fitness values at random to the observed phenotypic values and estimating $ \\beta $ for this scrambled (randomized) dataset. Repeating this resampling procedure several thousand times generates a distribution of regression coefficients under the null hypothesis of no association between individual fitness and character value. For example, suppose we obtain a standard least-squares estimate (assuming a linear regression) of $ \\widehat{\\beta} = 1.25 $, and upon subsequent randomization of the same dataset we find that only 14 out of 1000 randomized datasets have $ |\\widehat{\\beta}| $ values in excess of 1.25, which suggests a p value of 0.014. Moore (1990) and Hews (1990) both illustrated applications of randomization tests to fitness data."
+      "content": "Another resampling approach involves randomization tests for the significance of a regression. Again, the idea behind this class of tests is simple. A value of $ \\widehat{\\beta} $ under the hypothesis of no association between fitness and trait value (z) is generated by assigning the n individual fitness values at random to the observed phenotypic values and estimating $ \\beta $ for this scrambled (randomized) dataset. Repeating this resampling procedure several thousand times generates a distribution of regression coefficients under the null hypothesis of no association between individual fitness and character value. For example, suppose we obtain a standard least-squares estimate (assuming a linear regression) of $ \\widehat{\\beta} = 1.25 $, and upon subsequent randomization of the same dataset we find that only 14 out of 1000 randomized datasets have $ |\\widehat{\\beta}| $ values in excess of 1.25, which suggests a p value of 0.014. Moore (1990) and Hews (1990) both illustrated applications of randomization tests to fitness data.",
+      "source_page": 1097,
+      "source_pages": [
+        1097
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p041:b9"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          771.0,
+          905.0,
+          1055.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "150cf8cf7e2e4401f9a08b752dade01a265bdf48c79132e5cae61eb14356704d"
     },
     {
       "type": "discussion",
-      "content": "A final issue concerns the validity of the particular model chosen to fit $ W(z) $. This is a difficult task because fitness data are inherently noisy—the residual variance can be rather large, even if we have perfectly fit $ W(z) $. One approach for comparing models is not to contrast their goodness-of-fit (i.e., least-squares solutions), but rather to compare their predictive ability: if some of the data are ignored, how well are their fitnesses predicted using a model built from the remaining data? This cross-validation procedure (Snee 1977; Picard and Cook 1984) can be used both to assess how well a model predicts the data and as a model-selection approach. The latter follows by choosing the model (from a set of candidates) with the smallest prediction error (Chapter 30 further discusses issues in model selection). Different schemes for splitting the data into training (model-building) and validation (testing) sets have been proposed. At one extreme is leave-one-out cross-validation, wherein the first observation is left out, after which a model built from the remaining data and its fitness prediction of the removed value is assessed, proceeding in this fashion through all of the observations to yield a prediction error variance for a given model. Generalized cross-validation (Craven and Wahba 1979) estimates a smoothing parameter to yield a less rugged solution."
+      "content": "A final issue concerns the validity of the particular model chosen to fit $ W(z) $. This is a difficult task because fitness data are inherently noisy—the residual variance can be rather large, even if we have perfectly fit $ W(z) $. One approach for comparing models is not to contrast their goodness-of-fit (i.e., least-squares solutions), but rather to compare their predictive ability: if some of the data are ignored, how well are their fitnesses predicted using a model built from the remaining data? This cross-validation procedure (Snee 1977; Picard and Cook 1984) can be used both to assess how well a model predicts the data and as a model-selection approach. The latter follows by choosing the model (from a set of candidates) with the smallest prediction error (Chapter 30 further discusses issues in model selection). Different schemes for splitting the data into training (model-building) and validation (testing) sets have been proposed. At one extreme is leave-one-out cross-validation, wherein the first observation is left out, after which a model built from the remaining data and its fitness prediction of the removed value is assessed, proceeding in this fashion through all of the observations to yield a prediction error variance for a given model. Generalized cross-validation (Craven and Wahba 1979) estimates a smoothing parameter to yield a less rugged solution.",
+      "source_page": 1097,
+      "source_pages": [
+        1097
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p041:b10"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1055.0,
+          905.0,
+          1423.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "309ec3846e4add8267bfbed8bbd36105cdba77aec77b81daff32c2a97f700060"
     },
     {
       "type": "discussion",
-      "content": "A computationally less intense approach is k-fold cross-validation, wherein data are randomly assigned to k groups (or folds), with the data from the first k - 1 groups used to fit the model, and the data from the last group used to check its prediction accuracy. This procedure is repeated so that all $k$ groups are used as test groups, typically with $k$ somewhere between 4 and 10. The $k$-fold approach may be more appropriate when model fitting is computationally intense, as only $k \\ll n$ models must be fitted. It is important to stress that fitting the model to existing data and predicting new data are quite different tasks, and that a model that fits the observed data well may not have good predictive ability."
+      "content": "A computationally less intense approach is k-fold cross-validation, wherein data are randomly assigned to k groups (or folds), with the data from the first k - 1 groups used to fit the model, and the data from the last group used to check its prediction accuracy. This procedure is repeated so that all $k$ groups are used as test groups, typically with $k$ somewhere between 4 and 10. The $k$-fold approach may be more appropriate when model fitting is computationally intense, as only $k \\ll n$ models must be fitted. It is important to stress that fitting the model to existing data and predicting new data are quite different tasks, and that a model that fits the observed data well may not have good predictive ability.",
+      "source_page": 1097,
+      "source_pages": [
+        1097,
+        1098
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p041:b11",
+        "Evolution_chapter29:p042:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1423.0,
+          904.0,
+          1472.0
+        ],
+        [
+          287.0,
+          206.0,
+          1060.0,
+          348.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "98e657ecf47deecdcf5a8b5e8f7862d95fa644047b4fa2f31f28d756a6b968a2"
     }
   ]
 }

@@ -144,13 +144,7 @@ Up to now, we have assumed an autosomal locus. The rules change when the locus o
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter7:1` · source: `Genetics_chapter7_004.json` · blocks 23–25
->
-> Example 1. One of the first pedigrees to which Wright (1922) applied his theory of inbreeding is that of Roan Gauntlet, an English bull. In the following figure, rectangles and ovals refer to bulls and cows, respectively. We wish to compute the coefficient of coancestry of the Royal Duke of Gloster and Princess Royal. This is the same as the inbreeding coefficient of their son, Roan Gauntlet. The four possible paths by which alleles identical by descent can be inherited by the Royal Duke and Princess Royal are indicated by the coded lines adjacent to the arrows in the pedigree. Two of these paths contain four individuals and two contain seven. Thus, assuming that the remote ancestors, Lord Raglan and Champion of England, are not inbred (so that for both, $ \Theta_{ii} = 1/2 $), the coefficient of coancestry of the Royal Duke and Princess Royal is $ [2(1/2)^4 + 2(1/2)^7] = 0.141 $. This is a slightly closer relationship than that for half sibs (for which $ \Theta = 0.125 $). Relative to the base population, the alleles at 14% of the autosomal loci in the offspring, Roan Gauntlet, are expected to be identical by descent.
-> 
-> ![Source illustration p155 b3](figures/examples/Genetics_p155_b3.png)
-> 
-> What is the coefficient of coancestry of the Royal Duke of Gloster and Princess Royal with respect to X-linked loci? Of the four paths between these two individuals, only the one traced by the dotted line does not contain consecutive males. Champion of England passes on his X chromosome to each of his daughters, Mimulus and Princess Royal, with probability 1. Mimulus passes that chromosome on to the Royal Duke of Gloster with probability 1/2. The probability of drawing a specific X chromosome from the Royal Duke is 1 (since he is a male) and from Princess Royal is 1/2. The coefficient of coancestry for X-linked loci is therefore $ 1 \cdot \frac{1}{2} \cdot 1 \cdot \frac{1}{2} = \frac{1}{4} $. This is substantially greater than the coefficient for autosomal loci over the same path, which is $ (1/2)^4 = \frac{1}{16} $.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter7:1]**
 
 
 > **Figure 7.5** · page 156 · source: `Genetics_chapter7`
@@ -198,16 +192,7 @@ Provided that the parents are unrelated, then $ \Theta_{ff} = 1/2 $ and $ \Theta
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter7:2` · source: `Genetics_chapter7_005.json` · blocks 10–12
->
-> Example 2. Returning to the figure in Example 1, what is $ \Delta_{xy} $ for x = Royal Duke of Gloster and y = Princess Royal?
-> 
-> Designate the parents as $ f_x = \text{Grand Duke of Gloster}, m_x = \text{Mimulus}, f_y = \text{Champion of England, and } m_y = \text{Carmine} $. Noting that Champion of England is the father of Grand Duke of Gloster and Mimulus, $ \Theta_{f_x f_y} = \Theta_{m_x f_y} = (1/4) $. Counting the number of individuals in the paths of descent between the remaining two pairs of parents, $ \Theta_{m_x m_y} = \Theta_{f_x m_y} = (1/2)^5 $. Substituting into Equation 7.7, the probability that $ x $ and $ y $ have identical genotypes by descent at an arbitrary autosomal locus is
-> 
-> $$
-> \Delta_{xy}=(1/4)(1/2)^{5}+(1/2)^{5}(1/4)=(1/2)^{6}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter7:2]**
 
 
 We now have a complete system for describing the identity by descent at an arbitrary locus for any two individuals. For complex pedigrees, this can be a rather tedious process, but relatively simple algorithms exist for the computation of $ \Theta_{xy} $ from simple information on parentage (Chapter 26). Karigl (1981) gives a general recursive procedure for obtaining all nine condensed coefficients of identity for arbitrary pedigrees. The identity coefficients for several common relationships are summarized in Table 7.1.
@@ -296,15 +281,15 @@ The most useful feature of the expressions in Table 7.2 involves their different
 >
 > Relationship | $ \sigma_{A}^{2} $ | $ \sigma_{D}^{2} $ | $ \sigma_{AA}^{2} $ | $ \sigma_{AD}^{2} $ | $ \sigma_{DD}^{2} $
 > --- | --- | --- | --- | --- | ---
-> Parent-offspring | $ \frac{1}{2} $ |  | $ \frac{1}{4} $ |  | 
-> Grandparent-grandchild | $ \frac{1}{4} $ |  | $ \frac{1}{16} $ |  | 
-> Great grandparent-great grandchild | $ \frac{1}{8} $ |  | $ \frac{1}{64} $ |  | 
-> Half sibs | $ \frac{1}{4} $ |  | $ \frac{1}{16} $ |  | 
+> Parent-offspring | $ \frac{1}{2} $ |  | $ \frac{1}{4} $ |  |
+> Grandparent-grandchild | $ \frac{1}{4} $ |  | $ \frac{1}{16} $ |  |
+> Great grandparent-great grandchild | $ \frac{1}{8} $ |  | $ \frac{1}{64} $ |  |
+> Half sibs | $ \frac{1}{4} $ |  | $ \frac{1}{16} $ |  |
 > Full sibs, dizygotic twins | $ \frac{1}{2} $ | $ \frac{1}{4} $ | $ \frac{1}{4} $ | $ \frac{1}{8} $ | $ \frac{1}{16} $
-> Uncle (aunt)-nephew (neice) | $ \frac{1}{4} $ |  | $ \frac{1}{16} $ |  | 
-> First cousins | $ \frac{1}{8} $ |  | $ \frac{1}{64} $ |  | 
+> Uncle (aunt)-nephew (neice) | $ \frac{1}{4} $ |  | $ \frac{1}{16} $ |  |
+> First cousins | $ \frac{1}{8} $ |  | $ \frac{1}{64} $ |  |
 > Double first cousins | $ \frac{1}{4} $ | $ \frac{1}{16} $ | $ \frac{1}{16} $ | $ \frac{1}{64} $ | $ \frac{1}{256} $
-> Second cousins | $ \frac{1}{32} $ |  | $ \frac{1}{1024} $ |  | 
+> Second cousins | $ \frac{1}{32} $ |  | $ \frac{1}{1024} $ |  |
 > Monozygotic twins (clonemates) | 1 | 1 | 1 | 1 | 1
 >
 > Note: To obtain the covariance expression for a particular type of relationship, multiply each variance component by its coefficient and sum. For example, the genetic covariance between half sibs is $ (\sigma_{A}^{2}/4) + (\sigma_{AA}^{2}/16) $. Blanks indicate values of zero.
@@ -367,15 +352,15 @@ The coefficients for full sibs and for other common relationships are summarized
 >
 > Relationship | $ \sigma_{A}^{2} $ | $ \sigma_{D}^{2} $ | $ \sigma_{AA}^{2} $ | $ \sigma_{AD}^{2} $ | $ \sigma_{DD}^{2} $ | $ \sigma_{A,A}(0) $ | $ \sigma_{D,D}(0) $
 > --- | --- | --- | --- | --- | --- | --- | ---
-> Parent-offspring | 1/2 |  | 1/4 |  |  | $ \frac{(1-c)^{t}}{2} $ | 
-> GP-GC | 1/4 |  | $ \frac{1+\lambda^{1/2}}{16} $ |  |  | $ \frac{(1-c)^{t}}{4} $ | 
-> Great GP-great GC | 1/8 |  | $ \frac{(1+\lambda^{1/2})^{2}}{64} $ |  |  | $ \frac{(1-c)^{t}}{8} $ | 
-> Half sibs | 1/4 |  | 1/ $ \lambda^{16} $ |  |  | $ \frac{(1-c)^{t}}{4} $ | 
+> Parent-offspring | 1/2 |  | 1/4 |  |  | $ \frac{(1-c)^{t}}{2} $ |
+> GP-GC | 1/4 |  | $ \frac{1+\lambda^{1/2}}{16} $ |  |  | $ \frac{(1-c)^{t}}{4} $ |
+> Great GP-great GC | 1/8 |  | $ \frac{(1+\lambda^{1/2})^{2}}{64} $ |  |  | $ \frac{(1-c)^{t}}{8} $ |
+> Half sibs | 1/4 |  | 1/ $ \lambda^{16} $ |  |  | $ \frac{(1-c)^{t}}{4} $ |
 > Full sibs, dizygotic twins | 1/2 | 1/4 | 2/ $ \lambda^{8} $ | 1/ $ \lambda^{8} $ | $ \frac{(1+\lambda)^{2}}{16} $ | $ \frac{(1-c)^{t}}{2} $ | $ \frac{(1-c)^{2t}}{4} $
-> Uncle(aunt)-nephew(niece) | 1/4 |  | 1/ $ \lambda(1+\lambda^{1/2})/2 $ |  |  | $ \frac{(1-c)^{t}}{4} $ | 
-> First cousins | 1/8 |  | 1/(1+ $ \lambda $)^{3}/128 |  |  | $ \frac{(1-c)^{t}}{8} $ | 
+> Uncle(aunt)-nephew(niece) | 1/4 |  | 1/ $ \lambda(1+\lambda^{1/2})/2 $ |  |  | $ \frac{(1-c)^{t}}{4} $ |
+> First cousins | 1/8 |  | 1/(1+ $ \lambda $)^{3}/128 |  |  | $ \frac{(1-c)^{t}}{8} $ |
 > Double first cousins | 1/4 | 1/16 | 3/(1+ $ \lambda $)^{3}/64 | 1/(1+ $ \lambda $)^{3}/128 | $ \frac{(1+\lambda)^{4}}{256} $ | $ \frac{(1-c)^{t}}{4} $ | $ \frac{(1-c)^{2t}}{16} $
-> Second cousins | 1/32 |  | 1/(1+ $ \lambda $)^{5}/1024 |  |  | $ \frac{(1-c)^{t}}{32} $ | 
+> Second cousins | 1/32 |  | 1/(1+ $ \lambda $)^{5}/1024 |  |  | $ \frac{(1-c)^{t}}{32} $ |
 > Monozygotic twins | 1 | 1 | 1 | 1 | 1 | (1-c)^{t} | (1-c)^{2t}
 >
 > Note: GP represents grandparent, GC represents grandchild, $ \lambda = (1 - 2c)^{2} $, and t is the generation number for the common ancestors. Blanks denote values of zero.
@@ -468,21 +453,7 @@ It may be argued that linkage is of little consequence for the resemblance betwe
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter7:3` · source: `Genetics_chapter7_009.json` · blocks 25–28
->
-> Example 3. There is one case where the probability of equivalence by descent is unequal to the coefficient of coancestry, which renders Equations 7.17a,b inappropriate. In monozygotic twins, both members of the pair are products of the same gametes, so the genes inherited in one twin are not independent of those inherited in the other twin through the same parent. Because monozygotic twins have genetic effects at all loci identical by descent, the covariance between monozygotic twins is equivalent to the expressed genetic variance in the population in the present generation. For twins whose parents are members of the base population, the probability that each ancestral gamete contributing to the twin progeny has not experienced a recombination event (between two loci of interest) is $ (1 - c) $. Therefore, the covariance between monozygotic twins resulting from additive and dominance effects is
-> 
-> $$
-> \sigma_{A}(M Z)=\sigma_{A}^{2}+(1-c)\sigma_{A,A}(0)
-> $$
-> 
-> 
-> $$
-> \sigma_{D}(M Z)=\sigma_{D}^{2}+(1-c)^{2}\sigma_{D,D}(0)
-> $$
-> 
-> 
-> where the disequilibrium covariances refer to the levels in the parental generation. The sum of these two quantities is the total expressed genetic variance in the population in the twin’s generation (ignorning epistasis).
+> **[UNRESOLVED EXAMPLE: Genetics_chapter7:3]**
 
 
 ---
@@ -538,15 +509,7 @@ Three points can be gleaned from Figure 7.7. First, there is an asymmetry in the
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter7:4` · source: `Genetics_chapter7_010.json` · blocks 15–18
->
-> Example 4. Gimelfarb (1984) performed an experiment in which lines of Drosophila melanogaster were artificially maintained under an absolute regimen of positive and negative assortative mating ( $ \rho_{z} \simeq \pm 1.0 $). Each generation, 300 male and 300 female flies from each line were scored for abdominal bristle number, and the line was then propagated by performing 300 rank-ordered matings. The change in the phenotypic variance of abdominal bristle number over an eight generation period is shown in the following figure.
-> 
-> ![Source illustration p172 b4](figures/examples/Genetics_p172_b4.png)
-> 
-> To what extent can these results be reconciled with the theory? Abdominal bristle number in $D$. melanogaster has been the subject of many quantitative-genetic studies. It appears to be nearly completely lacking in nonadditive genetic variance, and random-mating laboratory populations generally exhibit heritabilities of approximately $h^2 = \sigma_A^2 / (\sigma_A^2 + \sigma_e^2) = 0.5$. Assuming that the effective number of loci underlying the trait is at least five or so, then $\gamma \simeq 1$, and Equation 7.19b predicts that complete negative assortative mating should ultimately reduce the additive genetic variance to approximately 70% of the level in the base population. Thus, scaling the original phenotypic variance to be one so that $\sigma_A^2 = \sigma_e^2 = 0.50$, we expect complete negative assortative mating to depress the additive genetic variance to approximately $ \widehat{\sigma}_{A}^{2}=0.70\times0.50=0.35 $. From the figure, it can be seen that the phenotypic variance declined to approximately 90% of the level in the base population. This is close to the theoretical expectation that the phenotypic variance should be 85% of the base-population level, $ \widehat{\sigma}_{z}^{2}/\sigma_{z}^{2}=(\widehat{\sigma}_{A}^{2}+\sigma_{e}^{2})/(\sigma_{A}^{2}+\sigma_{e}^{2})=(0.35+0.50)/(0.50+0.50)=0.85 $.
-> 
-> Such an analysis cannot be performed for the line under positive assortative mating because it is less clear that an equilibrium phenotypic variance had been obtained. Nevertheless, a simple expectation can be pointed out for an experiment of this type. With absolute positive assortative mating, $ \rho_z = 1.0 $, and a heritability of 0.5, the expected inflation of the additive genetic variance predicted by Equation 7.19b is simply $ (2n_e)^{1/2} $. Thus, if this experiment had been carried out to the point at which $ \widehat{\sigma}_z^2 $ had stabilized, an estimate of the effective number of factors for abdominal bristle number would have been possible.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter7:4]**
 
 
 To this point, we have said nothing about the dominance component of variance. When only two loci contribute to the trait, $ \sigma_{D}^{2} $ can change with assortative mating (Reeve 1961). However, Fisher (1918) argued that if the number of loci is even moderate, the effect will be negligible, and this was later confirmed by Vetta (1976). Thus, for all practical purposes, we can assume that the dominance genetic variance is unaltered by assortative mating.
@@ -569,29 +532,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_chapter7:5` · source: `Genetics_chapter7_010.json` · blocks 25–35
->
-> Example 5. As an example of the application of the preceding theory, we consider an early data set on height in British families (Pearson and Lee 1903). Pearson recruited college students to obtain data from approximately 1300 families, recording whenever possible the stature of father, mother, and eldest son and daughter (ignoring offspring less than 18 years of age). This was a very large data set for the precomputer era, and it took two years to calculate the statistics by hand. The data are remarkable for their essentially normal distribution and for the linearity of the regressions between relatives.
-> 
-> ![Source illustration p175 b2](figures/examples/Genetics_p175_b2.png)
-> 
-> ![Source illustration p175 b3](figures/examples/Genetics_p175_b3.png)
-> 
-> In the figure on the left, the histogram gives the observed data for maternal height, while the smooth curve is the fitted normal distribution. On the right, the straight line is the least-squares regression of sons' height on paternal height, the data having been pooled into one-inch size classes for paternal height.
-> 
-> Pearson and Lee do not report the covariances between relatives, but rather the correlations, but this turns out to be quite convenient for the following analysis. The variance of height tends to be larger for males than for females, and this may be expected to influence the regressions depending upon which sexes are involved. However, since a correlation coefficient is equivalent to the covariance between two standardized variables (each with unit variance), we can ignore this problem. The data in the following table indicate that the phenotypic correlations for all four sex-specific parent–offspring combinations are quite consistent, yielding a pooled value of $ 0.506 \pm 0.011 $. The three full-sib correlations are also consistent with each other and give the pooled value of $ 0.534 \pm 0.019 $. Finally, we note that there is highly significant assortative mating for height, the estimated value of $ \rho_{z} $ being $ 0.280 \pm 0.028 $.
-> 
-> <table><tr><td>Relationship</td><td>r</td><td>SE</td></tr><tr><td>Parent-offspring:</td><td></td><td></td></tr><tr><td>Father-son</td><td>0.514</td><td>0.022</td></tr><tr><td>Father-daughter</td><td>0.510</td><td>0.019</td></tr><tr><td>Mother-son</td><td>0.494</td><td>0.024</td></tr><tr><td>Mother-daughter</td><td>0.507</td><td>0.021</td></tr><tr><td>Full sibs:</td><td></td><td></td></tr><tr><td>Brother-brother</td><td>0.511</td><td>0.042</td></tr><tr><td>Brother-sister</td><td>0.553</td><td>0.019</td></tr><tr><td>Sister-sister</td><td>0.537</td><td>0.033</td></tr><tr><td>Husband-wife</td><td>0.280</td><td>0.028</td></tr></table>
-> 
-> We first consider the additive genetic variance in the population. Recall that $ \widehat{\sigma}_{z}^{2} = 1 $ on the scale of analysis. From Table 7.4, we see that the expected covariance between parent and offspring is $ (1 + \rho_{z})\widehat{\sigma}_{A}^{2}/2 $. Setting this quantity equal to 0.506, substituting 0.280 for $ \rho_{z} $, and rearranging, we obtain an estimate for $ \widehat{\sigma}_{A}^{2} $ of $ 0.791 \pm 0.024 $ (the standard error being obtained by the Taylor expansion method, Appendix 1). Thus, unless epistasis is very strong (we have assumed it to be equal to zero), it appears that approximately 80% of the variance in human height is attributable to additive gene action.
-> 
-> Suppose assortative mating were to be eliminated. What is the expected equilibrium value of the additive genetic variance? Assuming a large effective number of loci ( $ \gamma \simeq 1 $), and substituting the estimates of $ \widehat{\sigma}_{A}^{2} $ and $ \rho_{z} $ into Equation 7.20, we obtain $ \sigma_{A}^{2} \simeq 0.616 $. The additive disequilibrium covariance for height is estimated as $ 0.791 - 0.616 = 0.175 $, showing that through the creation of gametic phase disequilibrium, assortative mating has induced an approximately 28% increase in the additive genetic variance.
-> 
-> We now consider whether the full-sib data are consistent with an additive genetic model. Again from Table 7.4, we see that in the absence of dominance, the covariance between full sibs has an expected value of $ \widehat{\sigma}_{A}^{2}(1 + \rho_{z}\widehat{h}^{2})/2 $. Since we are operating on a scale for which $ \widehat{\sigma}_{z}^{2} = 1 $, this value is also the expected correlation coefficient. Substituting 0.280 for $ \rho_{z} $ and 0.791 for $ \widehat{\sigma}_{A}^{2} $, we obtain the expectation $ 0.483 \pm 0.024 $. The difference between the observed and expected value $ (0.534 - 0.483 = 0.051) $ has a standard error equal to $ [(0.024)^{2} + (0.019)^{2}]^{1/2} = 0.031 $ and cannot be considered to be significant. Thus, on the basis of the existing data, there are no grounds for rejecting the purely additive model.
-> 
-> In a more recent study, Roberts et al. (1978) performed a census of adult heights in families of a West African population, where assortative mating by height is relatively weak, $ \rho_z \simeq 0.10 \pm 0.10 $. The correlations between parents and offspring, $ (0.434 \pm 0.015) $, and between full sibs, $ (0.378 \pm 0.048) $, are somewhat lower than those observed in the study of Pearson and Lee. Using the procedures outlined above, these data yield estimates of $ \widehat{\sigma}_A^2 \simeq 0.789 $ and $ \sigma_A^2 = 0.727 $. Thus, the expressed additive genetic variances in the two populations are very similar, although a smaller fraction is associated with disequilibrium covariance in the West African population. Roberts et al. (1978) also report a half-sib correlation equal to $ 0.198 \pm 0.059 $, which can be used to provide a further check on the theory. Substituting the estimate of $ \rho_z $ and $ \widehat{h}^2 = 0.789 $ into the half-sib expression in Table 7.4, the predicted correlation is 0.229, which is not significantly different from the observed value.
-> 
-> There is an interesting historical note regarding the data of Pearson and Lee. Fisher's (1918) demonstration that the data were quite consistent with a Mendelian hypothesis flew in the face of Pearson's notorious non-Mendelian philosophy. Fisher also extended the analyses to other types of relatives, illustrating their consistency with resemblances between first cousins and between grandparents and their grandchildren. However, the literature that Fisher cites for the latter correlations actually involves characters other than height (in one case, eye color)! Thus, at the time, Fisher apparently believed that there was a universal correlation for all characters within a species. This is an interesting twist since Pearson had similar feelings, as amply documented in Pearson and Lee (1903, p. 379): “Thus for most practical purposes we may assume parental heredity for all species and all characters to be approximately represented by a correlation of 0.5.” We now know that this is far from the truth.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter7:5]**
 
 
 > **Table 7.4** · `7.4` · page 174 · source: `Genetics_chapter7_010`
@@ -599,10 +540,10 @@ $$
 >
 > Relationship | $ \widehat{\sigma}_{A}^{2} $ | $ \sigma_{D}^{2} $
 > --- | --- | ---
-> Parent-offspring | $ \frac{1}{2}(1 + \rho_{z}) $ | 
-> Grandparent-grandchild | $ \frac{1}{4}(1 + \rho_{z})(1 + \rho_{z}\widehat{h}^{2}) $ | 
-> Great grandparent-great grandchild | $ \frac{1}{8}(1 + \rho_{z})(1 + \rho_{z}\widehat{h}^{2})^{2} $ | 
-> Half sibs | $ \frac{1}{4}(1 + 2\rho_{z}\widehat{h}^{2} + \rho_{z}^{2}\widehat{h}^{2}) $ | 
+> Parent-offspring | $ \frac{1}{2}(1 + \rho_{z}) $ |
+> Grandparent-grandchild | $ \frac{1}{4}(1 + \rho_{z})(1 + \rho_{z}\widehat{h}^{2}) $ |
+> Great grandparent-great grandchild | $ \frac{1}{8}(1 + \rho_{z})(1 + \rho_{z}\widehat{h}^{2})^{2} $ |
+> Half sibs | $ \frac{1}{4}(1 + 2\rho_{z}\widehat{h}^{2} + \rho_{z}^{2}\widehat{h}^{2}) $ |
 > Full sibs, dizygotic twins | $ \frac{1}{2}(1 + \rho_{z}\widehat{h}^{2}) $ | $ \frac{1}{4} $
 > Uncle(aunt)-nephew(niece) | $ \frac{1}{4}(1 + \rho_{z}\widehat{h}^{2})^{2} $ | $ \frac{1}{8}\rho_{z}\widehat{h}^{2} $
 > First cousins | $ \frac{1}{8}(1 + \rho_{z}\widehat{h}^{2})^{3} $ | $ \frac{1}{16}(\rho_{z}\widehat{h}^{2})^{2} $
@@ -783,25 +724,7 @@ Even more complicated scenarios, for additional types of relatives, have been co
 
 **[示例 Example]**
 
-> **Example 6** · ref: `Genetics_chapter7:6` · source: `Genetics_chapter7_012.json` · blocks 35–43
->
-> Example 6. Several large and independent studies have been performed on human birth weight. As can be seen in the following table, the estimated correlations between relatives are quite consistent among studies. For example, the five available full-sib correlations have a narrow range of 0.47 to 0.52. Mi et al. (1986) performed large analyses on several ethnic groups in Hawaii and found only minor differences among them for the correlations between relatives. We will therefore pool the independent estimates where they exist. In keeping with the linear model just outlined, we will assume that dominance and epistatic sources of variance are of negligible importance. In the absence of conflicting data, we will also assume that assortative mating and genotype-environment correlation are negligible, and that general environmental effects are only transmitted through mothers. Under these assumptions, $ \rho_G = 0 $, $ g^2 = h^2/2 $, $ \rho_{GE} = 0 $, and $ \theta = 1 $.
-> 
-> <table><tr><td>Relationship</td><td>Estimated Correlations</td><td>Prediction</td></tr><tr><td>Full sibs $ ^{2-6} $</td><td>0.50, 0.52, 0.47, 0.48, 0.48</td><td>$ \frac{h^{2}}{2} + c^{2} = 0.50 $</td></tr><tr><td>Maternal half sibs $ ^{3} $</td><td>0.58</td><td>$ \frac{h^{2}}{4} + c^{2} = 0.42 $</td></tr><tr><td>Paternal half sibs $ ^{3} $</td><td>0.10</td><td>$ \frac{h^{2}}{4} = 0.08 $</td></tr><tr><td>Maternal first cousins $ ^{2,6} $</td><td>0.14, 0.13</td><td>$ \frac{h^{2}}{8} + \frac{c_{G}^{2}}{2} = 0.15 $</td></tr><tr><td>Paternal first cousins $ ^{2,6} $</td><td>0.02, 0.06</td><td>$ \frac{h^{2}}{8} = 0.04 $</td></tr></table>
-> 
-> <table><tr><td>Relationship</td><td>Estimated Correlations</td><td>Prediction</td></tr><tr><td>Monozygotic twins $ ^{1} $</td><td>0.67</td><td>$ h^{2} + c^{2} = 0.65 $</td></tr><tr><td>Dizygotic twins $ ^{2,3} $</td><td>0.59, 0.66</td><td>$ \frac{h^{2}}{2} + c^{2} = 0.50 $</td></tr><tr><td colspan="3">Half sibs via monozygotic twin parents:</td></tr><tr><td>Maternal $ ^{5} $</td><td>0.31</td><td>$ \frac{h^{2}}{4} + c_{G}^{2} = 0.30 $</td></tr><tr><td>Paternal $ ^{5,7} $</td><td>-0.03, 0.12</td><td>$ \frac{h^{2}}{4} = 0.08 $</td></tr></table>
-> 
-> References: 1. Penrose (1954a); 2. Robson (1955); 3. Morton (1955a); 4. Billewicz (1972); 5. Nance et al. (1983); 6. Mi et al. (1986); 7. Magnus (1984).
-> 
-> We first consider the additive genetic variance. Inferences about it must be derived from relationships for which shared environmental effects do not influence the covariance. Paternal half sibs and paternal first cousins satisfy these conditions. The expected correlations for these types of relatives are $ h^2/4 $ and $ h^2/8 $, respectively, where $ h^2 = \sigma_A^2/\sigma_z^2 $. Since the observed correlations are 0.10 and 0.04, we obtain independent estimates of $ h^2 $ of $ 4 \times 0.10 = 0.40 $ and $ 8 \times 0.04 = 0.32 $. Also available is an average correlation of 0.05 for offspring of monozygotic twin brothers. Such individuals are genetically equivalent to paternal half sibs (the fathers are different individuals, but identical genetically), so this result yields an additional estimate of $ h^2 = 4 \times 0.05 = 0.20 $. Averaging over all three types of relationship, $ h^2 \simeq 0.30 $, i. e., additive genetic variance appears to account for approximately 30% of the phenotypic variance.
-> 
-> The data make it very clear that aspects of the maternal environment have a substantial influence on birth weight. For example, the correlation between maternal half sibs is several times greater than that between paternal half sibs, and the same pattern is seen for maternal vs. paternal first cousins. The total variation caused by the maternal environment can be obtained from the maternal half-sib correlation, 0.58, whose expectation is $ (h^{2}/4) + c^{2} $. Subtracting out the additive genetic contribution, $ c^{2} = 0.58 - (0.30/4) = 0.50 $. Pooling this with an independent estimate of $ c^{2} = 0.20 $ obtained by Magnus (1984), we estimate $ c^{2} \simeq 0.35 $. Thus, aspects of the mother (in excess of the genes that she contributes to her offspring) account for approximately 35% of the variance in birth weight.
-> 
-> There are two ways to partition the maternal effects variance into genetic and environmental components, $ c^2 = c_G^2 + c_E^2 $. First, monozygotic twin sisters provide the same genetic environment but different home settings for their progeny, which are genetically equivalent to maternal half sibs. The expected correlation between half sibs via this route is therefore $ (h^2/4) + c_G^2 $. Subtracting $ h^2/4 $ from the observed correlation, we obtain an estimate of the variance caused by genetic maternal effects, $ c_G^2 = 0.31 - (0.30/4) = 0.23 $. Second, the covariance between maternal first cousins is unaffected by common maternal environment, but is influenced by half the genetic maternal variance since the mothers are full sibs; their expected correlation is therefore $ (h^{2}/8) + (c_{G}^{2}/2) $. Again equating observed and expected correlations, we obtain a second estimate $ c_{G}^{2} = 2[0.14 - (0.30/8)] = 0.20 $. Thus, of the maternal effects variance, approximately two-thirds $ (0.215/0.35) $ appears to be caused by the effects of the maternal genotype on the uterine environment.
-> 
-> The causes of approximately 35% of the variance remain to be identified. Offspring sex, birth order, and gestation age account for 2, 3, and 4% of the variance, respectively (Penrose 1954a, Morton 1955a, Billewicz 1972, Magnus 1984). Some of these sources of variance presumably fall in the environmental maternal-effects category. Relatively low weights for first-born offspring account for another 5% of the variation. Morton (1955a) has argued for the existence of dominance genetic variance, but the following argument suggests that this source of variance is negligible. In principle, the correlation between full sibs is $ \left(\sigma_{A}^{2}/2+\sigma_{D}^{2}/4+\sigma_{E}^{2}\right)/\sigma_{z}^{2} $. However, from the above $ \left(\sigma_{A}^{2}/2+\sigma_{E}^{2}\right)/\sigma_{z}^{2}\simeq(0.30/2)+0.35=0.50 $, which accounts for the mean observed correlation of 0.49.
-> 
-> The approach that we have taken to analyze these data is not very rigorous from a statistical standpoint, our main objective having simply been to provide a heuristic guide to understanding how correlations derived from several types of relatives can be used to estimate components of variance. Nevertheless, when the estimates of $ h^{2} $, $ c^{2} $, and $ c_{G}^{2} $ are substituted into the expressions for the expected correlations between relatives, the overall fit to the data is quite good (last column in the preceding table). Thus, variation in human birth weight appears to be largely a function of additive gene action, maternal effects, and special environmental effects, each of which accounts for about a third of the total variance.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter7:6]**
 
 
 > **Table 7.6** · `7.6` · page 183 · source: `Genetics_chapter7_012`

@@ -9,7 +9,6 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable
 
-
 CHUNK_FILE_RE = re.compile(r"^((?:(?:[A-Za-z]+)_)?(?:chapter|appendix)\d+)_(\d+)\.json$", re.IGNORECASE)
 NUMBERED_REF_RE = re.compile(r"^(\d+)\.\d+")
 FIGURE_TEXT_REF_RE = re.compile(r"\bFigure(?:s)?\s+(?P<id>(?:A\d+|\d+)\.\d+[a-z]?)\b", re.IGNORECASE)
@@ -723,7 +722,9 @@ class TextbookRenderer:
             [
                 f"> **Formula {label}** · `{clean_ref_id(formula_id)}` · source: `{unit_id}` · {subsection}",
                 ">",
-                f"> $$ {latex} $$",
+                "> $$",
+                f"> {latex}",
+                "> $$",
                 "",
             ]
         )
@@ -826,10 +827,10 @@ class TextbookRenderer:
                     self.append_table_notes(lines, notes)
                     self.append_table_markdown_body(lines, markdown_body)
                     return
-                lines.append("> " + " | ".join(render_cell(cell) for cell in rows[0]))
-                lines.append("> " + " | ".join("---" for _ in range(column_count)))
+                lines.append(("> " + " | ".join(render_cell(cell) for cell in rows[0])).rstrip())
+                lines.append(("> " + " | ".join("---" for _ in range(column_count))).rstrip())
                 for row in rows[1:]:
-                    lines.append("> " + " | ".join(render_cell(cell) for cell in row))
+                    lines.append(("> " + " | ".join(render_cell(cell) for cell in row)).rstrip())
                 self.append_table_notes(lines, notes)
                 self.append_table_markdown_body(lines, markdown_body)
                 return

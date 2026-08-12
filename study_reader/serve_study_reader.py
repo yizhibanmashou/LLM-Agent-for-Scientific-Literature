@@ -6,7 +6,6 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
-
 APP_DIR = Path(__file__).resolve().parent
 REPO_ROOT = APP_DIR.parent
 APP_PATH = "/study_reader"

@@ -21,23 +21,185 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "A powerful use of diagonalization is that it allows one to extract a set of $n$ uncorrelated variables for any $n \\times n$ nonsingular covariance matrix, $\\mathbf{V}_{\\mathbf{x}}$. Consider the transformation $$ \\mathbf{y}=\\mathbf{U}^{T}\\mathbf{x} $$ where $ \\mathbf{U} = (\\mathbf{e}_1, \\mathbf{e}_2, \\cdots, \\mathbf{e}_n) $ contains the normalized eigenvectors of $ \\mathbf{V}_x $. Because $ \\mathbf{U} $ is an orthonormal matrix, this transformation is a rigid rotation of the axes of the original $ (x_1, \\cdots, x_n) $ coordinate system to a new system given by $ (e_1, \\cdots, e_n) $. Applying LW Equation 8.21b and Equation A5.12, respectively, the covariance matrix for $ \\mathbf{y} $ is $$ \\mathbf{V_{y}}=\\mathbf{U}^{T}\\mathbf{V_{x}}\\mathbf{U}=\\boldsymbol{\\Lambda} $$ where A is a diagonal matrix whose elements are the eigenvalues of $ V_{x} $, $$ \\sigma(y_{i},y_{j})=\\left\\{\\begin{aligned}&\\lambda_{i}&if i=j\\\\ &0&if i\\neq j\\end{aligned}\\right. $$"
+      "content": "A powerful use of diagonalization is that it allows one to extract a set of $n$ uncorrelated variables for any $n \\times n$ nonsingular covariance matrix, $\\mathbf{V}_{\\mathbf{x}}$. Consider the transformation $$ \\mathbf{y}=\\mathbf{U}^{T}\\mathbf{x} $$ where $ \\mathbf{U} = (\\mathbf{e}_1, \\mathbf{e}_2, \\cdots, \\mathbf{e}_n) $ contains the normalized eigenvectors of $ \\mathbf{V}_x $. Because $ \\mathbf{U} $ is an orthonormal matrix, this transformation is a rigid rotation of the axes of the original $ (x_1, \\cdots, x_n) $ coordinate system to a new system given by $ (e_1, \\cdots, e_n) $. Applying LW Equation 8.21b and Equation A5.12, respectively, the covariance matrix for $ \\mathbf{y} $ is $$ \\mathbf{V_{y}}=\\mathbf{U}^{T}\\mathbf{V_{x}}\\mathbf{U}=\\boldsymbol{\\Lambda} $$ where A is a diagonal matrix whose elements are the eigenvalues of $ V_{x} $, $$ \\sigma(y_{i},y_{j})=\\left\\{\\begin{aligned}&\\lambda_{i}&if i=j\\\\ &0&if i\\neq j\\end{aligned}\\right. $$",
+      "source_page": 1269,
+      "source_pages": [
+        1269
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p009:b15",
+        "Evolution_appendix5:p009:b16",
+        "Evolution_appendix5:p009:b17",
+        "Evolution_appendix5:p009:b19",
+        "Evolution_appendix5:p009:b20",
+        "Evolution_appendix5:p009:b22",
+        "Evolution_appendix5:p009:b23"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1063.0,
+          649.0,
+          1086.0
+        ],
+        [
+          132.0,
+          1092.0,
+          903.0,
+          1141.0
+        ],
+        [
+          473.0,
+          1160.0,
+          562.0,
+          1188.0
+        ],
+        [
+          132.0,
+          1210.0,
+          904.0,
+          1304.0
+        ],
+        [
+          427.0,
+          1324.0,
+          611.0,
+          1352.0
+        ],
+        [
+          132.0,
+          1374.0,
+          752.0,
+          1398.0
+        ],
+        [
+          408.0,
+          1419.0,
+          625.0,
+          1473.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "43edf2b0c9d26fa6a6167b5985b141b107f606227bf9ca38ff58303e29207734"
     },
     {
       "type": "discussion",
-      "content": "The rigid rotation introduced by U creates a set of n uncorrelated variables, the ith of which is $$ y_{i}=\\mathbf{e}_{i}^{T}\\mathbf{x} $$ Because the $ e_i $ are of unit length, from Equation A5.3b we have that $ y_i = e_i^T x $ is the length of the projection of $ x $ onto the $ i $th eigenvector of $ V_x $, which implies that the axes of the new coordinate system are given by the orthogonal set of eigenvectors of $ V_x $."
+      "content": "The rigid rotation introduced by U creates a set of n uncorrelated variables, the ith of which is $$ y_{i}=\\mathbf{e}_{i}^{T}\\mathbf{x} $$ Because the $ e_i $ are of unit length, from Equation A5.3b we have that $ y_i = e_i^T x $ is the length of the projection of $ x $ onto the $ i $th eigenvector of $ V_x $, which implies that the axes of the new coordinate system are given by the orthogonal set of eigenvectors of $ V_x $.",
+      "source_page": 1270,
+      "source_pages": [
+        1270
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p010:b4",
+        "Evolution_appendix5:p010:b5",
+        "Evolution_appendix5:p010:b7"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          699.0,
+          1059.0,
+          744.0
+        ],
+        [
+          628.0,
+          745.0,
+          719.0,
+          769.0
+        ],
+        [
+          287.0,
+          777.0,
+          1059.0,
+          846.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0da94a1c3d58b071886f46beced7aea5e8295f95730bbdaf0546b9c69ba03685"
     },
     {
       "type": "discussion",
-      "content": "Defining the matrix B as $$ \\mathbf{B}=\\mathbf{U}\\boldsymbol{A}^{-1/2} $$ the vector $ \\mathbf{y} = \\mathbf{B}^T \\mathbf{x} $ has a covariance matrix of $ \\mathbf{V}_{\\mathbf{y}} = \\mathbf{I} $, which means that this transformation creates a set of uncorrelated variables, each with unit variance. To see this, note that $$ \\begin{aligned}\\mathbf{V}_{\\mathbf{y}}=\\mathbf{B}^{T}\\mathbf{V}_{\\mathbf{x}}\\mathbf{B}&=\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\right)^{T}\\left(\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T}\\right)\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\right)\\\\&=\\boldsymbol{\\Lambda}^{-1/2}\\left(\\mathbf{U}^{T}\\mathbf{U}\\right)\\boldsymbol{\\Lambda}\\left(\\mathbf{U}^{T}\\mathbf{U}\\right)\\boldsymbol{\\Lambda}^{-1/2}\\\\&=\\boldsymbol{\\Lambda}^{-1/2}\\boldsymbol{\\Lambda}\\boldsymbol{\\Lambda}^{-1/2}=\\mathbf{I}\\\\ \\end{aligned} $$"
+      "content": "Defining the matrix B as $$ \\mathbf{B}=\\mathbf{U}\\boldsymbol{A}^{-1/2} $$ the vector $ \\mathbf{y} = \\mathbf{B}^T \\mathbf{x} $ has a covariance matrix of $ \\mathbf{V}_{\\mathbf{y}} = \\mathbf{I} $, which means that this transformation creates a set of uncorrelated variables, each with unit variance. To see this, note that $$ \\begin{aligned}\\mathbf{V}_{\\mathbf{y}}=\\mathbf{B}^{T}\\mathbf{V}_{\\mathbf{x}}\\mathbf{B}&=\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\right)^{T}\\left(\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T}\\right)\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\right)\\\\&=\\boldsymbol{\\Lambda}^{-1/2}\\left(\\mathbf{U}^{T}\\mathbf{U}\\right)\\boldsymbol{\\Lambda}\\left(\\mathbf{U}^{T}\\mathbf{U}\\right)\\boldsymbol{\\Lambda}^{-1/2}\\\\&=\\boldsymbol{\\Lambda}^{-1/2}\\boldsymbol{\\Lambda}\\boldsymbol{\\Lambda}^{-1/2}=\\mathbf{I}\\\\ \\end{aligned} $$",
+      "source_page": 1270,
+      "source_pages": [
+        1270
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p010:b8",
+        "Evolution_appendix5:p010:b9",
+        "Evolution_appendix5:p010:b11",
+        "Evolution_appendix5:p010:b12"
+      ],
+      "source_bboxes": [
+        [
+          327.0,
+          847.0,
+          547.0,
+          869.0
+        ],
+        [
+          613.0,
+          867.0,
+          734.0,
+          893.0
+        ],
+        [
+          286.0,
+          901.0,
+          1059.0,
+          950.0
+        ],
+        [
+          448.0,
+          958.0,
+          897.0,
+          1072.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e1a9632589bfc028f8735391e7adcb667bc93cc3b48576e1e3a4d7c363e6bfa3"
     },
     {
       "type": "discussion",
-      "content": "An alternative to Equation A5.15d is the Cholesky decomposition, $ A = C^T C $, of a square, symmetric matrix $ A $, where $ C $ is an lower triangular matrix (all elements above the diagonal are zero). If $ C $ is the Cholesky decomposition for $ V_X $, then $ y = C^{-1} x $ also returns a covariance matrix of $ I $."
+      "content": "An alternative to Equation A5.15d is the Cholesky decomposition, $ A = C^T C $, of a square, symmetric matrix $ A $, where $ C $ is an lower triangular matrix (all elements above the diagonal are zero). If $ C $ is the Cholesky decomposition for $ V_X $, then $ y = C^{-1} x $ also returns a covariance matrix of $ I $.",
+      "source_page": 1270,
+      "source_pages": [
+        1270
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p010:b14"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1083.0,
+          1058.0,
+          1177.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1bc68c6f3c73f340629d6a52fc2fbda7d806ed9523a481391de6650848d8075b"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A5.4]]"
+      "content": "[[SEE_EXAMPLE:A5.4]]",
+      "source_page": 1270,
+      "source_pages": [
+        1270
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p010:b3"
+      ],
+      "source_bboxes": [
+        [
+          321.0,
+          483.0,
+          1036.0,
+          657.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2f67cf253a3ad48fa93571571c42058d672c9f8af0657d01ac93b742ae01b93c"
     }
   ]
 }

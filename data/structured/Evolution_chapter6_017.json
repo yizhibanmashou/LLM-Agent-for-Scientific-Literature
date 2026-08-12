@@ -20,12 +20,260 @@
   },
   "blocks": [
     {
-      "type": "proposition",
-      "content": "The breeder’s equation forms the backbone for much of the theory of selection response in quantitative genetics (Chapters 13–20). Almost all of the theory of breeding is framed around it, as is much of evolutionary quantitative genetics, although Robertson’s secondary theorem has been gaining some recent traction in studies in natural populations (reviewed in Chapter 20). As these results show, the breeder’s equation is an approximation, with a linear parent-offspring regression as a necessary, but not sufficient, condition (Example 6.1). When viewed in a population-genetic framework, Example 5.12 showed that the breeder’s equation is generally a fairly good approximation under weak selection on each of the loci underlying a trait. Conversely, as highlighted in Example 6.3, the performance of the breeder’s equation can be compromised if there are major genes, especially if they display dominance. Here we conclude our discussion on theorems of selection by expanding upon our earlier discussion (Equations 6.12 and 6.13) to fully place the breeder’s equation into the exact Price equation framework."
+      "type": "derivation",
+      "content": "$$ \\sigma(e {w},e {\\overline{{z}}})=\\sigma(w,\\overline{{z}} z) $$",
+      "source_page": 164,
+      "source_pages": [
+        164
+      ],
+      "source_block_ids": [
+        "Evolution_chapter6:p024:b2",
+        "Evolution_chapter6:p024:b17"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          206.0,
+          960.0,
+          229.0
+        ],
+        [
+          575.0,
+          1445.0,
+          772.0,
+          1470.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "73e1063deedf200ba90bd3870acb5d8111814c248e2afc4a9df5928f04368dd2"
     },
     {
       "type": "discussion",
-      "content": "Equation 6.12 shows that when the parent-offspring regression is linear, the expression for selection response reduces to the breeder's equation plus two correction terms. What can be said if we make no assumptions about the functional form of this regression? The most general solution is Heywood's decomposition (2005), which we build up to after introducing the partial covariance and the effect of the reference population on the parent-offspring regression. Based on the Price equation, Heywood's decomposition yields components with biologically meaningful interpretations that go beyond simply being mathematically convenient correction terms. A key point from this decomposition was foreshadowed in Example 6.3—it is the parent-offspring regression after, as opposed to before, selection that is more appropriate for predicting the response to selection."
+      "content": "Substitution of this expression into Equation 6.30a yields",
+      "source_page": 165,
+      "source_pages": [
+        165
+      ],
+      "source_block_ids": [
+        "Evolution_chapter6:p025:b10"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1107.0,
+          622.0,
+          1131.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "3f93c35117e5df0b702250cc56059123ea9fd0abe0946811659db2625e916fe8"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ R_z=\\beta_{\\bar{z}z}S+\\sigma(w,\\bar{z}\\mid z)+E(\\bar{\\delta}) $$",
+      "source_page": 165,
+      "source_pages": [
+        165,
+        166
+      ],
+      "source_block_ids": [
+        "Evolution_chapter6:p025:b11",
+        "Evolution_chapter6:p026:b4"
+      ],
+      "source_bboxes": [
+        [
+          375.0,
+          1149.0,
+          660.0,
+          1175.0
+        ],
+        [
+          475.0,
+          404.0,
+          880.0,
+          458.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "01a8e2203d61c5bad46eb4229307b60d71ef8376f56ca9ec9f655d51262862d6"
+    },
+    {
+      "type": "discussion",
+      "content": "Thus, even when the parent-offspring regression is nonlinear, we can express the selection response in trait z as a linear response (breeder's equation) term $ \\beta {\\overline{z} z}S $ plus a correction $ \\sigma(w,\\overline{z} z)=\\sigma(e w,e {\\overline{z}}) $ accounting for (among other things) nonlinearity and an additional correction $ E(\\overline{\\delta}) $ for transmission. Because $ \\sigma(w,\\overline{z} z) $ removes the (linear) effect of parental value $ z i $, on both its offspring mean $ \\overline{z} i $ and its own relative fitness, $ w i $, any residual association between $ w i $ and $ \\overline{z} i $ is uncorrelated with $ z i $ and hence uncorrelated with selection on the parent. Thus, the response from this component need not be adaptive, leading Heywood to denote $ \\sigma(w,\\overline{z} z) $ as the spurious response to selection.",
+      "source_page": 165,
+      "source_pages": [
+        165,
+        167,
+        168
+      ],
+      "source_block_ids": [
+        "Evolution_chapter6:p025:b13",
+        "Evolution_chapter6:p027:b19",
+        "Evolution_chapter6:p028:b2",
+        "Evolution_chapter6:p028:b3"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1192.0,
+          904.0,
+          1377.0
+        ],
+        [
+          131.0,
+          1377.0,
+          903.0,
+          1425.0
+        ],
+        [
+          286.0,
+          207.0,
+          1059.0,
+          253.0
+        ],
+        [
+          298.0,
+          261.0,
+          1067.0,
+          691.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "6ef003f8568b6835544f81acab04587b6df61a337347179a4b0bda056e3098b3"
+    },
+    {
+      "type": "discussion",
+      "content": "There are two ways to generate a nonzero $ \\sigma(w, \\overline{z} \\parallel z) $. First, both regressions $ (w i \\text{ on } z i \\text{ and } \\overline{z} i \\text{ on } z i) $ may be nonlinear, and, as a result, their residuals may be correlated, generating a spurious response (e.g., Figure 6.5). Second, even if one (or both) of these regressions is linear, if both $ w i $ and $ \\overline{z} i $ are correlated through an unmeasured variable (such as an environmental",
+      "source_page": 165,
+      "source_pages": [
+        165
+      ],
+      "source_block_ids": [
+        "Evolution_chapter6:p025:b14"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1377.0,
+          903.0,
+          1471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "eb702c6cace7630b1f190fa13f36854856942b2a048bf933fb73db9df65e7fff"
+    },
+    {
+      "type": "discussion",
+      "content": "As shown in Example 6.8 (Equation 6.33f), we can write",
+      "source_page": 165,
+      "source_pages": [
+        165
+      ],
+      "source_block_ids": [
+        "Evolution_chapter6:p025:b7"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          992.0,
+          614.0,
+          1016.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "6ae6e3f4e547cb81b0783fdb536313114ba4f3ffa737415d54aaf5075348f333"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ \\begin{aligned}\\sigma(w,\\bar{z})&=\\sigma(w,\\bar{z}\\mid z)+\\beta_{\\bar{z}z}\\sigma(w,z)\\\\ &=\\sigma(w,\\bar{z}\\mid z)+\\beta_{\\bar{z}z}S\\end{aligned} $$",
+      "source_page": 165,
+      "source_pages": [
+        165
+      ],
+      "source_block_ids": [
+        "Evolution_chapter6:p025:b8"
+      ],
+      "source_bboxes": [
+        [
+          368.0,
+          1034.0,
+          667.0,
+          1089.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "9021f071e97890021babe8ac576894821df05a785408a1b7d3497335cd64598e"
+    },
+    {
+      "type": "discussion",
+      "content": "effect), their residuals, after being regressed on $ z {i} $, can still be correlated, again generating a potentially spurious response (Chapter 20 examines this process in more detail).",
+      "source_page": 166,
+      "source_pages": [
+        166
+      ],
+      "source_block_ids": [
+        "Evolution_chapter6:p026:b2"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          206.0,
+          1059.0,
+          256.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "403748d5acccdb1c235b225197842a35daf8286acdee63b51fdde1e44493293d"
+    },
+    {
+      "type": "proposition",
+      "content": "The breeder’s equation forms the backbone for much of the theory of selection response in quantitative genetics (Chapters 13–20). Almost all of the theory of breeding is framed around it, as is much of evolutionary quantitative genetics, although Robertson’s secondary theorem has been gaining some recent traction in studies in natural populations (reviewed in Chapter 20). As these results show, the breeder’s equation is an approximation, with a linear parent-offspring regression as a necessary, but not sufficient, condition (Example 6.1). When viewed in a population-genetic framework, Example 5.12 showed that the breeder’s equation is generally a fairly good approximation under weak selection on each of the loci underlying a trait. Conversely, as highlighted in Example 6.3, the performance of the breeder’s equation can be compromised if there are major genes, especially if they display dominance. Here we conclude our discussion on theorems of selection by expanding upon our earlier discussion (Equations 6.12 and 6.13) to fully place the breeder’s equation into the exact Price equation framework.",
+      "source_page": 164,
+      "source_pages": [
+        164
+      ],
+      "source_block_ids": [
+        "Evolution_chapter6:p024:b3"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          253.0,
+          1060.0,
+          551.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c99ff7b8b3661524be86394d79433fc74af92a320b70a12832e25f2008fb5e0c"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 6.12 shows that when the parent-offspring regression is linear, the expression for selection response reduces to the breeder's equation plus two correction terms. What can be said if we make no assumptions about the functional form of this regression? The most general solution is Heywood's decomposition (2005), which we build up to after introducing the partial covariance and the effect of the reference population on the parent-offspring regression. Based on the Price equation, Heywood's decomposition yields components with biologically meaningful interpretations that go beyond simply being mathematically convenient correction terms. A key point from this decomposition was foreshadowed in Example 6.3—it is the parent-offspring regression after, as opposed to before, selection that is more appropriate for predicting the response to selection.",
+      "source_page": 164,
+      "source_pages": [
+        164
+      ],
+      "source_block_ids": [
+        "Evolution_chapter6:p024:b4"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          551.0,
+          1060.0,
+          784.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f5346f6e2fe990f7a5efa12894f68348ec06f06bd488c0e9605e9e5ecdf9dc4b"
     }
   ]
 }

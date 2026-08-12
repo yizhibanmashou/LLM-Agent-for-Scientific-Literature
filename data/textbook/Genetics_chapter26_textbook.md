@@ -32,37 +32,7 @@ where X and Z are respectively $ n \times p $ and $ n \times q $ incidence matri
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter26:1` · source: `Genetics_chapter26_003.json` · blocks 3–11
->
-> Example 1. Suppose that three sires are chosen at random from a population, and each mated to a randomly chosen dam. Two offspring from each mating are evaluated, some in environment 1 and some in environment 2. Let $ y_{ijk} $ denote the phenotypic value of the kth offspring of sire i in environment j. The model is then
-> 
-> $$
-> y_{ijk}=\beta_{j}+u_{i}+e_{ijk}
-> $$
-> 
-> 
-> This model has three random effects $ (u_{1}, u_{2}, u_{3}) $, which measure the contribution from each sire, and two fixed effects $ (\beta_{1}, \beta_{2}) $, which describe the influence of the two environments. The model assumes an absence of sire $ \times $ environment interaction.
-> 
-> As noted above, a total of six offspring were measured. One offspring of sire 1 was assigned to environment 1 and had phenotypic value $ y_{1,1,1} = 9 $, while the second offspring was assigned to environment 2 and had phenotypic value $ y_{1,2,1} = 12 $. The two offspring of sire 2 were both assigned to environment 1 and had values of $ y_{2,1,1} = 11 $ and $ y_{2,1,2} = 6 $. One offspring of sire 3 was assigned to environment 1 and had phenotypic value $ y_{3,1,1} = 7 $, while the second offspring was assigned to environment 2 and had phenotypic value $ y_{3,2,1} = 14 $. The resulting vector of observations can be written as
-> 
-> $$
-> \mathbf{y}=\begin{pmatrix}y_{1,1,1}\\y_{1,2,1}\\y_{2,1,1}\\y_{2,1,2}\\y_{3,1,1}\\y_{3,2,1}\end{pmatrix}=\begin{pmatrix}9\\12\\11\\6\\7\\14\end{pmatrix}
-> $$
-> 
-> 
-> giving the mixed model as
-> 
-> $$
-> \mathbf{y}=\mathbf{X}\boldsymbol{\beta}+\mathbf{Z}\mathbf{u}+\mathbf{e}
-> $$
-> 
-> 
-> where the incidence matrices for fixed and random effects and the vectors of these effects are respectively
-> 
-> $$
-> \mathbf{X}=\begin{pmatrix}{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}} \\{{{1}}}&{{{0}}} \\{{{1}}}&{{{0}}} \\{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}}\end{pmatrix},\qquad\mathbf{Z}=\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\{{{1}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix},\qquad\boldsymbol{\beta}=\begin{pmatrix}{{{\beta_{1}}}} \\{{{\beta_{2}}}}\end{pmatrix},\qquad\mathbf{u}=\begin{pmatrix}{{{u_{1}}}} \\{{{u_{2}}}} \\{{{u_{3}}}}\end{pmatrix}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter26:1]**
 
 
 Now consider the means and variances of the component vectors of the mixed model. Since $ E(\mathbf{u}) = E(\mathbf{e}) = \mathbf{0} $ by definition, $ E(\mathbf{y}) = \mathbf{X}\boldsymbol{\beta} $. Denote the $ (n \times n) $ covariance matrix for the vector $ \mathbf{e} $ of residual errors by $ \mathbf{R} $ and the $ (q \times q) $ covariance matrix for the vector $ \mathbf{u} $ of random genetic effects by $ \mathbf{G} $. Excluding the difference among individuals due to fixed effects, from Equation 8.21b and the assumption that u and e are uncorrelated, the covariance matrix for the vector of observations y is
@@ -124,83 +94,12 @@ which is equivalent to the conditional expectation of u given y under the assump
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter26:2` · source: `Genetics_chapter26_004.json` · blocks 6–12
->
-> Example 2. What are the BLUP values for the sire effects $(u_1, u_2, u_3)$ in Example 1? In order to proceed, we require the covariance matrices for sire effects and errors. We assume that the residual variances within both environments are the same $(\sigma_E^2)$, so $\mathbf{R} = \sigma_E^2 \mathbf{I}$, where $\mathbf{I}$ is the $6 \times 6$ identity matrix. Assuming that all three sires are unrelated and drawn from the same population, $\mathbf{G} = \sigma_S^2 \mathbf{I}$, where $\mathbf{I}$ is the $3 \times 3$ identity matrix and $\sigma_S^2$ is the variance of sire effects. Assuming only additive genetic variance, the sire effects (breeding values) are half the sires' additive genetic values. Thus, since the sires are sampled randomly from an outbred base population, $\sigma_S^2 = \sigma_A^2 / 4$, where $\sigma_A^2$ is the additive genetic variance. Assuming that $\sigma_A^2 = 8$ and $\sigma_E^2 = 6$, the covariance matrix $\mathbf{V}$ for the vector of observations $\mathbf{y}$ is given by $\mathbf{Z}\mathbf{G}\mathbf{Z}^T + \mathbf{R}$, or
-> 
-> $$
-> \mathbf{V}=\frac{8}{4}\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\{{{1}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix}\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix}\begin{pmatrix}{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{1}}}\end{pmatrix}+6\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix}
-> $$
-> 
-> 
-> $$
-> \begin{aligned}=\begin{pmatrix}{{{8}}}&{{{2}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{2}}}&{{{8}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{8}}}&{{{2}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{2}}}&{{{8}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{8}}}&{{{2}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{2}}}&{{{8}}}\end{pmatrix}\quad giving\quad\mathbf{V}^{-1}=\frac{1}{30}\cdot\begin{pmatrix}{{{4}}}&{{{-1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{-1}}}&{{{4}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{4}}}&{{{-1}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{-1}}}&{{{4}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{4}}}&{{{-1}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{-1}}}&{{{4}}}\end{pmatrix}\end{aligned}
-> $$
-> 
-> 
-> Using this result, a few simple matrix calculations give
-> 
-> $$
-> \widehat{\boldsymbol{\beta}}=\left(\begin{matrix}\widehat{\beta}_{1}\\ \widehat{\beta}_{2}\end{matrix}\right)=\left(\mathbf{X}^{T}\mathbf{V}^{-1}\mathbf{X}\right)^{-1}\mathbf{X}^{T}\mathbf{V}^{-1}\mathbf{y}=\frac{1}{18}\left(\begin{matrix}148\\ 235\end{matrix}\right)
-> $$
-> 
-> 
-> and
-> 
-> $$
-> \widehat{\mathbf{u}}=\begin{pmatrix}\widehat{u}_{1}\\\widehat{u}_{2}\\\widehat{u}_{3}\end{pmatrix}=\mathbf{G}\mathbf{Z}^{T}\mathbf{V}^{-1}\left(\mathbf{y}-\mathbf{X}\widehat{\boldsymbol{\beta}}\right)=\frac{1}{18}\begin{pmatrix}-1\\2\\-1\end{pmatrix}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter26:2]**
 
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter26:3` · source: `Genetics_chapter26_004.json` · blocks 13–27
->
-> Example 3. As mentioned in Chapter 13, the effects of different genotypes at a single QTL are often estimated by ordinary least squares (OLS), using the model
-> 
-> $$
-> y_{ij}=g_{i}+e_{ij}
-> $$
-> 
-> 
-> where $ y_{ij} $ is the observed phenotype of the jth individual of genotype i, $ g_i $ is the mean genotypic value for the ith genotype at the locus of interest, and $ e_{ij} $ is a residual deviation assumed to be independently distributed among individuals. While this model may be reasonable for a random collection of individuals from a large population, when some sampled individuals are relatives, the sharing of alleles at other loci influencing the trait will induce correlations between residuals. If this is the case, OLS analysis can produce biased estimates of the QTL effects. When one of the QTL genotypes is very rare, as is often the case, the sampled individuals may be intentionally selected from the same pedigree, so the problem of bias is not trivial.
-> 
-> Use of a mixed model provides a means for accounting for associations among background QTLs in a way that eliminates bias in estimates of QTL effects. If the relatives in question share only additive effects (as in a pedigree with no full sibs or double first cousins, or when there is no nonadditive gene action), the correlations among residuals are accounted for by the additive genetic relationship matrix A, where $ A_{ij} $ is twice the coefficient of coancestry, $ 2\Theta_{ij} $. When sibs are included and dominance is present at background QTLs, both A and a dominance relationship matrix (see below) are required.
-> 
-> Here we assume that all of the background genetic effects are additive, in which case the simplest mixed model can be applied,
-> 
-> $$
-> y_{ij}=g_{i}+a_{ij}+e_{ij}
-> $$
-> 
-> 
-> with the contribution from the different single-locus genotypes ($g_i$) being treated as fixed effects. The additive genetic background effects ($a_{ij}$) and the residual environmental deviations ($e_{ij}$) are treated as random effects, both with expected values equal to zero, and with respective variances $\sigma_A^2$ and $\sigma_E^2$. Note that $\sigma_A^2$ is the background additive genetic variance for the trait in excess of that caused by the QTL.
-> 
-> In matrix form,
-> 
-> $$
-> \mathbf{y}=\mathbf{X}\mathbf{g}+\mathbf{Z}\mathbf{a}+\mathbf{e}
-> $$
-> 
-> 
-> If there is a single observation for each individual, as we assume below, then $ \mathbf{Z} = \mathbf{I} $ and the covariance matrix for the vector of observations (y) is
-> 
-> $$
-> \mathbf{V}=\sigma_{A}^{2}\mathbf{A}+\sigma_{E}^{2}\mathbf{I}
-> $$
-> 
-> 
-> Thus, the covariance between the residual errors of two individuals (i and j) is just $ 2\Theta_{ij}\sigma_A^2 $, while the variance of individual errors is $ \sigma_A^2 + \sigma_E^2 $. The error in using OLS to estimate single gene effects is that $ \mathbf{A} $ is assumed to equal an identity matrix, so that $ \mathbf{V} $ is incorrectly assumed to be a diagonal matrix.
-> 
-> From Equation 26.3, the estimates of the QTL means are given by
-> 
-> $$
-> \hat{\mathbf{g}}=\left(\mathbf{X}^{T}\mathbf{V}^{-1}\mathbf{X}\right)^{-1}\mathbf{X}^{T}\mathbf{V}^{-1}\mathbf{y}
-> $$
-> 
-> 
-> Kennedy et al. (1992) showed that mixed-model estimates of QTL effects are much more reliable than OLS estimates, especially in small selected populations. Building on this approach, several authors (Hoeschele 1988, Hofer and Kennedy 1993, Kinghorn et al. 1993) have proposed BLUP-based segregation analysis for estimating the effects of an unknown major gene. Here the elements in the design matrix X associated with $ g_{i} $ are probabilistic estimates for the major-locus genotypes of each individual.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter26:3]**
 
 
 Note that the solution of Equations 26.3 and 26.4 requires the inverse of the covariance matrix V. In the preceding example, $ V^{-1} $ was not particularly difficult to obtain. However, when y contains many thousands of observations, as is commonly the case in cattle breeding, the computation of $ V^{-1} $ can be quite difficult. As a way around this problem, Henderson (1950, 1963, 1973, 1984a)
@@ -223,35 +122,7 @@ Although there are several ways to derive the mixed-model equations (Robinson 19
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter26:4` · source: `Genetics_chapter26_005.json` · blocks 0–7
->
-> Example 4. Using the values from Examples 1 and 2, we find that
-> 
-> $$
-> \mathbf{X}^{T}\mathbf{R}^{-1}\mathbf{X}=\frac{1}{6}\begin{pmatrix}{{{4}}}&{{{0}}} \\{{{0}}}&{{{2}}}\end{pmatrix},\qquad\mathbf{X}^{T}\mathbf{R}^{-1}\mathbf{Z}=\left(\mathbf{Z}^{T}\mathbf{R}^{-1}\mathbf{X}\right)^{T}=\frac{1}{6}\begin{pmatrix}{{{1}}}&{{{2}}}&{{{1}}} \\{{{1}}}&{{{0}}}&{{{1}}}\end{pmatrix}
-> $$
-> 
-> 
-> $$
-> \mathbf{G}^{-1}+\mathbf{Z}^{T}\mathbf{R}^{-1}\mathbf{Z}=\frac{5}{6}\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix},\mathbf{X}^{T}\mathbf{R}^{-1}\mathbf{y}=\frac{1}{6}\begin{pmatrix}{{{33}}} \\{{{26}}}\end{pmatrix},\mathbf{Z}^{T}\mathbf{R}^{-1}\mathbf{y}=\frac{1}{6}\begin{pmatrix}{{{21}}} \\{{{17}}} \\{{{21}}}\end{pmatrix}
-> $$
-> 
-> 
-> Thus, after factoring out 1/6 from both sides, the mixed-model equations for these data become
-> 
-> $$
-> \begin{pmatrix}{{{4}}}&{{{0}}}&{{{1}}}&{{{2}}}&{{{1}}} \\{{{0}}}&{{{2}}}&{{{1}}}&{{{0}}}&{{{1}}} \\{{{1}}}&{{{1}}}&{{{5}}}&{{{0}}}&{{{0}}} \\{{{2}}}&{{{0}}}&{{{0}}}&{{{5}}}&{{{0}}} \\{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{5}}}\end{pmatrix}\begin{pmatrix}{{{\widehat{\beta}_{1}}}} \\{{{\widehat{\beta}_{2}}}} \\{{{\widehat{u}_{1}}}} \\{{{\widehat{u}_{2}}}} \\{{{\widehat{u}_{3}}}}\end{pmatrix}=\begin{pmatrix}{{{33}}} \\{{{26}}} \\{{{21}}} \\{{{17}}} \\{{{21}}}\end{pmatrix}
-> $$
-> 
-> 
-> Taking the inverse gives the solution
-> 
-> $$
-> \begin{pmatrix}\widehat{\beta}_{1}\\\widehat{\beta}_{2}\\\widehat{u}_{1}\\\widehat{u}_{2}\\\widehat{u}_{3}\end{pmatrix}=\frac{1}{270}\begin{pmatrix}100&25&-25&-40&-25\\25&175&-40&-10&-40\\-25&-40&67&10&13\\-40&-10&10&70&10\\-25&-40&13&10&67\end{pmatrix}\begin{pmatrix}33\\26\\21\\17\\21\end{pmatrix}=\frac{1}{18}\begin{pmatrix}148\\235\\-1\\2\\-1\end{pmatrix}
-> $$
-> 
-> 
-> which is identical to the results obtained in Example 2.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter26:4]**
 
 
 Although the method of predicting random effects using BLUP methodology was first discussed by Henderson (1949, 1950), the expression “best linear unbiased predictor” was apparently first used by Goldberger (1962), with the acronym BLUP due to Henderson (1973). In a relatively short time, BLUP has become the method of choice for estimating the breeding values of individuals from field records of large and complex pedigrees. For BLUPs to be the best unbiased estimates, the appropriate genetic variances must be known without error. Kackar and Harville (1981) show that BLUP estimates remain unbiased when estimates of genetic variances are used in place of actual values (as is usually the case), although they are not guaranteed to be the best of all unbiased linear estimators.
@@ -323,35 +194,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_chapter26:5` · source: `Genetics_chapter26_007.json` · blocks 9–16
->
-> Example 5. Consider the mixed-model equation from Example 4. Here for the fixed factors $ \beta_{1}, \beta_{2} $ and the random effects $ u_{1}, u_{2}, u_{3} $, the inverse of the coefficient matrix is
-> 
-> $$
-> \begin{pmatrix}{{{4}}}&{{{0}}}&{{{\vdots}}}&{{{1}}}&{{{2}}}&{{{1}}} \\{{{0}}}&{{{2}}}&{{{\vdots}}}&{{{1}}}&{{{0}}}&{{{1}}} \\{{{\ddots}}}&{{{\cdots}}}&{{{\cdots}}}&{{{\ddots}}} \\{{{1}}}&{{{1}}}&{{{\vdots}}}&{{{5}}}&{{{0}}}&{{{0}}} \\{{{2}}}&{{{0}}}&{{{\vdots}}}&{{{0}}}&{{{5}}}&{{{0}}} \\{{{1}}}&{{{1}}}&{{{\vdots}}}&{{{0}}}&{{{0}}}&{{{5}}}\end{pmatrix}^{-1}=\frac{1}{270}\begin{pmatrix}{{{100}}}&{{{25}}}&{{{\vdots}}}&{{{-25}}}&{{{-40}}}&{{{-25}}} \\{{{25}}}&{{{175}}}&{{{\cdots}}}&{{{-40}}}&{{{-10}}}&{{{-40}}} \\{{{\cdots}}}&{{{\cdots}}}&{{{\cdots}}}&{{{\cdots}}} \\{{{-25}}}&{{{-40}}}&{{{\vdots}}}&{{{67}}}&{{{10}}}&{{{13}}} \\{{{-40}}}&{{{-10}}}&{{{\vdots}}}&{{{10}}}&{{{70}}}&{{{10}}} \\{{{-25}}}&{{{-40}}}&{{{\cdots}}}&{{{13}}}&{{{10}}}&{{{67}}}\end{pmatrix}
-> $$
-> 
-> 
-> Hence,
-> 
-> $$
-> \mathbf{C}_{11}=\frac{1}{270}\begin{pmatrix}{{{100}}}&{{{25}}} \\{{{25}}}&{{{175}}}\end{pmatrix}\qquad and \qquad\mathbf{C}_{22}=\frac{1}{270}\begin{pmatrix}{{{67}}}&{{{10}}}&{{{13}}} \\{{{10}}}&{{{70}}}&{{{10}}} \\{{{13}}}&{{{10}}}&{{{67}}}\end{pmatrix}
-> $$
-> 
-> 
-> so that, for example,
-> 
-> $$
-> \sigma^{2}(\widehat{\beta_{1}})=\frac{100}{270},\quad\sigma^{2}(\widehat{\beta_{2}})=\frac{175}{270},\quad\sigma(\widehat{\beta_{1}},\widehat{\beta_{2}})=\frac{25}{270}
-> $$
-> 
-> 
-> and, likewise,
-> 
-> $$
-> \sigma^{2}(\widehat{u_{2}}-u_{2})=\frac{70}{270},\quad\sigma(\widehat{u_{1}}-u_{1},\widehat{u_{3}}-u_{3})=\frac{13}{270},\quad\mathrm{a n d~s o~o n.}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter26:5]**
 
 
 ---
@@ -401,48 +244,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 6** · ref: `Genetics_chapter26:6` · source: `Genetics_chapter26_009.json` · blocks 10–22
->
-> Example 6. Consider the pedigree of individuals given in the figure below, where each individual has a single measurement and the only fixed factor is the mean.
-> 
-> ![Source illustration p769 b2](figures/examples/Genetics_p769_b2.png)
-> 
-> With the vector of observations,
-> 
-> $$
-> \mathbf{y}=\begin{pmatrix}y_{1}\\ y_{2}\\ y_{3}\\ y_{4}\\ y_{5}\end{pmatrix}=\begin{pmatrix}7\\ 9\\ 10\\ 6\\ 9\end{pmatrix}
-> $$
-> 
-> 
-> we can use Equation 26.9b with $ \hat{u}^{*} $ = $ (\widehat{a}_{1}, \widehat{a}_{2}, \widehat{a}_{3}, \widehat{a}_{4}, \widehat{a}_{5}) $. Assuming that individuals 1, 2, and 3 are unrelated and not inbred, the relationship matrix becomes
-> 
-> $$
-> \mathbf{A}=\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}}&{{{1/2}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}}&{{{1/2}}}&{{{1/2}}} \\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{1/2}}} \\{{{1/2}}}&{{{1/2}}}&{{{0}}}&{{{1}}}&{{{1/4}}} \\{{{0}}}&{{{1/2}}}&{{{1/2}}}&{{{1/4}}}&{{{1}}}\end{pmatrix}
-> $$
-> 
-> 
-> Suppose it is known that $ \sigma_{E}^{2}=\sigma_{A}^{2} $, so that $ \lambda=1 $. Then,
-> 
-> $$
-> \mathbf{I}+\lambda\mathbf{A}^{-1}=\begin{pmatrix}{{{5/2}}}&{{{1/2}}}&{{{0}}}&{{{-1}}}&{{{0}}} \\{{{1/2}}}&{{{3}}}&{{{1/2}}}&{{{-1}}}&{{{-1}}} \\{{{0}}}&{{{1/2}}}&{{{5/2}}}&{{{0}}}&{{{-1}}} \\{{{-1}}}&{{{-1}}}&{{{0}}}&{{{3}}}&{{{0}}} \\{{{0}}}&{{{-1}}}&{{{-1}}}&{{{0}}}&{{{3}}}\end{pmatrix}
-> $$
-> 
-> 
-> Since $n = 5$ and $\sum y_i = 41$, Equation 26.9b gives the mixed-model equations for these data as
-> 
-> $$
-> \begin{pmatrix}{{{5}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}}&{{{1}}} \\{{{1}}}&{{{5/2}}}&{{{1/2}}}&{{{0}}}&{{{-1}}}&{{{0}}} \\{{{1}}}&{{{1/2}}}&{{{3}}}&{{{1/2}}}&{{{-1}}}&{{{-1}}} \\{{{1}}}&{{{0}}}&{{{1/2}}}&{{{5/2}}}&{{{0}}}&{{{-1}}} \\{{{1}}}&{{{-1}}}&{{{-1}}}&{{{0}}}&{{{3}}}&{{{0}}} \\{{{1}}}&{{{0}}}&{{{-1}}}&{{{-1}}}&{{{0}}}&{{{3}}}\end{pmatrix}\begin{pmatrix}{{{\widehat{\mu}}}} \\{{{\widehat{a}_{1}}}} \\{{{\widehat{a}_{2}}}} \\{{{\widehat{a}_{3}}}} \\{{{\widehat{a}_{4}}}} \\{{{\widehat{a}_{5}}}}\end{pmatrix}=\begin{pmatrix}{{{41}}} \\{{{7}}} \\{{{9}}} \\{{{10}}} \\{{{6}}} \\{{{9}}}\end{pmatrix}
-> $$
-> 
-> 
-> the solutions of which are
-> 
-> $$
-> \widehat{\mu}=\frac{440}{53}\simeq8.302,\quad\begin{pmatrix}\widehat{a}_{1}\\\widehat{a}_{2}\\\widehat{a}_{3}\\\widehat{a}_{4}\\\widehat{a}_{5}\end{pmatrix}=\begin{pmatrix}-662/689\\4/53\\610/689\\-732/689\\381/689\end{pmatrix}\simeq\begin{pmatrix}-0.961\\0.076\\0.885\\-1.062\\0.553\end{pmatrix}
-> $$
-> 
-> 
-> Note that the average breeding value in the base population (individuals 1, 2, and 3) is zero (as expected for a random sample of the population). This is no longer the case once we leave the base population, unless all base-population individuals contribute equally to progeny production.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter26:6]**
 
 
 ---
@@ -545,94 +347,7 @@ At first sight, the reduced animal model seems much more complicated than the an
 
 **[示例 Example]**
 
-> **Example 7** · ref: `Genetics_chapter26:7` · source: `Genetics_chapter26_011.json` · blocks 13–36
->
-> Example 7. We now reconsider Example 6, modeling the data with the reduced animal model. Here, the only genetic parameters to estimate are the three parental breeding values. The resulting model has $ \beta $ and X as in Example 6, but
-> 
-> $$
-> \mathbf{y}=\begin{pmatrix}{{{\mathbf{y}_{p}}}} \\{{{\mathbf{y}_{o}}}}\end{pmatrix}=\begin{pmatrix}{{{y_{1}}}} \\{{{y_{2}}}} \\{{{y_{3}}}} \\{{{\cdots}}} \\{{{y_{4}}}} \\{{{y_{5}}}}\end{pmatrix},\quad\mathbf{u}=\begin{pmatrix}{{{a_{1}}}} \\{{{a_{2}}}} \\{{{a_{3}}}}\end{pmatrix},\quad\mathbf{Z}^{*}=\begin{pmatrix}{{{1/2}}}&{{{1/2}}}&{{{0}}} \\{{{0}}}&{{{1/2}}}&{{{1/2}}}\end{pmatrix}
-> $$
-> 
-> 
-> giving
-> 
-> $$
-> \mathbf{Z}=\left(\begin{array}{c}{{{\mathbf{I}}}} \\{{{\mathbf{Z}^{*}}}}\end{array}\right)=\left(\begin{array}{ccc}{{{1}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}} \\{{{1/2}}}&{{{1/2}}}&{{{0}}} \\{{{0}}}&{{{1/2}}}&{{{1/2}}}\end{array}\right)
-> $$
-> 
-> 
-> Since the three parents were assumed to be unrelated and noninbred, $ \mathbf{G} = \sigma_A^2 \mathbf{A} = (\sigma_E^2 / \lambda) \mathbf{A} $, where
-> 
-> $$
-> \mathbf{A}=\mathbf{A}^{-1}=\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix}
-> $$
-> 
-> 
-> Note that by restricting attention to just the parents, the relationship matrix $ \mathbf{A} $ is much simpler than that in Example 6 where parents and offspring are considered jointly. Since the parents are assumed to be noninbred,
-> 
-> $$
-> \mathbf{W}=\left(1+\frac{1}{2\lambda}\right)\begin{pmatrix}{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}}\end{pmatrix}=\left(1+\frac{1}{2\lambda}\right)\mathbf{I}
-> $$
-> 
-> 
-> Because we assumed $ \lambda = 1 $, $ \mathbf{R} $ is diagonal with elements $ \sigma_E^2 \times (1, 1, 1, 3/2, 3/2) $, so that $ \mathbf{R}^{-1} $ is diagonal, with elements $ \sigma_E^{-2} \times (1, 1, 1, 2/3, 2/3) $. To obtain the mixed-model equations (ignoring the factor $ \sigma_E^{-2} $ common to all equations), we first obtain
-> 
-> $$
-> \mathbf{X}^{T}\mathbf{R}^{-1}\mathbf{X}=\frac{13}{3},\quad\mathbf{Z}^{T}\mathbf{R}^{-1}\mathbf{Z}=\frac{1}{6}\begin{pmatrix}{{{7}}}&{{{1}}}&{{{0}}} \\{{{1}}}&{{{8}}}&{{{1}}} \\{{{0}}}&{{{1}}}&{{{7}}}\end{pmatrix},\quad\mathbf{X}^{T}\mathbf{R}^{-1}\mathbf{y}=36,
-> $$
-> 
-> 
-> $$
-> \left(\mathbf{X}^{T}\mathbf{R}^{-1}\mathbf{Z}\right)^{T}=\mathbf{Z}^{T}\mathbf{R}^{-1}\mathbf{X}=\frac{1}{3}\begin{pmatrix}4\\ 5\\ 4\end{pmatrix},\quad\mathbf{Z}^{T}\mathbf{R}^{-1}\mathbf{y}=\begin{pmatrix}9\\ 14\\ 13\end{pmatrix}
-> $$
-> 
-> 
-> $$
-> \mathbf{Z}^{T}\mathbf{R}^{-1}\mathbf{Z}+\mathbf{G}^{-1}=\frac{1}{6}\begin{pmatrix}{{{13}}}&{{{1}}}&{{{0}}} \\{{{1}}}&{{{14}}}&{{{1}}} \\{{{0}}}&{{{1}}}&{{{13}}}\end{pmatrix}
-> $$
-> 
-> 
-> giving the final form of the mixed-model Equation 26.5 as
-> 
-> $$
-> \begin{pmatrix}{{{13/3}}}&{{{4/3}}}&{{{5/3}}}&{{{4/3}}} \\{{{4/3}}}&{{{13/6}}}&{{{1/6}}}&{{{0}}} \\{{{5/3}}}&{{{1/6}}}&{{{14/6}}}&{{{1/6}}} \\{{{4/3}}}&{{{0}}}&{{{1/6}}}&{{{13/6}}}\end{pmatrix}\begin{pmatrix}{{{\widehat{\mu}}}} \\{{{\widehat{a}_{1}}}} \\{{{\widehat{a}_{2}}}} \\{{{\widehat{a}_{3}}}}\end{pmatrix}=\begin{pmatrix}{{{36}}} \\{{{9}}} \\{{{14}}} \\{{{13}}}\end{pmatrix}
-> $$
-> 
-> 
-> which has solutions
-> 
-> $$
-> \widehat{\mu}=\frac{440}{53},\qquad\begin{pmatrix}\widehat{a}_{1}\\\widehat{a}_{2}\\\widehat{a}_{3}\end{pmatrix}=\begin{pmatrix}-662/689\\4/53\\610/689\end{pmatrix}
-> $$
-> 
-> 
-> To obtain the estimates of the offspring breeding values by use of Equation 26.15, first note that neither offspring has inbred parents and that $ \lambda = 1 $, so that the within-family heritability is
-> 
-> $$
-> \frac{(1-\overline{f}_{i})/(2\lambda)}{1+(1-\overline{f}_{i})/(2\lambda)}=\frac{(1-0)/2}{1+(1-0)/2}=\frac{1}{3}
-> $$
-> 
-> 
-> Hence,
-> 
-> $$
-> \widehat{a}_{i}=\frac{1}{2}\left(\widehat{a}_{s i}+\widehat{a}_{d i}\right)+\left(\frac{1}{3}\right)\left[y_{i}-\frac{440}{53}-\frac{1}{2}\left(\widehat{a}_{s i}+\widehat{a}_{d i}\right)\right]
-> $$
-> 
-> 
-> giving the BLUPs for the offspring breeding values as
-> 
-> $$
-> \widehat{a}_{4}=\frac{1}{2}\left(-\frac{662}{689}+\frac{4}{53}\right)+\left(\frac{1}{3}\right)\left[6-\frac{440}{53}-\frac{1}{2}\left(-\frac{662}{689}+\frac{4}{53}\right)\right]=-\frac{732}{689}
-> $$
-> 
-> 
-> $$
-> \widehat{a}_{5}=\frac{1}{2}\left(\frac{4}{53}+\frac{610}{689}\right)+\left(\frac{1}{3}\right)\left[6-\frac{440}{53}-\frac{1}{2}\left(\frac{4}{53}+\frac{610}{689}\right)\right]=\frac{381}{689}
-> $$
-> 
-> 
-> These estimates are identical to those obtained from the full animal model (Example 6). This result is expected, as the RAM and full models are equivalent (Appendix 3).
+> **[UNRESOLVED EXAMPLE: Genetics_chapter26:7]**
 
 
 In closing this section, we emphasize several aspects of BLUP (as applied to the animal, gametic, and reduced animal models) that highlight its exceptional degree of flexibility. First, because the relationship matrix A records the flow of genetic information through the pedigree, BLUP provides unbiased estimates of breeding values even in populations under selection, provided the individuals upon which selection operated are included in the analysis (Kennedy and Sorensen 1988). For further information on this subject, including modifications that need to be made when measurements are unavailable for some selected individuals, see Henderson (1975, 1990), Goffinet (1983), Gianola et al. (1988), and Fernando and Gianola (1990). Second, the breeding value estimates from different generations reflect changes in mean phenotypes and additive genetic variances resulting from selection and/or random genetic drift and inbreeding (recall Example 6). Third, because breeding value estimates are conditional expectations given the entire vector of observations (y), the evaluations of individuals are based on weighted information from all measured relatives. Individual evaluations are adjusted for the breeding values of their progeny and mates, thereby accounting for any assortative mating, and as noted in Equation 26.15, the deviation of the individual's own phenotype from its conditional expectation provides an additional bit of information. Further adjustments to the BLUPs can be made for individuals with relatives other than parents and progeny, see Mrode (1996) for examples.
@@ -663,51 +378,7 @@ If a parent is unknown, it is assumed to be noninbred and unrelated to any other
 
 **[示例 Example]**
 
-> **Example 8** · ref: `Genetics_chapter26:8` · source: `Genetics_chapter26_012.json` · blocks 6–18
->
-> Example 8. Consider the additive genetic relationship matrix A for the five measured individuals in the pedigree given in the following figure.
-> 
-> ![Source illustration p775 b11](figures/examples/Genetics_p775_b11.png)
-> 
-> Here, measured individuals 1 and 2 as well as the unmeasured (and potentially unknown) individual x are assumed to be unrelated members of a noninbred base population. Since 1 and 2 are unrelated and noninbred, $ A_{11} = A_{22} = 1 $ and $ A_{12} = A_{21} = 0 $. Likewise, $ A_{xx} = 1 $, $ A_{x1} = A_{x2} = 0 $. Now consider individual 3, whose parents are 1 and x. Applying Equations 26.16a,b, we have $ A_{33} = 1 + A_{x1}/2 = 1 $ and
-> 
-> $$
-> A_{13}=A_{31}=\frac{A_{1x}+A_{11}}{2}=\frac{1}{2},\quad A_{23}=A_{32}=\frac{A_{2x}+A_{21}}{2}=0
-> $$
-> 
-> 
-> Individual 4 has parents 1 and 2, giving $ A_{44}=1+A_{12}/2=1 $ and
-> 
-> $$
-> A_{14}=A_{41}=\frac{A_{11}+A_{12}}{2}=\frac{1}{2},\quad A_{24}=A_{42}=\frac{A_{21}+A_{22}}{2}=\frac{1}{2},
-> $$
-> 
-> 
-> and
-> 
-> $$
-> A_{34}=A_{43}=\frac{A_{31}+A_{32}}{2}=\frac{1}{4}
-> $$
-> 
-> 
-> Turning to individual 5, whose parents are 3 and 4, $ A_{55} = 1 + A_{34} / 2 = 1 + 1 / 8 = 1.25 $, and
-> 
-> $$
-> A_{15}=A_{51}=\frac{A_{13}+A_{14}}{2}=\frac{1}{2},\quad A_{25}=A_{52}=\frac{A_{23}+A_{24}}{2}=\frac{1}{4}
-> $$
-> 
-> 
-> $$
-> A_{35}=A_{53}=\frac{A_{33}+A_{34}}{2}=\frac{5}{8},\quad A_{45}=A_{54}=\frac{A_{43}+A_{44}}{2}=\frac{5}{8}
-> $$
-> 
-> 
-> Thus,
-> 
-> $$
-> \mathbf{A}=\begin{pmatrix}1&0&1/2&1/2&1/2\\0&1&0&1/2&1/4\\1/2&0&1&1/4&5/8\\1/2&1/2&1/4&1&5/8\\1/2&1/2&5/8&5/8&9/8\end{pmatrix}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter26:8]**
 
 
 In many natural settings, and some breeding situations, only one of the parents (generally, the mother) is known with certainty. One approach to dealing with such uncertainty is simply to assume that the unknown sire is unrelated to any measured individual in the base population (as we did above). However, when all potential sires have been measured, an average relationship matrix can be computed by assigning all potential sires equal weight (Henderson 1988b). For example, if the sire of individual i is one of k potential males, then each of these is assumed to be the sire with probability 1/k, and the entry for each potential sire in the ith row and column of A becomes 1/(2k). In principle, molecular-marker information may be used to assign more accurate probabilities of paternity. Konigsberg and Cheverud (1992) conclude that when more than a few individuals are potential sires, either method (ignoring the sire or replacing the values in A for each potential sire by a probabilistic estimate) gives similar power. However, when the sire can be limited to a few potential individuals, the use of the average relationship matrix is a more powerful approach.
@@ -740,30 +411,7 @@ Using these simple rules, all of the elements of $ D^{-1} $ and $ T^{-1} $ can b
 
 **[示例 Example]**
 
-> **Example 9** · ref: `Genetics_chapter26:9` · source: `Genetics_chapter26_012.json` · blocks 29–35
->
-> Example 9. Recall the pedigree given in Example 6, where the inverse of the relationship matrix was
-> 
-> $$
-> \mathbf{A}^{-1}=\begin{pmatrix}{{{3/2}}}&{{{1/2}}}&{{{0}}}&{{{-1}}}&{{{0}}} \\{{{1/2}}}&{{{2}}}&{{{1/2}}}&{{{-1}}}&{{{-1}}} \\{{{0}}}&{{{1/2}}}&{{{3/2}}}&{{{0}}}&{{{-1}}} \\{{{-1}}}&{{{-1}}}&{{{0}}}&{{{2}}}&{{{0}}} \\{{{0}}}&{{{-1}}}&{{{-1}}}&{{{0}}}&{{{2}}}\end{pmatrix}
-> $$
-> 
-> 
-> This can also be obtained by applying Equation 26.17b. Because the parents of individuals 1, 2, and 3 are unknown, while both parents of individuals 4 and 5 are contained within the observed pedigree, D is diagonal with elements (1.0, 1.0, 1.0, 0.5, 0.5). The inverse of D is therefore diagonal with elements (1.0, 1.0, 1.0, 2.0, 2.0). Following the rules outlined above, the gene-flow matrix is
-> 
-> $$
-> \mathbf{T}=\left(\begin{array}{ccccc}{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}} \\{{{0.5}}}&{{{0.5}}}&{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{0.5}}}&{{{0.5}}}&{{{0}}}&{{{1}}} \\\end{array}\right)
-> $$
-> 
-> 
-> Note that within a given column, below the diagonal, the elements equal to 0.5 denote parent-offspring relationships. Taking the inverse directly,
-> 
-> $$
-> \mathbf{T}^{-1}=\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}} \\{{{-0.5}}}&{{{-0.5}}}&{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{-0.5}}}&{{{-0.5}}}&{{{0}}}&{{{1}}}\end{pmatrix}
-> $$
-> 
-> 
-> T $ ^{-1} $ can also be obtained by the shorter route — below the diagonal, within each individual's row, each known parent is denoted with a -0.5. Using Equation 26.17b, the inverse of A (given above) is recovered.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter26:9]**
 
 
 ---
@@ -939,85 +587,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 10** · ref: `Genetics_chapter26:10` · source: `Genetics_chapter26_016.json` · blocks 17–37
->
-> Example 10. To compare the two different methods for dealing with repeated records, suppose three unrelated and noninbred individuals are measured, with two observations on individual one $ (y_1 = 7, y_2 = 8) $, three observations on individual two $ (y_3 = 6, y_4 = 6, y_5 = 5) $, and one observation on individual three $ (y_6 = 9) $. Assume that the only fixed factor is the mean and that the character has heritability $ h^2 = 0.4 $ and repeatability $ r = 0.5 $, giving $ 1 - h^2 = 0.6 $ and $ r - h^2 = 0.1 $. For either formulation, we have
-> 
-> $$
-> \mathbf{y}=\begin{pmatrix}{{{7}}} \\{{{8}}} \\{{{6}}} \\{{{6}}} \\{{{5}}} \\{{{9}}}\end{pmatrix},\quad\boldsymbol{\beta}=(\boldsymbol{\mu}),\quad\mathbf{X}=\begin{pmatrix}{{{1}}} \\{{{1}}} \\{{{1}}} \\{{{1}}} \\{{{1}}}\end{pmatrix},\quad\mathbf{Z}=\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\{{{1}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix}
-> $$
-> 
-> 
-> Since all three individuals are assumed to be unrelated, $ \mathbf{A} = \mathbf{I} $.
-> 
-> To apply the permanent-effects model $ y_{i} = \mu + a_{i} + p_{i} + e_{i} $, note that
-> 
-> $$
-> \lambda_{A}=\frac{1-r}{h^{2}}=\frac{1-0.5}{0.4}=1.25,\qquad\lambda_{P}=\frac{1-r}{r-h^{2}}=\frac{1-0.5}{0.5-0.4}=5,
-> $$
-> 
-> 
-> $$
-> \mathbf{X}^{T}\mathbf{X}=6,\qquad\mathbf{X}^{T}\mathbf{y}=41,
-> $$
-> 
-> 
-> $$
-> \mathbf{Z}^{T}\mathbf{X}=(\mathbf{X}^{T}\mathbf{Z})^{T}=\begin{pmatrix}{{{2}}} \\{{{3}}} \\{{{1}}}\end{pmatrix},\qquad\mathbf{Z}^{T}\mathbf{y}=\begin{pmatrix}{{{15}}} \\{{{17}}} \\{{{9}}}\end{pmatrix},\qquad\mathbf{Z}^{T}\mathbf{Z}=\begin{pmatrix}{{{2}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{3}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix},
-> $$
-> 
-> 
-> $$
-> \mathbf{Z}^{T}\mathbf{Z}+\lambda_{A}\mathbf{A}^{-1}=\begin{pmatrix}{{{3.25}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{4.25}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{2.25}}}\end{pmatrix},\qquad\mathbf{Z}^{T}\mathbf{Z}+\lambda_{P}\mathbf{I}=\begin{pmatrix}{{{7}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{8}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{6}}}\end{pmatrix}
-> $$
-> 
-> 
-> giving the MMEs (Equation 26.28a) as
-> 
-> $$
-> \begin{pmatrix}{{{6}}}&{{{2}}}&{{{3}}}&{{{1}}}&{{{2}}}&{{{3}}}&{{{1}}} \\{{{2}}}&{{{3.25}}}&{{{0}}}&{{{0}}}&{{{2}}}&{{{0}}}&{{{0}}} \\{{{3}}}&{{{0}}}&{{{4.25}}}&{{{0}}}&{{{0}}}&{{{3}}}&{{{0}}} \\{{{1}}}&{{{0}}}&{{{0}}}&{{{2.25}}}&{{{0}}}&{{{0}}}&{{{1}}} \\{{{2}}}&{{{2}}}&{{{0}}}&{{{0}}}&{{{7}}}&{{{0}}}&{{{0}}} \\{{{3}}}&{{{0}}}&{{{3}}}&{{{0}}}&{{{0}}}&{{{8}}}&{{{0}}} \\{{{1}}}&{{{0}}}&{{{0}}}&{{{1}}}&{{{0}}}&{{{0}}}&{{{6}}}\end{pmatrix}\begin{pmatrix}{{{\hat{\mu}}}} \\{{{\hat{a}_{1}}}} \\{{{\hat{a}_{2}}}} \\{{{\hat{a}_{3}}}} \\{{{\hat{p}_{1}}}} \\{{{\hat{p}_{2}}}} \\{{{\hat{p}_{3}}}}\end{pmatrix}=\begin{pmatrix}{{{41}}} \\{{{15}}} \\{{{17}}} \\{{{9}}} \\{{{15}}} \\{{{17}}} \\{{{9}}}\end{pmatrix}
-> $$
-> 
-> 
-> which has solutions
-> 
-> $$
-> \widehat{\mu}\simeq7.174,\qquad\begin{pmatrix}\widehat{a}_{1}\\ \widehat{a}_{2}\\ \widehat{a}_{3}\end{pmatrix}\simeq\begin{pmatrix}0.174\\ -0.904\\ 0.730\end{pmatrix},\qquad\begin{pmatrix}\widehat{p}_{1}\\ \widehat{p}_{2}\\ \widehat{p}_{3}\end{pmatrix}\simeq\begin{pmatrix}0.043\\ -0.226\\ 0.183\end{pmatrix}
-> $$
-> 
-> 
-> Conversely, applying the simple animal model $ y_{i} = \mu + a_{i} + e_{i} $, from Equation 26.25 the covariance matrix for the residual errors becomes
-> 
-> $$
-> \mathbf{R}=\sigma_{y}^{2}\begin{pmatrix}{{{0.5}}}&{{{0.1}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0.1}}}&{{{0.5}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0.5}}}&{{{0.1}}}&{{{0.1}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0.1}}}&{{{0.5}}}&{{{0.1}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0.1}}}&{{{0.1}}}&{{{0.5}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0}}}&{{{0.5}}}\end{pmatrix}
-> $$
-> 
-> 
-> Likewise, $ \mathbf{G} = h^2 \sigma_y^2 \mathbf{I} $, and hence $ \mathbf{G}^{-1} = (h^2 \sigma_y^2)^{-1} \mathbf{I} $. Removing the factor $ \sigma_y^2 $ common to all expressions gives
-> 
-> $$
-> \mathbf{X}^{T}\mathbf{R}^{-1}\mathbf{X}\simeq8.27,\qquad\mathbf{Z}^{T}\mathbf{R}^{-1}\mathbf{X}=(\mathbf{X}^{T}\mathbf{R}^{-1}\mathbf{Z})^{T}\simeq\begin{pmatrix}2.86\\ 3.75\\ 1.67\end{pmatrix}
-> $$
-> 
-> 
-> $$
-> \mathbf{Z}^{T}\mathbf{R}^{-1}\mathbf{Z}+\mathbf{G}^{-1}=\mathbf{Z}^{T}\mathbf{R}^{-1}\mathbf{Z}+\frac{1}{h^{2}}\mathbf{I}\simeq\begin{pmatrix}{{{5.36}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{6.25}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{4.17}}}\end{pmatrix}
-> $$
-> 
-> 
-> $$
-> \mathbf{X}^{T}\mathbf{R}^{-1}\mathbf{y}=57.68,\qquad\mathbf{Z}^{T}\mathbf{R}^{-1}\mathbf{y}\simeq\begin{pmatrix}21.43\\ 21.25\\ 15\end{pmatrix}
-> $$
-> 
-> 
-> Substituting into Equation 26.5 gives the MMEs
-> 
-> $$
-> \begin{pmatrix}{{{8.27}}}&{{{2.86}}}&{{{3.75}}}&{{{1.67}}} \\{{{2.86}}}&{{{5.36}}}&{{{0}}}&{{{0}}} \\{{{3.75}}}&{{{0}}}&{{{6.25}}}&{{{0}}} \\{{{1.67}}}&{{{0}}}&{{{0}}}&{{{4.17}}}\end{pmatrix}\begin{pmatrix}{{{\widehat{\mu}}}} \\{{{\widehat{a}_{1}}}} \\{{{\widehat{a}_{2}}}} \\{{{\widehat{a}_{3}}}}\end{pmatrix}=\begin{pmatrix}{{{57.68}}} \\{{{21.43}}} \\{{{21.25}}} \\{{{15}}}\end{pmatrix}
-> $$
-> 
-> 
-> which gives the same estimates as obtained with the permanent-effects model.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter26:10]**
 
 
 ---

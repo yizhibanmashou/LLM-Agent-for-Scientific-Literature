@@ -87,47 +87,7 @@ Indeed, if $ \sigma_{A_{o},A_{m}} $ were sufficiently negative, the regression o
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter23:1` · source: `Genetics_chapter23_002.json` · blocks 17–30
->
-> Example 1. Consider the genetic covariance between mother y and offspring x. Since maternal effects are assumed present, we also need to consider the mothers z and w of y and x, respectively. Here y = w, whereas z represents individual x's maternal grandmother (as shown in the left of the accompanying figure on the next page).
-> 
-> For this set of relationships, $ 2\Theta_{xy} = 1/2 $, $ 2\Theta_{xz} = 1/4 $, $ 2\Theta_{wz} = 1/2 $, and since w and y represent the same individual, $ 2\Theta_{yw} = 2\Theta_{yy} = 1 $. Because an individual inherits only one gene from each parent, $ \Delta_{xy} = \Delta_{xz} = \Delta_{wz} = 0 $, but again, since w is y, $ \Delta_{yw} = \Delta_{yy} = 1 $. Making the appropriate substitutions in
-> 
-> ![Source illustration p704 b2](figures/examples/Genetics_p704_b2.png)
-> 
-> Equations 23.3a-d, the genetic covariance between mother and offspring is found to be
-> 
-> $$
-> \sigma_{G}(M,O)=\frac{\sigma_{A_{o}}^{2}}{2}+\frac{5\sigma_{A_{o},A_{m}}}{4}+\sigma_{D_{o},D_{m}}+\frac{\sigma_{A_{m}}^{2}}{2}
-> $$
-> 
-> 
-> From arguments presented above, the environmental covariance between mother and offspring can be expressed as
-> 
-> $$
-> \sigma_{E}(M,O)=\sigma_{E_{o},E_{m}}+b\sigma_{E_{m}}^{2}
-> $$
-> 
-> 
-> On the other hand, a father-offspring relationship can be represented by letting the offspring be $x$, the father be $y$, and the paternal grandmother be $z$ (as shown in the right of the accompanying figure). We then have the coefficients $2\Theta_{xy} = 1/2$, $2\Theta_{xz} = 1/4$, and since the father and mother of $x$ are assumed to be unrelated, $2\Theta_{yw} = 2\Theta_{wz} = 0$. All of the $\Delta$ coefficients are also zero in this case. Summing up the terms,
-> 
-> $$
-> \sigma_{G}(F,O)=\frac{\sigma_{A_{o}}^{2}}{2}+\frac{\sigma_{A_{o},A_{m}}}{4}
-> $$
-> 
-> 
-> As noted above, the second term represents the covariance between the maternal effect expressed in the father (via z) and the direct effects of the genes of z, one-quarter of which are transmitted to x. Assuming the father is derived from a different maternal lineage than its mate, the environmental covariance between father and offspring is zero.
-> 
-> Thus, the expected difference between the mother-offspring and father-offspring covariances is
-> 
-> $$
-> \left(\sigma_{A_{o},A_{m}}+\sigma_{D_{o},D_{m}}+\sigma_{E_{o},E_{m}}\right)+\frac{\sigma_{A_{m}}^{2}}{2}+b\sigma_{E_{m}}^{2}
-> $$
-> 
-> 
-> The first term (in parentheses) is the covariance between all of the direct effects on a mother's phenotype and the maternal effect she contributes to her offspring's phenotype. The second term is half the additive genetic variance for maternal effects; it arises because a mother transmits half the genes that determine her maternal effect to her progeny. The third term is the fraction of the environmental maternal effect on the mother that is transmitted to her offspring (through, for example, physiological effects or cultural inheritance).
-> 
-> Let the difference between the regressions of offspring on mother and offspring on father be m. Since the final two terms in the preceding equation are necessarily positive, one would ordinarily expect m to be positive. However, the opposite has sometimes been observed. For example, Falconer (1965a) found the difference between regressions to be -0.13 for litter size in mice, and Janssen et al. (1988) obtained a difference of approximately -0.5 for age at maturity in springtails. Such a pronounced reduction of the mother-offspring regression relative to that for father-offspring provides a strong indication that the covariance between direct and maternal effects is negative, i.e., that genes whose direct effects cause an increase in the expression of the trait have an antagonistic effect on the trait's expression through their maternal effects.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter23:1]**
 
 
 > **Table 23.1** · `23.1` · page 703 · source: `Genetics_chapter23_002`
@@ -525,40 +485,7 @@ Since M contains $ n^{2} $ coefficients, where n is the number of traits under c
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter23:2` · source: `Genetics_chapter23_009.json` · blocks 33–41
->
-> Example 2. Here we consider a two-character situation (from Lande and Price 1989) in which only one of the four possible maternal effect coefficients is nonzero. Adult size (character 1) of a mother has a direct maternal effect on her offspring's size at birth (character 2) so that $ m_{21} = m \neq 0 $, but no direct effect on the offspring's size at maturity ( $ m_{11} = 0 $). Furthermore, the mother's size at birth has no maternal influence on her offspring's size at birth ( $ m_{22} = 0 $) or maturity ( $ m_{12} = 0 $). Thus, all of the elements of M are zero but $ m_{21} $. If there are no other maternal characters influencing size at birth or maturity, and the other assumptions of the Kirkpatrick-Lande model are met, then unbiased definitions of the expected values of the parent-offspring covariance matrices are given by Equations 23.16a,b, which reduce to
-> 
-> $$
-> \begin{aligned}\mathbf{C}^{m}&=\begin{pmatrix}\sigma_{A_{1}}^{2}/2&\sigma_{A_{1},A_{2}}/2+m_{21}\sigma_{A_{1}}^{2}/4\\\sigma_{A_{1},A_{2}}/2+m_{21}\sigma_{z_{1}}^{2}&\sigma_{A_{2}}^{2}/2+m_{21}\sigma_{A_{1},A_{2}}/4+m_{21}\sigma_{z_{1},z_{2}}\end{pmatrix}\\\mathbf{C}^{f}&=\begin{pmatrix}\sigma_{A_{1}}^{2}/2&\sigma_{A_{1},A_{2}}/2+m_{21}\sigma_{A_{1}}^{2}/4\\\sigma_{A_{1},A_{2}}/2&\sigma_{A_{2}}^{2}/2+m_{21}\sigma_{A_{1},A_{2}}/4\end{pmatrix}\end{aligned}
-> $$
-> 
-> 
-> where $ A_{1} $ denotes the direct additive effect on adult size, and $ A_{2} $ the direct additive effect on size at birth.
-> 
-> Provided that observed values of the elements of the two parent-offspring covariance matrices, $ C^m $ and $ C^f $, are available along with estimates of the phenotypic variance of the maternal trait, $ \sigma_{z_1}^2 $, and the phenotypic covariance between the two traits, $ \sigma_{z_1,z_2} $, estimates of the genetic variances and covariance and of the maternal effect coefficient can be acquired by equating the observed elements of $ C^m $ and $ C^f $ to their expectations. For example, letting subscripts denote the rows and columns of matrix elements,
-> 
-> $$
-> \sigma_{A_{1}}^{2}=C_{11}^{m}+C_{11}^{f}
-> $$
-> 
-> 
-> $$
-> \sigma_{A_{1},A_{2}}=2C_{21}^{f}
-> $$
-> 
-> 
-> $$
-> \sigma_{A_{2}}^{2}=C_{22}^{m}+C_{22}^{f}-m_{21}[C_{21}^{f}+\sigma_{z_{1},z_{2}}]
-> $$
-> 
-> 
-> $$
-> m_{21}=\frac{2(C_{12}^{m}+C_{12}^{f}-2C_{21}^{m})}{C_{11}^{m}+C_{11}^{f}-4\sigma_{z_{1}}^{2}}
-> $$
-> 
-> 
-> Applying this model to weight data for Darwin’s finches (Price and Grant 1985) and great tits (van Noordwijk 1984), Lande and Price (1989) obtained estimates of $ m_{21} = 0.6 $ and 0.3 respectively. Assuming the model is valid, these results suggest that the maternal contribution to hatchling body size associated with maternal adult size can be quite substantial in birds with maternal care.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter23:2]**
 
 
 ---
@@ -579,72 +506,12 @@ As in the case of maternal effects, each of the new terms in Equation 23.19 can 
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter23:3` · source: `Genetics_chapter23_010.json` · blocks 4–18
->
-> Example 3. Consider the case in which the only intrafamilial effects on the phenotype derive from fathers and mothers. Equation 23.19 then reduces to
-> 
-> $$
-> z_{x}=z_{ox}+M_{x}+P_{x}
-> $$
-> 
-> 
-> Such a model should provide a reasonable description of prereproductive.traits of organisms, provided that interactions with sibs during development are either nonexistent or have negligible phenotypic consequences. How does this model alter our interpretations of the covariances between relatives compared to the maternal-effects model?
-> 
-> First, we note that the phenotypic covariance between relatives x and y can be written
-> 
-> $$
-> \begin{aligned}\sigma_{z}(x,y)&=\sigma(z_{ox},z_{oy})+[\sigma(z_{ox},M_{y})+\sigma(z_{oy},M_{x})]\\&\quad+\sigma(M_{x},M_{y})+[\sigma(z_{ox},P_{y})+\sigma(z_{oy},P_{x})]\\&\quad+[\sigma(M_{x},P_{y})+\sigma(M_{y},P_{x})]+\sigma(P_{x},P_{y})\end{aligned}
-> $$
-> 
-> 
-> Thus, six types of factors can contribute to the resemblance between relatives: variances associated with direct, maternal, and paternal effects, and covariances between direct and maternal effects, between direct and paternal effects, and between maternal and paternal effects.
-> 
-> The first four terms of this equation (i.e., those involving direct and/or maternal effects) have all been described above (Table 23.1). The next two terms, which describe the covariance between direct and paternal effects, can be evaluated by extending the procedures used earlier in the chapter. For example, for the genetic covariance of direct and paternal effects, we let s denote the father of x and t denote the father of y. Modifying Equations 23.3a,b, we then obtain
-> 
-> $$
-> \sigma_{G_{o},G_{p}}(x,t)+\sigma_{G_{o},G_{p}}(y,s)=2(\Theta_{xt}+\Theta_{ys})\sigma_{A_{o},A_{p}}+(\Delta_{xt}+\Delta_{ys})\sigma_{D_{o},D_{p}}
-> $$
-> 
-> 
-> For most relationships, simple expressions for the contributions of $ \sigma_{A_0,A_p} $ and $ \sigma_{D_0,D_p} $ to the phenotypic covariance can be obtained by reversing the sexes in Table 23.1. For example, when $ y = s $ is the father of $ x $, then $ \Theta_{xt} = 1/8 $, $ \Theta_{ys} = 1/2 $, $ \Delta_{xt} = 0 $, and $ \Delta_{ys} = 1 $, yielding
-> 
-> $$
-> \sigma_{G_{o},G_{p}}(x,t)+\sigma_{G_{o},G_{p}}(y,s)=\frac{5\sigma_{A_{o},A_{p}}}{4}+\sigma_{D_{o},D_{p}}
-> $$
-> 
-> 
-> This equation has the same structure as the covariance between direct and maternal effects when $y$ is the mother of $x$ (Table 23.1). Similar procedures show that the covariance of direct and paternal effects contributes $\sigma_{A_o,A_p}/4$ to the mother-offspring covariance, which compares with the contribution of the covariance of direct and maternal effects to the father-offspring covariance, $\sigma_{A_o,A_m}/4$. Comparable analogies can be used to deduce the contribution of $\sigma_{A_p}^2$ to phenotypic resemblance.
-> 
-> Finally, we consider the genetic covariance between maternal and paternal effects. Here we let s and w denote the father and mother of x and t and z denote the father and mother of y, which leads to
-> 
-> $$
-> \sigma_{G_{m},G_{p}}(w,t)+\sigma_{G_{m},G_{p}}(z,s)=2(\Theta_{w t}+\Theta_{z s})\sigma_{A_{m},A_{p}}+(\Delta_{w t}+\Delta_{z s})\sigma_{D_{m},D_{p}}
-> $$
-> 
-> 
-> For all of the relationships given in Table 23.1, except reciprocal sibs, this covariance is equal to zero because the dams are unrelated to the sires. In the case of reciprocal full sibs, $ w = t $ and $ s = z $, so the covariance is $ 2(\sigma_{A_m}, A_p + \sigma_{D_m}, D_p) $. For reciprocal half-sibs, the father of $ x $ is the mother of $ y $, but the other parents are unrelated. This reduces the covariance to $ (\sigma_{A_m}, A_p + \sigma_{D_m}, D_p) $.
-> 
-> From these results, it is clear that by adding terms in $ \sigma_{A_p}^2 $, $ \sigma_{D_p}^2 $, $ \sigma_{A_o,A_p} $, and $ \sigma_{D_o,D_p} $, the presence of genetic paternal effects can substantially complicate the expressions for the covariance between relatives beyond those described in Table 23.1. We leave it to the reader to work out the additional contributions from environmental paternal effects. The addition of more terms to a model describing the resemblance between relatives can only magnify the difficulties in achieving clean estimates of causal components of variance. Nevertheless, some of the empirical procedures for detecting maternal effects described in this chapter suggest ways in which paternal effects might be detected. For example, for species in which it is possible to cross-foster with respect to sire, a simple means of testing for paternal effects would be to estimate the foster child-foster father covariance. Factorial designs incorporating reciprocal crosses can also be useful in this regard (Chapter 20).
+> **[UNRESOLVED EXAMPLE: Genetics_chapter23:3]**
 
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter23:4` · source: `Genetics_chapter23_010.json` · blocks 19–24
->
-> Example 4. For organisms that invest substantially in postnatal parental care, it is conceivable that progeny, through their demands on parental resources, can affect aspects of a parent's phenotype. A simple way to test for such effects is to consider pairs of unrelated parents mated to the same individual:
-> 
-> ![Source illustration p725 b7](figures/examples/Genetics_p725_b7.png)
-> 
-> In this case, even under the complete model (Equation 23.19), the paired parents would share no direct, maternal, paternal, or sib effects. However, their offspring would be related as half-sibs. Denoting the offspring of the two individuals by w and z, and noting $ 2\Theta_{wz} = 1/4 $, the expected (postreproductive) phenotypic covariance between unrelated parents mated to the same individual is
-> 
-> $$
-> \sigma[(G_{r w}+E_{r w}),(G_{r z}+E_{r z})]=2\Theta_{w z}\sigma_{G_{r}}^{2}=\frac{\sigma_{G_{r}}^{2}}{4}
-> $$
-> 
-> 
-> where $ G_{rw} $ and $ E_{rw} $ denote the genetic and environmental effects of progeny w on the phenotype of the maternal parent, and we assume that environmental progeny effects are uncorrelated
-> 
-> Thus, four times the phenotypic covariance between unrelated individuals sharing half-sib progeny provides an estimate of the genetic variance associated with offspring effects, $ \sigma_{Gr}^{2} $. Additional ideas on the analysis of offspring (fetal) effects can be found in Bar-Anan et al. (1976) and Van Vleck (1978), who present evidence that a negative genetic correlation exists between direct genetic and fetal effects operating on calving ability in cattle.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter23:4]**
 
 
 Current thought on the evolution of social behavior is heavily dominated by two theoretical concepts. Hamilton’s (1964) idea of inclusive fitness led to the conclusion that a behavior that is costly to an individual’s fitness will nonetheless evolve if it increases a relative’s fitness enough that the cost:benefit ratio is less than $ 2\Theta_{xy} $. Trivers (1974) popularized the notion that there is a genetic conflict between parents and offspring such that offspring are selected to acquire as many resources from their parents as possible, whereas parents are selected for their total reproductive output (see also Haig 1993). Almost all applications of these ideas assume that behavioral characters expressed in different social contexts are free to evolve independently. However, since individuals play overlapping roles of offspring, sib, parent, and mate at various stages in their lives, it seems likely that behavioral attributes expressed in these different roles are correlated genetically. If this is the case, the direction of evolution of a species’ behavioral repertoire can be radically altered relative to conventional expectations (Cheverud 1984, Lynch 1987). For example, offspring behavior that elicits more parental care cannot be expected to evolve if the traits underlying such behavior are strongly negatively correlated with characters that influence fitness later in life, e.g., parenting ability. A quantitative-genetic perspective may prove useful in future attempts to decipher the genetic constraints on the evolution of social behavior.

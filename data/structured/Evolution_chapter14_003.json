@@ -21,23 +21,228 @@
   "blocks": [
     {
       "type": "proposition",
-      "content": "Given a threshold cutoff, $T$, the expected mean of the selected adults is given by the conditional mean, $E[z \\mid z \\geq T]$. Generally, it is assumed that phenotypes are normally distributed, and we use this assumption throughout (unless stated otherwise). With an initial mean of $ \\mu $ and variance of $ \\sigma^2 $, and $ p = \\Pr(z \\geq T) $ being the fraction saved, this conditional mean is given by LW Equation 2.14, which yields the expected selection differential as $$ S=\\varphi\\left(\\frac{T-\\mu}{\\sigma}\\right)\\frac{\\sigma}{p} $$ where $ \\varphi(x)=(2\\pi)^{-1/2}\\exp(-x^{2}/2) $ is the unit normal density function evaluated at x."
+      "content": "Given a threshold cutoff, $T$, the expected mean of the selected adults is given by the conditional mean, $E[z \\mid z \\geq T]$. Generally, it is assumed that phenotypes are normally distributed, and we use this assumption throughout (unless stated otherwise). With an initial mean of $ \\mu $ and variance of $ \\sigma^2 $, and $ p = \\Pr(z \\geq T) $ being the fraction saved, this conditional mean is given by LW Equation 2.14, which yields the expected selection differential as $$ S=\\varphi\\left(\\frac{T-\\mu}{\\sigma}\\right)\\frac{\\sigma}{p} $$ where $ \\varphi(x)=(2\\pi)^{-1/2}\\exp(-x^{2}/2) $ is the unit normal density function evaluated at x.",
+      "source_page": 496,
+      "source_pages": [
+        496,
+        497
+      ],
+      "source_block_ids": [
+        "Evolution_chapter14:p001:b9",
+        "Evolution_chapter14:p001:b10",
+        "Evolution_chapter14:p002:b3",
+        "Evolution_chapter14:p002:b4",
+        "Evolution_chapter14:p002:b5",
+        "Evolution_chapter14:p002:b7"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1365.0,
+          721.0,
+          1389.0
+        ],
+        [
+          132.0,
+          1393.0,
+          904.0,
+          1444.0
+        ],
+        [
+          310.0,
+          481.0,
+          1035.0,
+          587.0
+        ],
+        [
+          287.0,
+          632.0,
+          1060.0,
+          703.0
+        ],
+        [
+          589.0,
+          719.0,
+          757.0,
+          770.0
+        ],
+        [
+          286.0,
+          787.0,
+          1019.0,
+          811.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d38e7c69204e34b0681f3b9067a6e766425fdf11dd29e019d30405745ca2ff17"
     },
     {
       "type": "discussion",
-      "content": "Usually the fraction saved $p$ (rather than $T$) is preset by the investigator. Given $p$, to apply Equation 14.1, we must first find the threshold value $T_p$ satisfying $\\Pr(z \\geq T_p) = p$. Notice that $T$ in Equation 14.1 enters only as $(T - \\mu)/\\sigma$, which transforms $T_p$ to a scale with a mean of zero and unit variance. Hence, $$ \\begin{align*}\\Pr(z\\geq T_p)=\\Pr\\left(\\frac{z-\\mu}{\\sigma}>\\frac{T_p-\\mu}{\\sigma}\\right)=\\Pr\\left(U>\\frac{T_p-\\mu}{\\sigma}\\right)=p\\end{align*} $$ where $ U \\sim \\mathrm{N}(0,1) $ denotes a unit normal random variable. Define $ x_{[p]} $, the probit transformation of $ p $ (LW Chapter 11), as satisfying $$ \\Pr(U\\leq x_{[p]})=p $$ so that $$ \\Pr(U>x_{[1-p]})=p $$"
+      "content": "Usually the fraction saved $p$ (rather than $T$) is preset by the investigator. Given $p$, to apply Equation 14.1, we must first find the threshold value $T_p$ satisfying $\\Pr(z \\geq T_p) = p$. Notice that $T$ in Equation 14.1 enters only as $(T - \\mu)/\\sigma$, which transforms $T_p$ to a scale with a mean of zero and unit variance. Hence, $$ \\begin{align*}\\Pr(z\\geq T_p)=\\Pr\\left(\\frac{z-\\mu}{\\sigma}>\\frac{T_p-\\mu}{\\sigma}\\right)=\\Pr\\left(U>\\frac{T_p-\\mu}{\\sigma}\\right)=p\\end{align*} $$ where $ U \\sim \\mathrm{N}(0,1) $ denotes a unit normal random variable. Define $ x_{[p]} $, the probit transformation of $ p $ (LW Chapter 11), as satisfying $$ \\Pr(U\\leq x_{[p]})=p $$ so that $$ \\Pr(U>x_{[1-p]})=p $$",
+      "source_page": 497,
+      "source_pages": [
+        497
+      ],
+      "source_block_ids": [
+        "Evolution_chapter14:p002:b8",
+        "Evolution_chapter14:p002:b9",
+        "Evolution_chapter14:p002:b10",
+        "Evolution_chapter14:p002:b11",
+        "Evolution_chapter14:p002:b13",
+        "Evolution_chapter14:p002:b14"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          813.0,
+          1057.0,
+          904.0
+        ],
+        [
+          410.0,
+          916.0,
+          939.0,
+          970.0
+        ],
+        [
+          286.0,
+          983.0,
+          1059.0,
+          1033.0
+        ],
+        [
+          595.0,
+          1048.0,
+          753.0,
+          1075.0
+        ],
+        [
+          288.0,
+          1090.0,
+          356.0,
+          1113.0
+        ],
+        [
+          587.0,
+          1112.0,
+          763.0,
+          1139.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "520438fb74bc70e71db6bd9e0340bf9250087fbafeaacbcafa50d4893e439676"
     },
     {
       "type": "discussion",
-      "content": "It immediately follows that $ x_{[1-p]} = (T_p - \\mu)/\\sigma $, and Equation 14.1 yields the expected selection intensity as $$ \\begin{align*}\\bar\\imath=\\frac{S}{\\sigma}=\\frac{\\varphi(x_{[1-p]})}{p}\\end{align*} $$"
+      "content": "It immediately follows that $ x_{[1-p]} = (T_p - \\mu)/\\sigma $, and Equation 14.1 yields the expected selection intensity as $$ \\begin{align*}\\bar\\imath=\\frac{S}{\\sigma}=\\frac{\\varphi(x_{[1-p]})}{p}\\end{align*} $$",
+      "source_page": 497,
+      "source_pages": [
+        497
+      ],
+      "source_block_ids": [
+        "Evolution_chapter14:p002:b16",
+        "Evolution_chapter14:p002:b17"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1146.0,
+          1059.0,
+          1193.0
+        ],
+        [
+          589.0,
+          1192.0,
+          754.0,
+          1242.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "601b867f94d30b38e961efc0b3361055b028f631a616f406f34204c9f797a10e"
     },
     {
       "type": "discussion",
-      "content": "Note that $ \\bar{\\tau} $ is entirely a function of p provided z is normal. Equation 14.3a can be approximated by $$ \\bar{\\imath}\\simeq0.8+0.41\\ln\\left(\\frac{1}{p}-1\\right) $$ a result due to Smith (1969). Simmonds (1977) found that this approximation is generally quite good for $ 0.004 \\leq p \\leq 0.75 $ and offered alternative approximations for $ p $ values outside this range, as did Saxton (1988). Montaldo (1997) gives an approximation for the standardized truncation value $ z = (T - \\mu)/\\sigma $ in terms of $ \\bar{r} $. Finally, when one selects for the lowest fraction $ p $ of the population, Equation 14.3a still holds, provided we take its negative value."
+      "content": "Note that $ \\bar{\\tau} $ is entirely a function of p provided z is normal. Equation 14.3a can be approximated by $$ \\bar{\\imath}\\simeq0.8+0.41\\ln\\left(\\frac{1}{p}-1\\right) $$ a result due to Smith (1969). Simmonds (1977) found that this approximation is generally quite good for $ 0.004 \\leq p \\leq 0.75 $ and offered alternative approximations for $ p $ values outside this range, as did Saxton (1988). Montaldo (1997) gives an approximation for the standardized truncation value $ z = (T - \\mu)/\\sigma $ in terms of $ \\bar{r} $. Finally, when one selects for the lowest fraction $ p $ of the population, Equation 14.3a still holds, provided we take its negative value.",
+      "source_page": 497,
+      "source_pages": [
+        497
+      ],
+      "source_block_ids": [
+        "Evolution_chapter14:p002:b19",
+        "Evolution_chapter14:p002:b20",
+        "Evolution_chapter14:p002:b22"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1250.0,
+          1059.0,
+          1297.0
+        ],
+        [
+          561.0,
+          1296.0,
+          781.0,
+          1346.0
+        ],
+        [
+          287.0,
+          1353.0,
+          1060.0,
+          1471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "55d2c2a8af0187e45e03461c2fcd8eece371b6fa6c9f31c785a9ca2e4a3bc7d1"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:14.1]]"
+      "content": "[[SEE_EXAMPLE:14.1]]",
+      "source_page": 498,
+      "source_pages": [
+        498
+      ],
+      "source_block_ids": [
+        "Evolution_chapter14:p003:b2",
+        "Evolution_chapter14:p003:b3",
+        "Evolution_chapter14:p003:b4",
+        "Evolution_chapter14:p003:b5",
+        "Evolution_chapter14:p003:b6"
+      ],
+      "source_bboxes": [
+        [
+          154.0,
+          255.0,
+          881.0,
+          342.0
+        ],
+        [
+          391.0,
+          375.0,
+          644.0,
+          424.0
+        ],
+        [
+          156.0,
+          454.0,
+          880.0,
+          499.0
+        ],
+        [
+          359.0,
+          532.0,
+          672.0,
+          582.0
+        ],
+        [
+          156.0,
+          615.0,
+          587.0,
+          640.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1fa67730f5fe8e4dfc843d922afe45bd4224f121e5d8634f01b3a7d6222f1a8c"
     }
   ]
 }

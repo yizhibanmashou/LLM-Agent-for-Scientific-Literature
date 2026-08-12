@@ -21,47 +21,370 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "The sampling variance of an allele frequency provides one way to succinctly define the stochastic effects of random genetic drift. Consider a large pool of gametes, a fraction p of which carry the B allele, and let 2N gametes be randomly drawn to produce a new generation of N individuals. Defining the expected frequencies of genotypes BB, Bb, and bb in the progeny generation by the Hardy-Weinberg proportions $ p^2 $, $ 2p(1-p) $, and $ (1-p)^2 $, the expected number of B alleles contained in a random offspring is simply $ (2 \\cdot p^2) + [1 \\cdot 2p(1-p)] + [0 \\cdot (1-p)^2] = 2p $. The expected square of the number of B alleles carried per individual is $ (2^2 \\cdot p^2) + [1^2 \\cdot 2p(1-p)] + [0^2 \\cdot (1-p)^2] = 2p(1+p) $. Thus, the variance (the mean squared value minus the square of the mean) of the number of B alleles carried by an individual is $ 2p(1+p) - (2p)^2 = 2p(1-p) $, whereas the variance of the total number of B alleles carried in the offspring generation is N times this, $ 2Np(1-p) $. Because the frequency of allele B is the number of copies divided by 2N, the sampling variance of the frequency (a second-order moment) is $ 2Np(1-p)/(2N)^2 = p(1-p)/(2N) $, which is directly proportional to the heterozygosity (the fraction of Bb individuals in the population) and inversely proportional to the population size. The expression $ p(1-p)/(2N) $ defines the dispersion in allele frequency resulting from a single generation of gamete sampling, conditional on allele frequency p in the parental population."
+      "content": "The sampling variance of an allele frequency provides one way to succinctly define the stochastic effects of random genetic drift. Consider a large pool of gametes, a fraction p of which carry the B allele, and let 2N gametes be randomly drawn to produce a new generation of N individuals. Defining the expected frequencies of genotypes BB, Bb, and bb in the progeny generation by the Hardy-Weinberg proportions $ p^2 $, $ 2p(1-p) $, and $ (1-p)^2 $, the expected number of B alleles contained in a random offspring is simply $ (2 \\cdot p^2) + [1 \\cdot 2p(1-p)] + [0 \\cdot (1-p)^2] = 2p $. The expected square of the number of B alleles carried per individual is $ (2^2 \\cdot p^2) + [1^2 \\cdot 2p(1-p)] + [0^2 \\cdot (1-p)^2] = 2p(1+p) $. Thus, the variance (the mean squared value minus the square of the mean) of the number of B alleles carried by an individual is $ 2p(1+p) - (2p)^2 = 2p(1-p) $, whereas the variance of the total number of B alleles carried in the offspring generation is N times this, $ 2Np(1-p) $. Because the frequency of allele B is the number of copies divided by 2N, the sampling variance of the frequency (a second-order moment) is $ 2Np(1-p)/(2N)^2 = p(1-p)/(2N) $, which is directly proportional to the heterozygosity (the fraction of Bb individuals in the population) and inversely proportional to the population size. The expression $ p(1-p)/(2N) $ defines the dispersion in allele frequency resulting from a single generation of gamete sampling, conditional on allele frequency p in the parental population.",
+      "source_page": 28,
+      "source_pages": [
+        28
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p006:b5",
+        "Evolution_chapter2:p006:b6"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          894.0,
+          859.0,
+          917.0
+        ],
+        [
+          287.0,
+          940.0,
+          1060.0,
+          1332.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "837023fcd7f1780be698cd07c6d281f26feacf5b1eec4b59cf43325a833f5331"
     },
     {
       "type": "discussion",
-      "content": "In the absence of any counteracting evolutionary forces, the dispersive effects of genetic drift will continue in each generation, leading to a progressive erosion of population-level heterozygosity until all loci have eventually become fixed for just a single allele. To evaluate the long-term impact of finite population size on the expected heterozygosity of a locus, we make use of the properties of the inbreeding coefficient, $ f_{1} $, which denotes the probability that two alleles at a locus in an individual are identical by descent (IBD) (LW Chapter 7). Because all gene copies at a locus must ultimately trace back to a single, remote common ancestor, it is essential to start with an appropriate reference generation, which we here take to be the current generation, and then simply query forward in time as to the probability that any random pair of genes traces back to a specific copy of one of the 2N genes present at the locus in the reference generation. Under this framework, a pair of genes that are identical in state (IIS; also know as alike in state, AIS) need not be IBD, but barring mutation, genes that are IBD must also be IIS (Figure 2.1)."
+      "content": "In the absence of any counteracting evolutionary forces, the dispersive effects of genetic drift will continue in each generation, leading to a progressive erosion of population-level heterozygosity until all loci have eventually become fixed for just a single allele. To evaluate the long-term impact of finite population size on the expected heterozygosity of a locus, we make use of the properties of the inbreeding coefficient, $ f_{1} $, which denotes the probability that two alleles at a locus in an individual are identical by descent (IBD) (LW Chapter 7). Because all gene copies at a locus must ultimately trace back to a single, remote common ancestor, it is essential to start with an appropriate reference generation, which we here take to be the current generation, and then simply query forward in time as to the probability that any random pair of genes traces back to a specific copy of one of the 2N genes present at the locus in the reference generation. Under this framework, a pair of genes that are identical in state (IIS; also know as alike in state, AIS) need not be IBD, but barring mutation, genes that are IBD must also be IIS (Figure 2.1).",
+      "source_page": 28,
+      "source_pages": [
+        28,
+        29
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p006:b7",
+        "Evolution_chapter2:p007:b4"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1330.0,
+          1060.0,
+          1471.0
+        ],
+        [
+          132.0,
+          629.0,
+          905.0,
+          790.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "43df8e9e9c2df7cfc7230c1b2424a688c6f0bd504bf6c27c1731397fd145a06a"
     },
     {
       "type": "discussion",
-      "content": "There is always a small chance that uniting gametes will derive from related individuals, even in a randomly mating population. For example, in a monocious population containing only two individuals, there are only four genes residing at each locus, so the probability that one gamete will randomly unite with another containing a direct descendant of the same parental gene is 1/4. With four individuals, there are eight gene copies, and this probability becomes 1/8. Thus, under the idealized Wright-Fisher model with population size N, the probability that two direct copies of any parental gene will randomly unite in an offspring is 1/(2N). Barring a rare mutation, all such offspring are homozygotes."
+      "content": "There is always a small chance that uniting gametes will derive from related individuals, even in a randomly mating population. For example, in a monocious population containing only two individuals, there are only four genes residing at each locus, so the probability that one gamete will randomly unite with another containing a direct descendant of the same parental gene is 1/4. With four individuals, there are eight gene copies, and this probability becomes 1/8. Thus, under the idealized Wright-Fisher model with population size N, the probability that two direct copies of any parental gene will randomly unite in an offspring is 1/(2N). Barring a rare mutation, all such offspring are homozygotes.",
+      "source_page": 29,
+      "source_pages": [
+        29
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p007:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          790.0,
+          904.0,
+          973.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3ad2c4408f0521d729d8cef1872f549274b2cf61d18e65afb21889afb5a9d43e"
     },
     {
       "type": "discussion",
-      "content": "Although the quantity $ 1/(2N) $ may be thought of as the new inbreeding that is incurred in each generation, this does not fully describe the buildup of homozygosity in a population. For even if uniting gametes do not carry genes that are direct copies of a parental gene, they may still be identical by descent through inbreeding in a previous generation. Under random mating, the probability of the latter event is simply the inbreeding coefficient of the parental generation. Thus, because the probability of drawing genes that are not direct copies of the same parental gene is $ [1 - (1/2N)] $, the expected inbreeding coefficient in generation t is $$ f_{t}=\\frac{1}{2N}+\\left(1-\\frac{1}{2N}\\right)f_{t-1} $$"
+      "content": "Although the quantity $ 1/(2N) $ may be thought of as the new inbreeding that is incurred in each generation, this does not fully describe the buildup of homozygosity in a population. For even if uniting gametes do not carry genes that are direct copies of a parental gene, they may still be identical by descent through inbreeding in a previous generation. Under random mating, the probability of the latter event is simply the inbreeding coefficient of the parental generation. Thus, because the probability of drawing genes that are not direct copies of the same parental gene is $ [1 - (1/2N)] $, the expected inbreeding coefficient in generation t is $$ f_{t}=\\frac{1}{2N}+\\left(1-\\frac{1}{2N}\\right)f_{t-1} $$",
+      "source_page": 29,
+      "source_pages": [
+        29
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p007:b6",
+        "Evolution_chapter2:p007:b7"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          973.0,
+          904.0,
+          1137.0
+        ],
+        [
+          400.0,
+          1150.0,
+          635.0,
+          1199.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1e36324f9ddda0ecbc32e14dd7252ef6c766050b687de38fd798a02454c91987"
     },
     {
       "type": "discussion",
-      "content": "Subtracting both sides from one yields the recursion formula $$ \\begin{align*}(1-f_t)=\\left(1-{1\\over2N}\\right)(1-f_{t-1})\\end{align*} $$ which generalizes to $$ \\begin{align*}(1-f_t)=\\left(1-{1\\over2N}\\right)^t(1-f_0)\\end{align*} $$ and finally to $$ \\begin{align*}(1-f_t)=\\left(1-{1\\over2N}\\right)^t\\end{align*} $$ if we assume a noninbred base population $ (f_0 = 0) $. Again, we see the central role that population size plays in the dynamics of genetic variation. As $ t \\to \\infty $, the fraction of the population that is not inbred, $ 1 - f_t $, approaches zero at a rate that is inversely proportional to N."
+      "content": "Subtracting both sides from one yields the recursion formula $$ \\begin{align*}(1-f_t)=\\left(1-{1\\over2N}\\right)(1-f_{t-1})\\end{align*} $$ which generalizes to $$ \\begin{align*}(1-f_t)=\\left(1-{1\\over2N}\\right)^t(1-f_0)\\end{align*} $$ and finally to $$ \\begin{align*}(1-f_t)=\\left(1-{1\\over2N}\\right)^t\\end{align*} $$ if we assume a noninbred base population $ (f_0 = 0) $. Again, we see the central role that population size plays in the dynamics of genetic variation. As $ t \\to \\infty $, the fraction of the population that is not inbred, $ 1 - f_t $, approaches zero at a rate that is inversely proportional to N.",
+      "source_page": 29,
+      "source_pages": [
+        29,
+        30
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p007:b9",
+        "Evolution_chapter2:p007:b10",
+        "Evolution_chapter2:p007:b12",
+        "Evolution_chapter2:p007:b13",
+        "Evolution_chapter2:p007:b15",
+        "Evolution_chapter2:p007:b16",
+        "Evolution_chapter2:p008:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1211.0,
+          656.0,
+          1236.0
+        ],
+        [
+          380.0,
+          1250.0,
+          656.0,
+          1301.0
+        ],
+        [
+          134.0,
+          1314.0,
+          317.0,
+          1337.0
+        ],
+        [
+          385.0,
+          1335.0,
+          651.0,
+          1390.0
+        ],
+        [
+          133.0,
+          1397.0,
+          256.0,
+          1420.0
+        ],
+        [
+          419.0,
+          1418.0,
+          617.0,
+          1473.0
+        ],
+        [
+          288.0,
+          206.0,
+          1059.0,
+          296.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3050c916d2c24c16ec251c370d5342104084716a5461e80521f540e438a1fabb"
     },
     {
       "type": "discussion",
-      "content": "To see the connection between the inbreeding coefficient and the expected heterozygosity in a population, consider a diallelic locus with base-population heterozygosity $ 2p(1-p) $. In the descendant population with inbreeding coefficient f, individuals can only be heterozygotes if they carry alleles that are not identical by descent, the probability of which is $ (1-f) $. If two alleles are not identical by descent, they must have been acquired independently, so the probability that a genotype containing a pair of such alleles is a heterozygote is $ 2p(1-p) $. Thus, the expected heterozygosity of a population with inbreeding coefficient f and initial allele frequency p is $ 2p(1-p)(1-f) $. This shows that the fractional reduction in heterozygosity relative to the base population is equal to f. Because this argument applies regardless of the initial heterozygosity (and regardless of the number of segregating alleles), Equation 2.4c may be rewritten to describe the expected population heterozygosity at time t. $$ H_{t}=H_{0}\\left(1-\\frac{1}{2N}\\right)^{t} $$"
+      "content": "To see the connection between the inbreeding coefficient and the expected heterozygosity in a population, consider a diallelic locus with base-population heterozygosity $ 2p(1-p) $. In the descendant population with inbreeding coefficient f, individuals can only be heterozygotes if they carry alleles that are not identical by descent, the probability of which is $ (1-f) $. If two alleles are not identical by descent, they must have been acquired independently, so the probability that a genotype containing a pair of such alleles is a heterozygote is $ 2p(1-p) $. Thus, the expected heterozygosity of a population with inbreeding coefficient f and initial allele frequency p is $ 2p(1-p)(1-f) $. This shows that the fractional reduction in heterozygosity relative to the base population is equal to f. Because this argument applies regardless of the initial heterozygosity (and regardless of the number of segregating alleles), Equation 2.4c may be rewritten to describe the expected population heterozygosity at time t. $$ H_{t}=H_{0}\\left(1-\\frac{1}{2N}\\right)^{t} $$",
+      "source_page": 30,
+      "source_pages": [
+        30
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p008:b3",
+        "Evolution_chapter2:p008:b4"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          300.0,
+          1060.0,
+          575.0
+        ],
+        [
+          581.0,
+          576.0,
+          765.0,
+          628.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1dab127aff4d7ec735dbec8d5ac633fbd33dc06b603cba79a661de2b0a2c658a"
     },
     {
       "type": "discussion",
-      "content": "This rate of decay of heterozygosity of $ 1/(2N) $ was first obtained by Wright (1931). It may be a source of encouragement to the nonmathematically inclined that the brilliant Fisher (1922), using a rather different approach, obtained the wrong answer."
+      "content": "This rate of decay of heterozygosity of $ 1/(2N) $ was first obtained by Wright (1931). It may be a source of encouragement to the nonmathematically inclined that the brilliant Fisher (1922), using a rather different approach, obtained the wrong answer.",
+      "source_page": 30,
+      "source_pages": [
+        30
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p008:b6"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          641.0,
+          1058.0,
+          711.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e3ef6f320b8f794c1281c0f93dcb154c0a98f4111da181f10a4ea30246cb677d"
     },
     {
       "type": "discussion",
-      "content": "The time course for the loss of heterozygosity can be clarified by using an exponential approximation to Equation 2.5. Because $ (1 - x)^t \\simeq e^{-xt} $ for $ |x| \\ll 1 $, for $ N $ greater than 10 or so, $$ H_{t}\\simeq H_{0}e^{-t/(2N)} $$"
+      "content": "The time course for the loss of heterozygosity can be clarified by using an exponential approximation to Equation 2.5. Because $ (1 - x)^t \\simeq e^{-xt} $ for $ |x| \\ll 1 $, for $ N $ greater than 10 or so, $$ H_{t}\\simeq H_{0}e^{-t/(2N)} $$",
+      "source_page": 30,
+      "source_pages": [
+        30
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p008:b7",
+        "Evolution_chapter2:p008:b8"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          712.0,
+          1059.0,
+          779.0
+        ],
+        [
+          599.0,
+          779.0,
+          747.0,
+          807.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e39c13c3b72ccea94123a105a9d94066016bd849522257b8bae047af14e5b001"
     },
     {
       "type": "discussion",
-      "content": "Rearrangement then leads to the expected time to reach a certain reduction in heterozygosity, $$ t=-2N\\ln(H_{t}/H_{0}) $$ which shows that the heterozygosity is reduced to half of its initial value in $ \\sim $ 1.4N generations and to 5% of $ H_{0} $ in $ \\sim $ 6N generations. Thus, a population twice the size of another requires twice the number of generations to reach the same expected state. With a temporally varying population size, Equation 2.6a becomes $$ H_{t}=H_{0}\\prod_{i=1}^{t}\\left(1-\\frac{1}{2N_{i}}\\right)\\simeq H_{0}\\exp\\left[-\\sum_{i=1}^{t}1/(2N_{i})\\right] $$ where the $ \\prod $ sign denotes a product of terms, and $ N_i $ is the population size in generation $ i $. This expression illustrates an important point. Because each of the generation-specific terms, $ [1 - (1/2N_i)] $, is necessarily less than one, Equation 2.7 shows that an expansion of population size can reduce the rate of erosion of heterozygosity, but does not eliminate it."
+      "content": "Rearrangement then leads to the expected time to reach a certain reduction in heterozygosity, $$ t=-2N\\ln(H_{t}/H_{0}) $$ which shows that the heterozygosity is reduced to half of its initial value in $ \\sim $ 1.4N generations and to 5% of $ H_{0} $ in $ \\sim $ 6N generations. Thus, a population twice the size of another requires twice the number of generations to reach the same expected state. With a temporally varying population size, Equation 2.6a becomes $$ H_{t}=H_{0}\\prod_{i=1}^{t}\\left(1-\\frac{1}{2N_{i}}\\right)\\simeq H_{0}\\exp\\left[-\\sum_{i=1}^{t}1/(2N_{i})\\right] $$ where the $ \\prod $ sign denotes a product of terms, and $ N_i $ is the population size in generation $ i $. This expression illustrates an important point. Because each of the generation-specific terms, $ [1 - (1/2N_i)] $, is necessarily less than one, Equation 2.7 shows that an expansion of population size can reduce the rate of erosion of heterozygosity, but does not eliminate it.",
+      "source_page": 30,
+      "source_pages": [
+        30
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p008:b10",
+        "Evolution_chapter2:p008:b11",
+        "Evolution_chapter2:p008:b13",
+        "Evolution_chapter2:p008:b14",
+        "Evolution_chapter2:p008:b15",
+        "Evolution_chapter2:p008:b17"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          822.0,
+          1058.0,
+          848.0
+        ],
+        [
+          586.0,
+          871.0,
+          760.0,
+          896.0
+        ],
+        [
+          287.0,
+          920.0,
+          1059.0,
+          991.0
+        ],
+        [
+          327.0,
+          991.0,
+          900.0,
+          1014.0
+        ],
+        [
+          457.0,
+          1038.0,
+          886.0,
+          1102.0
+        ],
+        [
+          287.0,
+          1124.0,
+          1058.0,
+          1217.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e4918cd4b6e0731ad96e2b7f57635ff951b74f87898f75d4c8bb753183d4acd1"
     },
     {
       "type": "discussion",
-      "content": "One significant limitation of the preceding expressions is that they only provide information on the behavior of the expected heterozygosity in a population. In reality, fluctuations in allelic copy number resulting from random genetic drift ensure that variation in heterozygosity will arise among loci that start in the same state. In a finite population of size N, the heterozygosity of a diallelic locus can take on $ N + 1 $ discrete values: $ 0, 2(1/2N)[1 - (1/2N)] $, $ \\cdots, 2(N/2N)[1 - (N/2N)] $. Using the transition-matrix approach (Equations 2.2a and 2.2b), one can obtain the exact probability distribution of heterozygosity for a locus starting with allele frequency $ i/2N $, using the fact that $ x_j(t) + x_{2N-j}(t) $ is the probability that the population has heterozygosity $ 2(j/2N)[1 - (j/2N)] $."
+      "content": "One significant limitation of the preceding expressions is that they only provide information on the behavior of the expected heterozygosity in a population. In reality, fluctuations in allelic copy number resulting from random genetic drift ensure that variation in heterozygosity will arise among loci that start in the same state. In a finite population of size N, the heterozygosity of a diallelic locus can take on $ N + 1 $ discrete values: $ 0, 2(1/2N)[1 - (1/2N)] $, $ \\cdots, 2(N/2N)[1 - (N/2N)] $. Using the transition-matrix approach (Equations 2.2a and 2.2b), one can obtain the exact probability distribution of heterozygosity for a locus starting with allele frequency $ i/2N $, using the fact that $ x_j(t) + x_{2N-j}(t) $ is the probability that the population has heterozygosity $ 2(j/2N)[1 - (j/2N)] $.",
+      "source_page": 30,
+      "source_pages": [
+        30
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p008:b18"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1217.0,
+          1059.0,
+          1425.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0a5a69990a97caa95f4eaa77678255b72e602048174994ccfc57be61dc85a263"
     },
     {
       "type": "discussion",
-      "content": "An alternative approach was developed by Kimura (1955b), who used diffusion theory (Appendix 1) to obtain an analytical expression for the probability density of allele frequency at time t, given the starting value $ p_{0} $, $$ \\begin{align*}\\varphi(p_{t}|p_{0})&=p_{0}(1-p_{0})\\sum_{i=1}^{\\infty}i(2i+1)(i+1)\\cdot\\\\&F(1-i,i+2,2,p_{0})\\cdot F(1-i,i+2,2,p_{t})\\cdot e^{-i(i+1)t/(4N)}\\end{align*} $$ where $ F(1-i, i+2, 2, p_0) $ and $ F(1-i, i+2, 2, p_t) $ are specific variants of the hypergeometric function (Equation 15.1.1 in Abramowitz and Stegun 1972). When we use this expression, $ [\\varphi(p_t|p_0) + \\varphi(1-p_t|p_0)] $ is the probability of heterozygosity $ 2p_t(1-p_t) $ at time $ t $. We will make more use of Equation 2.8 in the next sections, illustrating in particular its implications for the dispersion of allele frequencies among isolated populations. The utility of the diffusion approximation is that it yields to numerous closed-form mathematical approximations, some of which we note below."
+      "content": "An alternative approach was developed by Kimura (1955b), who used diffusion theory (Appendix 1) to obtain an analytical expression for the probability density of allele frequency at time t, given the starting value $ p_{0} $, $$ \\begin{align*}\\varphi(p_{t}|p_{0})&=p_{0}(1-p_{0})\\sum_{i=1}^{\\infty}i(2i+1)(i+1)\\cdot\\\\&F(1-i,i+2,2,p_{0})\\cdot F(1-i,i+2,2,p_{t})\\cdot e^{-i(i+1)t/(4N)}\\end{align*} $$ where $ F(1-i, i+2, 2, p_0) $ and $ F(1-i, i+2, 2, p_t) $ are specific variants of the hypergeometric function (Equation 15.1.1 in Abramowitz and Stegun 1972). When we use this expression, $ [\\varphi(p_t|p_0) + \\varphi(1-p_t|p_0)] $ is the probability of heterozygosity $ 2p_t(1-p_t) $ at time $ t $. We will make more use of Equation 2.8 in the next sections, illustrating in particular its implications for the dispersion of allele frequencies among isolated populations. The utility of the diffusion approximation is that it yields to numerous closed-form mathematical approximations, some of which we note below.",
+      "source_page": 30,
+      "source_pages": [
+        30,
+        31
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p008:b19",
+        "Evolution_chapter2:p009:b2",
+        "Evolution_chapter2:p009:b3",
+        "Evolution_chapter2:p009:b5"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1422.0,
+          1059.0,
+          1472.0
+        ],
+        [
+          133.0,
+          208.0,
+          447.0,
+          232.0
+        ],
+        [
+          249.0,
+          246.0,
+          787.0,
+          340.0
+        ],
+        [
+          132.0,
+          354.0,
+          904.0,
+          517.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a67519c7a27ea38267a58c26e64b0bb4821bb1f86ce3b0b87ffa05586ce873d1"
     }
   ]
 }

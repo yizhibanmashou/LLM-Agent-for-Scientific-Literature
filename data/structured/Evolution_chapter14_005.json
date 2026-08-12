@@ -26,39 +26,334 @@
   "blocks": [
     {
       "type": "proposition",
-      "content": "One application of truncation-selection theory is in the response to selection of binary traits, which are characterized simply by presence or absence (such as normal or diseased). The basic trait model to this point assumed a continuous character, which initially seems at odds with a binary trait. However, as discussed in LW Chapters 11 and 25, discrete characters can often be modeled by mapping an underlying (unobserved, or latent) continuous character, the liability, z, onto the observed discrete character states, y = 0 or y = 1 (Figure 14.4). The assumption is that the breeder's equation holds on the liability scale, and our goal is to predict how changes on this scale map onto changes in the frequency of a binary trait. The simplest assumption is a threshold model, wherein the character is present if liability exceeds some threshold value $ T \\left(z \\geq T \\right) $, and otherwise is absent $ (z < T) $. Roff (1996) reviewed a number of examples of such threshold-determined morphological traits in animals. Our analysis is restricted to a single threshold, but extension to multiple thresholds is straightforward (Lande 1978; Korsgaard et al. 2002)."
+      "content": "One application of truncation-selection theory is in the response to selection of binary traits, which are characterized simply by presence or absence (such as normal or diseased). The basic trait model to this point assumed a continuous character, which initially seems at odds with a binary trait. However, as discussed in LW Chapters 11 and 25, discrete characters can often be modeled by mapping an underlying (unobserved, or latent) continuous character, the liability, z, onto the observed discrete character states, y = 0 or y = 1 (Figure 14.4). The assumption is that the breeder's equation holds on the liability scale, and our goal is to predict how changes on this scale map onto changes in the frequency of a binary trait. The simplest assumption is a threshold model, wherein the character is present if liability exceeds some threshold value $ T \\left(z \\geq T \\right) $, and otherwise is absent $ (z < T) $. Roff (1996) reviewed a number of examples of such threshold-determined morphological traits in animals. Our analysis is restricted to a single threshold, but extension to multiple thresholds is straightforward (Lande 1978; Korsgaard et al. 2002).",
+      "source_page": 501,
+      "source_pages": [
+        501
+      ],
+      "source_block_ids": [
+        "Evolution_chapter14:p006:b7",
+        "Evolution_chapter14:p006:b8",
+        "Evolution_chapter14:p006:b9"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          547.0,
+          840.0,
+          570.0
+        ],
+        [
+          287.0,
+          594.0,
+          571.0,
+          617.0
+        ],
+        [
+          287.0,
+          625.0,
+          1059.0,
+          924.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ad80360ea2574e34d4a1765d5c64e455c0827a582122d2113bcef654843e5636"
     },
     {
       "type": "discussion",
-      "content": "To predict the selection response, let $\\mu_t$ be the mean liability and $q_t$ be the frequency of individuals displaying the character in generation $t$, i.e., $q_t = \\Pr(y_t = 1)$. If liability is well enough, behaved to satisfy the assumptions of the breeder's equation, then $\\mu_{t+1} = \\mu_t + h^2 S_t$. As shown in Figure 14.4, three tasks must be performed to predict the selection response: (i) estimate the mean liability, $\\mu_t$, from the observed frequency, $q_t$, of the trait; (ii) estimate $S$ on the liability scale, given the change in the frequency of the binary trait following selection; and (iii) translate $\\mu_{t+1}$ into $q_{t+1}$. We assume liability to be normally distributed on some appropriate scale, in which case we can also choose a scale that sets the threshold value at $T = 0$ and assigns $z$ a variance of 1.0. Because $z - \\mu_t$ is a unit normal, $\\Pr(z \\geq 0) = \\Pr(z - \\mu_t \\geq -\\mu_t) = \\Pr(U \\geq -\\mu_t) = q_t$, and by analogy with Equation 14.2b, where $\\Pr(U \\geq x_{[1-p]}) = p$, we have $$ \\mu_{t}=-x_{[1-q_{t}]} $$ where $ x_{[p]} $ is the probit transformation of $ p $ (Equation 14.2a), as suggested by Wright (1934). For example, if 5% of the population displays the trait, $ \\Pr(U \\leq 1.65) = 0.95 $, implying $ x_{[0.95]} = 1.65 $, and yielding the mean on the underlying liability scale as $ \\mu = -x_{[0.95]} = -1.65 $. When the mean liability is at this value, only 5% of the population has a value exceeding the threshold $ (T = 0) $, and hence displays the trait."
+      "content": "To predict the selection response, let $\\mu_t$ be the mean liability and $q_t$ be the frequency of individuals displaying the character in generation $t$, i.e., $q_t = \\Pr(y_t = 1)$. If liability is well enough, behaved to satisfy the assumptions of the breeder's equation, then $\\mu_{t+1} = \\mu_t + h^2 S_t$. As shown in Figure 14.4, three tasks must be performed to predict the selection response: (i) estimate the mean liability, $\\mu_t$, from the observed frequency, $q_t$, of the trait; (ii) estimate $S$ on the liability scale, given the change in the frequency of the binary trait following selection; and (iii) translate $\\mu_{t+1}$ into $q_{t+1}$. We assume liability to be normally distributed on some appropriate scale, in which case we can also choose a scale that sets the threshold value at $T = 0$ and assigns $z$ a variance of 1.0. Because $z - \\mu_t$ is a unit normal, $\\Pr(z \\geq 0) = \\Pr(z - \\mu_t \\geq -\\mu_t) = \\Pr(U \\geq -\\mu_t) = q_t$, and by analogy with Equation 14.2b, where $\\Pr(U \\geq x_{[1-p]}) = p$, we have $$ \\mu_{t}=-x_{[1-q_{t}]} $$ where $ x_{[p]} $ is the probit transformation of $ p $ (Equation 14.2a), as suggested by Wright (1934). For example, if 5% of the population displays the trait, $ \\Pr(U \\leq 1.65) = 0.95 $, implying $ x_{[0.95]} = 1.65 $, and yielding the mean on the underlying liability scale as $ \\mu = -x_{[0.95]} = -1.65 $. When the mean liability is at this value, only 5% of the population has a value exceeding the threshold $ (T = 0) $, and hence displays the trait.",
+      "source_page": 501,
+      "source_pages": [
+        501
+      ],
+      "source_block_ids": [
+        "Evolution_chapter14:p006:b10",
+        "Evolution_chapter14:p006:b11",
+        "Evolution_chapter14:p006:b13"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          923.0,
+          1060.0,
+          1176.0
+        ],
+        [
+          613.0,
+          1190.0,
+          732.0,
+          1211.0
+        ],
+        [
+          287.0,
+          1217.0,
+          1058.0,
+          1333.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b092f2daeb5a07f9b714b0a366ca2045ccd527a872802074276ffd3ef8243b88"
     },
     {
       "type": "discussion",
-      "content": "The response to selection, as measured by the new frequency, $ q_{t+1} $, of the trait in the next generation, is given by $$ \\begin{aligned}q_{t+1}&=\\Pr(U\\geq-\\mu_{t+1})\\\\&=\\Pr(U\\geq-\\mu_{t}-h^{2}S_{t})\\\\&=\\Pr(U\\geq x_{[1-q_{t}]}-h^{2}S_{t})\\\\ \\end{aligned} $$"
+      "content": "The response to selection, as measured by the new frequency, $ q_{t+1} $, of the trait in the next generation, is given by $$ \\begin{aligned}q_{t+1}&=\\Pr(U\\geq-\\mu_{t+1})\\\\&=\\Pr(U\\geq-\\mu_{t}-h^{2}S_{t})\\\\&=\\Pr(U\\geq x_{[1-q_{t}]}-h^{2}S_{t})\\\\ \\end{aligned} $$",
+      "source_page": 501,
+      "source_pages": [
+        501
+      ],
+      "source_block_ids": [
+        "Evolution_chapter14:p006:b14",
+        "Evolution_chapter14:p006:b15"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1333.0,
+          1059.0,
+          1380.0
+        ],
+        [
+          542.0,
+          1388.0,
+          804.0,
+          1472.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "96bf10fd42eb010dba21767c5ae5f5ab296789040f341a278d405e2d368595be"
     },
     {
       "type": "discussion",
-      "content": "It remains to obtain $S_t = \\mu_t^* - \\mu_t$, where $\\mu_t^*$ is the mean liability value in the selected parents in generation $t$. While the selected population may consist entirely of adults displaying the trait, more individuals than this may be required to keep the population at a constant size, especially if $q_t$ is small (i.e., the trait is rare). In this case, the selected adults consist of two groups of individuals: those displaying the trait (hence having $z \\geq 0$) and those not displaying it ($z < 0$). Letting $p_t$ be the fraction of selected adults displaying the character, $$ \\begin{align*}\\mu_t^*=(1-p_t)E\\left[z|z<0,\\mu_t\\right]+p_t E\\left[z|z\\geq0,\\mu_t\\right]\\end{align*} $$"
+      "content": "It remains to obtain $S_t = \\mu_t^* - \\mu_t$, where $\\mu_t^*$ is the mean liability value in the selected parents in generation $t$. While the selected population may consist entirely of adults displaying the trait, more individuals than this may be required to keep the population at a constant size, especially if $q_t$ is small (i.e., the trait is rare). In this case, the selected adults consist of two groups of individuals: those displaying the trait (hence having $z \\geq 0$) and those not displaying it ($z < 0$). Letting $p_t$ be the fraction of selected adults displaying the character, $$ \\begin{align*}\\mu_t^*=(1-p_t)E\\left[z|z<0,\\mu_t\\right]+p_t E\\left[z|z\\geq0,\\mu_t\\right]\\end{align*} $$",
+      "source_page": 502,
+      "source_pages": [
+        502
+      ],
+      "source_block_ids": [
+        "Evolution_chapter14:p007:b4",
+        "Evolution_chapter14:p007:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1154.0,
+          904.0,
+          1297.0
+        ],
+        [
+          319.0,
+          1306.0,
+          717.0,
+          1332.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "bea53c54c446eefaf026cb98f15722a92066030891f94209ddb9879120c2e8f2"
     },
     {
       "type": "discussion",
-      "content": "Applying LW Equation 2.14, and noting that the unit normal density function satisfies $ \\varphi(x) = \\varphi(-x) $, yields $$ \\begin{align*}E\\left[z|z\\geq0,\\mu_t\\right]=\\mu_t+\\frac{\\varphi(\\mu_t)}{q_t}\\quad{\\rm and}\\quad E\\left[z|z<0,\\mu_t\\right]=\\mu_t-\\frac{\\varphi(\\mu_t)}{1-q_t}\\end{align*} $$ where $ \\varphi(x) $ is the unit normal density function evaluated at x. Substituting into Equation 14.8a yields $$ \\begin{align*}S_t=\\mu_t^*-\\mu_t=\\frac{\\varphi(\\mu_t)}{q_t}\\frac{p_t-q_t}{1-q_t}=\\frac{\\varphi(-x_{[1-q_t]})}{q_t}\\frac{p_t-q_t}{1-q_t}\\end{align*} $$ As expected, if $ p_t > q_t $, then $ S_t > 0 $. Maximal selection occurs if only individuals displaying the trait are saved $ (p_t = 1) $, in which case Equation 14.9 reduces to $ S_t = \\varphi(-x_{[1-q_t]}) / q_t $."
+      "content": "Applying LW Equation 2.14, and noting that the unit normal density function satisfies $ \\varphi(x) = \\varphi(-x) $, yields $$ \\begin{align*}E\\left[z|z\\geq0,\\mu_t\\right]=\\mu_t+\\frac{\\varphi(\\mu_t)}{q_t}\\quad{\\rm and}\\quad E\\left[z|z<0,\\mu_t\\right]=\\mu_t-\\frac{\\varphi(\\mu_t)}{1-q_t}\\end{align*} $$ where $ \\varphi(x) $ is the unit normal density function evaluated at x. Substituting into Equation 14.8a yields $$ \\begin{align*}S_t=\\mu_t^*-\\mu_t=\\frac{\\varphi(\\mu_t)}{q_t}\\frac{p_t-q_t}{1-q_t}=\\frac{\\varphi(-x_{[1-q_t]})}{q_t}\\frac{p_t-q_t}{1-q_t}\\end{align*} $$ As expected, if $ p_t > q_t $, then $ S_t > 0 $. Maximal selection occurs if only individuals displaying the trait are saved $ (p_t = 1) $, in which case Equation 14.9 reduces to $ S_t = \\varphi(-x_{[1-q_t]}) / q_t $.",
+      "source_page": 502,
+      "source_pages": [
+        502,
+        503
+      ],
+      "source_block_ids": [
+        "Evolution_chapter14:p007:b7",
+        "Evolution_chapter14:p007:b8",
+        "Evolution_chapter14:p008:b3",
+        "Evolution_chapter14:p008:b4",
+        "Evolution_chapter14:p008:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1343.0,
+          903.0,
+          1392.0
+        ],
+        [
+          213.0,
+          1402.0,
+          763.0,
+          1453.0
+        ],
+        [
+          310.0,
+          711.0,
+          1035.0,
+          756.0
+        ],
+        [
+          287.0,
+          800.0,
+          1059.0,
+          848.0
+        ],
+        [
+          452.0,
+          852.0,
+          893.0,
+          903.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "08902804e47567f9ff7c521f51524b07520c2e15ac75c253bebdec21b63e6d64"
     },
     {
       "type": "proposition",
-      "content": "Why did we not simply estimate $ \\mu_t^* $ using $ x_{[1-q_t^*]} $, i.e., using the frequency, $ q^* $, of the trait in the selected parents? The reason is that the distribution of $ z $ values in selected parents is a weighted average of two truncated normal density functions (Equation 14.8a), and this distribution is not normal (see Figure 14.4). However, we assume that normality is restored in the liability distribution at the start of the next generation due to segregation plus the addition of the environmental value. We examine the validity of this assumption in Chapter 24. Finally, a diligent reader might be concerned that this lack of normality violates the breeder's equation, and hence our assumption that $ \\mu_{t+1} = \\mu_t + h^2 S $. However, this expression is a weighted form of truncation selection on a normally distributed trait, with a fraction $ 1 - p $ with $ z < T $, and a fraction $ p $ with $ z \\geq T $, with the change in breeding value given by the weighted average of these two pools."
+      "content": "Why did we not simply estimate $ \\mu_t^* $ using $ x_{[1-q_t^*]} $, i.e., using the frequency, $ q^* $, of the trait in the selected parents? The reason is that the distribution of $ z $ values in selected parents is a weighted average of two truncated normal density functions (Equation 14.8a), and this distribution is not normal (see Figure 14.4). However, we assume that normality is restored in the liability distribution at the start of the next generation due to segregation plus the addition of the environmental value. We examine the validity of this assumption in Chapter 24. Finally, a diligent reader might be concerned that this lack of normality violates the breeder's equation, and hence our assumption that $ \\mu_{t+1} = \\mu_t + h^2 S $. However, this expression is a weighted form of truncation selection on a normally distributed trait, with a fraction $ 1 - p $ with $ z < T $, and a fraction $ p $ with $ z \\geq T $, with the change in breeding value given by the weighted average of these two pools.",
+      "source_page": 503,
+      "source_pages": [
+        503
+      ],
+      "source_block_ids": [
+        "Evolution_chapter14:p008:b8"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          961.0,
+          1059.0,
+          1217.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "45deac134883f920ea9d83f80d5ec95686b2df4f89d5a1d72a8fabe8ba6e473c"
     },
     {
       "type": "discussion",
-      "content": "One important feature about selection on threshold traits is that the response to selection is not necessarily symmetric—a selected 5% increase in the trait may not yield the same response as a selected 5% decrease. The reason for this is that the mapping between phenotypes and their underlying liability is highly nonlinear. Even though the parent-offspring regression on the liability scale is assumed to be linear (and hence liability response is symmetric), the parent-offspring regression on the phenotypic level is not linear, resulting in an asymmetric response. ample"
+      "content": "One important feature about selection on threshold traits is that the response to selection is not necessarily symmetric—a selected 5% increase in the trait may not yield the same response as a selected 5% decrease. The reason for this is that the mapping between phenotypes and their underlying liability is highly nonlinear. Even though the parent-offspring regression on the liability scale is assumed to be linear (and hence liability response is symmetric), the parent-offspring regression on the phenotypic level is not linear, resulting in an asymmetric response. ample",
+      "source_page": 503,
+      "source_pages": [
+        503
+      ],
+      "source_block_ids": [
+        "Evolution_chapter14:p008:b9",
+        "Evolution_chapter14:p008:b10"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1214.0,
+          1059.0,
+          1378.0
+        ],
+        [
+          311.0,
+          1444.0,
+          1034.0,
+          1469.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3f2df86af2081536b047dbcd23dd228194cff0e88e503e5f45f20e485680ef7d"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:14.3]]"
+      "content": "[[SEE_EXAMPLE:14.3]]",
+      "source_page": 503,
+      "source_pages": [
+        503
+      ],
+      "source_block_ids": [
+        "Evolution_chapter14:p008:b3"
+      ],
+      "source_bboxes": [
+        [
+          310.0,
+          711.0,
+          1035.0,
+          756.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "22ee90978f8376c4fb5f6b99dc9d4ad96ed982a42aa099d809a5020c3f1ce7eb"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:14.4]]"
+      "content": "[[SEE_EXAMPLE:14.4]]",
+      "source_page": 504,
+      "source_pages": [
+        504,
+        505
+      ],
+      "source_block_ids": [
+        "Evolution_chapter14:p009:b10",
+        "Evolution_chapter14:p009:b12",
+        "Evolution_chapter14:p009:b13",
+        "Evolution_chapter14:p009:b14",
+        "Evolution_chapter14:p009:b15",
+        "Evolution_chapter14:p009:b16",
+        "Evolution_chapter14:p009:b17",
+        "Evolution_chapter14:p010:b2",
+        "Evolution_chapter14:p010:b3",
+        "Evolution_chapter14:p010:b4"
+      ],
+      "source_bboxes": [
+        [
+          155.0,
+          738.0,
+          882.0,
+          994.0
+        ],
+        [
+          155.0,
+          1183.0,
+          881.0,
+          1250.0
+        ],
+        [
+          216.0,
+          1264.0,
+          820.0,
+          1290.0
+        ],
+        [
+          156.0,
+          1304.0,
+          412.0,
+          1327.0
+        ],
+        [
+          378.0,
+          1343.0,
+          658.0,
+          1367.0
+        ],
+        [
+          155.0,
+          1383.0,
+          879.0,
+          1426.0
+        ],
+        [
+          290.0,
+          1424.0,
+          747.0,
+          1474.0
+        ],
+        [
+          310.0,
+          207.0,
+          1035.0,
+          295.0
+        ],
+        [
+          556.0,
+          310.0,
+          789.0,
+          363.0
+        ],
+        [
+          310.0,
+          379.0,
+          995.0,
+          405.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "15eb4624d4955c778d1467d7176a1b18a98cd6c2dd6356cc940d6c555eeccac1"
     }
   ]
 }

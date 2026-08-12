@@ -26,55 +26,494 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Before examining the Gaussian likelihood with unknown variance, a brief aside is needed to develop the inverse chi-square distribution, denoted by $ \\chi^{-2} $. We do this via the gamma and inverse-gamma distributions, as both $ \\chi^{2} $ and $ \\chi^{-2} $ are special cases of these distributions."
+      "content": "Before examining the Gaussian likelihood with unknown variance, a brief aside is needed to develop the inverse chi-square distribution, denoted by $ \\chi^{-2} $. We do this via the gamma and inverse-gamma distributions, as both $ \\chi^{2} $ and $ \\chi^{-2} $ are special cases of these distributions.",
+      "source_page": 1200,
+      "source_pages": [
+        1200
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p012:b28",
+        "Evolution_appendix2:p012:b29"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          1369.0,
+          745.0,
+          1394.0
+        ],
+        [
+          288.0,
+          1398.0,
+          1058.0,
+          1471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8f0cbf5aa3b0b8204ccfc3f9d00aafbed6e2697c8bd5b8a7796e77aaa94b0b3d"
     },
     {
       "type": "discussion",
-      "content": "To motivate the gamma distribution, first consider the simple exponential waiting-time distribution, where $ \\beta $ is the rate (the probability of a success in some small time unit, $ \\delta_{t} $, is given by $ \\beta \\delta_{t} $), then the probability density function (pdf) for the exponential is $$ p(x\\mid\\beta)=\\beta e^{-\\beta x}\\quad for\\quad0\\leq x<\\infty,\\quad\\beta>0 $$ Because the expected waiting time until a success is $ \\lambda = 1/\\beta $, this can be reparameterized in terms of the scale (waiting time) parameter as $$ p(x\\mid\\beta)=\\lambda^{-1}e^{-x/\\lambda} $$"
+      "content": "To motivate the gamma distribution, first consider the simple exponential waiting-time distribution, where $ \\beta $ is the rate (the probability of a success in some small time unit, $ \\delta_{t} $, is given by $ \\beta \\delta_{t} $), then the probability density function (pdf) for the exponential is $$ p(x\\mid\\beta)=\\beta e^{-\\beta x}\\quad for\\quad0\\leq x<\\infty,\\quad\\beta>0 $$ Because the expected waiting time until a success is $ \\lambda = 1/\\beta $, this can be reparameterized in terms of the scale (waiting time) parameter as $$ p(x\\mid\\beta)=\\lambda^{-1}e^{-x/\\lambda} $$",
+      "source_page": 1201,
+      "source_pages": [
+        1201
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p013:b5",
+        "Evolution_appendix2:p013:b6",
+        "Evolution_appendix2:p013:b7",
+        "Evolution_appendix2:p013:b8"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          671.0,
+          903.0,
+          744.0
+        ],
+        [
+          329.0,
+          763.0,
+          707.0,
+          789.0
+        ],
+        [
+          132.0,
+          810.0,
+          904.0,
+          857.0
+        ],
+        [
+          429.0,
+          877.0,
+          605.0,
+          907.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "89e7da3a1110b4dce323cbead785e86eb51481f0eb9f0117d10966a483132225"
     },
     {
       "type": "discussion",
-      "content": "The sum of $ k $ exponentials with the same rate (or scale) parameter is called an Erlang distribution, and it was initially developed for certain problems in telephone queuing theory. Expressed in terms of the rate parameter, the resulting pdf becomes $$ p(x\\mid k,\\beta)=\\frac{\\beta^{k}}{(k-1)!}\\; x^{k-1}\\; e^{-\\beta x}\\quad\\mathrm{f o r}\\quad0\\leq x<\\infty $$ where the integer k is called the shape parameter, with k = 1 recovering the exponential."
+      "content": "The sum of $ k $ exponentials with the same rate (or scale) parameter is called an Erlang distribution, and it was initially developed for certain problems in telephone queuing theory. Expressed in terms of the rate parameter, the resulting pdf becomes $$ p(x\\mid k,\\beta)=\\frac{\\beta^{k}}{(k-1)!}\\; x^{k-1}\\; e^{-\\beta x}\\quad\\mathrm{f o r}\\quad0\\leq x<\\infty $$ where the integer k is called the shape parameter, with k = 1 recovering the exponential.",
+      "source_page": 1201,
+      "source_pages": [
+        1201
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p013:b9",
+        "Evolution_appendix2:p013:b10",
+        "Evolution_appendix2:p013:b11"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          927.0,
+          904.0,
+          1000.0
+        ],
+        [
+          302.0,
+          1017.0,
+          732.0,
+          1072.0
+        ],
+        [
+          132.0,
+          1090.0,
+          897.0,
+          1114.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8252452cff792d1d7baeddac23246a48761c6859626a1e6f0396dba2d4a078a4"
     },
     {
       "type": "discussion",
-      "content": "The gamma distribution follows by allowing the shape parameter to be any positive number, $ \\alpha $, with $ x \\sim \\Gamma(\\alpha, \\beta) $ having its pdf defined by its shape ($ \\alpha $) and rate ($ \\beta $) values, $$ \\begin{align*}p(x\\mid\\alpha,\\beta)={\\beta^\\alpha\\over\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\beta x}\\quad{\\rm for}\\alpha,\\beta,x>0\\end{align*} $$"
+      "content": "The gamma distribution follows by allowing the shape parameter to be any positive number, $ \\alpha $, with $ x \\sim \\Gamma(\\alpha, \\beta) $ having its pdf defined by its shape ($ \\alpha $) and rate ($ \\beta $) values, $$ \\begin{align*}p(x\\mid\\alpha,\\beta)={\\beta^\\alpha\\over\\Gamma(\\alpha)}x^{\\alpha-1}e^{-\\beta x}\\quad{\\rm for}\\alpha,\\beta,x>0\\end{align*} $$",
+      "source_page": 1201,
+      "source_pages": [
+        1201
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p013:b12",
+        "Evolution_appendix2:p013:b13"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1117.0,
+          902.0,
+          1181.0
+        ],
+        [
+          324.0,
+          1179.0,
+          712.0,
+          1227.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2fb5c65d0679a0b62b9f28f538bf9d816c7f22d61e10907e08c2b89d6f824e84"
     },
     {
       "type": "discussion",
-      "content": "Note that the factorial in the Erlang is replaced by the gamma function, $ \\Gamma(x) $, which is defined below (Equation A2.26a). Figure A2.2 shows how changes in these two parameters influence the shape of the distribution. Note that, as a function of x, $$ p(x\\mid\\alpha,\\beta)\\propto x^{\\alpha-1}e^{-\\beta x} $$"
+      "content": "Note that the factorial in the Erlang is replaced by the gamma function, $ \\Gamma(x) $, which is defined below (Equation A2.26a). Figure A2.2 shows how changes in these two parameters influence the shape of the distribution. Note that, as a function of x, $$ p(x\\mid\\alpha,\\beta)\\propto x^{\\alpha-1}e^{-\\beta x} $$",
+      "source_page": 1201,
+      "source_pages": [
+        1201
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p013:b15",
+        "Evolution_appendix2:p013:b16"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1238.0,
+          904.0,
+          1309.0
+        ],
+        [
+          419.0,
+          1327.0,
+          617.0,
+          1356.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8cb4567fedead3273de0489993dd8e9f7c45f078ee415f8823c501614db7b5e9"
     },
     {
       "type": "discussion",
-      "content": "When expressed in terms of the scale ($ \\lambda = 1/\\beta $) parameter, the pdf becomes $$ p(x\\mid\\alpha,\\lambda)=\\frac{\\lambda^{-\\alpha}}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-x/\\lambda} $$ which yields $$ p(x\\mid\\alpha,\\lambda)\\propto x^{\\alpha-1}e^{-x/\\lambda} $$ Because both the rate and scale versions of the gamma distribution are widely used, take care to know which version your software package is using (for example, the default in R uses the scale parameter version). We can parameterize a gamma in terms of its mean and variance by noting that $$ \\mu_{x}=\\frac{\\alpha}{\\beta}=\\alpha\\lambda\\qquad and\\qquad\\sigma_{x}^{2}=\\frac{\\alpha}{\\beta^{2}}=\\alpha\\lambda^{2} $$ so that $$ \\alpha=\\frac{\\mu_{x}^{2}}{\\sigma_{x}^{2}}\\qquad and\\qquad\\beta=\\frac{\\mu_{x}}{\\sigma_{x}^{2}} $$"
+      "content": "When expressed in terms of the scale ($ \\lambda = 1/\\beta $) parameter, the pdf becomes $$ p(x\\mid\\alpha,\\lambda)=\\frac{\\lambda^{-\\alpha}}{\\Gamma(\\alpha)}x^{\\alpha-1}e^{-x/\\lambda} $$ which yields $$ p(x\\mid\\alpha,\\lambda)\\propto x^{\\alpha-1}e^{-x/\\lambda} $$ Because both the rate and scale versions of the gamma distribution are widely used, take care to know which version your software package is using (for example, the default in R uses the scale parameter version). We can parameterize a gamma in terms of its mean and variance by noting that $$ \\mu_{x}=\\frac{\\alpha}{\\beta}=\\alpha\\lambda\\qquad and\\qquad\\sigma_{x}^{2}=\\frac{\\alpha}{\\beta^{2}}=\\alpha\\lambda^{2} $$ so that $$ \\alpha=\\frac{\\mu_{x}^{2}}{\\sigma_{x}^{2}}\\qquad and\\qquad\\beta=\\frac{\\mu_{x}}{\\sigma_{x}^{2}} $$",
+      "source_page": 1201,
+      "source_pages": [
+        1201,
+        1202
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p013:b18",
+        "Evolution_appendix2:p013:b19",
+        "Evolution_appendix2:p014:b4",
+        "Evolution_appendix2:p014:b5",
+        "Evolution_appendix2:p014:b7",
+        "Evolution_appendix2:p014:b8",
+        "Evolution_appendix2:p014:b10",
+        "Evolution_appendix2:p014:b11"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1376.0,
+          780.0,
+          1401.0
+        ],
+        [
+          381.0,
+          1418.0,
+          634.0,
+          1473.0
+        ],
+        [
+          289.0,
+          501.0,
+          406.0,
+          526.0
+        ],
+        [
+          572.0,
+          523.0,
+          775.0,
+          551.0
+        ],
+        [
+          286.0,
+          559.0,
+          1059.0,
+          654.0
+        ],
+        [
+          487.0,
+          663.0,
+          858.0,
+          707.0
+        ],
+        [
+          288.0,
+          719.0,
+          355.0,
+          742.0
+        ],
+        [
+          550.0,
+          737.0,
+          795.0,
+          788.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "dc55b2b605f3ac8407b3250dcb8ff46c5b3583edaff5ffc9838becc51ef8739e"
     },
     {
       "type": "discussion",
-      "content": "$ \\Gamma(\\alpha) $, the gamma function evaluated at $ \\alpha $ (which normalizes the gamma distribution), is defined by $$ \\Gamma(\\alpha)=\\int_{0}^{\\infty}y^{\\alpha-1}e^{-y}d y\\qquad for\\alpha>0 $$"
+      "content": "$ \\Gamma(\\alpha) $, the gamma function evaluated at $ \\alpha $ (which normalizes the gamma distribution), is defined by $$ \\Gamma(\\alpha)=\\int_{0}^{\\infty}y^{\\alpha-1}e^{-y}d y\\qquad for\\alpha>0 $$",
+      "source_page": 1202,
+      "source_pages": [
+        1202
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p014:b13",
+        "Evolution_appendix2:p014:b14"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          792.0,
+          1059.0,
+          839.0
+        ],
+        [
+          514.0,
+          839.0,
+          834.0,
+          889.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b3c38e3aac84c555d038470780403a5a84f67a2635f03b4c19db3de1285f0b32"
     },
     {
       "type": "discussion",
-      "content": "This is the generalization of the factorial function from the integers to any positive number. If $n$ is an integer, then $\\Gamma(n) = (n - 1)!$ Using integration by parts, one can show that $\\Gamma$ satisfies the following identities $$ \\Gamma(\\alpha+1)=\\alpha\\Gamma(\\alpha),\\quad\\Gamma(1)=1,\\quad and\\quad\\Gamma(1/2)=\\sqrt{\\pi} $$ The chi-square ($ \\chi^2 $) distribution is a special case of the gamma, as a $ \\chi^2 $ random variable with $ n $ degrees of freedom follows a gamma distribution with parameters $ \\alpha = n/2 $ and $ \\beta = 1/2 $ ($ \\lambda = 2 $), namely, $ \\chi_n^2 \\sim \\Gamma(\\frac{n}{2}, 1/2) $, giving the density function as $$ p(x\\mid n)=\\frac{2^{-n/2}}{\\Gamma(n/2)}x^{n/2-1}e^{-x/2} $$ Hence for $ x \\sim \\chi_{n}^{2} $, $$ p(x)\\propto x^{n/2-1}e^{-x/2} $$"
+      "content": "This is the generalization of the factorial function from the integers to any positive number. If $n$ is an integer, then $\\Gamma(n) = (n - 1)!$ Using integration by parts, one can show that $\\Gamma$ satisfies the following identities $$ \\Gamma(\\alpha+1)=\\alpha\\Gamma(\\alpha),\\quad\\Gamma(1)=1,\\quad and\\quad\\Gamma(1/2)=\\sqrt{\\pi} $$ The chi-square ($ \\chi^2 $) distribution is a special case of the gamma, as a $ \\chi^2 $ random variable with $ n $ degrees of freedom follows a gamma distribution with parameters $ \\alpha = n/2 $ and $ \\beta = 1/2 $ ($ \\lambda = 2 $), namely, $ \\chi_n^2 \\sim \\Gamma(\\frac{n}{2}, 1/2) $, giving the density function as $$ p(x\\mid n)=\\frac{2^{-n/2}}{\\Gamma(n/2)}x^{n/2-1}e^{-x/2} $$ Hence for $ x \\sim \\chi_{n}^{2} $, $$ p(x)\\propto x^{n/2-1}e^{-x/2} $$",
+      "source_page": 1202,
+      "source_pages": [
+        1202
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p014:b16",
+        "Evolution_appendix2:p014:b17",
+        "Evolution_appendix2:p014:b19",
+        "Evolution_appendix2:p014:b20",
+        "Evolution_appendix2:p014:b22",
+        "Evolution_appendix2:p014:b23"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          892.0,
+          1060.0,
+          964.0
+        ],
+        [
+          449.0,
+          976.0,
+          897.0,
+          1003.0
+        ],
+        [
+          286.0,
+          1014.0,
+          1058.0,
+          1088.0
+        ],
+        [
+          541.0,
+          1098.0,
+          803.0,
+          1151.0
+        ],
+        [
+          289.0,
+          1162.0,
+          447.0,
+          1188.0
+        ],
+        [
+          587.0,
+          1181.0,
+          759.0,
+          1211.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f6279acea29d549bd2529edd8e845f2c05f924f8ddfc2f8ee275de55bec007a2"
     },
     {
       "type": "discussion",
-      "content": "The inverse-gamma distribution will prove useful as a conjugate prior for Gaussian likelihoods with unknown variance. It is defined by the distribution of the random variable $ y = x^{-1} $, where $ x \\sim \\text{Gamma}(\\alpha, \\beta) $. The resulting density function is $$ p(x\\mid\\alpha,\\beta)=\\frac{\\beta^{\\alpha}}{\\Gamma(\\alpha)}x^{-(\\alpha+1)}e^{-\\beta/x}\\quad for\\alpha,\\beta,x>0 $$"
+      "content": "The inverse-gamma distribution will prove useful as a conjugate prior for Gaussian likelihoods with unknown variance. It is defined by the distribution of the random variable $ y = x^{-1} $, where $ x \\sim \\text{Gamma}(\\alpha, \\beta) $. The resulting density function is $$ p(x\\mid\\alpha,\\beta)=\\frac{\\beta^{\\alpha}}{\\Gamma(\\alpha)}x^{-(\\alpha+1)}e^{-\\beta/x}\\quad for\\alpha,\\beta,x>0 $$",
+      "source_page": 1202,
+      "source_pages": [
+        1202
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p014:b25",
+        "Evolution_appendix2:p014:b26"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1218.0,
+          1059.0,
+          1290.0
+        ],
+        [
+          462.0,
+          1301.0,
+          883.0,
+          1351.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "996022a5e0609a54de3ffa5fc2acd7afab6d37c77cd6817a813c7639497e1476"
     },
     {
       "type": "discussion",
-      "content": "The mean and variance for this distribution are only defined (i.e., finite) if $ \\alpha $ is sufficiently large, with $$ \\mu_{x}=\\frac{\\beta}{\\alpha-1}\\quad for\\alpha>1\\quad and\\quad\\sigma_{x}^{2}=\\frac{\\beta^{2}}{(\\alpha-1)^{2}(\\alpha-2)}\\quad for\\alpha>2 $$"
+      "content": "The mean and variance for this distribution are only defined (i.e., finite) if $ \\alpha $ is sufficiently large, with $$ \\mu_{x}=\\frac{\\beta}{\\alpha-1}\\quad for\\alpha>1\\quad and\\quad\\sigma_{x}^{2}=\\frac{\\beta^{2}}{(\\alpha-1)^{2}(\\alpha-2)}\\quad for\\alpha>2 $$",
+      "source_page": 1202,
+      "source_pages": [
+        1202
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p014:b28",
+        "Evolution_appendix2:p014:b29"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1360.0,
+          1059.0,
+          1409.0
+        ],
+        [
+          336.0,
+          1420.0,
+          938.0,
+          1473.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "fd7c5f2854290451a9a759b61d85599f48c337f51458dcd0f24e7b1d60f8bcfb"
     },
     {
       "type": "discussion",
-      "content": "Note for the inverse gamma that $$ p(x\\mid\\alpha,\\beta)\\propto x^{-(\\alpha+1)}e^{-\\beta/x} $$"
+      "content": "Note for the inverse gamma that $$ p(x\\mid\\alpha,\\beta)\\propto x^{-(\\alpha+1)}e^{-\\beta/x} $$",
+      "source_page": 1203,
+      "source_pages": [
+        1203
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p015:b2",
+        "Evolution_appendix2:p015:b3"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          207.0,
+          418.0,
+          231.0
+        ],
+        [
+          404.0,
+          248.0,
+          632.0,
+          277.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d78ac5731c9c50ec76184d1d47172cfb8e3b70b02ec43e3e97f62592dc15dad2"
     },
     {
       "type": "discussion",
-      "content": "If $ y \\sim \\chi_n^2 $, then $ x = 1/y $ follows an inverse chi-square distribution, which is denoted by $ x \\sim \\chi_n^{-2} $. This is a special case of the inverse gamma, with (as for a normal $ \\chi^2 $) $ \\alpha = n/2 $, $ \\beta = 1/2 $. For $ n > 4 $ (i.e., $ \\alpha > 2 $), the resulting density function is $$ p(x\\mid n)=\\frac{2^{-n/2}}{\\Gamma(n/2)}x^{-(n/2+1)}e^{-1/(2x)} $$ with a mean and variance of $$ \\mu_{x}=\\frac{1}{n-2}\\qquad and\\qquad\\sigma_{x}^{2}=\\frac{2}{(n-2)^{2}(n-4)} $$"
+      "content": "If $ y \\sim \\chi_n^2 $, then $ x = 1/y $ follows an inverse chi-square distribution, which is denoted by $ x \\sim \\chi_n^{-2} $. This is a special case of the inverse gamma, with (as for a normal $ \\chi^2 $) $ \\alpha = n/2 $, $ \\beta = 1/2 $. For $ n > 4 $ (i.e., $ \\alpha > 2 $), the resulting density function is $$ p(x\\mid n)=\\frac{2^{-n/2}}{\\Gamma(n/2)}x^{-(n/2+1)}e^{-1/(2x)} $$ with a mean and variance of $$ \\mu_{x}=\\frac{1}{n-2}\\qquad and\\qquad\\sigma_{x}^{2}=\\frac{2}{(n-2)^{2}(n-4)} $$",
+      "source_page": 1203,
+      "source_pages": [
+        1203
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p015:b5",
+        "Evolution_appendix2:p015:b6",
+        "Evolution_appendix2:p015:b8",
+        "Evolution_appendix2:p015:b9"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          295.0,
+          902.0,
+          368.0
+        ],
+        [
+          362.0,
+          384.0,
+          665.0,
+          437.0
+        ],
+        [
+          134.0,
+          455.0,
+          384.0,
+          478.0
+        ],
+        [
+          319.0,
+          492.0,
+          713.0,
+          541.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "54f3edbd9e9ebe5799b8a5210551724e5118ebe59f5017775a11662e7845f333"
     },
     {
       "type": "discussion",
-      "content": "The scaled inverse chi-square distribution is more typically used in a Bayesian analysis, where the rate parameter, $ \\beta $ (which equals 1/2 under a chi-square), is replaced by $ \\beta = \\sigma_{0}^{2}/2 $, making the resulting pdf $$ p(x\\mid n)\\propto x^{-(n/2+1)}e^{-\\sigma_{0}^{2}/(2x)} $$ where the $ 1/(2x) $ term in the exponential is replaced by a $ \\sigma_0^2/(2x) $ term. The scaled inverse chi-square distribution thus involves two parameters $ (\\sigma_0^2 $ and $ n) $, and is denoted by $ \\chi_{(n,\\sigma_0^2)}^{-2} $ or $ \\mathrm{SI}-\\chi^2(n,\\sigma_0^2) $. Note that if $$ x\\sim\\chi_{(n,\\sigma_{0}^{2})}^{-2},\\qquad\\mathrm{t h e n}\\qquad\\sigma_{0}^{2}x\\sim\\chi_{n}^{-2} $$ which shows that $ \\sigma_{0}^{2} $ is a scaling factor on a standard $ (\\beta = 1/2) $ inverse chi-square."
+      "content": "The scaled inverse chi-square distribution is more typically used in a Bayesian analysis, where the rate parameter, $ \\beta $ (which equals 1/2 under a chi-square), is replaced by $ \\beta = \\sigma_{0}^{2}/2 $, making the resulting pdf $$ p(x\\mid n)\\propto x^{-(n/2+1)}e^{-\\sigma_{0}^{2}/(2x)} $$ where the $ 1/(2x) $ term in the exponential is replaced by a $ \\sigma_0^2/(2x) $ term. The scaled inverse chi-square distribution thus involves two parameters $ (\\sigma_0^2 $ and $ n) $, and is denoted by $ \\chi_{(n,\\sigma_0^2)}^{-2} $ or $ \\mathrm{SI}-\\chi^2(n,\\sigma_0^2) $. Note that if $$ x\\sim\\chi_{(n,\\sigma_{0}^{2})}^{-2},\\qquad\\mathrm{t h e n}\\qquad\\sigma_{0}^{2}x\\sim\\chi_{n}^{-2} $$ which shows that $ \\sigma_{0}^{2} $ is a scaling factor on a standard $ (\\beta = 1/2) $ inverse chi-square.",
+      "source_page": 1203,
+      "source_pages": [
+        1203
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p015:b11",
+        "Evolution_appendix2:p015:b12",
+        "Evolution_appendix2:p015:b14",
+        "Evolution_appendix2:p015:b15",
+        "Evolution_appendix2:p015:b17"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          558.0,
+          904.0,
+          630.0
+        ],
+        [
+          390.0,
+          645.0,
+          639.0,
+          677.0
+        ],
+        [
+          132.0,
+          695.0,
+          900.0,
+          773.0
+        ],
+        [
+          360.0,
+          787.0,
+          674.0,
+          821.0
+        ],
+        [
+          131.0,
+          842.0,
+          834.0,
+          867.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7bd0cbf7c766ae92acfe76e94b66356050c1ff8bd92a625e09f7766730045e2e"
     }
   ]
 }

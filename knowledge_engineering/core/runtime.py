@@ -2,19 +2,18 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
 import socket
-import time
-import hashlib
 import threading
+import time
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Tuple
+from typing import Any, Dict, List, Tuple
 from urllib import error as urlerror
 from urllib import request as urlrequest
-
 
 DEFAULT_SOURCE_TITLE = "Evolution and Selection of Quantitative Traits"
 CHAPTER_NAME_PATTERN = re.compile(r"^chapter(?P<num>\d+)$", re.IGNORECASE)

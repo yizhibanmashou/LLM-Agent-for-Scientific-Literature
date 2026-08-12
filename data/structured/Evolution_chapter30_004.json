@@ -21,47 +21,617 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "As was discussed briefly in Chapters 13 and 20, $ \\beta $, removes the effects of phenotypic correlations (among the set of traits being considered) because it is a vector of partial regression coefficients. From multiple regression theory (LW Chapter 8), the vector of partial regression coefficients for predicting the value of w, given a vector of observations z, is $ \\mathbf{P}^{-1}\\sigma(\\mathbf{z},w) $, where $ \\mathbf{P} $ is the covariance matrix of z and $ \\sigma(\\mathbf{z},w) $ is the vector of covariances between the elements of z and fitness, with an ith element of $ \\sigma(z_i,w) $. Because $ \\mathbf{S}=\\sigma(\\mathbf{z},w) $, it immediately follows that $$ \\mathbf{P}^{-1}\\boldsymbol{\\sigma}(\\mathbf{z},w)=\\mathbf{P}^{-1}\\mathbf{S}=\\boldsymbol{\\beta} $$ is the vector of partial regression coefficients for the linear regression of relative fitness, w, on phenotypic value, z, namely, $$ \\begin{align*}w(\\mathbf{z})=1+\\sum\\limits_{j=1}^n\\beta_j(z_j-\\mu_j)+e=1+\\beta^T(\\mathbf{z}-\\boldsymbol{\\mu})+e\\end{align*} $$"
+      "content": "As was discussed briefly in Chapters 13 and 20, $ \\beta $, removes the effects of phenotypic correlations (among the set of traits being considered) because it is a vector of partial regression coefficients. From multiple regression theory (LW Chapter 8), the vector of partial regression coefficients for predicting the value of w, given a vector of observations z, is $ \\mathbf{P}^{-1}\\sigma(\\mathbf{z},w) $, where $ \\mathbf{P} $ is the covariance matrix of z and $ \\sigma(\\mathbf{z},w) $ is the vector of covariances between the elements of z and fitness, with an ith element of $ \\sigma(z_i,w) $. Because $ \\mathbf{S}=\\sigma(\\mathbf{z},w) $, it immediately follows that $$ \\mathbf{P}^{-1}\\boldsymbol{\\sigma}(\\mathbf{z},w)=\\mathbf{P}^{-1}\\mathbf{S}=\\boldsymbol{\\beta} $$ is the vector of partial regression coefficients for the linear regression of relative fitness, w, on phenotypic value, z, namely, $$ \\begin{align*}w(\\mathbf{z})=1+\\sum\\limits_{j=1}^n\\beta_j(z_j-\\mu_j)+e=1+\\beta^T(\\mathbf{z}-\\boldsymbol{\\mu})+e\\end{align*} $$",
+      "source_page": 1115,
+      "source_pages": [
+        1115,
+        1116
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p002:b14",
+        "Evolution_chapter30:p002:b15",
+        "Evolution_chapter30:p003:b4",
+        "Evolution_chapter30:p003:b5",
+        "Evolution_chapter30:p003:b7",
+        "Evolution_chapter30:p003:b8"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1370.0,
+          687.0,
+          1394.0
+        ],
+        [
+          287.0,
+          1399.0,
+          1059.0,
+          1447.0
+        ],
+        [
+          132.0,
+          670.0,
+          901.0,
+          787.0
+        ],
+        [
+          405.0,
+          784.0,
+          632.0,
+          810.0
+        ],
+        [
+          132.0,
+          821.0,
+          903.0,
+          870.0
+        ],
+        [
+          296.0,
+          887.0,
+          740.0,
+          947.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "12f46bbfe9c691b01c8cad319bc666b9e480ba370e9cf2e1964d54f20db5bb0e"
     },
     {
       "type": "discussion",
-      "content": "Recalling the fact (LW Chapters 3 and 8) that the regression must pass through the means of both w and z (1 and $ \\mu $, respectively), allows us to remove the intercept constant, a, in the regression. We could equivalently write Equation 30.2b as $ w(\\mathbf{z}) = a + \\beta^{T}\\mathbf{z} + e $, where $ a = 1 - \\beta^{T}\\mu $."
+      "content": "Recalling the fact (LW Chapters 3 and 8) that the regression must pass through the means of both w and z (1 and $ \\mu $, respectively), allows us to remove the intercept constant, a, in the regression. We could equivalently write Equation 30.2b as $ w(\\mathbf{z}) = a + \\beta^{T}\\mathbf{z} + e $, where $ a = 1 - \\beta^{T}\\mu $.",
+      "source_page": 1116,
+      "source_pages": [
+        1116
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p003:b10"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          964.0,
+          902.0,
+          1060.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "236c526157bebaf4f6e1da587a45a643f23240183c157c142cac00be1436942c"
     },
     {
       "type": "discussion",
-      "content": "The partial regression coefficient, $ \\beta_j $, represents the change in $ w $ from a one-unit increase in $ z_j $ while holding all the other characters constant. It is important to note, however, that $ \\beta $ accounts for the effects of phenotypic correlations only among the measured set of characters that comprise the elements of $ z $. Among the members of this set, a character under no directional selection has a value of $ \\beta_j = 0 $. Because S = Pβ, we have $$ \\begin{align*}S_i=\\sum\\limits_{j=1}^n\\beta_j\\; P_{ij}=\\beta_i\\; P_{ii}+\\sum\\limits_{j\\ne i}^n\\beta_j\\; P_{ij}\\end{align*} $$ which illustrates that the directional selection differential for trait $i$ confounds direct selection on that character ($\\beta_i$) with indirect contributions due to selection on phenotypically correlated characters ($\\beta_j P_{ij} \\neq 0$). These contributions are given, respectively, by the first and second terms in Equation 30.3."
+      "content": "The partial regression coefficient, $ \\beta_j $, represents the change in $ w $ from a one-unit increase in $ z_j $ while holding all the other characters constant. It is important to note, however, that $ \\beta $ accounts for the effects of phenotypic correlations only among the measured set of characters that comprise the elements of $ z $. Among the members of this set, a character under no directional selection has a value of $ \\beta_j = 0 $. Because S = Pβ, we have $$ \\begin{align*}S_i=\\sum\\limits_{j=1}^n\\beta_j\\; P_{ij}=\\beta_i\\; P_{ii}+\\sum\\limits_{j\\ne i}^n\\beta_j\\; P_{ij}\\end{align*} $$ which illustrates that the directional selection differential for trait $i$ confounds direct selection on that character ($\\beta_i$) with indirect contributions due to selection on phenotypically correlated characters ($\\beta_j P_{ij} \\neq 0$). These contributions are given, respectively, by the first and second terms in Equation 30.3.",
+      "source_page": 1116,
+      "source_pages": [
+        1116
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p003:b11",
+        "Evolution_chapter30:p003:b12",
+        "Evolution_chapter30:p003:b13",
+        "Evolution_chapter30:p003:b15"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1060.0,
+          905.0,
+          1176.0
+        ],
+        [
+          172.0,
+          1176.0,
+          401.0,
+          1198.0
+        ],
+        [
+          365.0,
+          1215.0,
+          669.0,
+          1278.0
+        ],
+        [
+          132.0,
+          1294.0,
+          903.0,
+          1385.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1ec9bb99fd11152d87a1a34e7c6284b51e0f170b601e05665ed71fb98809a3be"
     },
     {
       "type": "discussion",
-      "content": "Operationally, fitness regressions are usually computed using standardized variables, $$ \\begin{align*}z_{sd,i}=\\frac{z_i-\\mu_i}{\\sigma_i}\\end{align*} $$ with $ z_{sd,i} $ having a mean of zero and unit variance (this is often denoted by $ z'_{i} $ in the literature). As mentioned in Chapter 29, one could also mean-standardize $ (z_{i}/\\mu_{i}) $, but when the term standardized variable is used in the evolutionary and ecological literature, it usually implies Equation 30.4a. The selection differential of the standardized variable is simply the selection intensity $ \\bar{\\tau} $ (Equation 13.6a), as $$ S_{sd,i}=\\sigma(z_{sd,i},w)=\\sigma(z_{i}/\\sigma_{i},w)=\\frac{\\sigma(z_{i},w)}{\\sigma_{i}}=\\frac{S_{i}}{\\sigma_{i}}=\\bar{\\imath}_{i} $$"
+      "content": "Operationally, fitness regressions are usually computed using standardized variables, $$ \\begin{align*}z_{sd,i}=\\frac{z_i-\\mu_i}{\\sigma_i}\\end{align*} $$ with $ z_{sd,i} $ having a mean of zero and unit variance (this is often denoted by $ z'_{i} $ in the literature). As mentioned in Chapter 29, one could also mean-standardize $ (z_{i}/\\mu_{i}) $, but when the term standardized variable is used in the evolutionary and ecological literature, it usually implies Equation 30.4a. The selection differential of the standardized variable is simply the selection intensity $ \\bar{\\tau} $ (Equation 13.6a), as $$ S_{sd,i}=\\sigma(z_{sd,i},w)=\\sigma(z_{i}/\\sigma_{i},w)=\\frac{\\sigma(z_{i},w)}{\\sigma_{i}}=\\frac{S_{i}}{\\sigma_{i}}=\\bar{\\imath}_{i} $$",
+      "source_page": 1116,
+      "source_pages": [
+        1116,
+        1117
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p003:b16",
+        "Evolution_chapter30:p003:b17",
+        "Evolution_chapter30:p004:b2",
+        "Evolution_chapter30:p004:b3"
+      ],
+      "source_bboxes": [
+        [
+          170.0,
+          1387.0,
+          903.0,
+          1412.0
+        ],
+        [
+          452.0,
+          1429.0,
+          582.0,
+          1473.0
+        ],
+        [
+          286.0,
+          206.0,
+          1059.0,
+          323.0
+        ],
+        [
+          445.0,
+          340.0,
+          902.0,
+          392.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a5b69df575c4746af7a2be4f62840bc6e172fa2d91f28b4e63afef5de2f7ff56"
     },
     {
       "type": "discussion",
-      "content": "The standardization given by Equation 30.4 can be expressed in matrix form as $$ \\mathbf{z}_{sd}=\\mathbf{D}^{-1}(\\mathbf{z}-\\boldsymbol{\\mu}) $$ where D is the diagonal matrix $$ \\mathbf{D}=\\begin{pmatrix}{{{\\sigma_{1}}}}&{{{0}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{0}}}&{{{\\sigma_{2}}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{\\vdots}}}&{{{\\ddots}}}&{{{\\vdots}}} \\\\{{{0}}}&{{{0}}}&{{{\\cdots}}}&{{{\\sigma_{n}}}}\\end{pmatrix} $$"
+      "content": "The standardization given by Equation 30.4 can be expressed in matrix form as $$ \\mathbf{z}_{sd}=\\mathbf{D}^{-1}(\\mathbf{z}-\\boldsymbol{\\mu}) $$ where D is the diagonal matrix $$ \\mathbf{D}=\\begin{pmatrix}{{{\\sigma_{1}}}}&{{{0}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{0}}}&{{{\\sigma_{2}}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{\\vdots}}}&{{{\\ddots}}}&{{{\\vdots}}} \\\\{{{0}}}&{{{0}}}&{{{\\cdots}}}&{{{\\sigma_{n}}}}\\end{pmatrix} $$",
+      "source_page": 1117,
+      "source_pages": [
+        1117
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p004:b4",
+        "Evolution_chapter30:p004:b5",
+        "Evolution_chapter30:p004:b7",
+        "Evolution_chapter30:p004:b8"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          405.0,
+          966.0,
+          431.0
+        ],
+        [
+          593.0,
+          448.0,
+          753.0,
+          474.0
+        ],
+        [
+          288.0,
+          493.0,
+          562.0,
+          517.0
+        ],
+        [
+          556.0,
+          535.0,
+          785.0,
+          639.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "953d399a973205df342bc7add62cc02e7dc69033f98da99e4f916938e6884067"
     },
     {
       "type": "discussion",
-      "content": "Equations 30.4b and 30.4c imply that the phenotypic covariance matrix $ (P_{sd}) $ for the standardized variables is simply the matrix of all pairwise correlations. Following our notation from Chapter 29, we denote selection gradients using variance-standardized variables by $ \\beta_{sd,i} $, although they are often denoted by $ \\beta_i' $ in the literature. When expressed with standardized variables, Equation 30.2b becomes $$ \\begin{array}{r l}{w(\\mathbf{z}_{s d})=1+\\beta_{s d}^{T}\\mathbf{z}_{s d}+e,}&{{}\\mathrm{w h e r e}\\quad\\beta_{s d}=\\mathbf{P}_{s d}^{-1}\\mathbf{S}_{s d}}\\end{array} $$"
+      "content": "Equations 30.4b and 30.4c imply that the phenotypic covariance matrix $ (P {sd}) $ for the standardized variables is simply the matrix of all pairwise correlations. Following our notation from Chapter 29, we denote selection gradients using variance-standardized variables by $ \\beta {sd,i} $, although they are often denoted by $ \\beta i' $ in the literature. When expressed with standardized variables, Equation 30.2b becomes",
+      "source_page": 1117,
+      "source_pages": [
+        1117
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p004:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          655.0,
+          1059.0,
+          772.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "2ffae8c93399f9aebc54e6f7ed5c7cd088dcf799b2cc5a1cab46ee154bcaf5c2"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ \\begin{array}{r l}{w(\\mathbf{z} {s d})=1+\\beta {s d}^{T}\\mathbf{z} {s d}+e,}&{{}\\mathrm{w h e r e}\\quad\\beta {s d}=\\mathbf{P} {s d}^{-1}\\mathbf{S} {s d}}\\end{array} $$",
+      "source_page": 1117,
+      "source_pages": [
+        1117
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p004:b11"
+      ],
+      "source_bboxes": [
+        [
+          459.0,
+          791.0,
+          888.0,
+          819.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "c9e888dd440fdd3897f292e1f58b4cdf4a1790d80254497c292a83d8032a9741"
     },
     {
       "type": "discussion",
-      "content": "Here $ \\beta_{sd,i} $ is the expected change in relative fitness given a change of one standard deviation in trait $ z_i $ when all of the other measured trait values (i.e., the elements of $ \\mathbf{z} $) are held constant."
+      "content": "Here $ \\beta {sd,i} $ is the expected change in relative fitness given a change of one standard deviation in trait $ z i $ when all of the other measured trait values (i.e., the elements of $ \\mathbf{z} $) are held constant.",
+      "source_page": 1117,
+      "source_pages": [
+        1117
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p004:b12"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          836.0,
+          1057.0,
+          884.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "c5d56ec3b4f458c6334c36cd59ad217e1044438586d352e6c95ab2407d92dddc"
     },
     {
       "type": "discussion",
-      "content": "The total strength of directional selection on the set of measured characters is a quantity of interest, and is given by the norm of $ \\beta $, where (Equation A5.1a) $$ ||\\boldsymbol{\\beta}||=\\sqrt{\\boldsymbol{\\beta}^{T}\\boldsymbol{\\beta}}=\\sqrt{\\sum\\boldsymbol{\\beta}_{i}^{2}} $$"
+      "content": "The total strength of directional selection on the set of measured characters is a quantity of interest, and is given by the norm of $ \\beta $, where (Equation A5.1a)",
+      "source_page": 1117,
+      "source_pages": [
+        1117
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p004:b13"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          884.0,
+          1058.0,
+          931.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "29538eb33ea083fd7adc6a7c438ccebfb8bcfaf34558a7b77622071aa6613ed7"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ \\boldsymbol{\\beta} =\\sqrt{\\boldsymbol{\\beta}^{T}\\boldsymbol{\\beta}}=\\sqrt{\\sum\\boldsymbol{\\beta} {i}^{2}} $$",
+      "source_page": 1117,
+      "source_pages": [
+        1117
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p004:b14"
+      ],
+      "source_bboxes": [
+        [
+          563.0,
+          950.0,
+          784.0,
+          991.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "8031839ebcba9e33b622783ae3eb5dd4ae1a2ec55c67ed086708d43950112c31"
     },
     {
       "type": "discussion",
-      "content": "Morrissey (2014b) noted that $ E[\\|\\beta\\|] \\geq \\|\\beta\\| $, as the values of $ \\beta_i $ are measured with error, and such error carries over into the norm. Suppose $ k $ independent traits are measured, where $ \\widehat{\\beta}_i \\sim N(\\beta, \\sigma^2) $, so that each $ \\beta_i $ is independent and identically distributed, with sampling error $ \\sigma^2 $. In this case, $ E[\\|\\widehat{\\beta}\\|] = \\sqrt{k(\\beta + \\sigma^2)} > \\|\\beta\\| = \\sqrt{k\\beta} $. Given that the standard error of an estimate of $ \\beta $ is often of the same order as the estimate itself (Morrissey 2014b), the total strength of selection can be considerably overestimated by $ \\|\\beta\\| $."
+      "content": "Morrissey (2014b) noted that $ E[\\lVert\\widehat{\\boldsymbol{\\beta}}\\rVert] \\geq \\lVert\\boldsymbol{\\beta}\\rVert $, as the values of $ \\beta_i $ are measured with error, and such error carries over into the norm. Suppose $ k $ independent traits are measured, where $ \\widehat{\\beta}_i \\sim N(\\beta_i, \\sigma_i^2) $, so that each $ \\widehat{\\beta}_i $ is independent and identically distributed, with sampling error $ \\sigma_i^2 $. In this case, $ E[\\lVert\\widehat{\\boldsymbol{\\beta}}\\rVert] = \\sqrt{k(\\beta_i^2 + \\sigma_i^2)} > \\lVert\\boldsymbol{\\beta}\\rVert = \\sqrt{k\\beta_i^2} $. Given that the standard error of an estimate of $ \\beta $ is often of the same order as the estimate itself (Morrissey 2014b), the total strength of selection can be considerably overestimated by $ \\lVert\\widehat{\\boldsymbol{\\beta}}\\rVert $.",
+      "source_page": 1117,
+      "source_pages": [
+        1117
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p004:b15"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1010.0,
+          1059.0,
+          1160.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "7591a2a4409bc1b8b243f378319ac60a839ee0443eb275cdbe09ced7d2a6c407"
     },
     {
       "type": "discussion",
-      "content": "We also remark in passing that the Henshaw-Zemel (2017) distributional selection differential (a nonparametric measure of the total shift in a distribution following selection; Equation 29.15a) can be generalized into a multivariate version that also partitions trait selection into direct and indirect effects; see their paper for details."
+      "content": "We also remark in passing that the Henshaw-Zemel (2017) distributional selection differential (a nonparametric measure of the total shift in a distribution following selection; Equation 29.15a) can be generalized into a multivariate version that also partitions trait selection into direct and indirect effects; see their paper for details.",
+      "source_page": 1117,
+      "source_pages": [
+        1117
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p004:b16"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1159.0,
+          1059.0,
+          1254.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "3bc80263361ecea3eadba43a670bc412a30a0213d81339ddee34d336f21754d9"
+    },
+    {
+      "type": "discussion",
+      "content": "Motivated by the univariate case wherein $ C = \\sigma[w, (z - \\mu)(z - \\mu)] $, the multivariate quadratic selection differential is defined as the square $ (n \\times n) $ matrix, C, whose elements are the covariances between all pairs of quadratic deviations, $ (z i - \\mu i)(z j - \\mu j) $, and relative fitness, w, namely,",
+      "source_page": 1119,
+      "source_pages": [
+        1119
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p006:b13"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1248.0,
+          1059.0,
+          1341.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "6c1a5d4bcb7056a118561642c67f3f765097715a0c54adc66027519b2ab073df"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ C {i j}=\\sigma[w,(z {i}-\\mu {i})(z {j}-\\mu {j})] $$",
+      "source_page": 1119,
+      "source_pages": [
+        1119
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p006:b14"
+      ],
+      "source_bboxes": [
+        [
+          543.0,
+          1359.0,
+          803.0,
+          1385.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "1f4197b3887caad5fda4c21de2144fd988623c29b5118bbd48f153addb21e2bc"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ \\mathbf{C}=\\boldsymbol{\\sigma}[w,(\\mathbf{z}-\\boldsymbol{\\mu})(\\mathbf{z}-\\boldsymbol{\\mu})^{T}]=\\mathbf{P}^{ }-\\mathbf{P}+\\mathbf{S}\\mathbf{S}^{T} $$",
+      "source_page": 1119,
+      "source_pages": [
+        1119
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p006:b17"
+      ],
+      "source_bboxes": [
+        [
+          481.0,
+          1442.0,
+          865.0,
+          1470.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "3ed47ce8dc1f8f7b2bad2b28a0fe2acd70eeac0b71b53c5a7ef30363813380c3"
+    },
+    {
+      "type": "discussion",
+      "content": "where P and $ P^{ } $ are, respectively, the phenotypic covariance matrices before- and after-selection. If no quadratic selection is acting, the covariance between each quadratic deviation and fitness is zero, and with C = 0. In this case, Equation 30.7b returns the within-generation change in P resulting from selection as",
+      "source_page": 1120,
+      "source_pages": [
+        1120
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p007:b2"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          206.0,
+          903.0,
+          301.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "820b3b3689f0d50123640ec08011d7712549e9d411d04169abe57b00ada82242"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ P {ij}^{ }-P {ij}=-S {i}S {j} $$",
+      "source_page": 1120,
+      "source_pages": [
+        1120
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p007:b3"
+      ],
+      "source_bboxes": [
+        [
+          438.0,
+          321.0,
+          598.0,
+          348.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "cafffbf2458b78cd93f228afbee4c28a8067f1ab65b4d8bcbef951670e52d5e7"
+    },
+    {
+      "type": "discussion",
+      "content": "This demonstrates that the $S i S j$ term corrects $C {ij}$ for the change in covariance caused by directional selection alone. This expression is the multivariate extension of the condition $\\sigma^2(z^ ) - \\sigma^2(z) = P^ - P = -S^2$ for a single trait (Equation 29.16a); the latter expression follows as a special case ($i = j$) for Equation 30.7c.",
+      "source_page": 1120,
+      "source_pages": [
+        1120
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p007:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          367.0,
+          904.0,
+          460.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "0ba4fb6df63270882e2f354925ae8a3d7015aebe814c8abdecbb2e19cc45a135"
+    },
+    {
+      "type": "discussion",
+      "content": "in the quadratic regression also appear as the coefficients of equations for predicting evolutionary change (Table 30.1). We will briefly review some statistical issues of fitting such regressions before examining the geometry of multivariate quadratic regressions.",
+      "source_page": 1125,
+      "source_pages": [
+        1125
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p012:b32"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1303.0,
+          1059.0,
+          1375.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "90c6e316cb21da7eabd26a0730257207adbc15755eb7136a710901ddac295d36"
+    },
+    {
+      "type": "discussion",
+      "content": "where $ y i = \\mathbf{e} i^T(\\mathbf{z} - \\mathbf{z} 0) $ and $ w 0 $ is shown by Equation 30.21b. Equation 30.26 is called the A canonical form and Equation 30.27, the B canonical form (Box and Draper 1987). Both forms represent a rotation of the original axis to the new set of coordinates (the canonical axes of $ \\gamma $) that align them with axes of symmetry of the original quadratic surface. The B canonical form further shifts the origin to the stationary point, $ z 0 $. Because the contribution to individual fitness from $ b^T z $ is a hyperplane, its effect is to tilt the fitness surface. The B canonical form effectively levels this tilting, thus allowing us to focus entirely on the curvature (quadratic) aspects of the fitness surface.",
+      "source_page": 1131,
+      "source_pages": [
+        1131
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p018:b5"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          411.0,
+          1059.0,
+          597.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "3628859167de6c638b07d11ee0229edd88a80bc64dc503e54fde365364c42841"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ \\beta_{JS,i}=E_{z_i}\\left[\\frac{\\partial w(\\mathbf{z})}{\\partial z_i}\\right]\\simeq\\frac{1}{n}\\sum_{j=1}^{n}\\left.\\frac{\\partial w(\\mathbf{z})}{\\partial z_i}\\right|_{\\mathbf{Z}=\\mathbf{Z}_j} $$",
+      "source_page": 1138,
+      "source_pages": [
+        1138
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p025:b5"
+      ],
+      "source_bboxes": [
+        [
+          338.0,
+          807.0,
+          695.0,
+          865.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "e1f5e08ec3e5053616bb8e7fbe23d51500b61d081990d24fe452d16f15458eb9"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:30.1]]"
+      "content": "[[SEE_EXAMPLE:30.1]]",
+      "source_page": 1117,
+      "source_pages": [
+        1117,
+        1118
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p004:b17",
+        "Evolution_chapter30:p005:b2",
+        "Evolution_chapter30:p005:b3",
+        "Evolution_chapter30:p005:b4",
+        "Evolution_chapter30:p005:b5",
+        "Evolution_chapter30:p005:b6"
+      ],
+      "source_bboxes": [
+        [
+          321.0,
+          1319.0,
+          1037.0,
+          1472.0
+        ],
+        [
+          166.0,
+          207.0,
+          882.0,
+          316.0
+        ],
+        [
+          236.0,
+          334.0,
+          804.0,
+          425.0
+        ],
+        [
+          167.0,
+          447.0,
+          773.0,
+          469.0
+        ],
+        [
+          190.0,
+          492.0,
+          851.0,
+          585.0
+        ],
+        [
+          166.0,
+          605.0,
+          881.0,
+          735.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e5879cb425386f0a93cda98600ef9acb3491c96f2d9052dbec20f23a29a33c5a"
     }
   ]
 }

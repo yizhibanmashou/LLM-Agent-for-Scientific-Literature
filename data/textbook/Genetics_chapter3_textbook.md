@@ -339,18 +339,7 @@ For practical reasons, we have expressed properties 1 – 6 in terms of the esti
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter3:1` · source: `Genetics_chapter3_008.json` · blocks 12–15
->
-> Example 1. Suppose $ \text{Cov}(x, y) = 10 $, $ \text{Var}(x) = 10 $, $ \text{Var}(y) = 15 $, and $ \overline{x} = \overline{y} = 0 $. Compute the least-squares regressions of y on x, and of x on y.
-> 
-> From Equation 3.14a, a = 0 for both regressions. However,
-> 
-> $$
-> b(y,x)=\mathrm{Cov}(x,y)/\mathrm{Var}(x)=10/10=1
-> $$
-> 
-> 
-> while $b(x,y) = \mathrm{Cov}(x,y)/\mathrm{Var}(y) = 2/3$. Hence, $\widehat{y} = x$ is the least-squares regression of $y$ on $x$, while $\widehat{x} = (2/3)y$ is the regression of $x$ on $y$.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter3:1]**
 
 
 ---
@@ -403,37 +392,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter3:2` · source: `Genetics_chapter3_009.json` · blocks 12–20
->
-> Example 2. Returning to Table 2.1, the preceding formulae can be used to characterize the relationship between maternal weight and offspring number in rats. Here we take offspring number as the response variable y and maternal weight as the predictor variable x. The mean and variance for maternal weight were found to be $ \overline{x} = 118.90 $ and $ \operatorname{Var}(x) = 623.06 $ (Table 2.1). For offspring number, $ \overline{y} = 5.49 $ and $ \operatorname{Var}(y) = 2.94 $. In order to obtain an estimate of the covariance, we first require an estimate of $ E(x, y) $. Taking the xy cross-product of all classes in Table 2.1 (using the midpoint of the interval for the value of x) and weighting them by their frequencies,
-> 
-> $$
-> \overline{xy}=\frac{\left(1\cdot4\cdot55\right)+\left(3\cdot5\cdot55\right)+\left(1\cdot6\cdot55\right)+\cdots+\left(1\cdot10\cdot195\right)}{1003}=660.14
-> $$
-> 
-> 
-> The covariance estimate is then obtained using Equation 3.9,
-> 
-> $$
-> \mathrm{Cov}(x,y)=\frac{1003}{1002}\left[660.14-(118.90\times5.49)\right]=7.39
-> $$
-> 
-> 
-> From Equation 3.14b, the slope of the regression is found to be
-> 
-> $$
-> b(y,x)=\frac{7.39}{623.06}=0.01
-> $$
-> 
-> 
-> Thus, the expected increase in number of offspring per gram increase in maternal weight is about 0.01. How predictable is this change? From Equation 3.15a, the correlation coefficient is estimated to be
-> 
-> $$
-> r=\frac{7.39}{\sqrt{623.06\times2.94}}=0.17
-> $$
-> 
-> 
-> Squaring this value, $ r^{2} = 0.03 $. Therefore, only about 3 percent of the variance in offspring number can be accounted for with a model that assumes a linear relationship with maternal weight.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter3:2]**
 
 
 ---

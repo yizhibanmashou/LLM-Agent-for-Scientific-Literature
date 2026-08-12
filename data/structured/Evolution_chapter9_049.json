@@ -21,19 +21,122 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "A number of tests are built around haplotype homozygosity (HH), the probability that two randomly chosen haplotypes are identical. This is given by the complement of the Depaulis-Veuille H (haplotype heterozygosity) statistic (Equation 9.34a), $$ H_{1}=1-H=\\sum_{i=1}^{k}p_{i}^{2} $$ where $ p_i $ is the frequency of the $ i $th haplotype in the sample. To adjust for sampling, some variants of this statistic replace $ p_i^2 $ with $ [p_i + (1/k)]^2 $, where $ k $ is the number of haplotypes (e.g., Kemper et al. 2014). As mentioned in Chapter 8, Garud et al. (2015) showed that a simple modification of this statistic results in a test that can detect both hard and soft sweeps. Their $ H_{12} $ test statistic combines the two largest haplotype classes into a single one, $$ H_{12}=(p_{1}+p_{2})^{2}+\\sum_{i>3}p_{i}^{2}=H_{1}+2p_{1}p_{2} $$"
+      "content": "A number of tests are built around haplotype homozygosity (HH), the probability that two randomly chosen haplotypes are identical. This is given by the complement of the Depaulis-Veuille H (haplotype heterozygosity) statistic (Equation 9.34a), $$ H_{1}=1-H=\\sum_{i=1}^{k}p_{i}^{2} $$ where $ p_i $ is the frequency of the $ i $th haplotype in the sample. To adjust for sampling, some variants of this statistic replace $ p_i^2 $ with $ [p_i + (1/k)]^2 $, where $ k $ is the number of haplotypes (e.g., Kemper et al. 2014). As mentioned in Chapter 8, Garud et al. (2015) showed that a simple modification of this statistic results in a test that can detect both hard and soft sweeps. Their $ H_{12} $ test statistic combines the two largest haplotype classes into a single one, $$ H_{12}=(p_{1}+p_{2})^{2}+\\sum_{i>3}p_{i}^{2}=H_{1}+2p_{1}p_{2} $$",
+      "source_page": 311,
+      "source_pages": [
+        311
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p054:b3",
+        "Evolution_chapter9:p054:b4",
+        "Evolution_chapter9:p054:b5",
+        "Evolution_chapter9:p054:b7",
+        "Evolution_chapter9:p054:b8"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          365.0,
+          565.0,
+          389.0
+        ],
+        [
+          287.0,
+          394.0,
+          1059.0,
+          468.0
+        ],
+        [
+          580.0,
+          483.0,
+          765.0,
+          547.0
+        ],
+        [
+          286.0,
+          563.0,
+          1059.0,
+          681.0
+        ],
+        [
+          501.0,
+          696.0,
+          845.0,
+          745.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e3b624efc5cdbba37795fc530a2f979aea3089526d4e57dcbc5a9453c7f7e683"
     },
     {
       "type": "discussion",
-      "content": "The logic is that a soft sweep results in not one, but several, dominant haplotypes. If the sweep is not too soft, then the first two haplotypes, both presumably harboring the favored allele, will together comprise most of the haplotype variation. In the case of a hard sweep, the second-most frequent haplotype will be sufficiently rare that $ H_{12} \\simeq H_{1} $. The authors applied this approach to Drosophila, looking at windows with a fixed number of SNPs and adjusting for the local recombination rate and then used coalescent simulations to generate values under the null of neutrality."
+      "content": "The logic is that a soft sweep results in not one, but several, dominant haplotypes. If the sweep is not too soft, then the first two haplotypes, both presumably harboring the favored allele, will together comprise most of the haplotype variation. In the case of a hard sweep, the second-most frequent haplotype will be sufficiently rare that $ H_{12} \\simeq H_{1} $. The authors applied this approach to Drosophila, looking at windows with a fixed number of SNPs and adjusting for the local recombination rate and then used coalescent simulations to generate values under the null of neutrality.",
+      "source_page": 311,
+      "source_pages": [
+        311
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p054:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          762.0,
+          1059.0,
+          924.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "86ce679603598dacb0294f9ab650a90090576db72325645d4290235e05d548f5"
     },
     {
       "type": "discussion",
-      "content": "Garud et al. considered a second modified HH statistic, namely, the homozygosity with the largest class removed $$ H_{2}=\\sum_{i>1}p_{i}^{2} $$"
+      "content": "Garud et al. considered a second modified HH statistic, namely, the homozygosity with the largest class removed $$ H_{2}=\\sum_{i>1}p_{i}^{2} $$",
+      "source_page": 311,
+      "source_pages": [
+        311
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p054:b11",
+        "Evolution_chapter9:p054:b12"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          924.0,
+          1059.0,
+          971.0
+        ],
+        [
+          621.0,
+          970.0,
+          727.0,
+          1018.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "620cda96e7c647563b6f6fcbbfe82721f2332a1bd02af00b62cefb8b47407d81"
     },
     {
       "type": "discussion",
-      "content": "Under a hard sweep with its single dominant haplotype, $ H_{2} $ should be considerably smaller than $ H_{1} $, while under a soft sweep the drop-off in value from $ H_{1} $ to $ H_{2} $ should be much less dramatic. Based on this observation, the ratio $ H_{2}/H_{1} $ forms the basis of a test as to whether a detected sweep is hard or soft, with moderate values suggesting soft sweeps and very small values suggesting hard sweeps (Garud et al. 2015; Garud and Rosenberg 2015)."
+      "content": "Under a hard sweep with its single dominant haplotype, $ H_{2} $ should be considerably smaller than $ H_{1} $, while under a soft sweep the drop-off in value from $ H_{1} $ to $ H_{2} $ should be much less dramatic. Based on this observation, the ratio $ H_{2}/H_{1} $ forms the basis of a test as to whether a detected sweep is hard or soft, with moderate values suggesting soft sweeps and very small values suggesting hard sweeps (Garud et al. 2015; Garud and Rosenberg 2015).",
+      "source_page": 311,
+      "source_pages": [
+        311
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p054:b14"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1027.0,
+          1060.0,
+          1145.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f6feaecd8b78ab8c7a05275ecaa9a67c3dcc1e5ec909d9571dd5a1a3b7a0aee5"
     }
   ]
 }

@@ -1,11 +1,12 @@
 
-import logging
 import json
-import pytest
+import logging
 from pathlib import Path
+
+import pytest
 from paper2latex.converters.structure_parser import StructureParser
-from paper2latex.generators.latex_generator import LaTeXGenerator
 from paper2latex.core.config import Config
+from paper2latex.generators.latex_generator import LaTeXGenerator
 
 logger = logging.getLogger(__name__)
 

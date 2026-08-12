@@ -21,15 +21,130 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "How should one proceed if the base population has, itself, been under selection? Graser et al. (1987) suggested that if this is known, or suspected, to be the case, the base population breeding values should be treated as fixed, rather than random, effects. The motivation for this suggestion is that if the parents are selected, they are not a random sample from the base population. Because REML variance estimates are unbiased by fixed effects, any bias in the variance of the initial sample is ignored by treating the original parental breeding values as fixed. However, simulation studies show that even if initial bias is reduced by treating the parents as fixed, selection on the resulting offspring (or future generations) introduces additional bias (van der Werf 1990)."
+      "content": "How should one proceed if the base population has, itself, been under selection? Graser et al. (1987) suggested that if this is known, or suspected, to be the case, the base population breeding values should be treated as fixed, rather than random, effects. The motivation for this suggestion is that if the parents are selected, they are not a random sample from the base population. Because REML variance estimates are unbiased by fixed effects, any bias in the variance of the initial sample is ignored by treating the original parental breeding values as fixed. However, simulation studies show that even if initial bias is reduced by treating the parents as fixed, selection on the resulting offspring (or future generations) introduces additional bias (van der Werf 1990).",
+      "source_page": 641,
+      "source_pages": [
+        641
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p025:b6",
+        "Evolution_chapter19:p025:b7"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1169.0,
+          572.0,
+          1192.0
+        ],
+        [
+          133.0,
+          1199.0,
+          905.0,
+          1405.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "659a32449bcabcf77379867f21bb2a569f70ea9250dbc70b15b86a57425e64f2"
     },
     {
       "type": "discussion",
-      "content": "Despite this reservation, we briefly review the approach here, as parents (beyond the base population) whose records are missing are also often treated as fixed, which requires some modifications of the mixed-model equations. Let $ a_{b} $ be the vector of breeding values for the base population and $ a_{r} $ be breeding values of the remaining individuals that descend from the base population. Following Graser et al. (1987), we can express the dependence of $ a_{r} $ on the base population breeding values, $ a_{b} $, as follows $$ \\begin{pmatrix}\\mathbf{a}_{\\mathbf{b}}\\\\\\mathbf{a}_{\\mathbf{r}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{I}&\\mathbf{0}\\\\\\mathbf{P}_{1}&\\mathbf{P}_{2}\\end{pmatrix}\\begin{pmatrix}\\mathbf{a}_{\\mathbf{b}}\\\\\\mathbf{a}_{\\mathbf{r}}\\end{pmatrix}+\\begin{pmatrix}\\mathbf{0}\\\\\\mathbf{s}\\end{pmatrix} $$ where s is the vector of segregational residuals (Equation 19.15a) and $ P_1 $ and $ P_2 $ are matrices with values of 1/2 in the parent's column in each row. Here, $ a_r $ is treated as a random effect because it is a function of a fixed effect ($ a_b $) and a random effect (s). The resulting mixed-model is $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{1}\\mathbf{a}_{\\mathbf{b}}+\\mathbf{Z}_{2}\\mathbf{a}_{\\mathbf{r}}+\\mathbf{e} $$"
+      "content": "Despite this reservation, we briefly review the approach here, as parents (beyond the base population) whose records are missing are also often treated as fixed, which requires some modifications of the mixed-model equations. Let $ a_{b} $ be the vector of breeding values for the base population and $ a_{r} $ be breeding values of the remaining individuals that descend from the base population. Following Graser et al. (1987), we can express the dependence of $ a_{r} $ on the base population breeding values, $ a_{b} $, as follows $$ \\begin{pmatrix}\\mathbf{a}_{\\mathbf{b}}\\\\\\mathbf{a}_{\\mathbf{r}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{I}&\\mathbf{0}\\\\\\mathbf{P}_{1}&\\mathbf{P}_{2}\\end{pmatrix}\\begin{pmatrix}\\mathbf{a}_{\\mathbf{b}}\\\\\\mathbf{a}_{\\mathbf{r}}\\end{pmatrix}+\\begin{pmatrix}\\mathbf{0}\\\\\\mathbf{s}\\end{pmatrix} $$ where s is the vector of segregational residuals (Equation 19.15a) and $ P_1 $ and $ P_2 $ are matrices with values of 1/2 in the parent's column in each row. Here, $ a_r $ is treated as a random effect because it is a function of a fixed effect ($ a_b $) and a random effect (s). The resulting mixed-model is $$ \\mathbf{y}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{1}\\mathbf{a}_{\\mathbf{b}}+\\mathbf{Z}_{2}\\mathbf{a}_{\\mathbf{r}}+\\mathbf{e} $$",
+      "source_page": 641,
+      "source_pages": [
+        641,
+        642
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p025:b8",
+        "Evolution_chapter19:p026:b2",
+        "Evolution_chapter19:p026:b3",
+        "Evolution_chapter19:p026:b5",
+        "Evolution_chapter19:p026:b6"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          1405.0,
+          905.0,
+          1453.0
+        ],
+        [
+          287.0,
+          207.0,
+          1059.0,
+          300.0
+        ],
+        [
+          516.0,
+          318.0,
+          832.0,
+          371.0
+        ],
+        [
+          287.0,
+          389.0,
+          1059.0,
+          481.0
+        ],
+        [
+          552.0,
+          482.0,
+          796.0,
+          505.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "59f29463103cc78286ef2c09bc5127840cae51818165af9fa65282d0e663f7a0"
     },
     {
       "type": "discussion",
-      "content": "Graser et al. showed that the associated mixed-model equations are $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}_{1}&\\mathbf{X}^{T}\\mathbf{Z}_{2}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{X}&\\mathbf{Z}_{1}^{T}\\mathbf{Z}_{1}+\\lambda\\mathbf{Q}^{T}\\mathbf{G}^{-1}\\mathbf{Q}&-\\lambda\\mathbf{Q}^{T}\\mathbf{G}^{-1}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{X}&-\\lambda\\mathbf{G}^{-1}\\mathbf{Q}&\\mathbf{Z}_{2}^{T}\\mathbf{Z}_{2}+\\lambda\\mathbf{G}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}_{\\mathbf{b}}\\\\\\widehat{\\mathbf{a}}_{\\mathbf{r}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{y}\\end{pmatrix} $$ where $ \\lambda = (2\\sigma_{e}^{2}/\\sigma_{A}^{2}) $, and $$ \\mathbf{Q}=(\\mathbf{I}-\\mathbf{P}_{2})^{-1}\\mathbf{P}_{1}\\quad and\\quad\\mathbf{G}=(\\mathbf{I}-\\mathbf{P}_{2})^{-1}\\mathbf{F}\\left[(\\mathbf{I}-\\mathbf{P}_{2})^{-1}\\right]^{T} $$ with the elements of the diagonal matrix, $ \\mathbf{F} $, given by Equation 19.16. Note that the information used to estimate the additive-genetic variance comes from the vector, s, of segregation values, and thus estimates the additive genic variance, $ \\sigma_a^2 $. If no linkage disequilibrium is present in the base population, this segregation-based estimate is also, then, an estimate of the additive genetic variance, $ \\sigma_A^2 $; otherwise it is biased (as $ \\sigma_A^2 \\neq \\sigma_a^2 $ when $ d \\neq 0 $; Chapter 15)."
+      "content": "Graser et al. showed that the associated mixed-model equations are $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}_{1}&\\mathbf{X}^{T}\\mathbf{Z}_{2}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{X}&\\mathbf{Z}_{1}^{T}\\mathbf{Z}_{1}+\\lambda\\mathbf{Q}^{T}\\mathbf{G}^{-1}\\mathbf{Q}&-\\lambda\\mathbf{Q}^{T}\\mathbf{G}^{-1}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{X}&-\\lambda\\mathbf{G}^{-1}\\mathbf{Q}&\\mathbf{Z}_{2}^{T}\\mathbf{Z}_{2}+\\lambda\\mathbf{G}^{-1}\\end{pmatrix}\\begin{pmatrix}\\widehat{\\boldsymbol{\\beta}}\\\\\\widehat{\\mathbf{a}}_{\\mathbf{b}}\\\\\\widehat{\\mathbf{a}}_{\\mathbf{r}}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{1}^{T}\\mathbf{y}\\\\\\mathbf{Z}_{2}^{T}\\mathbf{y}\\end{pmatrix} $$ where $ \\lambda = (2\\sigma_{e}^{2}/\\sigma_{A}^{2}) $, and $$ \\mathbf{Q}=(\\mathbf{I}-\\mathbf{P}_{2})^{-1}\\mathbf{P}_{1}\\quad and\\quad\\mathbf{G}=(\\mathbf{I}-\\mathbf{P}_{2})^{-1}\\mathbf{F}\\left[(\\mathbf{I}-\\mathbf{P}_{2})^{-1}\\right]^{T} $$ with the elements of the diagonal matrix, $ \\mathbf{F} $, given by Equation 19.16. Note that the information used to estimate the additive-genetic variance comes from the vector, s, of segregation values, and thus estimates the additive genic variance, $ \\sigma_a^2 $. If no linkage disequilibrium is present in the base population, this segregation-based estimate is also, then, an estimate of the additive genetic variance, $ \\sigma_A^2 $; otherwise it is biased (as $ \\sigma_A^2 \\neq \\sigma_a^2 $ when $ d \\neq 0 $; Chapter 15).",
+      "source_page": 642,
+      "source_pages": [
+        642
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p026:b8",
+        "Evolution_chapter19:p026:b9",
+        "Evolution_chapter19:p026:b11",
+        "Evolution_chapter19:p026:b12",
+        "Evolution_chapter19:p026:b14"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          517.0,
+          870.0,
+          541.0
+        ],
+        [
+          346.0,
+          558.0,
+          935.0,
+          682.0
+        ],
+        [
+          288.0,
+          700.0,
+          512.0,
+          727.0
+        ],
+        [
+          386.0,
+          748.0,
+          892.0,
+          779.0
+        ],
+        [
+          287.0,
+          798.0,
+          1061.0,
+          936.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b89d01237adacdcb5370cf8bce2509481483423acb89cad9562fac61039c3131"
     }
   ]
 }

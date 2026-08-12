@@ -21,47 +21,420 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "The roots of MCMC methods trace back to a problem faced by mathematical physicists in applying Monte Carlo integration, namely, generating random samples from some complex distribution in order to apply Equation A3.1. Their solution was the Metropolis-Hastings algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953; Hastings 1970), which was reviewed by Chib and Greenberg (1995)."
+      "content": "The roots of MCMC methods trace back to a problem faced by mathematical physicists in applying Monte Carlo integration, namely, generating random samples from some complex distribution in order to apply Equation A3.1. Their solution was the Metropolis-Hastings algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953; Hastings 1970), which was reviewed by Chib and Greenberg (1995).",
+      "source_page": 1214,
+      "source_pages": [
+        1214
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p007:b5",
+        "Evolution_appendix3:p007:b6"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          351.0,
+          565.0,
+          375.0
+        ],
+        [
+          132.0,
+          398.0,
+          903.0,
+          512.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "973f1de511b16a88c5783a36d338695796cd09baa58e480f4c8a09e1ca590b8d"
     },
     {
       "type": "discussion",
-      "content": "Suppose our goal is to draw samples from some distribution, $ p(\\theta) = f(\\theta)/K $, where the normalizing constant, K, may be very difficult to compute. Note that Bayesian posteriors are of this form (Equation A2.4b). The Metropolis algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953), which generates a sequence of draws from this distribution, is as follows: 1. Start with any initial value, $ \\theta_{0} $, satisfying $ f(\\theta_{0}) > 0 $."
+      "content": "Suppose our goal is to draw samples from some distribution, $ p(\\theta) = f(\\theta)/K $, where the normalizing constant, K, may be very difficult to compute. Note that Bayesian posteriors are of this form (Equation A2.4b). The Metropolis algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953), which generates a sequence of draws from this distribution, is as follows: 1. Start with any initial value, $ \\theta_{0} $, satisfying $ f(\\theta_{0}) > 0 $.",
+      "source_page": 1214,
+      "source_pages": [
+        1214
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p007:b7",
+        "Evolution_appendix3:p007:b8"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          513.0,
+          904.0,
+          628.0
+        ],
+        [
+          133.0,
+          636.0,
+          613.0,
+          661.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6c4a40925c459372bf124ead349776b0e7ea01871e01fe2d07ac8f2f5b39a462"
     },
     {
       "type": "discussion",
-      "content": "2. Using the current value of $\\theta$, sample a candidate point, $\\theta^{*}$, from some jumping distribution, $q(\\theta_1, \\theta_2) = \\Pr(\\theta_1 \\to \\theta_2)$, which is the probability of returning a value of $\\theta_2$ given a previous value of $\\theta_1$. This distribution is also referred to as the proposal distribution or candidate-generating distribution. The only restriction on the jump density in the Metropolis algorithm is that it is symmetric, with $q(\\theta_1, \\theta_2) = q(\\theta_2, \\theta_1)$."
+      "content": "2. Using the current value of $\\theta$, sample a candidate point, $\\theta^{*}$, from some jumping distribution, $q(\\theta_1, \\theta_2) = \\Pr(\\theta_1 \\to \\theta_2)$, which is the probability of returning a value of $\\theta_2$ given a previous value of $\\theta_1$. This distribution is also referred to as the proposal distribution or candidate-generating distribution. The only restriction on the jump density in the Metropolis algorithm is that it is symmetric, with $q(\\theta_1, \\theta_2) = q(\\theta_2, \\theta_1)$.",
+      "source_page": 1214,
+      "source_pages": [
+        1214
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p007:b9"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          668.0,
+          877.0,
+          785.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ca0062a5f5947132a47f9477dfb8befff9579bb7901e336159de13acc3ae574a"
     },
     {
       "type": "discussion",
-      "content": "3. Given the candidate point, $ \\theta^{*} $, calculate the ratio of the density at the candidate and current, $ \\theta_{t-1} $, points, $$ \\alpha=\\frac{p(\\theta^{*})}{p(\\theta_{t-1})}=\\frac{f(\\theta^{*})}{f(\\theta_{t-1})} $$"
+      "content": "3. Given the candidate point, $ \\theta^{*} $, calculate the ratio of the density at the candidate and current, $ \\theta_{t-1} $, points, $$ \\alpha=\\frac{p(\\theta^{*})}{p(\\theta_{t-1})}=\\frac{f(\\theta^{*})}{f(\\theta_{t-1})} $$",
+      "source_block_ids": [
+        "Evolution_appendix3:p009:b2",
+        "Evolution_appendix3:p007:b10",
+        "Evolution_appendix3:p007:b11"
+      ],
+      "source_pages": [
+        1214,
+        1216
+      ],
+      "source_page": 1214,
+      "source_bboxes": [
+        [
+          170.0,
+          213.0,
+          193.0,
+          229.0
+        ],
+        [
+          132.0,
+          791.0,
+          878.0,
+          839.0
+        ],
+        [
+          424.0,
+          841.0,
+          624.0,
+          892.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "2122e1ba8ec609aefa1a9d628fabcc35c8311ef38a8d85427900a868dd415932"
     },
     {
       "type": "discussion",
-      "content": "Notice that because we are considering the ratio of $ p(x) $ under two different values, the normalizing constant, K, cancels out."
+      "content": "Notice that because we are considering the ratio of $ p(x) $ under two different values, the normalizing constant, K, cancels out.",
+      "source_page": 1214,
+      "source_pages": [
+        1214,
+        1216
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p009:b14",
+        "Evolution_appendix3:p009:b17",
+        "Evolution_appendix3:p007:b12"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          1022.0,
+          879.0,
+          1066.0
+        ],
+        [
+          205.0,
+          1138.0,
+          749.0,
+          1189.0
+        ],
+        [
+          172.0,
+          903.0,
+          877.0,
+          951.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ac7a3f65e8159fc042609ced6bb393db926d831cc8f8e9542e74f88f3b285416"
     },
     {
       "type": "discussion",
-      "content": "4. If the jump increases the density ($ \\alpha > 1 $), accept the candidate point (set $ \\theta_t = \\theta^* $) and return to step 2. If the jump decreases the density ($ \\alpha < 1 $), then with a probability of $ \\alpha $ we accept the candidate point, else we reject it and return to step 2. Note that $ \\alpha $ is a ratio of two likelihoods, so the probability of accepting a move is the ratio of the candidate to current likelihoods."
+      "content": "4. If the jump increases the density ($ \\alpha > 1 $), accept the candidate point (set $ \\theta_t = \\theta^* $) and return to step 2. If the jump decreases the density ($ \\alpha < 1 $), then with a probability of $ \\alpha $ we accept the candidate point, else we reject it and return to step 2. Note that $ \\alpha $ is a ratio of two likelihoods, so the probability of accepting a move is the ratio of the candidate to current likelihoods.",
+      "source_page": 1214,
+      "source_pages": [
+        1214
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p007:b13"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          959.0,
+          880.0,
+          1075.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "dac35d6ba8000e2b889804d09cb452287984bb8186b844f783d86c6614c404f7"
     },
     {
       "type": "discussion",
-      "content": "We can summarize Metropolis sampling as first computing $$ \\alpha=\\min\\left(\\frac{f(\\theta^{*})}{f(\\theta_{t-1})},1\\right) $$ and then accepting a candidate value, $ \\theta^* $, with probability $ \\alpha $ (the probability of a move). This generates a Markov chain, $ (\\theta_0, \\theta_1, \\cdots, \\theta_k, \\cdots) $, as the transition probabilities from $ \\theta_t $ to $ \\theta_{t+1} $ depend only on $ \\theta_t $ and not on $ (\\theta_0, \\cdots, \\theta_{t-1}) $. Following a sufficient burn-in period (of, say, $ k $ steps), the chain approaches its stationary distribution and (as we will demonstrate shortly) samples from the vector $ (\\theta_{k+1}, \\cdots, \\theta_{k+n}) $ are samples from $ p(\\theta) $."
+      "content": "We can summarize Metropolis sampling as first computing $$ \\alpha=\\min\\left(\\frac{f(\\theta^{*})}{f(\\theta_{t-1})},1\\right) $$ and then accepting a candidate value, $ \\theta^* $, with probability $ \\alpha $ (the probability of a move). This generates a Markov chain, $ (\\theta_0, \\theta_1, \\cdots, \\theta_k, \\cdots) $, as the transition probabilities from $ \\theta_t $ to $ \\theta_{t+1} $ depend only on $ \\theta_t $ and not on $ (\\theta_0, \\cdots, \\theta_{t-1}) $. Following a sufficient burn-in period (of, say, $ k $ steps), the chain approaches its stationary distribution and (as we will demonstrate shortly) samples from the vector $ (\\theta_{k+1}, \\cdots, \\theta_{k+n}) $ are samples from $ p(\\theta) $.",
+      "source_page": 1214,
+      "source_pages": [
+        1214
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p007:b14",
+        "Evolution_appendix3:p007:b15",
+        "Evolution_appendix3:p007:b17"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1093.0,
+          643.0,
+          1118.0
+        ],
+        [
+          420.0,
+          1139.0,
+          613.0,
+          1192.0
+        ],
+        [
+          133.0,
+          1213.0,
+          903.0,
+          1328.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5bd7425d2b6c5aa4e55d4d10dffc9534be9f257c7d5ec556e8a071e7d6d6b4e6"
     },
     {
       "type": "discussion",
-      "content": "Hastings (1970) generalized the Metropolis algorithm by using an arbitrary (as opposed to strictly symmetric) transition probability function, $ q(\\theta_1, \\theta_2) = \\Pr(\\theta_1 \\to \\theta_2) $, and setting the acceptance probability for a candidate point as $$ \\alpha=\\min\\left(\\frac{f(\\theta^{*})q(\\theta^{*},\\theta_{t-1})}{f(\\theta_{t-1})q(\\theta_{t-1},\\theta^{*})},1\\right) $$"
+      "content": "Hastings (1970) generalized the Metropolis algorithm by using an arbitrary (as opposed to strictly symmetric) transition probability function, $ q(\\theta_1, \\theta_2) = \\Pr(\\theta_1 \\to \\theta_2) $, and setting the acceptance probability for a candidate point as $$ \\alpha=\\min\\left(\\frac{f(\\theta^{*})q(\\theta^{*},\\theta_{t-1})}{f(\\theta_{t-1})q(\\theta_{t-1},\\theta^{*})},1\\right) $$",
+      "source_page": 1214,
+      "source_pages": [
+        1214
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p007:b18",
+        "Evolution_appendix3:p007:b19"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1329.0,
+          904.0,
+          1400.0
+        ],
+        [
+          374.0,
+          1420.0,
+          658.0,
+          1474.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "90a022844751026301416140560a3460922e9d8eeb19e133ed7d7f0b614df06c"
     },
     {
       "type": "discussion",
-      "content": "This is the Metropolis-Hastings algorithm, and Equation A3.13 is the Hastings ratio. When the proposal distribution is symmetric, $ q(x, y) = q(y, x) $, we recover the original Metropolis algorithm."
+      "content": "This is the Metropolis-Hastings algorithm, and Equation A3.13 is the Hastings ratio. When the proposal distribution is symmetric, $ q(x, y) = q(y, x) $, we recover the original Metropolis algorithm.",
+      "source_page": 1215,
+      "source_pages": [
+        1215
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p008:b5"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1011.0,
+          1060.0,
+          1082.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "880a76bbdc96e98e1a35924f760f1587df73c5b679d47196976ebd41be10ccad"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A3.3]]"
+      "content": "[[SEE_EXAMPLE:A3.3]]",
+      "source_page": 1215,
+      "source_pages": [
+        1215
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p008:b4"
+      ],
+      "source_bboxes": [
+        [
+          322.0,
+          901.0,
+          1036.0,
+          968.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ffea04ed38158af8429ff5af9b6ed227132a0946454563f28f3439b8cf0563a8"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A3.4]]"
+      "content": "[[SEE_EXAMPLE:A3.4]]",
+      "source_page": 1216,
+      "source_pages": [
+        1216,
+        1217
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p009:b10",
+        "Evolution_appendix3:p009:b11",
+        "Evolution_appendix3:p009:b13",
+        "Evolution_appendix3:p009:b14",
+        "Evolution_appendix3:p009:b15",
+        "Evolution_appendix3:p009:b16",
+        "Evolution_appendix3:p009:b17",
+        "Evolution_appendix3:p009:b18",
+        "Evolution_appendix3:p009:b19",
+        "Evolution_appendix3:p009:b21",
+        "Evolution_appendix3:p009:b6",
+        "Evolution_appendix3:p009:b7",
+        "Evolution_appendix3:p009:b8",
+        "Evolution_appendix3:p010:b2",
+        "Evolution_appendix3:p010:b3",
+        "Evolution_appendix3:p010:b4",
+        "Evolution_appendix3:p010:b5",
+        "Evolution_appendix3:p010:b6"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          914.0,
+          779.0,
+          937.0
+        ],
+        [
+          270.0,
+          945.0,
+          705.0,
+          970.0
+        ],
+        [
+          166.0,
+          981.0,
+          878.0,
+          1021.0
+        ],
+        [
+          167.0,
+          1022.0,
+          879.0,
+          1066.0
+        ],
+        [
+          168.0,
+          1073.0,
+          723.0,
+          1096.0
+        ],
+        [
+          271.0,
+          1104.0,
+          810.0,
+          1128.0
+        ],
+        [
+          205.0,
+          1138.0,
+          749.0,
+          1189.0
+        ],
+        [
+          167.0,
+          1219.0,
+          533.0,
+          1241.0
+        ],
+        [
+          369.0,
+          1252.0,
+          713.0,
+          1300.0
+        ],
+        [
+          329.0,
+          1339.0,
+          750.0,
+          1469.0
+        ],
+        [
+          167.0,
+          675.0,
+          878.0,
+          800.0
+        ],
+        [
+          167.0,
+          801.0,
+          880.0,
+          845.0
+        ],
+        [
+          234.0,
+          854.0,
+          737.0,
+          904.0
+        ],
+        [
+          321.0,
+          206.0,
+          627.0,
+          232.0
+        ],
+        [
+          523.0,
+          247.0,
+          867.0,
+          297.0
+        ],
+        [
+          358.0,
+          312.0,
+          682.0,
+          335.0
+        ],
+        [
+          483.0,
+          349.0,
+          908.0,
+          483.0
+        ],
+        [
+          359.0,
+          499.0,
+          574.0,
+          522.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4466ee52a5e004ac39366663622d3f25bc827ab3f58a6e485acaac6b97d15411"
     }
   ]
 }

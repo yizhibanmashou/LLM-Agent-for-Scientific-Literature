@@ -26,11 +26,123 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "With $ L $ replicate populations, a common estimate in the literature for $ \\sigma_B^2(t) $ is $$ V_{B}(t)=\\frac{1}{L-1}\\sum_{i=1}^{L}\\left[\\overline{z}_{i}(t)-\\overline{z}_{.}(t)\\right]^{2} $$ the sample variance among the sample means, $ \\overline{z}_{1}, \\cdots, \\overline{z}_{L} $, of the replicate population. When just two populations are being considered (as in some of the tests developed below), their squared difference $$ d^{2}(t)=\\left[\\overline{z}_{1}(t)-\\overline{z}_{2}(t)\\right]^{2} $$ is often used. This is easily related to Equation 12.8a by noting for L = 2 that $$ V_{B}=\\frac{1}{2-1}\\sum_{i=1}^{2}\\left(\\overline{z}_{i}-\\frac{\\overline{z}_{1}+\\overline{z}_{2}}{2}\\right)^{2}=\\frac{\\left(\\overline{z}_{1}-\\overline{z}_{2}\\right)^{2}}{4}+\\frac{\\left(\\overline{z}_{2}-\\overline{z}_{1}\\right)^{2}}{4}=\\frac{d^{2}}{2} $$"
+      "content": "With $ L $ replicate populations, a common estimate in the literature for $ \\sigma_B^2(t) $ is $$ V_{B}(t)=\\frac{1}{L-1}\\sum_{i=1}^{L}\\left[\\overline{z}_{i}(t)-\\overline{z}_{.}(t)\\right]^{2} $$ the sample variance among the sample means, $ \\overline{z}_{1}, \\cdots, \\overline{z}_{L} $, of the replicate population. When just two populations are being considered (as in some of the tests developed below), their squared difference $$ d^{2}(t)=\\left[\\overline{z}_{1}(t)-\\overline{z}_{2}(t)\\right]^{2} $$ is often used. This is easily related to Equation 12.8a by noting for L = 2 that $$ V_{B}=\\frac{1}{2-1}\\sum_{i=1}^{2}\\left(\\overline{z}_{i}-\\frac{\\overline{z}_{1}+\\overline{z}_{2}}{2}\\right)^{2}=\\frac{\\left(\\overline{z}_{1}-\\overline{z}_{2}\\right)^{2}}{4}+\\frac{\\left(\\overline{z}_{2}-\\overline{z}_{1}\\right)^{2}}{4}=\\frac{d^{2}}{2} $$",
+      "source_page": 423,
+      "source_pages": [
+        423
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p008:b4",
+        "Evolution_chapter12:p008:b5",
+        "Evolution_chapter12:p008:b6",
+        "Evolution_chapter12:p008:b8",
+        "Evolution_chapter12:p008:b9",
+        "Evolution_chapter12:p008:b11",
+        "Evolution_chapter12:p008:b12"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          824.0,
+          633.0,
+          848.0
+        ],
+        [
+          289.0,
+          853.0,
+          947.0,
+          879.0
+        ],
+        [
+          529.0,
+          897.0,
+          817.0,
+          955.0
+        ],
+        [
+          287.0,
+          961.0,
+          1059.0,
+          1032.0
+        ],
+        [
+          573.0,
+          1031.0,
+          773.0,
+          1058.0
+        ],
+        [
+          287.0,
+          1064.0,
+          945.0,
+          1089.0
+        ],
+        [
+          367.0,
+          1097.0,
+          922.0,
+          1156.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "747094f8190b4bb2c3aab3a6c80027a8b7f5e280862fd5bab23fca5b19e3894e"
     },
     {
       "type": "discussion",
-      "content": "These expressions for $ V_B $ overestimate the true among-line variance $ \\sigma_B^2 $, as the sample means are measured with error. In particular, $ \\overline{z}_i = \\mu_i + e_i $, so that $$ \\sigma^{2}(\\overline{z}_{i})=\\sigma^{2}(\\mu_{i})+\\sigma^{2}(e_{i})=\\sigma_{B}^{2}+\\frac{\\sigma_{z}^{2}}{n} $$ where $ \\sigma_z^2 $ is the trait variance and $ n $ is the sample sized used to estimate $ \\mu_i $. When $ \\sigma_B^2 = 2f_t\\sigma_A^2 \\gg \\sigma_z^2/n $ (which is equivalent to $ 2f_t h^2 \\gg 1/n $), the difference between $ \\sigma^2(\\overline{z}_i) $ and $ \\sigma_B^2 $ is small. As suggested by a number of authors (Lynch 1988a, 1990; Turelli et al. 1988; Bjöklund 1991; Savalli 1993), a simple way to avoid this issue is to estimate the among-group variance from a standard one-way ANOVA, with $$ V_{B}(t)=\\frac{MS_{B}-MS_{W}}{n_{0}} $$ using the among- and within-group mean squares $ (MS_{B} $ and $ MS_{W} $, respectively), with $ n_{0} $ being a measure of the average sample size per group (see LW Table 18.1)."
+      "content": "These expressions for $ V_B $ overestimate the true among-line variance $ \\sigma_B^2 $, as the sample means are measured with error. In particular, $ \\overline{z}_i = \\mu_i + e_i $, so that $$ \\sigma^{2}(\\overline{z}_{i})=\\sigma^{2}(\\mu_{i})+\\sigma^{2}(e_{i})=\\sigma_{B}^{2}+\\frac{\\sigma_{z}^{2}}{n} $$ where $ \\sigma_z^2 $ is the trait variance and $ n $ is the sample sized used to estimate $ \\mu_i $. When $ \\sigma_B^2 = 2f_t\\sigma_A^2 \\gg \\sigma_z^2/n $ (which is equivalent to $ 2f_t h^2 \\gg 1/n $), the difference between $ \\sigma^2(\\overline{z}_i) $ and $ \\sigma_B^2 $ is small. As suggested by a number of authors (Lynch 1988a, 1990; Turelli et al. 1988; Bjöklund 1991; Savalli 1993), a simple way to avoid this issue is to estimate the among-group variance from a standard one-way ANOVA, with $$ V_{B}(t)=\\frac{MS_{B}-MS_{W}}{n_{0}} $$ using the among- and within-group mean squares $ (MS_{B} $ and $ MS_{W} $, respectively), with $ n_{0} $ being a measure of the average sample size per group (see LW Table 18.1).",
+      "source_page": 423,
+      "source_pages": [
+        423,
+        424
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p008:b14",
+        "Evolution_chapter12:p008:b15",
+        "Evolution_chapter12:p008:b17",
+        "Evolution_chapter12:p008:b18",
+        "Evolution_chapter12:p008:b19",
+        "Evolution_chapter12:p009:b2"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1168.0,
+          1058.0,
+          1215.0
+        ],
+        [
+          518.0,
+          1226.0,
+          828.0,
+          1271.0
+        ],
+        [
+          286.0,
+          1278.0,
+          1056.0,
+          1345.0
+        ],
+        [
+          288.0,
+          1348.0,
+          1059.0,
+          1415.0
+        ],
+        [
+          571.0,
+          1424.0,
+          773.0,
+          1474.0
+        ],
+        [
+          132.0,
+          206.0,
+          903.0,
+          255.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6687da774e797eabad3ab559c2f43a0894fb34a13ae2dd6d6d46d9916e880ba6"
     }
   ]
 }

@@ -16,12 +16,12 @@ expressed as generic reusable repair rules for future scanned books.
 from __future__ import annotations
 
 import argparse
-from collections import Counter, defaultdict
-from dataclasses import dataclass
 import json
+import os
 import re
 import shutil
-import os
+from collections import Counter, defaultdict
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -34,10 +34,6 @@ from knowledge_engineering.core.common import (
     sort_table_refs,
     table_reference_key,
     table_sort_key,
-)
-from knowledge_engineering.reports.fusion_reporting import (
-    build_structured_fusion_summary,
-    write_structured_fusion_artifacts,
 )
 from knowledge_engineering.core.runtime import (
     DEFAULT_SOURCE_TITLE,
@@ -71,7 +67,10 @@ from knowledge_engineering.processors.structured_repair import (
     load_glm_index,
     simple_audit_block,
 )
-
+from knowledge_engineering.reports.fusion_reporting import (
+    build_structured_fusion_summary,
+    write_structured_fusion_artifacts,
+)
 
 FORMULA_PLACEHOLDER_RE = re.compile(
     r"\[\[(?:SEE_FORMULA|FORMULA):(?P<label>\d+\.\d+(?:\.\d+)?[A-Za-z]?)\]\]"

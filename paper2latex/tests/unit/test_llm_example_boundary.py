@@ -10,7 +10,6 @@ from knowledge_engineering.processors.llm_example_boundary import (
     validate_llm_example_decision,
 )
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 TEST_RUNTIME_ROOT = PROJECT_ROOT / "tmp" / "test_runtime" / "llm_example_boundary"
 

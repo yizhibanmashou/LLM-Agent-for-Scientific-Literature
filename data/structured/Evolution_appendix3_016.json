@@ -21,23 +21,200 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Any feature of interest for the marginals can be computed from the m realizations of the Gibbs sequence. If $ \\theta_1, \\cdots, \\theta_m $ is an appropriately burned-in set of realizations from a Gibbs sampler, the expectation of any function, $ f $, of the random variable $ \\theta $ is approximated by $$ E[f(\\theta)]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(\\theta_{i}) $$"
+      "content": "Any feature of interest for the marginals can be computed from the m realizations of the Gibbs sequence. If $ \\theta_1, \\cdots, \\theta_m $ is an appropriately burned-in set of realizations from a Gibbs sampler, the expectation of any function, $ f $, of the random variable $ \\theta $ is approximated by $$ E[f(\\theta)]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(\\theta_{i}) $$",
+      "source_page": 1226,
+      "source_pages": [
+        1226
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p019:b11",
+        "Evolution_appendix3:p019:b12",
+        "Evolution_appendix3:p019:b13"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          931.0,
+          715.0,
+          956.0
+        ],
+        [
+          131.0,
+          961.0,
+          903.0,
+          1034.0
+        ],
+        [
+          414.0,
+          1052.0,
+          622.0,
+          1111.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "75c74eb69f36f6c1b3d7635a7ff2ad962d0caae3dd1979038b4270a864dc9549"
     },
     {
       "type": "discussion",
-      "content": "This is the Monte-Carlo (MC) estimate of $ f(x) $, as $ E[f(\\theta)]_m \\to E[f(\\theta)] $ as $ m \\to \\infty $. Likewise, the MC estimate for any function of $ n $ variables $ (\\theta^{(1)}, \\cdots, \\theta^{(n)}) $ is calculated by $$ E[f(\\theta^{(1)},\\cdots,\\theta^{(n)})]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(\\theta_{i}^{(1)},\\cdots,\\theta_{i}^{(n)}) $$"
+      "content": "This is the Monte-Carlo (MC) estimate of $ f(x) $, as $ E[f(\\theta)]_m \\to E[f(\\theta)] $ as $ m \\to \\infty $. Likewise, the MC estimate for any function of $ n $ variables $ (\\theta^{(1)}, \\cdots, \\theta^{(n)}) $ is calculated by $$ E[f(\\theta^{(1)},\\cdots,\\theta^{(n)})]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(\\theta_{i}^{(1)},\\cdots,\\theta_{i}^{(n)}) $$",
+      "source_page": 1226,
+      "source_pages": [
+        1226
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p019:b15",
+        "Evolution_appendix3:p019:b16"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1130.0,
+          903.0,
+          1178.0
+        ],
+        [
+          322.0,
+          1200.0,
+          714.0,
+          1258.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c2ea581646ef269bd7afb8c1d88a17668ef8b84d6dcdf1aa912d4dcc4e157e13"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A3.7]]"
+      "content": "[[SEE_EXAMPLE:A3.7]]",
+      "source_page": 1226,
+      "source_pages": [
+        1226,
+        1227
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p019:b18",
+        "Evolution_appendix3:p019:b19",
+        "Evolution_appendix3:p020:b2",
+        "Evolution_appendix3:p020:b3",
+        "Evolution_appendix3:p020:b4",
+        "Evolution_appendix3:p020:b5"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          1347.0,
+          880.0,
+          1427.0
+        ],
+        [
+          300.0,
+          1427.0,
+          746.0,
+          1474.0
+        ],
+        [
+          322.0,
+          208.0,
+          1035.0,
+          275.0
+        ],
+        [
+          392.0,
+          283.0,
+          966.0,
+          310.0
+        ],
+        [
+          323.0,
+          318.0,
+          509.0,
+          339.0
+        ],
+        [
+          455.0,
+          346.0,
+          903.0,
+          371.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "22f89a0dd3763dfa3c0373403e499ac85a006f26f686e3d000a5b5b270111ef9"
     },
     {
       "type": "discussion",
-      "content": "While computing the MC estimate for any moment using the sampler is straightforward, computing the actual shape of the marginal density is slightly more involved. While one might use the empirical histogram of the Gibbs sequence as a rough approximation of the marginal distribution of x, this turns out to be inefficient, especially for obtaining the tails of the distribution. A better approach is to use the average of the conditional densities $ p(x \\mid y = y_i) $, as the function form of the conditional density contains more information about the shape of the entire distribution than the sequence of individual realizations, $ x_i $ (Gelfand and Smith 1990; Liu et al. 1991). Because $$ p(x)=\\int p(x\\mid y)p(y)dy=E_{y}\\left[p(x\\mid y)\\right] $$ one can approximate the marginal density using $$ \\widehat{p}_{m}(x)=\\frac{1}{m}\\sum_{i=1}^{m}p(x\\mid y=y_{i}) $$"
+      "content": "While computing the MC estimate for any moment using the sampler is straightforward, computing the actual shape of the marginal density is slightly more involved. While one might use the empirical histogram of the Gibbs sequence as a rough approximation of the marginal distribution of x, this turns out to be inefficient, especially for obtaining the tails of the distribution. A better approach is to use the average of the conditional densities $ p(x \\mid y = y_i) $, as the function form of the conditional density contains more information about the shape of the entire distribution than the sequence of individual realizations, $ x_i $ (Gelfand and Smith 1990; Liu et al. 1991). Because $$ p(x)=\\int p(x\\mid y)p(y)dy=E_{y}\\left[p(x\\mid y)\\right] $$ one can approximate the marginal density using $$ \\widehat{p}_{m}(x)=\\frac{1}{m}\\sum_{i=1}^{m}p(x\\mid y=y_{i}) $$",
+      "source_page": 1227,
+      "source_pages": [
+        1227
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p020:b6",
+        "Evolution_appendix3:p020:b7",
+        "Evolution_appendix3:p020:b9",
+        "Evolution_appendix3:p020:b10"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          449.0,
+          1060.0,
+          634.0
+        ],
+        [
+          502.0,
+          641.0,
+          842.0,
+          684.0
+        ],
+        [
+          287.0,
+          692.0,
+          708.0,
+          717.0
+        ],
+        [
+          552.0,
+          727.0,
+          792.0,
+          784.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "29a83a8a0fba56d31475f309efd53bd2cc5b8ba30b7709367cb2feda7e47155e"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A3.8]]"
+      "content": "[[SEE_EXAMPLE:A3.8]]",
+      "source_page": 1227,
+      "source_pages": [
+        1227
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p020:b12",
+        "Evolution_appendix3:p020:b13",
+        "Evolution_appendix3:p020:b14"
+      ],
+      "source_bboxes": [
+        [
+          322.0,
+          861.0,
+          1035.0,
+          948.0
+        ],
+        [
+          311.0,
+          966.0,
+          1032.0,
+          1021.0
+        ],
+        [
+          318.0,
+          1026.0,
+          1036.0,
+          1092.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4d3b516f0192dacffa8c47e8c7076d736031f6c822c38a626bee0fc6d30dda8c"
     }
   ]
 }

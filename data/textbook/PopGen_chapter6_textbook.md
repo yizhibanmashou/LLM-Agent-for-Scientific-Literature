@@ -119,6 +119,13 @@ $$
 
 As we shall see Section 6.2, this formulation is particularly useful in thinking about subdivided populations, when both inbreeding and random genetic drift contribute to the overall probability of identity by descent. of P. cuspidata, two alleles of the phosphoglucomutase-2 gene were observed, which we will designate as the A and a alleles. The sample included were 15 AA, 6 Aa, and 14 aa genotypes (Levin 1978). Are these numbers consistent with the estimate $ F = 0.64 $? (Note: The $ \chi^{2} $ in this case has one degree of freedom because only the allele frequency is estimated from the data; if F also were estimated from the data, rather than being calculated independently from the degree of self-fertilization, then there would be zero degrees of freedom and no goodness-of-fit test would be possible.)
 
+**[Problem]**
+
+PROBLEM 6.1 Plants able to undergo self-fertilization are said to be self-compatible. In a population of self-compatible plants, if each plant undergoes self-fertilization a fraction s of the time and otherwise mates randomly, then it can be shown (Crow and Kimura 1970; Hedrick and Cockerham 1986) that F very quickly attains the value  $ F = s/(2 - s) $. Phlox cuspidata is self-compatible, and for this species the amount of self-fertilization is estimated at approximately  $ s = 0.78 $ (Levin 1978). From s we can predict the inbreeding coefficient as  $ F = 0.78/(2 - 0.78) = 0.64 $. In a sample of 35 plants from a Texas population of P. cuspidata, two alleles of the phosphoglucomutase-2 gene were observed, which we will designate as the A and a alleles. The sample included were 15 AA, 6 Aa, and 14 aa genotypes (Levin 1978). Are these numbers consistent with the estimate  $ F = 0.64 $? (Note: The  $ \chi^{2} $ in this case has one degree of freedom because only the allele frequency is estimated from the data; if F also were estimated from the data, rather than being calculated independently from the degree of self-fertilization, then there would be zero degrees of freedom and no goodness-of-fit test would be possible.)
+
+> **[UNRESOLVED FIGURE: problem_6.1]**
+
+
 ANSWER The allele frequencies of A and a are estimated as $ (30 + 6)/70 = 0.514 $ and $ 1 - 0.514 = 0.486 $, respectively. The hypothesis is that F = 0.64, and so 1 - F = 0.36. The expected numbers of the genotypes AA, Aa, and aa are, respectively, $ [(0.514)^2(0.36) + (0.514)(0.64)](35) = 14.8 $, $ [2(0.514)(0.486)(0.36)](35) = 6.3 $, and $ [(0.486)^2(0.36) + (0.486)(0.64)](35) = 13.9 $. With these expectations, the $ \chi^2 = 0.02 $ with one degree of freedom, and the associated probability is about 0.96. The fit to the inbreeding model is excellent.
 
 **[Table]**
@@ -218,7 +225,17 @@ F_{I}=\sum_{A}\left(\frac{1}{2}\right)^{i}(1+F_{A})
 \tag{6.7}
 $$
 
-in which the summation over A means summation over all possible paths through all common ancestors, i is the number of organisms in each path, and A is the common ancestor in each path. Figure 6.9 gives the inbreeding coefficient of an offspring produced by mating between any of several common types of relatives in human pedigrees. assuming that none of the common ancestors is inbred. (Altogether, there are four common ancestors and six paths.) ANSWER $ F_{1} = \left(\frac{1}{2}\right)^{3}(1 + F_{C}) + \left(\frac{1}{2}\right)^{3}(1 + F_{D}) + \left(\frac{1}{2}\right)^{5}(1 + F_{A}) + \left(\frac{1}{2}\right)^{5}(1 + F_{B}) + \left(\frac{1}{2}\right)^{5}(1 + F_{A}) + \left(\frac{1}{2}\right)^{5}(1 + F_{B}) $. When the common ancestors are assumed to
+in which the summation over A means summation over all possible paths through all common ancestors, i is the number of organisms in each path, and A is the common ancestor in each path. Figure 6.9 gives the inbreeding coefficient of an offspring produced by mating between any of several common types of relatives in human pedigrees.
+
+> **Figure 6.9** · page 16 · source: `PopGen_chapter6`
+>
+> ![Figure 6.9](figures/PopGen_6.9.png)
+>
+> FIGURE 6.9 Inbreeding coefficient of the offspring of various types of consanguineous mating.
+
+**[Problem]**
+
+PROBLEM 6.2 The accompanying pedigree depicts two generations of brother-sister mating. Calculate the inbreeding coefficient of I. assuming that none of the common ancestors is inbred. (Altogether, there are four common ancestors and six paths.) ANSWER  $ F_{1} = \left(\frac{1}{2}\right)^{3}(1 + F_{C}) + \left(\frac{1}{2}\right)^{3}(1 + F_{D}) + \left(\frac{1}{2}\right)^{5}(1 + F_{A}) + \left(\frac{1}{2}\right)^{5}(1 + F_{B}) + \left(\frac{1}{2}\right)^{5}(1 + F_{A}) + \left(\frac{1}{2}\right)^{5}(1 + F_{B}) $. When the common ancestors are assumed to
 
 $$
 F_{A}=F_{B}=F_{C}=F_{D}=0
@@ -228,11 +245,12 @@ $$
 F_{I}=\tfrac{3}{8}
 $$
 
-> **Figure 6.9** · page 16 · source: `PopGen_chapter6`
+> **Figure problem_6.2** · page 15 · source: `PopGen_chapter6`
 >
-> ![Figure 6.9](figures/PopGen_6.9.png)
+> ![Figure problem_6.2](figures/PopGen_problem_6.2.png)
 >
-> FIGURE 6.9 Inbreeding coefficient of the offspring of various types of consanguineous mating.
+> Problem 6.2 diagram from the authoritative chapter PDF.
+
 
 ---
 
@@ -846,9 +864,30 @@ Figure 6.26A shows the inferred relation between s and h for an effective popula
 
 7. What is the inbreeding coefficient of individual K in the accompanying pedigree, assuming that none of the individuals at the top of the pedigree is inbred.
 
+> **Figure problem_6.7** · page 56 · source: `PopGen_chapter6`
+>
+> ![Figure problem_6.7](figures/PopGen_problem_6.7.png)
+>
+> Problem 6.7 diagram from the authoritative chapter PDF.
+
+
 8. The accompanying pedigree shows several generations of half-sib mating. Assuming that the individuals in generation 0 have $ F_{0}=0 $, what are the inbreeding coefficients of the individuals in generations 1, 2, 3, and 4?
 
+> **Figure problem_6.8** · page 56 · source: `PopGen_chapter6`
+>
+> ![Figure problem_6.8](figures/PopGen_problem_6.8.png)
+>
+> Problem 6.8 diagram from the authoritative chapter PDF.
+
+
 9. Assuming $ F_{A}=F_{B}=0 $, calculate the inbreeding coefficient for each of the individuals C–I in the accompanying pedigree (see figure at right).
+
+> **Figure problem_6.9** · page 57 · source: `PopGen_chapter6`
+>
+> ![Figure problem_6.9](figures/PopGen_problem_6.9.png)
+>
+> Problem 6.9 diagram from the authoritative chapter PDF.
+
 
 10. Derive a recursion equation for $ F_{t} $ for repeated parent-offspring mating, and calculate $ F_{t} $ for t = 0 to 5.
 
@@ -888,6 +927,13 @@ Figure 6.26A shows the inferred relation between s and h for an effective popula
 
 27. Two island populations 1 and 2 are shown in the accompanying diagram. In population 1 the allele frequency of A in generation t is $ x_t $, and in population 2 it is $ y_t $. In every generation, a fraction u > 0 of the alleles in population 1 is removed and replaced with alleles from population 2, and a fraction v > 0 of the alleles in population 2 is removed and replaced with alleles from population 1.
 
+> **Figure problem_6.27** · page 58 · source: `PopGen_chapter6`
+>
+> ![Figure problem_6.27](figures/PopGen_problem_6.27.png)
+>
+> Problem 6.27 diagram from the authoritative chapter PDF.
+
+
 The equations relating $ x_{t} $ to $ x_{t-1} $ and $ y_{t} $ to $ y_{t-1} $ are
 
 $$
@@ -909,6 +955,13 @@ $$
 (c) Explain how the approach to equilibrium differs between the case 0 < u + v < 1 and the case 1 < u + v < 2.
 
 28. In the Swabian Alps in Southern Germany, a verdant meadow serves as home to subpopulations of the incredible edible snail Helix pomatia. The subpopulations differ in the allele frequency of a mutation affecting shell coloration. A river meanders through the meadow from west to east, and a prominent knoll interrupts it from north to south. The accompanying crude diagram of the site shows the estimated allele frequency in a sample taken at each of 12 collection sites.
+
+> **Figure problem_6.28** · page 59 · source: `PopGen_chapter6`
+>
+> ![Figure problem_6.28](figures/PopGen_problem_6.28.png)
+>
+> Problem 6.28 diagram from the authoritative chapter PDF.
+
 
 Assuming that the differences in allele frequency are due mainly to random genetic drift, does the river or the knoll seem to be the stronger isolating barrier between the snail subpopulations? To solve this problem, first consider the subpopulation as divided into regions above (A) and below (B) the river (R), or as divided into regions west (W) or east (E) of the knoll (K). You should calculate $ F_{SR'} $, $ F_{KT} $, and $ F_{ST} $ for the division based on the river, and $ F_{SK'} $, $ F_{KT'} $, and $ F_{ST} $ for the division based on the knoll. The relative values of $ F_{SR} $ and $ F_{KT} $ should tell you whether the river or the knoll is the more significant barrier to genetic exchange.
 

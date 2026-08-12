@@ -21,27 +21,178 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "The final distribution needed for a Bayesian analysis of a Gaussian likelihood is the $t$ (or Student's $t$) distribution. Suppose that $x_i \\sim N(\\mu, \\sigma^2)$, so for $n$ independent draws, $\\overline{x} \\sim N(\\mu, \\sigma^2/n)$. This implies that $(\\overline{x} - \\mu) / \\sqrt{\\sigma^2/n} \\sim U$, where $U \\sim N(0,1)$ denotes a unit normal. Likewise, the sample variance, $\\text{Var}(x)$, follows a scaled chi-square distribution, with $\\text{Var}(x) \\sim (n-1)\\sigma^2 \\chi_{n-1}^2$ (LW Equation A5.14c). When the estimated variance, $\\text{Var}(x)$, is used in place of the true variance, $\\sigma^2$, the quantity $(\\overline{x} - \\mu) / \\sqrt{\\text{Var}(x)/n}$ follows a $t$ distribution with $n - 1$ degrees of freedom, giving rise to the very familiar $t$-test. Notice that $$ t_{n-1}=\\left(\\frac{\\overline{x}-\\mu}{\\sigma/\\sqrt{n}}\\right)\\left(\\frac{1}{\\sqrt{\\mathrm{Var}(x)/\\sigma^{2}}}\\right)=\\frac{U}{\\sqrt{\\chi_{n-1}^{2}/(n-1)}} $$"
+      "content": "The final distribution needed for a Bayesian analysis of a Gaussian likelihood is the $t$ (or Student's $t$) distribution. Suppose that $x_i \\sim N(\\mu, \\sigma^2)$, so for $n$ independent draws, $\\overline{x} \\sim N(\\mu, \\sigma^2/n)$. This implies that $(\\overline{x} - \\mu) / \\sqrt{\\sigma^2/n} \\sim U$, where $U \\sim N(0,1)$ denotes a unit normal. Likewise, the sample variance, $\\text{Var}(x)$, follows a scaled chi-square distribution, with $\\text{Var}(x) \\sim (n-1)\\sigma^2 \\chi_{n-1}^2$ (LW Equation A5.14c). When the estimated variance, $\\text{Var}(x)$, is used in place of the true variance, $\\sigma^2$, the quantity $(\\overline{x} - \\mu) / \\sqrt{\\text{Var}(x)/n}$ follows a $t$ distribution with $n - 1$ degrees of freedom, giving rise to the very familiar $t$-test. Notice that $$ t_{n-1}=\\left(\\frac{\\overline{x}-\\mu}{\\sigma/\\sqrt{n}}\\right)\\left(\\frac{1}{\\sqrt{\\mathrm{Var}(x)/\\sigma^{2}}}\\right)=\\frac{U}{\\sqrt{\\chi_{n-1}^{2}/(n-1)}} $$",
+      "source_page": 1204,
+      "source_pages": [
+        1204
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p016:b2",
+        "Evolution_appendix2:p016:b3",
+        "Evolution_appendix2:p016:b4"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          207.0,
+          506.0,
+          229.0
+        ],
+        [
+          287.0,
+          237.0,
+          1058.0,
+          405.0
+        ],
+        [
+          445.0,
+          421.0,
+          898.0,
+          489.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e0a8b0883852582a557d073b5b04b6e5d7c793b87e618d1721d1b3c582002a97"
     },
     {
       "type": "discussion",
-      "content": "Thus, a $ t_{\\nu} $ random variable follows the distribution of a unit normal divided by the square root of a chi-square with $ \\nu $ degrees of freedom, $$ t_{\\nu}=\\frac{U}{\\sqrt{\\chi_{\\nu}^{2}/\\nu}} $$"
+      "content": "Thus, a $ t_{\\nu} $ random variable follows the distribution of a unit normal divided by the square root of a chi-square with $ \\nu $ degrees of freedom, $$ t_{\\nu}=\\frac{U}{\\sqrt{\\chi_{\\nu}^{2}/\\nu}} $$",
+      "source_page": 1204,
+      "source_pages": [
+        1204
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p016:b5",
+        "Evolution_appendix2:p016:b6"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          506.0,
+          1058.0,
+          553.0
+        ],
+        [
+          615.0,
+          566.0,
+          731.0,
+          621.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a78e6e385db171477186de5bfcc54bde579951e71124e514ef6a3ac60ff55bea"
     },
     {
       "type": "discussion",
-      "content": "Note that $ E(\\chi_{\\nu}^{2}) = \\nu $, so $ E(\\chi_{\\nu}^{2}/\\nu) = 1 $. Relative to a normal, a t distribution is more peaked and has heavier tails, and this kurtosis becomes more pronounced as $ \\nu $ decreases. Indeed, the tails fall off sufficiently slowly that a t random variable with two degrees of freedom has an infinite variance, while a t with four (or fewer) degrees of freedom has an infinite fourth moment. The coefficient of kurtosis (LW Equation 2.12a) for a t with $ \\nu > 4 $ degrees of freedom is $ k_{4} = 6/(\\nu - 4) $, which approaches the value (zero) for a normal random variable for large values of $ \\nu $. For $ \\nu > 30 $, the t essentially becomes a unit normal distribution. As with a unit normal, one can also add scale and location to a standard $ t_{\\nu} $-distributed random variable, thus generating a three-parameter family of distributions, $$ t_{\\nu}(\\mu,\\sigma)=\\mu+\\sigma\\cdot t_{\\nu} $$"
+      "content": "Note that $ E(\\chi_{\\nu}^{2}) = \\nu $, so $ E(\\chi_{\\nu}^{2}/\\nu) = 1 $. Relative to a normal, a t distribution is more peaked and has heavier tails, and this kurtosis becomes more pronounced as $ \\nu $ decreases. Indeed, the tails fall off sufficiently slowly that a t random variable with two degrees of freedom has an infinite variance, while a t with four (or fewer) degrees of freedom has an infinite fourth moment. The coefficient of kurtosis (LW Equation 2.12a) for a t with $ \\nu > 4 $ degrees of freedom is $ k_{4} = 6/(\\nu - 4) $, which approaches the value (zero) for a normal random variable for large values of $ \\nu $. For $ \\nu > 30 $, the t essentially becomes a unit normal distribution. As with a unit normal, one can also add scale and location to a standard $ t_{\\nu} $-distributed random variable, thus generating a three-parameter family of distributions, $$ t_{\\nu}(\\mu,\\sigma)=\\mu+\\sigma\\cdot t_{\\nu} $$",
+      "source_page": 1204,
+      "source_pages": [
+        1204
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p016:b8",
+        "Evolution_appendix2:p016:b9",
+        "Evolution_appendix2:p016:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          636.0,
+          1059.0,
+          797.0
+        ],
+        [
+          287.0,
+          798.0,
+          1058.0,
+          844.0
+        ],
+        [
+          586.0,
+          863.0,
+          760.0,
+          886.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1158c296444776411f283b28a666bce3e709d6b3ba6788436171ce12cf331962"
     },
     {
       "type": "discussion",
-      "content": "The resulting mean and variance this distribution are $$ E[t_{\\nu}(\\mu,\\sigma)]=\\mu\\quad and\\quad\\sigma^{2}[t_{\\nu}(\\mu,\\sigma)]=\\sigma^{2}\\frac{\\nu}{\\nu-2}\\quad for\\nu>2 $$"
+      "content": "The resulting mean and variance this distribution are $$ E[t_{\\nu}(\\mu,\\sigma)]=\\mu\\quad and\\quad\\sigma^{2}[t_{\\nu}(\\mu,\\sigma)]=\\sigma^{2}\\frac{\\nu}{\\nu-2}\\quad for\\nu>2 $$",
+      "source_page": 1204,
+      "source_pages": [
+        1204
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p016:b12",
+        "Evolution_appendix2:p016:b13"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          902.0,
+          748.0,
+          926.0
+        ],
+        [
+          393.0,
+          941.0,
+          884.0,
+          984.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9f41eb78ffbf938ce6ec2b6065271b1b1675f11f00305655b7bfd7d6a797ce94"
     },
     {
       "type": "discussion",
-      "content": "Hence, the choice of $ \\mu $ and $ \\sigma $ control, respectively, the location and scale (uncertainty about the location), while $ \\nu $ controls the kurtosis, with heavy tails for values of $ \\nu $ that are small and little kurtosis for $ \\nu > 20 $. The resulting probability density function thus becomes $$ p(x\\mid\\nu,\\mu,\\sigma)=\\frac{\\Gamma([\\nu+1]/2)}{\\Gamma(\\nu/2)\\sigma\\sqrt{\\pi\\nu}}\\left[1+\\frac{1}{\\nu}\\left(\\frac{x-\\mu}{\\sigma}\\right)^{2}\\right]^{-(\\nu+1)/2} $$"
+      "content": "Hence, the choice of $ \\mu $ and $ \\sigma $ control, respectively, the location and scale (uncertainty about the location), while $ \\nu $ controls the kurtosis, with heavy tails for values of $ \\nu $ that are small and little kurtosis for $ \\nu > 20 $. The resulting probability density function thus becomes $$ p(x\\mid\\nu,\\mu,\\sigma)=\\frac{\\Gamma([\\nu+1]/2)}{\\Gamma(\\nu/2)\\sigma\\sqrt{\\pi\\nu}}\\left[1+\\frac{1}{\\nu}\\left(\\frac{x-\\mu}{\\sigma}\\right)^{2}\\right]^{-(\\nu+1)/2} $$",
+      "source_page": 1204,
+      "source_pages": [
+        1204
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p016:b15",
+        "Evolution_appendix2:p016:b16"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          997.0,
+          1059.0,
+          1068.0
+        ],
+        [
+          391.0,
+          1085.0,
+          878.0,
+          1149.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a0643359d6a9917c3163465aadc9f87c87a1d734daafa341a21332bfbbb0d99c"
     },
     {
       "type": "discussion",
-      "content": "The role of the $t$ distribution in Bayesian statistics is twofold. First, it is often used as a more robust prior, as its heavier tails may better account for outliers. Using a $t$ distribution with low degrees of freedom (often $\\nu = 5$) offers a prior that is similar to a normal but allows for more frequent extreme values. The second scenario is that the marginal posterior for $\\mu$ of a Gaussian likelihood with a normal prior on the mean and an inverse chi-square prior on the variance is a $t$ distribution. This arises after the joint posterior is integrated over all possible $\\sigma^{2}$ values (i.e., over an inverse chi-square)."
+      "content": "The role of the $t$ distribution in Bayesian statistics is twofold. First, it is often used as a more robust prior, as its heavier tails may better account for outliers. Using a $t$ distribution with low degrees of freedom (often $\\nu = 5$) offers a prior that is similar to a normal but allows for more frequent extreme values. The second scenario is that the marginal posterior for $\\mu$ of a Gaussian likelihood with a normal prior on the mean and an inverse chi-square prior on the variance is a $t$ distribution. This arises after the joint posterior is integrated over all possible $\\sigma^{2}$ values (i.e., over an inverse chi-square).",
+      "source_page": 1204,
+      "source_pages": [
+        1204
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p016:b18"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1166.0,
+          1060.0,
+          1329.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "002a3321f2210139c52b619688b82a9c34db4a31946d93ada060f5325b6bfdc5"
     }
   ]
 }

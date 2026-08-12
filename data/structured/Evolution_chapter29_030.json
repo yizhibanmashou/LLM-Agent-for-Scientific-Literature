@@ -26,39 +26,278 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "As we have seen, when traits are normally distributed, $ \\beta $ and $ \\gamma $ provide summary statistics of the geometry of the individual surface and mean fitness landscape, either by measuring the average slope or curvature of the individual fitness surface (average selection gradients; Equations 29.20b and 29.20c) or the slope or curvature (evaluated at the current mean, $ \\mu_{z} $) of the fitness landscape (landscape selection gradients; Equation 29.20a). [[SEE_TABLE:30.1]] summarizes these (and other) features for the multivariate versions of $ \\beta $ and $ \\gamma $. These expressions hold for any form of $ w(z) $, provided z is normally distributed."
+      "content": "As we have seen, when traits are normally distributed, $ \\beta $ and $ \\gamma $ provide summary statistics of the geometry of the individual surface and mean fitness landscape, either by measuring the average slope or curvature of the individual fitness surface (average selection gradients; Equations 29.20b and 29.20c) or the slope or curvature (evaluated at the current mean, $ \\mu_{z} $) of the fitness landscape (landscape selection gradients; Equation 29.20a). [[SEE_TABLE:30.1]] summarizes these (and other) features for the multivariate versions of $ \\beta $ and $ \\gamma $. These expressions hold for any form of $ w(z) $, provided z is normally distributed.",
+      "source_page": 1095,
+      "source_pages": [
+        1095,
+        1125
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p039:b12",
+        "Evolution_chapter29:p039:b13",
+        "Evolution_chapter30:p012:b2",
+        "Evolution_chapter30:p012:b3"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          664.0,
+          541.0,
+          688.0
+        ],
+        [
+          132.0,
+          695.0,
+          903.0,
+          855.0
+        ],
+        [
+          286.0,
+          206.0,
+          1058.0,
+          251.0
+        ],
+        [
+          323.0,
+          273.0,
+          810.0,
+          330.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "074208118eaa35f52aedb092bffd3744d13a31da69523e9bcf77bcd1fd87f3a2"
     },
     {
       "type": "discussion",
-      "content": "Moreover, when $ w(z) $ is exactly a quadratic, similar expressions hold for any distribution of z. Taking the first two partial derivatives of Equation 29.27a yields $$ \\frac{\\partial w(z)}{\\partial z}=b_{1}+2b_{2}(z-\\mu_{z})\\quad and\\quad\\frac{\\partial^{2}w(z)}{\\partial z^{2}}=2b_{2} $$"
+      "content": "Moreover, when $ w(z) $ is exactly a quadratic, similar expressions hold for any distribution of z. Taking the first two partial derivatives of Equation 29.27a yields $$ \\frac{\\partial w(z)}{\\partial z}=b_{1}+2b_{2}(z-\\mu_{z})\\quad and\\quad\\frac{\\partial^{2}w(z)}{\\partial z^{2}}=2b_{2} $$",
+      "source_page": 1095,
+      "source_pages": [
+        1095
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p039:b14",
+        "Evolution_chapter29:p039:b15"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          856.0,
+          903.0,
+          902.0
+        ],
+        [
+          313.0,
+          919.0,
+          724.0,
+          968.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4883846a3ccb5e46dbec87a1174bc6da9126506d22103e26e35f9b1b8360e890"
     },
     {
       "type": "discussion",
-      "content": "Evaluating these derivatives at the current mean $ (z = \\mu_z) $ returns $$ \\frac{\\partial w(z)}{\\partial z}\\bigg|_{z=\\mu_{z}}=b_{1}\\qquad and\\qquad\\frac{\\partial^{2}w(z)}{\\partial z^{2}}\\bigg|_{z=\\mu_{z}}=2b_{2} $$"
+      "content": "Evaluating these derivatives at the current mean $ (z = \\mu_z) $ returns $$ \\frac{\\partial w(z)}{\\partial z}\\bigg|_{z=\\mu_{z}}=b_{1}\\qquad and\\qquad\\frac{\\partial^{2}w(z)}{\\partial z^{2}}\\bigg|_{z=\\mu_{z}}=2b_{2} $$",
+      "source_page": 1095,
+      "source_pages": [
+        1095
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p039:b17",
+        "Evolution_chapter29:p039:b18"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          981.0,
+          692.0,
+          1005.0
+        ],
+        [
+          306.0,
+          1021.0,
+          730.0,
+          1078.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "72f601e723462464553c3143fda48a46011a7ae890ccdfd46bfb845a0dde0ef2"
     },
     {
       "type": "discussion",
-      "content": "Hence, one interpretation of the regression coefficients in Equation 29.27a is that they describe the slope $ (b_1) $ and the curvature $ (2b_2) $ of a quadratic fitness surface at the population mean. A second interpretation (along the lines of Equation 29.20b and 29.20c) is that these coefficients also equal the average slope $ (b_1) $ and average curvature $ (2b_2) $ of the quadratic fitness surface over the entire distribution of $ z $ (i.e., they are average selection gradients). To see this, note that Equation 29.20b yields an average directional selection gradient of $$ E_{z}\\left[\\frac{\\partial w(z)}{\\partial z}\\right]=E_{z}\\left[b_{1}+2b_{2}(z-\\mu_{z})\\right]=b_{1}+2b_{2}E_{z}\\left[z-\\mu_{z}\\right]=b_{1} $$"
+      "content": "Hence, one interpretation of the regression coefficients in Equation 29.27a is that they describe the slope $ (b_1) $ and the curvature $ (2b_2) $ of a quadratic fitness surface at the population mean. A second interpretation (along the lines of Equation 29.20b and 29.20c) is that these coefficients also equal the average slope $ (b_1) $ and average curvature $ (2b_2) $ of the quadratic fitness surface over the entire distribution of $ z $ (i.e., they are average selection gradients). To see this, note that Equation 29.20b yields an average directional selection gradient of $$ E_{z}\\left[\\frac{\\partial w(z)}{\\partial z}\\right]=E_{z}\\left[b_{1}+2b_{2}(z-\\mu_{z})\\right]=b_{1}+2b_{2}E_{z}\\left[z-\\mu_{z}\\right]=b_{1} $$",
+      "source_page": 1095,
+      "source_pages": [
+        1095
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p039:b20",
+        "Evolution_chapter29:p039:b21"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1092.0,
+          904.0,
+          1232.0
+        ],
+        [
+          218.0,
+          1246.0,
+          750.0,
+          1299.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6966fc6559dc40c990672eabe2f7929e2a5242fc3d440f35eaa73190fc7912f9"
     },
     {
       "type": "discussion",
-      "content": "Likewise, from Equation 29.20, the average quadratic selection gradient is $$ E_{z}\\left[\\frac{\\partial^{2}w(z)}{\\partial z^{2}}\\right]=E_{z}\\left[2b_{2}\\right]=2b_{2} $$"
+      "content": "Likewise, from Equation 29.20, the average quadratic selection gradient is $$ E_{z}\\left[\\frac{\\partial^{2}w(z)}{\\partial z^{2}}\\right]=E_{z}\\left[2b_{2}\\right]=2b_{2} $$",
+      "source_page": 1095,
+      "source_pages": [
+        1095
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p039:b23",
+        "Evolution_chapter29:p039:b24"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1314.0,
+          766.0,
+          1339.0
+        ],
+        [
+          388.0,
+          1353.0,
+          648.0,
+          1407.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e1feb1d21897fda2cc0a626ae50826ac06f0b411361cfdf274f36da20d599a8c"
     },
     {
       "type": "discussion",
-      "content": "Even when the trait distribution (before selection) is normal, if $ w(z) $ is not a quadratic, then the average slope and curvature need not equal the slope or the curvature of $ w(z) $ that is evaluated at $ \\mu_z $. In other words, the average of the function need not equal the value of the function evaluated at the average. Assuming a normally distributed trait, Phillips and Arnold (1989) performed Taylor-series expansions (around $ z = \\mu_z $) of Equations 29.20b and 29.20c, showing how the expected slope and curvature relate to the slope and curve at the mean, $$ \\begin{aligned}&\\int\\frac{\\partial w(z)}{\\partial z}p(z)dz=\\left.\\frac{\\partial w(z)}{\\partial z}\\right|_{z=\\mu_{z}}+\\left(\\frac{\\sigma_{z}^{2}}{2}\\frac{\\partial^{3}w(z)}{\\partial z^{3}}+\\frac{\\sigma_{z}^{4}}{8}\\frac{\\partial^{5}w(z)}{\\partial z^{5}}+\\cdots\\right)\\bigg|_{z=\\mu_{z}}\\\\ &\\\\ &\\int\\frac{\\partial^{2}w(z)}{\\partial z^{2}}p(z)dz=\\left.\\frac{\\partial^{2}w(z)}{\\partial z^{2}}\\right|_{z=\\mu_{z}}+\\left(\\frac{\\sigma_{z}^{2}}{2}\\frac{\\partial^{4}w(z)}{\\partial z^{4}}+\\frac{\\sigma_{z}^{4}}{8}\\frac{\\partial^{6}w(z)}{\\partial z^{6}}+\\cdots\\right)\\bigg|_{z=\\mu_{z}}\\\\ \\end{aligned} $$"
+      "content": "Even when the trait distribution (before selection) is normal, if $ w(z) $ is not a quadratic, then the average slope and curvature need not equal the slope or the curvature of $ w(z) $ that is evaluated at $ \\mu_z $. In other words, the average of the function need not equal the value of the function evaluated at the average. Assuming a normally distributed trait, Phillips and Arnold (1989) performed Taylor-series expansions (around $ z = \\mu_z $) of Equations 29.20b and 29.20c, showing how the expected slope and curvature relate to the slope and curve at the mean, $$ \\begin{aligned}&\\int\\frac{\\partial w(z)}{\\partial z}p(z)dz=\\left.\\frac{\\partial w(z)}{\\partial z}\\right|_{z=\\mu_{z}}+\\left(\\frac{\\sigma_{z}^{2}}{2}\\frac{\\partial^{3}w(z)}{\\partial z^{3}}+\\frac{\\sigma_{z}^{4}}{8}\\frac{\\partial^{5}w(z)}{\\partial z^{5}}+\\cdots\\right)\\bigg|_{z=\\mu_{z}}\\\\ &\\\\ &\\int\\frac{\\partial^{2}w(z)}{\\partial z^{2}}p(z)dz=\\left.\\frac{\\partial^{2}w(z)}{\\partial z^{2}}\\right|_{z=\\mu_{z}}+\\left(\\frac{\\sigma_{z}^{2}}{2}\\frac{\\partial^{4}w(z)}{\\partial z^{4}}+\\frac{\\sigma_{z}^{4}}{8}\\frac{\\partial^{6}w(z)}{\\partial z^{6}}+\\cdots\\right)\\bigg|_{z=\\mu_{z}}\\\\ \\end{aligned} $$",
+      "source_page": 1095,
+      "source_pages": [
+        1095,
+        1096
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p039:b25",
+        "Evolution_chapter29:p040:b2",
+        "Evolution_chapter29:p040:b3"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1422.0,
+          904.0,
+          1471.0
+        ],
+        [
+          286.0,
+          207.0,
+          1060.0,
+          323.0
+        ],
+        [
+          358.0,
+          335.0,
+          985.0,
+          478.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7f22778e7b643761ec415eab64c75894b7b06dafe3f1fcc7e7b4d067d3ceb671"
     },
     {
       "type": "discussion",
-      "content": "While trait normality ensures that the slope of the mean fitness landscape, W, evaluated at the trait mean equals the average slope of w(z), it does not ensure that the average slope or curvature of w(z) equals the slope or curvature of w(z) as is evaluated at the trait mean. As Equation 29.30 shows, this only happens when w(z) is quadratic (and hence partials of order three and higher vanish). While this point may seem overly technical, it is important to stress because much of the elegant symmetry of the connections between $ \\beta $ and $ \\gamma $ and quantities of interest (average geometries of the fitness surface, regression coefficients, and important parameters in evolutionary equations for predicting response) only hold when the quadratic is an excellent approximation of the true fitness surface or when z is normal (before selection). See Geyer and Shaw (2008) for an extended discussion of this issue."
+      "content": "While trait normality ensures that the slope of the mean fitness landscape, W, evaluated at the trait mean equals the average slope of w(z), it does not ensure that the average slope or curvature of w(z) equals the slope or curvature of w(z) as is evaluated at the trait mean. As Equation 29.30 shows, this only happens when w(z) is quadratic (and hence partials of order three and higher vanish). While this point may seem overly technical, it is important to stress because much of the elegant symmetry of the connections between $ \\beta $ and $ \\gamma $ and quantities of interest (average geometries of the fitness surface, regression coefficients, and important parameters in evolutionary equations for predicting response) only hold when the quadratic is an excellent approximation of the true fitness surface or when z is normal (before selection). See Geyer and Shaw (2008) for an extended discussion of this issue.",
+      "source_page": 1096,
+      "source_pages": [
+        1096
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p040:b5"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          493.0,
+          1060.0,
+          725.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "31cf098864c443d70133099b7fd0375d697915e865cd4a85280833b14ae6e48c"
     },
     {
       "type": "discussion",
-      "content": "Finally, note that for a quadratic fitness function, for any distribution of z $$ \\overline{W}=E_{z}\\left[a+b_{1}z+b_{2}(z-\\mu)^{2}\\right]=a+b_{1}\\mu+b_{2}\\sigma_{2}^{2} $$ which implies that $$ \\frac{\\partial\\overline{W}}{\\partial\\mu}=b_{1} $$"
+      "content": "Finally, note that for a quadratic fitness function, for any distribution of z $$ \\overline{W}=E_{z}\\left[a+b_{1}z+b_{2}(z-\\mu)^{2}\\right]=a+b_{1}\\mu+b_{2}\\sigma_{2}^{2} $$ which implies that $$ \\frac{\\partial\\overline{W}}{\\partial\\mu}=b_{1} $$",
+      "source_page": 1096,
+      "source_pages": [
+        1096
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p040:b6",
+        "Evolution_chapter29:p040:b7",
+        "Evolution_chapter29:p040:b9",
+        "Evolution_chapter29:p040:b10"
+      ],
+      "source_bboxes": [
+        [
+          326.0,
+          725.0,
+          954.0,
+          748.0
+        ],
+        [
+          466.0,
+          763.0,
+          882.0,
+          791.0
+        ],
+        [
+          289.0,
+          807.0,
+          456.0,
+          831.0
+        ],
+        [
+          632.0,
+          829.0,
+          715.0,
+          880.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cf487d2455f756059873e46c6dabce02ba0a6673672ed32df4bc70034e214773"
     },
     {
       "type": "discussion",
-      "content": "It is important to stress that throughout, we have defined $ \\beta = S/\\sigma_z^2 $ (Equation 13.8b) and $ \\gamma = C/\\sigma_z^4 $ (Equation 29.19), making no assumptions about either the trait distribution or the individual fitness function. While alternative expressions (e.g., Equations 29.20 and 29.30) exist for $ \\beta $ and $ \\gamma $ under certain distributional (normality) or fitness function (quadratic) assumptions, these are simply equalities under certain conditions that follow given our (distributional and fitness function-independent) definitions of $ \\beta $ and $ \\gamma $. The importance of $ \\beta $ and $ \\gamma $ is that they appear as the sole measures of selection in the breeder's equation (13.8c) and Bulmer equation (29.21) for predicting changes in means and variances. When the normality assumptions underlying the simple forms of these two selection-response (mean and variance, respectively) equations fail, the response depends, in complex ways, on the underlying genetic details and various partials of the mean fitness landscape (Equation 24.26)."
+      "content": "It is important to stress that throughout, we have defined $ \\beta = S/\\sigma_z^2 $ (Equation 13.8b) and $ \\gamma = C/\\sigma_z^4 $ (Equation 29.19), making no assumptions about either the trait distribution or the individual fitness function. While alternative expressions (e.g., Equations 29.20 and 29.30) exist for $ \\beta $ and $ \\gamma $ under certain distributional (normality) or fitness function (quadratic) assumptions, these are simply equalities under certain conditions that follow given our (distributional and fitness function-independent) definitions of $ \\beta $ and $ \\gamma $. The importance of $ \\beta $ and $ \\gamma $ is that they appear as the sole measures of selection in the breeder's equation (13.8c) and Bulmer equation (29.21) for predicting changes in means and variances. When the normality assumptions underlying the simple forms of these two selection-response (mean and variance, respectively) equations fail, the response depends, in complex ways, on the underlying genetic details and various partials of the mean fitness landscape (Equation 24.26).",
+      "source_page": 1096,
+      "source_pages": [
+        1096
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p040:b12"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          890.0,
+          1060.0,
+          1167.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d7a236723ca2c93a66587cd6d92b7f0e6a51570cd1b6414211c3ddbb252191e7"
     }
   ]
 }

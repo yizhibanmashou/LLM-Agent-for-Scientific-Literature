@@ -5,7 +5,6 @@ from uuid import uuid4
 
 from scripts.preview_figure_relink import patch_chapter
 
-
 TEST_RUNTIME_ROOT = Path(__file__).resolve().parents[3] / "tmp" / "test_runtime" / "preview_figure_relink"
 TEST_RUNTIME_ROOT.mkdir(parents=True, exist_ok=True)
 

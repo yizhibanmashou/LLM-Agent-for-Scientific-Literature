@@ -26,27 +26,130 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Recall from Equation 30.11a that $(\\gamma_{ii}/2)(z_i - \\mu_i)^2$ is the contribution toward relative fitness, $w$, from squared deviations of trait $i$ from its mean. It is therefore natural to assume that if $\\gamma_{ii} < 0$ (concave selection), this implies at least the potential of stabilizing selection on trait $i$. Figure 30.3 showed that using only the diagonal elements of $\\gamma$ can potentially give a very misleading picture of the nature of quadratic selection. However, the eigenvalues ($\\lambda$) of $\\gamma$ provide a more exact description of the true nature of selection. Blows and Brooks (2003) stressed this point, and noted in an analysis of 19 studies that $|\\gamma_{ii}|_{max} < |\\lambda|_{max}$. Thus, studies that report weak values for quadratic selection are potentially biased if they use $\\gamma_{ii}$ values, rather than the full geometry of $\\gamma$, as described by its eigenvalues. A further point (mentioned above) is that many published studies report only half the true value for $\\lambda_{ii}$ due to incorrect translation of the coefficient of the quadratic regression."
+      "content": "Recall from Equation 30.11a that $(\\gamma_{ii}/2)(z_i - \\mu_i)^2$ is the contribution toward relative fitness, $w$, from squared deviations of trait $i$ from its mean. It is therefore natural to assume that if $\\gamma_{ii} < 0$ (concave selection), this implies at least the potential of stabilizing selection on trait $i$. Figure 30.3 showed that using only the diagonal elements of $\\gamma$ can potentially give a very misleading picture of the nature of quadratic selection. However, the eigenvalues ($\\lambda$) of $\\gamma$ provide a more exact description of the true nature of selection. Blows and Brooks (2003) stressed this point, and noted in an analysis of 19 studies that $|\\gamma_{ii}|_{max} < |\\lambda|_{max}$. Thus, studies that report weak values for quadratic selection are potentially biased if they use $\\gamma_{ii}$ values, rather than the full geometry of $\\gamma$, as described by its eigenvalues. A further point (mentioned above) is that many published studies report only half the true value for $\\lambda_{ii}$ due to incorrect translation of the coefficient of the quadratic regression.",
+      "source_page": 1133,
+      "source_pages": [
+        1133
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p020:b3",
+        "Evolution_chapter30:p020:b4"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          389.0,
+          594.0,
+          411.0
+        ],
+        [
+          288.0,
+          416.0,
+          1059.0,
+          669.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7de15978ae5d3877e6c2903c72cb690f82fec35efb982614f100a36d61ba5e71"
     },
     {
       "type": "discussion",
-      "content": "Blows and Brooks (2003) noted several advantages of focusing on estimation of the $ \\lambda_i $ versus estimation of all of the $ \\gamma_{ij} $, noting that there are $ n $ eigenvalues, and $ n(n + 1)/2 $ elements in $ \\gamma $. Further, given that many eigenvalues may be close to zero, a subspace of $ \\gamma $, such as the space spanned by the first few principal (i.e., canonical) components of $ \\gamma $ may essentially capture all of the relevant information on the quadratic fitness surface. Following Simms (1990) and Simms and Rausher (1993), Blows and Brooks suggested that estimation and hypothesis testing can occur if we first obtain the eigenvectors of $ \\gamma $, and then use them to generate the transformed variables $ \\mathbf{y} = \\mathbf{U}^T \\mathbf{z} $ in the quadratic regression given by Equation 30.26. This approach is often referred to as a double regression, as one first uses the eigenvectors of $ \\gamma $ to generate $ y $ and then fits a quadratic regression of $ w $ using $ y $. The quadratic terms in the regression correspond to the eigenvalues of $ \\gamma $ (Equation 30.26), and confidence intervals and significance levels can be conducted within the standard GLM framework (LW Chapter 8). Bisgaard and Ankenman (1996) provided a formal statistical framework for generating standard errors for the estimated $ \\lambda_i $ when using this procedure. However, Reynolds et al. (2010) noted that the initial transformation (to generate $ y $) biases tests of significance of the $ \\lambda_i $, and they suggested a permutation method to obtain correct type-I error rates."
+      "content": "Blows and Brooks (2003) noted several advantages of focusing on estimation of the $ \\lambda_i $ versus estimation of all of the $ \\gamma_{ij} $, noting that there are $ n $ eigenvalues, and $ n(n + 1)/2 $ elements in $ \\gamma $. Further, given that many eigenvalues may be close to zero, a subspace of $ \\gamma $, such as the space spanned by the first few principal (i.e., canonical) components of $ \\gamma $ may essentially capture all of the relevant information on the quadratic fitness surface. Following Simms (1990) and Simms and Rausher (1993), Blows and Brooks suggested that estimation and hypothesis testing can occur if we first obtain the eigenvectors of $ \\gamma $, and then use them to generate the transformed variables $ \\mathbf{y} = \\mathbf{U}^T \\mathbf{z} $ in the quadratic regression given by Equation 30.26. This approach is often referred to as a double regression, as one first uses the eigenvectors of $ \\gamma $ to generate $ y $ and then fits a quadratic regression of $ w $ using $ y $. The quadratic terms in the regression correspond to the eigenvalues of $ \\gamma $ (Equation 30.26), and confidence intervals and significance levels can be conducted within the standard GLM framework (LW Chapter 8). Bisgaard and Ankenman (1996) provided a formal statistical framework for generating standard errors for the estimated $ \\lambda_i $ when using this procedure. However, Reynolds et al. (2010) noted that the initial transformation (to generate $ y $) biases tests of significance of the $ \\lambda_i $, and they suggested a permutation method to obtain correct type-I error rates.",
+      "source_page": 1133,
+      "source_pages": [
+        1133
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p020:b5"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          671.0,
+          1061.0,
+          1060.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c6c7a18cb092d7f6a03365c95b0c935129e96c413898f860514a5688ff6826d3"
     },
     {
       "type": "proposition",
-      "content": "Kruuk and Garant (2007) noted that the Mercer-Mercer theorem (2000) states that the magnitude of the largest eigenvalue of $ \\gamma $ is as least as great as the largest magnitude of the diagonal elements of $ \\gamma $. Thus, it is “algebraically inevitable” that at least one combination of traits will show stronger quadratic selection than any of the original traits (provided all values of $ \\gamma_{ii} \\neq 0 $). Nevertheless, the biological issue here is whether $ \\lambda_i $ is significantly greater than $ \\gamma_{ii} $ (as opposed to only being slightly larger). Reynolds et al. (2010) found higher power for detecting curvature (nonzero eigenvalues of $ \\gamma $) using canonical analysis than when testing each value of $ \\gamma_{ii} $ separately."
+      "content": "Kruuk and Garant (2007) noted that the Mercer-Mercer theorem (2000) states that the magnitude of the largest eigenvalue of $ \\gamma $ is as least as great as the largest magnitude of the diagonal elements of $ \\gamma $. Thus, it is “algebraically inevitable” that at least one combination of traits will show stronger quadratic selection than any of the original traits (provided all values of $ \\gamma_{ii} \\neq 0 $). Nevertheless, the biological issue here is whether $ \\lambda_i $ is significantly greater than $ \\gamma_{ii} $ (as opposed to only being slightly larger). Reynolds et al. (2010) found higher power for detecting curvature (nonzero eigenvalues of $ \\gamma $) using canonical analysis than when testing each value of $ \\gamma_{ii} $ separately.",
+      "source_page": 1133,
+      "source_pages": [
+        1133
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p020:b6"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1061.0,
+          1060.0,
+          1247.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2ea46cdc986b722986738d2a7de95cf4a90ba6cdfb82f84adc102ef7bc421c4f"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:30.6]]"
+      "content": "[[SEE_EXAMPLE:30.7]]",
+      "source_page": 1136,
+      "source_pages": [
+        1136
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p023:b5"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          1082.0,
+          881.0,
+          1256.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9ecf043f7e697c6d3ee84010f3b9553297f963835c31734ce8451fe4d85391e0"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:30.7]]"
-    },
-    {
-      "type": "discussion",
-      "content": "The diagonal elements suggest evidence for weak convex selection ($ \\gamma_{44} = 0.060 $, $ \\gamma_{11} = 0.032 $) and some evidence for very weak concave selection ($ \\gamma_{33} = -0.022 $). However, the eigenvalues of $ \\gamma $ are 0.262, 0.012, -0.077, and -0.123. Of these eigenvalues, only the leading one (0.262) is significantly different from zero, with an amount of convex selection over four times that suggested from the largest $ \\gamma_{ii} $ value (0.060). The take-home message is that simply relying upon a visual inspection of the diagonal elements of $ \\gamma $ can depict a very misleading view of the nature of selection."
+      "content": "[[SEE_EXAMPLE:30.6]]",
+      "source_page": 1133,
+      "source_pages": [
+        1133,
+        1134
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p020:b7",
+        "Evolution_chapter30:p020:b8",
+        "Evolution_chapter30:p021:b2"
+      ],
+      "source_bboxes": [
+        [
+          322.0,
+          1312.0,
+          1035.0,
+          1357.0
+        ],
+        [
+          468.0,
+          1379.0,
+          847.0,
+          1472.0
+        ],
+        [
+          167.0,
+          206.0,
+          882.0,
+          358.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e0350e0021ab57f7ee14b27f9b9ee5779dd652033a37900f957d73f059438b5a"
     }
   ]
 }

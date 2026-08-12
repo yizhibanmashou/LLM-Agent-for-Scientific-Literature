@@ -40,9 +40,7 @@ Natural chromosomal assays become possible when chromosomal rearrangements are s
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter14:1` · source: `Genetics_chapter14_004.json` · blocks 2–2
->
-> Example 1. A large sample of Ab recombinant chromosomes was generated from a cross between an ab line with negative character value and an AB tester line with mean zero. Each recombinant chromosome was used to create a line with a recombinant Ab chromosome and an AB tester chromosome in an otherwise genetically homogeneous background. Construction of such lines requires the use of balancer chromosomes, which prevent any further recombination from occurring (see Figure 5.7). The mean character values from the resulting lines formed two distinct clusters, one (comprising 43%) clustering around -1.5, the other clustering around 0. Hence, there appears to be a single factor (at our level of resolution), with the 0 mean class corresponding to Q/Q and the -1.5 class corresponding to Q/q, implying $ \mu_{QQ} - \mu_{Qq} = 1.5 $. The frequencies of these classes among Ab recombinant chromosomes imply that the A-Q recombination fraction is 43% of the A-B recombination fraction (assuming no interference).
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:1]**
 
 
 McMillan and Robertson (1974) found that the power of Thoday’s method is generally very poor. For high power, both the number of recombinant chromosomes (N) and the number of replicates (n) per recombinant chromosome need to be large. Even if a factor has a large effect, it will remain undetected unless the sample of recombinant chromosomes contains both factor alleles, which requires a sufficiently large N. To see this result, set the distance between the two markers to one, and let $ f(0 \leq f \leq 1) $ denote the relative distance between factor and marker A, so that a fraction f of the aB recombinants are aqB and 1 - f are aQB. The probability that N recombinant (aB) chromosomes all contain the same QTL allele is $ f^N + (1 - f)^N $. If f is close to zero or one, N has to be considerable for a sample to contain a sufficient number of both QTL genotypes for detection. The power for detection is maximized when the factor is exactly between the two markers. Graphs of power are given by McMillan and Robertson (1974).
@@ -51,17 +49,7 @@ Thoday’s method can be extended to allow for multiple factors between two mark
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter14:2` · source: `Genetics_chapter14_004.json` · blocks 5–9
->
-> Example 2. Suppose there are three QTLs between the marker loci A and B, as shown in the following figure. Assuming no double crossovers, let $ f_1 $, $ f_2 $, $ f_3 $, and $ 1 - (f_1 + f_2 + f_3) $, respectively, be the fractions of recombination between flanking markers that occur between A and the first QTL, between the first and second QTL, the second and third, and the third and B. Let $ Q_i $ denote alleles from the high line, which have effect $ H_i $ relative to alleles $ q_i $ from the low line.
-> 
-> <table><tr><td>A</td><td>Q_{1}</td><td>Q_{2}</td><td>Q_{3}</td><td>B</td></tr><tr><td>$ \mid f_{1}\mid $</td><td>$ \mid f_{2}\mid $</td><td>$ \mid f_{3}\mid $</td><td></td><td></td></tr><tr><td>a</td><td>q_{1}</td><td>q_{2}</td><td>q_{3}</td><td>b</td></tr></table>
-> 
-> The expected frequencies and effects of Ab recombinant chromosomes are obtained as follows. As shown in the following figure, a fraction $ f_1 $ of Ab chromosomes have no high-line alleles, as the crossover occurred between A and $ Q_1 $. Likewise, a fraction $ f_2 $ contain high-line allele $ Q_1 $ with effect $ H_1 $. The last two classes follow similarly. Thoday's method estimates the $ H_i $ and $ f_i $ by making the assumption that all alleles from the high line increase character value (all $ H_i > 0 $) so that the mean of the largest phenotypic class corresponds to $ H_1 + H_2 + H_3 $, the mean of second largest class to $ H_1 + H_2 $, etc. This ordering allows us to uniquely estimate the $ H_i $ and $ f_i $.
-> 
-> <table><tr><td>Fraction</td><td>Chromosome type</td></tr><tr><td rowspan="2">$ f_{1} $</td><td>A $ q_{1} $ $ q_{2} $ $ q_{3} $ b</td></tr><tr><td>A $ Q_{1} $ $ q_{2} $ $ q_{3} $ b</td></tr><tr><td>$ f_{2} $</td><td>A $ Q_{1} $ $ Q_{2} $ $ q_{3} $ b</td></tr><tr><td>$ f_{3} $</td><td>A $ Q_{1} $ $ Q_{2} $ $ Q_{3} $ b</td></tr><tr><td>$ 1-f_{1}-f_{2}-f_{3} $</td><td>$ \downarrow $ $ \downarrow $ $ \downarrow $ $ \downarrow $ $ \downarrow $</td></tr></table>
-> 
-> If some of the $ H_{i} $ differ in sign, this ordering breaks down, as illustrated in following example offered by McMillan and Robertson (1974). Setting the mean of the low line at 0, suppose that 23% of the recombinants have value 0, 7% have value 0.5, 41% have value 1.3, and the remaining 29% have value 3.7. Assuming that the effects of all Q alleles are positive, the second smallest mean corresponds to $ H_{1} = 0.5 $. Likewise, the third smallest mean corresponds to $ H_{1} + H_{2} = 1.3 $, and hence $ H_{2} = 1.3 - 0.5 = 0.8 $. Continuing in this fashion gives the estimated values shown below on the left. In actuality, McMillan and Robertson generated these data using a very different configuration than suggested by the estimate, as shown on the right.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:2]**
 
 
 > **Figure 14.1** · page 399 · source: `Genetics_chapter14`
@@ -313,20 +301,7 @@ It is important to note that the above expressions refer to randomly chosen mark
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter14:3` · source: `Genetics_chapter14_010.json` · blocks 12–16
->
-> Example 3. The human linkage map is 33 Morgans long with haploid chromosome number C = 23. How many random markers are required to achieve a 90% probability that at least one marker is within 10 map units (centiMorgans) of a randomly chosen gene?
-> 
-> Here $ L = 3300 \, \text{cM} $, $ m = 10 \, \text{cM} $, and $ p = 0.9 $. The circular-chromosome approximation (Equation 14.6a) gives
-> 
-> $$
-> n=\frac{\ln(1-.9)}{\ln(1-2/330)}\simeq379
-> $$
-> 
-> 
-> Numerically solving Equation 14.7 with p = 0.9 gives n = 404. Hence, the effect of ignoring chromosome ends underestimates n by about 7%.
-> 
-> Suppose that 110 random markers are used. From Equation 14.8a, the expected distance of a particular gene from the nearest of these 110 markers is 14.9 cM, while Equation 14.8b gives the upper 95% confidence interval for this distance as 44.3 cM. In contrast, suppose these 110 markers are not random, but are instead chosen to be equally spaced at 30 cM apart. With this spacing, no locus is more than 15 cM from a marker, and all loci are, on average, 7.5 cM from a marker.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:3]**
 
 
 ---
@@ -345,39 +320,14 @@ A number of problems, which are elaborated on in Chapter 16, conspire to make QT
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter14:4` · source: `Genetics_chapter14_011.json` · blocks 5–11
->
-> Example 4. Likelihood functions for QTL mapping follow from standard mixture models (Chapter 13). Consider the simple backcross design, where two completely inbred lines (with marker/QTL genotypes MMQQ and mmqq) are crossed to form an $ F_{1} $ (MQ/mq) which is then backcrossed to the MMQQ population. If c denotes the marker-QTL recombination frequency, then a fraction $ (1 - c) $ of M-bearing $ F_{1} $ gametes contain Q, while c contain q. Likewise $ (1 - c) $ and c of m-bearing gametes contain q and Q, respectively. Because the gamete from the parental population is always MQ, the conditional probabilities of QTL genotypes given marker genotypes are
-> 
-> $$
-> \Pr(QQ\mid MM)=\Pr(Qq\mid Mm)=1-c
-> $$
-> 
-> 
-> $$
-> \Pr(Qq\mid MM)=\Pr(QQ\mid Mm)=c
-> $$
-> 
-> 
-> Hence, if $ z_{j} $ is the character value for individual j, the likelihood depends on the marker genotype,
-> 
-> $$
-> \ell(z_{j})=\left\{\begin{aligned}&(1-c)\cdot\varphi(z_{j},\mu_{QQ},\sigma^{2})+c\cdot\varphi(z_{j},\mu_{Qq},\sigma^{2}),&if marker=MM\\ &c\cdot\varphi(z_{j},\mu_{QQ},\sigma^{2})+(1-c)\cdot\varphi(z_{j},\mu_{Qq},\sigma^{2}),&if marker=Mm\end{aligned}\right.
-> $$
-> 
-> 
-> As in Chapter 13, we have assumed that phenotypes are normally distributed with potentially different means for each genotype but a common variance, with $ \varphi(z, \mu, \sigma^2) $ denoting the density function for a normal distribution with mean $ \mu $ and variance $ \sigma^2 $. The total likelihood for $ n $ measured backcross individuals is the product of individual likelihoods, $ \prod \ell(z_j) $. The maximum-likelihood estimates of the four model parameters ( $ \mu_{QQ} $, $ \mu_{Qq} $, $ c $, $ \sigma^2 $) are obtained by maximizing the likelihood with respect to these variables, treating the observed $ z_j $ as fixed constants.
-> 
-> Hypothesis testing follows by standard likelihood-ratio tests (Chapter 13, Appendix 4). The appropriate test for the presence of a QTL linked to the marker compares the likelihood under the assumed full model with the likelihood under a model of no QTL, in which each individual character value is assumed to be drawn from the same normal with unknown mean $ \mu $ and variance $ \sigma^{2} $. The maximum of this restricted likelihood is given by Equation 13.8. The resulting likelihood-ratio test has 4 - 2 = 2 degrees of freedom (four free parameters in the full model; $ \mu $ and $ \sigma^{2} $ in the restricted model). Knott and Haley (1992a) show that this test is not biased by the presence of unlinked QTLs. It is, however, biased if one or more additional QTLs are linked to the marker under consideration.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:4]**
 
 
 An observed association between alleles at a polymorphic marker locus and the value of a quantitative trait can result either because of gametic phase disequilibrium between the marker locus and a QTL or because the marker itself has a pleiotropic effect on the trait. A simple test for pleiotropy versus disequilibrium is to examine a marker-trait association over several generations of random mating. An association due to pleiotropy will not decay over time, while one due to linkage alone will. A caveat is that if linkage is very tight, it can take many generations before any substantial decay is observed (Equation 5.13). If one suspects that the marker itself is the QTL, a variety of candidate-locus approaches (to be discussed below) can be used to test this hypothesis.
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_chapter14:5` · source: `Genetics_chapter14_011.json` · blocks 13–13
->
-> Example 5. Following crosses between inbred lines of barley, Powell et al. (1985a,b) found that two loci with recessive dwarfing alleles (ert and denso) were associated with other quantitative traits: ert with reduced seed weight and denso with reduced height. By crossing different lines to produce an $ F_{2} $, it was found that the ert locus accounted for roughly 84% of the additive genetic variation in seed weight after both one and three generations of recombination, suggesting that the association between ert and seed weight is either due to pleiotropy or very tight linkage. In contrast, the denso locus accounted for 58% of the additive genetic variance for height in lines undergoing a single round of recombination but only 35% in lines undergoing three rounds. Hence, for the denso locus, much of the initial association was due to gametic phase disequilibrium.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:5]**
 
 
 ---
@@ -417,16 +367,12 @@ Finally, we note that BSA can be used to find additional markers linked to a par
 
 **[示例 Example]**
 
-> **Example 6** · ref: `Genetics_chapter14:6` · source: `Genetics_chapter14_014.json` · blocks 3–3
->
-> Example 6. Yaghoobi et al. (1995) used bulked segregant analysis to map a major gene for root-knot nematode resistance in tomatoes. Forty-eight backcross individuals from a cross between resistant and susceptible strains ( $ F_{1} $ backcrossed to the susceptible parent) were scored, 25 of which were susceptible, and 23 resistant. This 1:1 segregation ratio is consistent with the hypothesis that a single dominant gene underlies resistance. To map this gene, two bulks of DNA, based on six resistant and six susceptible backcross plants were formed. Each bulk was screened for RAPDs using 520 different 10-base primers. Each primer gave on average about eight bands, resulting in 4,160 bands being scored in each pool, about 3% of which varied significantly between pools. These significant primers were then used to probe each of the original 48 backcross plants. One marker was present in 20 of 23 resistant plants and none (out of 25) of the susceptible plants, suggesting linkage to a major resistance gene.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:6]**
 
 
 **[示例 Example]**
 
-> **Example 7** · ref: `Genetics_chapter14:7` · source: `Genetics_chapter14_014.json` · blocks 4–4
->
-> Example 7. As a test of BSA, Mansur et al. (1993) examined four traits — maturity, plant height, lodging (a measure of plant structure), and seed yield — in 284 recombinant inbred lines generated by a cross between two soybean (Glycine max) cultivars. The four chosen traits were measured in each of the 284 RILs grown in two distinct environments (Minnesota and Chile) and the 20 highest-and lowest-performing lines, averaged over both environments, were selected for each trait. DNA was extracted from each of the extreme lines and bulked into a high and low sample for each of the traits. The resulting DNA was tested using radioactive probes for RFLP markers, and the amount of hybridization to each probe was quantified using a phosphoimager. The authors had previously used RFLPs to map a number of QTLs for these and several other traits using maximum-likelihood interval mapping (Chapter 15) in $ F_{2} $ families (Mansur et al. 1993). The previous RFLP marker-QTL associations were confirmed, and one marker that showed marginal linkage to maturity and height under interval mapping showed very strong linkage to these traits as well as to lodging and yield.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:7]**
 
 
 ---
@@ -443,9 +389,7 @@ Marker alleles associated with body size have been found in several studies of d
 
 **[示例 Example]**
 
-> **Example 8** · ref: `Genetics_chapter14:8` · source: `Genetics_chapter14_015.json` · blocks 4–4
->
-> Example 8. Nuzhdin et al. (1993) used allele-frequency changes to detect markers associated with fitness in a cross of high and low fitness lines of Drosophila melanogaster. These authors used the presence/absence of the mobile genetic elements mdg1 and copia as markers, finding 19 locations on chromosome 2 where the high and low lines differed in the presence/absence of inserted elements. An F1 was backcrossed to the low line for three generations to generate a base population with high-line alleles at expected frequency 1/32. This base population was then allowed to reproduce, with marker frequencies sampled after 11, 13, and 17 generations of natural selection. The frequencies of nine high-line markers (all located in a region around the centromere of chromosome 2) showed significantly higher values than expected by drift, suggesting linkage to one (or more) QTLs increasing fitness. The associated selection coefficients estimated by the maximum likelihood approach of Keightley and Bulfield ranged from 0.3 to 0.7.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:8]**
 
 
 ---
@@ -466,27 +410,17 @@ Typically, five to seven generations of backcrossing are performed, giving the e
 
 **[示例 Example]**
 
-> **Example 9** · ref: `Genetics_chapter14:9` · source: `Genetics_chapter14_016.json` · blocks 4–4
->
-> Example 9. Eshed and Zamir (1995) formed 50 NILs from a cross between the cultivated tomato (Lycopersicon esculentum) and a wild relative (L. pennellii). Based on analysis with 375 markers, each line contained a single RFLP-defined fragment from L. pennellii, averaging around 33 cM (or roughly 3% donor DNA). Comparing the mean value of each NIL against a standard, the authors found 23 QTLs for fruit soluble-solids content and 18 QTLs for fruit mass. By comparison, in an analysis of marker-trait associations in RILs, Goldman et al. (1995) found 7 and 13 QTLs, respectively. Eshed and Zamir subjected two regions to much finer scale mapping, using markers to select for recombinants within these regions. Upon finer analysis, a 55 cM region influencing fruit size was shown to contain at least three separate QTLs. A 37 cM region showing heterosis for soluble-solids yield was shown to result from associative overdominance. This latter region was subdivided by recombination into a partially dominant QTL that increases yield and a linked recessive that reduces yield.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:9]**
 
 
 **[示例 Example]**
 
-> **Example 10** · ref: `Genetics_chapter14:10` · source: `Genetics_chapter14_016.json` · blocks 5–7
->
-> Example 10. The simplest scheme for constructing NILs is to backcross without any selection (intentional or otherwise). A collection of such NILs is expected to be random with regard to the donor regions maintained. Most NILs, however, are produced by a select-and-backcross procedure, and hence are not random with regard to the retained donor DNA. This example shows how such an approach can be exploited for QTL mapping.
-> 
-> “Exotic” sorghum is tall and has a short-daylength requirement for flowering, while commercial sorghum cultivars are short (for easier harvesting) and day- length insensitive. Exotic strains are “converted” to commercial cultivars by first crossing to a standard short, daylength-neutral donor parent and continually backcrossing each generation to the exotic parent while selecting for short height and daylength neutrality. The resulting converted strains are expected to contain mostly exotic DNA, but are short and daylength neutral, due to the retention of donor QTL alleles influencing these traits. Hence, one approach to mapping QTLs for these traits is to search for regions that are retained in the converted derivatives.
-> 
-> This approach was used as a check of conventional QTL mapping by Lin et al. (1995), who examined 71 markers in nine exotic accessions of Sorghum bicolor and their converted derivatives. The authors compared the positions of retained donor regions in these accessions with the positions of QTLs for height and daylength sensitivity mapped in a previous experiment using the $ F_{2} $ progeny in a cross of S. bicolor × S. propinquum. Seven of the nine QTLs (six for height, three for daylength) detected using the $ F_{2} $ cross coincided with regions of donor parent DNA retained in the converted strains despite several generations of backcrossing. One donor region was seen in all nine derivatives, and in the $ F_{2} $ crosses this region accounted for 55% of the variation in height and 86% of the variation in daylength sensitivity. In contrast, three converted regions (found in at least one line) did not coincide with mapped QTLs. Whether these regions indeed contain QTLs for height or daylength could be examined by crossing the converted strains with their parental exotics and looking for associations between the retained donor markers and trait values.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:10]**
 
 
 **[示例 Example]**
 
-> **Example 11** · ref: `Genetics_chapter14:11` · source: `Genetics_chapter14_016.json` · blocks 8–8
->
-> Example 11. Martin et al. (1991) used 144 random primers to generate RAPDs for comparing two tomato NILs, both derived from the same donor and recurrent parents. One NIL contained an introgressed segment for resistance to the bacterial pathogen Pseudomonas syringae, while the other lacked resistance. The random primers generated approximately 625 discrete products, seven of which differed between the two lines. Of the four chosen for further analysis, three were shown by cosegregation between the marker and pathogen resistance to be tightly linked to the resistance gene. The power of this approach can be seen by comparing the time for identification and confirmation of these three markers by this analysis (roughly one month) with the time required to construct a dense genetic map of tomatoes (over 2 years).
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:11]**
 
 
 ---
@@ -568,22 +502,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 12** · ref: `Genetics_chapter14:12` · source: `Genetics_chapter14_017.json` · blocks 20–25
->
-> Example 12. Suppose there are $n = 15$ chromosomes, each of length 75 cM, and that we select for retention of a marker located in the middle of chromosome 1 during five generations of backcrossing and a generation of selfing. Applying Equation 14.10a, the expected fraction of donor DNA on chromosome 1 is
-> 
-> $$
-> E[p_{M}(5)]=2\left(\frac{1-e^{-6\left(0.75/2\right)}}{0.75\cdot6}\right)\simeq0.40
-> $$
-> 
-> 
-> or, in units of chromosome length, $ 0.4 \cdot 75 \, \text{cM} = 30 \, \text{cM} $. Equation 14.10b gives the standard deviation of the expected proportion retained as 0.23, or 17.25 cM. Likewise, applying Equations 14.11a,b, the proportion of donor DNA on any nonmarker chromosome is $ 0.016 \pm 0.077 $, or $ 1.2 \pm 5.8 \, \text{cM} $. The fraction of the total expected donor DNA in the NIL contributed by the marked chromosome is $ 30 / (30 + 14 \cdot 1.2) = 0.64 $.
-> 
-> Fewer and more generations of backcrossing give the following expected values:
-> 
-> <table><tr><td rowspan="2">b</td><td colspan="2">Lengths of Introgressed Segment (cM)</td><td rowspan="2">% from Marked Chromosome</td></tr><tr><td>Marker chromosome</td><td>All unmarked</td></tr><tr><td>2</td><td>45.0 $ \pm $ 19.1</td><td>131.25 $ \pm $ 255.9</td><td>25.6</td></tr><tr><td>7</td><td>23.8 $ \pm $ 14.8</td><td>4.10 $ \pm $ 36.7</td><td>85.3</td></tr><tr><td>10</td><td>17.9 $ \pm $ 12.0</td><td>0.51 $ \pm $ 11.3</td><td>97.3</td></tr><tr><td>12</td><td>15.3 $ \pm $ 10.5</td><td>0.13 $ \pm $ 5.2</td><td>99.2</td></tr><tr><td>15</td><td>12.5 $ \pm $ 8.7</td><td>0.02 $ \pm $ 1.7</td><td>99.9</td></tr></table>
-> 
-> A NIL line created by selecting for retention of a marker contains significantly more donor DNA than a NIL created without any selection. The total map length in this example is 1,125 cM, giving the expected total length of donor DNA in an NIL formed without selection as 1125/2^{b+1}, or 17.58, 4.39, and 0.55 cM after 5, 7, and 10 generations of backcrossing, respectively.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:12]**
 
 
 If donor and recurrent-parent DNAs are sufficiently different, recombination between donor and recurrent chromosomes can be greatly reduced, resulting in a much longer segment of donor DNA being retained than expected (e.g., Young and Tanksley 1989a, Paterson et al. 1990). In these cases, the above expressions may give rather serious underestimates. For example, Young and Tanksley (1989a) examined the length of donor DNA introgressed by selecting for a donor marker (resistance to tobacco mosaic virus) in a cross between two species of tomatoes.
@@ -609,11 +528,7 @@ Equation 14.10c shows that 99 backcross generations are required to reduce the a
 
 **[示例 Example]**
 
-> **Example 13** · ref: `Genetics_chapter14:13` · source: `Genetics_chapter14_017.json` · blocks 33–34
->
-> Example 13. Suppose the region of interest is flanked by markers, each at recombination frequency c from the locus of interest. To have a 95% probability of recovering a double recombinant in a single generation, one must examine roughly $ 3/c^2 $ individuals, or 30,000 individuals for $ c = 0.01 $ (a 2 cM interval). This follows since the probability of no double recombinants among n sampled chromosomes is $ (1 - c^2)^n $, giving the probability of at least one double as $ 1 - (1 - c^2)^n $. Setting this equal to 0.95 and solving for n gives $ n = -\ln(0.05)/\ln(1 - c^2) \simeq 3/c^2 $. How much of a savings can the two-generation method offer?
-> 
-> If $ n_1 $ first-generation individuals are screened, the probability that at least one of them is a single recombinant is $ 1-(1-2c)^{n_1} $ (with 2c being the probability of recombination on either side of the marker, $ 1-2c $ is the probability that a chromosome is nonrecombinant with respect to the flanking markers). Using a single recombinant to form the next generation, the probability of a single recombination event on the opposite side of the region is $ 1-(1-c)^{n_2} $. The probability of obtaining a double recombinant after two generations is the probability of a single recombinant in the first generation times the probability of a single recombinant in the second. Thus, to have an overall probability of 95%, we need a probability of 97.5% for each of the two events, as $ 0.975^2 = 0.95 $. The sample size required to have a 97.5% chance of a single recombinant (on either side of the region) in the first generation is obtained by solving $ 0.975 = 1 - (1-2c)^{n_1} $, yielding $ n_1 \simeq 1.85/c $. Likewise, solving $ 0.975 = 1 - (1-c)^{n_2} $ gives $ n_2 \simeq 3.7/c = 2n_1 $. Hence, using this two-generation approach, to have a 95% probability of recovering a double recombinant, a total of $ n_{1} + n_{2} = 5.55 / c $ individuals must be scored. For c = 0.01, this is 555 individuals (185 in the first generation, 370 in the second), only two percent of the 30,000 required for the single-generation method.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:13]**
 
 
 ---
@@ -654,15 +569,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 14** · ref: `Genetics_chapter14:14` · source: `Genetics_chapter14_019.json` · blocks 4–7
->
-> Example 14. Hästbacka et al. (1992) examined the gene for diastrophic dysplasia (DTD), an autosomal recessive disease, in Finland. A total of 18 multiplex families (showing two or more affected individuals) allowed the gene to be localized to within 1.6 cM from a marker locus (CSF1R) using standard pedigree methods. To increase the resolution using pedigree methods requires significantly more multiplex families. Given the excellent public health system in Finland, however, it is likely that the investigators had already sampled most of the existing families. As a result, the authors turned to LD mapping.
-> 
-> While only multiplex families provide information under standard mapping procedures, this is not the case with LD mapping wherein single affected individuals can provide information. Using LD mapping thus allowed the sample size to increase by 59. A number of marker loci were examined, with the CSF1R locus showing the most striking correlation with DTD. The investigators were able to unambiguously determine the haplotypes of 152 DTD-bearing chromosomes and 123 normal chromosomes for the sampled individuals. Four alleles of the CSF1R marker gene were detected. The frequencies for these alleles among normal and DTD chromosomes were found to be:
-> 
-> <table><tr><td rowspan="2">Allele</td><td colspan="4">Chromosome type</td></tr><tr><td colspan="2">Normal</td><td colspan="2">DTD</td></tr><tr><td>1-1</td><td>4</td><td>3.3%</td><td>144</td><td>94.7%</td></tr><tr><td>1-2</td><td>28</td><td>22.7%</td><td>1</td><td>0.7%</td></tr><tr><td>2-1</td><td>7</td><td>5.7%</td><td>0</td><td>0%</td></tr><tr><td>2-2</td><td>84</td><td>68.3%</td><td>7</td><td>4.6%</td></tr></table>
-> 
-> Given that the majority of DTD-bearing chromosomes are associated with the rare 1-1 allele (present in only 3.3% of normal chromosomes), the authors suggested that all DTD-bearing chromosomes in the sample descended from a single ancestor carrying allele 1-1. Since 95% of all present DTD-bearing chromosomes are of this allele, $ \pi = 0.95 $. The current Finnish population traces back to around 2000 years to a small group of founders, which underwent around $ t = 100 $ generations of exponential growth. Using these estimates of $ \pi $ and $ t $, Equation 14.14 gives an estimated recombination frequency between the CSF1R gene and the DTD gene as $ c = 1 - (0.95)^{1/100} \simeq 0.00051 $. Thus, the two genes are estimated to be separated by 0.05 cM, or about 50 kb (using the rough rule for humans that $ 1 \text{ cM} = 10^6 \text{ bp} $). Subsequent cloning of this gene by Hästbacka et al. (1994) showed it be to 70 kb proximal to the CSF1R marker locus. Thus, LD mapping increased precision by about 34-fold over that possible using segregation within pedigrees (0.05 cM vs. 1.6 cM).
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:14]**
 
 
 The DTD example is exceptional in that the disease allele was initially associated with a rare haplotype. Since the majority of current disease-bearing chromosomes have this haplotype, this suggests that the sample of disease alleles is unlikely to contain a significant fraction of new mutants. Lehesjoki et al. (1993) offer a modification when the predominant marker haplotype among disease-bearing chromosomes is also a common haplotype for normal chromosomes. Let $p_{a}$ denote the frequency of the most common haplotype of disease-bearing chromosomes and $p_{n}$ denote the frequency of this haplotype among normal chromosomes. Let $\pi$ represent the fraction of disease-bearing chromosomes descended from the common ancestor that have not undergone any recombination between the marker and QTL, and $\alpha$ be the proportion of all disease alleles descending from the founder copy (as opposed to being new mutants). We can then divide disease-bearing chromosomes into two classes. First, a fraction $\alpha \pi$ of these chromosomes have a disease allele that both traces back to the founder copy ($\alpha$) and does so through chromosomes that have not undergone recombination between the marker and disease loci ($\pi$). Second, a fraction $(1 - \alpha \pi)$ are either new mutants (which arose on some random chromosome) or a product of recombination between the founder copy and some random chromosome. In either event, the chance that such individuals have the predominant haplotype is just $(1 - \alpha \pi) p_{n}$. Putting these two results together gives
@@ -717,30 +624,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 15** · ref: `Genetics_chapter14:15` · source: `Genetics_chapter14_019.json` · blocks 21–27
->
-> Example 15. Sulisalo et al. (1994) examined the major gene for cartilage-hair hypoplasia (CHH), an autosomal recessive disease, in the Finnish population. As in Example 14, pedigree information allowed unambiguous determination the haplotypes associated with most CCH-bearing chromosomes. The authors observed that 85% of these contain a particular allele at marker D95163, while only 41% of non-CHH chromosomes carry this allele. Hence,
-> 
-> $$
-> \delta_{p}=\frac{p_{a}-p_{n}}{1-p_{n}}=\frac{0.85-0.41}{1-0.41}=0.75
-> $$
-> 
-> 
-> implying
-> 
-> $$
-> c=1-\left(\frac{\delta_{p}}{\alpha}\right)^{1/t}=1-\left(\frac{0.75}{\alpha}\right)^{1/t}
-> $$
-> 
-> 
-> To estimate the fraction $ \alpha $ of all current CHH alleles that directly trace back to the ancestral copy, first note that the frequency of CHH alleles in Finland is estimated to be 0.0066. Assuming $ t = 100 $ and $ \mu = 1 \times 10^{-5} $,
-> 
-> $$
-> \alpha=\left(1-\frac{\mu t}{q}\right)=\left(1-\frac{100\times10^{-5}}{0.0066}\right)=0.85
-> $$
-> 
-> 
-> Thus, 85% of all present CHH alleles are estimated to be direct descendants of the founder copy, which implies $ c = 0.12 \, \text{cM} $. Taking $ \mu = 1 \times 10^{-6} $ gives $ \alpha = 0.98 $ and $ c = 0.27 \, \text{cM} $. By contrast, traditional pedigree-based mapping was able to localize the CHH gene to only a 1.7 cM region.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:15]**
 
 
 LD mapping has been successfully applied to other disease genes segregating in the Finnish population, such as congenital nephrotic syndrome (Kestilä et al. 1994) and progressive myoclonus epilepsy (Lehesjoki et al. 1993). Kaplan et al. (1995) were able to apply LD mapping to the cystic fibrosis (CF) gene, using much more heterogeneous populations from Europe and elsewhere. The likely reason for success is that 70% of CF chromosomes worldwide appear to result from a single three-base deletion (Kerem et al. 1989), so that allelic heterogeneity is, at worst, a modest problem. Kaplan et al. (1995) found, however, that LD mapping was not very successful for Huntington's disease (multiple ancestral haplotypes) or Friedrich ataxia (high allelic heterogeneity) using European or North American populations.
@@ -755,9 +639,7 @@ In some cases, there may be sufficient physiological/biochemical information to 
 
 **[示例 Example]**
 
-> **Example 16** · ref: `Genetics_chapter14:16` · source: `Genetics_chapter14_020.json` · blocks 1–1
->
-> Example 16. Winkelman and Hodgetts (1992) examined the growth hormone (GH) gene as a candidate locus for body weight in selected lines of mice. Molecular analysis disclosed the presence of an allele, $ GH^{h} $, present in all four lines selected for increased weight (being fixed in three of these). An alternative allele, $ GH^{c} $, was fixed in all five control lines. One of the up-selected lines was crossed to two separate control lines to create two different $ F_{2} $ populations. The $ GH^{h} $ allele had a significant, but unexpected, effect on body weight in both $ F_{2} $ populations, as it decreased weight. For one population, the genotypes $ GH^{h}GH^{h} $ : $ GH^{h}GH^{c} $ : $ GH^{c}GH^{c} $ had 42-day weights of 29.2 : 30.2 : 31.4, while in the other population these respective weights were 34.6 : 34.9 : 38.8. Thus, the $ GH^{h} $ allele was additive in one of the $ F_{2} $ backgrounds, but dominant in the other. The $ GH^{h} $ allele behaved rather differently once the $ F_{2} $ populations were subjected to selection, again increasing in frequency in up-selected lines, and decreasing in frequency in down-selected lines. Winkelman and Hodgetts suggested that the association between the $ GH^{h} $ allele and increased weight was a product of epistastic interactions in mice selected for high weight.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:16]**
 
 
 How are candidate loci chosen? One obvious approach is to consider loci known from laboratory studies (such as knockout experiments) to have mutant alleles with major effects on the character of interest, as in natural populations such loci may also be segregating alleles with smaller effects (Chapter 12). Results from several QTL mapping experiments offer support for this approach (Chapter 15). In maize, for example, Beavis et al. (1991), Edwards et al. (1992), Veldboom et al. (1994), and Berke and Rocheford (1995) found that many QTLs for height map near the locations of known height mutants. Similar findings have been obtained with bristle number in Drosophila by Mackay and Langley (1990), Lai et al. (1994), and Long et al. (1995).
@@ -770,19 +652,7 @@ When considering genetic disorders, the frequency of a particular candidate (or 
 
 **[示例 Example]**
 
-> **Example 17** · ref: `Genetics_chapter14:17` · source: `Genetics_chapter14_021.json` · blocks 1–6
->
-> Example 17. Hanson et al. (1995) used segregation analysis (Chapter 13) to find evidence for a major gene for Type 2 diabetes mellitus segregating at high frequency in members of the Pima and Tohono O'odham tribes of southern Arizona. In an attempt to map this gene, Knowler et al. (1988) examined how the simple presence/absence of a particular haplotype, $ Gm^{+} $, was associated with diabetes. Their sample showed the following associations:
-> 
-> <table><tr><td>$ Gm^{+} $</td><td>Total subjects</td><td>% with Diabetes</td></tr><tr><td>Present</td><td>293</td><td>8%</td></tr><tr><td>Absent</td><td>4,627</td><td>29%</td></tr></table>
-> 
-> The resulting $ \chi^{2} $ value (61.6, 1 df) shows a highly significant negative association between the $ Gm^{+} $ haplotype and diabetes, making it very tempting to suggest that this haplotype marks a candidate diabetes locus (either directly or by close linkage).
-> 
-> However, the presence/absence of this haplotype is also a very sensitive indicator of admixture with the Caucasian population. The frequency of $ Gm^{+} $ is around 67% in Caucasians as compared to < 1% in full-heritage Pima and Tohono O'odham. When the authors restricted the analysis to such full-heritage adults (over age 35 to correct for age of onset), the association between haplotype and disease disappeared:
-> 
-> <table><tr><td>$ Gm^{+} $</td><td>Total subjects</td><td>% with Diabetes</td></tr><tr><td>Present</td><td>17</td><td>59%</td></tr><tr><td>Absent</td><td>1,764</td><td>60%</td></tr></table>
-> 
-> Hence, the $ Gm^{+} $ marker is a predictor of diabetes not because it is linked to genes influencing diabetes but rather because it serves as a predictor of whether individuals are from a specific subpopulation. $ Gm^{+} $ individuals usually carry a significant fraction of genes of Caucasian extraction. Since a gene (or genes) increasing the risk of diabetes appears to be present at high frequency in individuals of full-blooded Pima/Tohono O'odham extraction, admixed individuals have a lower chance of carrying this gene (or genes).
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:17]**
 
 
 The problem of population stratification can be overcome by employing tests that use family data, rather than data from unrelated individuals, to provide the case and control samples (Woolf 1955, Rubinstein et al. 1981, Falk and Rubinstein 1987, Terwilliger and Ott 1992, Spielman et al. 1993). This is done by considering the transmission (or lack thereof) of a parental marker allele to an affected offspring. Focusing on transmission within families controls for association generated entirely by population stratification and provides a direct test for linkage provided that a population-wide association between the marker and disease gene exists (Spielman et al. 1993, Ewens and Spielman 1995). This method can be applied to any family that has at least one affected offspring. The assumption of population-wide disequilibrium is required as one pools marker associations across all families.
@@ -801,20 +671,7 @@ How are T and NT determined? Consider an M/m parent with three affected offsprin
 
 **[示例 Example]**
 
-> **Example 18** · ref: `Genetics_chapter14:18` · source: `Genetics_chapter14_021.json` · blocks 12–16
->
-> Example 18. Copeman et al. (1995) examined 21 microsatellite marker loci in 455 human families with Type 1 diabetes. One marker locus, D2S152, had three alleles, with one allele (denoted 228) showing a significant effect under the TDT. Parents heterozygous for this marker transmitted allele 228 to diabetic offspring 81 times, while transmitting alternative alleles only 45 times, giving
-> 
-> $$
-> \chi^{2}=\frac{(81-45)^{2}}{(81+45)}=10.29
-> $$
-> 
-> 
-> which has a corresponding P value of 0.001. As summarized below, the other two alleles (230 and 240) at this marker locus did not show a significant TD effect.
-> 
-> <table><tr><td>Allele</td><td>T</td><td>NT</td><td>$ \chi^{2} $</td><td>P</td></tr><tr><td>228</td><td>81</td><td>45</td><td>10.29</td><td>0.001</td></tr><tr><td>230</td><td>59</td><td>73</td><td>1.48</td><td>0.223</td></tr><tr><td>240</td><td>36</td><td>24</td><td>2.40</td><td>0.121</td></tr></table>
-> 
-> Hence, this marker is linked to a QTL influencing Type 1 diabetes, with allele 228 in (coupling) linkage disequilibrium with an allele that increases the risk for this disease.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter14:18]**
 
 
 Spielman et al. (1993) note that the TDT can give a false positive if the marker shows segregation distortion, where heterozygotes preferentially segregate one allele. This distortion can be controlled for by using a standard $ 2 \times 2 $ contingency table $ \chi^{2} $ test, considering separately the transmission of a marker allele to affected and unaffected offspring,

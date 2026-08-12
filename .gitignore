@@ -6,7 +6,17 @@
 # Local handoff / agent guidance
 AGENTS.md
 HANDOFF.md
+PROJECT_HANDOFF.md
 docs/
+!docs/
+docs/*
+!docs/book-accuracy-audit.md
+!docs/assets/
+docs/assets/*
+!docs/assets/book-audit/
+docs/assets/book-audit/*
+!docs/assets/book-audit/genetics-formula-example.jpg
+!docs/assets/book-audit/popgen-text-trace.jpg
 
 # Local tool indexes and workspace caches
 .codegraph/
@@ -32,6 +42,8 @@ htmlcov/
 build/
 dist/
 .cloudflare-assets/
+node_modules/
+Pack/
 
 # Local IDE and OS files
 .vscode/
@@ -47,3 +59,6 @@ Thumbs.db
 *.tmp
 .mypy_cache/
 .ruff_cache/
+
+# Local reproducible-environment directories
+.venv/

@@ -26,39 +26,382 @@
   "blocks": [
     {
       "type": "proposition",
-      "content": "The foundation of Bayesian statistics is Bayes' theorem. Suppose we observe a random variable, x, and wish to make inferences about another random variable, $ \\theta $, in the case where $ \\theta $ is drawn from some distribution, $ \\operatorname{Pr}(\\theta) $. From the definition of conditional probability $$ \\Pr(\\theta\\mid x)=\\frac{\\Pr(x,\\theta)}{\\Pr(x)} $$ where (for now) x and $ \\theta $ are discrete random variables. Again from the definition of conditional probability, we can express the joint probability by conditioning on $ \\theta $ to give $$ \\Pr(x,\\theta)=\\Pr(x\\mid\\theta)\\Pr(\\theta) $$"
+      "content": "The foundation of Bayesian statistics is Bayes' theorem. Suppose we observe a random variable, x, and wish to make inferences about another random variable, $ \\theta $, in the case where $ \\theta $ is drawn from some distribution, $ \\operatorname{Pr}(\\theta) $. From the definition of conditional probability $$ \\Pr(\\theta\\mid x)=\\frac{\\Pr(x,\\theta)}{\\Pr(x)} $$ where (for now) x and $ \\theta $ are discrete random variables. Again from the definition of conditional probability, we can express the joint probability by conditioning on $ \\theta $ to give $$ \\Pr(x,\\theta)=\\Pr(x\\mid\\theta)\\Pr(\\theta) $$",
+      "source_page": 1190,
+      "source_pages": [
+        1190
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p002:b3",
+        "Evolution_appendix2:p002:b4",
+        "Evolution_appendix2:p002:b5",
+        "Evolution_appendix2:p002:b7",
+        "Evolution_appendix2:p002:b8"
+      ],
+      "source_bboxes": [
+        [
+          290.0,
+          401.0,
+          470.0,
+          424.0
+        ],
+        [
+          286.0,
+          447.0,
+          1060.0,
+          519.0
+        ],
+        [
+          587.0,
+          535.0,
+          757.0,
+          584.0
+        ],
+        [
+          287.0,
+          601.0,
+          1059.0,
+          651.0
+        ],
+        [
+          566.0,
+          667.0,
+          780.0,
+          693.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a5da822fa57c3736346adcdcd9dfd683cc9b13b4b96e1058e506af964cf6f946"
     },
     {
       "type": "proposition",
-      "content": "Putting these together yields Bayes' theorem $$ \\mathrm{Pr}(\\theta\\mid x)=\\frac{\\mathrm{Pr}(x\\mid\\theta)\\mathrm{Pr}(\\theta)}{\\mathrm{Pr}(x)} $$"
+      "content": "Putting these together yields Bayes' theorem $$ \\mathrm{Pr}(\\theta\\mid x)=\\frac{\\mathrm{Pr}(x\\mid\\theta)\\mathrm{Pr}(\\theta)}{\\mathrm{Pr}(x)} $$",
+      "source_page": 1190,
+      "source_pages": [
+        1190
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p002:b10",
+        "Evolution_appendix2:p002:b11"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          710.0,
+          675.0,
+          736.0
+        ],
+        [
+          562.0,
+          752.0,
+          783.0,
+          803.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5a7d93f0da66e07afc731e20a7e884861f472b300f498ede8dee57e0d2e5e047"
     },
     {
       "type": "proposition",
-      "content": "Bayes' theorem flips the conditioning variable, allowing us to move from $ \\Pr(x \\mid \\theta) $ to $ \\Pr(\\theta \\mid x) $. With $ k $ possible values of $ \\theta $ ($ \\theta_1 $ through $ \\theta_k $), the discrete version of Bayes' theorem becomes $$ \\Pr(\\theta_{j}\\mid x)=\\frac{\\Pr(x\\mid\\theta_{j})\\Pr(\\theta_{j})}{\\Pr(x)}=\\frac{\\Pr(x\\mid\\theta_{j})\\Pr(\\theta_{j})}{\\displaystyle\\sum_{i=1}^{k}\\Pr(\\theta_{i})\\Pr(x\\mid\\theta_{i})}\\quad for\\quad1\\leq j\\leq k $$"
+      "content": "Bayes' theorem flips the conditioning variable, allowing us to move from $ \\Pr(x \\mid \\theta) $ to $ \\Pr(\\theta \\mid x) $. With $ k $ possible values of $ \\theta $ ($ \\theta_1 $ through $ \\theta_k $), the discrete version of Bayes' theorem becomes $$ \\Pr(\\theta_{j}\\mid x)=\\frac{\\Pr(x\\mid\\theta_{j})\\Pr(\\theta_{j})}{\\Pr(x)}=\\frac{\\Pr(x\\mid\\theta_{j})\\Pr(\\theta_{j})}{\\displaystyle\\sum_{i=1}^{k}\\Pr(\\theta_{i})\\Pr(x\\mid\\theta_{i})}\\quad for\\quad1\\leq j\\leq k $$",
+      "source_page": 1190,
+      "source_pages": [
+        1190
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p002:b13",
+        "Evolution_appendix2:p002:b14"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          819.0,
+          1055.0,
+          869.0
+        ],
+        [
+          350.0,
+          883.0,
+          931.0,
+          972.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5edd7e05ceaa517ed4c01b2901fda56c3d3373e02ead80268f2eeca6ea4ab190"
     },
     {
       "type": "discussion",
-      "content": "In Bayesian statistics, x represents an observable variable (the data), while $ \\theta $ represents a parameter describing the distribution of x. In this setting, $ \\Pr(\\theta) $ is the prior distribution of possible parameter values, while $ \\Pr(\\theta \\mid x) $ is the subsequent posterior distribution of $ \\theta $ given the observed data x and the prior. In classical statistics, the unknown parameters are treated as fixed and the data are considered random, whereas under a Bayesian analysis, the data are considered fixed and the unknown parameters that generated the data are considered random."
+      "content": "In Bayesian statistics, x represents an observable variable (the data), while $ \\theta $ represents a parameter describing the distribution of x. In this setting, $ \\Pr(\\theta) $ is the prior distribution of possible parameter values, while $ \\Pr(\\theta \\mid x) $ is the subsequent posterior distribution of $ \\theta $ given the observed data x and the prior. In classical statistics, the unknown parameters are treated as fixed and the data are considered random, whereas under a Bayesian analysis, the data are considered fixed and the unknown parameters that generated the data are considered random.",
+      "source_page": 1190,
+      "source_pages": [
+        1190
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p002:b16"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          991.0,
+          1059.0,
+          1152.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "40276814a8e3d7cdea38e5474d27d6ce6353bceb88d1320070be82f78b49c1ca"
     },
     {
       "type": "proposition",
-      "content": "All of the above statements also hold for continuous random variables, for which the probability density function, p, replaces the discrete probability value, Pr. In particular, the continuous multivariate version of Bayes' theorem is $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})=\\frac{p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{p(\\mathbf{x})}=\\frac{p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{\\int p(\\mathbf{x},\\boldsymbol{\\Theta})d\\boldsymbol{\\Theta}} $$ where $ \\boldsymbol{\\Theta} = (\\theta_1, \\theta_2, \\cdots, \\theta_n) $ is a vector of $ n $ (potentially) continuous variables. As with the univariate case, $ p(\\boldsymbol{\\Theta}) $ is the assumed prior distribution of the unknown parameters, while $ p(\\boldsymbol{\\Theta} \\mid \\mathbf{x}) $ is the posterior distribution given the prior, $ p(\\boldsymbol{\\Theta}) $, and the data, $ \\mathbf{x} $."
+      "content": "All of the above statements also hold for continuous random variables, for which the probability density function, p, replaces the discrete probability value, Pr. In particular, the continuous multivariate version of Bayes' theorem is $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})=\\frac{p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{p(\\mathbf{x})}=\\frac{p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{\\int p(\\mathbf{x},\\boldsymbol{\\Theta})d\\boldsymbol{\\Theta}} $$ where $ \\boldsymbol{\\Theta} = (\\theta_1, \\theta_2, \\cdots, \\theta_n) $ is a vector of $ n $ (potentially) continuous variables. As with the univariate case, $ p(\\boldsymbol{\\Theta}) $ is the assumed prior distribution of the unknown parameters, while $ p(\\boldsymbol{\\Theta} \\mid \\mathbf{x}) $ is the posterior distribution given the prior, $ p(\\boldsymbol{\\Theta}) $, and the data, $ \\mathbf{x} $.",
+      "source_page": 1190,
+      "source_pages": [
+        1190
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p002:b17",
+        "Evolution_appendix2:p002:b18",
+        "Evolution_appendix2:p002:b20"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1152.0,
+          1060.0,
+          1222.0
+        ],
+        [
+          499.0,
+          1238.0,
+          845.0,
+          1291.0
+        ],
+        [
+          286.0,
+          1307.0,
+          1059.0,
+          1377.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0ee2512934128e4ac4df700c863b91bab275d6c6998a1c34175090e7c00046d0"
     },
     {
       "type": "proposition",
-      "content": "The origin of Bayes' theorem has a fascinating history (Stigler 1983). It is named after the Rev. Thomas Bayes, a priest who never published a mathematical paper during his lifetime. The paper in which the theorem appears was posthumously read before the Royal Society by his friend Richard Price in 1764. Stigler suggests it was first discovered by Nicholas"
+      "content": "The origin of Bayes' theorem has a fascinating history (Stigler 1983). It is named after the Rev. Thomas Bayes, a priest who never published a mathematical paper during his lifetime. The paper in which the theorem appears was posthumously read before the Royal Society by his friend Richard Price in 1764. Stigler suggests it was first discovered by Nicholas",
+      "source_page": 1190,
+      "source_pages": [
+        1190
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p002:b21"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1376.0,
+          1060.0,
+          1471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "db6cb283a578f4c2eb717fe6f2934e386a2643b1869cf55ef857fcab34001aa3"
     },
     {
       "type": "discussion",
-      "content": "Saunderson, a blind mathematician and optician who, at age 29, became Lucasian Professor of Mathematics at Cambridge (the position held earlier by Issac Newton). This is an example of Stigler's Law of Eponymy (Stigler 1980), wherein no discovery or invention is named after its first discoverer (an eponym). As is fitting, Stigler's law is self-consistent, as this phenomenon was previously mentioned by Merton (1965)."
+      "content": "Saunderson, a blind mathematician and optician who, at age 29, became Lucasian Professor of Mathematics at Cambridge (the position held earlier by Issac Newton). This is an example of Stigler's Law of Eponymy (Stigler 1980), wherein no discovery or invention is named after its first discoverer (an eponym). As is fitting, Stigler's law is self-consistent, as this phenomenon was previously mentioned by Merton (1965).",
+      "source_page": 1191,
+      "source_pages": [
+        1191
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p003:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          206.0,
+          905.0,
+          325.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1bdfe8e6e68fa9f88b4b365d7ea280166c8def36709bb26d7374dea8b71cf5e7"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A2.1]]"
+      "content": "[[SEE_EXAMPLE:A2.1]]",
+      "source_page": 1191,
+      "source_pages": [
+        1191
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p003:b10",
+        "Evolution_appendix2:p003:b11",
+        "Evolution_appendix2:p003:b12",
+        "Evolution_appendix2:p003:b14",
+        "Evolution_appendix2:p003:b15",
+        "Evolution_appendix2:p003:b16",
+        "Evolution_appendix2:p003:b17",
+        "Evolution_appendix2:p003:b3",
+        "Evolution_appendix2:p003:b4",
+        "Evolution_appendix2:p003:b5",
+        "Evolution_appendix2:p003:b6",
+        "Evolution_appendix2:p003:b7",
+        "Evolution_appendix2:p003:b8",
+        "Evolution_appendix2:p003:b9"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          854.0,
+          235.0,
+          877.0
+        ],
+        [
+          355.0,
+          876.0,
+          693.0,
+          901.0
+        ],
+        [
+          333.0,
+          914.0,
+          714.0,
+          940.0
+        ],
+        [
+          246.0,
+          972.0,
+          766.0,
+          1041.0
+        ],
+        [
+          168.0,
+          1067.0,
+          593.0,
+          1090.0
+        ],
+        [
+          181.0,
+          1110.0,
+          862.0,
+          1163.0
+        ],
+        [
+          167.0,
+          1183.0,
+          881.0,
+          1207.0
+        ],
+        [
+          167.0,
+          390.0,
+          880.0,
+          476.0
+        ],
+        [
+          202.0,
+          474.0,
+          880.0,
+          498.0
+        ],
+        [
+          441.0,
+          519.0,
+          601.0,
+          572.0
+        ],
+        [
+          167.0,
+          593.0,
+          880.0,
+          660.0
+        ],
+        [
+          285.0,
+          679.0,
+          763.0,
+          731.0
+        ],
+        [
+          167.0,
+          751.0,
+          880.0,
+          795.0
+        ],
+        [
+          431.0,
+          791.0,
+          613.0,
+          844.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d2a5f2b954f5e25a8a13b717c87b617395d973270185a8718bca2cd2af318e05"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A2.2]]"
+      "content": "[[SEE_EXAMPLE:A2.2]]",
+      "source_page": 1191,
+      "source_pages": [
+        1191,
+        1192
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p003:b18",
+        "Evolution_appendix2:p004:b2",
+        "Evolution_appendix2:p004:b3",
+        "Evolution_appendix2:p004:b4",
+        "Evolution_appendix2:p004:b5",
+        "Evolution_appendix2:p004:b6",
+        "Evolution_appendix2:p004:b7"
+      ],
+      "source_bboxes": [
+        [
+          166.0,
+          1273.0,
+          881.0,
+          1471.0
+        ],
+        [
+          435.0,
+          205.0,
+          960.0,
+          304.0
+        ],
+        [
+          322.0,
+          316.0,
+          1035.0,
+          361.0
+        ],
+        [
+          492.0,
+          368.0,
+          776.0,
+          392.0
+        ],
+        [
+          502.0,
+          410.0,
+          775.0,
+          434.0
+        ],
+        [
+          502.0,
+          452.0,
+          774.0,
+          476.0
+        ],
+        [
+          322.0,
+          487.0,
+          1036.0,
+          533.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0620d4a9f894d971b6cdbec3e11feefcfecac8c07a52c20ce766482ecd5af69e"
     }
   ]
 }

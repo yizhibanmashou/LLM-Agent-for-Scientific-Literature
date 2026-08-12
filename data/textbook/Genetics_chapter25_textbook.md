@@ -122,9 +122,7 @@ Less clear is why all three approaches yield lower heritability estimates with i
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter25:1` · source: `Genetics_chapter25_003.json` · blocks 23–23
->
-> Example 1. For the case in which individuals can be clonally replicated, a simple method exists for estimating the broad-sense heritability on the underlying scale. Suppose that $n$ individuals are scored for the character in each of $N$ clones, and let $n_i$ be the number of affected individuals in the $i$th clone. The incidence of the trait in the population is then $\Phi_p = \sum n_i / (N_n)$. Within a clone exhibiting affected individuals, the incidence of affected relatives is estimated by $(n_i - 1) / (n - 1)$, since an affected individual has $(n - 1)$ sibs, $(n_i - 1)$ of which are also affected. Thus, an estimate of the incidence among relatives is $\Phi_r = \sum (n_i - 1) / [N_a(n - 1)]$, where $N_a$ is the number of clones with affected individuals, and the summation is over such clones. The broad-sense heritability can be estimated by using $\Phi_r$ in place of $\Phi_o$ in the solution of Equations 25.1a, 25.2, or 25.3. The regression coefficient provides an estimate of $h^2$ since $2\Theta = 1$ for clonemates.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter25:1]**
 
 
 As in all attempts to estimate heritability from the resemblance between relatives, an important assumption of the above procedures is that selection does not alter the relative incidence of the trait in different pairs of relatives (i.e., the values of a, b, c, and d in Figure 25.4) prior to their assessment. Selection may be a serious source of bias for certain types of relatives and characters. In the case of human genetic disorders, for example, affected individuals may fail to reproduce for physiological reasons or, as a response to genetic counseling, may differentially abort affected fetuses. Comparisons of full sibs do not necessarily provide a solution to such problems. For example, individuals whose first offspring is affected may tend to decide against having future offspring, in which case they would be eliminated from the analysis. With appropriate medical records, correction might be made for such bias, but it would not be a trivial task.
@@ -173,15 +171,7 @@ where $ a_{1}=p(x_{p1})/\Phi_{p1} $ and $ a_{2}=p(x_{p2})/\Phi_{p2} $. If the as
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter25:2` · source: `Genetics_chapter25_004.json` · blocks 9–12
->
-> Example 2. The application of the two-threshold model can be illustrated with data on the incidence of diabetes in the Edinburgh population (Smith et al. 1972). Considerable variation exists for the age of onset of diabetes, and the authors wanted to know whether early-onset vs. late-onset diabetes simply represent different levels of liability. Through interviews of diabetics attending a clinic, information on the incidence of the disease in first-degree relatives was obtained. The affected individuals were partitioned into those first exhibiting the disease before and after age 25 years. Thus, the narrowly affected individuals were those affected between ages 0 and 25. A large survey estimated the incidence of narrowly affected individuals to be $ \Phi_{p2} = 0.0006 $, whereas the total (or wide) incidence of the disease was $ \Phi_{p1} = 0.0039 $. From a table of the standard normal distribution, $ x_{p2} = 3.24 $, $ x_{p1} = 2.66 $, $ a_{2} = 3.51 $, and $ a_{1} = 2.97 $. Thus, the wide and narrow thresholds are approximately 2.7 and 3.2 standard deviations above the mean on the liability scale, and the distance between the two thresholds is $ (x_{p1} - x_{p2}) = 0.58 $ standard deviations.
-> 
-> Data on the incidence of late- and early-onset diabetes in first degree relatives are given in the table at the top of the following page. If early-onset patients represent a subset of the population with more extreme genetic values for liability than late-onset patients, the total incidence of the disease should be higher in the relatives of the former than the latter. The data show this to be true — first-degree relatives of early- and late-onset patients have total incidences of 0.0520 and 0.0312, respectively.
-> 
-> Converting the incidences of disease in relatives to their respective $x$ values, the four possible heritability estimates (twice the regression coefficients) range from 0.46 to 0.76. From Equation 25.1b, the standard errors of $h^{2}$ based on narrow propositi and relatives and on wide propositi and relatives are found to be approximately 0.10 and 0.03, respectively. Thus, with one possible exception, the four estimates are in approximate agreement, leading to an overall estimate of $h^{2}=0.56$ for the liability.
-> 
-> <table><tr><td></td><td></td><td colspan="4">Incidence</td></tr><tr><td>Propositi</td><td>Relatives</td><td>Among Relatives:</td><td></td><td>$ b_{op} $</td><td>Equation</td></tr><tr><td rowspan="2">Narrow</td><td>Narrow</td><td>0.0205</td><td>$ x_{o2}=2.044 $</td><td>0.38</td><td>(25.3)</td></tr><tr><td>Wide</td><td>0.0315</td><td>$ x_{o1}^{\prime}=1.859 $</td><td>0.23</td><td>(25.4a)</td></tr><tr><td rowspan="2">Wide</td><td>Narrow</td><td>0.0045</td><td>$ x_{o2}^{\prime}=2.612 $</td><td>0.24</td><td>(25.4b)</td></tr><tr><td>Wide</td><td>0.0267</td><td>$ x_{o1}=1.932 $</td><td>0.27</td><td>(25.3)</td></tr></table>
+> **[UNRESOLVED EXAMPLE: Genetics_chapter25:2]**
 
 
 ---
@@ -246,13 +236,7 @@ Finally, it is relatively straightforward to compute the genetic correlation bet
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter25:3` · source: `Genetics_chapter25_005.json` · blocks 15–17
->
-> Example 3. The application of the preceding ideas will be illustrated with a familiar dichotomy in humans — handedness. The data base consists of responses to questionnaires distributed to college undergraduates and service recruits in Scotland (Annett 1973). The incidences of left-handedness in males and females are 0.118 and 0.114, so at least on the outward scale the two sexes have essentially identical phenotype distributions. In the following analyses, we assume that the variances for both sexes are also equal on the underlying scale. The table summarizes the incidences of left-handedness in brothers and sisters of male and female propositi and the associated probit (x) scores. The regression coefficients are computed by use of Equation 25.3.
-> 
-> <table><tr><td>Propositi</td><td>Relatives</td><td>Incidence in Relatives</td><td>x</td><td>2b</td><td>Expectation</td></tr><tr><td rowspan="2">Males</td><td>Brothers</td><td>0.143</td><td>1.067</td><td>0.15</td><td>$ h_{M}^{2} $</td></tr><tr><td>Sisters</td><td>0.114</td><td>1.208</td><td>-0.02</td><td>$ \rho_{FM}h_{M}h_{F} $</td></tr><tr><td rowspan="2">Females</td><td>Brothers</td><td>0.135</td><td>1.103</td><td>0.12</td><td>$ \rho_{FM}(A)h_{M}h_{F} $</td></tr><tr><td>Sisters</td><td>0.156</td><td>1.010</td><td>0.24</td><td>$ h_{F}^{2} $</td></tr></table>
-> 
-> Averaging over the two sexes, the heritability estimate for liability to left-handedness is approximately 0.20. By use of Equation 25.6b, we obtain $ r_{FM}(A) = 0.26 $. Thus, the genetic correlation across the sexes appears to be small. In light of these results and the fact that the study population consisted of full sibs, a reasonable interpretation is that handedness is primarily a chance event of development, with genetics playing a minor role, and perhaps a small contribution of the variance coming from common environmental effects.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter25:3]**
 
 
 > **Table 25.2** · `25.2` · page 751 · source: `Genetics_chapter25_005`
@@ -309,17 +293,7 @@ out by VanVleck (1971), is that the relationship between $ h_{o}^{2} $ and $ h^{
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter25:4` · source: `Genetics_chapter25_006.json` · blocks 13–17
->
-> Example 4. In map turtles, the average sex ratio (% males) of clutches is closely coupled with the temperature at which the eggs are incubated. A rather tight threshold exists at 29.2°C. Below 28°C, virtually all eggs develop into males, while above 30°C clutches are entirely female (see the accompanying figure below). In effect, the response curve is a phenotypic risk function if temperature is viewed as the underlying scale of liability.
-> 
-> Bull et al. (1982) were interested in determining the extent to which variation in offspring sex at the intermediate temperature was due to genetic variation among females. Twenty gravid females were collected in the field and induced to lay eggs in the laboratory. Ten eggs from each mother were then randomly distributed in an incubator maintained at 29.2 – 29.3°C. The offspring were sexed upon hatching and scored as 0 if female and 1 if male. A one-way ANOVA was then performed on the full-sib family data.
-> 
-> The additive genetic variance on the observed scale was estimated to be 0.13 from the among-family component of variance. As an estimate of $ \sigma^{2}(A_{o}) $, this among-family variance could be inflated by dominance genetic variance for the sex determination mechanisms, but the influence of common-family environment should have been eliminated by the random design. The total proportion of male hatchlings was 0.41. Heritability on the observed scale is therefore approximately 0.13/[0.41(1 - 0.41)] = 0.54. Using $ \Phi_p = 0.41 $, $ x_p = 0.228 $ and $ p(x_p) = 0.389 $, from Equation 25.8b, heritability on the underlying scale is estimated to be $ h^2 \simeq (0.54)(0.41)(1 - 0.41)/(0.389)^2 = 0.86 $.
-> 
-> The authors note that the above computation assumes a constant incubation temperature for all females. In the field, however, different females will inevitably place their eggs in areas of somewhat different temperatures. Let the phenotypic variance in liability at a constant temperature (as in the laboratory experiment) be $ \sigma_x^2 $. In the field, the phenotypic variance is $ \sigma_x^2 + \sigma_T^2 $, where $ \sigma_T^2 $ is the additional variance in liability resulting from a variable environment. Thus, the heritability in the field is $ h^2[\sigma_x^2 / (\sigma_x^2 + \sigma_T^2)] $. For the study population, rough estimates of $ \sigma_x^2 $ and $ \sigma_T^2 $ were 0.09 and 1.0, reducing the expected heritability in the field to only 0.06.
-> 
-> ![Source illustration p756 b4](figures/examples/Genetics_p756_b4.png)
+> **[UNRESOLVED EXAMPLE: Genetics_chapter25:4]**
 
 
 ---

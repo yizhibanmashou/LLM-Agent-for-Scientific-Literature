@@ -42,7 +42,11 @@ function canonicalDisplayErrors(markdown, location) {
 }
 
 function validateTeX(tex, location, errors, seen) {
-  const value = String(tex || "").trim();
+  const value = String(tex || "")
+    .replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">")
+    .replaceAll("&amp;", "&")
+    .trim();
   if (!value) {
     errors.push(`${location}: empty TeX`);
     return;
@@ -82,7 +86,10 @@ function validateBook(book, errors, seen, counts, root) {
     validateMixedText(fs.readFileSync(pathname, "utf8"), path.relative(root, pathname), errors, seen, true);
   });
 
-  filesMatching(structuredDir, (name) => name.startsWith(`${book}_chapter`) && name.endsWith(".json")).forEach((pathname) => {
+  filesMatching(
+    structuredDir,
+    (name) => new RegExp(`^${book}_(?:chapter|appendix)\\d+_\\d{3}\\.json$`, "i").test(name),
+  ).forEach((pathname) => {
     const payload = json(pathname);
     (payload.blocks || []).forEach((block, index) => {
       counts.structuredBlocks += 1;

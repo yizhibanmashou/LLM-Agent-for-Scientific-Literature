@@ -21,47 +21,397 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Motivated by the general diallel analysis of Gardner and Eberhart (1966), Hammond and Gardner (1974) extended the simple additive model to allow for dominance, which requires three additional parameters $ (D_{0}, D, \\text{ and } D_{q}) $. Assuming all lines start from the same base population, as derived below in Example 18.10, the Hammond-Gardner (HG) model returns means for various lines and line crosses of: $$ C_{k}=m+A\\cdot k+D_{0}+D\\cdot k+D_{q}\\cdot k^{2} $$ $$ C_{k}(s)=m+A\\cdot k+\\frac{1}{2}\\left(D_{0}+D\\cdot k+D_{q}\\cdot k^{2}\\right) $$ $$ C_{k\\times j}=m+\\frac{A}{2}(k+j)+D_{0}+\\frac{1}{2}\\left[D\\cdot(k+j)+2D_{q}\\cdot k j\\right] $$ $$ C_{k\\times j}(s)=m+\\frac{A}{2}(k+j)+\\frac{D_{0}}{2}+\\frac{1}{4}\\left[D\\cdot(k+j)+2D_{q}\\cdot k j\\right] $$ $$ C_{k\\times j}(rm)=C_{k\\times j}+\\frac{D_{q}}{4}(k-j)^{2} $$ where $ (s) $ and $ (rm) $, respectively, denote the selfed and randomly mated next generations given the cross or line. For example, $ C_4(s) $ is the mean among the selfed progeny of individuals from cycle four. Likewise, for $ C_{2\\times6}(rm) $, we cross cycle two and cycle six individuals, let their offspring (the $ F_1 $, $ C_{2\\times6}[rm] $) randomly mate, and then measure their resulting progeny (the $ F_2 $). As expected, when all of the dominance terms are zero, Equations 18.38a–18.38e reduce to Equations 18.37a and 18.37b. With no dominance, there is no change in the line mean following inbreeding, so $ C_k = C_k(s) $, and the $ F_1 $ progeny mean from a cross has the same mean as the progeny from either a selfed or randomly mated $ F_2 $, $ C_{k\\times i} = C_{k\\times i}(s) = C_{k\\times i}(rm) $."
+      "content": "Motivated by the general diallel analysis of Gardner and Eberhart (1966), Hammond and Gardner (1974) extended the simple additive model to allow for dominance, which requires three additional parameters $ (D_{0}, D, \\text{ and } D_{q}) $. Assuming all lines start from the same base population, as derived below in Example 18.10, the Hammond-Gardner (HG) model returns means for various lines and line crosses of: $$ C_{k}=m+A\\cdot k+D_{0}+D\\cdot k+D_{q}\\cdot k^{2} $$ $$ C_{k}(s)=m+A\\cdot k+\\frac{1}{2}\\left(D_{0}+D\\cdot k+D_{q}\\cdot k^{2}\\right) $$ $$ C_{k\\times j}=m+\\frac{A}{2}(k+j)+D_{0}+\\frac{1}{2}\\left[D\\cdot(k+j)+2D_{q}\\cdot k j\\right] $$ $$ C_{k\\times j}(s)=m+\\frac{A}{2}(k+j)+\\frac{D_{0}}{2}+\\frac{1}{4}\\left[D\\cdot(k+j)+2D_{q}\\cdot k j\\right] $$ $$ C_{k\\times j}(rm)=C_{k\\times j}+\\frac{D_{q}}{4}(k-j)^{2} $$ where $ (s) $ and $ (rm) $, respectively, denote the selfed and randomly mated next generations given the cross or line. For example, $ C_4(s) $ is the mean among the selfed progeny of individuals from cycle four. Likewise, for $ C_{2\\times6}(rm) $, we cross cycle two and cycle six individuals, let their offspring (the $ F_1 $, $ C_{2\\times6}[rm] $) randomly mate, and then measure their resulting progeny (the $ F_2 $). As expected, when all of the dominance terms are zero, Equations 18.38a–18.38e reduce to Equations 18.37a and 18.37b. With no dominance, there is no change in the line mean following inbreeding, so $ C_k = C_k(s) $, and the $ F_1 $ progeny mean from a cross has the same mean as the progeny from either a selfed or randomly mated $ F_2 $, $ C_{k\\times i} = C_{k\\times i}(s) = C_{k\\times i}(rm) $.",
+      "source_page": 609,
+      "source_pages": [
+        609,
+        610
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p033:b15",
+        "Evolution_chapter18:p033:b16",
+        "Evolution_chapter18:p033:b17",
+        "Evolution_chapter18:p033:b19",
+        "Evolution_chapter18:p033:b21",
+        "Evolution_chapter18:p033:b23",
+        "Evolution_chapter18:p033:b25",
+        "Evolution_chapter18:p034:b2"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          1103.0,
+          417.0,
+          1126.0
+        ],
+        [
+          131.0,
+          1134.0,
+          905.0,
+          1248.0
+        ],
+        [
+          317.0,
+          1260.0,
+          646.0,
+          1286.0
+        ],
+        [
+          294.0,
+          1294.0,
+          679.0,
+          1331.0
+        ],
+        [
+          297.0,
+          1336.0,
+          775.0,
+          1382.0
+        ],
+        [
+          273.0,
+          1383.0,
+          780.0,
+          1427.0
+        ],
+        [
+          257.0,
+          1431.0,
+          535.0,
+          1473.0
+        ],
+        [
+          287.0,
+          206.0,
+          1059.0,
+          412.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9eee3485ac72c68e13c856a84e77f8046d2014f2ea96c46707b78fa71f44e2ff"
     },
     {
       "type": "discussion",
-      "content": "Five parameters $ (m, A, D, D_0, $ and $ D_q) $ are required under the full model, and closer inspection of the coefficients on these model parameters in Equations 18.38a–18.38e reveals what types of crosses are required to estimate parameters of interest. If the investigator only has the unselfed line means, $ C_k $, and their $ F_1 $ crosses, $ C_{k \\times j} $, A and D are not separately estimable, as they appear as $ k(A + D) $ in expressions for these means (see Equations 18.38a and 18.38c). Obtaining separate estimates requires having different coefficients on the A and D terms, as occurs with either selfed lines or selfed $ F_2 $ crosses (Equations 18.38b and 18.38d). These particular crosses provide additional information on the genetic nature of the between-generation divergence that is not given by the simple line means, or their $ F_1 $s, alone. Likewise, one cannot obtain separate estimates of m and $ D_0 $ unless there is at least one selfed line in the study. These terms enter as $ m + D_0 $ in all randomly mating populations, but they enter as $ m + D_0 / 2 $ in selfed lines. As with the strictly additive model, we can express the parameters of the Hammond-Gardner model in terms of locus-specific parameters, with m and A as defined by Equation 18.36. Letting $ d_i $ be the dominance for locus i, which now makes the genotypic values 0: $ a_i + d_i: 2a_i $, the dominance-related parameters, $ D_0 $, D, and $ D_q $, in Equations 18.38a–18.38e are as follows. $ D_0 $ is the contribution (to the mean) from dominance in the initial (cycle-zero) population $$ D_{0}=2\\sum p_{i}(1-p_{i})d_{i} $$"
+      "content": "Five parameters $ (m, A, D, D_0, $ and $ D_q) $ are required under the full model, and closer inspection of the coefficients on these model parameters in Equations 18.38a–18.38e reveals what types of crosses are required to estimate parameters of interest. If the investigator only has the unselfed line means, $ C_k $, and their $ F_1 $ crosses, $ C_{k \\times j} $, A and D are not separately estimable, as they appear as $ k(A + D) $ in expressions for these means (see Equations 18.38a and 18.38c). Obtaining separate estimates requires having different coefficients on the A and D terms, as occurs with either selfed lines or selfed $ F_2 $ crosses (Equations 18.38b and 18.38d). These particular crosses provide additional information on the genetic nature of the between-generation divergence that is not given by the simple line means, or their $ F_1 $s, alone. Likewise, one cannot obtain separate estimates of m and $ D_0 $ unless there is at least one selfed line in the study. These terms enter as $ m + D_0 $ in all randomly mating populations, but they enter as $ m + D_0 / 2 $ in selfed lines. As with the strictly additive model, we can express the parameters of the Hammond-Gardner model in terms of locus-specific parameters, with m and A as defined by Equation 18.36. Letting $ d_i $ be the dominance for locus i, which now makes the genotypic values 0: $ a_i + d_i: 2a_i $, the dominance-related parameters, $ D_0 $, D, and $ D_q $, in Equations 18.38a–18.38e are as follows. $ D_0 $ is the contribution (to the mean) from dominance in the initial (cycle-zero) population $$ D_{0}=2\\sum p_{i}(1-p_{i})d_{i} $$",
+      "source_page": 610,
+      "source_pages": [
+        610
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p034:b3",
+        "Evolution_chapter18:p034:b4",
+        "Evolution_chapter18:p034:b5"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          413.0,
+          1059.0,
+          689.0
+        ],
+        [
+          287.0,
+          689.0,
+          1060.0,
+          828.0
+        ],
+        [
+          574.0,
+          828.0,
+          772.0,
+          859.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5194d393c54b46d91ac4e73bea868950f3626a3a2ecda7f28b1f3bf4988292b5"
     },
     {
       "type": "discussion",
-      "content": "The role of dominance in response in the line means enters through D and $ D_{q} $, which are the linear and quadratic regression coefficients on cycle number. D is calculated by $$ D=2\\sum\\Delta p_{i}(1-2p_{i})d_{i} $$ and it appears in Equations 18.38a–18.38e as terms of the form $ D \\cdot k $, namely, D times the appropriate selection cycle number, k. Recalling (LW Equation 4.10b) that the average effect, $ \\alpha $, of an allelic substitution (replacing an unfavorable allele by a favorable one) is given by $ \\alpha = a + d(1 - 2p) $, we have $$ \\begin{align*}A+D&=2\\left(\\sum\\Delta p_i a_i+\\sum\\Delta p_i(1-2p_i)d_i\\right)\\\\&=2\\left(\\sum\\Delta p_i\\left[a_i+(1-2p_i)d_i\\right]\\right)=2\\sum\\Delta p_i\\alpha_i\\end{align*} $$ with $ A+D $ representing the per-generation change in the trait mean as a linear regression on cycle number (e.g., $ k[A+D] $ for line $ k $). This is also twice the average effect of substituting the unfavorable allele with the favorable one weighted by the allele-frequency change."
+      "content": "The role of dominance in response in the line means enters through D and $ D_{q} $, which are the linear and quadratic regression coefficients on cycle number. D is calculated by $$ D=2\\sum\\Delta p_{i}(1-2p_{i})d_{i} $$ and it appears in Equations 18.38a–18.38e as terms of the form $ D \\cdot k $, namely, D times the appropriate selection cycle number, k. Recalling (LW Equation 4.10b) that the average effect, $ \\alpha $, of an allelic substitution (replacing an unfavorable allele by a favorable one) is given by $ \\alpha = a + d(1 - 2p) $, we have $$ \\begin{align*}A+D&=2\\left(\\sum\\Delta p_i a_i+\\sum\\Delta p_i(1-2p_i)d_i\\right)\\\\&=2\\left(\\sum\\Delta p_i\\left[a_i+(1-2p_i)d_i\\right]\\right)=2\\sum\\Delta p_i\\alpha_i\\end{align*} $$ with $ A+D $ representing the per-generation change in the trait mean as a linear regression on cycle number (e.g., $ k[A+D] $ for line $ k $). This is also twice the average effect of substituting the unfavorable allele with the favorable one weighted by the allele-frequency change.",
+      "source_page": 610,
+      "source_pages": [
+        610
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p034:b7",
+        "Evolution_chapter18:p034:b8",
+        "Evolution_chapter18:p034:b10",
+        "Evolution_chapter18:p034:b11",
+        "Evolution_chapter18:p034:b13"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          869.0,
+          1060.0,
+          917.0
+        ],
+        [
+          566.0,
+          935.0,
+          781.0,
+          970.0
+        ],
+        [
+          286.0,
+          985.0,
+          1060.0,
+          1079.0
+        ],
+        [
+          447.0,
+          1097.0,
+          898.0,
+          1177.0
+        ],
+        [
+          287.0,
+          1194.0,
+          1059.0,
+          1264.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e58ed47a2bf94267ea5fd8b1c9864707b841c0ccf5b59ccee4f49e59b6011d5c"
     },
     {
       "type": "discussion",
-      "content": "The final dominance term $$ D_{q}=-2\\sum\\left(\\Delta p_{i}\\right)^{2}d_{i} $$ appears as a quadratic function of cycle number, with terms of the form $ k^{2}D_{q} $ for cycle k and $ k\\dot{j}D_{q} $ for crosses between lines from cycles j and k. This is perhaps the most interesting dominance term, as it measures both inbreeding depression and the expected heterosis when two lines are crossed. As discussed below, $ D_{q} $ has also been interpreted as the component of change in the mean due to the effects of drift, with $ A + D $ representing the response from selection (the expected deterministic change). Recall (LW Chapter 10) that the heterosis, H, between two lines $$ H=\\mu_{1\\times2}-\\frac{\\mu_{1}+\\mu_{2}}{2} $$ is the difference between the mean of the $ F_{1} $ and the average of its parental lines. In the absence of epistasis $$ H=\\sum(\\delta p_{i})^{2}d_{i} $$ where $ \\delta p_i $ is the between-line difference in allele frequency for the favorable allele at the $ i $th locus and $ d_i $ is the associated dominance term. Because the expected difference, $ \\delta p_i $, in allele frequency between lines separated by a single cycle of selection is $ \\Delta p_i $, comparing Equations 18.39d and 18.39e shows that $ D_q $ is the negative of twice the heterosis generated by a single generation of selection, namely, $ D_q = -2H $."
+      "content": "The final dominance term $$ D_{q}=-2\\sum\\left(\\Delta p_{i}\\right)^{2}d_{i} $$ appears as a quadratic function of cycle number, with terms of the form $ k^{2}D_{q} $ for cycle k and $ k\\dot{j}D_{q} $ for crosses between lines from cycles j and k. This is perhaps the most interesting dominance term, as it measures both inbreeding depression and the expected heterosis when two lines are crossed. As discussed below, $ D_{q} $ has also been interpreted as the component of change in the mean due to the effects of drift, with $ A + D $ representing the response from selection (the expected deterministic change). Recall (LW Chapter 10) that the heterosis, H, between two lines $$ H=\\mu_{1\\times2}-\\frac{\\mu_{1}+\\mu_{2}}{2} $$ is the difference between the mean of the $ F_{1} $ and the average of its parental lines. In the absence of epistasis $$ H=\\sum(\\delta p_{i})^{2}d_{i} $$ where $ \\delta p_i $ is the between-line difference in allele frequency for the favorable allele at the $ i $th locus and $ d_i $ is the associated dominance term. Because the expected difference, $ \\delta p_i $, in allele frequency between lines separated by a single cycle of selection is $ \\Delta p_i $, comparing Equations 18.39d and 18.39e shows that $ D_q $ is the negative of twice the heterosis generated by a single generation of selection, namely, $ D_q = -2H $.",
+      "source_page": 610,
+      "source_pages": [
+        610,
+        611
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p034:b14",
+        "Evolution_chapter18:p034:b15",
+        "Evolution_chapter18:p034:b17",
+        "Evolution_chapter18:p035:b2",
+        "Evolution_chapter18:p035:b3",
+        "Evolution_chapter18:p035:b4",
+        "Evolution_chapter18:p035:b5",
+        "Evolution_chapter18:p035:b7"
+      ],
+      "source_bboxes": [
+        [
+          329.0,
+          1263.0,
+          556.0,
+          1285.0
+        ],
+        [
+          578.0,
+          1301.0,
+          769.0,
+          1337.0
+        ],
+        [
+          287.0,
+          1352.0,
+          1060.0,
+          1472.0
+        ],
+        [
+          132.0,
+          206.0,
+          903.0,
+          254.0
+        ],
+        [
+          427.0,
+          248.0,
+          609.0,
+          290.0
+        ],
+        [
+          132.0,
+          298.0,
+          904.0,
+          344.0
+        ],
+        [
+          446.0,
+          343.0,
+          590.0,
+          379.0
+        ],
+        [
+          131.0,
+          387.0,
+          903.0,
+          505.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5b54a644e09cef960227bc8f6876d79028677ed38c0c709aa72fd166b4135a1b"
     },
     {
       "type": "discussion",
-      "content": "The composite parameters $ (m, A, D, D_0,\\text{and } D_q) $ are typically estimated by OLS, with the vector of estimates given by $ \\left(\\mathbf{X}^T\\mathbf{X}\\right)^{-1}\\mathbf{X}^T\\mathbf{y} $, with y being the vector of population means and the design matrix, $ \\mathbf{X} $, containing the appropriate coefficients for the parameters of interest (Example 18.9). The machinery introduced in LW Chapter 9 for standard line-cross analysis, such as hypothesis testing, testing goodness-of-fit, and estimation via GLS when the standard errors vary over means, can all be applied in a straightforward fashion. As with a standard line-cross analysis, one starts a GMA with the simple additive model and then tests whether adding additional model terms significantly improves the fit (LW Chapter 9). Typically one ends up with a reduced model, as some of the parameters turn out to be nonsignificant."
+      "content": "The composite parameters $ (m, A, D, D_0,\\text{and } D_q) $ are typically estimated by OLS, with the vector of estimates given by $ \\left(\\mathbf{X}^T\\mathbf{X}\\right)^{-1}\\mathbf{X}^T\\mathbf{y} $, with y being the vector of population means and the design matrix, $ \\mathbf{X} $, containing the appropriate coefficients for the parameters of interest (Example 18.9). The machinery introduced in LW Chapter 9 for standard line-cross analysis, such as hypothesis testing, testing goodness-of-fit, and estimation via GLS when the standard errors vary over means, can all be applied in a straightforward fashion. As with a standard line-cross analysis, one starts a GMA with the simple additive model and then tests whether adding additional model terms significantly improves the fit (LW Chapter 9). Typically one ends up with a reduced model, as some of the parameters turn out to be nonsignificant.",
+      "source_page": 611,
+      "source_pages": [
+        611
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p035:b8"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          504.0,
+          903.0,
+          749.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5e8894f5b2c998aa3793923f2a43706438893801508d09e52a341b3d2ed099da"
     },
     {
       "type": "discussion",
-      "content": "GMA can be extended to situations where some of the crosses are between lines from different base populations (Smith 1979b, 1983; Helms et al. 1989; Butruille et al. 2004; Melchinger and Flachenecker 2006). The same logic holds as before, with the frequency of the favorable allele in cycle $k$ from base population $j$ being $p_j(k) \\simeq p_j + k \\Delta p_j$, and with associated parameters $m_j, A_j, D_j, D_{0,j}$, and $D_{q,j}$. Additional terms are required to account for any initial heterosis (cycle-zero crosses between base populations $j$ and $i$) which, from Equation 18.39e, is a function of the square of the difference in their allele frequencies, $\\delta_{i,j}^2 = (p_i - p_j)^2$. Finally, terms for any additional heterosis that has accrued during selection are required, and again these are functions of the squared allele-frequency differences. For a cycle-$k$ line from base population $i$ crossed to a cycle-$l$ line from base population $j$, this is $$ [\\delta_{i,j}(k,\\ell)]^{2}=[p_{j}(k)-p_{i}(\\ell)]^{2}=[(p_{j}+k\\Delta p_{j})-(p_{i}+\\ell\\Delta p_{i})]^{2} $$"
+      "content": "GMA can be extended to situations where some of the crosses are between lines from different base populations (Smith 1979b, 1983; Helms et al. 1989; Butruille et al. 2004; Melchinger and Flachenecker 2006). The same logic holds as before, with the frequency of the favorable allele in cycle $k$ from base population $j$ being $p_j(k) \\simeq p_j + k \\Delta p_j$, and with associated parameters $m_j, A_j, D_j, D_{0,j}$, and $D_{q,j}$. Additional terms are required to account for any initial heterosis (cycle-zero crosses between base populations $j$ and $i$) which, from Equation 18.39e, is a function of the square of the difference in their allele frequencies, $\\delta_{i,j}^2 = (p_i - p_j)^2$. Finally, terms for any additional heterosis that has accrued during selection are required, and again these are functions of the squared allele-frequency differences. For a cycle-$k$ line from base population $i$ crossed to a cycle-$l$ line from base population $j$, this is $$ [\\delta_{i,j}(k,\\ell)]^{2}=[p_{j}(k)-p_{i}(\\ell)]^{2}=[(p_{j}+k\\Delta p_{j})-(p_{i}+\\ell\\Delta p_{i})]^{2} $$",
+      "source_page": 611,
+      "source_pages": [
+        611
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p035:b9",
+        "Evolution_chapter18:p035:b10"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          749.0,
+          904.0,
+          983.0
+        ],
+        [
+          264.0,
+          1000.0,
+          774.0,
+          1030.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6ee785914a5cb2b4580a4f7ecdd73b0fd1405426f6852aa1774954b406a6a3fb"
     },
     {
       "type": "discussion",
-      "content": "The motivation for this type of analysis is examined in our final volume, where we discuss the breeding of superior hybrids between lines. Basically, one tries to improve the performance of both selected lines, as well as that of their resulting hybrid. Generation means analysis can help partition any observed improvement into components of within-line and between-line (hybrid) improvement."
+      "content": "The motivation for this type of analysis is examined in our final volume, where we discuss the breeding of superior hybrids between lines. Basically, one tries to improve the performance of both selected lines, as well as that of their resulting hybrid. Generation means analysis can help partition any observed improvement into components of within-line and between-line (hybrid) improvement.",
+      "source_page": 611,
+      "source_pages": [
+        611
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p035:b11"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1049.0,
+          904.0,
+          1167.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "fc5e59c6574874b41de5642e1c80de3627c4a0808e7da3debedc5ec6247f0196"
     },
     {
       "type": "discussion",
-      "content": "The resulting vector, y, of means and the design matrix, X, become $$ \\mathbf{y}=\\begin{pmatrix}{{{59.7}}} \\\\{{{63.4}}} \\\\{{{68.9}}} \\\\{{{42.3}}} \\\\{{{61.2}}} \\\\{{{79.6}}} \\\\{{{72.3}}} \\\\{{{40.3}}}\\end{pmatrix},\\qquad\\mathbf{X}=\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{4}}}&{{{1}}}&{{{4}}} \\\\{{{1}}}&{{{7}}}&{{{1}}}&{{{7}}} \\\\{{{1}}}&{{{7}}}&{{{0.5}}}&{{{3.5}}} \\\\{{{1}}}&{{{2}}}&{{{1}}}&{{{2}}} \\\\{{{1}}}&{{{3.5}}}&{{{1}}}&{{{3.5}}} \\\\{{{1}}}&{{{5.5}}}&{{{1}}}&{{{5.5}}} \\\\{{{1}}}&{{{5.5}}}&{{{0.5}}}&{{{2.75}}}\\end{pmatrix} $$"
+      "content": "The resulting vector, y, of means and the design matrix, X, become $$ \\mathbf{y}=\\begin{pmatrix}{{{59.7}}} \\\\{{{63.4}}} \\\\{{{68.9}}} \\\\{{{42.3}}} \\\\{{{61.2}}} \\\\{{{79.6}}} \\\\{{{72.3}}} \\\\{{{40.3}}}\\end{pmatrix},\\qquad\\mathbf{X}=\\begin{pmatrix}{{{1}}}&{{{0}}}&{{{1}}}&{{{0}}} \\\\{{{1}}}&{{{4}}}&{{{1}}}&{{{4}}} \\\\{{{1}}}&{{{7}}}&{{{1}}}&{{{7}}} \\\\{{{1}}}&{{{7}}}&{{{0.5}}}&{{{3.5}}} \\\\{{{1}}}&{{{2}}}&{{{1}}}&{{{2}}} \\\\{{{1}}}&{{{3.5}}}&{{{1}}}&{{{3.5}}} \\\\{{{1}}}&{{{5.5}}}&{{{1}}}&{{{5.5}}} \\\\{{{1}}}&{{{5.5}}}&{{{0.5}}}&{{{2.75}}}\\end{pmatrix} $$",
+      "source_page": 612,
+      "source_pages": [
+        612
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p036:b3",
+        "Evolution_chapter18:p036:b4"
+      ],
+      "source_bboxes": [
+        [
+          323.0,
+          417.0,
+          846.0,
+          440.0
+        ],
+        [
+          482.0,
+          456.0,
+          870.0,
+          642.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5749e3504fd87b1a1ffc31405e96564fbf90c8e711d410b44ef1065a179f9982"
     },
     {
       "type": "discussion",
-      "content": "Solving for the vector of parameter estimates yields $$ \\begin{aligned}\\left(\\begin{array}{c}\\widehat{m}\\\\\\widehat{A}\\\\\\widehat{D}_{0}\\\\\\widehat{D}\\\\\\end{array}\\right)=\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{y}=\\left(\\begin{array}{c}4.266\\\\1.072\\\\57.402\\\\0.523\\\\\\end{array}\\right)\\end{aligned} $$"
+      "content": "Solving for the vector of parameter estimates yields $$ \\begin{aligned}\\left(\\begin{array}{c}\\widehat{m}\\\\\\widehat{A}\\\\\\widehat{D}_{0}\\\\\\widehat{D}\\\\\\end{array}\\right)=\\left(\\mathbf{X}^{T}\\mathbf{X}\\right)^{-1}\\mathbf{X}^{T}\\mathbf{y}=\\left(\\begin{array}{c}4.266\\\\1.072\\\\57.402\\\\0.523\\\\\\end{array}\\right)\\end{aligned} $$",
+      "source_page": 612,
+      "source_pages": [
+        612
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p036:b5",
+        "Evolution_chapter18:p036:b6"
+      ],
+      "source_bboxes": [
+        [
+          323.0,
+          660.0,
+          724.0,
+          684.0
+        ],
+        [
+          509.0,
+          702.0,
+          849.0,
+          792.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "119f994e2dbee10bf378770e74da8594c0622e4307f8c8c8db1d24d9205568b4"
     },
     {
       "type": "discussion",
-      "content": "Based on this subset of data, we note that there is considerable initial dominance ($ D_{0} = 57.402 $) influencing the initial value of the trait. Of the per-generation change of $ A + D = 1.595 $ per generation, roughly two-thirds are from $ A (1.072) $, and one-third is from $ D (0.5223) $. Standard errors for these estimates follow using standard OLS machinery (LW Chapter 9)."
+      "content": "Based on this subset of data, we note that there is considerable initial dominance ($ D_{0} = 57.402 $) influencing the initial value of the trait. Of the per-generation change of $ A + D = 1.595 $ per generation, roughly two-thirds are from $ A (1.072) $, and one-third is from $ D (0.5223) $. Standard errors for these estimates follow using standard OLS machinery (LW Chapter 9).",
+      "source_page": 612,
+      "source_pages": [
+        612
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p036:b7"
+      ],
+      "source_bboxes": [
+        [
+          323.0,
+          817.0,
+          1033.0,
+          905.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cb789def65dbe7def6e8c1fa45c27382c017a4d850aa690b8b059eafdfe903fa"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:18.10]]"
+      "content": "[[SEE_EXAMPLE:18.10]]",
+      "source_page": 609,
+      "source_pages": [
+        609
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p033:b16"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          1134.0,
+          905.0,
+          1248.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "52dc7e01994cf026d79767ae539089a830721791bc8f93d909fe0b9831f94f69"
     }
   ]
 }

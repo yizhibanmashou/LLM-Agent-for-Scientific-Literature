@@ -4,11 +4,13 @@ from pathlib import Path
 from unittest.mock import patch
 from uuid import uuid4
 
-from knowledge_engineering.pipeline.example_pipeline import apply_example_pipeline
-from knowledge_engineering.pipeline.example_pipeline import _clean_trimmed_duplicate_prose
-from knowledge_engineering.pipeline.example_pipeline import _sync_example_numbered_formulas
+from knowledge_engineering.pipeline.example_pipeline import (
+    _clean_trimmed_duplicate_prose,
+    _missing_raw_sequence_targets,
+    _sync_example_numbered_formulas,
+    apply_example_pipeline,
+)
 from knowledge_engineering.processors import example_extraction as example_trial
-
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 TEST_RUNTIME_ROOT = PROJECT_ROOT / "tmp" / "test_runtime" / "example_pipeline"
@@ -31,6 +33,24 @@ def write_json(path: Path, payload: dict) -> None:
 
 
 class ExamplePipelineTests(unittest.TestCase):
+    def test_missing_raw_examples_include_leading_and_trailing_ids(self):
+        rows = [
+            {"chapter": "chapter8", "example_id": "8.1", "replacement": {"status": "replaced"}},
+            {"chapter": "chapter8", "example_id": "8.2", "replacement": {"status": "replaced"}},
+        ]
+        raw_records = [
+            example_trial.RawRecord("chapter8", 0, index, "figure_title", f"Example 8.{index + 1}. Body", None, index)
+            for index in range(3)
+        ]
+
+        with patch(
+            "knowledge_engineering.pipeline.example_pipeline.ordered_paddle_records",
+            return_value=raw_records,
+        ):
+            targets = _missing_raw_sequence_targets(project_root=Path("."), rows=rows)
+
+        self.assertEqual(targets, {("chapter8", "8.3")})
+
     def test_clean_trimmed_duplicate_prose_removes_dangling_close_punctuation(self):
         self.assertEqual(
             _clean_trimmed_duplicate_prose("). As Example 9.14 shows, potential evidence remains."),
@@ -1168,7 +1188,6 @@ class ExamplePipelineTests(unittest.TestCase):
     def test_existing_library_refresh_stops_before_new_body_paragraph_after_example(self):
         root = make_test_workspace("existing_library_body_stop")
         structured_dir = root / "structured"
-        artifacts_dir = root / "artifacts"
         write_json(
             structured_dir / "chapter9_010.json",
             {
@@ -1209,7 +1228,6 @@ class ExamplePipelineTests(unittest.TestCase):
                         "external_refs": [],
                         "evidence": {},
                         "metadata": {"needs_review": False},
-                        "example_ref": "9.2",
                         "placeholder": "[[SEE_EXAMPLE:9.2]]",
                         "replacement": {"status": "replaced", "reason": "placeholder_block_written", "source_block_span": [0, 0]},
                     }

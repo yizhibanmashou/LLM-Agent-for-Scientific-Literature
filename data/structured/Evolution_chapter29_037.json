@@ -21,31 +21,221 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "We have shown that when phenotypes are normally distributed before an episode of selection, $ \\beta = S/\\sigma_{z}^{2} $ equals two different summary statistics of the geometry of selection, $$ \\beta=\\int\\frac{\\partial w(z)}{\\partial z}p(z)dz=\\frac{\\partial\\ln\\overline{W}}{\\partial\\mu_{z}} $$ namely, the average selection gradient (the average slope of the individual fitness surface over the current distribution of phenotypes) and the landscape gradient (the gradient of log mean fitness with respect to the population mean). This relationship also holds for any phenotypic distribution when the individual fitness function is exactly a quadratic (Equations 29.30c and 29.30g). Outside of this special case for a quadratic $ w(z) $ these equalities break down when the distribution of z is no longer normal distributed."
+      "content": "We have shown that when phenotypes are normally distributed before an episode of selection, $ \\beta = S/\\sigma_{z}^{2} $ equals two different summary statistics of the geometry of selection, $$ \\beta=\\int\\frac{\\partial w(z)}{\\partial z}p(z)dz=\\frac{\\partial\\ln\\overline{W}}{\\partial\\mu_{z}} $$ namely, the average selection gradient (the average slope of the individual fitness surface over the current distribution of phenotypes) and the landscape gradient (the gradient of log mean fitness with respect to the population mean). This relationship also holds for any phenotypic distribution when the individual fitness function is exactly a quadratic (Equations 29.30c and 29.30g). Outside of this special case for a quadratic $ w(z) $ these equalities break down when the distribution of z is no longer normal distributed.",
+      "source_page": 1104,
+      "source_pages": [
+        1104
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p048:b5",
+        "Evolution_chapter29:p048:b6",
+        "Evolution_chapter29:p048:b7",
+        "Evolution_chapter29:p048:b8"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          737.0,
+          1059.0,
+          784.0
+        ],
+        [
+          288.0,
+          790.0,
+          1058.0,
+          838.0
+        ],
+        [
+          538.0,
+          853.0,
+          805.0,
+          905.0
+        ],
+        [
+          286.0,
+          919.0,
+          1060.0,
+          1057.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "81b3e37f887003b85535cc1d4482a375562b21798d2b1f4a3f1b4f7044d73123"
     },
     {
       "type": "discussion",
-      "content": "This raises the question of how to obtain these gradients when the trait does not follow a normal distribution and the individual fitness function is not a quadratic. For example, suppose the fitness surface is fitted by a nonquadratic function (such as Equations 29.34a or 29.34b) or by using Schluter's semiparametric regression. What should we take as the \"gradient\" of fitness in this case? The answer very much depends on the specific question that an investigator is asking. If one wishes to obtain a summary measure of the nature of selection, then the average gradients (the average slope or curvature; Equation 29.20b and 29.20c) might be a reasonable metric."
+      "content": "This raises the question of how to obtain these gradients when the trait does not follow a normal distribution and the individual fitness function is not a quadratic. For example, suppose the fitness surface is fitted by a nonquadratic function (such as Equations 29.34a or 29.34b) or by using Schluter's semiparametric regression. What should we take as the \"gradient\" of fitness in this case? The answer very much depends on the specific question that an investigator is asking. If one wishes to obtain a summary measure of the nature of selection, then the average gradients (the average slope or curvature; Equation 29.20b and 29.20c) might be a reasonable metric.",
+      "source_page": 1104,
+      "source_pages": [
+        1104
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p048:b9"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1058.0,
+          1060.0,
+          1240.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7a64e4b398ed476f018804eb5cb4bde49df20cadaeb24fc3f365c03ee5a88487"
     },
     {
       "type": "discussion",
-      "content": "Janzen and Stein (1998) considered the case in which some general individual fitness surface, $ w(z) $, was fit using n observations. Motivated by Equation 29.20b, they suggest using $$ \\beta_{JS}=\\int\\frac{\\partial w(z)}{\\partial z}p(z)dz=E_{z}\\left[\\frac{\\partial w(z)}{\\partial z}\\right]\\simeq\\frac{1}{n}\\sum_{i=1}^{n}\\frac{\\partial w(z)}{\\partial z}\\bigg|_{z=z_{i}} $$ with the last step following by approximating the expectation by using the sampled values. We refer to this as a Janzen-Stein selection gradient. They used this approach to obtain a gradient when a logistic function is used to fit $ w(z) $, where an explicit form of the required derivative is easily obtained. The same approach can be extended to the average curvature of the individual fitness surface by recalling Equation 29.20c, which calculates the corresponding Janzen-Stein (quadratic) gradient as $$ \\gamma_{JS}=\\int\\frac{\\partial^{2}w(z)}{\\partial z^{2}}p(z)dz\\simeq\\frac{1}{n}\\sum_{i=1}^{n}\\frac{\\partial^{2}w(z)}{\\partial z^{2}}\\bigg|_{z=z_{i}} $$"
+      "content": "Janzen and Stein (1998) considered the case in which some general individual fitness surface, $ w(z) $, was fit using n observations. Motivated by Equation 29.20b, they suggest using $$ \\beta_{JS}=\\int\\frac{\\partial w(z)}{\\partial z}p(z)dz=E_{z}\\left[\\frac{\\partial w(z)}{\\partial z}\\right]\\simeq\\frac{1}{n}\\sum_{i=1}^{n}\\frac{\\partial w(z)}{\\partial z}\\bigg|_{z=z_{i}} $$ with the last step following by approximating the expectation by using the sampled values. We refer to this as a Janzen-Stein selection gradient. They used this approach to obtain a gradient when a logistic function is used to fit $ w(z) $, where an explicit form of the required derivative is easily obtained. The same approach can be extended to the average curvature of the individual fitness surface by recalling Equation 29.20c, which calculates the corresponding Janzen-Stein (quadratic) gradient as $$ \\gamma_{JS}=\\int\\frac{\\partial^{2}w(z)}{\\partial z^{2}}p(z)dz\\simeq\\frac{1}{n}\\sum_{i=1}^{n}\\frac{\\partial^{2}w(z)}{\\partial z^{2}}\\bigg|_{z=z_{i}} $$",
+      "source_page": 1104,
+      "source_pages": [
+        1104,
+        1105
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p048:b10",
+        "Evolution_chapter29:p048:b11",
+        "Evolution_chapter29:p048:b13",
+        "Evolution_chapter29:p049:b2",
+        "Evolution_chapter29:p049:b3"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1241.0,
+          1060.0,
+          1311.0
+        ],
+        [
+          422.0,
+          1310.0,
+          922.0,
+          1367.0
+        ],
+        [
+          287.0,
+          1376.0,
+          1060.0,
+          1472.0
+        ],
+        [
+          132.0,
+          207.0,
+          904.0,
+          255.0
+        ],
+        [
+          321.0,
+          270.0,
+          712.0,
+          329.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d3037d4fd79003a678cbdb98d7803bb76d55c6db93d02465fab8230f5ccc8681"
     },
     {
       "type": "discussion",
-      "content": "When the fitness surface is complex (for example, a fine-meshed grid with individual fitness values for each coordinate, such as would be returned by a semiparametric regression), numerical methods can be used to compute the required partials for Equations 29.35a and 29.35b. When $ \\delta \\simeq 0 $, $$ \\left.\\frac{\\partial w(z)}{\\partial z}\\right|_{z=z_{i}}\\simeq\\frac{w(z_{i}+\\delta/2)-w(z_{i}-\\delta/2)}{\\delta} $$ $$ \\left.\\frac{\\partial^{2}w(z)}{\\partial z^{2}}\\right|_{z=z_{i}}\\simeq\\frac{w(z_{i}-\\delta)-2w(z_{i})+w(z_{i}+\\delta)}{\\delta} $$"
+      "content": "When the fitness surface is complex (for example, a fine-meshed grid with individual fitness values for each coordinate, such as would be returned by a semiparametric regression), numerical methods can be used to compute the required partials for Equations 29.35a and 29.35b. When $ \\delta \\simeq 0 $, $$ \\left.\\frac{\\partial w(z)}{\\partial z}\\right|_{z=z_{i}}\\simeq\\frac{w(z_{i}+\\delta/2)-w(z_{i}-\\delta/2)}{\\delta} $$ $$ \\left.\\frac{\\partial^{2}w(z)}{\\partial z^{2}}\\right|_{z=z_{i}}\\simeq\\frac{w(z_{i}-\\delta)-2w(z_{i})+w(z_{i}+\\delta)}{\\delta} $$",
+      "source_page": 1105,
+      "source_pages": [
+        1105
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p049:b5",
+        "Evolution_chapter29:p049:b6",
+        "Evolution_chapter29:p049:b8"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          344.0,
+          905.0,
+          438.0
+        ],
+        [
+          327.0,
+          449.0,
+          677.0,
+          502.0
+        ],
+        [
+          320.0,
+          532.0,
+          715.0,
+          587.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "556fc45ad1a3c3cfb18112d708b7050fece5ff7973c989857a6ecbf302bd3151"
     },
     {
       "type": "discussion",
-      "content": "While average gradients of the individual fitness function provide reasonable summary statistics for discussions about the nature of selection, if the concern is the evolution of these traits over time, then landscape gradients are required. This follows from our extensive discussion in Chapter 24 of selection response when normality no longer holds. The generalized Barton-Turelli selection response equations (Equation 24.26) for changes in the phenotypic moments after a generation of selection requires estimates of various partials of the landscape gradient with respect to the moments of the phenotypic distribution. If the underlying genetics are such that the distribution of breeding values is nearly normal, then (Equation 24.30a) the only measure of selection entering into the equation for the change in mean is the landscape gradient with respect to the population mean. If the distribution of breeding values shows skew and/or kurtosis (specifically, a nonzero value of the scaled kurtosis, $ \\kappa_4 = [\\mu_4, G - 3\\sigma_A^4] / \\sigma_A^4 $), then partials of the landscape gradient with respect to the phenotypic variance and skew are required to predict the change in mean."
+      "content": "While average gradients of the individual fitness function provide reasonable summary statistics for discussions about the nature of selection, if the concern is the evolution of these traits over time, then landscape gradients are required. This follows from our extensive discussion in Chapter 24 of selection response when normality no longer holds. The generalized Barton-Turelli selection response equations (Equation 24.26) for changes in the phenotypic moments after a generation of selection requires estimates of various partials of the landscape gradient with respect to the moments of the phenotypic distribution. If the underlying genetics are such that the distribution of breeding values is nearly normal, then (Equation 24.30a) the only measure of selection entering into the equation for the change in mean is the landscape gradient with respect to the population mean. If the distribution of breeding values shows skew and/or kurtosis (specifically, a nonzero value of the scaled kurtosis, $ \\kappa_4 = [\\mu_4, G - 3\\sigma_A^4] / \\sigma_A^4 $), then partials of the landscape gradient with respect to the phenotypic variance and skew are required to predict the change in mean.",
+      "source_page": 1105,
+      "source_pages": [
+        1105
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p049:b9"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          603.0,
+          905.0,
+          903.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6c03b9003d8fc86815d688cb7288ff492e37947ba532b47394c81850768a2579"
     },
     {
       "type": "definition",
-      "content": "The requirement of landscape gradients to predict selection response motivates the definition of the Morrissey-Sakrejda selection gradient (Morrissey and Sakrejda 2013, 2014; Morrissey 2014a). Following Janzen and Stein, they suggest that this gradient (for a given estimated fitness function) can also be computed numerically. Here $$ \\beta_{M S}=\\frac{\\partial\\ln\\overline{W}}{\\partial\\mu_{z}}=\\frac{1}{\\overline{W}}\\frac{\\partial\\overline{W}}{\\partial\\mu_{z}},\\quad\\mathrm{w h e r e}\\quad\\overline{W}=\\frac{1}{n}\\sum_{i=1}^{n}W(z_{i}) $$"
+      "content": "The requirement of landscape gradients to predict selection response motivates the definition of the Morrissey-Sakrejda selection gradient (Morrissey and Sakrejda 2013, 2014; Morrissey 2014a). Following Janzen and Stein, they suggest that this gradient (for a given estimated fitness function) can also be computed numerically. Here $$ \\beta_{M S}=\\frac{\\partial\\ln\\overline{W}}{\\partial\\mu_{z}}=\\frac{1}{\\overline{W}}\\frac{\\partial\\overline{W}}{\\partial\\mu_{z}},\\quad\\mathrm{w h e r e}\\quad\\overline{W}=\\frac{1}{n}\\sum_{i=1}^{n}W(z_{i}) $$",
+      "source_page": 1105,
+      "source_pages": [
+        1105
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p049:b10",
+        "Evolution_chapter29:p049:b11"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          903.0,
+          904.0,
+          995.0
+        ],
+        [
+          283.0,
+          1011.0,
+          751.0,
+          1068.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cdbe8e2de6c21d5354df1c41059da19cefcff5e77f39b89c4fe94f24bb2fd7ad"
     },
     {
       "type": "discussion",
-      "content": "A similar expression defines $ \\gamma_{MS} $. This approach works for general fitness surfaces, such as those estimated using a semiparametric regression, and nonnormal distributions."
+      "content": "A similar expression defines $ \\gamma_{MS} $. This approach works for general fitness surfaces, such as those estimated using a semiparametric regression, and nonnormal distributions.",
+      "source_page": 1105,
+      "source_pages": [
+        1105
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p049:b13"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1085.0,
+          904.0,
+          1133.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b5ab72671af1c25f70bc8ec8c9020a40fd8980a523580b7b6b1a223bc8b7db03"
     }
   ]
 }

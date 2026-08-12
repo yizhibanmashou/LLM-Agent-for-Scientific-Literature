@@ -21,31 +21,165 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "The gold standard for detecting a genetic change is to grow two populations in a common-garden experiment, ensuring that any change is genetic, rather than environmental. With the exception of the use of remnant seed (or, for other organisms where we can freeze or otherwise immortalize individuals), making contemporaneous comparisons of the genetic composition of different generations is usually not possible. However, as we saw in Chapter 19, it is often possible to make this comparison statistically through the animal model, provided the population is sufficiently connected across the generations by sampled relatives. Due to their pedigree depth and connectedness, this is reasonable for most breeding programs and artificially selected populations. The reliability of PBVs in such settings is fairly high, as these conditions reduce the environmental influence on PBVs. Further, PBVs are unbiased (provided individuals are randomized over environments), and taking their average for a sample (such as a generation) smooths out some of the environmental noise associated with individual estimates, thus allowing a plot of mean PBVs over time to show a trend (or lack thereof). In theory, this same approach can be applied to natural populations, provided the genotype-environment correlations are largely ignorable."
+      "content": "The gold standard for detecting a genetic change is to grow two populations in a common-garden experiment, ensuring that any change is genetic, rather than environmental. With the exception of the use of remnant seed (or, for other organisms where we can freeze or otherwise immortalize individuals), making contemporaneous comparisons of the genetic composition of different generations is usually not possible. However, as we saw in Chapter 19, it is often possible to make this comparison statistically through the animal model, provided the population is sufficiently connected across the generations by sampled relatives. Due to their pedigree depth and connectedness, this is reasonable for most breeding programs and artificially selected populations. The reliability of PBVs in such settings is fairly high, as these conditions reduce the environmental influence on PBVs. Further, PBVs are unbiased (provided individuals are randomized over environments), and taking their average for a sample (such as a generation) smooths out some of the environmental noise associated with individual estimates, thus allowing a plot of mean PBVs over time to show a trend (or lack thereof). In theory, this same approach can be applied to natural populations, provided the genotype-environment correlations are largely ignorable.",
+      "source_page": 691,
+      "source_pages": [
+        691
+      ],
+      "source_block_ids": [
+        "Evolution_chapter20:p036:b4",
+        "Evolution_chapter20:p036:b5"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          886.0,
+          520.0,
+          910.0
+        ],
+        [
+          286.0,
+          916.0,
+          1061.0,
+          1262.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6cb91fcd18ce164a04ad25d72a2c64438051178cc1592e44ae0a1d5a6c4ded7c"
     },
     {
       "type": "discussion",
-      "content": "The more delicate issue is that of inference. As we saw in Chapter 18, both OLS and GLS regressions of the selection response on the selection differential gave unbiased estimates of the realized heritability, but because the residuals are heteroscedastic and correlated, the sampling variances under OLS are too small relative to the correct values under GLS (see Example 18.4). As a result, OLS-based tests are anticonservative; namely, the p values (testing for a potential genetic trend by regressing mean breeding value on time) are heavily biased toward smaller, more significant, values. The same issue arises with the error structure of PBVs (Hadfield et al. 2010), as Figure 20.6 illustrates."
+      "content": "The more delicate issue is that of inference. As we saw in Chapter 18, both OLS and GLS regressions of the selection response on the selection differential gave unbiased estimates of the realized heritability, but because the residuals are heteroscedastic and correlated, the sampling variances under OLS are too small relative to the correct values under GLS (see Example 18.4). As a result, OLS-based tests are anticonservative; namely, the p values (testing for a potential genetic trend by regressing mean breeding value on time) are heavily biased toward smaller, more significant, values. The same issue arises with the error structure of PBVs (Hadfield et al. 2010), as Figure 20.6 illustrates.",
+      "source_page": 691,
+      "source_pages": [
+        691
+      ],
+      "source_block_ids": [
+        "Evolution_chapter20:p036:b6"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1261.0,
+          1061.0,
+          1446.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "25181d19e9c842deabde975fae3d1078048b8cc192cf8733acaf1845c4aaeed8"
     },
     {
       "type": "discussion",
-      "content": "Fortunately, there is a simple solution (Hadfield al. 2010), again within the powerful Bayesian framework that (additionally) accounts for all levels of uncertainty in our analysis. A vector, $ \\hat{a} $, from the posterior PBV distribution is drawn from a given iteration of the MCMC sampler (Appendix 3). Then the resulting series of PBVs is used to regress (using OLS) mean PBV on generation number (i.e., time) and the resulting slope is recorded. This sampling process is repeated thousands of times to construct an empirical histogram of the posterior slope distribution, which is then used for inference (see Figure 20.6). The resulting empirical distribution of slopes fully accounts for the correlated structure among the PBVs."
+      "content": "Fortunately, there is a simple solution (Hadfield al. 2010), again within the powerful Bayesian framework that (additionally) accounts for all levels of uncertainty in our analysis. A vector, $ \\hat{a} $, from the posterior PBV distribution is drawn from a given iteration of the MCMC sampler (Appendix 3). Then the resulting series of PBVs is used to regress (using OLS) mean PBV on generation number (i.e., time) and the resulting slope is recorded. This sampling process is repeated thousands of times to construct an empirical histogram of the posterior slope distribution, which is then used for inference (see Figure 20.6). The resulting empirical distribution of slopes fully accounts for the correlated structure among the PBVs.",
+      "source_page": 692,
+      "source_pages": [
+        692
+      ],
+      "source_block_ids": [
+        "Evolution_chapter20:p037:b4"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1154.0,
+          904.0,
+          1340.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4e792e46cf1ea07b6ed165b6eaba3c54ab84008fb1693253f529c5fcb1e3ad5f"
     },
     {
       "type": "proposition",
-      "content": "Detection of a significant genetic trend is not, by itself, evidence of a selection response, as this could arise simply from drift. A powerful feature of the MCMC approach is that it allows for a straightforward test of drift versus selection (Hadfield et al. 2010). First, a value for $ \\sigma^{2}(A) $ is sampled from its marginal posterior. Breeding values are then drawn from a normal distribution (with a mean of zero, and the sampled value of $ \\sigma^{2}[A] $) and assigned to individuals in the pedigree with no past relatives. These parental BVs, coupled with Mendelian sampling (Equation 16.8a), are then used to generate random breeding values (RBVs) for their downstream relatives, generating a set of RBVs over the specific pedigree under the assumption of drift (as the BVs are chosen at random). With a set of RBVs in hand, a genetic trend is computed as above (regression of mean RBVs over generations), and the slope is recorded. Extracting many such samples (redrawing $ \\sigma^{2}(A) $ at the start of each run) generates an empirical histogram of the posterior slope distribution under drift alone, which can be compared with those generated from the MCMC using the full data."
+      "content": "Detection of a significant genetic trend is not, by itself, evidence of a selection response, as this could arise simply from drift. A powerful feature of the MCMC approach is that it allows for a straightforward test of drift versus selection (Hadfield et al. 2010). First, a value for $ \\sigma^{2}(A) $ is sampled from its marginal posterior. Breeding values are then drawn from a normal distribution (with a mean of zero, and the sampled value of $ \\sigma^{2}[A] $) and assigned to individuals in the pedigree with no past relatives. These parental BVs, coupled with Mendelian sampling (Equation 16.8a), are then used to generate random breeding values (RBVs) for their downstream relatives, generating a set of RBVs over the specific pedigree under the assumption of drift (as the BVs are chosen at random). With a set of RBVs in hand, a genetic trend is computed as above (regression of mean RBVs over generations), and the slope is recorded. Extracting many such samples (redrawing $ \\sigma^{2}(A) $ at the start of each run) generates an empirical histogram of the posterior slope distribution under drift alone, which can be compared with those generated from the MCMC using the full data.",
+      "source_page": 692,
+      "source_pages": [
+        692,
+        693
+      ],
+      "source_block_ids": [
+        "Evolution_chapter20:p037:b5",
+        "Evolution_chapter20:p038:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1340.0,
+          905.0,
+          1457.0
+        ],
+        [
+          287.0,
+          206.0,
+          1059.0,
+          391.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "11e9a6e25a4dbcb67d3b92daa18804d48ef83b42de00a99b3409e9ffb945f650"
     },
     {
       "type": "discussion",
-      "content": "An issue debated in the literature is whether one should also include a year (or generation) effect in models for trends. When PBVs have low reliability, they are strongly influenced by the environment, with the PBV trend partly reflecting any underlying environmental trend (Postma 2006). Incorporation of a year effect (a fixed value for each year or generation) can account for such an environmental trend, but it will also partly absorb any true genetic trend, thus reducing the power. Postma and Charmantier (2007) offered some guidelines as to how to proceed (Figure 20.7). Given that PBVs are biased toward an environmental trend when their reliability is low, the finding of genetic and environmental trends in opposite directions provides evidence of a genetic trend. If the change is in the same direction and still persists after a year effect has been incorporated, this is also supportive of a genetic trend. Figure 20.7 presents a flow chart for the interpretation of other combinations of trends."
+      "content": "An issue debated in the literature is whether one should also include a year (or generation) effect in models for trends. When PBVs have low reliability, they are strongly influenced by the environment, with the PBV trend partly reflecting any underlying environmental trend (Postma 2006). Incorporation of a year effect (a fixed value for each year or generation) can account for such an environmental trend, but it will also partly absorb any true genetic trend, thus reducing the power. Postma and Charmantier (2007) offered some guidelines as to how to proceed (Figure 20.7). Given that PBVs are biased toward an environmental trend when their reliability is low, the finding of genetic and environmental trends in opposite directions provides evidence of a genetic trend. If the change is in the same direction and still persists after a year effect has been incorporated, this is also supportive of a genetic trend. Figure 20.7 presents a flow chart for the interpretation of other combinations of trends.",
+      "source_page": 693,
+      "source_pages": [
+        693
+      ],
+      "source_block_ids": [
+        "Evolution_chapter20:p038:b3"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          391.0,
+          1060.0,
+          666.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e2b53ab5fb32dd74033cf290312f7a587608b33191b07242e43ac386180743d8"
     },
     {
       "type": "discussion",
-      "content": "A final issue is that if one has individuals throughout the pedigree with missing parents, these are treated as de facto founders and their BVs come from a common distribution of those older individuals at the top of the pedigree that really are biologically founders. This effect will generally dampen any inferred trend in breeding values (M. Morrissey, pers. comm.)"
+      "content": "A final issue is that if one has individuals throughout the pedigree with missing parents, these are treated as de facto founders and their BVs come from a common distribution of those older individuals at the top of the pedigree that really are biologically founders. This effect will generally dampen any inferred trend in breeding values (M. Morrissey, pers. comm.)",
+      "source_page": 693,
+      "source_pages": [
+        693
+      ],
+      "source_block_ids": [
+        "Evolution_chapter20:p038:b4"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          666.0,
+          1060.0,
+          782.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6c03ccd685508902e568fb8613ede3bbb673a115a01f8d86df50802e9e4aab35"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:20.7]]"
+      "content": "[[SEE_EXAMPLE:20.7]]",
+      "source_page": 683,
+      "source_pages": [
+        683
+      ],
+      "source_block_ids": [
+        "Evolution_chapter20:p028:b3"
+      ],
+      "source_bboxes": [
+        [
+          301.0,
+          332.0,
+          1061.0,
+          817.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4e402e77766fe42c9fbc6c070b7ae71cfe4caea9b344f37f218b6457badb400f"
     }
   ]
 }

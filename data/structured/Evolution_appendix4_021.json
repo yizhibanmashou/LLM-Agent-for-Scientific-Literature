@@ -21,27 +21,213 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Following Storey and Tibshirani (2003), we consider the expected FDR for an experiment where we declare a hypothesis to be significant if its $p$ value is less than or equal to some threshold value, $\\tau$. Obviously, as $\\tau$ becomes smaller, the FDR is smaller (as significant nulls become increasingly less likely). However, if $\\tau$ is set too small, we lose power (e.g., suppose we set $\\tau = \\pi/n$; namely, the Bonferroni correction). What we would like to do is to find the expected value of the FDR as a function of the chosen threshold parameter, $\\tau$, to allow us to optimally tune this parameter to obtain the desired FDR. If we have a large number of tested hypotheses, $$ E[F D R(\\tau)]=E\\left[\\frac{F(\\tau)}{S(\\tau)}\\right]\\simeq\\frac{E[F(\\tau)]}{E[S(\\tau)]} $$"
+      "content": "Following Storey and Tibshirani (2003), we consider the expected FDR for an experiment where we declare a hypothesis to be significant if its $p$ value is less than or equal to some threshold value, $\\tau$. Obviously, as $\\tau$ becomes smaller, the FDR is smaller (as significant nulls become increasingly less likely). However, if $\\tau$ is set too small, we lose power (e.g., suppose we set $\\tau = \\pi/n$; namely, the Bonferroni correction). What we would like to do is to find the expected value of the FDR as a function of the chosen threshold parameter, $\\tau$, to allow us to optimally tune this parameter to obtain the desired FDR. If we have a large number of tested hypotheses, $$ E[F D R(\\tau)]=E\\left[\\frac{F(\\tau)}{S(\\tau)}\\right]\\simeq\\frac{E[F(\\tau)]}{E[S(\\tau)]} $$",
+      "source_page": 1248,
+      "source_pages": [
+        1248
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p019:b2",
+        "Evolution_appendix4:p019:b3",
+        "Evolution_appendix4:p019:b4"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          206.0,
+          655.0,
+          230.0
+        ],
+        [
+          131.0,
+          236.0,
+          905.0,
+          423.0
+        ],
+        [
+          361.0,
+          418.0,
+          674.0,
+          471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "39aaec4080f6fb396072e417e4c8652b2a808cab461a8a19620704f3d778b82a"
     },
     {
       "type": "discussion",
-      "content": "A simple estimate of $ E[S(\\tau)] $ is given by the observed number of significant tests when the threshold is $ \\tau $."
+      "content": "A simple estimate of $ E[S(\\tau)] $ is given by the observed number of significant tests when the threshold is $ \\tau $.",
+      "source_page": 1248,
+      "source_pages": [
+        1248
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p019:b6"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          480.0,
+          903.0,
+          526.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "fb782b7bd136c398caeed215fea05fddeb1bd6c769d948d7ebaceb85a4842f60"
     },
     {
       "type": "discussion",
-      "content": "To obtain an estimate for $ E[F(\\tau)] $, we again use the fact that the distribution of p values under the null follows a uniform $ (0,1) $ distribution. Hence, $$ \\Pr(p\\leq\\tau\\mid null hypothesis)=\\int_{0}^{\\tau}\\phi_{u}(p)dp=\\tau $$ where $ \\phi_{u}(p) $ is the uniform probability density function for p values under the null (Equation A4.8a). Hence, if $ n_{0} $ of the n tests are truly null, then $$ E[F(\\tau)]=n_{0}\\cdot\\Pr(p\\leq\\tau\\mid null hypothesis)\\simeq n_{0}\\cdot\\tau $$"
+      "content": "To obtain an estimate for $ E[F(\\tau)] $, we again use the fact that the distribution of p values under the null follows a uniform $ (0,1) $ distribution. Hence, $$ \\Pr(p\\leq\\tau\\mid null hypothesis)=\\int_{0}^{\\tau}\\phi_{u}(p)dp=\\tau $$ where $ \\phi_{u}(p) $ is the uniform probability density function for p values under the null (Equation A4.8a). Hence, if $ n_{0} $ of the n tests are truly null, then $$ E[F(\\tau)]=n_{0}\\cdot\\Pr(p\\leq\\tau\\mid null hypothesis)\\simeq n_{0}\\cdot\\tau $$",
+      "source_page": 1248,
+      "source_pages": [
+        1248
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p019:b7",
+        "Evolution_appendix4:p019:b8",
+        "Evolution_appendix4:p019:b10",
+        "Evolution_appendix4:p019:b11"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          528.0,
+          904.0,
+          573.0
+        ],
+        [
+          319.0,
+          593.0,
+          718.0,
+          644.0
+        ],
+        [
+          132.0,
+          662.0,
+          903.0,
+          709.0
+        ],
+        [
+          304.0,
+          731.0,
+          733.0,
+          757.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ad670bbb43f0851cedae930e28b9380e2517f456adee8011837589dfc66c5350"
     },
     {
       "type": "discussion",
-      "content": "Hence, $$ E[FDR(\\tau)]=\\frac{n_{0}\\cdot\\tau}{S(\\tau)} $$"
+      "content": "Hence, $$ E[FDR(\\tau)]=\\frac{n_{0}\\cdot\\tau}{S(\\tau)} $$",
+      "source_page": 1248,
+      "source_pages": [
+        1248
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p019:b13",
+        "Evolution_appendix4:p019:b14"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          778.0,
+          201.0,
+          801.0
+        ],
+        [
+          428.0,
+          797.0,
+          608.0,
+          841.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e97bc4e7a664b2cbc7e5cb39b1788b804a2ef4e46b4880d9ded2305082e39a88"
     },
     {
       "type": "discussion",
-      "content": "Setting $ \\tau = p(k) $, then $ S(\\tau) = k $, and Equation A4.21 becomes $ n_0 p(k)/k $, recovering Equation A4.17. Using the Storey-Tibshirani estimator for $ n_0 $ (Equation A4.9b), an estimated value for the FDR using threshold value, $ \\tau $ (and based on the tuning parameter, $ \\lambda $, in the Storey-Tibshirani estimator), becomes $$ \\widehat{F D R}(\\tau)=n_{0}\\cdot\\frac{\\tau}{S(\\tau)}=\\left(\\frac{N[p(i)\\ values>\\lambda]}{1-\\lambda}\\right)\\cdot\\left(\\frac{\\tau}{N[p(i)\\ values\\leq\\tau]}\\right) $$ where $ N[x] $ is the number of occurrences of event x. Ideally, over a reasonable range of $ \\lambda $ values, we expect this estimate be stable. If $ \\lambda $ is set too large, the likelihood that almost all values correspond to draws from a null will be countered by the much smaller sample size (and hence a larger sampling error) from using such a small fraction of the total data."
+      "content": "Setting $ \\tau = p(k) $, then $ S(\\tau) = k $, and Equation A4.21 becomes $ n_0 p(k)/k $, recovering Equation A4.17. Using the Storey-Tibshirani estimator for $ n_0 $ (Equation A4.9b), an estimated value for the FDR using threshold value, $ \\tau $ (and based on the tuning parameter, $ \\lambda $, in the Storey-Tibshirani estimator), becomes $$ \\widehat{F D R}(\\tau)=n_{0}\\cdot\\frac{\\tau}{S(\\tau)}=\\left(\\frac{N[p(i)\\ values>\\lambda]}{1-\\lambda}\\right)\\cdot\\left(\\frac{\\tau}{N[p(i)\\ values\\leq\\tau]}\\right) $$ where $ N[x] $ is the number of occurrences of event x. Ideally, over a reasonable range of $ \\lambda $ values, we expect this estimate be stable. If $ \\lambda $ is set too large, the likelihood that almost all values correspond to draws from a null will be countered by the much smaller sample size (and hence a larger sampling error) from using such a small fraction of the total data.",
+      "source_page": 1248,
+      "source_pages": [
+        1248
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p019:b16",
+        "Evolution_appendix4:p019:b17",
+        "Evolution_appendix4:p019:b19"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          851.0,
+          905.0,
+          946.0
+        ],
+        [
+          177.0,
+          966.0,
+          794.0,
+          1018.0
+        ],
+        [
+          131.0,
+          1036.0,
+          903.0,
+          1128.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2d2becdd670a72b1705dbc1c4d7eb38aa879964b163aa50121e5ef88fbc28045"
     },
     {
       "type": "discussion",
-      "content": "Under a mixture-model setting (e.g., Equation A4.10), the false-discovery rate for a given a significance threshold ($ \\tau $) is simply the fraction of all true positives that are declared significant divided by the fraction of all tests that are declared significant (i.e., those tests for which $ p \\leq \\tau $). This can be estimated directly from the parameters of the mixture distribution, $$ \\mathrm{F D R}(\\tau)=\\frac{\\pi_{0}\\mathrm{c d f}_{U}(\\tau)}{\\pi_{0}\\mathrm{c d f}_{U}(\\tau)+\\left(1-\\pi_{0}\\right)\\mathrm{c d f}_{A}(\\tau)}=\\frac{\\pi_{0}\\tau}{\\pi_{0}\\tau+\\left(1-\\pi_{0}\\right)\\mathrm{c d f}_{A}(\\tau)}, $$ where cdf denotes the cumulative distribution function, with $$ \\mathbf{c}\\mathbf{d}\\mathbf{f}_{U}(x)=\\int_{0}^{x}\\phi_{U}(p)d p=x\\qquad\\mathbf{c}\\mathbf{d}\\mathbf{f}_{A}(x)=\\int_{0}^{x}\\phi_{A}(p)d p $$ where $ \\phi_{U} $ is the uniform distribution under the null and $ \\phi_{A} $ is the distribution of p values under the alternative (for example, a fitted beta)."
+      "content": "Under a mixture-model setting (e.g., Equation A4.10), the false-discovery rate for a given a significance threshold ($ \\tau $) is simply the fraction of all true positives that are declared significant divided by the fraction of all tests that are declared significant (i.e., those tests for which $ p \\leq \\tau $). This can be estimated directly from the parameters of the mixture distribution, $$ \\mathrm{F D R}(\\tau)=\\frac{\\pi_{0}\\mathrm{c d f}_{U}(\\tau)}{\\pi_{0}\\mathrm{c d f}_{U}(\\tau)+\\left(1-\\pi_{0}\\right)\\mathrm{c d f}_{A}(\\tau)}=\\frac{\\pi_{0}\\tau}{\\pi_{0}\\tau+\\left(1-\\pi_{0}\\right)\\mathrm{c d f}_{A}(\\tau)}, $$ where cdf denotes the cumulative distribution function, with $$ \\mathbf{c}\\mathbf{d}\\mathbf{f}_{U}(x)=\\int_{0}^{x}\\phi_{U}(p)d p=x\\qquad\\mathbf{c}\\mathbf{d}\\mathbf{f}_{A}(x)=\\int_{0}^{x}\\phi_{A}(p)d p $$ where $ \\phi_{U} $ is the uniform distribution under the null and $ \\phi_{A} $ is the distribution of p values under the alternative (for example, a fitted beta).",
+      "source_page": 1248,
+      "source_pages": [
+        1248
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p019:b20",
+        "Evolution_appendix4:p019:b21",
+        "Evolution_appendix4:p019:b23",
+        "Evolution_appendix4:p019:b24",
+        "Evolution_appendix4:p019:b25"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          1129.0,
+          905.0,
+          1222.0
+        ],
+        [
+          199.0,
+          1244.0,
+          773.0,
+          1293.0
+        ],
+        [
+          133.0,
+          1311.0,
+          659.0,
+          1334.0
+        ],
+        [
+          285.0,
+          1352.0,
+          752.0,
+          1405.0
+        ],
+        [
+          131.0,
+          1422.0,
+          904.0,
+          1471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8fbf30cb4978266db19a323ba4991d8d2622a9a4dcc0a45e26ac2036fd82533b"
     }
   ]
 }

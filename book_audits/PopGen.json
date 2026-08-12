@@ -1,0 +1,28 @@
+{
+  "schema": "book_accuracy_profile.v2",
+  "book": "PopGen",
+  "title": "Principles of Population Genetics, Fourth Edition",
+  "master_pdf_glob": "data/**/Principle of population genetics 4th ed - Hartl and Clark.pdf",
+  "master_pdf_sha256": "4e1cc6c5eaabd3c33bb0e6e51089440eb8f1d52e1ee6e4e713a0992d22e2d388",
+  "master_page_count": 666,
+  "chapters": [
+    {"id": "PopGen_chapter2", "number": 2, "master_start": 59, "master_end": 106, "chapter_pdf_glob": "data/**/PopGen_chapter2.pdf", "raw_dir": "tmp/popgen/paddle_output/PopGen_chapter2_full"},
+    {"id": "PopGen_chapter3", "number": 3, "master_start": 109, "master_end": 162, "chapter_pdf_glob": "data/**/PopGen_chapter3.pdf", "raw_dir": "tmp/popgen/paddle_output/PopGen_chapter3_full"},
+    {"id": "PopGen_chapter4", "number": 4, "master_start": 165, "master_end": 210, "chapter_pdf_glob": "data/**/PopGen_chapter4.pdf", "raw_dir": "tmp/popgen/paddle_output/PopGen_chapter4_full"},
+    {"id": "PopGen_chapter6", "number": 6, "master_start": 271, "master_end": 329, "chapter_pdf_glob": "data/**/PopGen_chapter6.pdf", "raw_dir": "tmp/popgen/paddle_output/PopGen_chapter6_full"}
+  ],
+  "excluded_page_ranges": [
+    {"start": 1, "end": 58, "reason": "front matter and chapters outside the four-section PopGen delivery scope"},
+    {"start": 107, "end": 108, "reason": "separator pages outside the selected chapter delivery ranges"},
+    {"start": 163, "end": 164, "reason": "separator pages outside the selected chapter delivery ranges"},
+    {"start": 211, "end": 270, "reason": "chapter 5 is outside the selected PopGen delivery scope"},
+    {"start": 330, "end": 666, "reason": "remaining chapters, references, and back matter are outside the selected PopGen delivery scope"}
+  ],
+  "source_block_exclusions": [
+    {"source_block_id":"PopGen_chapter6:p024:b4","bbox":[123.0,958.0,355.0,982.0],"reason":"source note is preserved in the corresponding delivered table resource metadata","source_content_sha256":"2f95378858bc1be11187b699333836e1789d067b97be336bcd222bfb7ed70a4f"},
+    {"source_block_id":"PopGen_chapter6:p031:b4","bbox":[102.0,669.0,467.0,693.0],"reason":"source note is preserved in the corresponding delivered table resource metadata","source_content_sha256":"66558e06fc15a03d1c602f4aa4e42e37f5440d2e1f7a34e7ebac24914dabf1d6"},
+    {"source_block_id":"PopGen_chapter6:p046:b6","bbox":[251.0,1229.0,475.0,1252.0],"reason":"source note is preserved in the corresponding delivered table resource metadata","source_content_sha256":"d34867fa6122829aa253cd61a2c304daf42f71feaca57de05556f52163a2f3b3"}
+  ],
+  "baseline_counts": {"pages": 207, "units": 103, "blocks": 675, "formulas": 115, "tables": 29, "figures": 81, "examples": 0},
+  "legacy_inputs": ["tmp/popgen", "tmp/popgen_accuracy", "tmp/pdfs/popgen_accuracy"]
+}

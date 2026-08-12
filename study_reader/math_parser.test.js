@@ -1,6 +1,10 @@
 "use strict";
 
 const assert = require("node:assert/strict");
+const { spawnSync } = require("node:child_process");
+const fs = require("node:fs");
+const os = require("node:os");
+const path = require("node:path");
 const test = require("node:test");
 const { tokenizeMath } = require("./math_parser.js");
 
@@ -51,4 +55,27 @@ test("tokenizes table-cell inline math with the same rules", () => {
   const parsed = tokenizeMath("Expected $ p^{2}+pqF $ value");
   assert.deepEqual(parsed.diagnostics, []);
   assert.equal(parsed.tokens[1].value, "p^{2}+pqF");
+});
+
+test("strict book validation includes structured appendices", () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), "textbook-math-"));
+  fs.mkdirSync(path.join(root, "data", "structured"), { recursive: true });
+  fs.mkdirSync(path.join(root, "data", "textbook"), { recursive: true });
+  fs.writeFileSync(path.join(root, "data", "textbook", "Book_appendix1_textbook.md"), "Valid prose.\n");
+  fs.writeFileSync(
+    path.join(root, "data", "structured", "Book_appendix1_001.json"),
+    JSON.stringify({ blocks: [{ content: "broken $$ formula" }] }),
+  );
+  fs.writeFileSync(
+    path.join(root, "data", "structured", "Book_formula_library.json"),
+    JSON.stringify({ formulas: [] }),
+  );
+  const result = spawnSync(
+    process.execPath,
+    [path.join(__dirname, "..", "scripts", "validate_textbook_math.js"), "--root", root, "--books", "Book"],
+    { encoding: "utf8" },
+  );
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /Book_appendix1_001\.json/);
+  fs.rmSync(root, { recursive: true, force: true });
 });

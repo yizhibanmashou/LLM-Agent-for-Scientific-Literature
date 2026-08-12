@@ -377,62 +377,7 @@ These solutions have two troublesome properties. First, unlike our simple exampl
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter27:1` · source: `Genetics_chapter27_004.json` · blocks 52–65
->
-> Example 1. Consider the simple animal model, $ \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{a} + \mathbf{e} $, where there is only one observation per individual ( $ \mathbf{Z} = \mathbf{I} $), and we assume $ \mathbf{a} \sim \mathrm{MVN}(\mathbf{0}, \sigma_A^2 \mathbf{A}) $ and $ \mathbf{e} \sim \mathrm{MVN}(\mathbf{0}, \sigma_E^2 \mathbf{I}) $. In this case, the ML equations become
-> 
-> $$
-> \widehat{\boldsymbol{\beta}}=(\mathbf{X}^{T}\widehat{\mathbf{V}}^{-1}\mathbf{X})^{-1}\mathbf{X}^{T}\widehat{\mathbf{V}}^{-1}\mathbf{y}
-> $$
-> 
-> 
-> $$
-> \mathbf{t r}(\hat{\mathbf{V}}^{-1})=\mathbf{y}^{T}\hat{\mathbf{P}}\hat{\mathbf{P}}\mathbf{y}
-> $$
-> 
-> 
-> $$
-> \mathrm{tr}(\hat{\mathbf{V}}^{-1}\mathbf{A})=\mathbf{y}^{T}\hat{\mathbf{P}}\mathbf{A}\hat{\mathbf{P}}\mathbf{y}
-> $$
-> 
-> 
-> where
-> 
-> $$
-> \hat{\mathbf{V}}=\hat{\sigma}_{A}^{2}\mathbf{A}+\hat{\sigma}_{E}^{2}\mathbf{I}
-> $$
-> 
-> 
-> and $ \hat{P} $ is obtained by substituting $ \hat{V} $ into Equation 27.17b.
-> 
-> If we further allow for dominance, the model becomes modified to $ \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{a} + \mathbf{d} + \mathbf{e} $. Assuming $ \mathbf{a} \sim \mathrm{MVN}(\mathbf{0}, \sigma_A^2 \mathbf{A}) $, $ \mathbf{d} \sim \mathrm{MVN}(\mathbf{0}, \sigma_D^2 \mathbf{D}) $, and $ \mathbf{e} \sim \mathrm{MVN}(\mathbf{0}, \sigma_E^2 \mathbf{I}) $, the ML equations now become
-> 
-> $$
-> \hat{\boldsymbol{\beta}}=(\mathbf{X}^{T}\hat{\mathbf{V}}^{-1}\mathbf{X})^{-1}\mathbf{X}^{T}\hat{\mathbf{V}}^{-1}\mathbf{y}
-> $$
-> 
-> 
-> $$
-> \mathbf{t r}(\widehat{\mathbf{V}}^{-1})=\mathbf{y}^{T}\widehat{\mathbf{P}}\widehat{\mathbf{P}}\mathbf{y}
-> $$
-> 
-> 
-> $$
-> \mathrm{t r}(\hat{\mathbf{V}}^{-1}\mathbf{A})=\mathbf{y}^{T}\hat{\mathbf{P}}\mathbf{A}\hat{\mathbf{P}}\mathbf{y}
-> $$
-> 
-> 
-> $$
-> \mathbf{t r}(\hat{\mathbf{V}}^{-1}\mathbf{D})=\mathbf{y}^{T}\hat{\mathbf{P}}\mathbf{D}\hat{\mathbf{P}}\mathbf{y}
-> $$
-> 
-> 
-> where $ \hat{P} $ is a function of
-> 
-> $$
-> \widehat{\mathbf{V}}=\widehat{\sigma}_{A}^{2}\mathbf{A}+\widehat{\sigma}_{D}^{2}\mathbf{D}+\widehat{\sigma}_{E}^{2}\mathbf{I}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter27:1]**
 
 
 ---
@@ -485,16 +430,7 @@ The ML estimates for fixed effects are uncorrelated with those for variance comp
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter27:2` · source: `Genetics_chapter27_005.json` · blocks 12–14
->
-> Example 2. For the simple model with dominance (Example 1), the Fisher information submatrix S dealing with the ML variance estimates $ \left(\sigma_{A}^{2}, \sigma_{D}^{2}, \sigma_{E}^{2}\right) $ is
-> 
-> $$
-> \mathbf{S}=\frac{1}{2}\left(\begin{matrix}{\mathbf{t r}(\mathbf{V}^{-1}\mathbf{A}\mathbf{V}^{-1}\mathbf{A})}&{\mathbf{t r}(\mathbf{V}^{-1}\mathbf{A}\mathbf{V}^{-1}\mathbf{D})}&{\mathbf{t r}(\mathbf{V}^{-1}\mathbf{A}\mathbf{V}^{-1})}\\ {\mathbf{t r}(\mathbf{V}^{-1}\mathbf{A}\mathbf{V}^{-1}\mathbf{D})}&{\mathbf{t r}(\mathbf{V}^{-1}\mathbf{D}\mathbf{V}^{-1}\mathbf{D})}&{\mathbf{t r}(\mathbf{V}^{-1}\mathbf{D}\mathbf{V}^{-1})}\\ {\mathbf{t r}(\mathbf{V}^{-1}\mathbf{A}\mathbf{V}^{-1})}&{\mathbf{t r}(\mathbf{V}^{-1}\mathbf{D}\mathbf{V}^{-1})}&{\mathbf{t r}(\mathbf{V}^{-1}\mathbf{V}^{-1})}\\ \end{matrix}\right)
-> $$
-> 
-> 
-> where V is as given in Example 1.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter27:2]**
 
 
 ---
@@ -593,23 +529,7 @@ with $ V_{i} $ given by Equation 27.15. Estimates of the sampling variances and 
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter27:3` · source: `Genetics_chapter27_006.json` · blocks 23–27
->
-> Example 3. The REML variance-component estimates for the single-records dominance model of Example 2, $ \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{a} + \mathbf{d} + \mathbf{e} $, satisfy
-> 
-> $$
-> \begin{aligned}\mathbf{tr}(\widehat{\mathbf{P}})&=\mathbf{y}^{T}\widehat{\mathbf{P}}\widehat{\mathbf{P}}\mathbf{y}\quad&for\sigma_{E}^{2}\\\mathbf{tr}(\widehat{\mathbf{P}}\mathbf{A})&=\mathbf{y}^{T}\widehat{\mathbf{P}}\mathbf{A}\widehat{\mathbf{P}}\mathbf{y}\quad&for\sigma_{A}^{2}\\\mathbf{tr}(\widehat{\mathbf{P}}\mathbf{D})&=\mathbf{y}^{T}\widehat{\mathbf{P}}\mathbf{D}\widehat{\mathbf{P}}\mathbf{y}\quad&for\sigma_{D}^{2}\end{aligned}
-> $$
-> 
-> 
-> where $ \widehat{\mathbf{P}} $ is defined as in Equation 27.17b with $ \mathbf{V} = \widehat{\sigma}_A^2 \mathbf{A} + \widehat{\sigma}_D^2 \mathbf{D} + \widehat{\sigma}_E^2 \mathbf{I} $. For purposes of estimating sampling variances and covariances of these estimates, the information matrix is given by
-> 
-> $$
-> \mathbf{S}=\frac{1}{2}\begin{pmatrix}\mathrm{tr}(\mathbf{PAPA})&\mathrm{tr}(\mathbf{PAPD})&\mathrm{tr}(\mathbf{PAP})\\ \mathrm{tr}(\mathbf{PAPD})&\mathrm{tr}(\mathbf{PDPD})&\mathrm{tr}(\mathbf{PDP})\\ \mathrm{tr}(\mathbf{PAP})&\mathrm{tr}(\mathbf{PDP})&\mathrm{tr}(\mathbf{PP})\end{pmatrix}
-> $$
-> 
-> 
-> When the estimate of P is inserted into this matrix, the standard errors of the variance-component estimates are obtained as the square roots of the diagonal elements of $ S^{-1} $, and the covariance between $ \widehat{\sigma}_{i}^{2} $ and $ \widehat{\sigma}_{j}^{2} $ is given by $ S_{ij}^{-1} $.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter27:3]**
 
 
 ---
@@ -715,44 +635,7 @@ There are several motivations for employing this modification. First, as noted a
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter27:4` · source: `Genetics_chapter27_010.json` · blocks 18–28
->
-> Example 4. Again consider the simple animal model with a single observation per individual, $ \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{a} + \mathbf{e} $. For REML estimates, letting
-> 
-> $$
-> \mathbf{\Theta}^{(k)}=\begin{pmatrix}(\sigma_{A}^{2})^{(k)}\\ (\sigma_{E}^{2})^{(k)}\end{pmatrix}\qquad gives\qquad\frac{\partial L}{\partial\mathbf{\Theta}}=\frac{1}{2}\begin{pmatrix}-\mathbf{tr}(\mathbf{P})+\mathbf{y}^{T}\mathbf{P}\mathbf{P}\mathbf{y}\\ -\mathbf{tr}(\mathbf{P}\mathbf{A})+\mathbf{y}^{T}\mathbf{P}\mathbf{A}\mathbf{P}\mathbf{y}\end{pmatrix}
-> $$
-> 
-> 
-> Note that P is a function of the current variance-component estimates, with
-> 
-> $$
-> \mathbf{P}=(\mathbf{V}^{-1})^{(k)}-(\mathbf{V}^{-1})^{(k)}\mathbf{X}(\mathbf{X}^{T}(\mathbf{V}^{-1})^{(k)}\mathbf{X})^{-1}\mathbf{X}^{T}(\mathbf{V}^{-1})^{(k)}
-> $$
-> 
-> 
-> where
-> 
-> $$
-> \mathbf{V}^{(k)}=\left(\sigma_{A}^{2}\right)^{(k)}\mathbf{A}+\left(\sigma_{E}^{2}\right)^{(k)}\mathbf{I}
-> $$
-> 
-> 
-> with A being the relationship matrix for the individuals being measured. Likewise, from Equation 27.34 the Hessian matrix H is given by
-> 
-> $$
-> \left.\frac{\partial^{2}L}{\partial\boldsymbol{\Theta}^{2}}\right|_{\boldsymbol{\Theta}^{(k)}}=\frac{1}{2}\begin{pmatrix}\operatorname{tr}(\mathbf{P}\mathbf{P})-2\mathbf{y}^{T}\mathbf{P}\mathbf{P}\mathbf{P}\mathbf{y}&\operatorname{tr}(\mathbf{P}\mathbf{A}\mathbf{P})-2\mathbf{y}^{T}\mathbf{P}\mathbf{A}\mathbf{P}\mathbf{P}\mathbf{y}\\\operatorname{tr}(\mathbf{P}\mathbf{A}\mathbf{P})-2\mathbf{y}^{T}\mathbf{P}\mathbf{A}\mathbf{P}\mathbf{P}\mathbf{y}&\operatorname{tr}(\mathbf{P}\mathbf{A}\mathbf{P}\mathbf{A})-2\mathbf{y}^{T}\mathbf{P}\mathbf{A}\mathbf{P}\mathbf{A}\mathbf{P}\mathbf{y}\end{pmatrix}
-> $$
-> 
-> 
-> and the Fisher information matrix by
-> 
-> $$
-> \mathbf{F}=-E\left(\frac{\partial^{2}L}{\partial\boldsymbol{\Theta}^{2}}\right)=\frac{1}{2}\left(\begin{array}{c c}\mathrm{t r}(\mathbf{P}\mathbf{P})&\mathrm{t r}(\mathbf{P}\mathbf{A}\mathbf{P})\\ &\\ \mathrm{t r}(\mathbf{P}\mathbf{P}\mathbf{A})&\mathrm{t r}(\mathbf{P}\mathbf{A}\mathbf{P}\mathbf{A})\end{array}\right)
-> $$
-> 
-> 
-> Note that P is really indexed by k since it depends on the current estimates of the unknown variance components, $ \widehat{\sigma}_{A}^{2} $ and $ \widehat{\sigma}_{E}^{2} $.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter27:4]**
 
 
 ---
@@ -829,31 +712,7 @@ In general, solutions via the EM algorithm can take considerably more iterations
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_chapter27:5` · source: `Genetics_chapter27_011.json` · blocks 19–24
->
-> Example 5. Consider again the animal model with dominance and a single record per individual, $ \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{a} + \mathbf{d} + \mathbf{e} $. The EM equations for the REML estimates of $ \sigma_{A}^{2}, \sigma_{D}^{2} $, and $ \sigma_{E}^{2} $ are
-> 
-> $$
-> \left(\widehat{\sigma}_{A}^{2}\right)^{(k+1)}=\left(\widehat{\sigma}_{A}^{2}\right)^{(k)}+\frac{\left(\widehat{\sigma}_{A}^{4}\right)^{(k)}}{n}.\left\{\mathbf{y}^{T}\mathbf{P}^{(k)}\mathbf{A}\mathbf{P}^{(k)}\mathbf{y}-\mathrm{tr}\left[\mathbf{P}^{(k)}\mathbf{A}\right]\right\}
-> $$
-> 
-> 
-> $$
-> \left(\widehat{\sigma}_{D}^{2}\right)^{(k+1)}=\left(\widehat{\sigma}_{D}^{2}\right)^{(k)}+\frac{\left(\widehat{\sigma}_{D}^{4}\right)^{(k)}}{n}\left\{\mathbf{y}^{T}\mathbf{P}^{(k)}\mathbf{D}\mathbf{P}^{(k)}\mathbf{y}-\mathrm{tr}\left[\mathbf{P}^{(k)}\mathbf{D}\right]\right\}
-> $$
-> 
-> 
-> $$
-> \left(\widehat{\sigma}_{E}^{2}\right)^{(k+1)}=\left(\widehat{\sigma}_{E}^{2}\right)^{(k)}+\frac{\left(\widehat{\sigma}_{E}^{4}\right)^{(k)}}{n}\left\{\mathbf{y}^{T}\mathbf{P}^{(k)}\mathbf{P}^{(k)}\mathbf{y}-\mathbf{t r}\left[\mathbf{P}^{(k)}\right]\right\}
-> $$
-> 
-> 
-> where $ \mathbf{P}^{(k)} $ is defined by Equation 27.17b using $ \mathbf{V}^{(k)} $ for V where
-> 
-> $$
-> \mathbf{V}^{(k)}=\left(\widehat{\sigma}_{A}^{2}\right)^{(k)}\mathbf{A}+\left(\widehat{\sigma}_{D}^{2}\right)^{(k)}\mathbf{D}+\left(\widehat{\sigma}_{E}^{2}\right)^{(k)}\mathbf{I}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter27:5]**
 
 
 ---

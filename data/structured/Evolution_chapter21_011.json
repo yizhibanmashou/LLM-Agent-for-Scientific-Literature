@@ -30,19 +30,153 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Recall that the genetic covariance between two (noninbred) relatives is a function of their coefficients of coancestry, $ \\Theta $, and fraternity, $ \\Delta $, (LW Chapter 7). If we ignore epistasis (for now), the genetic covariance between a particular sib, $ x_i $, and $ y $ is $ \\sigma_G(x_i, y) = 2\\Theta_{x_i y} \\sigma_A^2 + \\Delta_{x_i y} \\sigma_D^2 $ (LW Equation 7.12). In the absence of inbreeding in $ y $ (the parents $ \\mathcal{R}_1 $ and $ \\mathcal{R}_2 $ are from different, unrelated families; $ \\Theta_{\\mathcal{R}_1, \\mathcal{R}_2} = 0 $), $ \\Delta_{xy} $ is zero. Note that $ \\Delta = 0 $ even when $ \\mathcal{R}_1 $ and / or $ \\mathcal{R}_2 $ are themselves inbred, provided that they are unrelated. For dominance effects to be shared by relatives, there must be paths wherein both alleles from an individual, $ x $, in the selection unit are passed onto the offspring, $ y $, which cannot occur if the parents of $ y $ ($ \\mathcal{R}_1 $ and $ \\mathcal{R}_2 $) are unrelated."
+      "content": "Recall that the genetic covariance between two (noninbred) relatives is a function of their coefficients of coancestry, $ \\Theta $, and fraternity, $ \\Delta $, (LW Chapter 7). If we ignore epistasis (for now), the genetic covariance between a particular sib, $ x_i $, and $ y $ is $ \\sigma_G(x_i, y) = 2\\Theta_{x_i y} \\sigma_A^2 + \\Delta_{x_i y} \\sigma_D^2 $ (LW Equation 7.12). In the absence of inbreeding in $ y $ (the parents $ \\mathcal{R}_1 $ and $ \\mathcal{R}_2 $ are from different, unrelated families; $ \\Theta_{\\mathcal{R}_1, \\mathcal{R}_2} = 0 $), $ \\Delta_{xy} $ is zero. Note that $ \\Delta = 0 $ even when $ \\mathcal{R}_1 $ and / or $ \\mathcal{R}_2 $ are themselves inbred, provided that they are unrelated. For dominance effects to be shared by relatives, there must be paths wherein both alleles from an individual, $ x $, in the selection unit are passed onto the offspring, $ y $, which cannot occur if the parents of $ y $ ($ \\mathcal{R}_1 $ and $ \\mathcal{R}_2 $) are unrelated.",
+      "source_page": 713,
+      "source_pages": [
+        713
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p013:b5",
+        "Evolution_chapter21:p013:b6"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          631.0,
+          562.0,
+          655.0
+        ],
+        [
+          131.0,
+          661.0,
+          903.0,
+          868.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b44d1f7de513239876906768746f5cbf67380411171e36dc2f6751bbb86d005c"
     },
     {
       "type": "discussion",
-      "content": "The coefficient of coancestry between $ x_1 $ and $ y $ depends upon the relationship between $ \\mathcal{R}_1 $ and $ x_1 $. The designs covered in [[SEE_TABLE:21.1]] involve four different relationships (Figure 21.2): (i) $ x_1 = \\mathcal{R}_1 $ (a measured sib is a parent of $ y $), (ii) $ x_1 $ and $ \\mathcal{R}_1 $ are sibs, (iii) $ \\mathcal{R}_1 = P_1 $ (the parent of $ x_1 $), and (iv) $ \\mathcal{R}_1 $ is the selfed-progeny of the parent of $ x_1 $. The path diagrams for computing $ \\Theta_{x_1y} $ for these four relationships are given in Figure 21.3, and [[SEE_TABLE:21.2]] summarizes the resulting genetic covariances. The parents, $ P_i $, are assumed to be non-inbred (i.e., $ \\Theta_{P_i P_i} = 1/2 $). If they are inbred, then $ \\Theta_{P_i P_i} = (1 + f_i)/2 $, where $ i $ is the inbreeding coefficient on that parent, and the expressions in [[SEE_TABLE:21.2]] are multiplied by this additional factor (for each inbred parent). As an example of how the coefficients of coancestry given in [[SEE_TABLE:21.2]] are used, consider family selection. Ignoring epistasis, $$ \\begin{align*}\\sigma(\\overline{z}_{i},y\\mid\\mathcal{R}_{1}=x_{ij})&=\\frac{1}{n}\\sum_{k}\\sigma(z_{ik},y\\mid\\mathcal{R}_{1}=x_{ij})=\\frac{1}{n}\\sigma(z_{ij},y)+\\left(1-\\frac{1}{n}\\right)\\sigma(z_{ik},y)\\\\&=\\sigma_{A}^{2}\\left[\\frac{1/2}{n}+\\left(1-\\frac{1}{n}\\right)2\\Theta_{z_{ik}y}\\right]\\quad;()\\end{align*} $$"
+      "content": "The coefficient of coancestry between $ x_1 $ and $ y $ depends upon the relationship between $ \\mathcal{R}_1 $ and $ x_1 $. The designs covered in [[SEE_TABLE:21.1]] involve four different relationships (Figure 21.2): (i) $ x_1 = \\mathcal{R}_1 $ (a measured sib is a parent of $ y $), (ii) $ x_1 $ and $ \\mathcal{R}_1 $ are sibs, (iii) $ \\mathcal{R}_1 = P_1 $ (the parent of $ x_1 $), and (iv) $ \\mathcal{R}_1 $ is the selfed-progeny of the parent of $ x_1 $. The path diagrams for computing $ \\Theta_{x_1y} $ for these four relationships are given in Figure 21.3, and [[SEE_TABLE:21.2]] summarizes the resulting genetic covariances. The parents, $ P_i $, are assumed to be non-inbred (i.e., $ \\Theta_{P_i P_i} = 1/2 $). If they are inbred, then $ \\Theta_{P_i P_i} = (1 + f_i)/2 $, where $ i $ is the inbreeding coefficient on that parent, and the expressions in [[SEE_TABLE:21.2]] are multiplied by this additional factor (for each inbred parent). As an example of how the coefficients of coancestry given in [[SEE_TABLE:21.2]] are used, consider family selection. Ignoring epistasis, $$ \\begin{align*}\\sigma(\\overline{z}_{i},y\\mid\\mathcal{R}_{1}=x_{ij})&=\\frac{1}{n}\\sum_{k}\\sigma(z_{ik},y\\mid\\mathcal{R}_{1}=x_{ij})=\\frac{1}{n}\\sigma(z_{ij},y)+\\left(1-\\frac{1}{n}\\right)\\sigma(z_{ik},y)\\\\&=\\sigma_{A}^{2}\\left[\\frac{1/2}{n}+\\left(1-\\frac{1}{n}\\right)2\\Theta_{z_{ik}y}\\right]\\quad;()\\end{align*} $$",
+      "source_page": 708,
+      "source_pages": [
+        708,
+        712,
+        713
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p008:b2",
+        "Evolution_chapter21:p008:b3",
+        "Evolution_chapter21:p012:b12",
+        "Evolution_chapter21:p013:b3",
+        "Evolution_chapter21:p013:b7",
+        "Evolution_chapter21:p013:b8",
+        "Evolution_chapter21:p013:b9"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          207.0,
+          1060.0,
+          317.0
+        ],
+        [
+          287.0,
+          329.0,
+          1063.0,
+          815.0
+        ],
+        [
+          322.0,
+          1276.0,
+          1047.0,
+          1456.0
+        ],
+        [
+          146.0,
+          288.0,
+          897.0,
+          475.0
+        ],
+        [
+          134.0,
+          869.0,
+          903.0,
+          1074.0
+        ],
+        [
+          132.0,
+          1075.0,
+          903.0,
+          1122.0
+        ],
+        [
+          180.0,
+          1146.0,
+          853.0,
+          1259.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c2d6c195aeebb769ac6fe152ba9ef298e32b3a852ca983d345366decb1381db7"
     },
     {
       "type": "discussion",
-      "content": "This follows because the first covariance, $ \\sigma(z_{ij}, y) $, is for parent and offspring $ (\\sigma_A^2/2) $, while the second covariance, $ \\sigma(z_{ik}, y) $, follows using the appropriate value of $ 2\\Theta $ from [[SEE_TABLE:21.2]] (1/8 for half-sibs and 1/4 for full-sibs). Using the results from [[SEE_TABLE:21.2]], expressions for the sib selection, parental selection (progeny testing), and $ S_1 $ seed designs follow in similar fashion. These are summarized in [[SEE_TABLE:21.3]]."
+      "content": "This follows because the first covariance, $ \\sigma(z_{ij}, y) $, is for parent and offspring $ (\\sigma_A^2/2) $, while the second covariance, $ \\sigma(z_{ik}, y) $, follows using the appropriate value of $ 2\\Theta $ from [[SEE_TABLE:21.2]] (1/8 for half-sibs and 1/4 for full-sibs). Using the results from [[SEE_TABLE:21.2]], expressions for the sib selection, parental selection (progeny testing), and $ S_1 $ seed designs follow in similar fashion. These are summarized in [[SEE_TABLE:21.3]].",
+      "source_page": 712,
+      "source_pages": [
+        712,
+        713
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p012:b12",
+        "Evolution_chapter21:p013:b10",
+        "Evolution_chapter21:p013:b3"
+      ],
+      "source_bboxes": [
+        [
+          322.0,
+          1276.0,
+          1047.0,
+          1456.0
+        ],
+        [
+          131.0,
+          1283.0,
+          904.0,
+          1399.0
+        ],
+        [
+          146.0,
+          288.0,
+          897.0,
+          475.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9b78bf3c82b1721446d81dca7352fe4bcc843021af05851bb3223dc940a67ba8"
     },
     {
       "type": "discussion",
-      "content": "In much of the animal-breeding literature, Wright's coefficient of relationship, r, is used in place of $ 2\\Theta $. Assuming no inbreeding, r = 1/4 for half-sibs and 1/2 for full-sibs."
+      "content": "In much of the animal-breeding literature, Wright's coefficient of relationship, r, is used in place of $ 2\\Theta $. Assuming no inbreeding, r = 1/4 for half-sibs and 1/2 for full-sibs.",
+      "source_page": 713,
+      "source_pages": [
+        713
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p013:b12"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1400.0,
+          900.0,
+          1448.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cb8b2757483f2899e226d5a83d648467b5facc0bb428ccc13105cdb488ed71a5"
     }
   ]
 }

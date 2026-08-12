@@ -21,43 +21,384 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Hudson, Kreitman, and Aguadé (1987) proposed the first approach to jointly use polymorphism and divergence data. Unlike many of the other divergence-based tests, their's can be applied to any type of sequence data (not just a contrast between replacement and silent sites). Their HKA test is formulated as follows. Consider two species (or very distantly related populations) A and B, which are both at mutation-drift equilibrium with effective population sizes of $ N_A = N_e $ and $ N_B = \\delta N_e $. Further assume that they separated $ \\tau = t/(2N_e) $ generations ago from a common population of size $ N_e^* = (N_A + N_B)/2 = N_e(1 + \\delta)/2 $, the average of the two current population sizes. Suppose $ i = 1, \\cdots, L $ unlinked loci are examined in both species. We allow the neutral mutation rate, $ \\mu_i $, to vary over loci, but assume (for a given locus) that it has been the same in both species, and hence unchanged during divergence. The expected number of neutral segregating sites at locus i is a function of $ \\theta_i = 4N_e\\mu_i $ in species A, and $ 4N_B\\mu_i = 4(\\delta N_e)\\mu_i = \\delta\\theta_i $ in species B. The expected divergence between A and B is $ 2t\\mu_i $, which we can express as $$ 2t\\mu_{i}=2\\frac{t}{2N_{e}}2N_{e}\\mu_{i}=\\tau\\theta_{i} $$"
+      "content": "Hudson, Kreitman, and Aguadé (1987) proposed the first approach to jointly use polymorphism and divergence data. Unlike many of the other divergence-based tests, their's can be applied to any type of sequence data (not just a contrast between replacement and silent sites). Their HKA test is formulated as follows. Consider two species (or very distantly related populations) A and B, which are both at mutation-drift equilibrium with effective population sizes of $ N_A = N_e $ and $ N_B = \\delta N_e $. Further assume that they separated $ \\tau = t/(2N_e) $ generations ago from a common population of size $ N_e^* = (N_A + N_B)/2 = N_e(1 + \\delta)/2 $, the average of the two current population sizes. Suppose $ i = 1, \\cdots, L $ unlinked loci are examined in both species. We allow the neutral mutation rate, $ \\mu_i $, to vary over loci, but assume (for a given locus) that it has been the same in both species, and hence unchanged during divergence. The expected number of neutral segregating sites at locus i is a function of $ \\theta_i = 4N_e\\mu_i $ in species A, and $ 4N_B\\mu_i = 4(\\delta N_e)\\mu_i = \\delta\\theta_i $ in species B. The expected divergence between A and B is $ 2t\\mu_i $, which we can express as $$ 2t\\mu_{i}=2\\frac{t}{2N_{e}}2N_{e}\\mu_{i}=\\tau\\theta_{i} $$",
+      "source_page": 340,
+      "source_pages": [
+        340
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p005:b7",
+        "Evolution_chapter10:p005:b8",
+        "Evolution_chapter10:p005:b9"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          1020.0,
+          519.0,
+          1042.0
+        ],
+        [
+          132.0,
+          1050.0,
+          904.0,
+          1352.0
+        ],
+        [
+          405.0,
+          1365.0,
+          631.0,
+          1409.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "83b8be2fa5db3a58abcf160b5e4537a2248484cb0626d130c0fe3576f45e1db8"
     },
     {
       "type": "discussion",
-      "content": "Under this model, the levels of polymorphism (measured by the number of segregating sites) and divergence at the L loci are a function of $ L + 2 $ parameters: L gene-specific $ \\theta_{i} $ values, and two demographic parameters ($ \\delta $ and $ \\tau $) shared by all loci. To estimate these parameters, we have 3L observations: the numbers $ S_i^A $ and $ S_i^B $ of segregating sites at each of the L loci in each species or population, and the number, $ D_i $, of substitutions between each pair of L loci. Under the HKA test, these data are first used to estimate the model parameters, and then a goodness-of-fit test is performed on the observed data. If the model provides a sufficiently poor fit, the equilibrium neutral model is rejected."
+      "content": "Under this model, the levels of polymorphism (measured by the number of segregating sites) and divergence at the L loci are a function of $ L + 2 $ parameters: L gene-specific $ \\theta_{i} $ values, and two demographic parameters ($ \\delta $ and $ \\tau $) shared by all loci. To estimate these parameters, we have 3L observations: the numbers $ S_i^A $ and $ S_i^B $ of segregating sites at each of the L loci in each species or population, and the number, $ D_i $, of substitutions between each pair of L loci. Under the HKA test, these data are first used to estimate the model parameters, and then a goodness-of-fit test is performed on the observed data. If the model provides a sufficiently poor fit, the equilibrium neutral model is rejected.",
+      "source_page": 340,
+      "source_pages": [
+        340,
+        341
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p005:b10",
+        "Evolution_chapter10:p006:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1422.0,
+          902.0,
+          1471.0
+        ],
+        [
+          287.0,
+          206.0,
+          1059.0,
+          346.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f5c56cefe20dda2bc4a7af19df05f9517246073e1cefea26081d99cff8c43b9a"
     },
     {
       "type": "discussion",
-      "content": "More formally, the HKA test statistic, $ X^{2} $, is given by $$ X^{2}=\\sum_{i=1}^{L}X_{i}^{2} $$ where $$ X_{i}^{2}=\\frac{\\left(S_{i}^{A}-\\widehat{E}[S_{i}^{A}]\\right)^{2}}{\\mathrm{Var}(S_{i}^{A})}+\\frac{\\left(S_{i}^{B}-\\widehat{E}[S_{i}^{B}]\\right)^{2}}{\\mathrm{Var}(S_{i}^{B})}+\\frac{\\left(D_{i}-\\widehat{E}[D_{i}]\\right)^{2}}{\\mathrm{Var}(D_{i})} $$ is the contribution to overall lack-of-fit from gene i. We use the notation $ \\widehat{E}[] $ to denote the estimate of an expectation, which is obtained by using estimates (also denoted by carets) of the parameters (Equations 10.3a through 10.3d). For $ n_A $ samples (haploid sequences from each of the $ L $ loci) from species $ A $ and $ n_B $ samples from species $ B $, $$ \\widehat{E}[S_{i}^{A}]=\\widehat{\\theta}_{i}a_{n_{A}},\\quad\\widehat{E}[S_{i}^{B}]=\\widehat{\\delta}\\widehat{\\theta}_{i}a_{n_{B}},\\quad\\mathrm{w h e r e}\\quad a_{n_{x}}=\\sum_{i=1}^{n_{x}-1}\\frac{1}{i} $$ $$ \\mathrm{V a r}(S_{i}^{A})=\\widehat{\\theta}_{i}a_{n_{A}}+\\widehat{\\theta}_{i}^{2}b_{n_{A}},\\quad\\mathrm{V a r}(S_{i}^{B})=\\widehat{\\delta}\\widehat{\\theta}_{i}a_{n_{A}}+\\widehat{\\delta}^{2}\\widehat{\\theta}_{i}^{2}b_{n_{B}},\\quad b_{n_{x}}=\\sum_{i=1}^{n_{x}-1}\\frac{1}{i^{2}} $$ $$ \\widehat{E}[D_{i}]=\\widehat{\\theta}_{i}\\left(\\widehat{\\tau}+\\frac{1+\\widehat{\\delta}}{2}\\right) $$ $$ \\mathrm{Var}(D_{i})=\\widehat{\\theta}_{i}\\left(\\widehat{\\tau}+\\frac{1+\\widehat{\\delta}}{2}\\right)+\\left(\\frac{\\widehat{\\theta}_{i}(1+\\widehat{\\delta})}{2}\\right)^{2} $$"
+      "content": "More formally, the HKA test statistic, $ X^{2} $, is given by $$ X^{2}=\\sum_{i=1}^{L}X_{i}^{2} $$ where $$ X_{i}^{2}=\\frac{\\left(S_{i}^{A}-\\widehat{E}[S_{i}^{A}]\\right)^{2}}{\\mathrm{Var}(S_{i}^{A})}+\\frac{\\left(S_{i}^{B}-\\widehat{E}[S_{i}^{B}]\\right)^{2}}{\\mathrm{Var}(S_{i}^{B})}+\\frac{\\left(D_{i}-\\widehat{E}[D_{i}]\\right)^{2}}{\\mathrm{Var}(D_{i})} $$ is the contribution to overall lack-of-fit from gene i. We use the notation $ \\widehat{E}[] $ to denote the estimate of an expectation, which is obtained by using estimates (also denoted by carets) of the parameters (Equations 10.3a through 10.3d). For $ n_A $ samples (haploid sequences from each of the $ L $ loci) from species $ A $ and $ n_B $ samples from species $ B $, $$ \\widehat{E}[S_{i}^{A}]=\\widehat{\\theta}_{i}a_{n_{A}},\\quad\\widehat{E}[S_{i}^{B}]=\\widehat{\\delta}\\widehat{\\theta}_{i}a_{n_{B}},\\quad\\mathrm{w h e r e}\\quad a_{n_{x}}=\\sum_{i=1}^{n_{x}-1}\\frac{1}{i} $$ $$ \\mathrm{V a r}(S_{i}^{A})=\\widehat{\\theta}_{i}a_{n_{A}}+\\widehat{\\theta}_{i}^{2}b_{n_{A}},\\quad\\mathrm{V a r}(S_{i}^{B})=\\widehat{\\delta}\\widehat{\\theta}_{i}a_{n_{A}}+\\widehat{\\delta}^{2}\\widehat{\\theta}_{i}^{2}b_{n_{B}},\\quad b_{n_{x}}=\\sum_{i=1}^{n_{x}-1}\\frac{1}{i^{2}} $$ $$ \\widehat{E}[D_{i}]=\\widehat{\\theta}_{i}\\left(\\widehat{\\tau}+\\frac{1+\\widehat{\\delta}}{2}\\right) $$ $$ \\mathrm{Var}(D_{i})=\\widehat{\\theta}_{i}\\left(\\widehat{\\tau}+\\frac{1+\\widehat{\\delta}}{2}\\right)+\\left(\\frac{\\widehat{\\theta}_{i}(1+\\widehat{\\delta})}{2}\\right)^{2} $$",
+      "source_page": 341,
+      "source_pages": [
+        341
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p006:b3",
+        "Evolution_chapter10:p006:b4",
+        "Evolution_chapter10:p006:b6",
+        "Evolution_chapter10:p006:b7",
+        "Evolution_chapter10:p006:b9",
+        "Evolution_chapter10:p006:b10",
+        "Evolution_chapter10:p006:b12",
+        "Evolution_chapter10:p006:b14",
+        "Evolution_chapter10:p006:b16"
+      ],
+      "source_bboxes": [
+        [
+          326.0,
+          345.0,
+          784.0,
+          368.0
+        ],
+        [
+          616.0,
+          387.0,
+          732.0,
+          449.0
+        ],
+        [
+          289.0,
+          464.0,
+          351.0,
+          486.0
+        ],
+        [
+          418.0,
+          479.0,
+          928.0,
+          550.0
+        ],
+        [
+          287.0,
+          561.0,
+          1060.0,
+          656.0
+        ],
+        [
+          421.0,
+          675.0,
+          927.0,
+          734.0
+        ],
+        [
+          318.0,
+          755.0,
+          970.0,
+          812.0
+        ],
+        [
+          568.0,
+          823.0,
+          775.0,
+          884.0
+        ],
+        [
+          488.0,
+          895.0,
+          857.0,
+          959.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e613196e83ae098f28947b2de63f026ac330940408f618789f15927bf5a419f6"
     },
     {
       "type": "discussion",
-      "content": "Equations 10.3a and 10.3b follow from the infinite-sites model (Equations 4.3a and 4.4a, respectively). Equation 10.3c follows if we rewrite $$ \\theta_{i}\\left(\\tau+\\frac{1+\\delta}{2}\\right)=4N_{e}\\mu_{i}\\left(\\frac{t}{2N_{e}}+\\frac{1+\\delta}{2}\\right)=2\\mu_{i}t+4\\mu_{i}\\frac{N_{e}(1+\\delta)}{2}=2\\mu_{i}t+4N_{e}^{*}\\mu_{i} $$"
+      "content": "Equations 10.3a and 10.3b follow from the infinite-sites model (Equations 4.3a and 4.4a, respectively). Equation 10.3c follows if we rewrite $$ \\theta_{i}\\left(\\tau+\\frac{1+\\delta}{2}\\right)=4N_{e}\\mu_{i}\\left(\\frac{t}{2N_{e}}+\\frac{1+\\delta}{2}\\right)=2\\mu_{i}t+4\\mu_{i}\\frac{N_{e}(1+\\delta)}{2}=2\\mu_{i}t+4N_{e}^{*}\\mu_{i} $$",
+      "source_page": 341,
+      "source_pages": [
+        341
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p006:b18",
+        "Evolution_chapter10:p006:b19"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          967.0,
+          1058.0,
+          1017.0
+        ],
+        [
+          329.0,
+          1030.0,
+          1016.0,
+          1082.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4a643254aa3c9ab82fb9a3f308eb6559582fbe73817c522b0750abc634bfb04b"
     },
     {
       "type": "discussion",
-      "content": "The first term in the right-most expression is the between-population divergence due to new mutations, while the second term is the divergence from the partitioning of any initial polymorphism, $ 4N_e^* \\mu_i $, present in the ancestral population. The HKA test statistic $ X^2 $ is approximately $ \\chi^2 $-distributed with $ 3L - (L + 2) = 2L - 2 $ degrees of freedom, given the 3L observations and $ L + 2 $ parameters to estimate. Hudson et al. suggested the following system of equations for estimating the unknown parameters $ (\\theta_1, \\cdots, \\theta_l, \\delta, \\tau) $, given the $ 1 \\leq i \\leq L $ observed values of $ S_i^A $, $ S_i^B $, and $ D_i $. $$ \\sum_{i=1}^{L}S_{i}^{A}=a_{n_{A}}\\sum_{i=1}^{L}\\widehat{\\theta}_{i} $$ $$ \\sum_{i=1}^{L}S_{i}^{B}=\\widehat{\\delta}a_{n_{B}}\\sum_{i=1}^{L}\\widehat{\\theta}_{i} $$ $$ \\sum_{i=1}^{L}D_{i}=\\left(\\widehat{\\tau}+\\frac{1+\\widehat{\\delta}}{2}\\right)\\sum_{i=1}^{L}\\widehat{\\theta}_{i} $$ $$ S_{i}^{A}+S_{i}^{B}+D_{i}=\\widehat{\\theta}_{i}\\left(\\widehat{\\tau}+\\frac{1+\\widehat{\\delta}}{2}+a_{n_{A}}+\\widehat{\\delta}\\cdot a_{n_{B}}\\right)\\quad for i=1,\\cdots,L-1 $$"
+      "content": "The first term in the right-most expression is the between-population divergence due to new mutations, while the second term is the divergence from the partitioning of any initial polymorphism, $ 4N_e^* \\mu_i $, present in the ancestral population. The HKA test statistic $ X^2 $ is approximately $ \\chi^2 $-distributed with $ 3L - (L + 2) = 2L - 2 $ degrees of freedom, given the 3L observations and $ L + 2 $ parameters to estimate. Hudson et al. suggested the following system of equations for estimating the unknown parameters $ (\\theta_1, \\cdots, \\theta_l, \\delta, \\tau) $, given the $ 1 \\leq i \\leq L $ observed values of $ S_i^A $, $ S_i^B $, and $ D_i $. $$ \\sum_{i=1}^{L}S_{i}^{A}=a_{n_{A}}\\sum_{i=1}^{L}\\widehat{\\theta}_{i} $$ $$ \\sum_{i=1}^{L}S_{i}^{B}=\\widehat{\\delta}a_{n_{B}}\\sum_{i=1}^{L}\\widehat{\\theta}_{i} $$ $$ \\sum_{i=1}^{L}D_{i}=\\left(\\widehat{\\tau}+\\frac{1+\\widehat{\\delta}}{2}\\right)\\sum_{i=1}^{L}\\widehat{\\theta}_{i} $$ $$ S_{i}^{A}+S_{i}^{B}+D_{i}=\\widehat{\\theta}_{i}\\left(\\widehat{\\tau}+\\frac{1+\\widehat{\\delta}}{2}+a_{n_{A}}+\\widehat{\\delta}\\cdot a_{n_{B}}\\right)\\quad for i=1,\\cdots,L-1 $$",
+      "source_page": 341,
+      "source_pages": [
+        341,
+        342
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p006:b20",
+        "Evolution_chapter10:p006:b21",
+        "Evolution_chapter10:p006:b23",
+        "Evolution_chapter10:p006:b25",
+        "Evolution_chapter10:p007:b2"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1097.0,
+          1058.0,
+          1261.0
+        ],
+        [
+          547.0,
+          1274.0,
+          721.0,
+          1339.0
+        ],
+        [
+          547.0,
+          1343.0,
+          734.0,
+          1406.0
+        ],
+        [
+          550.0,
+          1409.0,
+          801.0,
+          1474.0
+        ],
+        [
+          189.0,
+          204.0,
+          788.0,
+          260.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "813ee2f5a13701f20fcc8f6bd22e9aa2cb41b5e39b61667ebdab0f6418942040"
     },
     {
       "type": "discussion",
-      "content": "Equations 10.4a through 10.4c are each single equations, while Equation 10.4d is a set of $ L - 1 $ equations (Equation 10.4d is automatically satisfied for $ i = L $ when Equations 10.4a–10.4c hold). This set of $ L + 2 $ equations can be solved numerically for the $ L \\widehat{\\theta}_i $ values unique to each locus and the common demographic values $ \\widehat{\\delta} $ and $ \\widehat{\\tau} $, thus generating the estimated values for the $ X^2 $ statistic (Equations 10.3a–10.3d). The HKA model assumes that there is no recombination within a gene but that there is free recombination between genes, thus treating distinct genes as independent. If a significant HKA value is found, the gene-specific $ X_i^2 $ values (Equation 10.2b) indicate which loci contributed the most to the lack of fit."
+      "content": "Equations 10.4a through 10.4c are each single equations, while Equation 10.4d is a set of $ L - 1 $ equations (Equation 10.4d is automatically satisfied for $ i = L $ when Equations 10.4a–10.4c hold). This set of $ L + 2 $ equations can be solved numerically for the $ L \\widehat{\\theta}_i $ values unique to each locus and the common demographic values $ \\widehat{\\delta} $ and $ \\widehat{\\tau} $, thus generating the estimated values for the $ X^2 $ statistic (Equations 10.3a–10.3d). The HKA model assumes that there is no recombination within a gene but that there is free recombination between genes, thus treating distinct genes as independent. If a significant HKA value is found, the gene-specific $ X_i^2 $ values (Equation 10.2b) indicate which loci contributed the most to the lack of fit.",
+      "source_page": 342,
+      "source_pages": [
+        342
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p007:b4"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          270.0,
+          904.0,
+          463.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "139cbe13918fc4d44b1ac667af4d440d7535feff64fe819d0cdab32dbc8327b2"
     },
     {
       "type": "discussion",
-      "content": "Modifications of the HKA test were proposed by Wright and Charlesworth (2004), who presented a maximum-likelihood version, and Innan (2006), who framed the test in terms of the polymorphism-divergence ratio, r. This formulation allowed Innan to consider a joint test involving r and a site-frequency measure (such as Tajima's D) to provide more support for selection at a site (Innan's two-dimensional test). An interesting application of this class of tests is the work of Ochola et al. (2010) in searching for vaccine targets in the malaria parasite Plasmodium falciparum. Their reasoning was that proteins in the parasite that are the target of naturally acquired host immunity (i.e., arms-race genes) are often under balancing selection. Hence, searching for loci with balancing-selection signals (a high HKA ratio coupled with high positive value of Tajima's D) can suggest potential candidates."
+      "content": "Modifications of the HKA test were proposed by Wright and Charlesworth (2004), who presented a maximum-likelihood version, and Innan (2006), who framed the test in terms of the polymorphism-divergence ratio, r. This formulation allowed Innan to consider a joint test involving r and a site-frequency measure (such as Tajima's D) to provide more support for selection at a site (Innan's two-dimensional test). An interesting application of this class of tests is the work of Ochola et al. (2010) in searching for vaccine targets in the malaria parasite Plasmodium falciparum. Their reasoning was that proteins in the parasite that are the target of naturally acquired host immunity (i.e., arms-race genes) are often under balancing selection. Hence, searching for loci with balancing-selection signals (a high HKA ratio coupled with high positive value of Tajima's D) can suggest potential candidates.",
+      "source_page": 342,
+      "source_pages": [
+        342
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p007:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          462.0,
+          905.0,
+          695.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "eec48fa4bc18942be3acf442f78eaedb4cacfcb6c950d117802ef6bdaaecffac"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:10.3]]"
+      "content": "[[SEE_EXAMPLE:10.3]]",
+      "source_page": 342,
+      "source_pages": [
+        342,
+        343
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p007:b10",
+        "Evolution_chapter10:p007:b11",
+        "Evolution_chapter10:p007:b12",
+        "Evolution_chapter10:p007:b13",
+        "Evolution_chapter10:p007:b6",
+        "Evolution_chapter10:p007:b7",
+        "Evolution_chapter10:p007:b8",
+        "Evolution_chapter10:p007:b9",
+        "Evolution_chapter10:p008:b2"
+      ],
+      "source_bboxes": [
+        [
+          304.0,
+          1296.0,
+          680.0,
+          1323.0
+        ],
+        [
+          168.0,
+          1342.0,
+          778.0,
+          1367.0
+        ],
+        [
+          314.0,
+          1382.0,
+          732.0,
+          1410.0
+        ],
+        [
+          168.0,
+          1425.0,
+          880.0,
+          1470.0
+        ],
+        [
+          166.0,
+          761.0,
+          881.0,
+          993.0
+        ],
+        [
+          166.0,
+          993.0,
+          881.0,
+          1205.0
+        ],
+        [
+          303.0,
+          1219.0,
+          654.0,
+          1248.0
+        ],
+        [
+          305.0,
+          1255.0,
+          743.0,
+          1287.0
+        ],
+        [
+          322.0,
+          206.0,
+          1035.0,
+          271.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9f09111cec7235e6abc05305392a1eec8ba013679f2209f65a4a245a83454637"
     },
     {
       "type": "discussion",
-      "content": "Although Equations 10.3 and 10.4 assume that all loci are autosomal, with care, sex-linked and organelle genes can also be incorporated. If all compared loci are X-linked, Equations 10.3 and 10.4 apply. However, if the loci are a mixture of autosomal and sex-linked, the $ \\theta_i $ terms for sex-linked loci must be multiplied by 3/4 (under equal sex ratios), as their expected levels of neutral polymorphism are $ 3N_e\\mu_i $ (Begun and Aquadro 1991; see Lynch 2007 for more general results). Finally, while the HKA test can accommodate mitochondrial or chloroplast genes, they introduce three concerns. First, all sequences from a given organelle are generally completely linked (because such genomes typically are nonrecombining), and thus must be treated as a single locus. Second, organelle loci have a different effective population size from autosomal genes, which also requires a scaling of their $ \\theta $ value (typically by 1/4 to 1/2, but other values may be justified). The third issue is a bit more subtle. Given that most organelle genomes are only transmitted through females, the population structure and demographic history of nuclear genes (which are an average of the two parents) can be significantly different from that of organelle genes (females only). This raises special concerns in HKA comparisons of genes between nuclear and organelle genomes."
+      "content": "Although Equations 10.3 and 10.4 assume that all loci are autosomal, with care, sex-linked and organelle genes can also be incorporated. If all compared loci are X-linked, Equations 10.3 and 10.4 apply. However, if the loci are a mixture of autosomal and sex-linked, the $ \\theta_i $ terms for sex-linked loci must be multiplied by 3/4 (under equal sex ratios), as their expected levels of neutral polymorphism are $ 3N_e\\mu_i $ (Begun and Aquadro 1991; see Lynch 2007 for more general results). Finally, while the HKA test can accommodate mitochondrial or chloroplast genes, they introduce three concerns. First, all sequences from a given organelle are generally completely linked (because such genomes typically are nonrecombining), and thus must be treated as a single locus. Second, organelle loci have a different effective population size from autosomal genes, which also requires a scaling of their $ \\theta $ value (typically by 1/4 to 1/2, but other values may be justified). The third issue is a bit more subtle. Given that most organelle genomes are only transmitted through females, the population structure and demographic history of nuclear genes (which are an average of the two parents) can be significantly different from that of organelle genes (females only). This raises special concerns in HKA comparisons of genes between nuclear and organelle genomes.",
+      "source_page": 343,
+      "source_pages": [
+        343
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p008:b3"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          335.0,
+          1060.0,
+          706.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f05d2e2c85c91ab875938fe502303fa30e5145acb206f5928f8e27bb1a4e7e22"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:10.4]]"
+      "content": "[[SEE_EXAMPLE:10.4]]",
+      "source_page": 343,
+      "source_pages": [
+        343
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p008:b4"
+      ],
+      "source_bboxes": [
+        [
+          321.0,
+          772.0,
+          1037.0,
+          1093.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e081939430f00a508d6ea48193a6876ed17462da5bd1ec7cf4d78c6363cca37e"
     }
   ]
 }

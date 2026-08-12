@@ -307,14 +307,14 @@ to be the additive genetic correlation between environments (Chapter 21). The ex
 >
 > Species | Mother-Daughter | Father-Son | Reference
 > --- | --- | --- | ---
-> Clutch size |  |  | 
+> Clutch size |  |  |
 > Anser caerulescens | 0.61 $ \pm $ 0.19 | — | Findlay and Cooke 1983
 > Ficedula albicollis | 0.32 $ \pm $ 0.14 | — | Gustafsson 1986
 > Geospiza fortis | $ -0.17 \pm 0.12 $ | — | Gibbs 1988
 > Parus major | 0.48 $ \pm $ 0.10 | — | Perrins and Jones 1974
 >  | 0.37 $ \pm $ 0.12 | — | van Noordwijk et al. 1981
 > Sturnus vulgaris | 0.34 $ \pm $ 0.08 | — | Flux and Flux 1982
-> Tarsus length |  |  | 
+> Tarsus length |  |  |
 > Ficedula albicollis | 0.50 $ \pm $ 0.22 | 0.43 $ \pm $ 0.14 | Gustafsson 1986
 >  | 0.65 $ \pm $ 0.07 | 0.53 $ \pm $ 0.04 | Merilä and Gustafsson 1993
 > Ficedula hypoleuca $ ^{*} $ | 0.50 $ \pm $ 0.22 | — | Alatalo and Lundberg 1986
@@ -323,7 +323,7 @@ to be the additive genetic correlation between environments (Chapter 21). The ex
 > Melospiza melodia $ ^{*} $ | 1.12 $ \pm $ 0.37 | 0.90 $ \pm $ 0.33 | Smith and Dhondt 1980
 >  | 0.34 $ \pm $ 0.15 | 0.37 $ \pm $ 0.18 | Smith and Zach 1979
 > Parus caerulescens $ ^{*} $ | 0.78 $ \pm $ 0.26 | 0.62 $ \pm $ 0.28 | Dhondt 1982
-> Bill length |  |  | 
+> Bill length |  |  |
 > Ficedula albicollis | 0.43 $ \pm $ 0.12 | 0.37 $ \pm $ 0.12 | Gustafsson 1986
 >  | 0.43 $ \pm $ 0.07 | 0.44 $ \pm $ 0.06 | Merilä and Gustafsson 1993
 > Geospiza fortis | 1.09 $ \pm $ 0.42 | 1.06 $ \pm $ 0.27 | Boag and Grant 1978

@@ -21,15 +21,94 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "The original estimator for the FDR was introduced by Benjamini and Hochberg (1995). Suppose we declare a test to be significant if its $p$ value is at or below some threshold value, $\\tau = p(k)$, in which case $k$ of the hypotheses will be declared significant (as $p[k]$ is the $k$th smallest $p$ value), and $S = k$. Likewise, if all $n$ of the hypotheses are null, then the expected value of $F$ (the number of false positives) is just $n p(k)$. The resulting fraction of all rejected hypotheses that are false discoveries becomes $F/S = n p(k)/k$. Hence, the false-discovery rate, $\\delta_k$, for hypothesis $k$ is bounded by $$ \\frac{np(k)}{k}\\leq\\delta_{k} $$"
+      "content": "The original estimator for the FDR was introduced by Benjamini and Hochberg (1995). Suppose we declare a test to be significant if its $p$ value is at or below some threshold value, $\\tau = p(k)$, in which case $k$ of the hypotheses will be declared significant (as $p[k]$ is the $k$th smallest $p$ value), and $S = k$. Likewise, if all $n$ of the hypotheses are null, then the expected value of $F$ (the number of false positives) is just $n p(k)$. The resulting fraction of all rejected hypotheses that are false discoveries becomes $F/S = n p(k)/k$. Hence, the false-discovery rate, $\\delta_k$, for hypothesis $k$ is bounded by $$ \\frac{np(k)}{k}\\leq\\delta_{k} $$",
+      "source_page": 1247,
+      "source_pages": [
+        1247
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p018:b4",
+        "Evolution_appendix4:p018:b5",
+        "Evolution_appendix4:p018:b6"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          530.0,
+          656.0,
+          554.0
+        ],
+        [
+          287.0,
+          560.0,
+          1059.0,
+          723.0
+        ],
+        [
+          623.0,
+          729.0,
+          724.0,
+          775.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c034d9819614015b46821cc7320fce67950907716bd941f7755311d243061a48"
     },
     {
       "type": "discussion",
-      "content": "In particular, if we wish to obtain an FDR of $ \\delta $ for the entire experiment, then we reject (i.e., declare as significant) all hypotheses that satisfy $$ p(k)\\leq\\delta\\frac{k}{n} $$"
+      "content": "In particular, if we wish to obtain an FDR of $ \\delta $ for the entire experiment, then we reject (i.e., declare as significant) all hypotheses that satisfy $$ p(k)\\leq\\delta\\frac{k}{n} $$",
+      "source_page": 1247,
+      "source_pages": [
+        1247
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p018:b8",
+        "Evolution_appendix4:p018:b9"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          779.0,
+          1057.0,
+          828.0
+        ],
+        [
+          623.0,
+          833.0,
+          723.0,
+          879.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f588f7cbb7f671a030e125e7b11b273a98078d3d0dbacdae13fd3484240650d2"
     },
     {
       "type": "discussion",
-      "content": "This simple (heuristic) derivation shows why the original Benjamini-Hochberg estimate of the FDR is conservative, as in those settings in which one applies the FDR criteria, the expectation is that some fraction of the hypotheses are not null, and so $ n_0 < n $. The correct estimator of the expected number of rejected null hypotheses is $ n_0 p(k) $, which leads to a more generalized estimate of the FDR, where $ \\widehat{n}_0 $ (e.g., Equations A4.8–A4.10) replaces n. In this case, Equation A4.16a becomes $$ \\widehat{\\delta}_{k}=\\frac{\\widehat{n}_{0}p(k)}{k} $$"
+      "content": "This simple (heuristic) derivation shows why the original Benjamini-Hochberg estimate of the FDR is conservative, as in those settings in which one applies the FDR criteria, the expectation is that some fraction of the hypotheses are not null, and so $ n_0 < n $. The correct estimator of the expected number of rejected null hypotheses is $ n_0 p(k) $, which leads to a more generalized estimate of the FDR, where $ \\widehat{n}_0 $ (e.g., Equations A4.8–A4.10) replaces n. In this case, Equation A4.16a becomes $$ \\widehat{\\delta}_{k}=\\frac{\\widehat{n}_{0}p(k)}{k} $$",
+      "source_page": 1247,
+      "source_pages": [
+        1247
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p018:b11",
+        "Evolution_appendix4:p018:b12"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          883.0,
+          1059.0,
+          1023.0
+        ],
+        [
+          615.0,
+          1029.0,
+          729.0,
+          1076.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "03116d1851a6ffd23f00022a30601698ce7f3fab439796e984c7820db544b55f"
     }
   ]
 }

@@ -7,7 +7,6 @@ from uuid import uuid4
 from textbook_exporter import export_textbooks
 from textbook_exporter.exporter import canonicalize_display_math, inline_table_math
 
-
 TEST_RUNTIME_ROOT = Path(__file__).resolve().parents[3] / "tmp" / "test_runtime" / "textbook_exporter"
 TEST_RUNTIME_ROOT.mkdir(parents=True, exist_ok=True)
 
@@ -30,6 +29,31 @@ class TextbookExporterTests(unittest.TestCase):
             inline_table_math(source),
             "<table><tr><td>$ x^2 $</td><td>$ y $</td></tr></table>",
         )
+
+    def test_exported_table_rows_have_no_trailing_whitespace(self):
+        root = make_test_workspace("table_trailing_whitespace")
+        structured_dir = root / "structured"
+        out_dir = root / "textbook"
+        write_json(
+            structured_dir / "chapter1_001.json",
+            {
+                "id": "chapter1_001",
+                "metadata": {"chapter": "chapter1"},
+                "blocks": [{"type": "table", "content": "[[TABLE:1.1]]"}],
+            },
+        )
+        write_json(structured_dir / "formula_library.json", {"formulas": []})
+        write_json(structured_dir / "example_library.json", {"examples": []})
+        write_json(
+            structured_dir / "table_library.json",
+            {"tables": [{
+                "id": "1.1", "chapter": "chapter1", "label_format": "Table 1.1",
+                "rows": [["Topic", "Reference"], ["Heading", ""]],
+            }]},
+        )
+        export_textbooks(structured_dir, out_dir, chapters={"chapter1"})
+        output = (out_dir / "chapter1_textbook.md").read_text(encoding="utf-8")
+        assert all(line == line.rstrip() for line in output.splitlines())
 
     def test_canonicalizes_display_math_without_absorbing_inline_prose(self):
         source = "Before $ p=1 $. Given by $$ x=y $$ where $ y=1 $. $$ a=b $$ $$ c=d $$"

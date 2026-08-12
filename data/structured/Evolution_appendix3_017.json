@@ -21,27 +21,159 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "In the words of Marjoram and Tavaré (2006), for many estimation problems in modern population genetics it is “far easier to simulate than to calculate.” Consider the number of segregating sites in a sample of alleles from a population that went through a bottleneck of undetermined width at some unknown time in the past. A likelihood calculation running over all possible coalescent structures even in this simple case is extremely challenging. Conversely, if we specify the fractional reduction of the bottleneck and the time when this occurred, it is very easy to simulate a coalescent from this population structure and then randomly apply mutations to generate a sample of alleles. This logic forms the basis of an approach that Beaumont et al. (2002) called approximate Bayesian computation (ABC), although its roots trace back to Tavaré et al. (1997), Weiss and von Haeseler (1998), and Pritchard et al. (1999). ABC is also referred to as likelihood-free computation in the literature (as the likelihood is obtained by simulation, rather than by direct calculation). Reviews of ABC were presented by Marjoram et al. (2003), Beaumont (2010), and Sisson and Fan (2011)."
+      "content": "In the words of Marjoram and Tavaré (2006), for many estimation problems in modern population genetics it is “far easier to simulate than to calculate.” Consider the number of segregating sites in a sample of alleles from a population that went through a bottleneck of undetermined width at some unknown time in the past. A likelihood calculation running over all possible coalescent structures even in this simple case is extremely challenging. Conversely, if we specify the fractional reduction of the bottleneck and the time when this occurred, it is very easy to simulate a coalescent from this population structure and then randomly apply mutations to generate a sample of alleles. This logic forms the basis of an approach that Beaumont et al. (2002) called approximate Bayesian computation (ABC), although its roots trace back to Tavaré et al. (1997), Weiss and von Haeseler (1998), and Pritchard et al. (1999). ABC is also referred to as likelihood-free computation in the literature (as the likelihood is obtained by simulation, rather than by direct calculation). Reviews of ABC were presented by Marjoram et al. (2003), Beaumont (2010), and Sisson and Fan (2011).",
+      "source_page": 1227,
+      "source_pages": [
+        1227,
+        1228
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p020:b15",
+        "Evolution_appendix3:p020:b16",
+        "Evolution_appendix3:p021:b4"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1170.0,
+          1043.0,
+          1193.0
+        ],
+        [
+          286.0,
+          1216.0,
+          1061.0,
+          1448.0
+        ],
+        [
+          132.0,
+          710.0,
+          904.0,
+          780.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ead5541e885d31d7d008916c9c919ef8565b09ea40dbf4b40214c536c1faf2dc"
     },
     {
       "type": "discussion",
-      "content": "Although much of the early focus of ABC methods was on population-genetic problems, it has broad applicability in quantitative genetics. For example, Technow et al. (2015) used ABC approaches to combine crop growth models and genomic selection, while Csilléry et al. (2010) reviewed a number of applications in evolution and ecology. The use of ABC methods is a rapid growth area and, as such, our treatment is rather basic and likely dated."
+      "content": "Although much of the early focus of ABC methods was on population-genetic problems, it has broad applicability in quantitative genetics. For example, Technow et al. (2015) used ABC approaches to combine crop growth models and genomic selection, while Csilléry et al. (2010) reviewed a number of applications in evolution and ecology. The use of ABC methods is a rapid growth area and, as such, our treatment is rather basic and likely dated.",
+      "source_page": 1228,
+      "source_pages": [
+        1228
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p021:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          780.0,
+          904.0,
+          894.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f0ee147fd67f29bf69ebaf91d837fdeca97a657ce7275c122e2e04f87108060d"
     },
     {
       "type": "discussion",
-      "content": "A very simple example motivates ABC. Suppose we wish to calculate the posterior distribution for the success probability, p, given that a sample of size 10 has three successes and we assume a prior, $ \\phi(p) $, for the distribution of possible p values. We can obtain this posterior exactly without ever computing the likelihood as follows: first, we draw a random p value from the prior, $ \\phi(p) $, and then we generate a random draw from a binomial with n = 10 and the sampled value of p. If the binomial random variable generated equals 3, we record the p value (i.e., we accept it into the posterior). If not, we randomly draw a new p from $ \\phi(p) $ and then simulate using this new value of p, repeating this procedure until we have a sufficiently large number of accepted values to approximate the posterior. This is an example of rejection sampling."
+      "content": "A very simple example motivates ABC. Suppose we wish to calculate the posterior distribution for the success probability, p, given that a sample of size 10 has three successes and we assume a prior, $ \\phi(p) $, for the distribution of possible p values. We can obtain this posterior exactly without ever computing the likelihood as follows: first, we draw a random p value from the prior, $ \\phi(p) $, and then we generate a random draw from a binomial with n = 10 and the sampled value of p. If the binomial random variable generated equals 3, we record the p value (i.e., we accept it into the posterior). If not, we randomly draw a new p from $ \\phi(p) $ and then simulate using this new value of p, repeating this procedure until we have a sufficiently large number of accepted values to approximate the posterior. This is an example of rejection sampling.",
+      "source_page": 1228,
+      "source_pages": [
+        1228
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p021:b6"
+      ],
+      "source_bboxes": [
+        [
+          130.0,
+          895.0,
+          904.0,
+          1125.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7d46c474790cd19efbb3cbe6268dedd899fa02a1b2a0f52fe02f23b9cb008ff1"
     },
     {
       "type": "discussion",
-      "content": "More generally, one would draw a candidate vector, $ \\Theta $, of model parameters from the prior, and then use these in a simulation to generate a dataset, D, which is then compared against the actual dataset, $ D^{*} $. For our opening example, one would draw values of bottleneck width, time of the bottleneck, and scaled mutation rate from a joint prior. These values are then used to simulate a dataset, D, of polymorphism information for this simulated sample. If $ D = D^{*} $, then we accept this value of $ \\Theta $ into the posterior and draw again. If not, we reject it and draw again. This generates a value in the MCMC sample without ever having to compute a likelihood."
+      "content": "More generally, one would draw a candidate vector, $ \\Theta $, of model parameters from the prior, and then use these in a simulation to generate a dataset, D, which is then compared against the actual dataset, $ D^{*} $. For our opening example, one would draw values of bottleneck width, time of the bottleneck, and scaled mutation rate from a joint prior. These values are then used to simulate a dataset, D, of polymorphism information for this simulated sample. If $ D = D^{*} $, then we accept this value of $ \\Theta $ into the posterior and draw again. If not, we reject it and draw again. This generates a value in the MCMC sample without ever having to compute a likelihood.",
+      "source_page": 1228,
+      "source_pages": [
+        1228
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p021:b7"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1124.0,
+          904.0,
+          1308.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e9d561df1588f4120e0d52027c6e64166e7241098280e21f6a8a22b9daf39d84"
     },
     {
       "type": "discussion",
-      "content": "The complication involved in this basic idea obviously arises when datasets become even slightly complex, as the probability that $ D = D^{*} $ becomes vanishingly small and the rejection probability is essentially one. In this case, one instead tries to match summary statistics from $ D $ and $ D^{*} $. Ideally, these would be sufficient statistics for the parameters of interest. Recall that, conditioned on the value of a sufficient statistic, the distribution of the data does not depend on the parameter of interest—all of the information on that parameter in the data is provided by the sufficient statistic. Suppose S is a vector of sufficient statistics. for the parameters of interest from the simulated dataset, $D$, and $S^{*}$ is the analogous vector from $D^{*}$ (the sufficient statistics based on the original data). A strict rejection method would accept the current draw from the prior if $S$ equals $S^{*}$. Here, again, the rejection probability is likely to be quite high. The approximate aspect of this approach arises when we don't require exact equality, but rather simply require that the two are “close,” namely, that $|S - S^*| \\leq \\epsilon$ for a single sufficient statistic, or $m(\\mathbf{S} - \\mathbf{S}^*) \\leq \\epsilon$ for some distance metric, $m$ (often this is Euclidean distance). In this case, the posterior that is generated is only an approximation. Beaumont et al. (2002) suggested regression approaches that attempt to adjust posterior values, given the distance between the simulated and actual data. A far more serious issue is when we do not use sufficient statistics for the parameters of interest (as these are often unknown, and, indeed, may not even exist). This introduces a second source of error that can be rather critical, especially if a significant amount of the information about an unknown parameter (or parameters) is not captured by $S$. A number of approaches for dealing with this issue have been suggested (e.g., Joyce and Marjoram 2008; Nunes and Balding 2010; Jung and Marjoram 2011; Aeschbacher et al. 2012), but this is a very active research area with no current clean answer."
+      "content": "The complication involved in this basic idea obviously arises when datasets become even slightly complex, as the probability that $ D = D^{*} $ becomes vanishingly small and the rejection probability is essentially one. In this case, one instead tries to match summary statistics from $ D $ and $ D^{*} $. Ideally, these would be sufficient statistics for the parameters of interest. Recall that, conditioned on the value of a sufficient statistic, the distribution of the data does not depend on the parameter of interest—all of the information on that parameter in the data is provided by the sufficient statistic. Suppose S is a vector of sufficient statistics. for the parameters of interest from the simulated dataset, $D$, and $S^{*}$ is the analogous vector from $D^{*}$ (the sufficient statistics based on the original data). A strict rejection method would accept the current draw from the prior if $S$ equals $S^{*}$. Here, again, the rejection probability is likely to be quite high. The approximate aspect of this approach arises when we don't require exact equality, but rather simply require that the two are “close,” namely, that $|S - S^*| \\leq \\epsilon$ for a single sufficient statistic, or $m(\\mathbf{S} - \\mathbf{S}^*) \\leq \\epsilon$ for some distance metric, $m$ (often this is Euclidean distance). In this case, the posterior that is generated is only an approximation. Beaumont et al. (2002) suggested regression approaches that attempt to adjust posterior values, given the distance between the simulated and actual data. A far more serious issue is when we do not use sufficient statistics for the parameters of interest (as these are often unknown, and, indeed, may not even exist). This introduces a second source of error that can be rather critical, especially if a significant amount of the information about an unknown parameter (or parameters) is not captured by $S$. A number of approaches for dealing with this issue have been suggested (e.g., Joyce and Marjoram 2008; Nunes and Balding 2010; Jung and Marjoram 2011; Aeschbacher et al. 2012), but this is a very active research area with no current clean answer.",
+      "source_page": 1228,
+      "source_pages": [
+        1228,
+        1229
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p021:b8",
+        "Evolution_appendix3:p022:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1308.0,
+          905.0,
+          1470.0
+        ],
+        [
+          288.0,
+          207.0,
+          1060.0,
+          576.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1b67ed23b27779fc2d093379c693b47b93ce53490a711a168f2b799ac9036458"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A3.9]]"
+      "content": "[[SEE_EXAMPLE:A3.9]]",
+      "source_page": 1229,
+      "source_pages": [
+        1229
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p022:b3",
+        "Evolution_appendix3:p022:b4"
+      ],
+      "source_bboxes": [
+        [
+          322.0,
+          638.0,
+          1035.0,
+          872.0
+        ],
+        [
+          322.0,
+          870.0,
+          1036.0,
+          1019.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "05a209fc3471860549786a45b77acebe77aee16467b9224d68e0b359b1bce32c"
     }
   ]
 }

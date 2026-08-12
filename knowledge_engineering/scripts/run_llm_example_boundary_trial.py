@@ -12,7 +12,6 @@ from knowledge_engineering.processors.llm_example_boundary import (
     run_llm_example_boundary_trial,
 )
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 

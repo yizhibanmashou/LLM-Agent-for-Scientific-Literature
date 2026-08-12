@@ -1,11 +1,15 @@
 {
   "name": "llm-agent-scientific-literature",
   "private": true,
+  "engines": {
+    "node": ">=24 <25",
+    "npm": ">=11 <12"
+  },
   "scripts": {
     "test:math": "node --test study_reader/math_parser.test.js",
     "validate:math": "node scripts/validate_textbook_math.js"
   },
   "dependencies": {
-    "katex": "0.16.11"
+    "katex": "0.16.47"
   }
 }

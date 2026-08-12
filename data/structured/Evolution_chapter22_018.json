@@ -21,63 +21,494 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "To combine both individual and group selection, consider the index, I, where the value of the index for the ith individual is given by $$ I_{i}=z_{i}+g\\sum_{j\\neq i}z_{j} $$"
+      "content": "To combine both individual and group selection, consider the index, I, where the value of the index for the ith individual is given by $$ I_{i}=z_{i}+g\\sum_{j\\neq i}z_{j} $$",
+      "source_page": 771,
+      "source_pages": [
+        771
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p021:b8",
+        "Evolution_chapter22:p021:b9",
+        "Evolution_chapter22:p021:b10"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          1306.0,
+          412.0,
+          1329.0
+        ],
+        [
+          133.0,
+          1336.0,
+          904.0,
+          1382.0
+        ],
+        [
+          444.0,
+          1390.0,
+          592.0,
+          1438.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7fb0949a748508bfc4f96a8028e62bc45e476ba1f6250324a1eda2a45ceff91d"
     },
     {
       "type": "discussion",
-      "content": "This is a modification of the initial proposal by Griffing (1977). Letting $ \\overline{z}_{i} $ denote the mean of the group containing individual i, this index can also be written as $$ I_{i}=(1-g)z_{i}+g\\sum_{j=1}^{n}z_{j}=(1-g)z_{i}+g n\\overline{z}_{i} $$ showing that individual selection corresponds to $g=0$ and group selection to $g=1$. Thus, the index given by Equation 22.28b includes both individual and group selection as special cases. Selection of individuals based on within-group deviations is also a special case of Equation 22.28a, as setting $g=-1/n$ yields $$ I_{i}=z_{i}-\\frac{1}{n}\\sum_{j=1}^{n}z_{j}=z_{i}-\\overline{z} $$"
+      "content": "This is a modification of the initial proposal by Griffing (1977). Letting $ \\overline{z}_{i} $ denote the mean of the group containing individual i, this index can also be written as $$ I_{i}=(1-g)z_{i}+g\\sum_{j=1}^{n}z_{j}=(1-g)z_{i}+g n\\overline{z}_{i} $$ showing that individual selection corresponds to $g=0$ and group selection to $g=1$. Thus, the index given by Equation 22.28b includes both individual and group selection as special cases. Selection of individuals based on within-group deviations is also a special case of Equation 22.28a, as setting $g=-1/n$ yields $$ I_{i}=z_{i}-\\frac{1}{n}\\sum_{j=1}^{n}z_{j}=z_{i}-\\overline{z} $$",
+      "source_page": 771,
+      "source_pages": [
+        771,
+        772
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p021:b12",
+        "Evolution_chapter22:p022:b2",
+        "Evolution_chapter22:p022:b3",
+        "Evolution_chapter22:p022:b5",
+        "Evolution_chapter22:p022:b6"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1445.0,
+          904.0,
+          1470.0
+        ],
+        [
+          287.0,
+          207.0,
+          881.0,
+          232.0
+        ],
+        [
+          485.0,
+          246.0,
+          861.0,
+          308.0
+        ],
+        [
+          287.0,
+          323.0,
+          1059.0,
+          419.0
+        ],
+        [
+          558.0,
+          434.0,
+          790.0,
+          494.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "defa3d66782414c7c3203d0660aca8011d6e3e247e8c80d920e1770963c7e5db"
     },
     {
       "type": "discussion",
-      "content": "The response in the trait mean $ (\\mu_{z}) $ from selection on this index is $$ R=\\frac{\\sigma(I,A_{T})}{\\sigma(I)}\\bar{\\imath}_{I} $$"
+      "content": "The response in the trait mean $ (\\mu_{z}) $ from selection on this index is $$ R=\\frac{\\sigma(I,A_{T})}{\\sigma(I)}\\bar{\\imath}_{I} $$",
+      "source_page": 772,
+      "source_pages": [
+        772
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p022:b8",
+        "Evolution_chapter22:p022:b9"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          510.0,
+          850.0,
+          534.0
+        ],
+        [
+          602.0,
+          550.0,
+          745.0,
+          599.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4f91f927c1691ac6425c287be192f01ebc5319142c233688982a4213df62168e"
     },
     {
       "type": "discussion",
-      "content": "This can also be written in terms of the accuracy of selection, a concept first introduced in Chapter 13 (Equation 13.11a), which is the correlation between the target of selection (here I) and the breeding objective (here the total breeding value, $ A_{T} $). We can express the ratio in Equation 22.28d as $$ \\frac{\\sigma(I,A_{T})}{\\sigma(I)}=\\frac{\\sigma(I,A_{T})}{\\sigma(I)}\\frac{\\sigma(A_{T})}{\\sigma(A_{T})}=\\sigma(A_{T})\\frac{\\sigma(I,A_{T})}{\\sigma(A_{T})\\sigma(I)}=\\sigma(A_{T})\\rho(A_{T},I) $$ where the accuracy $$ \\rho(A_{T},I)=\\frac{\\sigma(I,A_{T})}{\\sigma(A_{T})\\sigma(I)} $$ is the correlation between the index value of an individual and its breeding value. Using this result, Equation 22.28d becomes $$ R=\\rho(A_{T},I)\\sigma(A_{T})\\bar{\\imath}_{I} $$ which is simply Equation 13.11c for the selection criteria $ x = I $. This is a very useful expression for comparing different selection schemes, as $ \\sigma(A_T) $ remains unchanged (provided group size remains fixed), so the maximal response occurs by maximizing $ \\rho(A_T, I)\\bar{\\nu}_I $. Given that the fraction saved largely sets the selection intensity $ \\bar{\\nu}_I $ (subject to minor variation due to finite populations; see Equation 14.4b), the optimal scheme (i.e., the optimal weight, $ g $) is that which maximizes the accuracy, $ \\rho(A_T, I) $."
+      "content": "This can also be written in terms of the accuracy of selection, a concept first introduced in Chapter 13 (Equation 13.11a), which is the correlation between the target of selection (here I) and the breeding objective (here the total breeding value, $ A_{T} $). We can express the ratio in Equation 22.28d as $$ \\frac{\\sigma(I,A_{T})}{\\sigma(I)}=\\frac{\\sigma(I,A_{T})}{\\sigma(I)}\\frac{\\sigma(A_{T})}{\\sigma(A_{T})}=\\sigma(A_{T})\\frac{\\sigma(I,A_{T})}{\\sigma(A_{T})\\sigma(I)}=\\sigma(A_{T})\\rho(A_{T},I) $$ where the accuracy $$ \\rho(A_{T},I)=\\frac{\\sigma(I,A_{T})}{\\sigma(A_{T})\\sigma(I)} $$ is the correlation between the index value of an individual and its breeding value. Using this result, Equation 22.28d becomes $$ R=\\rho(A_{T},I)\\sigma(A_{T})\\bar{\\imath}_{I} $$ which is simply Equation 13.11c for the selection criteria $ x = I $. This is a very useful expression for comparing different selection schemes, as $ \\sigma(A_T) $ remains unchanged (provided group size remains fixed), so the maximal response occurs by maximizing $ \\rho(A_T, I)\\bar{\\nu}_I $. Given that the fraction saved largely sets the selection intensity $ \\bar{\\nu}_I $ (subject to minor variation due to finite populations; see Equation 14.4b), the optimal scheme (i.e., the optimal weight, $ g $) is that which maximizes the accuracy, $ \\rho(A_T, I) $.",
+      "source_page": 772,
+      "source_pages": [
+        772
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p022:b11",
+        "Evolution_chapter22:p022:b12",
+        "Evolution_chapter22:p022:b14",
+        "Evolution_chapter22:p022:b15",
+        "Evolution_chapter22:p022:b17",
+        "Evolution_chapter22:p022:b18",
+        "Evolution_chapter22:p022:b20"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          613.0,
+          1060.0,
+          708.0
+        ],
+        [
+          352.0,
+          721.0,
+          928.0,
+          773.0
+        ],
+        [
+          289.0,
+          787.0,
+          461.0,
+          811.0
+        ],
+        [
+          572.0,
+          808.0,
+          772.0,
+          858.0
+        ],
+        [
+          286.0,
+          866.0,
+          1059.0,
+          914.0
+        ],
+        [
+          578.0,
+          929.0,
+          769.0,
+          954.0
+        ],
+        [
+          288.0,
+          971.0,
+          1059.0,
+          1108.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b87b689e9faec0d78ec0d50503fbb47b0b5fc57184b3bc28cce89a6d025dc6aa"
     },
     {
       "type": "discussion",
-      "content": "To obtain a general expression for response for any combination of group selection fraction $ (g) $ and average relatedness within groups $ (r) $, we first need the covariance of I and $ A_{T} $ within an individual. This is obtained as follows. First, note that $$ \\sigma\\left(A_{T},I\\right)=\\left(1-g\\right)\\sigma\\left(A_{T},z\\right)+g\\sigma\\left(A_{T},\\sum_{j=1}^{n}z_{j}\\right) $$"
+      "content": "To obtain a general expression for response for any combination of group selection fraction $ (g) $ and average relatedness within groups $ (r) $, we first need the covariance of I and $ A_{T} $ within an individual. This is obtained as follows. First, note that $$ \\sigma\\left(A_{T},I\\right)=\\left(1-g\\right)\\sigma\\left(A_{T},z\\right)+g\\sigma\\left(A_{T},\\sum_{j=1}^{n}z_{j}\\right) $$",
+      "source_page": 772,
+      "source_pages": [
+        772
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p022:b21",
+        "Evolution_chapter22:p022:b22"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1109.0,
+          1060.0,
+          1178.0
+        ],
+        [
+          473.0,
+          1192.0,
+          871.0,
+          1252.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cd58dbaf07b86ee063813f628a07560cb2b5fcb51dc02fda70b5ddce2d45e359"
     },
     {
       "type": "discussion",
-      "content": "When group members are unrelated, Equations 22.4b and 22.19b give $$ \\sigma\\left(A_{T},I\\right)=\\left(1-g\\right)\\left[\\sigma^{2}(A_{d})+(n-1)\\sigma(A_{d},A_{s})\\right]+g\\sigma^{2}(A_{T}) $$"
+      "content": "When group members are unrelated, Equations 22.4b and 22.19b give $$ \\sigma\\left(A_{T},I\\right)=\\left(1-g\\right)\\left[\\sigma^{2}(A_{d})+(n-1)\\sigma(A_{d},A_{s})\\right]+g\\sigma^{2}(A_{T}) $$",
+      "source_page": 772,
+      "source_pages": [
+        772
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p022:b24",
+        "Evolution_chapter22:p022:b25"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1268.0,
+          887.0,
+          1294.0
+        ],
+        [
+          382.0,
+          1307.0,
+          895.0,
+          1337.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c1490b037a1cc1dcdccb609f76708a55debfd134f08873fefe1c677153af8ee9"
     },
     {
       "type": "discussion",
-      "content": "When group members all have the same relationship, Equations 22.12e and 22.19c yield $$ \\begin{align*}\\sigma\\left(A_{T},I\\right)=(1-g)\\Biggl(r\\sigma^{2}(A_{T})+(1-r)\\left[\\sigma^{2}(A_{d})+(n-1)\\sigma(A_{d},A_{s})\\right]\\Biggr)\\\\+g\\left[1+(n-1)r\\right]\\sigma^{2}(A_{T})\\end{align*} $$"
+      "content": "When group members all have the same relationship, Equations 22.12e and 22.19c yield $$ \\begin{align*}\\sigma\\left(A_{T},I\\right)=(1-g)\\Biggl(r\\sigma^{2}(A_{T})+(1-r)\\left[\\sigma^{2}(A_{d})+(n-1)\\sigma(A_{d},A_{s})\\right]\\Biggr)\\\\+g\\left[1+(n-1)r\\right]\\sigma^{2}(A_{T})\\end{align*} $$",
+      "source_page": 772,
+      "source_pages": [
+        772
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p022:b27",
+        "Evolution_chapter22:p022:b28"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1350.0,
+          1039.0,
+          1375.0
+        ],
+        [
+          373.0,
+          1389.0,
+          970.0,
+          1469.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4efe40cacbb41a335f88456b463d2fcfa1ec21f121b48502827a266abbfcf664"
     },
     {
       "type": "discussion",
-      "content": "Collecting terms, Equation 22.29c reduces to $$ \\sigma(A_{T},I)=\\left[g+r+(n-2)g r\\right]\\sigma^{2}(A_{T})+(1-g)(1-r)\\left[\\sigma^{2}(A_{d})+(n-1)\\sigma(A_{s},A_{d})\\right] $$"
+      "content": "Collecting terms, Equation 22.29c reduces to $$ \\sigma(A_{T},I)=\\left[g+r+(n-2)g r\\right]\\sigma^{2}(A_{T})+(1-g)(1-r)\\left[\\sigma^{2}(A_{d})+(n-1)\\sigma(A_{s},A_{d})\\right] $$",
+      "source_page": 773,
+      "source_pages": [
+        773
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p023:b2",
+        "Evolution_chapter22:p023:b3"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          207.0,
+          517.0,
+          231.0
+        ],
+        [
+          142.0,
+          249.0,
+          822.0,
+          277.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a29f0859bb08390dd2681902b1a6d1982aeccac73a6eea5ed4a00d6cf9ffbed0"
     },
     {
       "type": "discussion",
-      "content": "While parts of this result (in a bit more cryptic form) appear in Griffing (1977), this, more general, version is due to Bijma et al. (2007a). Note that g and r have symmetric roles in the covariance between the index and the total breeding value. Thus, from the standpoint of this covariance, relatedness and group selection (r and g) are interchangeable. However, as we will soon demonstrate, g and r do not play symmetric roles in the variance, $ \\sigma_{1}^{2} $, of the index, so interchanging r and g values results in a different variance, and hence a different selection response (see Equation 22.28d and Example 22.8)."
+      "content": "While parts of this result (in a bit more cryptic form) appear in Griffing (1977), this, more general, version is due to Bijma et al. (2007a). Note that g and r have symmetric roles in the covariance between the index and the total breeding value. Thus, from the standpoint of this covariance, relatedness and group selection (r and g) are interchangeable. However, as we will soon demonstrate, g and r do not play symmetric roles in the variance, $ \\sigma_{1}^{2} $, of the index, so interchanging r and g values results in a different variance, and hence a different selection response (see Equation 22.28d and Example 22.8).",
+      "source_page": 773,
+      "source_pages": [
+        773
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p023:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          296.0,
+          905.0,
+          457.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a28fcbcff0b9bbcc76c58cdf83872729aa1e3484b827222671e4d1dc69890748"
     },
     {
       "type": "discussion",
-      "content": "Now consider the variance of the index, I. From Equation 22.28a, $$ \\begin{aligned}\\sigma_{I}^{2}&=\\sigma\\Big(z_{i}+g\\sum_{j\\neq i}z_{j},z_{i}+g\\sum_{j\\neq i}z_{j}\\Big)\\\\&=\\sigma_{z}^{2}+2g\\sigma\\Big(z_{i},\\sum_{j\\neq i}z_{j}\\Big)+g^{2}\\sigma^{2}\\Big(\\sum_{j\\neq i}z_{j}\\Big)\\end{aligned} $$ $$ \\sigma\\bigg(z_{i},\\sum_{j\\neq i}z_{j}\\bigg)=(n-1)\\sigma(z_{i},z_{j}) $$"
+      "content": "Now consider the variance of the index, I. From Equation 22.28a, $$ \\begin{aligned}\\sigma_{I}^{2}&=\\sigma\\Big(z_{i}+g\\sum_{j\\neq i}z_{j},z_{i}+g\\sum_{j\\neq i}z_{j}\\Big)\\\\&=\\sigma_{z}^{2}+2g\\sigma\\Big(z_{i},\\sum_{j\\neq i}z_{j}\\Big)+g^{2}\\sigma^{2}\\Big(\\sum_{j\\neq i}z_{j}\\Big)\\end{aligned} $$ $$ \\sigma\\bigg(z_{i},\\sum_{j\\neq i}z_{j}\\bigg)=(n-1)\\sigma(z_{i},z_{j}) $$",
+      "source_page": 773,
+      "source_pages": [
+        773
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p023:b6",
+        "Evolution_chapter22:p023:b7",
+        "Evolution_chapter22:p023:b9"
+      ],
+      "source_bboxes": [
+        [
+          171.0,
+          457.0,
+          731.0,
+          479.0
+        ],
+        [
+          332.0,
+          502.0,
+          701.0,
+          621.0
+        ],
+        [
+          382.0,
+          685.0,
+          654.0,
+          742.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6c8d455127cd4d946d592e2bb0249404056b76d641efaa6a8dd8b530b85a8711"
     },
     {
       "type": "discussion",
-      "content": "If all group members have the same relationship, then and $$ \\sigma^{2}\\Bigg(\\sum_{j\\neq i}z_{j}\\Bigg)=(n-1)\\left[\\sigma_{z}^{2}+(n-2)\\sigma(z_{i},z_{j})\\right] $$"
+      "content": "If all group members have the same relationship, then and $$ \\sigma^{2}\\Bigg(\\sum_{j\\neq i}z_{j}\\Bigg)=(n-1)\\left[\\sigma_{z}^{2}+(n-2)\\sigma(z_{i},z_{j})\\right] $$",
+      "source_page": 773,
+      "source_pages": [
+        773
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p023:b10",
+        "Evolution_chapter22:p023:b12",
+        "Evolution_chapter22:p023:b13"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          640.0,
+          598.0,
+          666.0
+        ],
+        [
+          133.0,
+          763.0,
+          174.0,
+          784.0
+        ],
+        [
+          326.0,
+          779.0,
+          707.0,
+          836.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4a865d4667549bfe985a7acbd27444c7fa2e46542e76efade9921f7a6f6660a3"
     },
     {
       "type": "discussion",
-      "content": "Substituting these last two expressions into Equation 22.30a and collecting terms gives $$ \\sigma_{I}^{2}=\\sigma_{z}^{2}\\left[1+g^{2}(n-1)\\right]+\\sigma(z_{i},z_{j})\\left[g(n-1)\\left(2+g\\{n-2\\}\\right)\\right] $$ As a check of Equation 22.30d, note that (as expected) this reduces to $ \\sigma_z^2 $ when $ g = 0 $ and to $ n\\sigma_z^2 + n(n - 1)\\sigma(z_i, z_j) $ when $ g = 1 $. Equation 22.13a gives the expression for $ \\sigma_z^2 $ when all relatives within the group are related by $ r $. It remains to obtain $ \\sigma(z_i, z_j) $, the phenotypic covariance of group members, in order to apply Equation 22.30d. From Equation 22.1c, and ignoring the constant, $ \\mu $, $$ \\begin{align*}\\sigma(z_{i},z_{j})&=\\sigma\\Big(A_{d_{i}}+\\sum_{k\\neq i}A_{s_{k}}+e_{i},A_{d_{j}}+\\sum_{k\\neq j}A_{s_{k}}+e_{j}\\Big)\\\\&=\\sigma\\Big(A_{d_{i}},A_{d_{j}}\\Big)+2\\sigma\\Big(A_{d_{i}},\\sum_{k\\neq i}A_{s_{k}}\\Big)+\\sigma\\Big(\\sum_{k\\neq i}A_{s_{k}},\\sum_{k\\neq j}A_{s_{k}}\\Big)+\\sigma(e_{i},e_{j})\\end{align*} $$"
+      "content": "Substituting these last two expressions into Equation 22.30a and collecting terms gives $$ \\sigma_{I}^{2}=\\sigma_{z}^{2}\\left[1+g^{2}(n-1)\\right]+\\sigma(z_{i},z_{j})\\left[g(n-1)\\left(2+g\\{n-2\\}\\right)\\right] $$ As a check of Equation 22.30d, note that (as expected) this reduces to $ \\sigma_z^2 $ when $ g = 0 $ and to $ n\\sigma_z^2 + n(n - 1)\\sigma(z_i, z_j) $ when $ g = 1 $. Equation 22.13a gives the expression for $ \\sigma_z^2 $ when all relatives within the group are related by $ r $. It remains to obtain $ \\sigma(z_i, z_j) $, the phenotypic covariance of group members, in order to apply Equation 22.30d. From Equation 22.1c, and ignoring the constant, $ \\mu $, $$ \\begin{align*}\\sigma(z_{i},z_{j})&=\\sigma\\Big(A_{d_{i}}+\\sum_{k\\neq i}A_{s_{k}}+e_{i},A_{d_{j}}+\\sum_{k\\neq j}A_{s_{k}}+e_{j}\\Big)\\\\&=\\sigma\\Big(A_{d_{i}},A_{d_{j}}\\Big)+2\\sigma\\Big(A_{d_{i}},\\sum_{k\\neq i}A_{s_{k}}\\Big)+\\sigma\\Big(\\sum_{k\\neq i}A_{s_{k}},\\sum_{k\\neq j}A_{s_{k}}\\Big)+\\sigma(e_{i},e_{j})\\end{align*} $$",
+      "source_page": 773,
+      "source_pages": [
+        773
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p023:b15",
+        "Evolution_chapter22:p023:b16",
+        "Evolution_chapter22:p023:b18",
+        "Evolution_chapter22:p023:b20"
+      ],
+      "source_bboxes": [
+        [
+          172.0,
+          848.0,
+          903.0,
+          874.0
+        ],
+        [
+          229.0,
+          889.0,
+          735.0,
+          920.0
+        ],
+        [
+          132.0,
+          935.0,
+          905.0,
+          1055.0
+        ],
+        [
+          146.0,
+          1074.0,
+          813.0,
+          1193.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "69f48507810d834a5727c8ad18fb352f3507f58938258eed13c88550bfba0c11"
     },
     {
       "type": "discussion",
-      "content": "If we expand and evaluate these covariance terms and collect the common terms, Equation 22.31b ultimately reduces to $$ \\begin{align*}\\sigma(z_{i},z_{j})&=2\\sigma(A_{d},A_{s})+(n-2)\\sigma^{2}(A_{s})+\\rho\\sigma^{2}(e)\\\\&\\quad+r\\left[\\sigma^{2}(A_{d})+2(n-2)\\sigma(A_{d},A_{s})+\\left\\{(n-1)+(n-2)^{2}\\right\\}\\sigma^{2}(A_{s})\\right]\\end{align*} $$"
+      "content": "If we expand and evaluate these covariance terms and collect the common terms, Equation 22.31b ultimately reduces to $$ \\begin{align*}\\sigma(z_{i},z_{j})&=2\\sigma(A_{d},A_{s})+(n-2)\\sigma^{2}(A_{s})+\\rho\\sigma^{2}(e)\\\\&\\quad+r\\left[\\sigma^{2}(A_{d})+2(n-2)\\sigma(A_{d},A_{s})+\\left\\{(n-1)+(n-2)^{2}\\right\\}\\sigma^{2}(A_{s})\\right]\\end{align*} $$",
+      "source_page": 773,
+      "source_pages": [
+        773
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p023:b21",
+        "Evolution_chapter22:p023:b23"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1213.0,
+          903.0,
+          1259.0
+        ],
+        [
+          170.0,
+          1278.0,
+          825.0,
+          1335.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f5f78af595b0975ed5e41da08bc83285c7ffb0041df36f9f70931860cb87113a"
     },
     {
       "type": "discussion",
-      "content": "Notice, by comparison to Equation 22.4c, that the term appearing when group members are related $ (r \\neq 0) $ is the variance of $ A_T $ when the group size is $ (n - 1) $ plus the correction $ (n - 1)\\sigma^2(A_s) $. Equations 22.29d and 22.30d are substituted into Equation 22.28d to obtain the response. The interplay of $ \\sigma(A_T, I) $ and $ \\sigma_I^2 $ (as functions of g and r) determine the accuracy of any particular index (Figure 22.3)."
+      "content": "Notice, by comparison to Equation 22.4c, that the term appearing when group members are related $ (r \\neq 0) $ is the variance of $ A_T $ when the group size is $ (n - 1) $ plus the correction $ (n - 1)\\sigma^2(A_s) $. Equations 22.29d and 22.30d are substituted into Equation 22.28d to obtain the response. The interplay of $ \\sigma(A_T, I) $ and $ \\sigma_I^2 $ (as functions of g and r) determine the accuracy of any particular index (Figure 22.3).",
+      "source_page": 773,
+      "source_pages": [
+        773
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p023:b25"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          1353.0,
+          904.0,
+          1471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "30234c6e04d015e77668d82de50f224871d4ee3adbd281ba64e799bd6cae94fe"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:22.8]]"
+      "content": "[[SEE_EXAMPLE:22.8]]",
+      "source_page": 773,
+      "source_pages": [
+        773
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p023:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          296.0,
+          905.0,
+          457.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "eada16447aedf78c1b579e54b7d217d8c4feb7a8b90f5883772a8f87afbfd489"
     }
   ]
 }

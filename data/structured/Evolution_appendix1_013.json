@@ -21,23 +21,165 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "The expressions for sojourn times are relatively simple examples of computing expected values along a sample path of the diffusion process, and more complex functions can be evaluated in a similar manner. Let $ x_t $, which resides in the open interval $ (0,1) $, denote the values of our random variable along a particular sample path, and suppose that we wish to compute the integral (over all time) of some function $ f $ of $ x_t $ $$ I_{f}(p)=\\int_{0}^{\\infty}f(x_{t})dt $$"
+      "content": "The expressions for sojourn times are relatively simple examples of computing expected values along a sample path of the diffusion process, and more complex functions can be evaluated in a similar manner. Let $ x_t $, which resides in the open interval $ (0,1) $, denote the values of our random variable along a particular sample path, and suppose that we wish to compute the integral (over all time) of some function $ f $ of $ x_t $ $$ I_{f}(p)=\\int_{0}^{\\infty}f(x_{t})dt $$",
+      "source_page": 1183,
+      "source_pages": [
+        1183
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p013:b4",
+        "Evolution_appendix1:p013:b5",
+        "Evolution_appendix1:p013:b6"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          358.0,
+          493.0,
+          382.0
+        ],
+        [
+          132.0,
+          388.0,
+          904.0,
+          506.0
+        ],
+        [
+          427.0,
+          525.0,
+          609.0,
+          578.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b5ccdc49eb0e81d4d90fba9ab84d56d707200b25a2143e2635ecb90306a51970"
     },
     {
       "type": "discussion",
-      "content": "Note that $ x_{t} $ is the realization at a particular time point, and hence the distribution of $ x_{t} $ (and thus ultimately $ I_{f} $) is a function of p, the starting value of our process. Because $ x_{t} $ is a random variable, the integral $ I_{f}(p) $ is also a random variable. Its expected value is given by $$ E[I_{f}(p)]=\\int_{0}^{\\infty}\\int_{0}^{1}f(x)\\varphi(x,t,p)dt dx $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Fortunately, we do not have to solve for $ \\varphi(x,t,p) $, as (recalling Equation A1.22a) the general solution is obtained by using the Green's function, as described by Equation A1.22c, with $$ E[I_{f}(p)]=\\int_{0}^{1}f(x)h(x,p)dx $$"
-    },
-    {
-      "type": "discussion",
-      "content": "This makes sense, as $ h(x,p)dx $ is the expected amount of time that the process (starting at p) spends in the neighborhood of x before it is eventually lost or fixed. Thus, integration over all possible neighborhoods gives the expected value of the function over all sample paths."
+      "content": "Note that $ x_{t} $ is the realization at a particular time point, and hence the distribution of $ x_{t} $ (and thus ultimately $ I_{f} $) is a function of p, the starting value of our process. Because $ x_{t} $ is a random variable, the integral $ I_{f}(p) $ is also a random variable. Its expected value is given by $$ E[I_{f}(p)]=\\int_{0}^{\\infty}\\int_{0}^{1}f(x)\\varphi(x,t,p)dt dx $$",
+      "source_page": 1183,
+      "source_pages": [
+        1183
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p013:b7",
+        "Evolution_appendix1:p013:b8"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          597.0,
+          901.0,
+          671.0
+        ],
+        [
+          355.0,
+          691.0,
+          682.0,
+          745.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "66388c369df913ad2342d147744ac235a29f828d266a706251553068bcee962e"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A1.9]]"
+      "content": "[[SEE_EXAMPLE:A1.9]]",
+      "source_page": 1183,
+      "source_pages": [
+        1183,
+        1184
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p013:b14",
+        "Evolution_appendix1:p013:b15",
+        "Evolution_appendix1:p013:b17",
+        "Evolution_appendix1:p013:b18",
+        "Evolution_appendix1:p014:b2",
+        "Evolution_appendix1:p014:b3",
+        "Evolution_appendix1:p014:b4",
+        "Evolution_appendix1:p014:b5",
+        "Evolution_appendix1:p014:b6",
+        "Evolution_appendix1:p014:b7",
+        "Evolution_appendix1:p014:b8",
+        "Evolution_appendix1:p014:b9"
+      ],
+      "source_bboxes": [
+        [
+          166.0,
+          1046.0,
+          881.0,
+          1218.0
+        ],
+        [
+          203.0,
+          1237.0,
+          842.0,
+          1348.0
+        ],
+        [
+          167.0,
+          1373.0,
+          821.0,
+          1395.0
+        ],
+        [
+          281.0,
+          1417.0,
+          764.0,
+          1474.0
+        ],
+        [
+          322.0,
+          208.0,
+          799.0,
+          231.0
+        ],
+        [
+          524.0,
+          264.0,
+          834.0,
+          317.0
+        ],
+        [
+          322.0,
+          352.0,
+          1036.0,
+          397.0
+        ],
+        [
+          591.0,
+          430.0,
+          768.0,
+          455.0
+        ],
+        [
+          322.0,
+          491.0,
+          1035.0,
+          617.0
+        ],
+        [
+          356.0,
+          617.0,
+          1007.0,
+          640.0
+        ],
+        [
+          425.0,
+          676.0,
+          931.0,
+          815.0
+        ],
+        [
+          323.0,
+          851.0,
+          751.0,
+          876.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a85694b844e1f5e8df076d09ba4d72b9d306cb362c6e786ac3548c7b9fa718ca"
     }
   ]
 }

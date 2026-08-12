@@ -9,51 +9,258 @@
     "source_file": "data\\paddle_output\\Evolution_chapter18_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": [],
+    "table_references": [
+      "inline_1"
+    ],
     "section_level_1": "REALIZED HERITABILITIES",
     "section_level_2": "Estimators for Several Generations of Selection",
     "heading_path": [
       "REALIZED HERITABILITIES",
       "Estimators for Several Generations of Selection"
     ],
-    "display_heading": "Estimators for Several Generations of Selection"
+    "display_heading": "Estimators for Several Generations of Selection",
+    "table_reference_keys": [
+      "evolution_chapter18:inline_1"
+    ]
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "While the estimator given by Equation 18.10 is unambiguous for a single generation of selection, two different estimation approaches have been proposed for an experiment of a length of T > 1 generations. Both approaches are based on the cumulative selection response, $ R_{C}(t) $, and cumulative selection differential, $ S_{C}(t) $ $$ S_{C}(t)=\\sum_{i=1}^{t}S_{i}\\qquad and\\qquad R_{C}(t)=\\sum_{i=1}^{t}R_{i} $$ where $ S_i = \\overline{z}_i^* - \\overline{z}_i $ and $ R_i = \\overline{z}_{i+1} - \\overline{z}_i $ are the selection differential and single-generation response (respectively) for generation $ i $, and $ \\overline{z}_i $ and $ \\overline{z}_i^* $ denoting the preselection and post-selection means in generation $ i $."
+      "content": "While the estimator given by Equation 18.10 is unambiguous for a single generation of selection, two different estimation approaches have been proposed for an experiment of a length of T > 1 generations. Both approaches are based on the cumulative selection response, $ R_{C}(t) $, and cumulative selection differential, $ S_{C}(t) $ $$ S_{C}(t)=\\sum_{i=1}^{t}S_{i}\\qquad and\\qquad R_{C}(t)=\\sum_{i=1}^{t}R_{i} $$ where $ S_i = \\overline{z}_i^* - \\overline{z}_i $ and $ R_i = \\overline{z}_{i+1} - \\overline{z}_i $ are the selection differential and single-generation response (respectively) for generation $ i $, and $ \\overline{z}_i $ and $ \\overline{z}_i^* $ denoting the preselection and post-selection means in generation $ i $.",
+      "source_page": 582,
+      "source_pages": [
+        582
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p006:b7",
+        "Evolution_chapter18:p006:b8",
+        "Evolution_chapter18:p006:b9",
+        "Evolution_chapter18:p006:b11"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          946.0,
+          711.0,
+          970.0
+        ],
+        [
+          287.0,
+          975.0,
+          1060.0,
+          1071.0
+        ],
+        [
+          491.0,
+          1088.0,
+          857.0,
+          1151.0
+        ],
+        [
+          286.0,
+          1167.0,
+          1058.0,
+          1236.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4dd745af2038858d236300c55b4d31340a90160cae54d9f1adbaa720fc45dede"
     },
     {
       "type": "discussion",
-      "content": "The first approach, the simple ratio estimator of the realized heritability, is to use the total response divided by the total differential $$ \\widehat{b}_{T}=\\frac{R_{C}(T)}{S_{C}(T)} $$"
+      "content": "The first approach, the simple ratio estimator of the realized heritability, is to use the total response divided by the total differential $$ \\widehat{b}_{T}=\\frac{R_{C}(T)}{S_{C}(T)} $$",
+      "source_page": 582,
+      "source_pages": [
+        582
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p006:b12",
+        "Evolution_chapter18:p006:b13"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1236.0,
+          1059.0,
+          1284.0
+        ],
+        [
+          614.0,
+          1302.0,
+          729.0,
+          1351.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7714d9c44dbc6e30e0f7ee148553e1cd3d8c3392207578279a22365aa747fab6"
     },
     {
       "type": "discussion",
-      "content": "We use the notation throughout the chapter of $ \\hat{b}_x $ for a particular estimator, as the realized heritability is some multiple of this, $ \\hat{h}_r^2 = c \\cdot \\hat{b}_x $, where $ c $ depends on the experimental design. For individual selection with only one sex selected, $ c = 2 $ (Example 18.1), while $ c = 1 $ when both sexes are selected."
+      "content": "We use the notation throughout the chapter of $ \\hat{b}_x $ for a particular estimator, as the realized heritability is some multiple of this, $ \\hat{h}_r^2 = c \\cdot \\hat{b}_x $, where $ c $ depends on the experimental design. For individual selection with only one sex selected, $ c = 2 $ (Example 18.1), while $ c = 1 $ when both sexes are selected.",
+      "source_page": 582,
+      "source_pages": [
+        582
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p006:b15"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1372.0,
+          1059.0,
+          1471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "35e912c52cdccfb814c02c58f64683503aa789454e68424c2a8a85780243cee8"
     },
     {
       "type": "proposition",
-      "content": "The ratio estimator makes no assumption about a constant heritability, and instead returns an average value over the experiment. When $ h^{2} $ remains constant, the breeder's equation predicts a linear cumulative response in R as a function of S. This observation leads to the second (and much more widely used) approach of estimating the realized heritability from the slope of the regression of cumulative response on cumulative selection differential $$ R_{C}(t)=b_{C}S_{C}(t)+e_{t}\\quad for t=1,\\cdots,T $$ with $ \\hat{h}_{r}^{2}=b_{C} $ for individual selection on both sexes (Falconer 1954). Modifications of Equations 18.12 and 18.13 can be used for family selection (Chapter 21) and other designs, such as divergent selection (discussed at the end of this chapter). Because the expected response is zero if there is no selection, the regression line is constrained to pass through the origin and hence lacks an intercept term. Standard linear model approaches (LW Chapter 8) can be used to test for goodness-of-fit, such as testing whether a quadratic regression gives an improved fit (which suggests a changing heritability)."
+      "content": "The ratio estimator makes no assumption about a constant heritability, and instead returns an average value over the experiment. When $ h^{2} $ remains constant, the breeder's equation predicts a linear cumulative response in R as a function of S. This observation leads to the second (and much more widely used) approach of estimating the realized heritability from the slope of the regression of cumulative response on cumulative selection differential $$ R_{C}(t)=b_{C}S_{C}(t)+e_{t}\\quad for t=1,\\cdots,T $$ with $ \\hat{h}_{r}^{2}=b_{C} $ for individual selection on both sexes (Falconer 1954). Modifications of Equations 18.12 and 18.13 can be used for family selection (Chapter 21) and other designs, such as divergent selection (discussed at the end of this chapter). Because the expected response is zero if there is no selection, the regression line is constrained to pass through the origin and hence lacks an intercept term. Standard linear model approaches (LW Chapter 8) can be used to test for goodness-of-fit, such as testing whether a quadratic regression gives an improved fit (which suggests a changing heritability).",
+      "source_page": 583,
+      "source_pages": [
+        583
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p007:b2",
+        "Evolution_chapter18:p007:b3",
+        "Evolution_chapter18:p007:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          207.0,
+          904.0,
+          345.0
+        ],
+        [
+          347.0,
+          361.0,
+          692.0,
+          385.0
+        ],
+        [
+          132.0,
+          415.0,
+          904.0,
+          579.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ac167761e477ad2f4b36aecb848d4fc60a735b8ab9fce5e5eb7263cc529ef736"
     },
     {
       "type": "discussion",
-      "content": "Recall from LW Chapter 8 that a regression estimator depends on the assumed covariance structure of the residuals. Most applications of the regression estimator (Equation 18.13) in the literature have assumed ordinary least-squares (OLS), which requires that the residuals, $ e_{t} $, be homoscedastic and uncorrelated (LW Chapter 8). However, the careful reader will recall from Equations 18.4 and 18.9 that drift generates heteroscedastic and correlated residuals, thus requiring a generalized least-squares (GLS) solution (LW Chapter 8). We return to this issue after first examining the OLS estimator."
+      "content": "Recall from LW Chapter 8 that a regression estimator depends on the assumed covariance structure of the residuals. Most applications of the regression estimator (Equation 18.13) in the literature have assumed ordinary least-squares (OLS), which requires that the residuals, $ e_{t} $, be homoscedastic and uncorrelated (LW Chapter 8). However, the careful reader will recall from Equations 18.4 and 18.9 that drift generates heteroscedastic and correlated residuals, thus requiring a generalized least-squares (GLS) solution (LW Chapter 8). We return to this issue after first examining the OLS estimator.",
+      "source_page": 583,
+      "source_pages": [
+        583
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p007:b6"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          578.0,
+          904.0,
+          737.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b39e25d16aeca5df699585d46435155d95156729316be99fca4e6933c4487347"
     },
     {
       "type": "discussion",
-      "content": "Recalling LW Equation 8.33a, the OLS estimator for the slope is $ (X^{T}X)^{-1}X^{T}y $. Because the design matrix, X, for the regression given by Equation 18.13 is simply the vector of cumulative selection differentials, S, and y is the vector of cumulative responses, R, it follows that the OLS estimate of the slope is given by $$ \\widehat{b}_{C}(\\mathrm{OLS})=\\left(\\mathbf{S}^{T}\\mathbf{S}\\right)^{-1}\\mathbf{S}^{T}\\mathbf{R}=\\frac{\\sum_{i=1}^{T}S_{C}(i)\\cdot R_{C}(i)}{\\sum_{i=1}^{T}S_{C}^{2}(i)} $$"
+      "content": "Recalling LW Equation 8.33a, the OLS estimator for the slope is $ (X^{T}X)^{-1}X^{T}y $. Because the design matrix, X, for the regression given by Equation 18.13 is simply the vector of cumulative selection differentials, S, and y is the vector of cumulative responses, R, it follows that the OLS estimate of the slope is given by $$ \\widehat{b}_{C}(\\mathrm{OLS})=\\left(\\mathbf{S}^{T}\\mathbf{S}\\right)^{-1}\\mathbf{S}^{T}\\mathbf{R}=\\frac{\\sum_{i=1}^{T}S_{C}(i)\\cdot R_{C}(i)}{\\sum_{i=1}^{T}S_{C}^{2}(i)} $$",
+      "source_page": 583,
+      "source_pages": [
+        583
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p007:b7",
+        "Evolution_chapter18:p007:b8"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          736.0,
+          902.0,
+          832.0
+        ],
+        [
+          304.0,
+          869.0,
+          728.0,
+          929.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8aeedbff331215c9455b6d64a5269a6fc01bc5bb933236ea0e3b1d33ccc75ab9"
     },
     {
       "type": "discussion",
-      "content": "We will refer to this as the OLS regression estimator of the realized heritability. While this is the most common approach used in the literature, by assuming the wrong residual error structure, the OLS approach substantially underestimates the standard error for the slope. Richardson et al. (1968) and Irgang et al. (1985) noted that when the number of individuals, $ M_t $, used to obtain the sample mean varies over generations, sample means based on more individuals contain more information, and thus have smaller residual errors. In this setting, the residual variances (roughly $ \\sigma_z^2/M_t $) are no longer homoscedastic, prompting these authors to suggest that a weighted least-squares method (e.g., LW Example 8.11) be used to correct for this. While it is an improvement over OLS, however, this approach still ignores the very significant impact from additional heteroscedasticity and correlations in the residual errors generated by drift."
+      "content": "We will refer to this as the OLS regression estimator of the realized heritability. While this is the most common approach used in the literature, by assuming the wrong residual error structure, the OLS approach substantially underestimates the standard error for the slope. Richardson et al. (1968) and Irgang et al. (1985) noted that when the number of individuals, $ M_t $, used to obtain the sample mean varies over generations, sample means based on more individuals contain more information, and thus have smaller residual errors. In this setting, the residual variances (roughly $ \\sigma_z^2/M_t $) are no longer homoscedastic, prompting these authors to suggest that a weighted least-squares method (e.g., LW Example 8.11) be used to correct for this. While it is an improvement over OLS, however, this approach still ignores the very significant impact from additional heteroscedasticity and correlations in the residual errors generated by drift.",
+      "source_page": 583,
+      "source_pages": [
+        583
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p007:b10"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          964.0,
+          905.0,
+          1216.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "771e5f2d69c08aec79da597e6b149a94a87416dd94101318d505dad678ad12bf"
     },
     {
       "type": "discussion",
-      "content": "The theory for estimating realized heritabilities (via a LS analysis) in populations with overlapping generations is less well-developed. As will be discussed in Volume 3, approaches assuming an asymptotic selection response are flawed in that many generations are required to reach a stable genetic structure when starting from an unselected base population. For nonasymptotic response, see Hill (1974a) and Johnson (1977a) for the relevant theory, and Atkins and Thompson (1986) for an example with Scottish Blackface sheep. Mixed-model approaches (Chapter 19) easily accommodate overlapping generations, but they require the full pedigree of all measured individuals used in making selection decisions. This is often quite feasible with selection on large domesticated animals, and it is becoming increasingly feasible in more general settings using dense-marker estimates of relationships (Chapter 20)."
+      "content": "The theory for estimating realized heritabilities (via a LS analysis) in populations with overlapping generations is less well-developed. As will be discussed in Volume 3, approaches assuming an asymptotic selection response are flawed in that many generations are required to reach a stable genetic structure when starting from an unselected base population. For nonasymptotic response, see Hill (1974a) and Johnson (1977a) for the relevant theory, and Atkins and Thompson (1986) for an example with Scottish Blackface sheep. Mixed-model approaches (Chapter 19) easily accommodate overlapping generations, but they require the full pedigree of all measured individuals used in making selection decisions. This is often quite feasible with selection on large domesticated animals, and it is becoming increasingly feasible in more general settings using dense-marker estimates of relationships (Chapter 20).",
+      "source_page": 583,
+      "source_pages": [
+        583
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p007:b11"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1217.0,
+          905.0,
+          1472.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5f481bc82fe33aec02ef1d53b830659fa9c1bc599c0a62a4e4a81dc52de893ee"
     },
     {
-      "type": "discussion",
-      "content": "The ratio estimate of the realized heritability (Equation 18.12) is $ \\hat{h}_r^2 = 2.63/12.51 = 0.2102 $. The regression, forced through the origin, of cumulative response ($ R_C $) on cumulative selection differential ($ S_C $) is plotted in Figure 18.2. Equation 18.14 yields an OLS regression estimator of the realized heritability of $$ \\widehat{h}_{r}^{2}=\\widehat{b}_{C}(O L S)=\\frac{\\sum_{i=1}^{5}S_{C}(i)\\cdot R_{C}(i)}{\\sum_{i=1}^{5}S_{C}^{2}(i)}=\\frac{78.96}{350.45}=0.2245 $$"
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:18.2]]",
+      "source_page": 584,
+      "source_pages": [
+        584
+      ],
+      "source_block_ids": [
+        "Evolution_chapter18:p008:b3"
+      ],
+      "source_bboxes": [
+        [
+          322.0,
+          580.0,
+          1035.0,
+          627.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a950b8322329d30a3124e774d220427af60fb86343c125c8cfca2cfc591e8979"
     }
   ]
 }

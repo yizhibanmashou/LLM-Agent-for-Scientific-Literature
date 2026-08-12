@@ -38,7 +38,7 @@
       "level": 2,
       "depth": 1,
       "anchor": "evolution_appendix5_003",
-      "text_preview": "As Figure A5.1 shows, a vector, x, can be treated as a geometric object, consisting of an arrow leading from the origin to an n-dimensional point whose coordinates are given by the elements of x. By changing coordinate systems, we change the resulting vector, potentially changing both its direction (rotating the vecto…"
+      "text_preview": "As Figure A5.1A shows, a vector, x, can be treated as a geometric object, consisting of an arrow leading from the origin to an n-dimensional point whose coordinates are given by the elements of x. By changing coordinate systems, we change the resulting vector, potentially changing both its direction (rotating the vect…"
     },
     {
       "id": "Evolution_appendix5_004",
@@ -128,7 +128,7 @@
       "level": 2,
       "depth": 1,
       "anchor": "evolution_appendix5_012",
-      "text_preview": "Recall the probability density function for the multivariate normal distribution (LW Chapter 8) $$ \\begin{align }\\phi(\\mathbf{x})=(2\\pi)^{-n/2}\\left \\mathbf{V} {\\mathbf{x}}\\right ^{-1/2}\\exp\\left[-{1\\over2}(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V} {\\mathbf{x}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)\\right]\\end{…"
+      "text_preview": "Recall the probability density function for the multivariate normal distribution (LW Chapter 8) $$ \\begin{align }\\phi(\\mathbf x)=(2\\pi)^{-n/2}\\left \\mathbf V {\\mathbf x}\\right ^{-1/2}\\exp\\left[-{1\\over2}(\\mathbf x-\\boldsymbol\\mu)^T\\mathbf V {\\mathbf x}^{-1}\\left(\\mathbf x-\\boldsymbol\\mu\\right)\\right]\\end{align } $$ Be…"
     },
     {
       "id": "Evolution_appendix5_013",
@@ -182,73 +182,6 @@
       "caption": "Figure A5.1 Some basic geometric concepts of vectors. While we use examples from two dimensions, these concepts easily extend to $n$ dimensions. A: A vector $x$ can be thought of as an arrow from the origin to a point in space whose coordinates are given by the elements of $x$. B: Multiplying a vector by $-1$ results in a reflection about the origin. C: One measure of the difference in direction between two vectors is the angle $(\\theta)$ between them. D: Proj($\\mathbf{b}$ on $\\mathbf{a}$) is the vector resulting from the projection of $\\mathbf{b}$ onto a. Note that the resulting projection vector is either in the same direction as $a$ or in the direction of the reflection of $a$, as seen for Proj($\\mathbf{c}$ on $\\mathbf{a}$)."
     },
     {
-      "kind": "example",
-      "id": "A5.1",
-      "anchor": "example-a5.1",
-      "label": "Example A5.1",
-      "section_id": "Evolution_appendix5_004",
-      "excerpt": "Example A5.1 · ref: A5.1 · source: Evolution appendix5 004.json · blocks 1–3 Example A5.1. Consider the Lande version of the multivariate breeder’s equation, $ \\mathbf{R} = \\mathbf{G}\\beta $ (Equation 13.26a). Here $ \\mathbf{R} $ is the change in the vector of phenotypic means resulting from selection, $ \\mathbf{G} $ is the covariance matrix of additive-genetic values (breeding values) of the characters, and $ \\beta $ is the directional selection gradient (the direction of c…"
-    },
-    {
-      "kind": "figure",
-      "id": "A5.2",
-      "anchor": "figure-a5.2",
-      "label": "Figure A5.2",
-      "section_id": "Evolution_appendix5_004",
-      "src": "figures/Evolution_A5.2.png",
-      "caption": "Figure A5.2 If we use the values of  $ \\beta $ and G from Example A5.1, observe that G translates the directional selection gradient vector  $ (\\beta) $ into the response vector  $ (R) $ in a counterintuitive fashion. While  $ \\beta $ shows that fitness is maximized by increasing both traits 1 and 2, the resulting response vector, R, increases trait 2 but decreases trait 1. This behavior results from the strong negative additive-genetic covariance between  $ z_1 $ and  $ z_2 $, as will become more obvious shortly, when we consider the eigenvectors of G (Figure A5.3). As shown in Example A5.1, the angle between the vectors  $ \\beta $ and R is 45 degrees."
-    },
-    {
-      "kind": "example",
-      "id": "A5.2",
-      "anchor": "example-a5.2",
-      "label": "Example A5.2",
-      "section_id": "Evolution_appendix5_006",
-      "excerpt": "Example A5.2 · ref: A5.2 · source: Evolution appendix5 006.json · blocks 8–12 Example A5.2. Determine the eigenstructure of the genetic covariance matrix G shown in Example A5.1. Writing the characteristic equation, and recalling the expression for the determinant of a $ 2 \\times 2 $ matrix (LW Equation 8.12a), yields $$ \\begin{aligned}\\left \\mathbf{G}-\\lambda\\mathbf{I}\\right &=\\left \\begin{pmatrix}4-\\lambda&-2\\\\ -2&2-\\lambda\\end{pmatrix}\\right \\\\&=(4-\\lambda)(2-\\lambda)-(-2…"
-    },
-    {
-      "kind": "figure",
-      "id": "A5.3",
-      "anchor": "figure-a5.3",
-      "label": "Figure A5.3",
-      "section_id": "Evolution_appendix5_006",
-      "src": "figures/Evolution_A5.3.png",
-      "caption": "Figure A5.3 Left: The scaled eigenvectors associated with the covariance matrix, G, from Example A5.1, plotted along with the selection gradient,  $ \\beta $. Note that  $ e_1 $ and  $ e_2 $ are orthogonal and hence can be thought of as describing a new coordinate system. Because  $ \\lambda_1 \\gg \\lambda_2 $, the leading eigenvector,  $ e_1 $, largely dominates the transformation. Right: This is shown by taking the projections of  $ \\beta $ on each of these eigenvectors (shown here on a magnified scale relative to the left figure). Even though  $ \\beta $ is nearly parallel to  $ e_2 $ ( $ \\theta | e_1 $,  $ \\beta = 13.2^\\circ $), the projection of  $ \\beta $ on  $ e_1 $ yields a vector of greater length than the projection of  $ \\beta $ on  $ e_2 $ ( $ 3.803 $ versus  $ 2.353 $). From Equation A5.9b, the vector of responses to selection, R, is the sum of these two projections."
-    },
-    {
-      "kind": "example",
-      "id": "A5.3",
-      "anchor": "example-a5.3",
-      "label": "Example A5.3",
-      "section_id": "Evolution_appendix5_008",
-      "excerpt": "Example A5.3 · ref: A5.3 · source: Evolution appendix5 008.json · blocks 8–8 Example A5.3. Consider the additive-genetic covariance matrix G from Examples A5.1 and A5.2. Recalling the results from Example A5.2 and using Equation A5.10a, we can express G as $ U\\Lambda U^{T} $, where $$ \\boldsymbol{A}=\\left(\\begin{array}{cc}{{{5.241}}}&{{{0}}} \\\\{{{0}}}&{{{0.765}}}\\end{array}\\right)\\quad and\\quad\\mathbf{U}=(\\mathbf{e} {1}\\quad\\mathbf{e} {2})=\\left(\\begin{array}{cc}\\left(-0.851…"
-    },
-    {
-      "kind": "figure",
-      "id": "A5.4",
-      "anchor": "figure-a5.4",
-      "label": "Figure A5.4",
-      "section_id": "Evolution_appendix5_009",
-      "src": "figures/Evolution_A5.4.png",
-      "caption": "Figure A5.4 The transformation (Equation A5.15a) generating a set of independent variables for the covariance matrix G from Example A5.4 results in a rigid rotation of axes of the original traits onto the new, uncorrelated set. Left: The direction of the new axes are given by the eigenvectors  $ e_1 $ and  $ e_2 $. The angle between the new axis,  $ e_1 $, and the original  $ z_1 $ axis is given by the angle between  $ e_1 $ and  $ z_1 = (1, 0)^T $. Here,  $ ||e_1|| = ||z_1|| = 1 $ and  $ e_1^T z_1 = 0.851 $, giving  $ \\theta = \\cos^{-1}(0.851) \\simeq 32^\\circ $. As this transformation is a rigid rotation, the angle between  $ e_2 $ and the  $ z_2 = (0, 1)^T $ axis is also also  $ 32^\\circ $. Right: On the  $ (y_1, y_2) $ coordinates, the angle between  $ R $ and  $ \\beta $ remains unchanged. See Example A5.4 for further details."
-    },
-    {
-      "kind": "example",
-      "id": "A5.4",
-      "anchor": "example-a5.4",
-      "label": "Example A5.4",
-      "section_id": "Evolution_appendix5_009",
-      "excerpt": "Example A5.4 · ref: A5.4 · source: Evolution appendix5 009.json · blocks 4–7 Example A5.4. If we apply the change of variables suggested by Equation A5.15a to the vector, z, of characters with associated G matrix used in Example A5.1 and using the eigenvalues and vectors obtained in Example A5.2 yields $$ \\begin{aligned}\\mathbf{y}=\\mathbf{U}^{T}\\mathbf{z}&=\\begin{pmatrix}\\mathbf{e} {1}^{T}\\\\\\mathbf{e} {2}^{T}\\end{pmatrix}\\begin{pmatrix}z {1}\\\\z {2}\\end{pmatrix}\\\\&=\\begin{pma…"
-    },
-    {
-      "kind": "example",
-      "id": "A5.5",
-      "anchor": "example-a5.5",
-      "label": "Example A5.5",
-      "section_id": "Evolution_appendix5_010",
-      "excerpt": "Example A5.5 · ref: A5.5 · source: Evolution appendix5 010.json · blocks 1–4 Example A5.5. To find the matrix, T, that simultaneously diagonalizes both P and G, we first use Equation A5.10a to write $$ \\mathbf{P}=\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T} $$ where $ A $ is a diagonal matrix and $ \\mathbf{U}^T\\mathbf{U} = \\mathbf{U}\\mathbf{U}^T = \\mathbf{I} $. Defining $ \\mathbf{B} = \\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2} $, Equation A5.15e showed that $ \\mathbf{B}^T\\mathbf{…"
-    },
-    {
       "kind": "figure",
       "id": "A5.5",
       "anchor": "figure-a5.5",
@@ -268,11 +201,63 @@
     },
     {
       "kind": "example",
+      "id": "A5.1",
+      "anchor": "example-a5.1",
+      "label": "Example A5.1",
+      "section_id": "Evolution_appendix5_004",
+      "excerpt": "Example A5.1. Consider the Lande version of the multivariate breeder’s equation, $ \\mathbf{R} = \\mathbf{G}\\beta $ (Equation 13.26a). Here $ \\mathbf{R} $ is the change in the vector of phenotypic means resulting from selection, $ \\mathbf{G} $ is the covariance matrix of additive-genetic values (breeding values) of the characters, and $ \\beta $ is the directional selection gradient (the direction of change in character means that results in the greatest increase in mean popula…",
+      "content_markdown": "Example A5.1. Consider the Lande version of the multivariate breeder’s equation, $ \\mathbf{R} = \\mathbf{G}\\beta $ (Equation 13.26a). Here $ \\mathbf{R} $ is the change in the vector of phenotypic means resulting from selection, $ \\mathbf{G} $ is the covariance matrix of additive-genetic values (breeding values) of the characters, and $ \\beta $ is the directional selection gradient (the direction of change in character means that results in the greatest increase in mean population fitness; Chapters 13 and 30). Suppose $$ \\mathbf{G}=\\begin{pmatrix}4&-2\\\\ -2&2\\end{pmatrix}\\quad and\\quad\\boldsymbol{\\beta}=\\begin{pmatrix}1\\\\ 3\\end{pmatrix},\\quad yielding\\quad\\mathbf{R}=\\mathbf{G}\\boldsymbol{\\beta}=\\begin{pmatrix}-2\\\\ 4\\end{pmatrix} $$ The resulting direction of change in character means is different from that most favored by natural selection. Selection ( $ \\beta $) favors an increase in trait one ( $ z_1 $), but when the genetic covariance structure is taken into account, the resulting change in the mean of $ z_1 $ is negative. If we take the appropriate inner products, we find $ \\|\\beta\\| = \\sqrt{10} $, $ \\|\\mathbf{R}\\| = \\sqrt{20} $, and $ \\beta^T \\mathbf{R} = 10 $. Equation A5.2a returns $$ \\cos(\\theta)=\\frac{\\beta^{T}\\mathbf{R}}{||\\mathbf{R}||||\\beta||}=\\frac{1}{\\sqrt{2}} $$ The resulting angle between the selection gradient and response vector is $ \\cos^{-1}(1/\\sqrt{2}) = 45^\\circ $, implying that the constraints introduced by the genetic covariance matrix rotate the response vector considerably away from the direction most favored by natural selection (Figure A5.2). [[FIGURE:A5.2]]",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A5.2",
+      "anchor": "example-a5.2",
+      "label": "Example A5.2",
+      "section_id": "Evolution_appendix5_006",
+      "excerpt": "Example A5.2. Determine the eigenstructure of the genetic covariance matrix G shown in Example A5.1. Writing the characteristic equation, and recalling the expression for the determinant of a $ 2 \\times 2 $ matrix (LW Equation 8.12a), yields $$ \\begin{aligned}\\left \\mathbf{G}-\\lambda\\mathbf{I}\\right &=\\left \\begin{pmatrix}4-\\lambda&-2\\\\ -2&2-\\lambda\\end{pmatrix}\\right \\\\&=(4-\\lambda)(2-\\lambda)-(-2)^{2}=\\lambda^{2}-6\\lambda+4=0\\end{aligned} $$ Alternatively, if we use the La…",
+      "content_markdown": "Example A5.2. Determine the eigenstructure of the genetic covariance matrix G shown in Example A5.1. Writing the characteristic equation, and recalling the expression for the determinant of a $ 2 \\times 2 $ matrix (LW Equation 8.12a), yields $$ \\begin{aligned}\\left|\\mathbf{G}-\\lambda\\mathbf{I}\\right|&=\\left|\\begin{pmatrix}4-\\lambda&-2\\\\ -2&2-\\lambda\\end{pmatrix}\\right|\\\\&=(4-\\lambda)(2-\\lambda)-(-2)^{2}=\\lambda^{2}-6\\lambda+4=0\\end{aligned} $$ Alternatively, if we use the Laplace expansion (Equation A5.7), and note that $ \\mathrm{tr}(\\mathbf{G}) = 4 + 2 = 6 $ and $ |\\mathbf{G}| = 4 \\cdot 2 - (-2)^2 = 4 $, we will also recover the characteristic equation, which has solutions $$ \\lambda_{1}=3+\\sqrt{5}\\simeq5.236\\qquad\\lambda_{2}=3-\\sqrt{5}\\simeq0.764 $$ The associated unit eigenvectors (which as easily obtained, along with the eigenvectors, by using the R command eigen) are $$ \\mathbf{e}_{1}\\simeq\\begin{pmatrix}-0.851\\\\ 0.526\\end{pmatrix}\\qquad\\mathbf{e}_{2}\\simeq\\begin{pmatrix}0.526\\\\ 0.851\\end{pmatrix} $$ These are orthogonal as $ \\mathbf{e}_{1}^{T}\\mathbf{e}_{2}=0 $. The eigenstructure of G shows why the vector of responses, $ \\mathbf{R} $, is rotated away from the direction of the vector that corresponds to the direction of selection, $ \\beta $. From Example A5.1, $ \\left|\\left|\\beta\\right|\\right| = \\sqrt{10} $, while $ \\mathbf{e}_1^T \\boldsymbol{\\beta} \\simeq 0.727 $ and $ \\mathbf{e}_2^T \\boldsymbol{\\beta} \\simeq 3.079 $. Because $ \\left|\\left|\\mathbf{e}_1\\right|\\right| = \\left|\\left|\\mathbf{e}_2\\right|\\right| = 1 $, Equation A5.2a simplifies to $$ \\cos(\\theta|\\mathbf{e}_{1},\\boldsymbol{\\beta})\\simeq\\frac{0.727}{\\sqrt{10}}\\simeq0.230\\qquad and\\qquad\\cos(\\theta|\\mathbf{e}_{2},\\boldsymbol{\\beta})\\simeq\\frac{3.079}{\\sqrt{10}}\\simeq0.974 $$ giving the angle between $\\mathbf{e}_1$ and $\\boldsymbol{\\beta}$ as $\\theta(\\mathbf{e}_1, \\boldsymbol{\\beta}) \\simeq 76.7^\\circ$, while $\\theta(\\mathbf{e}_2, \\boldsymbol{\\beta}) \\simeq 13.2^\\circ$. Applying Equation A5.3b, the corresponding scaled projections of $\\boldsymbol{\\beta}$ on these eigenvectors are $$ \\begin{aligned}\\lambda_{1}Proj(\\boldsymbol{\\beta}on\\mathbf{e}_{1})&=\\lambda_{1}\\cos(\\theta|\\mathbf{e}_{1},\\boldsymbol{\\beta})||\\boldsymbol{\\beta}||\\mathbf{e}_{1}=\\left(5.236\\cdot0.230\\cdot\\sqrt{10}\\right)\\mathbf{e}_{1}\\\\&=3.803\\left(\\begin{array}{c}-0.851\\\\0.526\\end{array}\\right)=\\left(\\begin{array}{c}-3.236\\\\2\\end{array}\\right)\\end{aligned} $$ $$ \\begin{aligned}\\lambda_{2}\\mathrm{Proj}(\\boldsymbol{\\beta}\\mathrm{on}\\mathbf{e}_{2})&=\\lambda_{2}\\cos(\\theta|\\mathbf{e}_{2},\\boldsymbol{\\beta})||\\boldsymbol{\\beta}||\\mathbf{e}_{2}=\\left(0.764\\cdot0.974\\cdot\\sqrt{10}\\right)\\mathbf{e}_{2}\\\\&=2.353\\begin{pmatrix}0.526\\\\ 0.851\\end{pmatrix}=\\begin{pmatrix}1.236\\\\ 2\\end{pmatrix}\\end{aligned} $$ [[FIGURE:A5.3]] From Equation A5.9b, we can express the response, R, as the sum of the projections of $ \\beta $ onto the eigenvalues of G, returning $$ \\begin{aligned}\\mathbf{R}=\\mathbf{G}\\boldsymbol{\\beta}&=\\lambda_{1}Proj(\\boldsymbol{\\beta}on\\mathbf{e}_{1})+\\lambda_{2}Proj(\\boldsymbol{\\beta}on\\mathbf{e}_{2})\\\\&=\\begin{pmatrix}-3.236\\\\ 2\\end{pmatrix}+\\begin{pmatrix}1.236\\\\ 2\\end{pmatrix}=\\begin{pmatrix}-2\\\\ 4\\end{pmatrix}\\end{aligned} $$ As Figure A5.3 shows, the eigenstructure of G explains the unusual behavior of the selection response seen in Figure A5.2. The eigenvector associated with the leading eigenvalue, $ \\lambda_1 $, accounts for most of the variation inherent in G (87%, as $ \\lambda_1 / (\\lambda_1 + \\lambda_2) = 0.87 $), and this eigenvector corresponds to a strong negative correlation between the additive-genetic values of $ z_1 $ and $ z_2 $. Hence, even though $ \\beta $ points in very much the same direction as $ e_2 $, because $ \\lambda_1 \\gg \\lambda_2 $, the projection of $ \\beta $ on $ e_1 $ yields a vector of greater length than the projection of $ \\beta $ on $ e_2 $ (3.803 versus 2.353), and it is this $ e_1 $ projection vector that results in the decrease in $ \\mu_{z_1} $.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A5.3",
+      "anchor": "example-a5.3",
+      "label": "Example A5.3",
+      "section_id": "Evolution_appendix5_008",
+      "excerpt": "Example A5.3. Consider the additive-genetic covariance matrix G from Examples A5.1 and A5.2. Recalling the results from Example A5.2 and using Equation A5.10a, we can express G as $ U\\Lambda U^{T} $, where $$ \\boldsymbol{A}=\\left(\\begin{array}{cc}{{{5.241}}}&{{{0}}} \\\\{{{0}}}&{{{0.765}}}\\end{array}\\right)\\quad and\\quad\\mathbf{U}=(\\mathbf{e} {1}\\quad\\mathbf{e} {2})=\\left(\\begin{array}{cc}\\left(-0.851\\right)&\\\\0.526&\\end{array}\\right)\\quad\\left(\\begin{array}{l}{{{0.526}}} \\\\{{…",
+      "content_markdown": "Example A5.3. Consider the additive-genetic covariance matrix G from Examples A5.1 and A5.2. Recalling the results from Example A5.2 and using Equation A5.10a, we can express G as $ U\\Lambda U^{T} $, where $$ \\boldsymbol{A}=\\left(\\begin{array}{cc}{{{5.241}}}&{{{0}}} \\\\{{{0}}}&{{{0.765}}}\\end{array}\\right)\\quad and\\quad\\mathbf{U}=(\\mathbf{e}_{1}\\quad\\mathbf{e}_{2})=\\left(\\begin{array}{cc}\\left(-0.851\\right)&\\\\0.526&\\end{array}\\right)\\quad\\left(\\begin{array}{l}{{{0.526}}} \\\\{{{0.851}}}\\end{array}\\right) $$ From Equation A5.11a, the eigenvalues of $ \\mathbf{A}^{-1} $ are $ (5.241)^{-1} \\simeq 0.191 $ and $ (0.765)^{-1} \\simeq 1.307 $, while from Equation A5.11b, the eigenvalues of $ \\mathbf{A}^{1/2} $ are $ \\sqrt{5.241} \\simeq 2.289 $ and $ \\sqrt{0.765} \\simeq 0.875 $.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A5.4",
+      "anchor": "example-a5.4",
+      "label": "Example A5.4",
+      "section_id": "Evolution_appendix5_009",
+      "excerpt": "Example A5.4. If we apply the change of variables suggested by Equation A5.15a to the vector, z, of characters with associated G matrix used in Example A5.1 and using the eigenvalues and vectors obtained in Example A5.2 yields $$ \\begin{aligned}\\mathbf{y}=\\mathbf{U}^{T}\\mathbf{z}&=\\begin{pmatrix}\\mathbf{e} {1}^{T}\\\\\\mathbf{e} {2}^{T}\\end{pmatrix}\\begin{pmatrix}z {1}\\\\z {2}\\end{pmatrix}\\\\&=\\begin{pmatrix}-0.851&0.526\\\\0.526&0.851\\end{pmatrix}\\begin{pmatrix}z {1}\\\\z {2}\\end{pm…",
+      "content_markdown": "Example A5.4. If we apply the change of variables suggested by Equation A5.15a to the vector, z, of characters with associated G matrix used in Example A5.1 and using the eigenvalues and vectors obtained in Example A5.2 yields $$ \\begin{aligned}\\mathbf{y}=\\mathbf{U}^{T}\\mathbf{z}&=\\begin{pmatrix}\\mathbf{e}_{1}^{T}\\\\\\mathbf{e}_{2}^{T}\\end{pmatrix}\\begin{pmatrix}z_{1}\\\\z_{2}\\end{pmatrix}\\\\&=\\begin{pmatrix}-0.851&0.526\\\\0.526&0.851\\end{pmatrix}\\begin{pmatrix}z_{1}\\\\z_{2}\\end{pmatrix}\\\\&=\\begin{pmatrix}-0.851z_{1}+0.526z_{2}\\\\0.526z_{1}+0.851z_{2}\\end{pmatrix}\\end{aligned} $$ From Equation A5.15b, $ \\mathbf{V}_{\\mathbf{y}} = \\mathbf{A} $ as given in Example A5.3, showing that $ y_1 $ and $ y_2 $ are uncorrelated with $ \\sigma^2(y_1) = \\lambda_1 = 5.241 $ and $ \\sigma^2(y_2) = \\lambda_2 = 0.765 $. Hence, by considering the new coordinate system with $$ y_{1}=\\mathbf{e}_{1}^{T}\\mathbf{z}=-0.851z_{1}+0.526z_{2}\\quad and\\quad y_{2}=\\mathbf{e}_{2}^{T}\\mathbf{z}=0.526z_{1}+0.851z_{2} $$ we can transform the original coordinate system into a new system on which there are no additive-genetic correlations between these new characters. Figure A5.4 shows that this transformation is simply a rigid rotation of the axes.\n\nLikewise, from Equation A5.15d, the transformation that yields uncorrelated variables with unit variance is $$ \\begin{aligned}\\mathbf{y}=\\boldsymbol{\\Lambda}^{-1/2}\\mathbf{U}^{T}\\mathbf{z}&=\\begin{pmatrix}{{{1/\\sqrt{\\lambda_{1}}}}}&{{{0}}} \\\\{{{0}}}&{{{1/\\sqrt{\\lambda_{2}}}}}\\end{pmatrix}\\begin{pmatrix}{{{\\mathbf{e}_{1}^{T}}}} \\\\{{{\\mathbf{e}_{2}^{T}}}}\\end{pmatrix}\\begin{pmatrix}{{{z_{1}}}} \\\\{{{z_{2}}}}\\end{pmatrix}\\\\&=\\begin{pmatrix}{{{1/\\sqrt{5.236}}}}&{{{0}}} \\\\{{{0}}}&{{{1/\\sqrt{0.764}}}}\\end{pmatrix}\\begin{pmatrix}{{{-0.851}}}&{{{0.526}}} \\\\{{{0.526}}}&{{{0.851}}}\\end{pmatrix}\\begin{pmatrix}{{{z_{1}}}} \\\\{{{z_{2}}}}\\end{pmatrix}\\\\&=\\begin{pmatrix}{{{-0.372}}}&{{{0.230}}} \\\\{{{0.602}}}&{{{0.974}}}\\end{pmatrix}\\begin{pmatrix}{{{z_{1}}}} \\\\{{{z_{2}}}}\\end{pmatrix}\\end{aligned} $$\n\nHence, the transformed variables $ y_1 = -0.372z_1 + 0.230z_2 $ and $ y_2 = 0.602z_1 + 0.974z_2 $ are uncorrelated, and each has unit variance.\n\nAn alternative set of uncorrelated random variables follows from the Cholesky decomposition, which can be compute in R using the cho1 command. (As an aside, cho1 returns the upper-triangular version of the decomposition, which is simply the transpose of the lower-triangular version). The resulting decomposition is $$ \\mathbf{G}=\\begin{pmatrix}{{{4}}}&{{{-2}}} \\\\{{{-2}}}&{{{2}}}\\end{pmatrix}=\\mathbf{C}\\mathbf{C}^{T}=\\begin{pmatrix}{{{2}}}&{{{0}}} \\\\{{{-1}}}&{{{1}}}\\end{pmatrix}\\begin{pmatrix}{{{2}}}&{{{-1}}} \\\\{{{0}}}&{{{1}}}\\end{pmatrix} $$ $$ \\mathbf{y}=\\mathbf{C}^{-1}\\mathbf{z}=\\begin{pmatrix}{{{0.5}}}&{{{0}}} \\\\{{{0.5}}}&{{{1}}}\\end{pmatrix}\\begin{pmatrix}{{{z_{1}}}} \\\\{{{z_{2}}}}\\end{pmatrix} $$ yielding $$ y_{1}=z_{1}/2\\quad and\\quad z_{2}=z_{1}/2+z_{2} $$ or as a new set of uncorrelated variables, each with unit variance. One nice feature about using a Cholesky decomposition is that we can always isolate a given variable of interest (simply by putting first in the vector). Because C is lower-triangular, it always returns the first new uncorrelated variable as a scalar times the first original variable (rather than some linear combination of all the variables, as was the case for the first decomposition in this example).",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A5.5",
+      "anchor": "example-a5.5",
+      "label": "Example A5.5",
+      "section_id": "Evolution_appendix5_010",
+      "excerpt": "Example A5.5. To find the matrix, T, that simultaneously diagonalizes both P and G, we first use Equation A5.10a to write $$ \\mathbf{P}=\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T} $$ where $ A $ is a diagonal matrix and $ \\mathbf{U}^T\\mathbf{U} = \\mathbf{U}\\mathbf{U}^T = \\mathbf{I} $. Defining $ \\mathbf{B} = \\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2} $, Equation A5.15e showed that $ \\mathbf{B}^T\\mathbf{P}\\mathbf{B} = \\mathbf{I} $. Next, note for $ \\mathbf{M} = \\mathbf{B}^T\\mathb…",
+      "content_markdown": "Example A5.5. To find the matrix, T, that simultaneously diagonalizes both P and G, we first use Equation A5.10a to write $$ \\mathbf{P}=\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T} $$ where $ A $ is a diagonal matrix and $ \\mathbf{U}^T\\mathbf{U} = \\mathbf{U}\\mathbf{U}^T = \\mathbf{I} $. Defining $ \\mathbf{B} = \\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2} $, Equation A5.15e showed that $ \\mathbf{B}^T\\mathbf{P}\\mathbf{B} = \\mathbf{I} $. Next, note for $ \\mathbf{M} = \\mathbf{B}^T\\mathbf{G}\\mathbf{B} $, that $ \\mathbf{M} = \\mathbf{M}^T $ (i.e., $ \\mathbf{M} $ is symmetric), as $$ \\mathbf{M}^{T}=\\left(\\mathbf{B}^{T}\\mathbf{G}\\mathbf{B}\\right)^{T}=\\mathbf{B}^{T}\\mathbf{G}^{T}\\mathbf{B}=\\mathbf{B}^{T}\\mathbf{G}\\mathbf{B}=\\mathbf{M} $$\n\nHence, we can also diagonalize M. $$ \\mathbf{C}^{T}\\mathbf{M}\\mathbf{C}=\\mathbf{D} $$ where D is a diagonal matrix and $ \\mathbf{C}^T\\mathbf{C} = \\mathbf{C}\\mathbf{C}^T = \\mathbf{I} $. Thus, $$ \\mathbf{C}^{T}\\mathbf{M}\\mathbf{C}=\\mathbf{C}^{T}\\left(\\mathbf{B}^{T}\\mathbf{G}\\mathbf{B}\\right)\\mathbf{C}=\\left(\\mathbf{B}\\mathbf{C}\\right)^{T}\\mathbf{G}\\left(\\mathbf{B}\\mathbf{C}\\right)=\\mathbf{D} $$\n\nDefining $$ \\mathbf{T}=\\mathbf{B}\\mathbf{C}=\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\mathbf{C} $$ we have from the previous expression that $$ \\mathbf{T}^{T}\\mathbf{G}\\mathbf{T}=\\mathbf{D} $$\n\nLikewise, $$ \\mathbf{T}^{T}\\mathbf{P}\\mathbf{T}=\\left(\\mathbf{B}\\mathbf{C}\\right)^{T}\\mathbf{P}\\left(\\mathbf{B}\\mathbf{C}\\right)=\\mathbf{C}^{T}\\left(\\mathbf{B}^{T}\\mathbf{P}\\mathbf{B}\\right)\\mathbf{C}=\\mathbf{C}^{T}\\mathbf{C}=\\mathbf{I} $$ showing that the matrix T satisfies Equation A5.16.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
       "id": "A5.6",
       "anchor": "example-a5.6",
       "label": "Example A5.6",
       "section_id": "Evolution_appendix5_013",
-      "excerpt": "Example A5.6 · ref: A5.6 · source: Evolution appendix5 013.json · blocks 3–4 Example A5.6. Again let us consider the additive-genetic covariance matrix, G, as shown in Examples A5.1 and A5.2. Because $ \\lambda 1 \\simeq 5.241 $, $ \\lambda 2 \\simeq 0.765 $, and $ \\text{tr}(G) = 4 + 2 = 6 $, the first PC explains $ 5.241/6 \\simeq 0.8735 $, or 87% of the variance in G. While the first PC accounts for the majority of variation over the entire space of the variables (x), the amoun…"
+      "excerpt": "Example A5.6. Again let us consider the additive-genetic covariance matrix, G, as shown in Examples A5.1 and A5.2. Because $ \\lambda 1 \\simeq 5.241 $, $ \\lambda 2 \\simeq 0.765 $, and $ \\text{tr}(G) = 4 + 2 = 6 $, the first PC explains $ 5.241/6 \\simeq 0.8735 $, or 87% of the variance in G. While the first PC accounts for the majority of variation over the entire space of the variables (x), the amount of variation explained by PC1 for any particular weighted combination, $ y…",
+      "content_markdown": "Example A5.6. Again let us consider the additive-genetic covariance matrix, G, as shown in Examples A5.1 and A5.2. Because $ \\lambda_1 \\simeq 5.241 $, $ \\lambda_2 \\simeq 0.765 $, and $ \\text{tr}(G) = 4 + 2 = 6 $, the first PC explains $ 5.241/6 \\simeq 0.8735 $, or 87% of the variance in G. While the first PC accounts for the majority of variation over the entire space of the variables (x), the amount of variation explained by PC1 for any particular weighted combination, $ y = b^T x $, of the original variables depends on the projection of b onto PC1. For example, if $ b = e_2 $ (the weight vector corresponds to the second eigenvector), then the projection of b onto PC1 has a length of zero, because PC1 is orthogonal to $ e_2 $, and hence PC1 explains none of the variation of this new variable.",
+      "origin": "example-library"
     },
     {
       "kind": "example",
@@ -280,16 +265,9 @@
       "anchor": "example-a5.7",
       "label": "Example A5.7",
       "section_id": "Evolution_appendix5_013",
-      "excerpt": "Example A5.7 · ref: A5.7 · source: Evolution appendix5 013.json · blocks 5–8 Example A5.7. Jolicoeur and Mosimann (1960) measured three carapace characters in 24 males of the painted turtle (Chrysemys picta marginata). Letting $ z 1 $ be the carapace length, $ z 2 $ be the maximum carapace width, and $ z 3 $ be the carapace height, the resulting sample covariance matrix ( $ S z $, the sample estimate of $ V z $) for these data was found to be $$ \\mathbf{S} {\\mathbf{z}}=\\begi…"
-    },
-    {
-      "kind": "figure",
-      "id": "A5.7",
-      "anchor": "figure-a5.7",
-      "label": "Figure A5.7",
-      "section_id": "Evolution_appendix5_015",
-      "src": "figures/Evolution_A5.7.png",
-      "caption": "Figure A5.7 Plots of ranked distance data  $ (d_{(j)}^{2}) $ being the jth smallest distance) versus the expected corresponding  $ \\chi^{2} $ value for the data of Jolicoeur and Mosimann from Example A5.8. Left: The untransformed data do not appear to depart significantly from linearity, although they depart slightly from the intercept (0) and slope (1) of the expected regression under multivariate normality. Right: Log-transforming the data gives a slightly better linear fit  $ (r^{2} = 0.983 \\text{ versus } r^{2} = 0.952) $, with the best-fitting line passing through the origin as expected if the distance data follow a  $ \\chi^{2} $ distribution, and has a slope of essentially one. See Example A5.8 for more details."
+      "excerpt": "Example A5.7. Jolicoeur and Mosimann (1960) measured three carapace characters in 24 males of the painted turtle (Chrysemys picta marginata). Letting $ z 1 $ be the carapace length, $ z 2 $ be the maximum carapace width, and $ z 3 $ be the carapace height, the resulting sample covariance matrix ( $ S z $, the sample estimate of $ V z $) for these data was found to be $$ \\mathbf{S} {\\mathbf{z}}=\\begin{pmatrix}138.77&79.15&37.38\\\\79.15&50.04&21.65\\\\37.38&21.65&11.26\\end{pmatri…",
+      "content_markdown": "Example A5.7. Jolicoeur and Mosimann (1960) measured three carapace characters in 24 males of the painted turtle (Chrysemys picta marginata). Letting $ z_1 $ be the carapace length, $ z_2 $ be the maximum carapace width, and $ z_3 $ be the carapace height, the resulting sample covariance matrix ( $ S_z $, the sample estimate of $ V_z $) for these data was found to be $$ \\mathbf{S}_{\\mathbf{z}}=\\begin{pmatrix}138.77&79.15&37.38\\\\79.15&50.04&21.65\\\\37.38&21.65&11.26\\end{pmatrix} $$ Hence, $ \\mathrm{tr}(\\mathbf{S}_{\\mathbf{Z}})=138.77+50.04+11.26=200.07 $. Using $ \\mathbf{R} $, the eigenvalues of $ \\mathbf{S}_{\\mathbf{Z}} $ are found to be $$ \\lambda_{1}=195.280,\\qquad\\lambda_{2}=3.687,\\qquad\\lambda_{3}=1.103 $$ which (as expected) sum to the value of the trace, 200.07. The associated (normalized) eigenvectors are similarly found to be $$ \\mathbf{e}_{1}=\\begin{pmatrix}0.840\\\\ 0.492\\\\ 0.229\\end{pmatrix},\\qquad\\mathbf{e}_{2}=\\begin{pmatrix}0.488\\\\ -0.870\\\\ 0.079\\end{pmatrix},\\qquad\\mathbf{e}_{3}=\\begin{pmatrix}0.213\\\\ 0.043\\\\ -0.971\\end{pmatrix} $$ PC1 accounts for 97.6% of the variation (195.281/200.07 = 0.976), while PC2 and PC3 account for 1.84% and 0.55%, respectively. Jolicoeur and Mosimann interpret PC1 as measuring overall size, as the new variable $$ y_{1}=\\mathbf{e}_{1}^{T}\\mathbf{z}=0.840z_{1}+0.492z_{2}+0.229z_{3} $$ corresponds to a simultaneous change in all three variables in the same direction, as is expected as individuals change their overall size. Likewise, PC2 and PC3 are $$ y_{2}=\\mathbf{e}_{2}^{T}\\mathbf{z}=0.488z_{1}-0.870z_{2}+0.079z_{3} $$ $$ y_{3}=\\mathbf{e}_{3}^{T}\\mathbf{z}=0.213z_{1}+0.043z_{2}-0.971z_{3} $$ which Jolicoeur and Mosimann interpreted as measures of shape. Because the coefficient on $ z_{3} $ is small relative to the others in PC2, they interpret PC2 as measuring the tradeoff between length ( $ z_{1} $) and width ( $ z_{2} $). Thus, after removing the variation in size, 1.84% of the remaining variation can be accounted for by differences in the shape measured by length versus width. Likewise, because the PC3 coefficient for $ z_{2} $ is very small, PC3 mainly measures shape differences due to length ( $ z_{1} $) versus height ( $ z_{3} $).",
+      "origin": "example-library"
     },
     {
       "kind": "example",
@@ -297,7 +275,9 @@
       "anchor": "example-a5.8",
       "label": "Example A5.8",
       "section_id": "Evolution_appendix5_015",
-      "excerpt": "Example A5.8 · ref: A5.8 · source: Evolution appendix5 015.json · blocks 4–7 Example A5.8. Consider again the data of Jolicoeur and Mosimann (1960) on carapace characters in 24 male turtles. Are the characters $ z 1 $ (carapace length) and $ z 2 $ (maximum carapace width) jointly bivariate normally distributed? Here $ n = 2 $ and $ m = 24 $ and $$ \\overline{\\mathbf{z}}=\\left(\\begin{array}{l}113.13.\\\\ 88.29\\end{array}\\right),\\mathbf{S} {\\mathbf{Z}}=\\left(\\begin{array}{l l}138…"
+      "excerpt": "Example A5.8. Consider again the data of Jolicoeur and Mosimann (1960) on carapace characters in 24 male turtles. Are the characters $ z 1 $ (carapace length) and $ z 2 $ (maximum carapace width) jointly bivariate normally distributed? Here $ n = 2 $ and $ m = 24 $ and $$ \\overline{\\mathbf{z}}=\\left(\\begin{array}{l}113.13.\\\\ 88.29\\end{array}\\right),\\mathbf{S} {\\mathbf{Z}}=\\left(\\begin{array}{l l}138.77&79.15\\\\ 79.15&50.04\\end{array}\\right),\\mathbf{S} {\\mathbf{Z}}^{-1}=\\left(…",
+      "content_markdown": "Example A5.8. Consider again the data of Jolicoeur and Mosimann (1960) on carapace characters in 24 male turtles. Are the characters $ z_1 $ (carapace length) and $ z_2 $ (maximum carapace width) jointly bivariate normally distributed? Here $ n = 2 $ and $ m = 24 $ and $$ \\overline{\\mathbf{z}}=\\left(\\begin{array}{l}113.13.\\\\ 88.29\\end{array}\\right),\\mathbf{S}_{\\mathbf{Z}}=\\left(\\begin{array}{l l}138.77&79.15\\\\ 79.15&50.04\\end{array}\\right),\\mathbf{S}_{\\mathbf{Z}}^{-1}=\\left(\\begin{array}{c c}0.0737&-0.1165\\\\ -0.1165&0.2043\\end{array}\\right) $$ where $ S_{Z} $ is the sample covariance matrix. A partial list of the 24 vectors of observations is $$ \\mathbf{z}_{1}=\\begin{pmatrix}93\\\\ 74\\end{pmatrix},\\quad\\cdots,\\quad\\mathbf{z}_{11}=\\begin{pmatrix}113\\\\ 88\\end{pmatrix},\\quad\\cdots,\\quad\\mathbf{z}_{24}=\\begin{pmatrix}135\\\\ 106\\end{pmatrix} $$\n\nApplying Equation A5.23, these observations translate into the distances $$ d_{1}^{2}=4.45,\\quad\\cdots,\\quad d_{11}^{2}=0.002,\\quad\\cdots,\\quad d_{24}^{2}=9.277 $$\n\nAfter rank ordering, these correspond to $ d_{(23)}^{2} $, $ d_{(1)}^{2} $, and $ d_{(24)}^{2} $, respectively. For $ d_{(23)}^{2} $, the matching value when distances are $ \\chi^{2} $-distributed is $$ \\chi_{2}^{2}\\left(\\frac{23-1/2}{24}\\right)=\\chi_{2}^{2}\\left(0.9375\\right) $$\n\nThe R command qchisq(0.9375,2) returns a value of $ x = 5.545 $, which satisfies $ \\Pr(\\chi_2^2 \\leq x) = 0.9375 $, and calculates the point generated from $ z_1 $ as (4.45, 5.545). Likewise, the $ \\chi^2 $ values for $ d_1^2 $ and $ d_2^2 $ are 0.043 and 7.742, respectively. Proceeding similarly for the other values, we obtain the regression plotted in Figure A5.7. This departs somewhat from linearity. Further, under the assumption of multivariate normality, the best-fitting linear regression is expected to have a slope of one and to pass through the origin, while the best linear fit of these data shows slight departures from these values. Transforming the data by taking logs results in a slightly better fit (Figure A5.7).",
+      "origin": "example-library"
     },
     {
       "kind": "example",
@@ -305,7 +285,9 @@
       "anchor": "example-a5.9",
       "label": "Example A5.9",
       "section_id": "Evolution_appendix5_016",
-      "excerpt": "Example A5.9 · ref: A5.9 · source: Evolution appendix5 016.json · blocks 4–4 Example A5.9. Do the data considered in Example A5.8 display significant skewness or kurtosis? Here $n = 2$ and $m = 24$. Applying Equations A5.25a and A5.25b gives $b {1,2} = 0.6792$ and $b {2,2} = 7.6043$. Considering skewness first, from Equation A5.25a it follows that the value $$ \\frac{m}{6}b {1,2}=\\frac{24}{6}0.6792=2.717 $$ is (under MVN) a draw from a chi-square distribution with $ f = 2(2 +…"
+      "excerpt": "Example A5.9. Do the data considered in Example A5.8 display significant skewness or kurtosis? Here $n = 2$ and $m = 24$. Applying Equations A5.25a and A5.25b gives $b {1,2} = 0.6792$ and $b {2,2} = 7.6043$. Considering skewness first, from Equation A5.25a it follows that the value $$ \\frac{m}{6}b {1,2}=\\frac{24}{6}0.6792=2.717 $$ is (under MVN) a draw from a chi-square distribution with $ f = 2(2 + 1)(2 + 2)/6 = 4 $ degrees of freedom. Because $ \\text{Prob}(\\chi 4^2 \\geq 2.…",
+      "content_markdown": "Example A5.9. Do the data considered in Example A5.8 display significant skewness or kurtosis? Here $n = 2$ and $m = 24$. Applying Equations A5.25a and A5.25b gives $b_{1,2} = 0.6792$ and $b_{2,2} = 7.6043$. Considering skewness first, from Equation A5.25a it follows that the value $$ \\frac{m}{6}b_{1,2}=\\frac{24}{6}0.6792=2.717 $$ is (under MVN) a draw from a chi-square distribution with $ f = 2(2 + 1)(2 + 2)/6 = 4 $ degrees of freedom. Because $ \\text{Prob}(\\chi_4^2 \\geq 2.717) \\simeq 0.606 $, this is not significant. Turning to kurtosis, Equation A5.25b yields $$ \\frac{b_{2,n}-n(n+2)}{\\sqrt{8n(n+2)/m}}=\\frac{7.6043-8}{1.633}\\simeq-0.2423 $$ which is also not significant as Prob(|N(0,1)| ≥ 0.2423) ≈ 0.81. Transforming the data by taking logs gives $ b_{1,2} = 0.2767 $ and $ b_{2,2} = 7.1501 $, and hence showing a slight decrease in skewness and a slight increase in kurtosis relative to the untransformed data. Reyment (1971) presented a number of other biological examples using Mardia's test.",
+      "origin": "example-library"
     },
     {
       "kind": "formula",
@@ -853,8 +835,29 @@
     "Evolution_appendix5_003": [
       {
         "kind": "figure",
+        "id": "A5.1A",
+        "label": "Figure A5.1A",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
         "id": "A5.1",
         "label": "Figure A5.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A5.1C",
+        "label": "Figure A5.1C",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A5.1B",
+        "label": "Figure A5.1B",
         "book_hint": "",
         "link_scope": "current-book"
       },
@@ -868,51 +871,9 @@
     ],
     "Evolution_appendix5_004": [
       {
-        "kind": "chapter",
-        "id": "13",
-        "label": "Chapter 13",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "chapter",
-        "id": "30",
-        "label": "Chapter 30",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
         "kind": "example",
         "id": "A5.1",
         "label": "Example A5.1",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "13.26a",
-        "label": "Equation 13.26a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A5.2a",
-        "label": "Equation A5.2a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "A5.2",
-        "label": "Figure A5.2",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "A5.3",
-        "label": "Figure A5.3",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -951,55 +912,6 @@
         "kind": "example",
         "id": "A5.2",
         "label": "Example A5.2",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "A5.1",
-        "label": "Example A5.1",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "8.12a",
-        "label": "LW Equation 8.12a",
-        "book_hint": "Genetics",
-        "link_scope": "lw"
-      },
-      {
-        "kind": "equation",
-        "id": "A5.7",
-        "label": "Equation A5.7",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A5.2a",
-        "label": "Equation A5.2a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "A5.3",
-        "label": "Figure A5.3",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A5.9b",
-        "label": "Equation A5.9b",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "A5.2",
-        "label": "Figure A5.2",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -1069,27 +981,6 @@
         "label": "Example A5.3",
         "book_hint": "",
         "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "A5.1",
-        "label": "Example A5.1",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "A5.2",
-        "label": "Example A5.2",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A5.11b",
-        "label": "Equation A5.11b",
-        "book_hint": "",
-        "link_scope": "current-book"
       }
     ],
     "Evolution_appendix5_009": [
@@ -1104,27 +995,6 @@
         "kind": "equation",
         "id": "A5.12",
         "label": "Equation A5.12",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "A5.4",
-        "label": "Figure A5.4",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A5.15a",
-        "label": "Equation A5.15a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "A5.4",
-        "label": "Example A5.4",
         "book_hint": "",
         "link_scope": "current-book"
       },
@@ -1144,29 +1014,8 @@
       },
       {
         "kind": "example",
-        "id": "A5.1",
-        "label": "Example A5.1",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "A5.2",
-        "label": "Example A5.2",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A5.15b",
-        "label": "Equation A5.15b",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "A5.3",
-        "label": "Example A5.3",
+        "id": "A5.4",
+        "label": "Example A5.4",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -1176,27 +1025,6 @@
         "kind": "example",
         "id": "A5.5",
         "label": "Example A5.5",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A5.10a",
-        "label": "Equation A5.10a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A5.15e",
-        "label": "Equation A5.15e",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A5.16",
-        "label": "Equation A5.16",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -1238,13 +1066,6 @@
         "link_scope": "current-book"
       },
       {
-        "kind": "example",
-        "id": "A5.1",
-        "label": "Example A5.1",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
         "kind": "equation",
         "id": "A5.17b",
         "label": "Equation A5.17b",
@@ -1255,6 +1076,13 @@
         "kind": "equation",
         "id": "A5.17c",
         "label": "Equation A5.17c",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.1",
+        "label": "Example A5.1",
         "book_hint": "",
         "link_scope": "current-book"
       },
@@ -1341,13 +1169,6 @@
       },
       {
         "kind": "example",
-        "id": "A5.1",
-        "label": "Example A5.1",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
         "id": "A5.7",
         "label": "Example A5.7",
         "book_hint": "",
@@ -1379,20 +1200,6 @@
         "link_scope": "current-book"
       },
       {
-        "kind": "figure",
-        "id": "A5.7",
-        "label": "Figure A5.7",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "A5.8",
-        "label": "Example A5.8",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
         "kind": "equation",
         "id": "A5.11a",
         "label": "Equation A5.11a",
@@ -1419,6 +1226,13 @@
         "label": "Equation A5.23",
         "book_hint": "",
         "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A5.8",
+        "label": "Example A5.8",
+        "book_hint": "",
+        "link_scope": "current-book"
       }
     ],
     "Evolution_appendix5_016": [
@@ -1433,20 +1247,6 @@
         "kind": "example",
         "id": "A5.9",
         "label": "Example A5.9",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "A5.8",
-        "label": "Example A5.8",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A5.25b",
-        "label": "Equation A5.25b",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -1466,36 +1266,6 @@
       "book_hint": "Genetics",
       "link_scope": "lw",
       "context_excerpt": "atrix notation, and for this I offer no apology as this has rapidly become an essential tool of any serious student of animal breeding. Henderson (1973) The basic concepts of matrix algebra were introduced in LW Chapter 8 and LW Appendix A3, and we assume the reader has this level of understanding (which includes matrix multiplication, inverses, and determinants). If not, a quick review of LW Chapter 8 before procee…",
-      "match_source": "llm-prerequisite"
-    },
-    {
-      "current_section_id": "Evolution_appendix5_004",
-      "current_anchor": "evolution_appendix5_004",
-      "source_chapter_id": "Evolution_chapter13",
-      "label": "Chapter 13",
-      "target_anchor": "evolution_chapter13_007",
-      "target_label": "Equation 13.26a",
-      "target_ref_type": "equation",
-      "target_ref_id": "13.26a",
-      "target_section_title": "SINGLE-GENERATION RESPONSE: THE BREEDER'S EQUATION / The Robertson-Price Identity, $ S = \\sigma(w, z) $",
-      "book_hint": "",
-      "link_scope": "current-book",
-      "context_excerpt": "THE GEOMETRY OF VECTORS AND MATRICES / Matrices Describe Vector Transformations When we multiply a vector, x, by a matrix, A, to create a new vector, y = Ax, A rotates and scales the original vector, x, into the new vector, y. A therefore describes a transformation of the original coordinate system of x into a new coordinate system, y (which has a different dimension from x unless A is square). [示例 Example] Example…",
-      "match_source": "llm-prerequisite"
-    },
-    {
-      "current_section_id": "Evolution_appendix5_004",
-      "current_anchor": "evolution_appendix5_004",
-      "source_chapter_id": "Evolution_chapter30",
-      "label": "Chapter 30",
-      "target_anchor": "evolution_chapter30_section_001",
-      "target_label": "Chapter 30",
-      "target_ref_type": "chapter",
-      "target_ref_id": "30",
-      "target_section_title": "Chapter 30 · Measuring Multivariate Selection",
-      "book_hint": "",
-      "link_scope": "current-book",
-      "context_excerpt": "THE GEOMETRY OF VECTORS AND MATRICES / Matrices Describe Vector Transformations When we multiply a vector, x, by a matrix, A, to create a new vector, y = Ax, A rotates and scales the original vector, x, into the new vector, y. A therefore describes a transformation of the original coordinate system of x into a new coordinate system, y (which has a different dimension from x unless A is square). [示例 Example] Example…",
       "match_source": "llm-prerequisite"
     },
     {
@@ -1540,7 +1310,7 @@
       "target_section_title": "Chapter 30 · Measuring Multivariate Selection",
       "book_hint": "",
       "link_scope": "current-book",
-      "context_excerpt": "A {ij}x i x j=c^2\\end{align } $$ arise fairly frequently in quantitative genetics. For example, they describe surfaces of constant variance (Figure A5.5) or constant fitnesses in quadratic fitness regressions (Chapter 30). Solutions to Equation A5.17b describe quadratic surfaces—for two dimensions, these are the familiar conic sections (ellipses, parabolas, or hyperbolas). Equation A5.17a greatly simplifies the inte…",
+      "context_excerpt": "{ij}x i x j=c^2\\end{align } $$ arise fairly frequently in quantitative genetics. For example, they describe surfaces of constant variance (Figure A5.5) or constant fitnesses in quadratic fitness regressions (Chapter 30). Solutions to Equation A5.17b describe quadratic surfaces—for two dimensions, these are the familiar conic sections (ellipses, parabolas, or hyperbolas). Equation A5.17a greatly simplifies the interp…",
       "match_source": "llm-prerequisite"
     },
     {
@@ -1555,7 +1325,7 @@
       "target_section_title": "Chapter 8 Textbook Mapping",
       "book_hint": "Genetics",
       "link_scope": "lw",
-      "context_excerpt": "CANONICAL AXES OF QUADRATIC FORMS / Implications for the Multivariate Normal Distribution Recall the probability density function for the multivariate normal distribution (LW Chapter 8) $$ \\begin{align }\\phi(\\mathbf{x})=(2\\pi)^{-n/2}\\left \\mathbf{V} {\\mathbf{x}}\\right ^{-1/2}\\exp\\left[-{1\\over2}(\\mathbf{x}-\\boldsymbol{\\mu})^{T}\\mathbf{V} {\\mathbf{x}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\rig",
+      "context_excerpt": "CANONICAL AXES OF QUADRATIC FORMS / Implications for the Multivariate Normal Distribution Recall the probability density function for the multivariate normal distribution (LW Chapter 8) $$ \\begin{align }\\phi(\\mathbf x)=(2\\pi)^{-n/2}\\left \\mathbf V {\\mathbf x}\\right ^{-1/2}\\exp\\left[-{1\\over2}(\\mathbf x-\\boldsymbol\\mu)^T\\mathbf V {\\mathbf x}^{-1}\\left(\\mathbf x-\\boldsymbol\\mu\\right)\\right]\\e",
       "match_source": "llm-prerequisite"
     },
     {
@@ -1809,7 +1579,7 @@
     "provider": "deepseek",
     "model": "deepseek-v4-flash",
     "cache_enabled": true,
-    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "cache_dir": "tmp/llm_cache",
     "max_remote_calls": 0,
     "max_prompt_chars_total": 0,
     "max_response_chars_total": 0,

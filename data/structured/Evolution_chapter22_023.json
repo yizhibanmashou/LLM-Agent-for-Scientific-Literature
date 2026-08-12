@@ -21,23 +21,136 @@
   "blocks": [
     {
       "type": "proposition",
-      "content": "Our simplifying assumption (Equation 22.28c), that the residuals, $ e_i $, are homoscedastic and uncorrelated (meaning that $ \\sigma(\\mathbf{e}) = \\sigma^2(\\mathbf{e})\\mathbf{I} $), is generally incorrect. As Equation 22.23a shows, individuals within the same group are correlated because they share the $ E_s $ values from the other group members, and not correctly accounting for these shared environmental values results in an overestimation of the variance of the social breeding values (Van Vleck and Cassady 2005; Bijma et al. 2007b; Bergsma et al. 2008; Chen et al. 2009). Equation 22.23a returns the correct covariance matrix for the residuals as $$ \\sigma(\\mathbf{e})=\\sigma^{2}(e)\\mathbf{R},\\quad\\mathrm{w h e r e}\\quad R_{i j}=\\left\\{\\begin{array}{l l}0&i\\mathrm{a n d}j\\mathrm{i n d i f f e r e n t g r o u p s}\\\\ \\rho&i\\mathrm{a n d}j\\mathrm{i n t h e s a m e g r o u p}\\\\ 1&i=k\\end{array}\\right. $$ where $ \\sigma^{2}(e) $ and $ \\rho $ are given by Equation 22.23b."
+      "content": "Our simplifying assumption (Equation 22.28c), that the residuals, $ e_i $, are homoscedastic and uncorrelated (meaning that $ \\sigma(\\mathbf{e}) = \\sigma^2(\\mathbf{e})\\mathbf{I} $), is generally incorrect. As Equation 22.23a shows, individuals within the same group are correlated because they share the $ E_s $ values from the other group members, and not correctly accounting for these shared environmental values results in an overestimation of the variance of the social breeding values (Van Vleck and Cassady 2005; Bijma et al. 2007b; Bergsma et al. 2008; Chen et al. 2009). Equation 22.23a returns the correct covariance matrix for the residuals as $$ \\sigma(\\mathbf{e})=\\sigma^{2}(e)\\mathbf{R},\\quad\\mathrm{w h e r e}\\quad R_{i j}=\\left\\{\\begin{array}{l l}0&i\\mathrm{a n d}j\\mathrm{i n d i f f e r e n t g r o u p s}\\\\ \\rho&i\\mathrm{a n d}j\\mathrm{i n t h e s a m e g r o u p}\\\\ 1&i=k\\end{array}\\right. $$ where $ \\sigma^{2}(e) $ and $ \\rho $ are given by Equation 22.23b.",
+      "source_page": 784,
+      "source_pages": [
+        784
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p034:b3",
+        "Evolution_chapter22:p034:b4",
+        "Evolution_chapter22:p034:b5",
+        "Evolution_chapter22:p034:b7"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          319.0,
+          927.0,
+          342.0
+        ],
+        [
+          287.0,
+          350.0,
+          1059.0,
+          511.0
+        ],
+        [
+          360.0,
+          523.0,
+          922.0,
+          604.0
+        ],
+        [
+          288.0,
+          625.0,
+          703.0,
+          651.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "bfd01a95f6d42f32e6d69a5365bd19538a9c2f63d36a186f246874c802787b84"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:22.13]]"
+      "content": "[[SEE_EXAMPLE:22.13]]",
+      "source_page": 784,
+      "source_pages": [
+        784
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p034:b8",
+        "Evolution_chapter22:p034:b9"
+      ],
+      "source_bboxes": [
+        [
+          322.0,
+          718.0,
+          1036.0,
+          778.0
+        ],
+        [
+          449.0,
+          777.0,
+          903.0,
+          961.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "fe4dac6142fdef1b23dd05bba2b6eba23c7fdf4fcf365c8603761f35caa16a4f"
     },
     {
       "type": "discussion",
-      "content": "With the same number of individuals in all groups, the only two estimable parameters in the environmental covariance matrix are $ \\rho $ and $ \\sigma^2(e) $. With groups of variable size (either by design or simply through the loss of data), the residual variances and covariances change with $ n $ (Equation 22.23b). In this case, the residual covariance matrix would be specified in terms of the three environmental variance/covariance terms, $ \\sigma^2(E_d), \\sigma^2(E_s) $, and $ \\sigma(E_d, E_s) $."
+      "content": "With the same number of individuals in all groups, the only two estimable parameters in the environmental covariance matrix are $ \\rho $ and $ \\sigma^2(e) $. With groups of variable size (either by design or simply through the loss of data), the residual variances and covariances change with $ n $ (Equation 22.23b). In this case, the residual covariance matrix would be specified in terms of the three environmental variance/covariance terms, $ \\sigma^2(E_d), \\sigma^2(E_s) $, and $ \\sigma(E_d, E_s) $.",
+      "source_page": 784,
+      "source_pages": [
+        784
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p034:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1039.0,
+          1058.0,
+          1156.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "bb561346104c2be1f5bcc99506166b236f5c50ded957d34d787264829dd89295"
     },
     {
       "type": "discussion",
-      "content": "Provided $ \\rho > 0 $, an equivalent approach is simply to fit a random group effect (Bergsema et al. 2008; Ellen et al. 2008). Example 22.14 works through an example. This approach is computationally less demanding than jointly estimating $ \\sigma^2(e) $ and $ \\rho $ in an R matrix. However, if the covariance, $ \\sigma(E_d, E_s) $, between environmental direct and social effects is sufficiently negative, $ \\rho $ can be negative (Equation 22.23b) and the simple random group-effects model fails, as the group variance $ \\sigma^2(g_p) $ must be positive. As Equation 22.23b suggests, as group size increases, the contribution from $ \\sigma^2(E_s) $ eventually dominates $ \\rho $, making it positive. Thus, for a design with large group size, fitting a random group effect will often suffice."
+      "content": "Provided $ \\rho > 0 $, an equivalent approach is simply to fit a random group effect (Bergsema et al. 2008; Ellen et al. 2008). Example 22.14 works through an example. This approach is computationally less demanding than jointly estimating $ \\sigma^2(e) $ and $ \\rho $ in an R matrix. However, if the covariance, $ \\sigma(E_d, E_s) $, between environmental direct and social effects is sufficiently negative, $ \\rho $ can be negative (Equation 22.23b) and the simple random group-effects model fails, as the group variance $ \\sigma^2(g_p) $ must be positive. As Equation 22.23b suggests, as group size increases, the contribution from $ \\sigma^2(E_s) $ eventually dominates $ \\rho $, making it positive. Thus, for a design with large group size, fitting a random group effect will often suffice.",
+      "source_page": 784,
+      "source_pages": [
+        784
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p034:b11"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1153.0,
+          1059.0,
+          1363.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "10917fbcfadc384f4edacb0f60569dd9e94b271573cf4c499a52479ac3f15cfa"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:22.14]]"
+      "content": "[[SEE_EXAMPLE:22.14]]",
+      "source_page": 768,
+      "source_pages": [
+        768
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p018:b13"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          912.0,
+          1060.0,
+          1097.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b16a5d2de0997a818b567ae8529d230b4057ad7e7d569238ac737e0f1cb0829b"
     }
   ]
 }

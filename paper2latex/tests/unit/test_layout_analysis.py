@@ -1,14 +1,15 @@
 
+import json
 import unittest
 from unittest.mock import MagicMock, patch
-import json
 
 import pytest
 
 pytest.importorskip("mcp", reason="MCP client dependency is not installed in this environment")
 
-from paper2latex.core.config import Config
 from paper2latex.converters.layout_analysis import PaddleOCR
+from paper2latex.core.config import Config
+
 
 class TestPaddleOCR(unittest.TestCase):
     def setUp(self):

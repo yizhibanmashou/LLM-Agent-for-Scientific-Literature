@@ -21,39 +21,278 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "We solve for the regression coefficients $ b_1 $ and $ b_2 $ by transforming Equation 29.27a into a standard multiple regression problem by setting $ x_1 = z $ and $ x_2 = (z - \\mu_z)^2 $ and applying the methods of LW Chapter 8. To proceed, we need expressions for $ \\sigma(x_1, x_2) $, $ \\sigma(x_1, w) $, and $ \\sigma(x_2, w) $. From LW Equation A1.14, $ \\sigma(x_1, x_2) = \\sigma(z, [z - \\mu_z]^2) = \\mu_{3,z} $, the skew of the phenotypic distribution before selection. Likewise, from Equations 13.7a and 29.17, $ \\sigma(x_1, w) = \\sigma(z, w) = S $ and $ \\sigma(x_2, w) = \\sigma([z - \\mu_z]^2, w) = C $. Substituting these values into the results from LW Example 8.3 (which gives exact expressions for the partial regression coefficients of a bivariate regression), and note that $ \\sigma^{2}(|z-\\mu_{z}|^{2})=\\mu_{4.z}-\\sigma_{s}^{4} $, we obtain $$ \\begin{aligned}&b_{1}=\\frac{\\sigma^{2}(x_{2})\\cdot\\sigma(x_{1},w)-\\sigma(x_{1},x_{2})\\cdot\\sigma(x_{2},w)}{\\sigma^{2}(x_{1})\\cdot\\sigma^{2}(x_{2})-\\sigma^{2}(x_{1},x_{2})}=\\frac{(\\mu_{4,z}-\\sigma_{z}^{4})\\cdot S-\\mu_{3,z}\\cdot C}{\\sigma_{z}^{2}\\cdot(\\mu_{4,z}-\\sigma_{z}^{4})-\\mu_{3,z}^{2}}\\\\ &b_{2}=\\frac{\\sigma^{2}(x_{1})\\cdot\\sigma(x_{2},w)-\\sigma(x_{1},x_{2})\\cdot\\sigma(x_{1},w)}{\\sigma^{2}(x_{1})\\cdot\\sigma^{2}(x_{2})-\\sigma^{2}(x_{1},x_{2})}=\\frac{\\sigma_{z}^{2}\\cdot C-\\mu_{3,z}\\cdot S}{\\sigma_{z}^{2}\\cdot(\\mu_{4,z}-\\sigma_{z}^{4})-\\mu_{3,z}^{2}}\\\\ \\end{aligned} $$"
+      "content": "We solve for the regression coefficients $ b_1 $ and $ b_2 $ by transforming Equation 29.27a into a standard multiple regression problem by setting $ x_1 = z $ and $ x_2 = (z - \\mu_z)^2 $ and applying the methods of LW Chapter 8. To proceed, we need expressions for $ \\sigma(x_1, x_2) $, $ \\sigma(x_1, w) $, and $ \\sigma(x_2, w) $. From LW Equation A1.14, $ \\sigma(x_1, x_2) = \\sigma(z, [z - \\mu_z]^2) = \\mu_{3,z} $, the skew of the phenotypic distribution before selection. Likewise, from Equations 13.7a and 29.17, $ \\sigma(x_1, w) = \\sigma(z, w) = S $ and $ \\sigma(x_2, w) = \\sigma([z - \\mu_z]^2, w) = C $. Substituting these values into the results from LW Example 8.3 (which gives exact expressions for the partial regression coefficients of a bivariate regression), and note that $ \\sigma^{2}(|z-\\mu_{z}|^{2})=\\mu_{4.z}-\\sigma_{s}^{4} $, we obtain $$ \\begin{aligned}&b_{1}=\\frac{\\sigma^{2}(x_{2})\\cdot\\sigma(x_{1},w)-\\sigma(x_{1},x_{2})\\cdot\\sigma(x_{2},w)}{\\sigma^{2}(x_{1})\\cdot\\sigma^{2}(x_{2})-\\sigma^{2}(x_{1},x_{2})}=\\frac{(\\mu_{4,z}-\\sigma_{z}^{4})\\cdot S-\\mu_{3,z}\\cdot C}{\\sigma_{z}^{2}\\cdot(\\mu_{4,z}-\\sigma_{z}^{4})-\\mu_{3,z}^{2}}\\\\ &b_{2}=\\frac{\\sigma^{2}(x_{1})\\cdot\\sigma(x_{2},w)-\\sigma(x_{1},x_{2})\\cdot\\sigma(x_{1},w)}{\\sigma^{2}(x_{1})\\cdot\\sigma^{2}(x_{2})-\\sigma^{2}(x_{1},x_{2})}=\\frac{\\sigma_{z}^{2}\\cdot C-\\mu_{3,z}\\cdot S}{\\sigma_{z}^{2}\\cdot(\\mu_{4,z}-\\sigma_{z}^{4})-\\mu_{3,z}^{2}}\\\\ \\end{aligned} $$",
+      "source_page": 1093,
+      "source_pages": [
+        1093,
+        1094
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p037:b15",
+        "Evolution_chapter29:p037:b16",
+        "Evolution_chapter29:p038:b2",
+        "Evolution_chapter29:p038:b3"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          1278.0,
+          442.0,
+          1301.0
+        ],
+        [
+          132.0,
+          1307.0,
+          904.0,
+          1473.0
+        ],
+        [
+          287.0,
+          206.0,
+          1041.0,
+          232.0
+        ],
+        [
+          368.0,
+          250.0,
+          972.0,
+          361.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4acc8a79c93ba647d0d23a8ad9b2ccce03afe240e32cddfd54d46e6b16e7f694"
     },
     {
       "type": "discussion",
-      "content": "The estimators of $ b_1 $ and $ b_2 $ are obtained by replacing $ \\mu_{k,z} $ with their sample estimates and using $ \\widehat{C} $ and $ \\widehat{S} $."
+      "content": "The estimators of $ b_1 $ and $ b_2 $ are obtained by replacing $ \\mu_{k,z} $ with their sample estimates and using $ \\widehat{C} $ and $ \\widehat{S} $.",
+      "source_page": 1094,
+      "source_pages": [
+        1094
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p038:b6"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          380.0,
+          1058.0,
+          428.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f3a995450b3902abe1438e9e1d02660d2f85d97c119d1cb42fa335d56b7089e6"
     },
     {
       "type": "discussion",
-      "content": "It is important to stress that the distributional assumptions leading to the solutions offered by Equation 29.28 are simply those of ordinarily least-squares (OLS), namely, homoscedastic and uncorrelated residuals (Chapter 18; LW Chapter 8). To this point, no other assumptions have been made about either the distribution of the trait values or the distributional form of the residuals (i.e., normality of the residuals is not required for Equation 29.28). Standard errors for parameter estimates follow from LW Equation 8.33b (again, requiring no assumptions on the distribution of residuals other than OLS). However, if we wish to turn standard errors into confidence intervals or to perform hypothesis testing, further distributional assumptions on residuals (such as normality) are required."
+      "content": "It is important to stress that the distributional assumptions leading to the solutions offered by Equation 29.28 are simply those of ordinarily least-squares (OLS), namely, homoscedastic and uncorrelated residuals (Chapter 18; LW Chapter 8). To this point, no other assumptions have been made about either the distribution of the trait values or the distributional form of the residuals (i.e., normality of the residuals is not required for Equation 29.28). Standard errors for parameter estimates follow from LW Equation 8.33b (again, requiring no assumptions on the distribution of residuals other than OLS). However, if we wish to turn standard errors into confidence intervals or to perform hypothesis testing, further distributional assumptions on residuals (such as normality) are required.",
+      "source_page": 1094,
+      "source_pages": [
+        1094
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p038:b7"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          430.0,
+          1060.0,
+          635.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7d29f7a24ef1eb51e73806ecf100fbb1089c3f41673ed968c389c39eb7899960"
     },
     {
       "type": "discussion",
-      "content": "Provided $z$ is normally distributed before selection, then $\\mu_{3,z}=0$ and $\\mu_{4,z}-\\sigma_{z}^{4}=2\\sigma_{z}^{4}$. In this case, Equations 13.8b and 29.19 imply, respectively, that $b_{1}=S/\\sigma_{z}^{2}=\\beta$ and $b_{2}=C/[2\\sigma_{z}^{4}]=\\gamma/2$, giving the univariate version of the Lande-Arnold regression (1983). $$ w=1+\\beta(z-\\mu_{z})+\\frac{\\gamma}{2}\\Big([z-\\mu_{z}]^{2}-\\sigma_{z}^{2}\\Big)+e $$ As this expression was also motivated by Pearson (1903), we occasionally refer to Equation 29.29a as the Pearson-Lande-Arnold regression. In standardized form, $$ w=a+\\beta_{sd}z_{sd}+\\frac{\\gamma_{sd}}{2}z_{sd}^{2}+e $$"
+      "content": "Provided $z$ is normally distributed before selection, then $\\mu_{3,z}=0$ and $\\mu_{4,z}-\\sigma_{z}^{4}=2\\sigma_{z}^{4}$. In this case, Equations 13.8b and 29.19 imply, respectively, that $b_{1}=S/\\sigma_{z}^{2}=\\beta$ and $b_{2}=C/[2\\sigma_{z}^{4}]=\\gamma/2$, giving the univariate version of the Lande-Arnold regression (1983). $$ w=1+\\beta(z-\\mu_{z})+\\frac{\\gamma}{2}\\Big([z-\\mu_{z}]^{2}-\\sigma_{z}^{2}\\Big)+e $$ As this expression was also motivated by Pearson (1903), we occasionally refer to Equation 29.29a as the Pearson-Lande-Arnold regression. In standardized form, $$ w=a+\\beta_{sd}z_{sd}+\\frac{\\gamma_{sd}}{2}z_{sd}^{2}+e $$",
+      "source_page": 1094,
+      "source_pages": [
+        1094
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p038:b8",
+        "Evolution_chapter29:p038:b9",
+        "Evolution_chapter29:p038:b11",
+        "Evolution_chapter29:p038:b12"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          634.0,
+          1055.0,
+          709.0
+        ],
+        [
+          483.0,
+          726.0,
+          864.0,
+          776.0
+        ],
+        [
+          286.0,
+          794.0,
+          1059.0,
+          841.0
+        ],
+        [
+          550.0,
+          861.0,
+          797.0,
+          902.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7b0340e3e449cf069fc42cdb1f1252292cbfbc6c34d67585c28f008f69fcaac8"
     },
     {
       "type": "proposition",
-      "content": "Equations 29.29a and 29.29b provide a connection between selection gradients (directional and stabilizing, $ \\beta $ and $ \\gamma $, respectively) and quadratic approximations of the individual fitness surface, provided z is normally distributed and residuals follow the OLS assumption."
+      "content": "Equations 29.29a and 29.29b provide a connection between selection gradients (directional and stabilizing, $ \\beta $ and $ \\gamma $, respectively) and quadratic approximations of the individual fitness surface, provided z is normally distributed and residuals follow the OLS assumption.",
+      "source_page": 1094,
+      "source_pages": [
+        1094
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p038:b14"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          918.0,
+          1058.0,
+          988.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c1ef31d42cddec0c0db865e2ac1a060f5d25e33b0d9c1cd907db5e22164b3dea"
     },
     {
       "type": "discussion",
-      "content": "An important point from Equation 29.28a is that if skew is present in the trait distribution ($ \\mu_{3,z} \\neq 0 $), then $ b_1 \\neq \\beta $, and hence the slope ($ \\beta $) in the linear regression (the best linear fit) of $ w(z) $ differs from the linear slope term ($ b_1 $) in the best quadratic fit of $ w(z) $. This inequality arises because the presence of skew generates a covariance between $ z $ and $ (z - \\mu_z)^2 $. The biological significance of this inequality can be seen by reconsidering Figure 29.7, where the presence of skew in the phenotypic distribution results in a change in the mean of a population under strict stabilizing selection (defined as the population mean being at the optimum of the individual fitness surface). From the Robertson-Price identity (Equation 6.10), the within-generation change in the mean equals the covariance between phenotypic value and relative fitness. Because covariances measure the amount of linear association between variables, in describing the change in mean, the correct measure is the slope of the best linear fit of the individual fitness surface, which is unbiased by skew (Lande and Arnold 1983). If skew is present, using $ b_1 $ from the quadratic regression to describe the change in mean is incorrect, as this quadratic regression removes the effects on relative fitness from a linear change in $ z $ due to the correlation between $ z $ and $ (z - \\mu_z)^2 $."
+      "content": "An important point from Equation 29.28a is that if skew is present in the trait distribution ($ \\mu_{3,z} \\neq 0 $), then $ b_1 \\neq \\beta $, and hence the slope ($ \\beta $) in the linear regression (the best linear fit) of $ w(z) $ differs from the linear slope term ($ b_1 $) in the best quadratic fit of $ w(z) $. This inequality arises because the presence of skew generates a covariance between $ z $ and $ (z - \\mu_z)^2 $. The biological significance of this inequality can be seen by reconsidering Figure 29.7, where the presence of skew in the phenotypic distribution results in a change in the mean of a population under strict stabilizing selection (defined as the population mean being at the optimum of the individual fitness surface). From the Robertson-Price identity (Equation 6.10), the within-generation change in the mean equals the covariance between phenotypic value and relative fitness. Because covariances measure the amount of linear association between variables, in describing the change in mean, the correct measure is the slope of the best linear fit of the individual fitness surface, which is unbiased by skew (Lande and Arnold 1983). If skew is present, using $ b_1 $ from the quadratic regression to describe the change in mean is incorrect, as this quadratic regression removes the effects on relative fitness from a linear change in $ z $ due to the correlation between $ z $ and $ (z - \\mu_z)^2 $.",
+      "source_page": 1094,
+      "source_pages": [
+        1094
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p038:b15"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          988.0,
+          1059.0,
+          1331.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ff4a3fa777735be6ef1273b28bcdf7a4bb27bd9993e31b79073ce1d8ad2166b1"
     },
     {
       "type": "discussion",
-      "content": "Observe from Equation 29.28b that the presence of skew (and kurtosis) also results in $ 2b_{2} $ being a biased estimator of $ \\gamma $. Despite this bias, $ 2b_{2} $ remains the standard estimate for $ \\gamma $ in the literature. Shifting the trait to give it a mean of zero, a less-biased estimator of $ \\gamma $ follows from a quadratic regression with no linear term, $$ w=a+b z^{2}+e $$ From standard regression theory (LW Chapter 3), the slope of Equation 29.29c is $ b = \\sigma(z^2, w)/\\sigma^2(z^2) $, and using the covariances obtained for Equation 29.28 yields $$ b=\\frac{\\sigma(z^{2},w)}{\\sigma^{2}(z^{2})}=\\frac{C}{\\mu_{4,z}-\\sigma_{z}^{4}} $$"
+      "content": "Observe from Equation 29.28b that the presence of skew (and kurtosis) also results in $ 2b_{2} $ being a biased estimator of $ \\gamma $. Despite this bias, $ 2b_{2} $ remains the standard estimate for $ \\gamma $ in the literature. Shifting the trait to give it a mean of zero, a less-biased estimator of $ \\gamma $ follows from a quadratic regression with no linear term, $$ w=a+b z^{2}+e $$ From standard regression theory (LW Chapter 3), the slope of Equation 29.29c is $ b = \\sigma(z^2, w)/\\sigma^2(z^2) $, and using the covariances obtained for Equation 29.28 yields $$ b=\\frac{\\sigma(z^{2},w)}{\\sigma^{2}(z^{2})}=\\frac{C}{\\mu_{4,z}-\\sigma_{z}^{4}} $$",
+      "source_page": 1094,
+      "source_pages": [
+        1094,
+        1095
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p038:b16",
+        "Evolution_chapter29:p038:b17",
+        "Evolution_chapter29:p039:b2",
+        "Evolution_chapter29:p039:b3"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1332.0,
+          1059.0,
+          1426.0
+        ],
+        [
+          603.0,
+          1445.0,
+          745.0,
+          1468.0
+        ],
+        [
+          131.0,
+          206.0,
+          902.0,
+          254.0
+        ],
+        [
+          406.0,
+          270.0,
+          627.0,
+          323.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "fec70ca6fea6555b48101bc028df61002156ed316414c3fd3ab3fd22984bf7a7"
     },
     {
       "type": "discussion",
-      "content": "Recall that the scaled kurtosis is $ \\kappa_4 = (\\mu_4 - 3\\sigma_z^4)/\\sigma_z^4 $ (LW Equation 2.12a). Therefore, rearranging yields $ \\mu_4, z - \\sigma_z^4 = \\sigma_z^4(\\kappa_4 + 2) $, or $$ b=\\frac{C}{\\sigma^{4}(\\kappa_{4}+2)}=\\frac{\\gamma}{\\kappa_{4}+2} $$"
+      "content": "Recall that the scaled kurtosis is $ \\kappa_4 = (\\mu_4 - 3\\sigma_z^4)/\\sigma_z^4 $ (LW Equation 2.12a). Therefore, rearranging yields $ \\mu_4, z - \\sigma_z^4 = \\sigma_z^4(\\kappa_4 + 2) $, or $$ b=\\frac{C}{\\sigma^{4}(\\kappa_{4}+2)}=\\frac{\\gamma}{\\kappa_{4}+2} $$",
+      "source_page": 1095,
+      "source_pages": [
+        1095
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p039:b5",
+        "Evolution_chapter29:p039:b6"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          339.0,
+          903.0,
+          389.0
+        ],
+        [
+          408.0,
+          403.0,
+          626.0,
+          452.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "55d873cdc37e48f12488f5165d7cafc1447e1e7ca1eff04a5ff8265e3fb29f75"
     },
     {
       "type": "discussion",
-      "content": "For a normal, $ \\kappa_4 = 0 $, and $ 2E[b] = \\gamma $. When kurtosis is present, using the sample estimate of $ \\widehat{\\kappa}_4 $ yields $$ \\widehat{\\gamma}=\\widehat{b}\\left(\\widehat{\\kappa}_{4}+2\\right) $$ which is an improved estimate of the quadratic gradient. Finally, despite these corrections, we should point out that bias induced by skewness and kurtosis is a matter of degree. Both of these moments have their own sampling problems, and using poor estimates of them to correct $ \\beta $ and $ \\gamma $ can be problematic."
+      "content": "For a normal, $ \\kappa_4 = 0 $, and $ 2E[b] = \\gamma $. When kurtosis is present, using the sample estimate of $ \\widehat{\\kappa}_4 $ yields $$ \\widehat{\\gamma}=\\widehat{b}\\left(\\widehat{\\kappa}_{4}+2\\right) $$ which is an improved estimate of the quadratic gradient. Finally, despite these corrections, we should point out that bias induced by skewness and kurtosis is a matter of degree. Both of these moments have their own sampling problems, and using poor estimates of them to correct $ \\beta $ and $ \\gamma $ can be problematic.",
+      "source_page": 1095,
+      "source_pages": [
+        1095
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p039:b8",
+        "Evolution_chapter29:p039:b9",
+        "Evolution_chapter29:p039:b11"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          468.0,
+          903.0,
+          514.0
+        ],
+        [
+          455.0,
+          515.0,
+          579.0,
+          541.0
+        ],
+        [
+          131.0,
+          552.0,
+          905.0,
+          646.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "777be9dc11723fdd26c1bcabacb0e906b0b6b9e3c7e39307862202ee113967c3"
     }
   ]
 }

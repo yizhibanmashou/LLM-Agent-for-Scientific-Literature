@@ -21,15 +21,101 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "One expects that selection is always acting on more than a single trait, as even with strong artificial selection on a single character, natural selection is likely operating on other traits as well. What risks do we run by ignoring this expectation and treating selection as a univariate problem? While this is examined much more fully in Volume 3, we can gain significant insight by considering the simple case of two traits, both of which are potentially under selection. Equation 13.23b gives the expected vector of responses as $$ \\mathbf{R}=\\begin{pmatrix}R_{1}\\\\ R_{2}\\end{pmatrix}=\\mathbf{G}\\mathbf{P}^{-1}\\mathbf{S}=\\begin{pmatrix}G_{11}&G_{12}\\\\ G_{12}&G_{22}\\end{pmatrix}\\begin{pmatrix}P_{11}&P_{12}\\\\ P_{12}&P_{22}\\end{pmatrix}^{-1}\\begin{pmatrix}S_{1}\\\\ S_{2}\\end{pmatrix} $$"
+      "content": "One expects that selection is always acting on more than a single trait, as even with strong artificial selection on a single character, natural selection is likely operating on other traits as well. What risks do we run by ignoring this expectation and treating selection as a univariate problem? While this is examined much more fully in Volume 3, we can gain significant insight by considering the simple case of two traits, both of which are potentially under selection. Equation 13.23b gives the expected vector of responses as $$ \\mathbf{R}=\\begin{pmatrix}R_{1}\\\\ R_{2}\\end{pmatrix}=\\mathbf{G}\\mathbf{P}^{-1}\\mathbf{S}=\\begin{pmatrix}G_{11}&G_{12}\\\\ G_{12}&G_{22}\\end{pmatrix}\\begin{pmatrix}P_{11}&P_{12}\\\\ P_{12}&P_{22}\\end{pmatrix}^{-1}\\begin{pmatrix}S_{1}\\\\ S_{2}\\end{pmatrix} $$",
+      "source_page": 490,
+      "source_pages": [
+        490
+      ],
+      "source_block_ids": [
+        "Evolution_chapter13:p021:b6",
+        "Evolution_chapter13:p021:b7",
+        "Evolution_chapter13:p021:b8"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          444.0,
+          370.0,
+          466.0
+        ],
+        [
+          131.0,
+          474.0,
+          905.0,
+          614.0
+        ],
+        [
+          216.0,
+          627.0,
+          750.0,
+          679.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1425b389897432f1179a4e9b47290dfbc27ad19bed64c1175e1446303de1e073"
     },
     {
       "type": "discussion",
-      "content": "Using LW Equation 8.11 to compute the inverse of P, and, recalling for a covariance that $ P_{12} = \\rho_{z} \\sqrt{P_{11} P_{22}} $, where $ \\rho_{z} $ is the phenotypic correlation between the two traits, yields $$ \\begin{aligned}\\mathbf{P}^{-1}\\mathbf{S}&=\\frac{1}{P_{11}P_{22}-P_{12}^{2}}\\begin{pmatrix}P_{22}&-P_{12}\\\\ -P_{12}&P_{11}\\end{pmatrix}\\begin{pmatrix}S_{1}\\\\ S_{2}\\end{pmatrix}\\\\&=\\frac{1}{P_{11}P_{22}(1-\\rho_{z}^{2})}\\begin{pmatrix}S_{1}P_{22}-S_{2}P_{12}\\\\ -S_{1}P_{12}+S_{2}P_{11}\\end{pmatrix}\\end{aligned} $$"
+      "content": "Using LW Equation 8.11 to compute the inverse of P, and, recalling for a covariance that $ P_{12} = \\rho_{z} \\sqrt{P_{11} P_{22}} $, where $ \\rho_{z} $ is the phenotypic correlation between the two traits, yields $$ \\begin{aligned}\\mathbf{P}^{-1}\\mathbf{S}&=\\frac{1}{P_{11}P_{22}-P_{12}^{2}}\\begin{pmatrix}P_{22}&-P_{12}\\\\ -P_{12}&P_{11}\\end{pmatrix}\\begin{pmatrix}S_{1}\\\\ S_{2}\\end{pmatrix}\\\\&=\\frac{1}{P_{11}P_{22}(1-\\rho_{z}^{2})}\\begin{pmatrix}S_{1}P_{22}-S_{2}P_{12}\\\\ -S_{1}P_{12}+S_{2}P_{11}\\end{pmatrix}\\end{aligned} $$",
+      "source_page": 490,
+      "source_pages": [
+        490
+      ],
+      "source_block_ids": [
+        "Evolution_chapter13:p021:b10",
+        "Evolution_chapter13:p021:b11"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          690.0,
+          904.0,
+          738.0
+        ],
+        [
+          318.0,
+          749.0,
+          714.0,
+          854.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "eb4fd1410179e10abe27e4d11e4612fea27e34684ab2265a7e733d309ae631c4"
     },
     {
       "type": "discussion",
-      "content": "Substituting into Equation 13.24a and recalling that $ h_{i}^{2} = G_{ii} / P_{ii} $, the response in trait one becomes $$ \\begin{aligned}R_{1}&=\\frac{1}{P_{11}P_{22}(1-\\rho_{z}^{2})}\\left(G_{11}\\quad G_{12}\\right)\\left(\\begin{aligned}&S_{1}P_{22}-S_{2}P_{12}\\\\&-S_{1}P_{12}+S_{2}P_{11}\\end{aligned}\\right)\\\\&=\\frac{G_{11}\\left(S_{1}P_{22}-S_{2}P_{12}\\right)+G_{12}\\left(-S_{1}P_{12}+S_{2}P_{11}\\right)}{P_{11}P_{22}(1-\\rho_{z}^{2})}\\\\&=\\frac{h_{1}^{2}}{\\left(1-\\rho_{z}^{2}\\right)}\\left(S_{1}-S_{2}\\frac{P_{12}}{P_{22}}\\right)+\\frac{G_{12}\\left(-S_{1}P_{12}+S_{2}P_{11}\\right)}{P_{11}P_{22}(1-\\rho_{z}^{2})}\\end{aligned} $$ with an analogous expression for $ R_2 $. The breeder's equation is recovered only when trait one is phenotypically $ (P_{12} = \\rho_z = 0) $ and genetically $ (G_{12} = 0) $ uncorrelated with trait two. As we now demonstrate, this complicated expression masks the rather different roles played by phenotypic and genetic correlations, impacting (respectively) the within- and between-generation changes. Volume 3 examines these points in some detail."
+      "content": "Substituting into Equation 13.24a and recalling that $ h_{i}^{2} = G_{ii} / P_{ii} $, the response in trait one becomes $$ \\begin{aligned}R_{1}&=\\frac{1}{P_{11}P_{22}(1-\\rho_{z}^{2})}\\left(G_{11}\\quad G_{12}\\right)\\left(\\begin{aligned}&S_{1}P_{22}-S_{2}P_{12}\\\\&-S_{1}P_{12}+S_{2}P_{11}\\end{aligned}\\right)\\\\&=\\frac{G_{11}\\left(S_{1}P_{22}-S_{2}P_{12}\\right)+G_{12}\\left(-S_{1}P_{12}+S_{2}P_{11}\\right)}{P_{11}P_{22}(1-\\rho_{z}^{2})}\\\\&=\\frac{h_{1}^{2}}{\\left(1-\\rho_{z}^{2}\\right)}\\left(S_{1}-S_{2}\\frac{P_{12}}{P_{22}}\\right)+\\frac{G_{12}\\left(-S_{1}P_{12}+S_{2}P_{11}\\right)}{P_{11}P_{22}(1-\\rho_{z}^{2})}\\end{aligned} $$ with an analogous expression for $ R_2 $. The breeder's equation is recovered only when trait one is phenotypically $ (P_{12} = \\rho_z = 0) $ and genetically $ (G_{12} = 0) $ uncorrelated with trait two. As we now demonstrate, this complicated expression masks the rather different roles played by phenotypic and genetic correlations, impacting (respectively) the within- and between-generation changes. Volume 3 examines these points in some detail.",
+      "source_page": 490,
+      "source_pages": [
+        490
+      ],
+      "source_block_ids": [
+        "Evolution_chapter13:p021:b13",
+        "Evolution_chapter13:p021:b14",
+        "Evolution_chapter13:p021:b16"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          867.0,
+          903.0,
+          913.0
+        ],
+        [
+          282.0,
+          921.0,
+          751.0,
+          1090.0
+        ],
+        [
+          132.0,
+          1101.0,
+          904.0,
+          1218.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4982d4c3b77f2a43957c3d61b54f30ee3f5ad62d1323cdd4e71dc6c150065235"
     }
   ]
 }

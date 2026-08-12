@@ -26,23 +26,254 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Our last formulation for modeling genetic variation in E was suggested by Hill and Zhang (2004) and Mulder et al. (2007), where $$ E=U\\cdot\\sqrt{\\sigma_{e}^{2}+A_{v}}\\quad\\mathrm{w h e r e}\\quad U\\sim N(0,1)\\quad\\mathrm{a n d}\\quad A_{v}\\sim N(\\mu_{A_{v}},\\sigma_{A_{v}}^{2}) $$"
+      "content": "Example 17.2. Here we derive the unconditional variances for the models summarized in Table 17.1. Consider the multiplicative model first, where",
+      "source_page": 567,
+      "source_pages": [
+        567
+      ],
+      "source_block_ids": [
+        "Evolution_chapter17:p008:b2",
+        "Evolution_chapter17:p008:b14"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          206.0,
+          478.0,
+          229.0
+        ],
+        [
+          322.0,
+          882.0,
+          1035.0,
+          926.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "ad7f1e44ccdfd427df2506f5df94a6a3d96b176df0a79cf95dd5995d143aae31"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ R(\\sigma {E}^{2})/\\sigma {E}^{2}=\\bar{\\imath}h {v}CV {A {v}}=\\bar{\\imath}\\sqrt{0.038}\\cdot0.41=0.08\\bar{\\imath} $$",
+      "source_page": 568,
+      "source_pages": [
+        568
+      ],
+      "source_block_ids": [
+        "Evolution_chapter17:p009:b17"
+      ],
+      "source_bboxes": [
+        [
+          318.0,
+          1195.0,
+          721.0,
+          1222.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "c5f55813dd71dd0621ed6d348d28755b110720d63517fcfefaf87e95e3fad9ba"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ R {A {v}}=h {v}^{2}\\ \\bar{\\imath}\\ x {[1-p]}\\sigma {z}^{2} $$",
+      "source_page": 573,
+      "source_pages": [
+        573
+      ],
+      "source_block_ids": [
+        "Evolution_chapter17:p014:b13"
+      ],
+      "source_bboxes": [
+        [
+          584.0,
+          769.0,
+          764.0,
+          798.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "6fe956d2d70deb1929c12a62ab239a35562c71634ba066144c9e75f736bf9204"
     },
     {
       "type": "discussion",
-      "content": "This is the additive model, as the environmental variance for an individual with breeding value $ A_{v} $ is simply $$ \\sigma^{2}(E\\mid A_{v})=\\sigma_{e}^{2}+A_{v} $$ with the constraint on the breeding value being that $ \\sigma_e^2 + A_v > 0 $. The additive model is a local analysis around the current mean, as selection to decrease $ A_v $ can eventually result in this constraint being violated, which generates a negative variance. Under the additive model, the mean population value for the environmental variance is simply $$ \\sigma_{E}^{2}=\\mathrm{E}\\left(\\sigma_{e}^{2}+A_{v}\\right)=\\sigma_{e}^{2}+\\mu_{A_{v}} $$"
+      "content": "which is also the response in $ \\sigma E^2 $ (Equation 17.6a). Equation 17.10a assumes that the population distribution of the trait value, z, is approximately normal, which breaks down at extreme trait values when there is heritable variation in $ \\sigma E^2 $ (as z is now no longer normally distributed, but rather has become a weighted mixture of normals). Hence, for strong selection these results are potentially biased.",
+      "source_page": 573,
+      "source_pages": [
+        573
+      ],
+      "source_block_ids": [
+        "Evolution_chapter17:p014:b15"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          813.0,
+          1060.0,
+          931.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "ef70b14246b70209be30f2e8e0d2da7d70bdc28202920d2e3255ea8c3ba65c71"
     },
     {
       "type": "discussion",
-      "content": "Unlike in the multiplicative and exponential models, changes in $ \\sigma_{E}^{2} $ under the additive model depend only on changes in the mean breeding value, and not on its variance ([[SEE_TABLE:17.1]])."
+      "content": "Our last formulation for modeling genetic variation in E was suggested by Hill and Zhang (2004) and Mulder et al. (2007), where $$ E=U\\cdot\\sqrt{\\sigma_{e}^{2}+A_{v}}\\quad\\mathrm{w h e r e}\\quad U\\sim N(0,1)\\quad\\mathrm{a n d}\\quad A_{v}\\sim N(\\mu_{A_{v}},\\sigma_{A_{v}}^{2}) $$",
+      "source_page": 567,
+      "source_pages": [
+        567
+      ],
+      "source_block_ids": [
+        "Evolution_chapter17:p008:b3",
+        "Evolution_chapter17:p008:b4"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          236.0,
+          1059.0,
+          284.0
+        ],
+        [
+          353.0,
+          302.0,
+          936.0,
+          329.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "27270050ca185f04b2815963f47f9168efe6b91979f486f2f64c5b3e65b4c2e3"
     },
     {
       "type": "discussion",
-      "content": "The additive model has the advantage of being much more tractable, but it has the disadvantage that it breaks down when the breeding value becomes sufficiently negative $ (A_v < -\\sigma_e^2) $. In contrast, the exponential model has additivity on the log of the variance scale, which is a nice statistical feature, as log variances are approximately normally distributed (Box 1953; Layard 1973). Mulder et al. (2007) discussed additional connections between the additive and exponential models, while Hill and Mulder (2010) reviewed different estimation methods under these models."
+      "content": "This is the additive model, as the environmental variance for an individual with breeding value $ A_{v} $ is simply $$ \\sigma^{2}(E\\mid A_{v})=\\sigma_{e}^{2}+A_{v} $$ with the constraint on the breeding value being that $ \\sigma_e^2 + A_v > 0 $. The additive model is a local analysis around the current mean, as selection to decrease $ A_v $ can eventually result in this constraint being violated, which generates a negative variance. Under the additive model, the mean population value for the environmental variance is simply $$ \\sigma_{E}^{2}=\\mathrm{E}\\left(\\sigma_{e}^{2}+A_{v}\\right)=\\sigma_{e}^{2}+\\mu_{A_{v}} $$",
+      "source_page": 567,
+      "source_pages": [
+        567
+      ],
+      "source_block_ids": [
+        "Evolution_chapter17:p008:b6",
+        "Evolution_chapter17:p008:b7",
+        "Evolution_chapter17:p008:b9",
+        "Evolution_chapter17:p008:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          348.0,
+          1058.0,
+          395.0
+        ],
+        [
+          580.0,
+          393.0,
+          766.0,
+          419.0
+        ],
+        [
+          287.0,
+          430.0,
+          1059.0,
+          524.0
+        ],
+        [
+          543.0,
+          541.0,
+          802.0,
+          570.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a090dffa6cc71c2b798e5fb082ac4ce83a37ddd8f75513d75d6c0621a56dab8d"
+    },
+    {
+      "type": "discussion",
+      "content": "Unlike in the multiplicative and exponential models, changes in $ \\sigma_{E}^{2} $ under the additive model depend only on changes in the mean breeding value, and not on its variance ([[SEE_TABLE:17.1]]).",
+      "source_page": 566,
+      "source_pages": [
+        566,
+        567
+      ],
+      "source_block_ids": [
+        "Evolution_chapter17:p007:b2",
+        "Evolution_chapter17:p007:b3",
+        "Evolution_chapter17:p008:b12"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          207.0,
+          904.0,
+          424.0
+        ],
+        [
+          158.0,
+          439.0,
+          879.0,
+          619.0
+        ],
+        [
+          287.0,
+          587.0,
+          1059.0,
+          656.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0ed6088aad40f9221fbd2764191d28c79cecb9db2633ecdc9143b57d04fabbac"
+    },
+    {
+      "type": "discussion",
+      "content": "The additive model has the advantage of being much more tractable, but it has the disadvantage that it breaks down when the breeding value becomes sufficiently negative $ (A_v < -\\sigma_e^2) $. In contrast, the exponential model has additivity on the log of the variance scale, which is a nice statistical feature, as log variances are approximately normally distributed (Box 1953; Layard 1973). Mulder et al. (2007) discussed additional connections between the additive and exponential models, while Hill and Mulder (2010) reviewed different estimation methods under these models.",
+      "source_page": 567,
+      "source_pages": [
+        567
+      ],
+      "source_block_ids": [
+        "Evolution_chapter17:p008:b13"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          657.0,
+          1059.0,
+          820.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c2974076466d013935ce90fd7348a8ceca8487af880926169b11b805df7b5daf"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:17.2]]"
+      "content": "[[SEE_EXAMPLE:17.2]]",
+      "source_page": 564,
+      "source_pages": [
+        564,
+        565
+      ],
+      "source_block_ids": [
+        "Evolution_chapter17:p005:b17",
+        "Evolution_chapter17:p006:b9"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1272.0,
+          903.0,
+          1341.0
+        ],
+        [
+          289.0,
+          1062.0,
+          504.0,
+          1085.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "60ab5ee85b03481f579bae7ef530ae148b04d19b5428924e20ba186391ddca6d"
     }
   ]
 }

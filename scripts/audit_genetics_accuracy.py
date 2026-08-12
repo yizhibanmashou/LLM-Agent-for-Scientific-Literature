@@ -24,16 +24,14 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any, Iterable
 
-import cv2
 import fitz
-import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-from scripts.rebuild_genetics_book import RANGES, write_json
 from scripts.build_genetics_staging import SOURCE_TEXT_CORRECTION_EVIDENCE, clean_text
+from scripts.rebuild_genetics_book import RANGES, write_json
 
 UNIT_RE = re.compile(r"^Genetics_(?:chapter\d+|appendix1)_\d{3}\.json$")
 PLACEHOLDER_RE = re.compile(r"\[\[(?:SEE_)?(?:FORMULA|TABLE|FIGURE|EXAMPLE):[^\]]+\]\]")

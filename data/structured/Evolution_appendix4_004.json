@@ -21,15 +21,144 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "An alternative to Fisher’s approach for combining $p$ values was offered by Stouffer et al. (1949), who transformed the individual $p$ values into $Z$ scores. The sum of $k$ independent unit normals is itself normal, with a mean of zero and a variance of $k$. These results lead to Stouffer’s $Z$ score method: assign a score of $Z_i$ for test $i$ by solving $\\Pr(U > Z_i) = p_i$. Let $Z_s$ denote the sum over the transformed $p$ values of $k$ tests, scaled by $k^{-1/2}$ to give it a variance of one, with $$ Z_{s}=\\frac{\\sum_{i=1}^{k}Z_{i}}{\\sqrt{k}} $$ Because $ Z_s \\sim N(0,1) $, the overall p value is obtained as $$ p=\\Pr(U>Z_{s}) $$ As noted by Whitlock (2005), this test was first proposed in a footnote in Stouffer et al.'s sociological study of army life, making it one of the more obscure origins of a statistical method."
+      "content": "An alternative to Fisher’s approach for combining $p$ values was offered by Stouffer et al. (1949), who transformed the individual $p$ values into $Z$ scores. The sum of $k$ independent unit normals is itself normal, with a mean of zero and a variance of $k$. These results lead to Stouffer’s $Z$ score method: assign a score of $Z_i$ for test $i$ by solving $\\Pr(U > Z_i) = p_i$. Let $Z_s$ denote the sum over the transformed $p$ values of $k$ tests, scaled by $k^{-1/2}$ to give it a variance of one, with $$ Z_{s}=\\frac{\\sum_{i=1}^{k}Z_{i}}{\\sqrt{k}} $$ Because $ Z_s \\sim N(0,1) $, the overall p value is obtained as $$ p=\\Pr(U>Z_{s}) $$ As noted by Whitlock (2005), this test was first proposed in a footnote in Stouffer et al.'s sociological study of army life, making it one of the more obscure origins of a statistical method.",
+      "source_page": 1232,
+      "source_pages": [
+        1232
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p003:b13",
+        "Evolution_appendix4:p003:b14",
+        "Evolution_appendix4:p003:b15",
+        "Evolution_appendix4:p003:b17",
+        "Evolution_appendix4:p003:b18",
+        "Evolution_appendix4:p003:b20"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          966.0,
+          299.0,
+          988.0
+        ],
+        [
+          132.0,
+          996.0,
+          902.0,
+          1133.0
+        ],
+        [
+          454.0,
+          1133.0,
+          581.0,
+          1185.0
+        ],
+        [
+          133.0,
+          1192.0,
+          608.0,
+          1216.0
+        ],
+        [
+          447.0,
+          1232.0,
+          588.0,
+          1257.0
+        ],
+        [
+          132.0,
+          1271.0,
+          904.0,
+          1341.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d0f21a875f4b40862c913c2ec1ab2757f7590c8969903ed3ff80daa42e933e53"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A4.2]]"
+      "content": "[[SEE_EXAMPLE:A4.2]]",
+      "source_page": 1232,
+      "source_pages": [
+        1232,
+        1233
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p003:b21",
+        "Evolution_appendix4:p004:b2",
+        "Evolution_appendix4:p004:b3",
+        "Evolution_appendix4:p004:b4"
+      ],
+      "source_bboxes": [
+        [
+          166.0,
+          1403.0,
+          879.0,
+          1471.0
+        ],
+        [
+          323.0,
+          207.0,
+          619.0,
+          232.0
+        ],
+        [
+          469.0,
+          253.0,
+          887.0,
+          312.0
+        ],
+        [
+          322.0,
+          332.0,
+          1034.0,
+          356.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "290240775c7e6b135ee7754dcdef3c5580d1fcebc927930966406031bd4c921d"
     },
     {
       "type": "discussion",
-      "content": "Besides providing symmetric values for large and small $p$ values (i.e., $p$ and $1-p$), a second advantage of the Z-score approach is that one can individually weight $p$ values from different tests (Mosteller and Bush 1954; Liptak 1958), as the weighted sum of unit normals is itself a unit normal (while the weighted sum of $\\chi^2$ variables—the analog for Fisher's test—is considerably more complex). The resulting weighted version becomes $$ Z_{w}=\\frac{\\sum_{i=1}^{k}w_{i}Z_{i}}{\\sqrt{\\sum_{i=1}^{k}w_{i}^{2}}} $$ where $ Z_w \\sim N(0,1) $. As expected, $ Z_w $ (Equation A4.2c) reduces to $ Z_s $ (Equation A4.2a) when all the weights are equal. One can either weight by the degrees of freedom or by the reciprocal of the standard error of the estimate. Whitlock (2005) showed that the weighted Z-score method is superior to either $ X^2 $ or $ Z_s $ when sample size varies over the data. $ Z_w $ has higher power and also a higher correlation between its predicted p value and the actual p value obtained if one was able to merge all the samples. As noted by Whitlock, many studies in evolutionary biology examine whether a hypothesis consistently holds over a collection of species. In such cases, the number of species is the number of replicates, and weighting p values for individual species is inappropriate. As detailed at the end of this Appendix, combining p values is one of the least powerful meta-analysis approaches, as it leaves much of the information from a collection of studies underutilized. A formal meta-analysis requires that studies report standard errors for their estimates. Unfortunately, many studies do not, and simply report p values instead, and in this setting the proceeding methods are the only type of meta-analysis available."
+      "content": "Besides providing symmetric values for large and small $p$ values (i.e., $p$ and $1-p$), a second advantage of the Z-score approach is that one can individually weight $p$ values from different tests (Mosteller and Bush 1954; Liptak 1958), as the weighted sum of unit normals is itself a unit normal (while the weighted sum of $\\chi^2$ variables—the analog for Fisher's test—is considerably more complex). The resulting weighted version becomes $$ Z_{w}=\\frac{\\sum_{i=1}^{k}w_{i}Z_{i}}{\\sqrt{\\sum_{i=1}^{k}w_{i}^{2}}} $$ where $ Z_w \\sim N(0,1) $. As expected, $ Z_w $ (Equation A4.2c) reduces to $ Z_s $ (Equation A4.2a) when all the weights are equal. One can either weight by the degrees of freedom or by the reciprocal of the standard error of the estimate. Whitlock (2005) showed that the weighted Z-score method is superior to either $ X^2 $ or $ Z_s $ when sample size varies over the data. $ Z_w $ has higher power and also a higher correlation between its predicted p value and the actual p value obtained if one was able to merge all the samples. As noted by Whitlock, many studies in evolutionary biology examine whether a hypothesis consistently holds over a collection of species. In such cases, the number of species is the number of replicates, and weighting p values for individual species is inappropriate. As detailed at the end of this Appendix, combining p values is one of the least powerful meta-analysis approaches, as it leaves much of the information from a collection of studies underutilized. A formal meta-analysis requires that studies report standard errors for their estimates. Unfortunately, many studies do not, and simply report p values instead, and in this setting the proceeding methods are the only type of meta-analysis available.",
+      "source_page": 1233,
+      "source_pages": [
+        1233
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p004:b5",
+        "Evolution_appendix4:p004:b6",
+        "Evolution_appendix4:p004:b8",
+        "Evolution_appendix4:p004:b9"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          423.0,
+          1059.0,
+          540.0
+        ],
+        [
+          595.0,
+          560.0,
+          750.0,
+          629.0
+        ],
+        [
+          287.0,
+          648.0,
+          1059.0,
+          855.0
+        ],
+        [
+          286.0,
+          855.0,
+          1060.0,
+          974.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8d3c97231db05852e5c681279c4b854f502a6c4fd249eaa300efea25d6a53a51"
     }
   ]
 }

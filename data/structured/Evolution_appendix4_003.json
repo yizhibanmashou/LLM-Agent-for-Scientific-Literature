@@ -21,15 +21,130 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Fisher (1932b) was among the first to offer a simple approach for combining $p$ values (along with Tippett 1931), based on the important concept that the distribution of realized $p$ values under the null follows a uniform distribution over $(0,1)$. Further, if $p \\sim \\text{Uniform}(0,1)$, then $-2 \\ln(p) \\sim \\chi_{2}^{2}$ (Pearson 1938). Hence, under the null, twice the negative natural log of a $p$ value follows a chi-square distribution with two degrees of freedom. If we have $k$ independent tests, then the sum of their log-transformed $p$ values is the sum of $k$ chi-square variables. Such a sum is itself chi-square, with the degrees of freedom given by the sum of the degrees of freedom for the individual chi-squares (LW Appendix 5). These observations formed the motivation for Fisher's combined probability test: for $k$ independent tests, where $ p_{i} $ denotes the p value for test i, the sum $$ X^{2}=-2\\sum_{i=1}^{k}\\ln(p_{i}) $$ approximately follows a $ \\chi_{2k}^{2} $ distribution."
+      "content": "Fisher (1932b) was among the first to offer a simple approach for combining $p$ values (along with Tippett 1931), based on the important concept that the distribution of realized $p$ values under the null follows a uniform distribution over $(0,1)$. Further, if $p \\sim \\text{Uniform}(0,1)$, then $-2 \\ln(p) \\sim \\chi_{2}^{2}$ (Pearson 1938). Hence, under the null, twice the negative natural log of a $p$ value follows a chi-square distribution with two degrees of freedom. If we have $k$ independent tests, then the sum of their log-transformed $p$ values is the sum of $k$ chi-square variables. Such a sum is itself chi-square, with the degrees of freedom given by the sum of the degrees of freedom for the individual chi-squares (LW Appendix 5). These observations formed the motivation for Fisher's combined probability test: for $k$ independent tests, where $ p_{i} $ denotes the p value for test i, the sum $$ X^{2}=-2\\sum_{i=1}^{k}\\ln(p_{i}) $$ approximately follows a $ \\chi_{2k}^{2} $ distribution.",
+      "source_page": 1231,
+      "source_pages": [
+        1231,
+        1232
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p002:b6",
+        "Evolution_appendix4:p002:b7",
+        "Evolution_appendix4:p003:b2",
+        "Evolution_appendix4:p003:b3",
+        "Evolution_appendix4:p003:b4",
+        "Evolution_appendix4:p003:b5"
+      ],
+      "source_bboxes": [
+        [
+          290.0,
+          1190.0,
+          466.0,
+          1215.0
+        ],
+        [
+          288.0,
+          1221.0,
+          1061.0,
+          1431.0
+        ],
+        [
+          132.0,
+          207.0,
+          536.0,
+          232.0
+        ],
+        [
+          434.0,
+          245.0,
+          601.0,
+          308.0
+        ],
+        [
+          835.0,
+          264.0,
+          901.0,
+          289.0
+        ],
+        [
+          134.0,
+          321.0,
+          492.0,
+          349.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "be773079f6e06c13cf7b82fbb0b0f8a1ed45c97afd835b1f86acbe7a6d053f4a"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A4.1]]"
+      "content": "[[SEE_EXAMPLE:A4.1]]",
+      "source_page": 1232,
+      "source_pages": [
+        1232
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p003:b6",
+        "Evolution_appendix4:p003:b7",
+        "Evolution_appendix4:p003:b8"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          414.0,
+          880.0,
+          506.0
+        ],
+        [
+          236.0,
+          516.0,
+          811.0,
+          579.0
+        ],
+        [
+          167.0,
+          591.0,
+          769.0,
+          616.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3bfcd5a170065e0beb3defbb3346944595adec5ba81ee929b6b4a295d80b5e19"
     },
     {
       "type": "discussion",
-      "content": "Rice (1990b; also see Whitlock 2005) noted that a problem with Fisher's method is that smaller p values are differentially weighted compared to complementary larger p values (e.g., p versus 1 - p). Equation A4.1a can be rearranged to yield $$ X^{2}=-2k\\ln(\\overline{p}_{G}) $$ where $ \\overline{p}_G $ is the geometric mean of the individual $ p $ values, which differentially weights smaller values. Under Fisher’s method, an observed $ p $ value of (say) 0.001 receives more weight than a complementary value of 0.999, which is as extreme (with $ -\\ln $ weights of 6.9 vs. 0.001). However, under the Z-score transformation—which is obtained by solving $ \\Pr(U > Z) = p $, where $ U \\sim \\mathrm{N}(0,1) $—the two complementary $ p $ values are of equal magnitude (Z scores of $ -3.09 $ and $ 3.09 $). This motivates the Z-score method, which we now consider."
+      "content": "Rice (1990b; also see Whitlock 2005) noted that a problem with Fisher's method is that smaller p values are differentially weighted compared to complementary larger p values (e.g., p versus 1 - p). Equation A4.1a can be rearranged to yield $$ X^{2}=-2k\\ln(\\overline{p}_{G}) $$ where $ \\overline{p}_G $ is the geometric mean of the individual $ p $ values, which differentially weights smaller values. Under Fisher’s method, an observed $ p $ value of (say) 0.001 receives more weight than a complementary value of 0.999, which is as extreme (with $ -\\ln $ weights of 6.9 vs. 0.001). However, under the Z-score transformation—which is obtained by solving $ \\Pr(U > Z) = p $, where $ U \\sim \\mathrm{N}(0,1) $—the two complementary $ p $ values are of equal magnitude (Z scores of $ -3.09 $ and $ 3.09 $). This motivates the Z-score method, which we now consider.",
+      "source_page": 1232,
+      "source_pages": [
+        1232
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p003:b9",
+        "Evolution_appendix4:p003:b10",
+        "Evolution_appendix4:p003:b12"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          682.0,
+          904.0,
+          754.0
+        ],
+        [
+          443.0,
+          766.0,
+          592.0,
+          792.0
+        ],
+        [
+          131.0,
+          806.0,
+          904.0,
+          947.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1b9c4832d01e9924d306e4161a171a79274a98f5e82e78bd2819053d4f8404dc"
     }
   ]
 }

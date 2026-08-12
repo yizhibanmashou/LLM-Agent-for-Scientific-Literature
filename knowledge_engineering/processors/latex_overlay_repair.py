@@ -8,17 +8,17 @@ source and only copies better LaTeX fragments into already-aligned text.
 from __future__ import annotations
 
 import argparse
-from collections import Counter, defaultdict
-from dataclasses import dataclass
-from difflib import SequenceMatcher
 import html
 import json
 import re
+from collections import Counter, defaultdict
+from dataclasses import dataclass
+from datetime import datetime
+from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Iterable
 
 from knowledge_engineering.core.common import read_json, utc_now_iso, write_json
-
 
 INLINE_MATH_RE = re.compile(r"(?<!\$)\$(?!\$)(.*?)(?<!\$)\$(?!\$)", re.DOTALL)
 PLACEHOLDER_RE = re.compile(r"\[\[(?:SEE_TABLE|TABLE|SEE_FORMULA|FORMULA):[^\]]+\]\]")

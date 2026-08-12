@@ -26,43 +26,312 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "The test given by Equation 9.2d assumes we have data from just two time points, but often one has time-series data for a number of generations. In such cases, the strong temptation to simply test the two most extreme values should be avoided, as such nonrandom sampling gives a highly biased result. Rather, specific tests have been developed that jointly consider all of the data. Indeed, the original test of Fisher and Ford involved such a temporal sequence of data. While one can use frequencies directly, Fisher and Ford used the arcsin-square-root transform to both stabilize the variance (making it independent of the initial frequencies) and improve the fit to normality, especially at extreme frequencies (note that the arcsin is measured in radians, rather than degrees). Such variance-stabilizing transformations were discussed in LW Chapter 11."
+      "content": "The test given by Equation 9.2d assumes we have data from just two time points, but often one has time-series data for a number of generations. In such cases, the strong temptation to simply test the two most extreme values should be avoided, as such nonrandom sampling gives a highly biased result. Rather, specific tests have been developed that jointly consider all of the data. Indeed, the original test of Fisher and Ford involved such a temporal sequence of data. While one can use frequencies directly, Fisher and Ford used the arcsin-square-root transform to both stabilize the variance (making it independent of the initial frequencies) and improve the fit to normality, especially at extreme frequencies (note that the arcsin is measured in radians, rather than degrees). Such variance-stabilizing transformations were discussed in LW Chapter 11.",
+      "source_page": 265,
+      "source_pages": [
+        265,
+        266
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p008:b8",
+        "Evolution_chapter9:p008:b9",
+        "Evolution_chapter9:p009:b2"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1301.0,
+          889.0,
+          1325.0
+        ],
+        [
+          286.0,
+          1330.0,
+          1061.0,
+          1471.0
+        ],
+        [
+          132.0,
+          206.0,
+          904.0,
+          298.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4463f2a8e1b392dd254bf69ec36949ca4b35849826b71c867c92987018a9e9c3"
     },
     {
       "type": "discussion",
-      "content": "Let $ y_t $ denote the transformed frequency of the allele in generation $ t $. For a $ t $ that is small relative to $ N_e $, we find (approximately) that $$ y_{t}=2\\sin^{-1}\\left(\\sqrt{p_{t}}\\right)\\sim N\\left(y_{0},t/[2N_{e}]\\right) $$ where $ y_0 = 2\\sin^{-1}\\left(\\sqrt{p_0}\\right) $ is the transformed value of the initial frequency. Estimates of allele frequencies are made at $ k $ time points, with no requirements about the temporal spacing between samples. Let $ y $ denote the vector of the transformed estimates of the $ k $ sampled allele-frequencies, and let $ 1 $ denote a vector of ones of the same length $$ \\mathbf{y}=2\\begin{pmatrix}\\sin^{-1}\\left[\\sqrt{p_{1}}\\right]\\\\ \\vdots\\\\ \\sin^{-1}\\left[\\sqrt{p_{k}}\\right]\\end{pmatrix},\\qquad\\mathbf{1}=\\begin{pmatrix}1\\\\ \\vdots\\\\ 1\\end{pmatrix} $$"
+      "content": "Let $ y_t $ denote the transformed frequency of the allele in generation $ t $. For a $ t $ that is small relative to $ N_e $, we find (approximately) that $$ y_{t}=2\\sin^{-1}\\left(\\sqrt{p_{t}}\\right)\\sim N\\left(y_{0},t/[2N_{e}]\\right) $$ where $ y_0 = 2\\sin^{-1}\\left(\\sqrt{p_0}\\right) $ is the transformed value of the initial frequency. Estimates of allele frequencies are made at $ k $ time points, with no requirements about the temporal spacing between samples. Let $ y $ denote the vector of the transformed estimates of the $ k $ sampled allele-frequencies, and let $ 1 $ denote a vector of ones of the same length $$ \\mathbf{y}=2\\begin{pmatrix}\\sin^{-1}\\left[\\sqrt{p_{1}}\\right]\\\\ \\vdots\\\\ \\sin^{-1}\\left[\\sqrt{p_{k}}\\right]\\end{pmatrix},\\qquad\\mathbf{1}=\\begin{pmatrix}1\\\\ \\vdots\\\\ 1\\end{pmatrix} $$",
+      "source_page": 266,
+      "source_pages": [
+        266
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p009:b3",
+        "Evolution_chapter9:p009:b4",
+        "Evolution_chapter9:p009:b6",
+        "Evolution_chapter9:p009:b7"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          298.0,
+          903.0,
+          347.0
+        ],
+        [
+          363.0,
+          362.0,
+          672.0,
+          389.0
+        ],
+        [
+          131.0,
+          406.0,
+          904.0,
+          502.0
+        ],
+        [
+          347.0,
+          516.0,
+          684.0,
+          602.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8a1bf8d52ce2cca90d5d1a3bf14caab7e19ae95f313e24232eec777f400ce591"
     },
     {
       "type": "discussion",
-      "content": "Finally, we need the covariance matrix, V, whose elements are independent of the allele frequency (because of the variance-stabilizing transformation; Equation 9.5a). The sample indices denote the sequence of samples, not the actual sampled generation itself (see Example 9.2), with $ t_i $ the generation number associated with the $ i $th sample. The diagonal terms of V are given from Equation 9.2c $$ V_{ii}=\\frac{1}{2n_{t_{i}}}+\\frac{t_{i}}{2N_{e}}\\left(1-\\frac{1}{2n_{t_{i}}}\\right)\\simeq\\frac{1}{2n_{t_{i}}}+\\frac{t_{i}}{2N_{e}} $$"
+      "content": "Finally, we need the covariance matrix, V, whose elements are independent of the allele frequency (because of the variance-stabilizing transformation; Equation 9.5a). The sample indices denote the sequence of samples, not the actual sampled generation itself (see Example 9.2), with $ t_i $ the generation number associated with the $ i $th sample. The diagonal terms of V are given from Equation 9.2c $$ V_{ii}=\\frac{1}{2n_{t_{i}}}+\\frac{t_{i}}{2N_{e}}\\left(1-\\frac{1}{2n_{t_{i}}}\\right)\\simeq\\frac{1}{2n_{t_{i}}}+\\frac{t_{i}}{2N_{e}} $$",
+      "source_page": 266,
+      "source_pages": [
+        266
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p009:b9",
+        "Evolution_chapter9:p009:b10"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          619.0,
+          904.0,
+          736.0
+        ],
+        [
+          325.0,
+          752.0,
+          710.0,
+          804.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d14d74f838c1903d729156fd515dcd87c9286dca099b78556f5603387db47bf5"
     },
     {
       "type": "discussion",
-      "content": "Now consider the covariance between samples i and j, which correspond to generations $ t_i $ and $ t_j $, respectively (where $ i > j $ and $ t_i > t_j $). The estimates for these two sample points have a shared history (from the base value, $ p_0 $) of drift up through generation $ t_j $, yielding $$ V_{i,j}=V_{j,i}=\\frac{t_{j}}{2N_{e}}\\quad\\mathrm{w h e r e}\\quad t_{j}<t_{i} $$"
+      "content": "Now consider the covariance between samples i and j, which correspond to generations $ t_i $ and $ t_j $, respectively (where $ i > j $ and $ t_i > t_j $). The estimates for these two sample points have a shared history (from the base value, $ p_0 $) of drift up through generation $ t_j $, yielding $$ V_{i,j}=V_{j,i}=\\frac{t_{j}}{2N_{e}}\\quad\\mathrm{w h e r e}\\quad t_{j}<t_{i} $$",
+      "source_page": 266,
+      "source_pages": [
+        266
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p009:b12",
+        "Evolution_chapter9:p009:b13"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          819.0,
+          902.0,
+          891.0
+        ],
+        [
+          381.0,
+          907.0,
+          673.0,
+          953.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "05718287f0bbf76c4c84aa747e886d00fac2d2fe5049c215d4e139a601e68dbf"
     },
     {
       "type": "discussion",
-      "content": "Note that the covariance with the base generation $ (t = 0) $ is always zero (which is why the off-diagonal covariances for V in Example 9.1 were set to zero). The $ k \\times k $ matrix, V, contains only those rows and columns corresponding to the k specific generations sampled."
+      "content": "Note that the covariance with the base generation $ (t = 0) $ is always zero (which is why the off-diagonal covariances for V in Example 9.1 were set to zero). The $ k \\times k $ matrix, V, contains only those rows and columns corresponding to the k specific generations sampled.",
+      "source_page": 266,
+      "source_pages": [
+        266
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p009:b14"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          969.0,
+          902.0,
+          1038.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "66904b42cea9ebdebd47402c02d9482dbd1a32a1312ebfc38a246d8b1d465322"
     },
     {
       "type": "discussion",
-      "content": "This is now a goodness-of-fit problem for a linear model. Using Equation 9.4, we obtain a generalized least-squares (GLS) estimate of the (transformed) initial frequency $$ \\hat{y}_{0}=\\frac{\\mathbf{1}^{T}\\mathbf{V}^{-1}\\mathbf{y}}{\\mathbf{1}^{T}\\mathbf{V}^{-1}\\mathbf{1}} $$"
+      "content": "This is now a goodness-of-fit problem for a linear model. Using Equation 9.4, we obtain a generalized least-squares (GLS) estimate of the (transformed) initial frequency $$ \\hat{y}_{0}=\\frac{\\mathbf{1}^{T}\\mathbf{V}^{-1}\\mathbf{y}}{\\mathbf{1}^{T}\\mathbf{V}^{-1}\\mathbf{1}} $$",
+      "source_page": 266,
+      "source_pages": [
+        266
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p009:b16",
+        "Evolution_chapter9:p009:b17"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1038.0,
+          903.0,
+          1087.0
+        ],
+        [
+          453.0,
+          1102.0,
+          582.0,
+          1151.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "026a9a0f16f44bd0ffe75d4f642bcf0e17480c9c106e36747986fc357c7a21d3"
     },
     {
       "type": "proposition",
-      "content": "Using this value, the vector of deviations is $$ \\delta_{\\mathbf{y}}=\\mathbf{y}-\\widehat{y}_{0}\\cdot\\mathbf{1} $$ and the test statistic, the weighted sum of the squared (transformed) allele-frequency differences, $$ \\delta_{\\mathbf{y}}^{T}\\mathbf{V}^{-1}\\delta_{\\mathbf{y}} $$ is expected to be approximately $ \\chi_{k-1}^{2} $ distributed due to the normality assumption on $ y_{i} $."
+      "content": "Using this value, the vector of deviations is $$ \\delta_{\\mathbf{y}}=\\mathbf{y}-\\widehat{y}_{0}\\cdot\\mathbf{1} $$ and the test statistic, the weighted sum of the squared (transformed) allele-frequency differences, $$ \\delta_{\\mathbf{y}}^{T}\\mathbf{V}^{-1}\\delta_{\\mathbf{y}} $$ is expected to be approximately $ \\chi_{k-1}^{2} $ distributed due to the normality assumption on $ y_{i} $.",
+      "source_page": 266,
+      "source_pages": [
+        266
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p009:b19",
+        "Evolution_chapter9:p009:b20",
+        "Evolution_chapter9:p009:b22",
+        "Evolution_chapter9:p009:b23",
+        "Evolution_chapter9:p009:b25"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          1165.0,
+          508.0,
+          1190.0
+        ],
+        [
+          452.0,
+          1208.0,
+          584.0,
+          1233.0
+        ],
+        [
+          132.0,
+          1251.0,
+          903.0,
+          1298.0
+        ],
+        [
+          471.0,
+          1294.0,
+          564.0,
+          1323.0
+        ],
+        [
+          132.0,
+          1331.0,
+          885.0,
+          1358.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a58b36c4e21369bb2e618ec8f411c5408f1a8bfc692ca912b960fb11c527fe1e"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:9.2]]"
+      "content": "[[SEE_EXAMPLE:9.2]]",
+      "source_page": 266,
+      "source_pages": [
+        266
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p009:b17",
+        "Evolution_chapter9:p009:b9"
+      ],
+      "source_bboxes": [
+        [
+          453.0,
+          1102.0,
+          582.0,
+          1151.0
+        ],
+        [
+          132.0,
+          619.0,
+          904.0,
+          736.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5648d030aad164105e44e3c001d6c790f0c0071c8ff0ff5d26c7762af067a52c"
     },
     {
       "type": "discussion",
-      "content": "A number of generalizations, as well as increasingly sophisticated tests building on the basic elements of the Fisher-Ford framework, have been proposed, including extending this methodology to handle data from high-throughput sequencing. A partial list includes Templeton (1974), Schaffer et al. (1977), Gibson et al. (1979), Wilson (1980), Watterson (1982), Waples (1989b), De Koeyer et al. (2001), Goldringer and Bataillon (2004), Bollback et al. (2008), Wisser et al. (2008), Sandoval-Castellanos (2010), Malaspinas et al. (2012), da Fonseca et al. (2013), Mathieson and McVean (2013), Feder et al. (2014), Lacerda and Seoighe (2014), Steinrücken et al. (2014), Foll et al. (2015), Terhorst et al. (2015), Topa et al. (2015), Gompert (2016), and Schraiber et al. (2016)."
+      "content": "A number of generalizations, as well as increasingly sophisticated tests building on the basic elements of the Fisher-Ford framework, have been proposed, including extending this methodology to handle data from high-throughput sequencing. A partial list includes Templeton (1974), Schaffer et al. (1977), Gibson et al. (1979), Wilson (1980), Watterson (1982), Waples (1989b), De Koeyer et al. (2001), Goldringer and Bataillon (2004), Bollback et al. (2008), Wisser et al. (2008), Sandoval-Castellanos (2010), Malaspinas et al. (2012), da Fonseca et al. (2013), Mathieson and McVean (2013), Feder et al. (2014), Lacerda and Seoighe (2014), Steinrücken et al. (2014), Foll et al. (2015), Terhorst et al. (2015), Topa et al. (2015), Gompert (2016), and Schraiber et al. (2016).",
+      "source_page": 267,
+      "source_pages": [
+        267
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p010:b8"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          853.0,
+          1060.0,
+          1059.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6344e66219018ee7c6f85a0c3cc0abd620219f77a070f0abfcd388df671797cf"
     },
     {
       "type": "discussion",
-      "content": "In addition to its use in studying natural populations, this machinery can be applied to artificial selection experiments to detect regions of interest. In the pre-genomics era, this approach was pioneered by Stuber and Moll (1972) and Stuber et al. (1980), who looked for shifts in the frequencies of isozyme markers in lines of maize selected for yield. Other examples for maize include Labate et al. (1999) and Coque and Gallais (2006) for yield selection, and Wisser et al. (2008) for disease resistance, while De Koeyer et al. (2001) examined yield in oats. In the genomics era, extensions of this machinery have been used in microorganisms, such as the analysis by Foll et al. (2014) on the target (or targets) of selection for influenza A virus exposed to the drug oseltamivir, as well as with data from evolve and resequence experiments (E&R), such as those on Drosophila (Terhorst et al. 2015; Topa et al. 2015)."
+      "content": "In addition to its use in studying natural populations, this machinery can be applied to artificial selection experiments to detect regions of interest. In the pre-genomics era, this approach was pioneered by Stuber and Moll (1972) and Stuber et al. (1980), who looked for shifts in the frequencies of isozyme markers in lines of maize selected for yield. Other examples for maize include Labate et al. (1999) and Coque and Gallais (2006) for yield selection, and Wisser et al. (2008) for disease resistance, while De Koeyer et al. (2001) examined yield in oats. In the genomics era, extensions of this machinery have been used in microorganisms, such as the analysis by Foll et al. (2014) on the target (or targets) of selection for influenza A virus exposed to the drug oseltamivir, as well as with data from evolve and resequence experiments (E&R), such as those on Drosophila (Terhorst et al. 2015; Topa et al. 2015).",
+      "source_page": 267,
+      "source_pages": [
+        267
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p010:b9",
+        "Evolution_chapter9:p010:b5"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1059.0,
+          1060.0,
+          1292.0
+        ],
+        [
+          322.0,
+          552.0,
+          421.0,
+          574.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9a866cd0d26443ff7c0ff703d76608477de6091eeb3a8306b40e67f5d46fe9a2"
     }
   ]
 }

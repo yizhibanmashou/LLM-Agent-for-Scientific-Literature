@@ -118,7 +118,7 @@
       "level": 2,
       "depth": 1,
       "anchor": "evolution_chapter16_011",
-      "text_preview": "and Figure 16.3 show that $ \\kappa 0 $ under stabilizing double-truncation selection, so that selection reduces the within-generation phenotypic variance and generates negative disequilibrium. Conversely, $ \\kappa 0 $), the value $ \\gamma = \\widetilde{\\sigma} A^2 / \\sigma z^2 $ (which measures the fraction of the init…"
+      "text_preview": "[See Table 16.1 at the end of this section.] and Figure 16.3 show that $ \\kappa 0 $ under stabilizing double-truncation selection, so that selection reduces the within-generation phenotypic variance and generates negative disequilibrium. Conversely, $ \\kappa 0 $), the value $ \\gamma = \\widetilde{\\sigma} A^2 / \\sigma z…"
     },
     {
       "id": "Evolution_chapter16_012",
@@ -201,48 +201,6 @@
       "caption": "Figure 16.2 The generation of covariances (gametic-phase disequilibrium, LD) by the various type of truncation selection. The variables  $ x $ and  $ y $ (e.g., allelic effects at two different loci) are uncorrelated before selection, with their distribution indicated by the open circle. Left: Under directional selection, only those values of  $ x + y $ above some threshold (say, a) are retained. The resulting distribution (the shaded area above the line for  $ x + y = a $) now displays a negative covariance between the remaining  $ x $ and  $ y $ values. Middle: Under stabilizing selection, only those values in the range of  $ -a \\leq x + y \\leq a $ are retained, also generating a negative covariance. Right: Under disruptive selection, only values of  $ x + y \\geq a $ or  $ x + y \\leq -a $ are retained, now resulting in a positive covariance between the remaining  $ x $ and  $ y $ values."
     },
     {
-      "kind": "example",
-      "id": "16.1",
-      "anchor": "example-16.1",
-      "label": "Example 16.1",
-      "section_id": "Evolution_chapter16_003",
-      "excerpt": "Example 16.1 · ref: 16.1 · source: Evolution chapter16 003.json · blocks 11–12 Example 16.1. Data from Rendel (1943) suggest that stabilizing selection occurs on egg weight in ducks. Of 960 eggs followed, 64.5% hatched. The change in mean egg weight (in grams) after selection was negligible, but the variance showed a significant decrease. The variance before selection was 52.7 (using all 960 eggs), and declined to 43.9 after selection (in those eggs that hatched), yielding $…"
-    },
-    {
-      "kind": "example",
-      "id": "16.2",
-      "anchor": "example-16.2",
-      "label": "Example 16.2",
-      "section_id": "Evolution_chapter16_004",
-      "excerpt": "Example 16.2 · ref: 16.2 · source: Evolution chapter16 004.json · blocks 4–8 Example 16.2. To show why the residual variance in Equation 16.8a depends on the genic variance, $ \\sigma {a}^{2} $, we assume the presence of random mating and unlinked loci, and that allele- frequency changes from selection can be ignored. Focusing on a single locus, suppose a parent has a genotype of $ A i A j $, with allelic effects of $ a i $ and $ a j $, where i and j index random alleles. The…"
-    },
-    {
-      "kind": "table",
-      "id": "16.1",
-      "anchor": "table-16.1",
-      "label": "Table 16.1",
-      "section_id": "Evolution_chapter16_006",
-      "caption": "Table 16.1 Changes in the phenotypic variance under the various schemes of single and double truncation given in Figure 16.1. Assuming the character is normally distributed before selection, the phenotypic variance after selection is calculated as $ \\sigma_{z*}^2 = (1 - \\kappa) \\sigma_z^2 $, where $ \\kappa $ (as shown in the table) is a function of the fraction, $ p $, of individuals saved. Here $ \\varphi $ denotes the unit normal density function and $ x_{[p]} $ satisfies $ \\Pr(U \\leq x_{[p]}) = p $ (equivalently, $ \\Pr[U > x_{[1-p]}] = p $), where $ U $ is a unit normal random variable. Finally, $ \\bar{\\tau} $ is the selection intensity and is also a function of $ p $ (Equation 14.3a). While first presented in the quantitative genetics literature by Bulmer (1976a), these expressions can be found in Johnson and Kotz (1970a).",
-      "rows": [
-        [
-          "Selection scheme",
-          "Formula"
-        ],
-        [
-          "Directional Truncation Selection: Uppermost p saved",
-          "$$\\kappa=\\frac{\\varphi\\left(x_{[1-p]}\\right)}{p}\\left(\\frac{\\varphi\\left(x_{[1-p]}\\right)}{p}-x_{[1-p]}\\right)=\\overline{\\imath}\\left(\\overline{\\imath}-x_{[1-p]}\\right)$$"
-        ],
-        [
-          "Stabilizing Truncation Selection: Middle fraction p of the distribution saved",
-          "$$\\kappa=\\frac{2\\varphi\\left(x_{[1/2+p/2]}\\right)x_{[1/2+p/2]}}{p}$$"
-        ],
-        [
-          "Disruptive Truncation Selection: Uppermost and lowermost p/2 saved",
-          "$$\\kappa=-\\frac{2\\varphi\\left(x_{[1-p/2]}\\right)x_{[1-p/2]}}{p}$$"
-        ]
-      ]
-    },
-    {
       "kind": "figure",
       "id": "16.3",
       "anchor": "figure-16.3",
@@ -261,21 +219,39 @@
       "caption": "Figure 16.4 Equilibrium  $ h^2 $ values as a function of  $ \\kappa $ and the initial heritability,  $ h^2 $. Note that for  $ \\kappa < 0 $, the variance is increased by selection ( $ \\sigma_z^2 > \\sigma_z^2 $, as occurs with disruptive selection) and the equilibrium  $ h^2 $ is greater than its initial value."
     },
     {
+      "kind": "table",
+      "id": "16.1",
+      "anchor": "table-16.1",
+      "label": "Table 16.1",
+      "section_id": "Evolution_chapter16_006",
+      "caption": "Table 16.1 Changes in the phenotypic variance under the various schemes of single and double truncation given in Figure 16.1. Assuming the character is normally distributed before selection, the phenotypic variance after selection is calculated as $ \\sigma_{z*}^2 = (1 - \\kappa) \\sigma_z^2 $, where $ \\kappa $ (as shown in the table) is a function of the fraction, $ p $, of individuals saved. Here $ \\varphi $ denotes the unit normal density function and $ x_{[p]} $ satisfies $ \\Pr(U \\leq x_{[p]}) = p $ (equivalently, $ \\Pr[U > x_{[1-p]}] = p $), where $ U $ is a unit normal random variable. Finally, $ \\bar{\\tau} $ is the selection intensity and is also a function of $ p $ (Equation 14.3a). While first presented in the quantitative genetics literature by Bulmer (1976a), these expressions can be found in Johnson and Kotz (1970a).",
+      "rows": [
+        [
+          "Selection scheme",
+          "Formula"
+        ],
+        [
+          "Directional Truncation Selection: Uppermost p saved",
+          "$\\kappa=\\frac{\\varphi\\left(x_{[1-p]}\\right)}{p}\\left(\\frac{\\varphi\\left(x_{[1-p]}\\right)}{p}-x_{[1-p]}\\right)=\\overline{\\imath}\\left(\\overline{\\imath}-x_{[1-p]}\\right)$"
+        ],
+        [
+          "Stabilizing Truncation Selection: Middle fraction p of the distribution saved",
+          "$\\kappa=\\frac{2\\varphi\\left(x_{[1/2+p/2]}\\right)x_{[1/2+p/2]}}{p}$"
+        ],
+        [
+          "Disruptive Truncation Selection: Uppermost and lowermost p/2 saved",
+          "$\\kappa=-\\frac{2\\varphi\\left(x_{[1-p/2]}\\right)x_{[1-p/2]}}{p}$"
+        ]
+      ]
+    },
+    {
       "kind": "figure",
       "id": "16.5",
       "anchor": "figure-16.5",
       "label": "Figure 16.5",
-      "section_id": "Evolution_chapter16_006",
+      "section_id": "Evolution_chapter16_008",
       "src": "figures/Evolution_16.5.png",
       "caption": "Figure 16.5 Equilibrium heritability values under directional (truncation) selection as a function of the fraction, p, saved and the initial heritability,  $ h^{2} $. The three curves correspond to initial heritability values of 0.75, 0.5, and 0.25, with the dashed lines displaying the constant heritability values and the solid line displaying the value at equilibrium."
-    },
-    {
-      "kind": "example",
-      "id": "16.3",
-      "anchor": "example-16.3",
-      "label": "Example 16.3",
-      "section_id": "Evolution_chapter16_008",
-      "excerpt": "Example 16.3 · ref: 16.3 · source: Evolution chapter16 008.json · blocks 2–11 Example 16.3. Suppose directional truncation selection is performed (equally on both sexes) on a normally distributed character with $ \\sigma z^2 = 100 $, $ h^2 = 0.5 $, and $ p = 0.20 $ (the upper 20% of the population is saved). To examine the impact of LD on the selection response, we first need to compute the fraction, $ \\kappa $, of phenotypic variance removed by selection. To apply Equation 1…"
     },
     {
       "kind": "table",
@@ -285,47 +261,6 @@
       "section_id": "Evolution_chapter16_008",
       "caption": "Table 16.2 Heritability and additive genetic variance in an experimental population undergoing directional selection on abdominal bristle number in Drosophila melanogaster. The base population is denoted by B. At the third generation of selection (H3), and following four generations of selection plus three generations of no selection (C7, in generation 7), $ h^2 $ was estimated from the response to divergent selection (Chapter 18) and $ \\sigma_A^2 $ was subsequently estimated by $ \\widehat{h}^2 \\sigma_z^2 $. The standard error for $ \\widehat{h}^2 $ in all cases was 0.04. (After Sorensen and Hill 1982.)",
       "rows": []
-    },
-    {
-      "kind": "example",
-      "id": "16.4",
-      "anchor": "example-16.4",
-      "label": "Example 16.4",
-      "section_id": "Evolution_chapter16_011",
-      "excerpt": "Example 16.4 · ref: 16.4 · source: Evolution chapter16 011.json · blocks 3–7 Example 16.4. Consider a normally distributed character with $ \\sigma z^2 = 100 $ and $ h^2 = 0.5 $ in a random-mating population. To compare the effects of stabilizing and disruptive selection, suppose that in one replicate, disruptive selection is practiced via double truncation with $ p = 0.5 $ (the upper and lower 25% of the population are saved), while stabilizing selection with $ p = 0.5 $ (th…"
-    },
-    {
-      "kind": "figure",
-      "id": "16.6",
-      "anchor": "figure-16.6",
-      "label": "Figure 16.6",
-      "section_id": "Evolution_chapter16_012",
-      "src": "figures/Evolution_16.6.png",
-      "caption": "Figure 16.6 The response to the same amount of direction selection for two different starting populations, one initially subjected to stabilizing selection and the other to disruptive selection. See Example 16.4 for details."
-    },
-    {
-      "kind": "example",
-      "id": "16.5",
-      "anchor": "example-16.5",
-      "label": "Example 16.5",
-      "section_id": "Evolution_chapter16_013",
-      "excerpt": "Example 16.5 · ref: 16.5 · source: Evolution chapter16 013.json · blocks 7–10 Example 16.5. Suppose that normalizing selection occurs on a normally distributed character with $ \\sigma z^2 = 100 $, $ h^2 = 0.5 $, and $ \\omega^2 = 200 $. From Equation 18.20a, with $ \\sigma a^2 = 0.5 \\cdot 100 = 50 $, the dynamics of the disequilibrium contribution are given by $$ d(t+1)=\\frac{d(t)}{2}-\\frac{1}{2}\\frac{[50+d(t)]^{2}}{300+d(t)} $$ Equation 16.20d gives $ \\tilde{d} = -6.46 $, and…"
-    },
-    {
-      "kind": "example",
-      "id": "16.6",
-      "anchor": "example-16.6",
-      "label": "Example 16.6",
-      "section_id": "Evolution_chapter16_016",
-      "excerpt": "Example 16.6 · ref: 16.6 · source: Evolution chapter16 016.json · blocks 3–7 Example 16.6. Starting with a base population that is initially in gametic-phase equilibrium with $ h^2 = 0.5 $ and $ \\sigma z^2 = 100 $, individuals are positively assortatively mated (with $ \\rho = 0.5 $) for $ k $ generations before being subjected to directional truncation selection, with $ p = 0.20 $. What is the difference in response to one generation of selection in the assortatively mated p…"
-    },
-    {
-      "kind": "example",
-      "id": "16.7",
-      "anchor": "example-16.7",
-      "label": "Example 16.7",
-      "section_id": "Evolution_chapter16_016",
-      "excerpt": "Example 16.7 · ref: 16.7 · source: Evolution chapter16 016.json · blocks 7–10 Example 16.7. Consider the same population and selection parameters as in the previous example, but with selection and assortative mating now occurring simultaneously, starting at generation 0. What is the difference in response if random mating occurs in one replicate and assortative mating with $ \\rho = 0.5 $ occurs in the other? From Example 16.3, directional truncation selection with $ p = 0.2…"
     },
     {
       "kind": "formula",
@@ -348,6 +283,76 @@
       "latex_render": "\\begin{aligned}R(k)=1.4h^{2}(k)\\sigma_{z}(k)&=1.4\\left(\\frac{\\sigma_{A}^{2}(0)+d(k)}{\\sigma_{z}^{2}(0)+d(k)}\\right)\\sqrt{\\sigma_{z}^{2}(0)+d(k)}\\\\&=1.4\\left(\\frac{50+d(k)}{100+d(k)}\\right)\\sqrt{100+d(k)}\\\\ \\end{aligned}",
       "origin": "formula-library",
       "source_label": ""
+    },
+    {
+      "kind": "example",
+      "id": "16.1",
+      "anchor": "example-16.1",
+      "label": "Example 16.1",
+      "section_id": "Evolution_chapter16_003",
+      "excerpt": "Example 16.1. Data from Rendel (1943) suggest that stabilizing selection occurs on egg weight in ducks. Of 960 eggs followed, 64.5% hatched. The change in mean egg weight (in grams) after selection was negligible, but the variance showed a significant decrease. The variance before selection was 52.7 (using all 960 eggs), and declined to 43.9 after selection (in those eggs that hatched), yielding $ \\delta(\\sigma z^2) = -8.8 $. Assuming that the reduction in variance due to ga…",
+      "content_markdown": "Example 16.1. Data from Rendel (1943) suggest that stabilizing selection occurs on egg weight in ducks. Of 960 eggs followed, 64.5% hatched. The change in mean egg weight (in grams) after selection was negligible, but the variance showed a significant decrease. The variance before selection was 52.7 (using all 960 eggs), and declined to 43.9 after selection (in those eggs that hatched), yielding $ \\delta(\\sigma_z^2) = -8.8 $. Assuming that the reduction in variance due to gametic-phase disequilibrium is at equilibrium and setting $ \\widetilde{h}_z^2 $ at 0.60 (the heritability for egg weight in poultry) gives from Equation 16.7c, $$ \\widetilde{d}=\\widetilde{h}^{4}\\widetilde{\\delta}(\\sigma_{z}^{2})=(0.6)^{2}(-8.8)=-3.2\\quad and\\quad\\widetilde{\\sigma}_{A}^{2}=\\widetilde{h}^{2}\\widetilde{\\sigma}_{z}^{2}=0.6\\cdot52.7=31.6 $$\n\nAssuming the infinitesimal model holds, if selection stops, the additive variance is expected to eventually increase to $$ \\sigma_{A}^{2}=\\sigma_{a}^{2}=\\widetilde{\\sigma}_{A}^{2}-\\widetilde{d}=31.6+3.2=34.8 $$ with half of this change occurring in one generation (assuming all underlying loci are unlinked). Similarly, $ \\sigma_{z}^{2} = 52.7 + 3.2 = 55.9 $ and $ h^{2} = 34.8/55.9 = 0.62 $. (Example from Bulmer 1971b.)",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "16.2",
+      "anchor": "example-16.2",
+      "label": "Example 16.2",
+      "section_id": "Evolution_chapter16_004",
+      "excerpt": "Example 16.2. To show why the residual variance in Equation 16.8a depends on the genic variance, $ \\sigma {a}^{2} $, we assume the presence of random mating and unlinked loci, and that allele- frequency changes from selection can be ignored. Focusing on a single locus, suppose a parent has a genotype of $ A i A j $, with allelic effects of $ a i $ and $ a j $, where i and j index random alleles. The expected contribution from this locus to the breeding value of its offspring…",
+      "content_markdown": "Example 16.2. To show why the residual variance in Equation 16.8a depends on the genic variance, $ \\sigma_{a}^{2} $, we assume the presence of random mating and unlinked loci, and that allele- frequency changes from selection can be ignored. Focusing on a single locus, suppose a parent has a genotype of $ A_i A_j $, with allelic effects of $ a_i $ and $ a_j $, where i and j index random alleles. The expected contribution from this locus to the breeding value of its offspring is $ (a_i + a_j)/2 $, as each allele is transmitted with a probability of 0.5. The resulting deviation between the actual contribution and expected contribution when $ A_i $ is transmitted is $ a_i - (a_i + a_j)/2 = (a_i - a_j)/2 $. Likewise, this deviation is $ (a_j - a_i)/2 $ when $ A_j $ is transmitted. Hence, the offspring variance in the contribution to its breeding value for this particular locus is simply the average of the squares of these two deviations, or $$ \\frac{1}{2}\\left[\\frac{(a_{j}-a_{i})^{2}}{4}+\\frac{(a_{i}-a_{i})^{2}}{4}\\right]=\\frac{(a_{j}-a_{i})^{2}}{4} $$\n\nExpanding the quadratic product and taking the expected value yields $$ E\\left[\\frac{(a_{j}-a_{i})^{2}}{4}\\right]=\\frac{E[a_{j}^{2}]}{4}+\\frac{E[a_{i}^{2}]}{4}-\\frac{E[a_{i}\\cdot a_{j}]}{2} $$\n\nUnder random mating, the alleles at a locus are independent, and the last term is simply $ E[a] = E[a] = 0 $, which yields a contribution to the segregation variance from a single locus in a single parent of $ E[a^2]/2 $. Summing over both parents gives the variance in the breeding value from this locus in their offspring as $ E[a^2] $, which is half the random-mating, linkage-equilibrium additive variance at this locus, $ \\sigma_a^2 = 2E[a^2] $ (Equation 16.1b). Further, because of independent assortment, the contributions from each unlinked loci from a parent are uncorrelated, and summing over all loci yields a residual variance of $ \\sigma_a^2/2 $.\n\nConversely, if a parent is inbred (with f being the probability that both alleles at a randomly chosen locus are identical by descent, IBD), then the alleles $ A_{i} $ and $ A_{j} $ are no longer independent. With a probability of f they are IBD, and hence the same allele; otherwise they are independent alleles, yielding $$ E[a_{i}\\cdot a_{j}]=fE[a^{2}]+(1-f)E[a]\\cdot E[a]=fE[a^{2}] $$ and now $$ E\\left[\\frac{(a_{j}-a_{i})^{2}}{4}\\right]=\\frac{E[a^{2}]}{4}+\\frac{E[a^{2}]}{4}-f\\frac{E[a^{2}]}{2}=(1-f)\\frac{E[a^{2}]}{2} $$\n\nSumming over all loci results in a segregation variance of $ \\sigma_a^2(1 - \\overline{f})/2 $, where $ \\overline{f} $ is the average of the inbreeding levels of the two parents.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "16.3",
+      "anchor": "example-16.3",
+      "label": "Example 16.3",
+      "section_id": "Evolution_chapter16_008",
+      "excerpt": "Example 16.3. Suppose directional truncation selection is performed (equally on both sexes) on a normally distributed character with $ \\sigma z^2 = 100 $, $ h^2 = 0.5 $, and $ p = 0.20 $ (the upper 20% of the population is saved). To examine the impact of LD on the selection response, we first need to compute the fraction, $ \\kappa $, of phenotypic variance removed by selection. To apply Equation 16.15b, we need to compute both $ x {[0.8]} $ and $ \\bar{\\tau} $. To do so, not…",
+      "content_markdown": "Example 16.3. Suppose directional truncation selection is performed (equally on both sexes) on a normally distributed character with $ \\sigma_z^2 = 100 $, $ h^2 = 0.5 $, and $ p = 0.20 $ (the upper 20% of the population is saved). To examine the impact of LD on the selection response, we first need to compute the fraction, $ \\kappa $, of phenotypic variance removed by selection. To apply Equation 16.15b, we need to compute both $ x_{[0.8]} $ and $ \\bar{\\tau} $. To do so, note that for a unit normal random variable, $ U $, that $ \\Pr(U \\leq 0.842) = 0.8 $, yielding $ x_{[0.8]} = 0.842 $, and from Equation 14.3a $$ \\bar{\\imath}=\\varphi(x_{[0.8]}/0.2=\\varphi(0.842)/p=0.280/0.20=1.400 $$ From Equation 16.15b, the fraction of variance removed by selection is $$ \\kappa=\\bar{\\imath}\\left(\\bar{\\imath}-x_{[0.8]}\\right)=1.400\\left(1.400-0.842\\right)=0.781 $$ With $ \\kappa $ in hand, Equation 16.12d becomes $$ d(t+1)=\\frac{d(t)}{2}-0.391\\frac{\\left[50+d(t)\\right]^{2}}{100+d(t)} $$ Starting selection in generation 0 on a base population in gametic-phase equilibrium (and hence $ d(0) = 0 $), iteration of this expression yields [[TABLE:inline_1]] For example, in generation 2 $$ h^{2}(2)=\\frac{\\sigma_{A}^{2}(2)}{\\sigma_{z}^{2}(2)}=\\frac{\\sigma_{A}^{2}(0)+d(2)}{\\sigma_{z}^{2}(0)+d(2)}=\\frac{50-11.90}{100-11.90}=0.43 $$ Note that essentially all of the decline in additive variance occurs in the first three generations. An important point to note is that the within-generation reduction in the variance is close to 80% ( $ \\kappa = 0.781 $), but the resulting decrease in the phenotypic variance (at equilibrium) is 100–12.54 = 87.46, only a 13% decrease. As was found for the response in the mean using the breeder's equation, only a fraction of the within-generation change in the variance is transmitted between generations. As with the change in mean (Chapter 13), this arises because only a fraction of the variation is due to additive-genetic variance. Another contributing factor is the additional variation generated by Mendelian sampling in each generation, which partly mitigates the decrease in variance from selection. We can also obtain the equilibrium additive variance directly from Equation 16.13a. Here $ \\widetilde{\\sigma}_{A}^{2} = \\sigma_{z}^{2} \\gamma = 100 \\gamma $, with $$ \\gamma=\\frac{2\\cdot0.5-1+\\sqrt{1+4\\cdot0.5\\cdot(1-0.5)\\cdot0.781}}{2(1+0.781)}=0.3746 $$ and hence $ \\widetilde{\\sigma}_{A}^{2}=37.46 $, as found by iteration. Likewise, Equation 16.13c returns the equilibrium heritability as $$ \\tilde{h}^{2}=\\frac{\\gamma}{1+\\gamma-h^{2}}=\\frac{0.3746}{1+0.3746-0.5}=0.43 $$ Again, this matches the value found by iteration. How does this reduction in $ \\sigma_A^2 $ influence the per-generation change in mean, $ R(t) $? Because $ \\bar{t} $ is unchanged (being entirely a function of the fraction, p, of adults saved), but $ h^2 $ and $ \\sigma_z^2 $ change over time, substituting $ \\sigma_A(t) = h(t)\\sigma_z(t) $ into Equation 13.6b yields the single-generation response in generation t as $$ R(t)=h^{2}(t)\\bar{\\imath}\\sigma_{z}(t)=1.40h^{2}(t)\\sqrt{\\sigma_{z}^{2}+d(t)}=1.40h^{2}(t)\\sqrt{100+d(t)} $$ Thus, the selection response declines from an initial value of $ R = 1.4 \\cdot 0.5 \\cdot 10 = 7 $ to an asymptotic per-generation value of $ \\widetilde{R} = 1.4 \\cdot 0.43 \\cdot \\sqrt{87.46} = 5.6 $. Using the unadjusted breeder's equation to predict change in mean over several generations without accounting for the Bulmer effect would have overestimated the expected response by 25%.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "16.4",
+      "anchor": "example-16.4",
+      "label": "Example 16.4",
+      "section_id": "Evolution_chapter16_011",
+      "excerpt": "Example 16.4. Consider a normally distributed character with $ \\sigma z^2 = 100 $ and $ h^2 = 0.5 $ in a random-mating population. To compare the effects of stabilizing and disruptive selection, suppose that in one replicate, disruptive selection is practiced via double truncation with $ p = 0.5 $ (the upper and lower 25% of the population are saved), while stabilizing selection with $ p = 0.5 $ (the upper and lower 25% are culled) is practiced in the other. To obtain $ \\kap…",
+      "content_markdown": "Example 16.4. Consider a normally distributed character with $ \\sigma_z^2 = 100 $ and $ h^2 = 0.5 $ in a random-mating population. To compare the effects of stabilizing and disruptive selection, suppose that in one replicate, disruptive selection is practiced via double truncation with $ p = 0.5 $ (the upper and lower 25% of the population are saved), while stabilizing selection with $ p = 0.5 $ (the upper and lower 25% are culled) is practiced in the other. To obtain $ \\kappa $ (from Table 16.1), first note that for stabilizing selection, $ x_{[1/2+p/2]} = x_{[0.75]} = 0.674 $, while for disruptive selection, $ x_{[1-p/2]} = x_{[0.75]} $, with $ \\varphi(0.674) = 0.318 $. Using these values, Equations 16.11b and 16.11c yield $$ \\kappa=\\pm(2\\cdot0.318\\cdot0.674)/0.5=\\pm0.857 $$ where the plus sign is used for stabilizing selection, and the minus sign is used for disruptive selection. Equation 16.12d becomes $$ d(t+1)=\\frac{d(t)}{2}\\mp0.429\\frac{\\left[50+d(t)\\right]^{2}}{100+d(t)} $$ where, because the equation is in terms of $ -\\kappa $, the minus sign in this expression corresponds to stabilizing selection and the plus sign to disruptive selection. Starting selection on a base population with d = 0 and iterating the above equation yields Disruptive selection [[TABLE:inline_2]] Note that with disruptive selection, the absolute change in d is much greater and the time to approach equilibrium considerably longer than with stabilizing selection. Now suppose that after the equilibrium value of $d$ has been reached, both of these two populations are then subjected to directional selection. In particular, assume directional truncation selection, with the upper 20 percent of the population being saved. The recursion equation for the disequilibrium contribution is given in Example 16.3, but now the initial disequilibrium values are $d(0) = -13.32$ for the population with a previous history of stabilizing selection and $d(0) = 82.69$ for the population with a previous history of disruptive selection. From Example 16.3, the per-generation response is $R(t) = h^2(t)$ and $z(t)$ is plotted in Figure 16.6 for both populations. The resulting changes in $d$ and the heritability under these two treatments are also plotted in Figure 16.6. If stabilizing or disruptive selection are stopped for $k$ generations before truncation selection, $d(0)$ is replaced by $d(0)/2^k$. Initially there is a large difference in $d$ (and hence in $h^{2}$ and in the response) between the replicates, but after three generations, both have essentially the same value, converging to $\\tilde{d} = -12.54$ and hence a per-generation response of $\\tilde{R} = 5.6$, the equilibrium value under directional truncation selection (see Example 16.3). As plotted in Figure 16.6, the replicate that was originally subjected to disruptive selection shows a higher cumulative response, due to larger responses resulting from higher heritabilities in the first few generations. This difference in cumulative response is permanent—it does not decay away once selection stops. Hence, we expect that if an unselected base population is divided into three replicates, one first subjected to disruptive selection, another subjected to stabilizing selection, and the third to no selection, and if directional selection is then applied, the largest response should occur in the disruptively selected replicate and the smallest in the replicate that underwent stabilizing selection. This pattern is indeed seen in artificial selection experiments on Drosophila sternopleural bristles (Thoday 1959) and wing length (Tantawy and Tayel 1970).",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "16.5",
+      "anchor": "example-16.5",
+      "label": "Example 16.5",
+      "section_id": "Evolution_chapter16_013",
+      "excerpt": "Example 16.5. Suppose that normalizing selection occurs on a normally distributed character with $ \\sigma z^2 = 100 $, $ h^2 = 0.5 $, and $ \\omega^2 = 200 $. From Equation 18.20a, with $ \\sigma a^2 = 0.5 \\cdot 100 = 50 $, the dynamics of the disequilibrium contribution are given by $$ d(t+1)=\\frac{d(t)}{2}-\\frac{1}{2}\\frac{[50+d(t)]^{2}}{300+d(t)} $$ Equation 16.20d gives $ \\tilde{d} = -6.46 $, and hence $ \\tilde{h}^2 = (50 - 6.46)/(100 - 6.46) = 0.47 $. Most of the reductio…",
+      "content_markdown": "Example 16.5. Suppose that normalizing selection occurs on a normally distributed character with $ \\sigma_z^2 = 100 $, $ h^2 = 0.5 $, and $ \\omega^2 = 200 $. From Equation 18.20a, with $ \\sigma_a^2 = 0.5 \\cdot 100 = 50 $, the dynamics of the disequilibrium contribution are given by $$ d(t+1)=\\frac{d(t)}{2}-\\frac{1}{2}\\frac{[50+d(t)]^{2}}{300+d(t)} $$ Equation 16.20d gives $ \\tilde{d} = -6.46 $, and hence $ \\tilde{h}^2 = (50 - 6.46)/(100 - 6.46) = 0.47 $. Most of the reduction in heritability occurs in the first few generations, as iteration of Equation 16.20a yields [[TABLE:inline_3]] Thus, under the infinitesimal model, the distribution reaches an equilibrium, with the phenotypes (before selection) normally distributed with a mean of $ \\theta $ and variance of $ \\widetilde{\\sigma}_{z}^{2} = 100 - 6.46 = 93.54 $.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "16.6",
+      "anchor": "example-16.6",
+      "label": "Example 16.6",
+      "section_id": "Evolution_chapter16_016",
+      "excerpt": "Example 16.6. Starting with a base population that is initially in gametic-phase equilibrium with $ h^2 = 0.5 $ and $ \\sigma z^2 = 100 $, individuals are positively assortatively mated (with $ \\rho = 0.5 $) for $ k $ generations before being subjected to directional truncation selection, with $ p = 0.20 $. What is the difference in response to one generation of selection in the assortatively mated population relative to a random-mating base population? To answer this questio…",
+      "content_markdown": "Example 16.6. Starting with a base population that is initially in gametic-phase equilibrium with $ h^2 = 0.5 $ and $ \\sigma_z^2 = 100 $, individuals are positively assortatively mated (with $ \\rho = 0.5 $) for $ k $ generations before being subjected to directional truncation selection, with $ p = 0.20 $. What is the difference in response to one generation of selection in the assortatively mated population relative to a random-mating base population? To answer this question, we first need to compute the expected disequilibrium contribution following $k$ generations of assortative mating in the population before selection. Here, $\\kappa_f = \\kappa_m = 0$ and Equation 16.21d yields $\\kappa = -\\rho = -0.5$, which is used to iterate Equation 16.22. $$ d(t+1)=\\frac{d(t)}{2}+0.25h^{2}(t)\\sigma_{A}^{2}(t) $$ (16.23a) where $ d(0) = 0 $, $ h^2(0) = 0.5 $, and $ \\sigma_A^2(0) = 50 $. As shown in the table below, assortative mating, by itself, generates $ d > 0 $, reaching an upper limit (for these genetic and mating parameters) of $ \\widetilde{d} = 20.71 $. From Example 16.3, the single-generation response using a population with $ d(k) $ is given by $$ \\begin{aligned}R(k)=1.4h^{2}(k)\\sigma_{z}(k)&=1.4\\left(\\frac{\\sigma_{A}^{2}(0)+d(k)}{\\sigma_{z}^{2}(0)+d(k)}\\right)\\sqrt{\\sigma_{z}^{2}(0)+d(k)}\\\\&=1.4\\left(\\frac{50+d(k)}{100+d(k)}\\right)\\sqrt{100+d(k)}\\\\ \\end{aligned} $$ (16.23b) Iterating Equation 16.23a for $ k $ generations and substituting the resulting $ d(k) $ value into Equation 16.23b gives the following values for a single generation of response following $ k $ generations of assortative mating: [[TABLE:inline_4]] $ R_{rm} = 7.00 $ is the first-generation response under random mating and $ d(0) = 0 $. With $ k = 3 $ generations of assortative mating in the base population, at the start of selection $ d(0) = 13.58 $ and $ h^2 = 0.56 $, giving a response of 8.35. While there can be up to a 29% increase in the rate of response to a single generation of selection when starting from an assortatively mated base population, it is extremely inefficient to assortatively mate a population for several generations before applying selection. For example, with a single generation of assortative mating followed by a single generation of selection, the total response is 7.64. If instead one just selected both generations (from a randomly mated base population), the responses are 7.00 in the first generation and (from Example 16.3) 5.93 in the second, for a total response almost twice as large (12.93/7.64). Further, once selection starts, the initially positive $d$ from assortative mating (which inflates $\\sigma_A^2$, and hence $h^2$ and the selection responses) decays very rapidly (Figure 16.6). Only half the previous value of $d$ is passed onto the next generation, where it is supplemented by negative $d$ values generated by selection (Equation 16.7b), which quickly drives $d$ to negative values and greatly reduces $R/R_{rm}$. Assuming $d(0) = 20.71$, after a single generation of selection, $d(1) = -3.55$ and $h^2 = 0.48$, and the selection response in the next generation drops to 6.62 (compared to a response of 5.93 under random mating of the selected parents). In the second generation of selection, $d(2) = -9.25$, with a response of 5.98.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "16.7",
+      "anchor": "example-16.7",
+      "label": "Example 16.7",
+      "section_id": "Evolution_chapter16_016",
+      "excerpt": "Example 16.7. Consider the same population and selection parameters as in the previous example, but with selection and assortative mating now occurring simultaneously, starting at generation 0. What is the difference in response if random mating occurs in one replicate and assortative mating with $ \\rho = 0.5 $ occurs in the other? From Example 16.3, directional truncation selection with $ p = 0.2 $ on both sexes yields $ \\kappa f = \\kappa m = 0.781 $, with the variance redu…",
+      "content_markdown": "Example 16.7. Consider the same population and selection parameters as in the previous example, but with selection and assortative mating now occurring simultaneously, starting at generation 0. What is the difference in response if random mating occurs in one replicate and assortative mating with $ \\rho = 0.5 $ occurs in the other? From Example 16.3, directional truncation selection with $ p = 0.2 $ on both sexes yields $ \\kappa_f = \\kappa_m = 0.781 $, with the variance reduction from Equation 16.21d becoming $$ \\kappa=\\kappa_{f}-\\rho(1-\\kappa_{f})=0.781-0.5(1-0.781)=0.672 $$ and (from Equation 16.22), the change in d in the assortatively mated population becomes $$ d(t+1)=\\frac{d(t)}{2}-\\frac{0.672}{2}h^{2}(t)\\sigma_{A}^{2}(t) $$ Assuming the initial population is in gametic-phase equilibrium $ d(0) = 0 $, iteration yields [[TABLE:inline_5]]",
+      "origin": "example-library"
     },
     {
       "kind": "formula",
@@ -1055,13 +1060,6 @@
         "label": "Example 16.1",
         "book_hint": "",
         "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "16.7c",
-        "label": "Equation 16.7c",
-        "book_hint": "",
-        "link_scope": "current-book"
       }
     ],
     "Evolution_chapter16_004": [
@@ -1132,13 +1130,6 @@
         "kind": "equation",
         "id": "16.8a",
         "label": "Equation 16.8a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "16.1b",
-        "label": "Equation 16.1b",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -1238,6 +1229,13 @@
         "link_scope": "current-book"
       },
       {
+        "kind": "table",
+        "id": "16.1",
+        "label": "Table 16.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
         "kind": "figure",
         "id": "16.3",
         "label": "Figure 16.3",
@@ -1259,23 +1257,9 @@
         "link_scope": "current-book"
       },
       {
-        "kind": "table",
-        "id": "16.1",
-        "label": "Table 16.1",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
         "kind": "equation",
         "id": "14.3a",
         "label": "Equation 14.3a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "16.5",
-        "label": "Figure 16.5",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -1292,13 +1276,6 @@
     "Evolution_chapter16_008": [
       {
         "kind": "chapter",
-        "id": "13",
-        "label": "Chapter 13",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "chapter",
         "id": "18",
         "label": "Chapter 18",
         "book_hint": "",
@@ -1310,6 +1287,13 @@
         "label": "LW Equation 2.15",
         "book_hint": "Genetics",
         "link_scope": "lw"
+      },
+      {
+        "kind": "table",
+        "id": "16.1",
+        "label": "Table 16.1",
+        "book_hint": "",
+        "link_scope": "current-book"
       },
       {
         "kind": "equation",
@@ -1340,51 +1324,9 @@
         "link_scope": "current-book"
       },
       {
-        "kind": "equation",
-        "id": "16.15b",
-        "label": "Equation 16.15b",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "14.3a",
-        "label": "Equation 14.3a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "16.12d",
-        "label": "Equation 16.12d",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "16.13c",
-        "label": "Equation 16.13c",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "13.6b",
-        "label": "Equation 13.6b",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
         "kind": "table",
         "id": "16.2",
         "label": "Table 16.2",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "table",
-        "id": "16.1",
-        "label": "Table 16.1",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -1423,6 +1365,13 @@
     ],
     "Evolution_chapter16_011": [
       {
+        "kind": "table",
+        "id": "16.1",
+        "label": "Table 16.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
         "kind": "figure",
         "id": "16.3",
         "label": "Figure 16.3",
@@ -1449,41 +1398,6 @@
         "label": "Example 16.4",
         "book_hint": "",
         "link_scope": "current-book"
-      },
-      {
-        "kind": "table",
-        "id": "16.1",
-        "label": "Table 16.1",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "16.11b",
-        "label": "Equation 16.11b",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "16.12d",
-        "label": "Equation 16.12d",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "16.3",
-        "label": "Example 16.3",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "16.6",
-        "label": "Figure 16.6",
-        "book_hint": "",
-        "link_scope": "current-book"
       }
     ],
     "Evolution_chapter16_012": [
@@ -1491,20 +1405,6 @@
         "kind": "chapter",
         "id": "17",
         "label": "Chapter 17",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "16.6",
-        "label": "Figure 16.6",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "16.4",
-        "label": "Example 16.4",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -1537,27 +1437,6 @@
         "label": "Example 16.5",
         "book_hint": "",
         "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "18.20a",
-        "label": "Equation 18.20a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "16.20d",
-        "label": "Equation 16.20d",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "16.20a",
-        "label": "Equation 16.20a",
-        "book_hint": "",
-        "link_scope": "current-book"
       }
     ],
     "Evolution_chapter16_014": [
@@ -1581,6 +1460,13 @@
         "kind": "equation",
         "id": "16.21b",
         "label": "Equation 16.21b",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "16.3",
+        "label": "Example 16.3",
         "book_hint": "",
         "link_scope": "current-book"
       },
@@ -1639,55 +1525,6 @@
         "kind": "example",
         "id": "16.6",
         "label": "Example 16.6",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "16.21d",
-        "label": "Equation 16.21d",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "16.22",
-        "label": "Equation 16.22",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "16.3",
-        "label": "Example 16.3",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "16.23a",
-        "label": "Equation 16.23a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "16.23b",
-        "label": "Equation 16.23b",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "16.6",
-        "label": "Figure 16.6",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "16.7b",
-        "label": "Equation 16.7b",
         "book_hint": "",
         "link_scope": "current-book"
       },
@@ -1939,7 +1776,7 @@
       "target_section_title": "Chapter 2 · Neutral Evolution in One- and Two-Locus Systems",
       "book_hint": "",
       "link_scope": "current-book",
-      "context_excerpt": "ft[1-\\frac{f {m}(t)+f {f}(t)}{2}\\right] $$ where $ f {m} $ and $ f {f} $ denote the average amount of inbreeding in the selected male and female parents (measured by their respected inbreeding coefficients, f; Chapter 2; LW Chapter 10). The additive variance recursion (Equation 16.8b), under the assumptions of the infinitesimal model, becomes $$ \\sigma {A}^{2}(t+1)=\\frac{1}{4}\\left[\\sigma {A {m}^{ }}^{2}(t)+\\sigma {…",
+      "context_excerpt": "t[1-\\frac{f {m}(t)+f {f}(t)}{2}\\right] $$ where $ f {m} $ and $ f {f} $ denote the average amount of inbreeding in the selected male and female parents (measured by their respected inbreeding coefficients, f; Chapter 2; LW Chapter 10). The additive variance recursion (Equation 16.8b), under the assumptions of the infinitesimal model, becomes $$ \\sigma {A}^{2}(t+1)=\\frac{1}{4}\\left[\\sigma {A {m}^{ }}^{2}(t)+\\sigma {A…",
       "match_source": "llm-prerequisite"
     },
     {
@@ -1954,7 +1791,7 @@
       "target_section_title": "Chapter 10 · Inbreeding Depression",
       "book_hint": "Genetics",
       "link_scope": "lw",
-      "context_excerpt": "f {m}(t)+f {f}(t)}{2}\\right] $$ where $ f {m} $ and $ f {f} $ denote the average amount of inbreeding in the selected male and female parents (measured by their respected inbreeding coefficients, f; Chapter 2; LW Chapter 10). The additive variance recursion (Equation 16.8b), under the assumptions of the infinitesimal model, becomes $$ \\sigma {A}^{2}(t+1)=\\frac{1}{4}\\left[\\sigma {A {m}^{ }}^{2}(t)+\\sigma {A {f}^{ }}^…",
+      "context_excerpt": "{m}(t)+f {f}(t)}{2}\\right] $$ where $ f {m} $ and $ f {f} $ denote the average amount of inbreeding in the selected male and female parents (measured by their respected inbreeding coefficients, f; Chapter 2; LW Chapter 10). The additive variance recursion (Equation 16.8b), under the assumptions of the infinitesimal model, becomes $$ \\sigma {A}^{2}(t+1)=\\frac{1}{4}\\left[\\sigma {A {m}^{ }}^{2}(t)+\\sigma {A {f}^{ }}^{2…",
       "match_source": "llm-prerequisite"
     },
     {
@@ -1984,22 +1821,7 @@
       "target_section_title": "TRUNCATION SELECTION / Selection Intensities and Differentials Under Truncation Selection",
       "book_hint": "",
       "link_scope": "current-book",
-      "context_excerpt": "ic solutions for the equilibrium variances and heritability can be obtained (again, assuming the validity of the infinitesimal model). Truncation selection—both as we have defined it for directional selection (Chapter 14) and double truncation giving disruptive or stabilizing selection (Figure 16.1)—satisfies Equation 16.10. As shown in , for truncation selection on a normally distributed phenotype, $ \\kappa",
-      "match_source": "llm-prerequisite"
-    },
-    {
-      "current_section_id": "Evolution_chapter16_008",
-      "current_anchor": "evolution_chapter16_008",
-      "source_chapter_id": "Evolution_chapter13",
-      "label": "Chapter 13",
-      "target_anchor": "evolution_chapter13_006",
-      "target_label": "Equation 13.6b",
-      "target_ref_type": "equation",
-      "target_ref_id": "13.6b",
-      "target_section_title": "SINGLE-GENERATION RESPONSE: THE BREEDER'S EQUATION / The Selection Intensity, $ \\bar{\\nu} $",
-      "book_hint": "",
-      "link_scope": "current-book",
-      "context_excerpt": "decrease. As was found for the response in the mean using the breeder's equation, only a fraction of the within-generation change in the variance is transmitted between generations. As with the change in mean (Chapter 13), this arises because only a fraction of the variation is due to additive-genetic variance. Another contributing factor is the additional variation generated by Mendelian sampling in each generation…",
+      "context_excerpt": "ic solutions for the equilibrium variances and heritability can be obtained (again, assuming the validity of the infinitesimal model). Truncation selection—both as we have defined it for directional selection (Chapter 14) and double truncation giving disruptive or stabilizing selection (Figure 16.1)—satisfies Equation 16.10. As shown in [See Table 16.1 at the end of this section.] , for truncation selection on a nor…",
       "match_source": "llm-prerequisite"
     },
     {
@@ -2519,7 +2341,7 @@
     "provider": "deepseek",
     "model": "deepseek-v4-flash",
     "cache_enabled": true,
-    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "cache_dir": "tmp/llm_cache",
     "max_remote_calls": 0,
     "max_prompt_chars_total": 0,
     "max_response_chars_total": 0,

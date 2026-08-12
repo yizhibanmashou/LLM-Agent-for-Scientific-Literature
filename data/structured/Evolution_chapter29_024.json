@@ -21,31 +21,250 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Suppose the total amount of within-generation selection is partitioned into $k$ episodes of selection. Let $\\mu_j$ and $\\sigma_j^2$ be the (fitness-weighted) mean and variance after the $j$th episode of selection ($\\mu = \\mu_0$ and $\\sigma^2 = \\sigma_0^2$) are the baseline mean and variance before the first measured episode of selection). The definitions of $S$ and $C$ suggest that their appropriate counterparts for the $j$th episode of selection are calculated by $$ S_{j}=\\mu_{j}-\\mu_{j-1} $$ $$ C_{j}=\\sigma_{j}^{2}-\\sigma_{j-1}^{2}+S_{j}^{2} $$"
+      "content": "Suppose the total amount of within-generation selection is partitioned into $k$ episodes of selection. Let $\\mu_j$ and $\\sigma_j^2$ be the (fitness-weighted) mean and variance after the $j$th episode of selection ($\\mu = \\mu_0$ and $\\sigma^2 = \\sigma_0^2$) are the baseline mean and variance before the first measured episode of selection). The definitions of $S$ and $C$ suggest that their appropriate counterparts for the $j$th episode of selection are calculated by $$ S_{j}=\\mu_{j}-\\mu_{j-1} $$ $$ C_{j}=\\sigma_{j}^{2}-\\sigma_{j-1}^{2}+S_{j}^{2} $$",
+      "source_page": 1086,
+      "source_pages": [
+        1086
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p030:b13",
+        "Evolution_chapter29:p030:b14",
+        "Evolution_chapter29:p030:b15",
+        "Evolution_chapter29:p030:b17"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1159.0,
+          929.0,
+          1183.0
+        ],
+        [
+          286.0,
+          1190.0,
+          1060.0,
+          1309.0
+        ],
+        [
+          584.0,
+          1329.0,
+          719.0,
+          1353.0
+        ],
+        [
+          582.0,
+          1354.0,
+          765.0,
+          1383.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8decc8f3acf94e7f727acf77afaa845060f6b9dffd22a528a02b06875095c021"
     },
     {
       "type": "discussion",
-      "content": "(Arnold and Wade 1984a). The properties for S and C hold for each episode of selection, with $$ \\begin{array}{r l r}{S_{j}=\\sigma(w_{j},z)}&{{}\\quad\\mathrm{a n d}\\quad}&{C_{j}=\\sigma\\left[w_{j},(z-\\mu_{j-1})^{2}\\right]}\\end{array} $$ where $ w_j $ is the relative fitness for the $ j $th episode of selection. Likewise, substituting $ I_j = \\sigma^2(w_i) $ for $ I $ in Equations 29.6 and 29.18c bounds the possible values of $ S_j $ and $ C_j $."
+      "content": "(Arnold and Wade 1984a). The properties for S and C hold for each episode of selection, with $$ \\begin{array}{r l r}{S_{j}=\\sigma(w_{j},z)}&{{}\\quad\\mathrm{a n d}\\quad}&{C_{j}=\\sigma\\left[w_{j},(z-\\mu_{j-1})^{2}\\right]}\\end{array} $$ where $ w_j $ is the relative fitness for the $ j $th episode of selection. Likewise, substituting $ I_j = \\sigma^2(w_i) $ for $ I $ in Equations 29.6 and 29.18c bounds the possible values of $ S_j $ and $ C_j $.",
+      "source_page": 1086,
+      "source_pages": [
+        1086,
+        1087
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p030:b19",
+        "Evolution_chapter29:p030:b20",
+        "Evolution_chapter29:p031:b2"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1399.0,
+          1057.0,
+          1444.0
+        ],
+        [
+          455.0,
+          1444.0,
+          889.0,
+          1473.0
+        ],
+        [
+          132.0,
+          206.0,
+          901.0,
+          253.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4e11fc2617a5534dd000c348cc1c0122fa669d92fa47ab29e814799dae330d39"
     },
     {
       "type": "discussion",
-      "content": "How do these individual-episode measures relate to their total measure (i.e., over all episodes)? The partition of the total differentials, $ S_{T} $ and $ C_{T} $, into those components are additive, with $$ S_{T}=\\mu_{k}-\\mu_{0}=\\sum_{j=1}^{k}\\left(\\mu_{i}-\\mu_{i-1}\\right)=\\sum_{j=1}^{k}S_{j} $$ and $$ \\begin{aligned}C_{T}&=\\sigma_{k}^{2}-\\sigma_{0}^{2}+S_{T}^{2}=\\sum_{j=1}^{k}\\left(\\sigma_{i}^{2}-\\sigma_{i-1}^{2}\\right)+S_{T}^{2}\\\\&=\\sum_{j=1}^{k}\\left(C_{j}-S_{j}^{2}\\right)+S_{T}^{2}=\\sum_{j=1}^{k}C_{j}+\\left(S_{T}^{2}-\\sum_{j=1}^{k}S_{j}^{2}\\right)\\end{aligned} $$"
+      "content": "How do these individual-episode measures relate to their total measure (i.e., over all episodes)? The partition of the total differentials, $ S_{T} $ and $ C_{T} $, into those components are additive, with $$ S_{T}=\\mu_{k}-\\mu_{0}=\\sum_{j=1}^{k}\\left(\\mu_{i}-\\mu_{i-1}\\right)=\\sum_{j=1}^{k}S_{j} $$ and $$ \\begin{aligned}C_{T}&=\\sigma_{k}^{2}-\\sigma_{0}^{2}+S_{T}^{2}=\\sum_{j=1}^{k}\\left(\\sigma_{i}^{2}-\\sigma_{i-1}^{2}\\right)+S_{T}^{2}\\\\&=\\sum_{j=1}^{k}\\left(C_{j}-S_{j}^{2}\\right)+S_{T}^{2}=\\sum_{j=1}^{k}C_{j}+\\left(S_{T}^{2}-\\sum_{j=1}^{k}S_{j}^{2}\\right)\\end{aligned} $$",
+      "source_page": 1087,
+      "source_pages": [
+        1087
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p031:b3",
+        "Evolution_chapter29:p031:b4",
+        "Evolution_chapter29:p031:b6",
+        "Evolution_chapter29:p031:b7"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          251.0,
+          903.0,
+          322.0
+        ],
+        [
+          342.0,
+          338.0,
+          693.0,
+          404.0
+        ],
+        [
+          133.0,
+          410.0,
+          175.0,
+          431.0
+        ],
+        [
+          289.0,
+          437.0,
+          745.0,
+          578.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a261e3f7dde42d22568c499c81ea53a43f583212711d85443d9c9fc27d50d589"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:29.8]]"
+      "content": "[[SEE_EXAMPLE:29.8]]",
+      "source_page": 1087,
+      "source_pages": [
+        1087
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p031:b10",
+        "Evolution_chapter29:p031:b11",
+        "Evolution_chapter29:p031:b9"
+      ],
+      "source_bboxes": [
+        [
+          261.0,
+          710.0,
+          787.0,
+          738.0
+        ],
+        [
+          167.0,
+          748.0,
+          880.0,
+          858.0
+        ],
+        [
+          167.0,
+          655.0,
+          878.0,
+          704.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9487752a38175222a5722b835e030bf08cc262ef23ffb75b69ebfe5ec22bba3a"
     },
     {
       "type": "discussion",
-      "content": "Partitioning $ \\beta $ and $ \\gamma $ requires a little more care, as we have to account for changes in the phenotypic variance following each episode. From their definitions, the appropriate gradients for the jth episode of selection are $$ \\beta_{j}=\\frac{S_{j}}{\\sigma_{j-1}^{2}}\\qquad and\\qquad\\gamma_{j}=\\frac{C_{j}}{\\sigma_{j-1}^{4}} $$"
+      "content": "Partitioning $ \\beta $ and $ \\gamma $ requires a little more care, as we have to account for changes in the phenotypic variance following each episode. From their definitions, the appropriate gradients for the jth episode of selection are $$ \\beta_{j}=\\frac{S_{j}}{\\sigma_{j-1}^{2}}\\qquad and\\qquad\\gamma_{j}=\\frac{C_{j}}{\\sigma_{j-1}^{4}} $$",
+      "source_page": 1087,
+      "source_pages": [
+        1087
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p031:b12",
+        "Evolution_chapter29:p031:b13"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          924.0,
+          904.0,
+          995.0
+        ],
+        [
+          371.0,
+          1001.0,
+          663.0,
+          1055.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4a2d294f24e32c15dd3492a8a2dceeac908f3adcf701c9b428b922ce87f840bf"
     },
     {
       "type": "definition",
-      "content": "In their original paper, Arnold and Wade (1984a) initially defined gradients for each episode using the baseline variance, $\\sigma_0^2$, throughout. With this definition, gradients are additive across episodes, as their numerators (being covariances) are additive and the denominators are unchanged. This approach is often called the additive partition (or more correctly, the unweighted additive partition), as $\\beta_T = \\sum \\beta_j^0$, where $\\beta_j^0 = S_j / \\sigma_0^2$. Kalisz (1986) and Wade and Kalisz (1989) noted that the correct definition for an episodic gradient depends upon the trait variance at the start of each episode (Equation 29.23a), and the variance is expected to change during each episode. Writing $S_j = \\beta_j \\sigma_{j-1}^2$ gives $$ \\beta_{T}=\\frac{S_{T}}{\\sigma_{0}^{2}}=\\sum_{j=1}^{k}\\frac{S_{j}}{\\sigma_{0}^{2}}=\\sum_{j=1}^{k}\\frac{\\beta_{j}\\sigma_{j-1}^{2}}{\\sigma_{0}^{2}}=\\sum_{j=1}^{k}\\beta_{j}a_{j},\\quad\\mathrm{w h e r e}\\quad a_{j}=\\frac{\\sigma_{j-1}^{2}}{\\sigma_{0}^{2}} $$"
+      "content": "In their original paper, Arnold and Wade (1984a) initially defined gradients for each episode using the baseline variance, $\\sigma_0^2$, throughout. With this definition, gradients are additive across episodes, as their numerators (being covariances) are additive and the denominators are unchanged. This approach is often called the additive partition (or more correctly, the unweighted additive partition), as $\\beta_T = \\sum \\beta_j^0$, where $\\beta_j^0 = S_j / \\sigma_0^2$. Kalisz (1986) and Wade and Kalisz (1989) noted that the correct definition for an episodic gradient depends upon the trait variance at the start of each episode (Equation 29.23a), and the variance is expected to change during each episode. Writing $S_j = \\beta_j \\sigma_{j-1}^2$ gives $$ \\beta_{T}=\\frac{S_{T}}{\\sigma_{0}^{2}}=\\sum_{j=1}^{k}\\frac{S_{j}}{\\sigma_{0}^{2}}=\\sum_{j=1}^{k}\\frac{\\beta_{j}\\sigma_{j-1}^{2}}{\\sigma_{0}^{2}}=\\sum_{j=1}^{k}\\beta_{j}a_{j},\\quad\\mathrm{w h e r e}\\quad a_{j}=\\frac{\\sigma_{j-1}^{2}}{\\sigma_{0}^{2}} $$",
+      "source_page": 1087,
+      "source_pages": [
+        1087
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p031:b14",
+        "Evolution_chapter29:p031:b16"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1060.0,
+          905.0,
+          1246.0
+        ],
+        [
+          233.0,
+          1256.0,
+          801.0,
+          1319.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "271753b1d1f37903f10c1646816be6cc220b6b0c98334d0adf2f4347c28ca283"
     },
     {
       "type": "discussion",
-      "content": "Equation 29.23b defines the variance-weighted additive partition of gradients, where the total selection gradient is now a weighted sum of the individual gradients associated with each episode. The partition of $ \\gamma $ follows in a similar manner, with $$ \\gamma=\\sum_{j=1}^{k}\\gamma_{j}a_{j}^{2}+\\frac{1}{\\sigma_{0}^{4}}\\left[S_{T}^{2}-\\sum_{j=1}^{k}S_{j}^{2}\\right] $$ where $ \\gamma_j $ is calculated by Equation 29.23a. McGlothlin (2010) presented the multivariate version of Equation 29.23c and also revealed a key feature of Equation 29.23c. Note that $ \\gamma $ can be nonzero even when all of the values of $ \\gamma_j $ are zero. Further, when directional selection is occurring, the sign of $ \\gamma $ can be different from the sign of the average value of $ \\gamma_k $."
+      "content": "Equation 29.23b defines the variance-weighted additive partition of gradients, where the total selection gradient is now a weighted sum of the individual gradients associated with each episode. The partition of $ \\gamma $ follows in a similar manner, with $$ \\gamma=\\sum_{j=1}^{k}\\gamma_{j}a_{j}^{2}+\\frac{1}{\\sigma_{0}^{4}}\\left[S_{T}^{2}-\\sum_{j=1}^{k}S_{j}^{2}\\right] $$ where $ \\gamma_j $ is calculated by Equation 29.23a. McGlothlin (2010) presented the multivariate version of Equation 29.23c and also revealed a key feature of Equation 29.23c. Note that $ \\gamma $ can be nonzero even when all of the values of $ \\gamma_j $ are zero. Further, when directional selection is occurring, the sign of $ \\gamma $ can be different from the sign of the average value of $ \\gamma_k $.",
+      "source_page": 1087,
+      "source_pages": [
+        1087,
+        1088
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p031:b18",
+        "Evolution_chapter29:p031:b19",
+        "Evolution_chapter29:p032:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1327.0,
+          904.0,
+          1399.0
+        ],
+        [
+          371.0,
+          1408.0,
+          661.0,
+          1472.0
+        ],
+        [
+          287.0,
+          207.0,
+          1059.0,
+          302.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cc95fee93572b03a5b349e3f5f106521e4d7b553dbce50de6a6ea15c1ad32fa0"
     }
   ]
 }

@@ -1,0 +1,67 @@
+[project]
+name = "llm-agent-scientific-literature"
+version = "0.1.0"
+description = "Reproducible local pipeline for audited genetics textbook deliveries"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "beautifulsoup4>=4.13,<5",
+  "lxml>=5.4,<7",
+  "pillow>=11.2,<13",
+  "pymupdf>=1.26,<2",
+  "pydantic>=2.11,<3",
+  "pyyaml>=6.0,<7",
+  "requests>=2.32,<3",
+]
+
+[dependency-groups]
+dev = [
+  "pip-audit>=2.9,<3",
+  "opencv-python-headless>=4.11,<5",
+  "pytest>=9.0.3,<10",
+  "pytest-asyncio>=1.1,<2",
+  "pytest-cov>=6.2,<8",
+  "ruff>=0.12,<1",
+]
+ocr = [
+  "paddleocr>=3.1,<4",
+]
+legacy = [
+  "fastapi>=0.116,<1",
+  "mcp>=1.12,<2",
+  "python-multipart>=0.0.20,<1",
+  "uvicorn>=0.35,<1",
+]
+
+[tool.uv]
+package = false
+default-groups = ["dev"]
+
+[tool.pytest.ini_options]
+testpaths = ["paper2latex/tests"]
+addopts = "--tb=short -p no:cacheprovider"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+exclude = [
+  "Pack",
+  "data",
+  "node_modules",
+  "paper2latex/src/paper2latex/server.py",
+  "paper2latex/web",
+  "tmp",
+]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "S110", "S112"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/build_genetics_knowledge_base.py" = ["E402", "E701", "F401", "F841", "I001"]
+"scripts/build_popgen_knowledge_base.py" = ["E402", "E701", "F401", "F841", "I001"]
+"scripts/build_figure_library.py" = ["F401", "I001"]
+"scripts/prepare_genetics_normalized_tex.py" = ["E402", "E701", "F401", "F841", "I001"]
+"study_reader/build_study_reader.py" = ["E402", "E701", "F401", "F841", "I001"]
+"knowledge_engineering/pipeline/process.py" = ["E402"]
+"knowledge_engineering/scripts/trial_common.py" = ["E402"]
+"scripts/*.py" = ["E402"]

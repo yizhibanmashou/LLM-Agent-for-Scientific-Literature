@@ -20,64 +20,706 @@
   },
   "blocks": [
     {
+      "type": "discussion",
+      "content": "For the special case of a pure-line cross ( $ \\iota^ = \\sigma D^2, \\sigma DI^2 = \\sigma {ADI} = 0 $), Equation 23.32 simplifies considerably, to",
+      "source_page": 832,
+      "source_pages": [
+        832
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p026:b6",
+        "Evolution_chapter23:p026:b11"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          710.0,
+          904.0,
+          733.0
+        ],
+        [
+          287.0,
+          1310.0,
+          1059.0,
+          1358.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "dfcde7b63328c5830584ce47aca68617f2fbc42b92e98e7609733787d03bef43"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ \\begin{aligned}\\sigma_G(T,\\tau,t)&=(1+f_t)\\sigma_A^2+\\left(\\frac{(1+f_t)(1-f_T)(1-f_\\tau)}{1-f_t}\\right)\\sigma_D^2+(1+f_t)^2\\sigma_{AA}^2+\\cdots\\\\ &=\\left(2-\\frac{1}{2^t}\\right)\\left(\\sigma_A^2+\\frac{\\sigma_D^2}{2^{T+\\tau-t}}+\\left(2-\\frac{1}{2^t}\\right)\\sigma_{AA}^2+\\cdots\\right)\\end{aligned} $$",
+      "source_page": 832,
+      "source_pages": [
+        832
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p026:b12"
+      ],
+      "source_bboxes": [
+        [
+          335.0,
+          1368.0,
+          1007.0,
+          1472.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "633e861b4f53917096851df28b2da45db1db6ba7a5961bcab2323d371d89c4a2"
+    },
+    {
+      "type": "discussion",
+      "content": "This is the genetic variance across the entire population (across all the lines present in generation T). For a pure-line cross, this reduces to",
+      "source_page": 833,
+      "source_pages": [
+        833
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p027:b11"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          656.0,
+          903.0,
+          704.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "7e7cf5263185e694748e1dd2163813d76ae7c2c66506945363bb3f5a0303e551"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ \\sigma {G}(T,T,T)=(1+f {T})\\sigma {A}^{2}+(1-f {T})(1+f {T})\\sigma {D}^{2} $$",
+      "source_page": 833,
+      "source_pages": [
+        833
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p027:b12"
+      ],
+      "source_bboxes": [
+        [
+          309.0,
+          722.0,
+          726.0,
+          749.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "2bd2922d34bf7481faf5dc6c9e5e506847e25b4f73dbba87c7726a8448edb684"
+    },
+    {
+      "type": "discussion",
+      "content": "We also require the genetic variance in generation T among the subset of lines that descend from a single individual in generation t. Here, $ \\tau = T $ and the variance becomes",
+      "source_page": 833,
+      "source_pages": [
+        833
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p027:b14"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          767.0,
+          904.0,
+          815.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "d1f40d9c62a9a78c8b734462027b3b0e8b2ed80d4108938b276fcc253df4fea4"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ \\begin{aligned}\\sigma {G}(T,T,t)=(1+f {t})\\sigma {A}^{2}+\\frac{(1-f {T})^{2}}{1-f {t}}\\sigma {D}^{2}+(f {t}+f {T})\\sigma {ADI}\\\\+\\left(f {t}+\\frac{(f {T}-f {t})^{2}}{2(1-f {t})}\\right)\\sigma {DI}^{2}+\\frac{f {t}(1-f {T})^{2}}{1-f {t}}\\iota^{ }\\end{aligned} $$",
+      "source_page": 833,
+      "source_pages": [
+        833
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p027:b15"
+      ],
+      "source_bboxes": [
+        [
+          248.0,
+          836.0,
+          749.0,
+          937.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "90beebe4db1cc8b629a8168592d2e4f47cf3a5fa3de03a59d1a8dafb2559490a"
+    },
+    {
+      "type": "discussion",
+      "content": "An example of this would be the genetic variance across the collection of $ F 3 $ or $ F 4 $ bulk families from a single $ F 2 $ parent. For an $ F 3 $ family this is $ \\sigma G(1,1,0) $, as the $ F 2 $ represents generation 0 of selfing, while the entire collection of $ F 4 $ families that trace back to this $ F 2 $ individual has a variance of $ \\sigma G(2,2,0) $. For the selfed offspring from a pure-line cross, Equation 23.36a simplifies to",
+      "source_page": 833,
+      "source_pages": [
+        833
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p027:b17"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          954.0,
+          904.0,
+          1072.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "d6edaaa098458a2d1f1c579fbbe45b6b658253e2f84f2c14afd5cf9bb898711b"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ \\sigma {G}(T,T,t)=(1+f {t})\\sigma {A}^{2}+\\frac{(1-f {T})^{2}}{1-f {t}}\\left(1+f {t}\\right)\\sigma {D}^{2} $$",
+      "source_page": 833,
+      "source_pages": [
+        833
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p027:b18"
+      ],
+      "source_bboxes": [
+        [
+          309.0,
+          1090.0,
+          727.0,
+          1141.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "3117756697421f1ff0f4e31a7732e72f8ed597b1f83de418961bf0473f178276"
+    },
+    {
+      "type": "discussion",
+      "content": "The permanent selection response is given by the covariance between a completely inbred $ F {\\infty} $ line ( $ f {\\infty} = 1 $) and a relative (for example, from the selection unit) in generation $ \\tau $ who last both shared a relative in generation t (as would occur if remnant seed from t was used to form the new lines). Here, Equation 23.32 reduces to",
+      "source_page": 833,
+      "source_pages": [
+        833
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p027:b2"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          207.0,
+          904.0,
+          300.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "0faead7ef7aceb632ac1e1ecfa69ca0caf5c1c075d08376fa8bc0dfd891a197f"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ \\begin{aligned}\\sigma {G}(\\infty,\\tau,t)&=(1+f {t})\\sigma {A}^{2}+\\frac{1+2f {t}+f {\\tau}}{2}\\sigma {ADI}+\\frac{f {t}+f {\\tau}}{2}\\sigma {DI}^{2}\\\\&\\quad+(1+f {t})^{2}\\sigma {AA}^{2}+(1+f {t})^{3}\\sigma {AAA}^{2}+\\cdots(1+f {t})^{k}\\sigma {A^{k}}^{2}\\end{aligned} $$",
+      "source_page": 833,
+      "source_pages": [
+        833
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p027:b3"
+      ],
+      "source_bboxes": [
+        [
+          244.0,
+          317.0,
+          790.0,
+          394.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "8f9d2782d16f39d94a174d91f59bef06b214e629e55a88cdffaa00576a5bdb0a"
+    },
+    {
+      "type": "discussion",
+      "content": "For offspring resulting from selfing a pure-line cross, $ \\sigma {ADI} = \\sigma {DI}^2 = 0 $, leaving the permanent response as only a function of the additive (and additive epistatic) effects,",
+      "source_page": 833,
+      "source_pages": [
+        833
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p027:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          411.0,
+          904.0,
+          460.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "23f33e383aa9ccf495754af81366e9df9701b5d837888f3363b02be8736a7694"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ \\sigma {G}(\\infty,\\tau,t)=(1+f {t})\\sigma {A}^{2}+(1+f {t})^{2}\\sigma {A A}^{2}+\\cdots(1+f {t})^{k}\\sigma {A^{k}}^{2} $$",
+      "source_page": 833,
+      "source_pages": [
+        833
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p027:b6"
+      ],
+      "source_bboxes": [
+        [
+          268.0,
+          476.0,
+          767.0,
+          505.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "84b1f90eefec4332ec0b7baa3a4ba3ffcb36e347b0a4301b89fa75d92982c0b5"
+    },
+    {
+      "type": "discussion",
+      "content": "Equation 23.33 also provides the genetic variance for any particular generation. For the sake of a clearer exposition, we will ignore additive epistasis in what follows (although their inclusion is trivial). First, the total genetic variance in generation T is given by",
+      "source_page": 833,
+      "source_pages": [
+        833
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p027:b8"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          523.0,
+          904.0,
+          594.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "9fb084cb99ea67f56bd4c512e517383e8b13f8fed7f46381c013764dab6d08fc"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ \\sigma {G}(T,T,T)=(1+f {T})\\sigma {A}^{2}+(1-f {T})\\sigma {D}^{2}+2f {T}\\sigma {ADI}+f {T}\\sigma {DI}^{2}+f {T}(1-f {T})\\iota^{ } $$",
+      "source_page": 833,
+      "source_pages": [
+        833
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p027:b9"
+      ],
+      "source_bboxes": [
+        [
+          157.0,
+          611.0,
+          811.0,
+          639.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "b7579ca8ce5f5691ddb3c2b89fb2b8c0dd2141c17a4413c290b65b4792caa74b"
+    },
+    {
       "type": "proposition",
-      "content": "Given the need to account for the structure in a selfing population, Cockerham (1983) and Cockerham and Martzinger (1985), built on concepts from Horner (1952) and Gates et al. (1957) and generalized the covariance given by Equation 23.23 to $ \\sigma_G(T, \\tau, t) $, the covariance between a relative in generation $ T $ and another relative in generation $ \\tau \\leq T $, when the last common relative of both is from generation $ t \\leq \\tau $ (Figure 23.2A). This covariance was given by Equation 11.15, namely, $$ \\begin{aligned}\\sigma_{G}(T,\\tau,t)&=(1+f_{t})\\sigma_{A}^{2}+\\left(\\frac{(1-f_{T})(1-f_{\\tau})}{1-f_{t}}\\right)\\sigma_{D}^{2}+\\left(f_{t}+\\frac{f_{T}+f_{\\tau}}{2}\\right)\\sigma_{ADI}\\\\&+\\left(f_{t}+\\frac{(f_{T}-f_{t})(f_{\\tau}-f_{t})}{2(1-f_{t})}\\right)\\sigma_{DI}^{2}+\\left(\\frac{f_{t}(1-f_{T})(1-f_{\\tau})}{1-f_{t}}\\right)\\iota^{*}\\\\&+(1+f_{t})^{2}\\sigma_{AA}^{2}+(1+f_{t})^{3}\\sigma_{AAA}^{2}+\\cdots(1+f_{t})^{k}\\sigma_{A^{k}}^{2}\\\\ \\end{aligned} $$ where $ t \\leq \\tau \\leq T $. Notice that Equation 23.32 reduces to Equation 23.23 when $ \\tau = t $ (parents are the selection unit), as $ \\sigma_G(T, t, t) = \\sigma_G(T, t) $. The epistatic terms are often ignored, and Equation 23.32 does not account for nonadditive epistatic terms and assumes linkage equilibrium. For cross-generational covariances indexed by two or more relatives, such as $ \\sigma_G(T, t) $ and $ \\sigma_G(T, \\tau, t) $, we use the convention that the rightmost index (t in this case) references the oldest (earliest-generation) individual, while the leftmost (T in this case) references the youngest (latest-generation). Thus, as one proceeds right-to-left in the index, more recent relatives are being considered; see Figure 23.2. Again, to use these covariances in predicting the selection response, we must make the strong assumption that selection does not significantly modify this covariance from the unselected version (Equation 23.32). The covariance between a parent in generation t and an offspring in generation T follows by noting that here $ t = \\tau $ and Equation 23.32 reduces to Equation 23.23."
-    },
-    {
-      "type": "discussion",
-      "content": "For the special case of a pure-line cross ($ \\iota^* = \\sigma_D^2, \\sigma_DI^2 = \\sigma_{ADI} = 0 $), Equation 23.32 simplifies considerably, to $$ \\begin{align*}\\sigma_G(T,\\tau,t)&=(1+f_t)\\sigma_A^2+\\left(\\frac{(1+f_t)(1-f_T)(1-f_\\tau)}{1-f_t}\\right)\\sigma_D^2+(1+f_t)^2\\sigma_{AA}^2+\\cdots\\\\&=\\left(2-\\frac{1}{2^t}\\right)\\left(\\sigma_A^2+\\frac{\\sigma_D^2}{2^{T+\\tau-t}}+\\left(2-\\frac{1}{2^t}\\right)\\sigma_{AA}^2+\\cdots\\right)\\\\\\end{align*} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The permanent selection response is given by the covariance between a completely inbred $ F_{\\infty} $ line ($ f_{\\infty} = 1 $) and a relative (for example, from the selection unit) in generation $ \\tau $ who last both shared a relative in generation t (as would occur if remnant seed from t was used to form the new lines). Here, Equation 23.32 reduces to $$ \\begin{aligned}\\sigma_{G}(\\infty,\\tau,t)&=(1+f_{t})\\sigma_{A}^{2}+\\frac{1+2f_{t}+f_{\\tau}}{2}\\sigma_{ADI}+\\frac{f_{t}+f_{\\tau}}{2}\\sigma_{DI}^{2}\\\\&\\quad+(1+f_{t})^{2}\\sigma_{AA}^{2}+(1+f_{t})^{3}\\sigma_{AAA}^{2}+\\cdots(1+f_{t})^{k}\\sigma_{A^{k}}^{2}\\end{aligned} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "For offspring resulting from selfing a pure-line cross, $ \\sigma_{ADI} = \\sigma_{DI}^2 = 0 $, leaving the permanent response as only a function of the additive (and additive epistatic) effects, $$ \\sigma_{G}(\\infty,\\tau,t)=(1+f_{t})\\sigma_{A}^{2}+(1+f_{t})^{2}\\sigma_{A A}^{2}+\\cdots(1+f_{t})^{k}\\sigma_{A^{k}}^{2} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Equation 23.33 also provides the genetic variance for any particular generation. For the sake of a clearer exposition, we will ignore additive epistasis in what follows (although their inclusion is trivial). First, the total genetic variance in generation T is given by $$ \\sigma_{G}(T,T,T)=(1+f_{T})\\sigma_{A}^{2}+(1-f_{T})\\sigma_{D}^{2}+2f_{T}\\sigma_{ADI}+f_{T}\\sigma_{DI}^{2}+f_{T}(1-f_{T})\\iota^{*} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "This is the genetic variance across the entire population (across all the lines present in generation T). For a pure-line cross, this reduces to $$ \\sigma_{G}(T,T,T)=(1+f_{T})\\sigma_{A}^{2}+(1-f_{T})(1+f_{T})\\sigma_{D}^{2} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "We also require the genetic variance in generation T among the subset of lines that descend from a single individual in generation t. Here, $ \\tau = T $ and the variance becomes $$ \\begin{aligned}\\sigma_{G}(T,T,t)=(1+f_{t})\\sigma_{A}^{2}+\\frac{(1-f_{T})^{2}}{1-f_{t}}\\sigma_{D}^{2}+(f_{t}+f_{T})\\sigma_{ADI}\\\\+\\left(f_{t}+\\frac{(f_{T}-f_{t})^{2}}{2(1-f_{t})}\\right)\\sigma_{DI}^{2}+\\frac{f_{t}(1-f_{T})^{2}}{1-f_{t}}\\iota^{*}\\end{aligned} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "An example of this would be the genetic variance across the collection of $ F_3 $ or $ F_4 $ bulk families from a single $ F_2 $ parent. For an $ F_3 $ family this is $ \\sigma_G(1,1,0) $, as the $ F_2 $ represents generation 0 of selfing, while the entire collection of $ F_4 $ families that trace back to this $ F_2 $ individual has a variance of $ \\sigma_G(2,2,0) $. For the selfed offspring from a pure-line cross, Equation 23.36a simplifies to $$ \\sigma_{G}(T,T,t)=(1+f_{t})\\sigma_{A}^{2}+\\frac{(1-f_{T})^{2}}{1-f_{t}}\\left(1+f_{t}\\right)\\sigma_{D}^{2} $$"
+      "content": "Given the need to account for the structure in a selfing population, Cockerham (1983) and Cockerham and Martzinger (1985), built on concepts from Horner (1952) and Gates et al. (1957) and generalized the covariance given by Equation 23.23 to $ \\sigma_G(T, \\tau, t) $, the covariance between a relative in generation $ T $ and another relative in generation $ \\tau \\leq T $, when the last common relative of both is from generation $ t \\leq \\tau $ (Figure 23.2A). This covariance was given by Equation 11.15, namely, $$ \\begin{aligned}\\sigma_{G}(T,\\tau,t)&=(1+f_{t})\\sigma_{A}^{2}+\\left(\\frac{(1-f_{T})(1-f_{\\tau})}{1-f_{t}}\\right)\\sigma_{D}^{2}+\\left(f_{t}+\\frac{f_{T}+f_{\\tau}}{2}\\right)\\sigma_{ADI}\\\\&+\\left(f_{t}+\\frac{(f_{T}-f_{t})(f_{\\tau}-f_{t})}{2(1-f_{t})}\\right)\\sigma_{DI}^{2}+\\left(\\frac{f_{t}(1-f_{T})(1-f_{\\tau})}{1-f_{t}}\\right)\\iota^{*}\\\\&+(1+f_{t})^{2}\\sigma_{AA}^{2}+(1+f_{t})^{3}\\sigma_{AAA}^{2}+\\cdots(1+f_{t})^{k}\\sigma_{A^{k}}^{2}\\\\ \\end{aligned} $$ where $ t \\leq \\tau \\leq T $. Notice that Equation 23.32 reduces to Equation 23.23 when $ \\tau = t $ (parents are the selection unit), as $ \\sigma_G(T, t, t) = \\sigma_G(T, t) $. The epistatic terms are often ignored, and Equation 23.32 does not account for nonadditive epistatic terms and assumes linkage equilibrium. For cross-generational covariances indexed by two or more relatives, such as $ \\sigma_G(T, t) $ and $ \\sigma_G(T, \\tau, t) $, we use the convention that the rightmost index (t in this case) references the oldest (earliest-generation) individual, while the leftmost (T in this case) references the youngest (latest-generation). Thus, as one proceeds right-to-left in the index, more recent relatives are being considered; see Figure 23.2. Again, to use these covariances in predicting the selection response, we must make the strong assumption that selection does not significantly modify this covariance from the unselected version (Equation 23.32). The covariance between a parent in generation t and an offspring in generation T follows by noting that here $ t = \\tau $ and Equation 23.32 reduces to Equation 23.23.",
+      "source_page": 832,
+      "source_pages": [
+        832,
+        846
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p040:b4",
+        "Evolution_chapter23:p040:b6",
+        "Evolution_chapter23:p040:b8",
+        "Evolution_chapter23:p040:b10",
+        "Evolution_chapter23:p040:b12",
+        "Evolution_chapter23:p040:b13",
+        "Evolution_chapter23:p040:b14",
+        "Evolution_chapter23:p040:b15",
+        "Evolution_chapter23:p026:b7",
+        "Evolution_chapter23:p026:b8",
+        "Evolution_chapter23:p026:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          243.0,
+          1059.0,
+          359.0
+        ],
+        [
+          497.0,
+          425.0,
+          849.0,
+          472.0
+        ],
+        [
+          478.0,
+          480.0,
+          868.0,
+          524.0
+        ],
+        [
+          494.0,
+          532.0,
+          851.0,
+          576.0
+        ],
+        [
+          287.0,
+          584.0,
+          1058.0,
+          679.0
+        ],
+        [
+          287.0,
+          711.0,
+          1000.0,
+          733.0
+        ],
+        [
+          286.0,
+          756.0,
+          1060.0,
+          1057.0
+        ],
+        [
+          287.0,
+          1057.0,
+          1060.0,
+          1354.0
+        ],
+        [
+          287.0,
+          738.0,
+          1060.0,
+          882.0
+        ],
+        [
+          351.0,
+          888.0,
+          993.0,
+          1025.0
+        ],
+        [
+          286.0,
+          1033.0,
+          1060.0,
+          1310.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3b4a932ff39331dd37ce1a0778fb4f2edf2756aad974ab012dddc72f9460ede6"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:23.7]]"
-    },
-    {
-      "type": "discussion",
-      "content": "Finally, it will prove useful to decompose the total genetic covariance, $ \\sigma_G(T,t) $, into within- and among-family covariances, $ \\sigma_{Gw}(T,t) $ and $ \\sigma_{Gb}(T,t) $, respectively, where $$ \\sigma_{G}(T,t)=\\sigma_{G w}(T,t)+\\sigma_{G b}(T,t) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The among-family covariance in generation t is the covariance between sibs from a parent in generation t - 1 $$ \\sigma_{Gb}(T,t)=\\sigma_{G}(T,t,t-1) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The within-family genetic covariance follows as $$ \\begin{aligned}\\sigma_{Gw}(T,t)&=\\sigma_{G}(T,t)-\\sigma_{Gb}(T,t)\\\\&=\\sigma_{G}(T,t,t)-\\sigma_{G}(T,t,t-1)\\end{aligned} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "For more general families, $ t - 1 $ is replaced by $ t - j $ when the last common ancestor to the family occurred $ j $ generations before the collection of families was scored. Note that the within- and among-family genetic variances in generation $ t $ are given by $ \\sigma_{Gw}(t, t) $ and $ \\sigma_{Gb}(t, t) $, respectively. Recalling Equation 23.8b, this implies a phenotypic variance for the among-family means of $ \\sigma_{\\overline{z}}(t, t) = \\sigma_{Gb}(t, t) + \\sigma_{e}^2 $."
-    },
-    {
-      "type": "example",
-      "content": "[[SEE_EXAMPLE:23.8]]"
+      "content": "[[SEE_EXAMPLE:23.7]]",
+      "source_page": 819,
+      "source_pages": [
+        819
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p013:b14"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1010.0,
+          903.0,
+          1080.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "13bb55b7b13d35557e208a8fb63c6c5482c49d6549a9f3f39220e1f054e3351c"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:23.9]]"
+      "content": "[[SEE_EXAMPLE:23.8]]",
+      "source_page": 834,
+      "source_pages": [
+        834,
+        835
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p028:b14",
+        "Evolution_chapter23:p028:b15",
+        "Evolution_chapter23:p028:b16",
+        "Evolution_chapter23:p028:b17",
+        "Evolution_chapter23:p028:b18",
+        "Evolution_chapter23:p028:b19",
+        "Evolution_chapter23:p028:b20",
+        "Evolution_chapter23:p028:b21",
+        "Evolution_chapter23:p028:b22",
+        "Evolution_chapter23:p028:b23",
+        "Evolution_chapter23:p029:b2",
+        "Evolution_chapter23:p029:b3",
+        "Evolution_chapter23:p029:b4",
+        "Evolution_chapter23:p029:b6"
+      ],
+      "source_bboxes": [
+        [
+          322.0,
+          882.0,
+          1036.0,
+          948.0
+        ],
+        [
+          570.0,
+          966.0,
+          788.0,
+          990.0
+        ],
+        [
+          322.0,
+          1008.0,
+          818.0,
+          1032.0
+        ],
+        [
+          444.0,
+          1049.0,
+          910.0,
+          1102.0
+        ],
+        [
+          322.0,
+          1118.0,
+          823.0,
+          1141.0
+        ],
+        [
+          515.0,
+          1159.0,
+          843.0,
+          1185.0
+        ],
+        [
+          323.0,
+          1202.0,
+          955.0,
+          1226.0
+        ],
+        [
+          525.0,
+          1243.0,
+          829.0,
+          1296.0
+        ],
+        [
+          322.0,
+          1312.0,
+          609.0,
+          1336.0
+        ],
+        [
+          390.0,
+          1351.0,
+          968.0,
+          1407.0
+        ],
+        [
+          132.0,
+          206.0,
+          904.0,
+          390.0
+        ],
+        [
+          132.0,
+          390.0,
+          904.0,
+          461.0
+        ],
+        [
+          305.0,
+          479.0,
+          734.0,
+          503.0
+        ],
+        [
+          133.0,
+          522.0,
+          691.0,
+          546.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d9ec631338e4a7f74063e6e6a6d467658069bfed2eedc1c9fefc330caa7dc6c0"
+    },
+    {
+      "type": "discussion",
+      "content": "Finally, it will prove useful to decompose the total genetic covariance, $ \\sigma_G(T,t) $, into within- and among-family covariances, $ \\sigma_{Gw}(T,t) $ and $ \\sigma_{Gb}(T,t) $, respectively, where $$ \\sigma_{G}(T,t)=\\sigma_{G w}(T,t)+\\sigma_{G b}(T,t) $$",
+      "source_page": 834,
+      "source_pages": [
+        834
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p028:b4",
+        "Evolution_chapter23:p028:b5"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          390.0,
+          1058.0,
+          437.0
+        ],
+        [
+          534.0,
+          457.0,
+          812.0,
+          481.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "625d45c1ce8738d9a212735b9723b08ef24a96a865467cffaf329f08527a206f"
+    },
+    {
+      "type": "discussion",
+      "content": "The among-family covariance in generation t is the covariance between sibs from a parent in generation t - 1 $$ \\sigma_{Gb}(T,t)=\\sigma_{G}(T,t,t-1) $$",
+      "source_page": 834,
+      "source_pages": [
+        834
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p028:b7",
+        "Evolution_chapter23:p028:b8"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          501.0,
+          1058.0,
+          547.0
+        ],
+        [
+          562.0,
+          547.0,
+          785.0,
+          570.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f8da94b90fec1a55f109986a7bb610db4416630087ef2c36de7ea1f4111715a7"
+    },
+    {
+      "type": "discussion",
+      "content": "The within-family genetic covariance follows as $$ \\begin{aligned}\\sigma_{Gw}(T,t)&=\\sigma_{G}(T,t)-\\sigma_{Gb}(T,t)\\\\&=\\sigma_{G}(T,t,t)-\\sigma_{G}(T,t,t-1)\\end{aligned} $$",
+      "source_page": 834,
+      "source_pages": [
+        834
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p028:b10",
+        "Evolution_chapter23:p028:b11"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          582.0,
+          702.0,
+          606.0
+        ],
+        [
+          506.0,
+          626.0,
+          839.0,
+          679.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "42e2a70808ea3a62274d4c97c045660ac76c105f62a5dc3eeb1d6f5959617e77"
+    },
+    {
+      "type": "discussion",
+      "content": "For more general families, $ t - 1 $ is replaced by $ t - j $ when the last common ancestor to the family occurred $ j $ generations before the collection of families was scored. Note that the within- and among-family genetic variances in generation $ t $ are given by $ \\sigma_{Gw}(t, t) $ and $ \\sigma_{Gb}(t, t) $, respectively. Recalling Equation 23.8b, this implies a phenotypic variance for the among-family means of $ \\sigma_{\\overline{z}}(t, t) = \\sigma_{Gb}(t, t) + \\sigma_{e}^2 $.",
+      "source_page": 834,
+      "source_pages": [
+        834
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p028:b13"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          698.0,
+          1059.0,
+          816.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ee295e0e4693705f7d9a9aabe7a825b4838b81735123161f9daec62832ccda78"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:23.9]]",
+      "source_page": 835,
+      "source_pages": [
+        835
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p029:b10",
+        "Evolution_chapter23:p029:b11",
+        "Evolution_chapter23:p029:b12",
+        "Evolution_chapter23:p029:b7",
+        "Evolution_chapter23:p029:b8",
+        "Evolution_chapter23:p029:b9"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          906.0,
+          880.0,
+          995.0
+        ],
+        [
+          278.0,
+          1012.0,
+          769.0,
+          1089.0
+        ],
+        [
+          166.0,
+          1106.0,
+          881.0,
+          1234.0
+        ],
+        [
+          167.0,
+          615.0,
+          881.0,
+          805.0
+        ],
+        [
+          167.0,
+          806.0,
+          881.0,
+          848.0
+        ],
+        [
+          391.0,
+          848.0,
+          655.0,
+          896.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3a6269700f543d5397da3723b03e667b2a5d7e079e3b16e6ccc00cdab70df5f7"
     }
   ]
 }

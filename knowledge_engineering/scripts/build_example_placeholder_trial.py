@@ -43,7 +43,6 @@ from knowledge_engineering.processors.example_extraction import (
     natural_key,
 )
 
-
 DEFAULT_OUTPUT = PROJECT_ROOT / "tmp" / "structured_quality_probe" / "candidates" / "example_placeholder_trial"
 DEFAULT_INPUT_STRUCTURED = PROJECT_ROOT / "data" / "structured"
 

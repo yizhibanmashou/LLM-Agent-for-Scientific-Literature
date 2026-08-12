@@ -143,38 +143,6 @@
   ],
   "assets": [
     {
-      "kind": "example",
-      "id": "3.1",
-      "anchor": "example-3.1",
-      "label": "Example 3.1",
-      "section_id": "Evolution_chapter3_003",
-      "excerpt": "Example 3.1 · ref: 3.1 · source: Evolution chapter3 003.json · blocks 11–11 Example 3.1. Hedgecock (1994) suggested that marine organisms with high fecundities and broadcast spawning may have effective population sizes that are orders of magnitude smaller than the absolute number of potential breeders. This situation can arise if vagaries in oceanographic conditions are such that only a small fraction of adults produce gametes at points in time and space that allow recruitme…"
-    },
-    {
-      "kind": "example",
-      "id": "3.2",
-      "anchor": "example-3.2",
-      "label": "Example 3.2",
-      "section_id": "Evolution_chapter3_003",
-      "excerpt": "Example 3.2 · ref: 3.2 · source: Evolution chapter3 003.json · blocks 13–13 Example 3.2. Heywood (1986) estimated that $ \\sigma k / \\mu k^2 $ for seed production is on the order of 1 to 4 in a number of annual plants (including self-compatible species). Unfortunately, the value of $ \\sigma k^2 $ for total gamete production requires additional information on successful pollen production, which is extremely difficult to acquire due to problems in ascertaining paternity. For he…"
-    },
-    {
-      "kind": "example",
-      "id": "3.3",
-      "anchor": "example-3.3",
-      "label": "Example 3.3",
-      "section_id": "Evolution_chapter3_005",
-      "excerpt": "Example 3.3 · ref: 3.3 · source: Evolution chapter3 005.json · blocks 6–10 Example 3.3. While complete age-specific survivorship and reproductive schedules are available for the females of many natural populations, male promiscuity often imposes enormous practical difficulties for ascertaining paternity. Thus, the variance in male reproductive success is generally unknown. However, a long-term study on the behavior and demography of the red deer ( $ Cervus\\ elaphus $) by Clu…"
-    },
-    {
-      "kind": "example",
-      "id": "3.4",
-      "anchor": "example-3.4",
-      "label": "Example 3.4",
-      "section_id": "Evolution_chapter3_006",
-      "excerpt": "Example 3.4 · ref: 3.4 · source: Evolution chapter3 006.json · blocks 3–3 Example 3.4. To see how population bottlenecks have especially pronounced effects on $ N e^ $, consider a population whose effective size regularly fluctuates between 10 and 100. From Equation 3.18, $ N e^ = 2/(0.1 + 0.01) = 18.2 $. Thus, the total loss of heterozygosity from this population every two generations is equivalent to that expected for an ideal random-mating population with a constant effec…"
-    },
-    {
       "kind": "figure",
       "id": "3.1",
       "anchor": "figure-3.1",
@@ -194,11 +162,53 @@
     },
     {
       "kind": "example",
+      "id": "3.1",
+      "anchor": "example-3.1",
+      "label": "Example 3.1",
+      "section_id": "Evolution_chapter3_003",
+      "excerpt": "Example 3.1. Hedgecock (1994) suggested that marine organisms with high fecundities and broadcast spawning may have effective population sizes that are orders of magnitude smaller than the absolute number of potential breeders. This situation can arise if vagaries in oceanographic conditions are such that only a small fraction of adults produce gametes at points in time and space that allow recruitment to the next generation. Suppose the total adult population size is $ N p…",
+      "content_markdown": "Example 3.1. Hedgecock (1994) suggested that marine organisms with high fecundities and broadcast spawning may have effective population sizes that are orders of magnitude smaller than the absolute number of potential breeders. This situation can arise if vagaries in oceanographic conditions are such that only a small fraction of adults produce gametes at points in time and space that allow recruitment to the next generation. Suppose the total adult population size is $ N_p $, whereas only $ N_p $ individuals contribute equally to the breeding pool. Such a situation is sustainable if reproductive adults can individually produce an average of $ 2N/N_p $ gametes (and many marine species are capable of producing many tens of thousands of gametes). Given such a situation, $ N_p $ individuals have expected family sizes of $ 2N/N_p $, whereas $ (N - N_p) $ have zero expected reproductive success, which results in an expected family-size variance among all $ N $ individuals of $ 4[(N/N_p) - 1] $ (Hedrick 2005). Using the logic outlined in the paragraph below Equation 3.4, the additional variance in reproductive success among spawning individuals resulting from random gamete sampling is equal to $$ \\left\\{\\left(\\frac{N_{p}}{N}\\right)\\cdot2N\\cdot\\left(\\frac{1}{N_{b}}\\right)\\left[1-\\left(\\frac{1}{N_{b}}\\right)\\right]\\right\\}+\\left\\{\\left[1-\\left(\\frac{N_{b}}{N}\\right)\\right]\\cdot2N\\cdot0\\right\\}=2\\left[1-\\left(\\frac{1}{N_{b}}\\right)\\right] $$\n\nSumming these two sources of family-size variance gives $ \\sigma_k^2 = [(4N - 2)/N_p] - 2 $, and substituting into Equation 3.4, we obtain $ N_e = N_p $. Thus, provided a species has a high enough gamete production to generate N surviving progeny from a small number of adults, the effective population size can be only a tiny fraction of N.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "3.2",
+      "anchor": "example-3.2",
+      "label": "Example 3.2",
+      "section_id": "Evolution_chapter3_003",
+      "excerpt": "Example 3.2. Heywood (1986) estimated that $ \\sigma k / \\mu k^2 $ for seed production is on the order of 1 to 4 in a number of annual plants (including self-compatible species). Unfortunately, the value of $ \\sigma k^2 $ for total gamete production requires additional information on successful pollen production, which is extremely difficult to acquire due to problems in ascertaining paternity. For heuristic purposes, however, let us assume a stable monoecious population. Thi…",
+      "content_markdown": "Example 3.2. Heywood (1986) estimated that $ \\sigma_k / \\mu_k^2 $ for seed production is on the order of 1 to 4 in a number of annual plants (including self-compatible species). Unfortunately, the value of $ \\sigma_k^2 $ for total gamete production requires additional information on successful pollen production, which is extremely difficult to acquire due to problems in ascertaining paternity. For heuristic purposes, however, let us assume a stable monoecious population. This necessarily implies mean seed and pollen production are both equal to one, and $ \\mu_k = \\mu_o + \\mu_p = 2 $, as each parent must produce two successful gametes (on average, one male and one female). We will also assume a three-fold higher standard deviation for successful pollen relative to seed production, so that $ \\sigma_p = 3\\sigma_o $, and a perfect correlation between ovule and pollen production. Because the correlation between the number of female and male gametes produced per individual is defined to be $ \\sigma_{o,p} / (\\sigma_{o,p_0}) $, the latter assumption implies $ 1 = \\sigma_{o,p} / [\\sigma_{o,p} \\cdot 3\\sigma_{o}] $. Assuming random mating, and substituting $ \\sigma_{o,p} = 3\\sigma_o^2 $ into Equation 3.8, we obtain $ N_c = N / [(12\\sigma_o^2 / \\mu_k^2) + 1] $. Thus, for $ \\sigma_o^2 / \\mu_k^2 $ in the range of 1 to 4, $ N_c $ is between 2% and 8% of the census number (N).",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "3.3",
+      "anchor": "example-3.3",
+      "label": "Example 3.3",
+      "section_id": "Evolution_chapter3_005",
+      "excerpt": "Example 3.3. While complete age-specific survivorship and reproductive schedules are available for the females of many natural populations, male promiscuity often imposes enormous practical difficulties for ascertaining paternity. Thus, the variance in male reproductive success is generally unknown. However, a long-term study on the behavior and demography of the red deer ( $ Cervus\\ elaphus $) by Clutton-Brock et al. (1982) allows at least a crude estimate of $ N e $ by use…",
+      "content_markdown": "Example 3.3. While complete age-specific survivorship and reproductive schedules are available for the females of many natural populations, male promiscuity often imposes enormous practical difficulties for ascertaining paternity. Thus, the variance in male reproductive success is generally unknown. However, a long-term study on the behavior and demography of the red deer ( $ Cervus\\ elaphus $) by Clutton-Brock et al. (1982) allows at least a crude estimate of $ N_e $ by use of the Emigh-Pollak equation, as shown in the table below. The study population was roughly constant in density for two decades, and observations on known individuals provide information on the age-specific rates of mortality and reproduction for both sexes. The sex ratio at birth ( $ \\phi_b $) averaged 0.43 over several years, so $ N_{eb} = 0.98 N_b $. The age-specific survival rates, $ \\ell_i $, in the following table were extracted directly from Clutton-Brock et al. (1982), while the age-specific reproductive schedules, $ b_i^f $ and $ b_i^m $, were estimated from behavioral and demographic observations of the authors and adjusted downward to maintain a stable population size. The columns marked (1) and (2) are $ \\left[\\left(1/\\ell_{i+1}^s\\right) - \\left(1/\\ell_i^s\\right)\\right] $ and $ \\left(\\sum_{j>i+1}^s \\ell_j^s b_j^s\\right)^2 $, and column (3) is the product of (1) and (2); all of these are deployed in Equation 3.15. [[TABLE:inline_1]] The summations in the denominator of Equation 3.15 reflect the variation in lifetime reproductive success of females and males. As outlined in the table, these terms are equal to 0.23 and 12.32, respectively, indicating a great inequity between the reproductive properties of the sexes. This results because male red deer appropriate harems, and older males are much more successful at doing so than young ones. The few males that live to an old age may father up to two dozen offspring in their lifetimes, whereas males that die before the age of five ( $ \\sim $40% of newborn males) have no reproductive success at all. On the other hand, almost all females reproduce to some degree once they have attained reproductive maturity. Substituting the sums from the table into Equation 3.15, the effective population size is found to be $ 0.98N_bT/[1+(1-0.43)(0.23)+0.43(12.32)]=0.15N_bT $. Thus, the effective size of this population is $ \\sim15\\% $ of the number of offspring produced by the population per generation. The mean generation time through females and males is 9.47 and 9.18 years, so $ T\\simeq9.32 $, and the annual number of offspring produced by the population is $ N_b\\simeq270 $. Thus, $ N_e\\simeq0.15\\times270\\times9.32=377 $.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "3.4",
+      "anchor": "example-3.4",
+      "label": "Example 3.4",
+      "section_id": "Evolution_chapter3_006",
+      "excerpt": "Example 3.4. To see how population bottlenecks have especially pronounced effects on $ N e^ $, consider a population whose effective size regularly fluctuates between 10 and 100. From Equation 3.18, $ N e^ = 2/(0.1 + 0.01) = 18.2 $. Thus, the total loss of heterozygosity from this population every two generations is equivalent to that expected for an ideal random-mating population with a constant effective size of 18, which is much closer to the expectation for a constant po…",
+      "content_markdown": "Example 3.4. To see how population bottlenecks have especially pronounced effects on $ N_e^* $, consider a population whose effective size regularly fluctuates between 10 and 100. From Equation 3.18, $ N_e^* = 2/(0.1 + 0.01) = 18.2 $. Thus, the total loss of heterozygosity from this population every two generations is equivalent to that expected for an ideal random-mating population with a constant effective size of 18, which is much closer to the expectation for a constant population size of 10 than 100. Frankham (1995) and Vucetich et al. (1997) showed that $ N_e^* $ is frequently in the range 10% to 20% of $ N_e $ for a diversity of natural populations of animals. In the extreme case where the effective population size is effectively infinite for t - 1 generations and $ N_e $ for one generation, $ N_e^* = tN_e $.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
       "id": "3.5",
       "anchor": "example-3.5",
       "label": "Example 3.5",
       "section_id": "Evolution_chapter3_011",
-      "excerpt": "Example 3.5 · ref: 3.5 · source: Evolution chapter3 011.json · blocks 4–4 Example 3.5. The genetic variance for relative mean-family fitness is a function of the intensity of selection and the heritability of the selected traits. For example, in the case of truncation selection on a single trait (Chapter 14), $ \\sigma w^2 = \\bar{i}^2 t {FS} $, where $ \\bar{i} $ is the standardized selection differential (the change in mean phenotype imposed by selection in units of phenotypi…"
+      "excerpt": "Example 3.5. The genetic variance for relative mean-family fitness is a function of the intensity of selection and the heritability of the selected traits. For example, in the case of truncation selection on a single trait (Chapter 14), $ \\sigma w^2 = \\bar{i}^2 t {FS} $, where $ \\bar{i} $ is the standardized selection differential (the change in mean phenotype imposed by selection in units of phenotypic standard deviations, Equation 14.3a), and $ t {FS} $ is the phenotypic c…",
+      "content_markdown": "Example 3.5. The genetic variance for relative mean-family fitness is a function of the intensity of selection and the heritability of the selected traits. For example, in the case of truncation selection on a single trait (Chapter 14), $ \\sigma_w^2 = \\bar{i}^2 t_{FS} $, where $ \\bar{i} $ is the standardized selection differential (the change in mean phenotype imposed by selection in units of phenotypic standard deviations, Equation 14.3a), and $ t_{FS} $ is the phenotypic correlation among full sibs (Milkman 1978), which is equivalent to half the heritability for an ideal trait with an additive genetic basis (LW Chapter 18). For situations in which the most extreme 1% to 10% of the phenotypic distribution is selected, $ \\bar{i} $ is in the range of 2.7 to 1.8 (LW Chapter 2), and $ t_{FS} $ takes on a maximum value of 0.5 when the heritability of the trait is equal to 1.0. Thus, recalling Equations 3.29a through 3.29c, with very strong truncation selection on a highly heritable trait, $ \\sigma_w^2 $ may take on high enough values to reduce $ N_e $ several-fold relative to the expectation in the absence of selection, even when the selected loci are unlinked. Chapter 26 examines the reduction in $ N_e $ due to truncation selection on a trait in more detail.",
+      "origin": "example-library"
     },
     {
       "kind": "example",
@@ -206,7 +216,9 @@
       "anchor": "example-3.6",
       "label": "Example 3.6",
       "section_id": "Evolution_chapter3_013",
-      "excerpt": "Example 3.6 · ref: 3.6 · source: Evolution chapter3 013.json · blocks 9–9 Example 3.6. Because natural populations are subject to both positive and negative selective forces, the total influence of selection on $ N {e} $ must reflect both background selection and selective sweeps. This necessarily raises even more technical issues than were outlined above. Significant progress was made by Kim and Stephan (2000), and here we simply outline the basic result. If background sele…"
+      "excerpt": "Example 3.6. Because natural populations are subject to both positive and negative selective forces, the total influence of selection on $ N {e} $ must reflect both background selection and selective sweeps. This necessarily raises even more technical issues than were outlined above. Significant progress was made by Kim and Stephan (2000), and here we simply outline the basic result. If background selection operates as an essentially continuous process resulting from the rec…",
+      "content_markdown": "Example 3.6. Because natural populations are subject to both positive and negative selective forces, the total influence of selection on $ N_{e} $ must reflect both background selection and selective sweeps. This necessarily raises even more technical issues than were outlined above. Significant progress was made by Kim and Stephan (2000), and here we simply outline the basic result. If background selection operates as an essentially continuous process resulting from the recurrent introduction of deleterious alleles, the depressive effects of both forms of selection, as well as baseline demographic effects, may be treated as largely independent. The reduction in $ N_{e} $ resulting from background selection can then be obtained by use of one of the above expressions, e.g., Equation 3.35b as a first-order approximation for a sexual population (with N already taking into consideration demographic effects).\n\nConsider a large monocouous population of constant breeding size and variance in family size $ \\sigma_k^2 = 4 $. Based on demographic considerations alone, from Equation 3.4, $ N_e \\simeq 2N/3 $. Letting $ U = 1 $ and $ C = 1 $, Equation 3.35b implies that background deleterious mutations further reduce $ N_e $ to $ (2N/3)e^{-1} \\simeq 0.25N $. The effective population size dictated by these demographic and deleterious-mutation processes further defines the background $ N_e' $ within which occasional beneficial mutations arise and sweep to fixation, so that the effective population size resulting from the joint operation of all three effects can be approximated by substituting $ N_e' $ for $ N $ in Equation 3.30b. Supposing a complete sweep occurs every 10,000 generations (so that $ f_s = 1 $ and $ \\delta = 0.0001 $), then $ N_e = 0.25N/[1 + (0.50N \\cdot 0.0001)] $. With $ N = 10^4 $, $ 10^6 $, and $ 10^8 $, this implies $ N_e/N \\simeq 0.17 $, 0.0049, and 0.00005, respectively.\n\nIn general, the joint operation of background selection and selective sweeps will reduce $ N_{e} $ more than either does alone, although it is, at least in principle, possible for background selection to reduce the influence of selective sweeps in regions of very low recombination by depressing $ N_{e} $, which in turn will reduce the fixation probability of favorable alleles (Chapters 7 and 8). The simultaneous operation of positive selection on multiple loci (which was ignored in the derivation of Equations 3.30a and 3.30b) can also slightly alleviate the overall effects of selection on $ N_{e} $ as simultaneously segregating mutations interfere with each other's fixation, thereby reducing the incidence of complete selective sweeps (Kim and Stephan 2003). These issues are examined in greater detail in Chapter 8.",
+      "origin": "example-library"
     },
     {
       "kind": "formula",
@@ -713,13 +725,6 @@
         "label": "Example 3.2",
         "book_hint": "",
         "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "3.8",
-        "label": "Equation 3.8",
-        "book_hint": "",
-        "link_scope": "current-book"
       }
     ],
     "Evolution_chapter3_004": [
@@ -794,13 +799,6 @@
         "kind": "example",
         "id": "3.4",
         "label": "Example 3.4",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "3.18",
-        "label": "Equation 3.18",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -913,34 +911,6 @@
     ],
     "Evolution_chapter3_011": [
       {
-        "kind": "chapter",
-        "id": "14",
-        "label": "Chapter 14",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "chapter",
-        "id": "18",
-        "label": "LW Chapter 18",
-        "book_hint": "Genetics",
-        "link_scope": "lw"
-      },
-      {
-        "kind": "chapter",
-        "id": "2",
-        "label": "LW Chapter 2",
-        "book_hint": "Genetics",
-        "link_scope": "lw"
-      },
-      {
-        "kind": "chapter",
-        "id": "26",
-        "label": "Chapter 26",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
         "kind": "equation",
         "id": "3.4",
         "label": "Equation 3.4",
@@ -958,20 +928,6 @@
         "kind": "example",
         "id": "3.5",
         "label": "Example 3.5",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "14.3a",
-        "label": "Equation 14.3a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "3.29a",
-        "label": "Equation 3.29a",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -1036,13 +992,6 @@
         "link_scope": "current-book"
       },
       {
-        "kind": "chapter",
-        "id": "8",
-        "label": "Chapter 8",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
         "kind": "equation",
         "id": "3.29b",
         "label": "Equation 3.29b",
@@ -1067,34 +1016,6 @@
         "kind": "example",
         "id": "3.6",
         "label": "Example 3.6",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "3.35b",
-        "label": "Equation 3.35b",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "3.4",
-        "label": "Equation 3.4",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "3.30b",
-        "label": "Equation 3.30b",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "3.30a",
-        "label": "Equation 3.30a",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -1143,7 +1064,7 @@
       "target_section_title": "Chapter 10 · Inbreeding Depression",
       "book_hint": "Genetics",
       "link_scope": "lw",
-      "context_excerpt": "that might endanger the line's survival. In reality, however, very small lines are likely to die out occasionally just by accident, and extreme inbreeding also often has serious deleterious effects on fitness (LW Chapter 10). The gradual replacement of extinct lines by members of surviving lines will lead to further loss of variation. [Figure] Figure 3.1 · page 12 · source: Evolution chapter3 ![Figure 3.1](figur",
+      "context_excerpt": "that might endanger the line's survival. In reality, however, very small lines are likely to die out occasionally just by accident, and extreme inbreeding also often has serious deleterious effects on fitness (LW Chapter 10). The gradual replacement of extinct lines by members of surviving lines will lead to further loss of variation. ---",
       "match_source": "llm-prerequisite"
     },
     {
@@ -1174,66 +1095,6 @@
       "book_hint": "",
       "link_scope": "current-book",
       "context_excerpt": "well as on the mode of selection, the issues are quite technical. Our goal is simply to provide a heuristic overview of why the effects of selection almost always lead to a substantial reduction in $ N {e} $. Chapter 8 examines many of these issues in greater detail. ---",
-      "match_source": "chapter-overview"
-    },
-    {
-      "current_section_id": "Evolution_chapter3_011",
-      "current_anchor": "evolution_chapter3_011",
-      "source_chapter_id": "Evolution_chapter14",
-      "label": "Chapter 14",
-      "target_anchor": "evolution_chapter14_section_001",
-      "target_label": "Chapter 14",
-      "target_ref_type": "chapter",
-      "target_ref_id": "14",
-      "target_section_title": "Chapter 14 · Short-term Changes in the Mean:",
-      "book_hint": "",
-      "link_scope": "current-book",
-      "context_excerpt": "he genetic variance for relative mean-family fitness is a function of the intensity of selection and the heritability of the selected traits. For example, in the case of truncation selection on a single trait (Chapter 14), $ \\sigma w^2 = \\bar{i}^2 t {FS} $, where $ \\bar{i} $ is the standardized selection differential (the change in mean phenotype imposed by selection in units of phenotypic standard deviations, Equat…",
-      "match_source": "chapter-overview"
-    },
-    {
-      "current_section_id": "Evolution_chapter3_011",
-      "current_anchor": "evolution_chapter3_011",
-      "source_chapter_id": "Genetics_chapter18",
-      "label": "LW Chapter 18",
-      "target_anchor": "genetics_chapter18_section_001",
-      "target_label": "Chapter 18",
-      "target_ref_type": "chapter",
-      "target_ref_id": "18",
-      "target_section_title": "Chapter 18 · 18",
-      "book_hint": "Genetics",
-      "link_scope": "lw",
-      "context_excerpt": "tandard deviations, Equation 14.3a), and $ t {FS} $ is the phenotypic correlation among full sibs (Milkman 1978), which is equivalent to half the heritability for an ideal trait with an additive genetic basis (LW Chapter 18). For situations in which the most extreme 1% to 10% of the phenotypic distribution is selected, $ \\bar{i} $ is in the range of 2.7 to 1.8 (LW Chapter 2), and $ t {FS} $ takes on a maximum value…",
-      "match_source": "chapter-overview"
-    },
-    {
-      "current_section_id": "Evolution_chapter3_011",
-      "current_anchor": "evolution_chapter3_011",
-      "source_chapter_id": "Genetics_chapter2",
-      "label": "LW Chapter 2",
-      "target_anchor": "genetics_chapter2_section_001",
-      "target_label": "Chapter 2",
-      "target_ref_type": "chapter",
-      "target_ref_id": "2",
-      "target_section_title": "Chapter 2 · Properties of Distributions",
-      "book_hint": "Genetics",
-      "link_scope": "lw",
-      "context_excerpt": "lity for an ideal trait with an additive genetic basis (LW Chapter 18). For situations in which the most extreme 1% to 10% of the phenotypic distribution is selected, $ \\bar{i} $ is in the range of 2.7 to 1.8 (LW Chapter 2), and $ t {FS} $ takes on a maximum value of 0.5 when the heritability of the trait is equal to 1.0. Thus, recalling Equations 3.29a through 3.29c, with very strong truncation selection on a highl…",
-      "match_source": "chapter-overview"
-    },
-    {
-      "current_section_id": "Evolution_chapter3_011",
-      "current_anchor": "evolution_chapter3_011",
-      "source_chapter_id": "Evolution_chapter26",
-      "label": "Chapter 26",
-      "target_anchor": "evolution_chapter26_section_001",
-      "target_label": "Chapter 26",
-      "target_ref_type": "chapter",
-      "target_ref_id": "26",
-      "target_section_title": "Chapter 26 · Long-term Response: 2. Finite Population Size and Mutation",
-      "book_hint": "",
-      "link_scope": "current-book",
-      "context_excerpt": "tion on a highly heritable trait, $ \\sigma w^2 $ may take on high enough values to reduce $ N e $ several-fold relative to the expectation in the absence of selection, even when the selected loci are unlinked. Chapter 26 examines the reduction in $ N e $ due to truncation selection on a trait in more detail. ---",
       "match_source": "chapter-overview"
     },
     {
@@ -1305,7 +1166,7 @@
       "target_label": "Chapter 4",
       "target_ref_type": "chapter",
       "target_ref_id": "4",
-      "target_section_title": "Chapter 4 · 4",
+      "target_section_title": "Chapter 4 · Properties of Single Loci",
       "book_hint": "Genetics",
       "link_scope": "lw",
       "context_excerpt": "elative fitness associated with this locus then has an expected value close to $ 2us $. This result can be obtained by noting that the additive genetic variance for a single locus is equal to $ 2a^2p(1 - p) $ (LW Chapter 4), where $ a $ is the difference in phenotype between adjacent genotypic classes and $ p $ is the allele frequency. In this case, $ a = s $, and because $ u/s $ is small, $ p(1 - p) \\simeq p = u/s…",
@@ -1339,21 +1200,6 @@
       "book_hint": "",
       "link_scope": "current-book",
       "context_excerpt": "tive fitness associated with this locus then has an expected value close to $ 2us $. This result can be obtained by noting that the additive genetic variance for a single locus is equal to $ 2a^2p(1 - p) $ (LW Chapter 4), where $ a $ is the difference in phenotype between adjacent genotypic classes and $ p $ is the allele frequency. In this case, $ a = s $, and because $ u/s $ is small, $ p(1 - p) \\simeq p = u/s $.…",
-      "match_source": "chapter-overview"
-    },
-    {
-      "current_section_id": "Evolution_chapter3_013",
-      "current_anchor": "evolution_chapter3_013",
-      "source_chapter_id": "Evolution_chapter8",
-      "label": "Chapter 8",
-      "target_anchor": "evolution_chapter8_section_001",
-      "target_label": "Chapter 8",
-      "target_ref_type": "chapter",
-      "target_ref_id": "8",
-      "target_section_title": "Chapter 8 · Hitchhiking and Selective Sweeps",
-      "book_hint": "",
-      "link_scope": "current-book",
-      "context_excerpt": "as simultaneously segregating mutations interfere with each other's fixation, thereby reducing the incidence of complete selective sweeps (Kim and Stephan 2003). These issues are examined in greater detail in Chapter 8. ---",
       "match_source": "chapter-overview"
     }
   ],
@@ -1491,7 +1337,7 @@
     "provider": "deepseek",
     "model": "deepseek-v4-flash",
     "cache_enabled": true,
-    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "cache_dir": "tmp/llm_cache",
     "max_remote_calls": 0,
     "max_prompt_chars_total": 0,
     "max_response_chars_total": 0,

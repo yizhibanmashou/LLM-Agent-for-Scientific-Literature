@@ -21,31 +21,199 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Suppose we are interested in using a burned-in MCMC sequence, $ (\\theta_1, \\cdots, \\theta_n) $, to estimate some function, $ h(\\theta) $, of the target distribution, such as a mean, variance, or specific quantile (namely, a specific cumulative probability value). Since we are drawing random variables, associated with the Monte Carlo estimate, there is a sampling variance of $$ \\widehat{h}=\\frac{1}{n}\\sum_{i=1}^{n}h(\\theta_{i}) $$"
+      "content": "Suppose we are interested in using a burned-in MCMC sequence, $ (\\theta_1, \\cdots, \\theta_n) $, to estimate some function, $ h(\\theta) $, of the target distribution, such as a mean, variance, or specific quantile (namely, a specific cumulative probability value). Since we are drawing random variables, associated with the Monte Carlo estimate, there is a sampling variance of $$ \\widehat{h}=\\frac{1}{n}\\sum_{i=1}^{n}h(\\theta_{i}) $$",
+      "source_page": 1221,
+      "source_pages": [
+        1221
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p014:b4",
+        "Evolution_appendix3:p014:b5",
+        "Evolution_appendix3:p014:b6"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          525.0,
+          775.0,
+          549.0
+        ],
+        [
+          286.0,
+          555.0,
+          1059.0,
+          649.0
+        ],
+        [
+          599.0,
+          664.0,
+          745.0,
+          722.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "01ada0f080879545d07edda58f58c2c56674326f2efeb2e30ea95a314d34f86c"
     },
     {
       "type": "discussion",
-      "content": "A similar issue arose with the error in Monte Carlo integration, where we used the sample variance around $ \\hat{h} $ to compute the Monte Carlo variance, dividing this by the number of iterations to yield a standard error (Equations A3.1e and A3.5c). This strategy exploited the fact that draws for Monte Carlo integration are independent and therefore uncorrelated. In stark contrast, we expect draws in an MCMC sequence to be highly dependent. A standard sample variance estimator ignores these correlations, potentially yielding a highly biased estimate of the Monte Carlo variance (see Equation A3.17b)."
+      "content": "A similar issue arose with the error in Monte Carlo integration, where we used the sample variance around $ \\hat{h} $ to compute the Monte Carlo variance, dividing this by the number of iterations to yield a standard error (Equations A3.1e and A3.5c). This strategy exploited the fact that draws for Monte Carlo integration are independent and therefore uncorrelated. In stark contrast, we expect draws in an MCMC sequence to be highly dependent. A standard sample variance estimator ignores these correlations, potentially yielding a highly biased estimate of the Monte Carlo variance (see Equation A3.17b).",
+      "source_page": 1221,
+      "source_pages": [
+        1221
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p014:b8"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          736.0,
+          1060.0,
+          901.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "55722b3071b8b99a2e4c3b97e0a5e4f6fecd3e86715e0ee5ce20698c928ffae2"
     },
     {
       "type": "discussion",
-      "content": "One direct approach is to run several chains (or extract subsamples from a very long chain) and use the between-chain variance in $ \\widehat{h} $ as our variance estimate. Specifically, if $ \\widehat{h}_j $ denotes the estimate for chain $ j $ ($ 1 \\leq j \\leq c $), where each of the $ c $ chains has the same length, then the estimated variance of the Monte Carlo estimate is $$ \\mathrm{Var}\\left(\\widehat{h}\\right)=\\frac{1}{c-1}\\sum_{j=1}^{c}\\left(\\widehat{h}_{j}-\\widehat{h^{*}}\\right)^{2}\\quad\\mathrm{w h e r e}\\quad\\widehat{h^{*}}=\\frac{1}{c}\\sum_{j=1}^{c}\\widehat{h}_{j} $$"
+      "content": "One direct approach is to run several chains (or extract subsamples from a very long chain) and use the between-chain variance in $ \\widehat{h} $ as our variance estimate. Specifically, if $ \\widehat{h}_j $ denotes the estimate for chain $ j $ ($ 1 \\leq j \\leq c $), where each of the $ c $ chains has the same length, then the estimated variance of the Monte Carlo estimate is $$ \\mathrm{Var}\\left(\\widehat{h}\\right)=\\frac{1}{c-1}\\sum_{j=1}^{c}\\left(\\widehat{h}_{j}-\\widehat{h^{*}}\\right)^{2}\\quad\\mathrm{w h e r e}\\quad\\widehat{h^{*}}=\\frac{1}{c}\\sum_{j=1}^{c}\\widehat{h}_{j} $$",
+      "source_page": 1221,
+      "source_pages": [
+        1221
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p014:b9",
+        "Evolution_appendix3:p014:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          901.0,
+          1058.0,
+          996.0
+        ],
+        [
+          425.0,
+          1006.0,
+          921.0,
+          1068.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ee4864ac0a72769577e396b4ce58f16fb4c8fad31cfb28449a05ea55f12406d2"
     },
     {
       "type": "discussion",
-      "content": "Using only a single chain, an alternative approach is to use results from the theory of time series to account for the correlations among members in the chain. To start, we estimate the lag-k autocovariance associated with h by $$ \\widehat{\\gamma}(k)=\\frac{1}{n-1}\\sum_{i=1}^{n-k}\\left[\\left(h(\\theta_{i})-\\widehat{h}\\right)\\left(h(\\theta_{i+k})-\\widehat{h}\\right)\\right] $$"
+      "content": "Using only a single chain, an alternative approach is to use results from the theory of time series to account for the correlations among members in the chain. To start, we estimate the lag-k autocovariance associated with h by $$ \\widehat{\\gamma}(k)=\\frac{1}{n-1}\\sum_{i=1}^{n-k}\\left[\\left(h(\\theta_{i})-\\widehat{h}\\right)\\left(h(\\theta_{i+k})-\\widehat{h}\\right)\\right] $$",
+      "source_page": 1221,
+      "source_pages": [
+        1221
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p014:b12",
+        "Evolution_appendix3:p014:b13"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1081.0,
+          1060.0,
+          1153.0
+        ],
+        [
+          463.0,
+          1169.0,
+          880.0,
+          1228.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "22c3ccd4008b3af7880257f93e01517e5429d19fbb7ea4104669af351ad682e8"
     },
     {
       "type": "discussion",
-      "content": "This is natural generalization of the kth order autocorrelation (Equation A3.16) to the random variable generated by $ h(\\theta_{i}) $. Geyer (1992, 2011) obtained the resulting estimate of the Monte Carlo variance as $$ \\mathrm{Var}\\left(\\widehat{h}\\right)=\\frac{1}{n}\\left(\\widehat{\\gamma}(0)+2\\sum_{i=1}^{2\\delta+1}\\widehat{\\gamma}(i)\\right) $$"
+      "content": "This is natural generalization of the kth order autocorrelation (Equation A3.16) to the random variable generated by $ h(\\theta_{i}) $. Geyer (1992, 2011) obtained the resulting estimate of the Monte Carlo variance as $$ \\mathrm{Var}\\left(\\widehat{h}\\right)=\\frac{1}{n}\\left(\\widehat{\\gamma}(0)+2\\sum_{i=1}^{2\\delta+1}\\widehat{\\gamma}(i)\\right) $$",
+      "source_page": 1221,
+      "source_pages": [
+        1221
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p014:b15",
+        "Evolution_appendix3:p014:b16"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1243.0,
+          1059.0,
+          1312.0
+        ],
+        [
+          526.0,
+          1323.0,
+          817.0,
+          1386.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "145dc4cc1c2c9be208567cb9102c821138a5a1024518a6a792fa276069955f1c"
     },
     {
       "type": "discussion",
-      "content": "Note that the zero-lag term, $ \\widehat{\\gamma}(0) $, is simply the standard variance estimate when observations are uncorrelated, while $ \\delta $ is the largest positive integer satisfying $ \\widehat{\\gamma}(2\\delta) + \\widehat{\\gamma}(2\\delta + 1) > 0 $, (i.e., the higher order, or lag, autocovariances above $ \\delta $ are zero)."
+      "content": "Note that the zero-lag term, $ \\widehat{\\gamma}(0) $, is simply the standard variance estimate when observations are uncorrelated, while $ \\delta $ is the largest positive integer satisfying $ \\widehat{\\gamma}(2\\delta) + \\widehat{\\gamma}(2\\delta + 1) > 0 $, (i.e., the higher order, or lag, autocovariances above $ \\delta $ are zero).",
+      "source_page": 1221,
+      "source_pages": [
+        1221
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p014:b18"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1399.0,
+          1057.0,
+          1471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3fff8b156f3c0a2afbebd52b6c1d9bf3ad9df0f98a28f75488eee181f0719cc5"
     },
     {
       "type": "discussion",
-      "content": "One measure of the effects of autocorrelation between elements in the sampler is the effective chain size, $$ \\widehat{n}=\\frac{\\widehat{\\gamma}(0)}{\\operatorname{Var}\\left(\\widehat{h}\\right)} $$ where $ \\widehat{\\gamma}(0) $ is the standard sample variance for uncorrelated observations. In the absence of autocorrelation between members, $ \\widehat{n} = n $."
+      "content": "One measure of the effects of autocorrelation between elements in the sampler is the effective chain size, $$ \\widehat{n}=\\frac{\\widehat{\\gamma}(0)}{\\operatorname{Var}\\left(\\widehat{h}\\right)} $$ where $ \\widehat{\\gamma}(0) $ is the standard sample variance for uncorrelated observations. In the absence of autocorrelation between members, $ \\widehat{n} = n $.",
+      "source_page": 1222,
+      "source_pages": [
+        1222
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p015:b2",
+        "Evolution_appendix3:p015:b3",
+        "Evolution_appendix3:p015:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          207.0,
+          903.0,
+          253.0
+        ],
+        [
+          459.0,
+          249.0,
+          574.0,
+          312.0
+        ],
+        [
+          131.0,
+          316.0,
+          903.0,
+          364.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e305b46ad00d959e715f987537a5171bc5139f8deb1672824b1beb196741280e"
     }
   ]
 }

@@ -21,23 +21,159 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "We often expect adjacent members from an MCMC sequence to be positively correlated, and we can quantify the nature of this correlation by using an autocorrelation function. Consider a sequence, $(\\theta_1, \\cdots, \\theta_n)$, of length $n$. Correlations can occur between adjacent members, $\\rho(\\theta_i, \\theta_{i+1}) \\neq 0$, and, more generally, between more distant members, $\\rho(\\theta_i, \\theta_{i+k}) \\neq 0$. The $k$th order autocorrelation, $\\rho_k$, can be estimated by $$ \\begin{align*}\\widehat{\\rho}_k=\\frac{\\mathrm{Cov}(\\theta_t,\\theta_{t+k})}{\\mathrm{Var}(\\theta_t)}=\\frac{\\sum\\limits_{t=1}^{n-k}\\left(\\theta_t-\\overline{\\theta}\\right)\\left(\\theta_{t+k}-\\overline{\\theta}\\right)}{\\sum\\limits_{t=1}^{n-k}\\left(\\theta_t-\\overline{\\theta}\\right)^2},\\quad\\textrm{with}\\quad\\overline{\\theta}=\\frac{1}{n}\\sum\\limits_{t=1}^n\\theta_t\\end{align*} $$"
+      "content": "We often expect adjacent members from an MCMC sequence to be positively correlated, and we can quantify the nature of this correlation by using an autocorrelation function. Consider a sequence, $(\\theta_1, \\cdots, \\theta_n)$, of length $n$. Correlations can occur between adjacent members, $\\rho(\\theta_i, \\theta_{i+1}) \\neq 0$, and, more generally, between more distant members, $\\rho(\\theta_i, \\theta_{i+k}) \\neq 0$. The $k$th order autocorrelation, $\\rho_k$, can be estimated by $$ \\begin{align*}\\widehat{\\rho}_k=\\frac{\\mathrm{Cov}(\\theta_t,\\theta_{t+k})}{\\mathrm{Var}(\\theta_t)}=\\frac{\\sum\\limits_{t=1}^{n-k}\\left(\\theta_t-\\overline{\\theta}\\right)\\left(\\theta_{t+k}-\\overline{\\theta}\\right)}{\\sum\\limits_{t=1}^{n-k}\\left(\\theta_t-\\overline{\\theta}\\right)^2},\\quad\\textrm{with}\\quad\\overline{\\theta}=\\frac{1}{n}\\sum\\limits_{t=1}^n\\theta_t\\end{align*} $$",
+      "source_page": 1219,
+      "source_pages": [
+        1219,
+        1220
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p012:b12",
+        "Evolution_appendix3:p012:b13",
+        "Evolution_appendix3:p013:b6",
+        "Evolution_appendix3:p013:b7"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          1392.0,
+          667.0,
+          1416.0
+        ],
+        [
+          287.0,
+          1421.0,
+          1059.0,
+          1471.0
+        ],
+        [
+          133.0,
+          866.0,
+          903.0,
+          938.0
+        ],
+        [
+          185.0,
+          952.0,
+          786.0,
+          1076.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ebcdd966d8a216c98a7e24e0be6a175384541a49d54560aca7549e18c0545eb4"
     },
     {
       "type": "discussion",
-      "content": "An important result from the theory of time series analysis is that if the values of $ \\theta_t $ are from a stationary (and correlated) process, correlated draws still provide an unbiased picture of the distribution provided the sample size is sufficiently large. The reason for this large-sample stipulation is that, strictly speaking, Equation A3.16 applies only to a stationary process."
+      "content": "An important result from the theory of time series analysis is that if the values of $ \\theta_t $ are from a stationary (and correlated) process, correlated draws still provide an unbiased picture of the distribution provided the sample size is sufficiently large. The reason for this large-sample stipulation is that, strictly speaking, Equation A3.16 applies only to a stationary process.",
+      "source_page": 1220,
+      "source_pages": [
+        1220
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p013:b9"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1092.0,
+          904.0,
+          1186.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "812192d2e38ef8c3553f87a491d3f917cbf40cec9f48b2873db55cb8744e9994"
     },
     {
       "type": "discussion",
-      "content": "Some indication of the required sample size comes from the theory of a first-order autoregressive process $ (AR_{1}) $, where $$ \\theta_{t}=\\mu+\\alpha\\big(\\theta_{t-1}-\\mu\\big)+\\epsilon $$ where $ |\\alpha| < 1 $ and $ \\epsilon $ is white noise, namely, $ \\epsilon \\sim N(0, \\sigma^2) $. Here $ \\rho_1 = \\alpha $ and the $ k $th order autocorrelation is given by $ \\rho_k = \\rho_1^k = \\alpha^k $. Under this process, $ E(\\bar{\\theta}) = \\mu $ with a standard error of $$ \\mathrm{SE}\\left(\\overline{\\theta}\\right)=\\frac{\\sigma}{\\sqrt{n}}\\sqrt{\\frac{1+\\rho}{1-\\rho}} $$"
+      "content": "Some indication of the required sample size comes from the theory of a first-order autoregressive process $ (AR_{1}) $, where $$ \\theta_{t}=\\mu+\\alpha\\big(\\theta_{t-1}-\\mu\\big)+\\epsilon $$ where $ |\\alpha| < 1 $ and $ \\epsilon $ is white noise, namely, $ \\epsilon \\sim N(0, \\sigma^2) $. Here $ \\rho_1 = \\alpha $ and the $ k $th order autocorrelation is given by $ \\rho_k = \\rho_1^k = \\alpha^k $. Under this process, $ E(\\bar{\\theta}) = \\mu $ with a standard error of $$ \\mathrm{SE}\\left(\\overline{\\theta}\\right)=\\frac{\\sigma}{\\sqrt{n}}\\sqrt{\\frac{1+\\rho}{1-\\rho}} $$",
+      "source_page": 1220,
+      "source_pages": [
+        1220
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p013:b10",
+        "Evolution_appendix3:p013:b11",
+        "Evolution_appendix3:p013:b13",
+        "Evolution_appendix3:p013:b14"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1185.0,
+          903.0,
+          1233.0
+        ],
+        [
+          407.0,
+          1247.0,
+          629.0,
+          1271.0
+        ],
+        [
+          131.0,
+          1285.0,
+          904.0,
+          1355.0
+        ],
+        [
+          419.0,
+          1351.0,
+          617.0,
+          1402.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "323c7d4de0775a992ac3486475a3e73c99d057217982f00501402fbd7ef6d95b"
     },
     {
       "type": "discussion",
-      "content": "The first ratio is the standard error for white noise, while the second ratio, $ \\sqrt{(1+\\rho)/(1-\\rho)} $, is the sample size inflation factor (SSIF), which shows how the autocorrelation inflates the sampling variance relative to independent samples. For $ \\rho = 0.5, 0.75, 0.9, 0.95 $, and 0.99, the associated SSIF values become 3, 7, 19, 39, and 199, respectively. With an autocorrelation of 0.95 (which is not uncommon in a Metropolis-Hastings sequence), roughly 40 times as many iterations are required for the same precision as with an uncorrelated sequence."
+      "content": "The first ratio is the standard error for white noise, while the second ratio, $ \\sqrt{(1+\\rho)/(1-\\rho)} $, is the sample size inflation factor (SSIF), which shows how the autocorrelation inflates the sampling variance relative to independent samples. For $ \\rho = 0.5, 0.75, 0.9, 0.95 $, and 0.99, the associated SSIF values become 3, 7, 19, 39, and 199, respectively. With an autocorrelation of 0.95 (which is not uncommon in a Metropolis-Hastings sequence), roughly 40 times as many iterations are required for the same precision as with an uncorrelated sequence.",
+      "source_page": 1220,
+      "source_pages": [
+        1220,
+        1221
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p013:b16",
+        "Evolution_appendix3:p014:b2"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1414.0,
+          900.0,
+          1470.0
+        ],
+        [
+          287.0,
+          206.0,
+          1059.0,
+          299.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3b3a45b80ebc3509f9ba61b9963eccd3dc6406d1a38d94fc63faa173c3ab01bc"
     },
     {
       "type": "discussion",
-      "content": "One historical strategy for reducing autocorrelation is thinning (or subsampling) the output, which involves storing only every $ m $th point after the burn-in period. Suppose a Metropolis-Hastings sequence follows an $ AR_1 $ model, with $ \\rho_1 = 0.99 $. In this case, sampling every 50, 100, and 500 points gives the correlation between the thinned samples as $ 0.605 (= 0.99^{50}) $, 0.366, and 0.007, respectively, returning SSIF values of 2, 1.5, and 1.007. In addition to reducing autocorrelation, thinning the sequence also saves computer memory. However, this throws out a huge amount of the data. If computer memory is not an issue, Geyer (1992) and MacEachern and Berliner (1994) found that it is more efficient (yielding smaller Monte Carlo variances) to keep the entire chain than to use thinning."
+      "content": "One historical strategy for reducing autocorrelation is thinning (or subsampling) the output, which involves storing only every $ m $th point after the burn-in period. Suppose a Metropolis-Hastings sequence follows an $ AR_1 $ model, with $ \\rho_1 = 0.99 $. In this case, sampling every 50, 100, and 500 points gives the correlation between the thinned samples as $ 0.605 (= 0.99^{50}) $, 0.366, and 0.007, respectively, returning SSIF values of 2, 1.5, and 1.007. In addition to reducing autocorrelation, thinning the sequence also saves computer memory. However, this throws out a huge amount of the data. If computer memory is not an issue, Geyer (1992) and MacEachern and Berliner (1994) found that it is more efficient (yielding smaller Monte Carlo variances) to keep the entire chain than to use thinning.",
+      "source_page": 1221,
+      "source_pages": [
+        1221
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p014:b3"
+      ],
+      "source_bboxes": [
+        [
+          285.0,
+          299.0,
+          1060.0,
+          507.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "274cf7fc8f1d56237dd128241eff3cbe08c354617c3b12f8367d15739af3a3d3"
     }
   ]
 }

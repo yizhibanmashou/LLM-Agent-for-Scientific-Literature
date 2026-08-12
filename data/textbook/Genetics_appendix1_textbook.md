@@ -24,14 +24,7 @@ where $f(c)$ refers to the function evaluated at $x = c$, and the partial deriva
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_appendix1:1` · source: `Genetics_appendix1_002.json` · blocks 3–4
->
-> Example 1. Consider the function $ f = \sqrt{x} $. Here, $ \partial f/\partial x = 1/(2\sqrt{x}) $ and $ \partial^2 f/\partial x^2 = -1/(4x^{3/2}) $, giving the second-order Taylor series about $ c $ as
-> 
-> $$
-> f=\sqrt{x}\simeq\sqrt{c}+\frac{x-c}{2\sqrt{c}}-\frac{(x-c)^{2}}{8c^{3/2}}+\cdots
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:1]**
 
 
 ---
@@ -79,57 +72,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_appendix1:2` · source: `Genetics_appendix1_003.json` · blocks 10–22
->
-> Example 2. By definition, the variance, $ \sigma^2(x) $, is equal to the average value of $ (x_i - \mu_x)^2 = x_i^2 - \mu_x^2 $ in a population, where $ x_i $ denotes the measure for the ith individual. The population mean, $ \mu_x $, is generally not known with certainty, but rather is estimated by $ \overline{x} $. Thus, it is tempting to estimate the variance by using the mean value of $ x_i^2 - \overline{x}^2 $. Here we show that this quantity gives a (slightly) downwardly biased estimate of $ \sigma^2(x) $, and that there is a simple solution to the problem.
-> 
-> Expanding $ x_{i}^{2} - \overline{x}^{2} $, we wish to know whether the expected value of the function
-> 
-> $$
-> f_{i}=x_{i}^{2}-\left(\frac{\sum_{j=1}^{n}x_{j}}{n}\right)^{2}
-> $$
-> 
-> 
-> is equal to $\sigma^{2}(x)$. Under the assumption that the population has been sampled randomly, $\mu_{x_{i}} = \mu_{x_{j}} = \mu_{x}, \sigma^{2}(x_{i}) = \sigma^{2}(x_{j}) = \sigma^{2}(x)$, and $\sigma(x_{i}, x_{j}) = 0$ for all $i, j$. Equation A1.4b then reduces to
-> 
-> $$
-> E(f_{i})=f_{i}(\mu_{x})+\frac{\sigma^{2}(x)}{2}\left(\frac{\partial^{2}f_{i}}{\partial x_{i}^{2}}+\sum_{j\neq i}\frac{\partial^{2}f_{i}}{\partial x_{j}^{2}}\right)
-> \tag{A1.5a}
-> $$
-> 
-> 
-> The required partial derivatives are
-> 
-> $$
-> \frac{\partial f_{i}}{\partial x_{i}}=2x_{i}-\frac{2\sum_{j=1}^{n}x_{j}}{n^{2}}\quad\frac{\partial^{2}f_{i}}{\partial x_{i}^{2}}=2\left(1-\frac{1}{n^{2}}\right)
-> $$
-> 
-> 
-> $$
-> \frac{\partial f_{i}}{\partial x_{j}}=-\frac{2\sum_{k=1}^{n}x_{k}}{n^{2}}\quad 夢軒 \quad\frac{\partial^{2}f_{i}}{\partial x_{j}^{2}}=-\frac{2}{n^{2}}
-> $$
-> 
-> 
-> Since all higher-order partials are equal to zero, Equation A1.5a is exact in this case. In addition, substitution of $ \mu_x $ for $ x_i $ and all $ x_j $, shows that $ f_i(\mu_x) = 0 $. Substituting the partial derivatives into Equation A1.5a gives
-> 
-> $$
-> E(x_{i}^{2}-\overline{x}^{2})=\sigma^{2}(x)\cdot\left(\frac{n-1}{n}\right)
-> $$
-> 
-> 
-> This shows that the mean value of $ x_{i}^{2} - \overline{x}^{2} $ gives a slightly downwardly biased estimate of the population variance, $ \sigma^{2}(x) $. The problem is eliminated by simply multiplying the mean value of $ x_{i}^{2} - \overline{x}^{2} $ by $ n/(n-1) $. Thus, an unbiased estimate of $ \sigma^{2}(x) $ is
-> 
-> $$
-> \mathrm{Var}(x)=\left(\frac{n}{n-1}\right)(\overline{x^{2}}-\overline{x}^{2})
-> \tag{A1.5b}
-> $$
-> 
-> 
-> $$
-> =\frac{1}{n-1}\sum_{i=1}^{n}\left(x_{i}-\overline{x}\right)^{2}
-> \tag{A1.5c}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:2]**
 
 
 ---
@@ -169,45 +112,7 @@ where $ \sigma(x_{i}, x_{j}) $ is a variance if $ i = j $ and a covariance other
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_appendix1:3` · source: `Genetics_appendix1_004.json` · blocks 9–19
->
-> Example 3. Imagine sampling a population many times independently for $n$ individuals, each time estimating the mean. Can we express the variance of the sample means, $\sigma^{2}(\overline{x})$, in terms of the variance of individual measures, $\sigma^{2}(x)$?
-> 
-> Recall that the definition of a sample estimate of the mean is
-> 
-> $$
-> \overline{x}=\frac{x_{1}+x_{2}+\cdots+x_{n}}{n}
-> \tag{A1.8a}
-> $$
-> 
-> 
-> Under the assumption that the population is sampled randomly, there is no covariance between the measures of different individuals, so that Equation A1.7c reduces to
-> 
-> $$
-> \sigma_{f}^{2}\simeq\sum_{i=1}^{n}\sigma^{2}(x_{i})\left(\frac{\partial f}{\partial x_{i}}\right)^{2}
-> \tag{A1.8a}
-> $$
-> 
-> 
-> where in this example $ f = \overline{x} $. The partial derivative of $ \overline{x} $ with respect to each individual measure $ x_i $ is simply 1/n, and assuming a homogeneous population, $ \sigma^2(x_i) = \sigma^2(x) $ for all i. Thus, substituting into Equation A1.8a, the sampling variance of a mean is
-> 
-> $$
-> \sigma^{2}(\overline{x})=\sum_{i=1}^{n}\frac{\sigma^{2}(x_{i})}{n^{2}}=\frac{\sigma^{2}(x)}{n}
-> \tag{A1.8b}
-> $$
-> 
-> 
-> i.e., the sampling variance of a mean is equal to the variance of individual measures divided by the sample size.
-> 
-> The practical utility of this expression might be questioned since the parameter $ \sigma^2(x) $ is something that we can only estimate. However, recall from Example 2 that an unbiased estimator of $ \sigma^2(x) $ is $ \text{Var}(x) = n(\overline{x}^2 - \overline{x}^2)/(n - 1) $. It follows that
-> 
-> $$
-> \mathrm{Var}(\overline{x})=\frac{\mathrm{Var}(x)}{n}
-> \tag{A1.8c}
-> $$
-> 
-> 
-> is an unbiased estimator of $ \sigma^{2}(\overline{x}) $. The square root of $ \operatorname{Var}(\overline{x}) $ is known as the standard error of the mean.
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:3]**
 
 
 The practice of substituting an observed (and, ideally, unbiased) statistic for a population parameter in sampling-variance equations is widely used to obtain approximate sampling variances of statistics. Since the accuracy of formulations employing such estimates increases with sample size, these formulations are usually referred to as large-sample variance expressions, their square roots yielding standard errors of the statistic. It is often possible to use the standard error to construct a confidence interval around the estimate, such that the parametric value is encompassed within the confidence limits with a certain probability. However, the construction of confidence intervals for complex functions is generally very difficult not only because of the approximate nature of the variance estimates but also because the forms of distributions of complex functions are usually unknown.
@@ -228,28 +133,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_appendix1:4` · source: `Genetics_appendix1_005.json` · blocks 2–7
->
-> Example 4. Consider two linear functions of the set of variables $ (x_{1}, \cdots, x_{n}) $
-> 
-> $$
-> f=\alpha_{1}x_{1}+\alpha_{2}x_{2}+\cdots+\beta_{n}x_{n}
-> $$
-> 
-> 
-> $$
-> g=\beta_{1}x_{1}+\beta_{2}x_{2}+\cdots+\beta_{n}x_{n}
-> $$
-> 
-> 
-> What is the covariance between $f$ and $g$? The partial derivatives with respect to the $x_i$ variables are $\partial f/\partial x_i = \alpha_i$ and $\partial g/\partial x_i = \beta_i$. Substituting into Equation A1.9,
-> 
-> $$
-> \sigma(f,g)=\sum_{i=1}^{n}\alpha_{i}\beta_{i}\sigma^{2}(x_{i})+\sum_{i=1}^{n}\sum_{j\neq i}^{n}\alpha_{i}\beta_{j}\sigma(x_{i},x_{j})
-> $$
-> 
-> 
-> This is an exact result, because here all of the higher-order partial derivatives are equal to zero.
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:4]**
 
 
 ---
@@ -262,66 +146,7 @@ The general rules set forth in the previous sections are readily applied to thes
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_appendix1:5` · source: `Genetics_appendix1_006.json` · blocks 2–17
->
-> Example 5. Here we consider the sampling variance of a variance estimate, i.e., $ \sigma^{2}[\mathrm{Var}(x)] $. This quantity can be thought of as the expected variance that would arise among variance estimates obtained from a large number of independent samples from the same population. With $ n $ observations $ (x_{1}, x_{2}, \cdots, x_{n}) $,
-> 
-> $$
-> f=\mathrm{Var}(x)=\frac{n}{n-1}\left[\frac{\sum_{i=1}^{n}x_{i}^{2}}{n}-\left(\frac{\sum_{i=1}^{n}x_{i}}{n}\right)^{2}\right]
-> $$
-> 
-> 
-> Provided that the individual measures of $x$ are obtained from random members of the same population, the covariance between all measures is zero, and the variance associated with each measure is the same, $\sigma^{2}(x)$. Thus, each of the $n$ observed variables makes an identical contribution to the variance of $\operatorname{Var}(x)$. The partial derivatives with respect to measure $x_{i}$, evaluated at its mean, are
-> 
-> $$
-> \frac{\partial f}{\partial x_{i}}=\frac{n}{n-1}\left(\frac{2x_{i}}{n}-\frac{2\sum_{j=1}^{n}x_{j}}{n^{2}}\right)\bigg|_{x_{i}=\mu_{x}}=\frac{n}{n-1}\left(\frac{2\mu_{x}}{n}-\frac{2n\mu_{x}}{n^{2}}\right)=0
-> $$
-> 
-> 
-> $$
-> \frac{\partial^{2}f}{\partial x_{i}^{2}}=\frac{n}{n-1}\left(\frac{2}{n}-\frac{2}{n^{2}}\right)=\frac{2}{n}
-> $$
-> 
-> 
-> Substituting into Equation A1.7a, the variance of $ \operatorname{Var}(x) $ caused by variation in the ith measure is $ [\mu_{4x}-\sigma^{4}(x)]/n^{2} $, and summing over all n measures,
-> 
-> $$
-> \sigma^{2}[\mathrm{Var}(x)]=\frac{\mu_{4x}-\sigma^{4}(x)}{n}
-> \tag{A1.10a}
-> $$
-> 
-> 
-> When x is normally distributed, $ \mu_{4x}=3\sigma^{4}(x) $ (Kendall and Stuart 1977), giving
-> 
-> $$
-> \sigma^{2}[\mathrm{Var}(x)]=\frac{2\sigma^{4}(x)}{n}
-> \tag{A1.10b}
-> $$
-> 
-> 
-> Equations A1.10a,b are exact expressions for the sampling variance of a variance because all partial derivatives higher than second order are equal to zero.
-> 
-> Our final problem is to modify Equation A1.10b in such a way that an unbiased estimate of the sampling variance of the variance can be obtained from the sample statistic $ \operatorname{Var}(x) $. It is tempting to simply substitute $ [\operatorname{Var}(x)]^2 $ for $ \sigma^4(x) $, but this is not quite correct. Recalling the definition of a variance, $ E(z^{2}) = \sigma^{2}(z) + \mu_{z}^{2} $, and substituting $ \mathrm{Var}(x) $ for $ z $, and $ \sigma^{2}(x) $ for $ \mu_{z} $, we find that
-> 
-> $$
-> E\{[\mathrm{Var}(x)]^{2}\}=\sigma^{2}[\mathrm{Var}(x)]+[\sigma^{2}(x)]^{2}
-> $$
-> 
-> 
-> Substituting for $ \sigma^{2}[\mathrm{Var}(x)] $ from Equation A1.10b,
-> 
-> $$
-> E\{[\mathrm{Var}(x)]^{2}\}=\left(1+\frac{2}{n}\right)\sigma^{4}(x)
-> $$
-> 
-> 
-> which shows that the quantity $ n\left[\mathrm{Var}(x)\right]^{2}/(n+2) $, rather than $ \left[\mathrm{Var}(x)\right]^{2} $, provides an unbiased estimate of $ \sigma^{4}(x) $. Thus, an unbiased estimate of the sampling variance of a variance is given by
-> 
-> $$
-> \mathrm{Var}[\mathrm{Var}(x)]=\frac{2[\mathrm{Var}(x)]^{2}}{n+2}
-> \tag{A1.10c}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:5]**
 
 
 General information on the variances and covariances of moments can be found in Chapter 10 of Kendall and Stuart (1977). Letting $ m_r = n^{-1} \sum (x_i - \overline{x})^r $ and $ \mu_r = E[(x - \mu_x)^r] $ represent observations and expectations for the $ r $th moment about the mean, the following approximations apply to the sampling variances and covariances,
@@ -382,32 +207,7 @@ Expressions for the variances and covariances of moments about the origin can be
 
 **[示例 Example]**
 
-> **Example 6** · ref: `Genetics_appendix1:6` · source: `Genetics_appendix1_006.json` · blocks 34–41
->
-> Example 6. What is the expected sampling variance of the directional selection differential S? In Chapter 3, it is shown that for any character whose phenotype is denoted by z, S is equivalent to the covariance between z and relative fitness w, i.e., $ S = \sigma(z, w) $. Applying Equation A1.14, we obtain
-> 
-> $$
-> \sigma^{2}(S)=\frac{\sigma^{2}(z)\sigma^{2}(w)+[\sigma(z,w)]^{2}}{n}
-> $$
-> 
-> 
-> Note that Equation A1.14 assumes z and w are bivariate normally distributed, implying that we assume that fitness has some optimal value and falls off (roughly quadratically) around this optimun.
-> 
-> Some insight into the relative magnitude of the sampling variance of S can be acquired by considering the coefficient of sampling variation,
-> 
-> $$
-> CV(S)=\frac{\sigma(S)}{E(S)}
-> $$
-> 
-> 
-> where $E(S) = \sigma(z, w)$. Letting $\rho$ be the correlation between phenotype and relative fitness, this reduces to
-> 
-> $$
-> \mathrm{CV}(S)=\frac{1}{\rho}\left(\frac{1+\rho^{2}}{n}\right)^{1/2}
-> $$
-> 
-> 
-> The minimum value of $ \mathrm{CV}(S) $ arises when the character is the sole determinant of fitness, i.e., $ \rho = 1 $, in which case $ \mathrm{CV}(S) = \sqrt{2/n} $. This shows that unless sample sizes are fairly high, the standard error of $ S $ relative to its expected value can be quite high — for $ n = 50 $, 100, and 250, the CVs are, respectively, $ \geq 0.20 $, 0.14, and 0.09.
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:6]**
 
 
 ---
@@ -525,16 +325,7 @@ Both of these expressions are strictly valid only under the assumption of bivari
 
 **[示例 Example]**
 
-> **Example 7** · ref: `Genetics_appendix1:7` · source: `Genetics_appendix1_009.json` · blocks 7–9
->
-> Example 7. Dickerson (1969) argued that because the numerator (the covariance) of a regression coefficient is estimated with much lower accuracy than the denominator (the variance), the sampling variance of the latter can be safely ignored in computing the standard error of a regression coefficient. Under this assumption, the approximate sampling variance of a regression coefficient is simply $ \sigma^2[\text{Cov}(x, y)] / \sigma^4(x) $, which upon substitution for $ \sigma^2[\text{Cov}(x, y)] $ becomes
-> 
-> $$
-> \sigma^{2}(b)\simeq\frac{\sigma^{2}(y)(1+\rho^{2})}{n\sigma^{2}(x)}
-> $$
-> 
-> 
-> Comparing this to Equation A1.20a, it can be seen that ignoring the sampling variance in the denominator leads to a conservative estimate of the standard error of b, i.e., to a standard error that is upwardly biased. The ratio of the standard errors resulting from both expressions is $ \left[(1-\rho^{2})/(1+\rho^{2})\right]^{1/2} $. For \rho = 0.5, the ratio is 0.77.
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:7]**
 
 
 ---
@@ -1067,63 +858,7 @@ which follows from Equations A3.3 and A3.1, respectively.
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_appendix1:1:occ2` · source: `Genetics_appendix1_021.json` · blocks 7–22
->
-> Example 1. Consider the following system of equations
-> 
-> $$
-> x_{1}+2x_{2}+3x_{3}=5
-> $$
-> 
-> 
-> $$
-> 2x_{1}+x_{2}+2x_{3}=6
-> $$
-> 
-> 
-> which can be written in matrix form as $ \mathbf{A}\mathbf{x}=\mathbf{y} $, with
-> 
-> $$
-> \mathbf{A}=\begin{pmatrix}{{{1}}}&{{{2}}}&{{{3}}} \\{{{2}}}&{{{1}}}&{{{2}}}\end{pmatrix},\qquad\mathbf{x}=\begin{pmatrix}{{{x_{1}}}} \\{{{x_{2}}}} \\{{{x_{3}}}}\end{pmatrix},\qquad\mathbf{y}=\begin{pmatrix}{{{5}}} \\{{{6}}}\end{pmatrix}
-> $$
-> 
-> 
-> The matrix
-> 
-> $$
-> \mathbf{A}^{-}=\begin{pmatrix}-11/26&9/13\\4/13&-3/13\\7/26&-1/13\end{pmatrix}
-> $$
-> 
-> 
-> satisfies $ \mathbf{A}\mathbf{A}^{-}\mathbf{A}=\mathbf{A} $ and thus is a generalized inverse of $ \mathbf{A} $. Matrix multiplication shows that $ \mathbf{A}\mathbf{A}^{-}=\mathbf{I} $, implying $ \mathbf{A}\mathbf{A}^{-}\mathbf{y}=\mathbf{y} $. Thus, Equation A3.3 is satisfied and this system of equations is consistent for any $ \mathbf{y} $. One solution is $ \mathbf{x}=\mathbf{A}^{-}\mathbf{y} $, or
-> 
-> $$
-> \begin{pmatrix}x_{1}\\x_{2}\\x_{3}\end{pmatrix}=\begin{pmatrix}-11/26&9/13\\4/13&-3/13\\7/26&-1/13\end{pmatrix}\begin{pmatrix}5\\6\end{pmatrix}=\frac{1}{26}\begin{pmatrix}53\\4\\23\end{pmatrix}
-> $$
-> 
-> 
-> More generally, since
-> 
-> $$
-> \mathbf{I}-\mathbf{A}^{-}\mathbf{A}=\left(\begin{array}{ccc}1/26&2/13&-3/26\\2/13&8/13&-6/13\\-3/26&-6/13&9/26\\\end{array}\right)
-> $$
-> 
-> 
-> then from Equation A3.4, any solution to this system of equations has the form
-> 
-> $$
-> \begin{pmatrix}x_{1}\\x_{2}\\x_{3}\end{pmatrix}=\frac{1}{26}\begin{pmatrix}53\\4\\23\end{pmatrix}+\begin{pmatrix}1/26&2/13&-3/26\\2/13&8/13&-6/13\\-3/26&-6/13&9/26\end{pmatrix}\begin{pmatrix}c_{1}\\c_{2}\\c_{3}\end{pmatrix}
-> $$
-> 
-> 
-> which reduces to
-> 
-> $$
-> \begin{pmatrix}x_{1}\\x_{2}\\x_{3}\end{pmatrix}=\frac{1}{26}\begin{pmatrix}53\\4\\23\end{pmatrix}+c\cdot\begin{pmatrix}1\\4\\-3\end{pmatrix}
-> $$
-> 
-> 
-> where c is an arbitrary constant. Substitution shows this to be a solution.
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:1:occ2]**
 
 
 Although an infinite number of solutions exists when A is singular, particular linear combinations (or contrasts) of the elements of x may have unique values. For example, consider the system $ x_{1} + x_{2} = 1 $. Here there are an infinite number of solutions for $ (x_{1}, x_{2}) $, but only a single solution, 1, for the contrast $ x_{1} + x_{2} $.
@@ -1155,51 +890,7 @@ which is independent of the arbitrary vector c. Likewise, a vector of contrasts 
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_appendix1:2:occ2` · source: `Genetics_appendix1_021.json` · blocks 31–43
->
-> Example 2. Consider the system of equations from Example 1. Is there a unique solution for the two linear contrasts $ c_1 = x_2 - 4x_1 $ and $ c_2 = x_3 + 3x_1 $? In matrix form,
-> 
-> $$
-> \begin{pmatrix}c_{1}\\c_{2}\end{pmatrix}=\begin{pmatrix}x_{2}-4x_{1}\\x_{3}+3x_{1}\end{pmatrix}=\mathbf{B}\mathbf{x}
-> $$
-> 
-> 
-> where
-> 
-> $$
-> \mathbf{B}=\begin{pmatrix}{{{-4}}}&{{{1}}}&{{{0}}} \\{{{3}}}&{{{0}}}&{{{1}}}\end{pmatrix}\quad and\quad\mathbf{x}=\begin{pmatrix}{{{x_{1}}}} \\{{{x_{2}}}} \\{{{x_{3}}}}\end{pmatrix}
-> $$
-> 
-> 
-> Using the generalized inverse for A from Example 1, matrix multiplication shows that
-> 
-> $$
-> \mathbf{B}\mathbf{A}^{-}\mathbf{A}=\begin{pmatrix}{{{-4}}}&{{{1}}}&{{{0}}} \\{{{3}}}&{{{0}}}&{{{1}}}\end{pmatrix}=\mathbf{B}
-> $$
-> 
-> 
-> Hence, the matrix version of Equation A3.5b gives the unique solution for this vector of contrasts as
-> 
-> $$
-> \begin{pmatrix}{{{c_{1}}}} \\{{{c_{2}}}}\end{pmatrix}=\mathbf{B}\mathbf{A}^{-}\mathbf{y}=\begin{pmatrix}{{{-4}}}&{{{1}}}&{{{0}}} \\{{{3}}}&{{{0}}}&{{{1}}}\end{pmatrix}\begin{pmatrix}{{{-11/26}}}&{{{9/13}}} \\{{{4/13}}}&{{{-3/13}}} \\{{{7/26}}}&{{{-1/13}}}\end{pmatrix}\begin{pmatrix}{{{5}}} \\{{{6}}}\end{pmatrix}=\begin{pmatrix}{{{-8}}} \\{{{7}}}\end{pmatrix}
-> $$
-> 
-> 
-> To see that this solution is indeed unique, note that we can rearrange the contrast equations to obtain $ x_{2} = c_{1} + 4x_{1} $ and $ x_{3} = c_{2} - 3x_{1} $. Substituting into the original set of equations (Example 1),
-> 
-> $$
-> \begin{aligned}&x_{1}+2x_{2}+3x_{3}=x_{1}+2(c_{1}+4x_{1})+3(c_{2}-3x_{1})=2c_{1}+3c_{2}=5\\ &2x_{1}+x_{2}+2x_{3}=2x_{1}+(c_{1}+4x_{1})+2(c_{2}-3x_{1})=c_{1}+2c_{2}=6\\ \end{aligned}
-> $$
-> 
-> 
-> so that the original set of three equations and three unknowns reduces to a two equation-two unknown system. In matrix form this is
-> 
-> $$
-> \begin{pmatrix}{{{2}}}&{{{3}}} \\{{{1}}}&{{{2}}}\end{pmatrix}\begin{pmatrix}{{{c_{1}}}} \\{{{c_{2}}}}\end{pmatrix}=\begin{pmatrix}{{{5}}} \\{{{6}}}\end{pmatrix}
-> $$
-> 
-> 
-> Since the coefficient matrix is invertible, there is a unique solution for this pair of contrasts $ (c_{1} = -8 $ and $ c_{2} = 7) $.
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:2:occ2]**
 
 
 ---
@@ -1248,30 +939,7 @@ is unique and independent of which generalized inverse is actually used.
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_appendix1:3:occ2` · source: `Genetics_appendix1_023.json` · blocks 0–6
->
-> Example 3. Consider the linear model $ y = X\beta $, where
-> 
-> $$
-> \boldsymbol{\beta}=\begin{pmatrix}{{{\beta_{1}}}} \\{{{\beta_{2}}}} \\{{{\beta_{3}}}}\end{pmatrix}\quad and\quad\mathbf{X}=\begin{pmatrix}{{{1}}}&{{{1}}}&{{{0}}} \\{{{1}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix},\quad giving\quad\mathbf{X}^{T}\mathbf{X}=\begin{pmatrix}{{{2}}}&{{{2}}}&{{{0}}} \\{{{2}}}&{{{2}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix}
-> $$
-> 
-> 
-> Note that $ \mathbf{X}^T\mathbf{X} $ is singular, so we cannot obtain unique estimates of all three parameters. For this design matrix, are $ \beta_3 $, $ \beta_1 + \beta_2 $, and $ \beta_1 $ estimable? These three combinations correspond to vectors of $ \mathbf{b}^T = (0, 0, 1) $, $ (1, 1, 0) $, and $ (1, 0, 0) $, respectively. For the first two $ \mathbf{b} $ vectors, we can find a vector $ \mathbf{a} $ that satisfies $ \mathbf{X}^T\mathbf{a} = \mathbf{b} $, viz.,
-> 
-> $$
-> \mathbf{X}^{T}\begin{pmatrix}0\\ 0\\ 1\end{pmatrix}=\begin{pmatrix}0\\ 0\\ 1\end{pmatrix}\qquad and\qquad\mathbf{X}^{T}\begin{pmatrix}1/2\\ 1/2\\ 0\end{pmatrix}=\begin{pmatrix}1\\ 1\\ 0\end{pmatrix}
-> $$
-> 
-> 
-> so that, from Equation A3.6b, these two linear combinations, $ \beta_{3} $ and $ (\beta_{1} + \beta_{2}) $, are estimable. However, since
-> 
-> $$
-> \mathbf{X}^{T}\begin{pmatrix}a_{1}\\ a_{2}\\ a_{3}\end{pmatrix}=\begin{pmatrix}a_{1}+a_{2}\\ a_{1}+a_{2}\\ a_{3}\end{pmatrix}\neq\begin{pmatrix}1\\ 0\\ 0\end{pmatrix}
-> $$
-> 
-> 
-> $ \beta_1 $ is not estimable as $ a_1 + a_2 $ cannot simultaneously equal zero and one, and hence there exists no vector $ \mathbf{a} $ that satisfies $ \mathbf{X}^T \mathbf{a} = \mathbf{b} $ for this particular $ \mathbf{X} $ and $ \mathbf{b} $.
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:3:occ2]**
 
 
 ---
@@ -1478,84 +1146,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_appendix1:4:occ2` · source: `Genetics_appendix1_028.json` · blocks 12–33
->
-> Example 4. Since we have expressed $ \operatorname{Var}(x) $ as a quadratic form, we can use Equation A3.12a to compute its expected value and Equation A3.12b (under the assumption of normality) to compute its sampling variance. If $ \mathbf{x} \sim (\boldsymbol{\mu}, \mathbf{V}) $, the expected value of $ \operatorname{Var}(x) $ is
-> 
-> $$
-> E[\operatorname{Var}(x)]=E(\mathbf{x}^{T}\mathbf{N}\mathbf{x})=\operatorname{tr}(\mathbf{N}\mathbf{V})+\mu^{T}\mathbf{N}\mu
-> $$
-> 
-> 
-> To compute this expression, first note from Equation A3.14b that
-> 
-> $$
-> \boldsymbol{\mu}^{T}\mathbf{N}\boldsymbol{\mu}=\frac{1}{n-1}\sum_{i=1}^{n}(\boldsymbol{\mu}_{i}-\overline{\boldsymbol{\mu}})^{2}
-> $$
-> 
-> 
-> Likewise, from Equation A3.13b
-> 
-> $$
-> \mathbf{N}\mathbf{V}=\frac{\mathbf{V}}{n-1}-\frac{\mathbf{J}\mathbf{V}}{n(n-1)}
-> $$
-> 
-> 
-> which has diagonal elements
-> 
-> $$
-> (\mathbf{N V})_{i i}=\frac{1}{n-1}\left(\sigma^{2}(z_{i})-\frac{\sum_{j}\sigma(z_{i},z_{j})}{n}\right)
-> $$
-> 
-> 
-> After some simplification, we have
-> 
-> $$
-> \mathbf{tr}(\mathbf{N}\mathbf{V})=\sum_{i=1}^{n}(\mathbf{N}\mathbf{V})_{ii}=\frac{1}{n}\sum_{i=1}^{n}\sigma^{2}(z_{i})-\frac{2}{n(n-1)}\sum_{i<j}\sigma(z_{i},z_{j})
-> $$
-> 
-> 
-> Putting these results together gives
-> 
-> $$
-> E[\mathrm{Var}(x)]=\frac{1}{n}\sum_{i=1}^{n}\sigma^{2}(z_{i})-\frac{2}{n(n-1)}\sum_{i<j}\sigma(z_{i},z_{j})+\frac{1}{n-1}\sum_{i=1}^{n}(\mu_{i}-\overline{\mu})^{2}
-> $$
-> 
-> 
-> where $ \overline{\mu} = \sum \mu_i / n $. In the simple situation where all observations have the same mean and variance ( $ \mu_i = \mu, \sigma^2(z_i) = \sigma^2 $) and are uncorrelated, this reduces to
-> 
-> $$
-> E[\operatorname{Var}(x)]=\sigma^{2}
-> $$
-> 
-> 
-> Turning now to the sample variance of $ \operatorname{Var}(x) $, if we are willing to assume that x is multivariate normal, then from Equation A3.12b,
-> 
-> $$
-> \sigma^{2}[\mathbf{V a r}(x)]=\sigma^{2}(\mathbf{x}^{T}\mathbf{N}\mathbf{x})=2\operatorname{t r}\left[\mathbf{N}\mathbf{V}\mathbf{N}\mathbf{V}\right]+4\mu^{T}\mathbf{N}\mathbf{V}\mathbf{N}\mu
-> $$
-> 
-> 
-> If, for example, $ \mathbf{V} = \sigma^2 \mathbf{I} $ (the $ x_i $ are uncorrelated with common variance), then
-> 
-> $$
-> \begin{aligned}\mathbf{N}\mathbf{V}\mathbf{N}\mathbf{V}=\sigma^{4}\mathbf{N}\mathbf{N}=&\frac{\sigma^{4}}{(n-1)^{2}}\left(\mathbf{I}-\frac{1}{n}\mathbf{J}_{n\times n}\right)\left(\mathbf{I}-\frac{1}{n}\mathbf{J}_{n\times n}\right)\\ =&\frac{\sigma^{4}}{(n-1)^{2}}\left(\mathbf{I}-\frac{2}{n}\mathbf{J}_{n\times n}+n^{-2}\mathbf{J}_{n\times n}\mathbf{J}_{n\times n}\right)\end{aligned}
-> $$
-> 
-> 
-> The ijth element in $ J_{n\times n}J_{n\times n} $ is n, giving $ J_{n\times n}^{2}=nJ_{n\times n} $. Hence, the ith diagonal element of NVNV is
-> 
-> $$
-> \frac{\sigma^{4}}{(n-1)^{2}}\left(1-\frac{2}{n}+n^{-2}n\right)=\frac{\sigma^{4}}{n(n-1)}
-> $$
-> 
-> 
-> giving $ \text{tr}(\mathbf{N}\mathbf{V}\mathbf{N}\mathbf{V}) = \sigma^{4}/(n-1) $. When all of the means are equal, it follows that $ \mathbf{N}\boldsymbol{\mu} = \mathbf{0} $ and the second term in Equation A3.12b vanishes, giving
-> 
-> $$
-> \sigma^{2}[\operatorname{Var}(x)]=\frac{2\sigma^{4}}{n-1}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:4:occ2]**
 
 
 ---
@@ -1834,30 +1425,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_appendix1:5:occ2` · source: `Genetics_appendix1_032.json` · blocks 9–15
->
-> Example 5. The OLS solution for a linear model is the value of $ \beta $ that minimizes the residual sum of squares given y and X. In matrix form,
-> 
-> $$
-> \sum_{i=1}^{n}e_{i}^{2}=\mathbf{e}^{T}\mathbf{e}=(\mathbf{y}-\mathbf{X}\boldsymbol{\beta})^{T}(\mathbf{y}-\mathbf{x}\boldsymbol{\beta})
-> $$
-> 
-> 
-> Taking the derivative with respect to $ \beta $ and using Equation A3.25c (with $ \mathbf{a} = \mathbf{y} $, $ \mathbf{B} = \mathbf{X} $, and $ \mathbf{x} = \boldsymbol{\beta} $) gives
-> 
-> $$
-> \frac{\partial\mathbf{e}^{T}\mathbf{e}}{\partial\beta}=\frac{(\mathbf{y}-\mathbf{X}\boldsymbol{\beta})^{T}(\mathbf{y}-\mathbf{x}\boldsymbol{\beta})}{\partial\beta}=-2\mathbf{X}^{T}\left(\mathbf{y}-\mathbf{X}\boldsymbol{\beta}\right)
-> $$
-> 
-> 
-> Setting this equal to zero gives $ \mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = \mathbf{X}^T\mathbf{y} $, or
-> 
-> If $ X^{T}X $ is singular, a generalized inverse is used instead.
-> 
-> $$
-> \boldsymbol{\beta}=\left(\mathbf{X}^{T}\mathbf{X}\right)^{-1}\mathbf{X}^{T}\mathbf{y}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:5:occ2]**
 
 
 ---
@@ -1890,33 +1458,7 @@ for a vector of $n$ parameters. From elementary calculus it follows that the sco
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_appendix1:1:occ3` · source: `Genetics_appendix1_034.json` · blocks 5–11
->
-> Example 1. Suppose $n$ values, $z_1 \cdots z_n$, are sampled independently from an underlying normal with unknown mean $\mu$ and unit variance ($\sigma^2 = 1$). Letting $\mathbf{z} = (z_1, z_2, \cdots, z_n)$, what is the MLE for $\mu$ given $\mathbf{z}$? Since the observations are independent, the resulting probability density function for $\mathbf{z}$ is the product of $n$ normal density functions,
-> 
-> $$
-> \begin{aligned}p(\mathbf{z},\mu)&=\prod_{i=1}^{n}(2\pi)^{-1/2}\exp\left[-(z_{i}-\mu)^{2}/2\right]\\&=(2\pi)^{-n/2}\exp\left[-\sum_{i=1}^{n}(z_{i}-\mu)^{2}/2\right]\end{aligned}
-> \tag{A4.3}
-> $$
-> 
-> 
-> The log-likelihood (or support) becomes
-> 
-> $$
-> L(\mu\mid\mathbf{z})=\ln\left[\ell(\mu\mid\mathbf{z})\right]=-\left(\frac{n}{2}\right)\ln(2\pi)-\frac{1}{2}\sum_{i=1}^{n}(z_{i}-\mu)^{2}
-> \tag{A4.4}
-> $$
-> 
-> 
-> which has the score function
-> 
-> $$
-> S(\mu)=\frac{\partial L(\mu\mid\mathbf{z})}{\partial\mu}=\sum_{i=1}^{n}(z_{i}-\mu)=n(\overline{z}-\mu)
-> \tag{A4.5}
-> $$
-> 
-> 
-> Setting the score equal to zero and solving gives the MLE, $ \widehat{\mu} = \overline{z} $.
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:1:occ3]**
 
 
 ---
@@ -1943,23 +1485,7 @@ This is just the reciprocal of the curvature of the log-likelihood surface at th
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_appendix1:2:occ3` · source: `Genetics_appendix1_035.json` · blocks 7–11
->
-> Example 2. What is the large-sample variance of the MLE for $ \mu $ from Example 1?
-> 
-> $$
-> \frac{\partial^{2}L(\mu\mid\mathbf{z})}{\partial\mu^{2}}=\frac{\partial S(\mu\mid\mathbf{z})}{\partial\mu}=\frac{\partial\left(\sum_{i=1}^{n}(z_{i}-\mu)\right)}{\partial\mu}=-n
-> $$
-> 
-> 
-> Applying Equation A4.6,
-> 
-> $$
-> \sigma^{2}\left(\widehat{\mu}\right)\simeq\frac{1}{n}
-> $$
-> 
-> 
-> Using the asymptotic normality of MLEs, the approximate distribution of the MLE is $\widehat{\mu} \sim \mathrm{N}(\mu, n^{-1})$, and the resulting 95 percent confidence interval for $\mu$ is $\widehat{\mu} \pm 1.96/\sqrt{n}$.
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:2:occ3]**
 
 
 ---
@@ -2008,73 +1534,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_appendix1:3:occ3` · source: `Genetics_appendix1_036.json` · blocks 10–26
->
-> Example 3. Suppose $n$ values are sampled independently from a normal with unknown mean and variance. What are the MLEs and their sampling variances? Here $\boldsymbol{\Theta} = (\mu, \sigma)^T$. Noting that $\sum_{i=1}^n (z_i - \mu)^2 = n(\overline{z^2} - 2\overline{z}\mu + \mu^2)$, the same logic leading to Equation A4.3 shows that the log-likelihood function is
-> 
-> $$
-> L(\mu,\sigma^{2}\mid\mathbf{z})=-\left(\frac{n}{2}\right)\ln(2\pi)-\left(\frac{n}{2}\right)\ln(\sigma^{2})-\frac{n\left(\overline{z^{2}}-2\overline{z}\mu+\mu^{2}\right)}{2\sigma^{2}}
-> \tag{A4.8a}
-> $$
-> 
-> 
-> Taking derivatives, the score vector becomes
-> 
-> $$
-> \mathbf{S}(\boldsymbol{\Theta})=\begin{pmatrix}\partial L(\boldsymbol{\Theta})/\partial\mu\\ \partial L(\boldsymbol{\Theta})/\partial\sigma^{2}\end{pmatrix}=\begin{pmatrix}\frac{n}{\sigma^{2}}\end{pmatrix}\begin{pmatrix}\overline{z}-\mu\\ \frac{\overline{z^{2}}-2\overline{z}\mu+\mu^{2}}{2\sigma^{2}}-\frac{1}{2}\end{pmatrix}
-> \tag{A4.8b}
-> $$
-> 
-> 
-> Solving $ \mathbf{S}(\widehat{\boldsymbol{\Theta}})=\mathbf{0} $ gives the MLEs as
-> 
-> $$
-> \hat{\Theta}=\begin{pmatrix}\hat{\mu}\\ \cdot\\ \hat{\sigma}^{2}\end{pmatrix}=\begin{pmatrix}\overline{z}\\ \cdot\\ \overline{z^{2}}-\overline{z}^{2}\end{pmatrix}
-> \tag{A4.8c}
-> $$
-> 
-> 
-> As the first step towards computing the Hessian and Fisher matrices, the second partials are found to be
-> 
-> $$
-> \frac{\partial L^{2}}{(\partial\mu)^{2}}=-\frac{n}{\sigma^{2}},\qquad\frac{\partial L^{2}}{\partial\mu\partial\sigma^{2}}=-\frac{n(\overline{z}-\mu)}{\sigma^{4}}
-> \tag{A4.8d}
-> $$
-> 
-> 
-> $$
-> \frac{\partial L^{2}}{\left(\partial\sigma^{2}\right)^{2}}=\frac{n}{2\sigma^{4}}\left(1-\frac{2\left(\overline{z^{2}}-2\overline{z}\mu+\mu^{2}\right)}{\sigma^{2}}\right)
-> \tag{A4.8e}
-> $$
-> 
-> 
-> Since $ E(\overline{z}) = \mu $, the first two derivatives have expected values of $ -n/\sigma^2 $ and 0. Likewise, since $ E(\overline{z^2}) = \mu^2 + \sigma^2 $, the expected value of Equation A4.8e becomes
-> 
-> $$
-> E\left(\frac{\partial L^{2}}{(\partial\sigma^{2})^{2}}\right)=\frac{n}{2\sigma^{4}}\left(1-\frac{2\left(\mu^{2}+\sigma^{2}-2\mu^{2}+\mu^{2}\right)}{\sigma^{2}}\right)=-\frac{n}{2\sigma^{4}}
-> $$
-> 
-> 
-> With the above results, the Fisher matrix becomes
-> 
-> $$
-> \mathbf{F}=-E(\mathbf{H})=\begin{pmatrix}{{{\frac{n}{\sigma^{2}}}}}&{{{0}}} \\{{{0}}}&{{{\frac{n}{2\sigma^{4}}}}}\end{pmatrix}
-> $$
-> 
-> 
-> Alternatively, evaluating the derivatives at the MLE, $ \widehat{\boldsymbol{\Theta}} = (\overline{z}, \widehat{\sigma}^{2})^{T} $, Equation A4.8d gives values of $ -n/\widehat{\sigma}^{2} $ and 0, while Equation A4.8e gives $ -n/(2\widehat{\sigma}^{4}) $, so that the value of the Hessian matrix evaluated at the MLE becomes
-> 
-> $$
-> \mathbf{H}(\widehat{\boldsymbol{\Theta}})=-\begin{pmatrix}{{{\frac{n}{\widehat{\sigma}^{2}}}}}&{{{0}}} \\{{{0}}}&{{{\frac{n}{2\widehat{\sigma}^{4}}}}}\end{pmatrix}
-> $$
-> 
-> 
-> Applying Equation A4.7d gives the large-sample variances and covariance for the MLEs as
-> 
-> $$
-> \sigma^{2}(\widehat{\mu})=\sigma^{2}/n\simeq\widehat{\sigma}^{2}/n,\quad\sigma^{2}(\widehat{\sigma}^{2})=2\sigma^{4}/n\simeq2\widehat{\sigma}^{4}/n,\quad\sigma(\widehat{\mu},\widehat{\sigma}^{2})=0
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:3:occ3]**
 
 
 ---
@@ -2093,37 +1553,7 @@ where $\ell(\hat{\Theta}|\mathbf{z})$ is the likelihood evaluated at the MLE and
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_appendix1:4:occ3` · source: `Genetics_appendix1_037.json` · blocks 3–11
->
-> Example 4. Suppose we wish to test the hypothesis that $ \mu = 0 $ in Example 1. Here the MLE is $ \widehat{\mu} = \overline{z} $ and the LR test statistic becomes
-> 
-> $$
-> \begin{aligned}-2\ln\left(\frac{\ell(0\mid\mathbf{z})}{\ell(\widehat{\mu}\mid\mathbf{z})}\right)&=-2\ln\left(\frac{(2\pi)^{-n/2}\exp\left(-\sum_{i=1}^{n}(z_{i}-0)^{2}/2\right)}{(2\pi)^{-n/2}\exp\left(-\sum_{i=1}^{n}(z_{i}-\overline{z})^{2}/2\right)}\right)\\&=\sum_{i=1}^{n}\left[z_{i}^{2}-(z_{i}-\overline{z})^{2}\right]=n\overline{z}^{2}\end{aligned}
-> $$
-> 
-> 
-> This test statistic is distributed as a $ \chi^2 $ with one degree of freedom, as one parameter ( $ \mu $) was assigned a fixed value in the reduced model. Since Prob( $ \chi_1^2 > 3.84 $) = 0.05, the hypothesis $ \mu = 0 $ is rejected at the 5% level if the test statistic exceeds 3.84.
-> 
-> Now suppose we wish to test this hypothesis under the conditions of Example 3, where the variance is also unknown and hence must also be estimated. Here the MLEs for the full model are given by Equation A4.8c. Substituting $ \mu = 0 $ into Equation A4.8b gives the score function for the restricted model as
-> 
-> $$
-> \frac{\partial L(\sigma^{2})}{\partial\sigma^{2}}=\frac{n}{\sigma^{2}}\left(\frac{\overline{z^{2}}}{2\sigma^{2}}-\frac{1}{2}\right)
-> $$
-> 
-> 
-> giving the MLE for $\sigma^2$ under this restriction as $\widehat{\sigma}_r^2 = \overline{z^2}$. Substituting the MLEs into the likelihood functions, and once again using the identity $\sum(z_i - \mu)^2 = n(\overline{z^2} - 2\overline{z}\mu + \mu^2)$ gives the LR test statistic as
-> 
-> $$
-> -2\ln\left(\frac{\ell\big(0,\widehat{\sigma}_{r}^{2}\mid\mathbf{z}\big)}{\ell\big(\widehat{\mu},\widehat{\sigma}^{2}\mid\mathbf{z}\big)}\right)
-> $$
-> 
-> 
-> $$
-> \begin{aligned}=-2\ln\left(\frac{\left(\overline{z^{2}}\right)^{-n/2}\cdot\exp\left[-n\overline{z^{2}}\left/\left(2\overline{z^{2}}\right.\right)\right]}{\left(\overline{z^{2}}-\overline{z}^{2}\right)^{-n/2}\cdot\exp\left[-n\left(\overline{z^{2}}-\overline{z}^{2}\right)\left/\left(2\left(\overline{z^{2}}-\overline{z}^{2}\right)\right.\right)\right]}\right)\\ =-n\ln\left(1-\frac{\left(\overline{z}\right)^{2}}{\overline{z^{2}}}\right)\end{aligned}
-> $$
-> 
-> 
-> Again, for large samples this follows a $ \chi_{1}^{2} $ distribution as the value of one parameter is assigned a fixed value.
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:4:occ3]**
 
 
 ---
@@ -2205,25 +1635,7 @@ where $ \widehat{y}_f = X_f \widehat{\beta}_f $ and $ \widehat{y}_r = X_r \wideh
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_appendix1:5:occ3` · source: `Genetics_appendix1_039.json` · blocks 10–14
->
-> Example 5. Suppose the $ y_{i} $ values are the means of n different populations, e.g., data from a series of populations being used in a line-cross analysis (Chapter 9). Assuming the means are independent but with potentially different variances (due to differences in sample sizes, among other things), V is a diagonal matrix whose ith element is the variance of the ith mean. Denoting the variance of the ith mean by $ \operatorname{Var}(y_i) $, then recalling Equation A3.11c, the quadratic product in the LR test reduces to
-> 
-> $$
-> (\mathbf{y}-\widehat{\mathbf{y}})^{T}\widehat{\mathbf{V}}^{-1}(\mathbf{y}-\widehat{\mathbf{y}})=\sum_{i=1}^{n}\frac{(y_{i}-\widehat{y}_{i})^{2}}{\operatorname{Var}(y_{i})}
-> \tag{A4.14}
-> $$
-> 
-> 
-> Hence, the likelihood-ratio test statistic for comparing a full model with a reduced model assuming fewer effects is given by
-> 
-> $$
-> \sum_{i=1}^{n}\frac{\left[y_{i}-\widehat{y}_{i}(r)\right]^{2}}{\mathrm{Var}(y_{i})}-\sum_{i=1}^{n}\frac{\left[y_{i}-\widehat{y}_{i}(f)\right]^{2}}{\mathrm{Var}(y_{i})}
-> \tag{A4.14}
-> $$
-> 
-> 
-> which is just the difference in the $ \chi^{2} $ values for the fit of the full and reduced models. This test follows a $ \chi^{2} $ distribution with degrees of freedom given by the difference in degrees of freedom for the full and reduced models.
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:5:occ3]**
 
 
 ---
@@ -2406,46 +1818,7 @@ Using these weights, updated estimates of the means and variance are obtained as
 
 **[示例 Example]**
 
-> **Example 6** · ref: `Genetics_appendix1:6:occ2` · source: `Genetics_appendix1_044.json` · blocks 8–19
->
-> Example 6. As an example of accounting for missing marker information, consider QTL mapping in an $ F_2 $ design from an inbred-line cross (Chapter 15) using dominant markers (such as RAPDs). Suppose marker allele M is dominant to allele m, so that the observed marker genotypes are mm and M−, the later consisting of the genotypes MM and Mm. Since in the $ F_2 $, $ \Pr(M-) = \Pr(MM) + \Pr(Mm) = 3/4 $,
-> 
-> $$
-> \Pr(MM\mid M-)=\frac{\Pr(MM)}{\Pr(M-)}=\frac{(1/4)}{(3/4)}=1/3
-> $$
-> 
-> 
-> and likewise $ \Pr(Mm \mid M-) = 2/3 $. The conditional probability $ \Pr(QQ \mid M-) $ that the QTL genotype is QQ given the marker genotype is M- becomes
-> 
-> $$
-> \begin{aligned}\Pr(QQ\mid M-)&=\Pr(QQ\mid MM)\Pr(MM\mid M-)\\&\quad+\Pr(QQ\mid Mm)\Pr(Mm\mid M-)\\&=\frac{1}{3}\Pr(QQ\mid MM)+\frac{2}{3}\Pr(QQ\mid Mm)\end{aligned}
-> $$
-> 
-> 
-> From Example 1 from Chapter 15, for the $ F_2 $ design $ \Pr(QQ \mid MM) = (1 - c)^2 $ and $ \Pr(QQ \mid Mm) = c(1 - c) $, giving
-> 
-> $$
-> \Pr(QQ\mid M-)=\frac{1}{3}\left(1-c\right)^{2}+\frac{2}{3}c(1-c)=\frac{1-c^{2}}{3}
-> $$
-> 
-> 
-> Similarly, it can be shown that
-> 
-> $$
-> \Pr(Qq\mid M-)=\frac{2(1-c+c^{2})}{3}\quad and\quad\Pr(qq\mid M-)=\frac{c(2-c)}{3}
-> $$
-> 
-> 
-> Thus, for a given c value, these mixing proportions are fixed constants. Similar logic gives the values for individuals with marker genotype mm.
-> 
-> To obtain the weights for the EM method, first index the three QTL genotypes by $ k = 1, 2, 3 $ for QQ, Qq, and qq. Given a current estimate of the three QTL means $ \widehat{\mu}_{k}^{(t)} $ and variance $ \widehat{\sigma}^{2}(t) $, the updated weights are obtained from Equation A4.24. For example, the updated weight that an individual is genotype QQ given it has trait value z and marker genotype M- is
-> 
-> $$
-> \begin{aligned}w^{(t+1)}(1\mid z,\ M-,c)&=\frac{\Pr(QQ\mid M-,c)\cdot\Pr(z\mid QQ)}{\Pr(z\mid M-,c)}\\=\Pr(QQ\mid M-,c)\cdot\Pr(z\mid QQ)\bigg/\bigg[\Pr(QQ\mid M-,c)\cdot\Pr(z\mid QQ)\\+\Pr(Qq\mid M-,c)\cdot\Pr(z\mid Qq)+\Pr(qq\mid M-,c)\cdot\Pr(z\mid qq)\bigg]\\=(1-c)^{2}\cdot\varphi(z,\widehat{\mu}_{1}^{(t)},\widehat{\sigma}^{2(t)})\bigg/\bigg[(1-c)^{2}\cdot\varphi(z,\widehat{\mu}_{1}^{(t)},\widehat{\sigma}^{2(t)})\\+2(1-c+c^{2})\cdot\varphi(z,\widehat{\mu}_{2}^{(t)},\widehat{\sigma}^{2(t)})+c(2-c)\cdot\varphi(z,\widehat{\mu}_{3}^{(t)},\widehat{\sigma}^{2(t)})\bigg]\end{aligned}
-> $$
-> 
-> 
-> The probabilities of the two other QTL genotypes follow similarly, as do the weights for individuals with marker genotype $ mm $. Using these updated weights, new estimates of the means and variance are obtained from Equations A4.22b, c.
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:6:occ2]**
 
 
 ---
@@ -2634,17 +2007,7 @@ Thus, the two-sided expressions are identical to the one-sided expressions with 
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_appendix1:1:occ4` · source: `Genetics_appendix1_048.json` · blocks 14–16
->
-> Example 1. One approach for detecting QTLs using a marker locus (with alleles M and m) in inbred-line crosses is to use the test statistic $ T = \overline{z}_{MM} - \overline{z}_{mm} $, which compares the mean trait values of alternate marker homozygotes (Chapter 15). This leads to a simple t-test.
-> 
-> How powerful is this method for detecting QTLs? Assuming the marker is completely linked to the QTL, the mean of $ T $ is $ \mu_1 = 2a $, the difference between the means of alternate QTL homozygotes. As derived in Equation 15.34, $ \sigma^2(T) = \sigma_1^2 = 8(1 - r^2)\sigma_z^2/n $, where $ r^2 $ is the fraction of the total of the total character variance accounted for by this QTL and $ n $ is the total number of offspring sampled (only 1/4 of the individuals are a particular homozygote, so that the expected sample size for each homozygote marker class is $ n/4 $). Under the null hypothesis of no linked QTL, $ \mu_0 = 0 $ and $ \sigma_0^2 = 8\sigma_z^2/n $. This test is two-sided, as a significantly positive or negative $ T $ indicates a linked QTL. Substituting into Equation A5.7a with $ f_1^2 = 8(1 - r^2)\sigma_z^2 $ and $ f_0^2 = 8\sigma_z^2 $ gives the sample size required to have power $ 1 - \beta $ in a test with significant level $ \alpha $.
-> 
-> $$
-> \begin{aligned}n&=\left(\frac{\sqrt{8(1-r^{2})\sigma_{z}^{2}}}{0-2a}\right)^{2}\left(\sqrt{\frac{8\sigma_{z}^{2}}{8(1-r^{2})\sigma_{z}^{2}}}z_{(1-\alpha/2)}+z_{(1-\beta)}\right)^{2}\\&=\left(2(1-r^{2})\frac{\sigma_{z}^{2}}{a^{2}}\right)\left(\frac{z_{(1-\alpha/2)}}{\sqrt{1-r^{2}}}+z_{(1-\beta)}\right)^{2}\end{aligned}
-> \tag{A5.8}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:1:occ4]**
 
 
 One popular approach when considering possible experimental designs is to compute the sample size required to give the expected confidence interval a preset length, so that the interval given by $ \mu_1 \pm z_\alpha f_1 / \sqrt{n} $ does not include $ \mu_0 $. Here $ z_\alpha $ is the appropriate value to give an $ \alpha $-level one- or two-sided test (depending on the hypothesis being tested). Solving for $ n $,
@@ -2682,72 +2045,7 @@ This expression, which assumes single parents and single offspring, can easily b
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_appendix1:2:occ4` · source: `Genetics_appendix1_049.json` · blocks 6–24
->
-> Example 2. Suppose 200 (single) parent-offspring pairs are measured (N = 200, n = 1) for a character with $ h^2 = 0.2 $ and no epistasis or maternal effects. Assuming a test with $ \alpha = 0.05 $, what is the power of this design to detect this regression as being significant? Here $ z_{(1-0.05)} = 1.65 $ and from Chapter 7,
-> 
-> $$
-> b_{op}=r_{op}=h^{2}/2=0.1
-> $$
-> 
-> 
-> Assuming parent and offspring have equal variance, $ \sigma^{2}(z_{o}) = \sigma^{2}(z_{p}) $, Equation A5.9 gives
-> 
-> $$
-> \sigma^{2}(b_{op})=\frac{f^{2}}{N}=\frac{1-r_{op}^{2}}{N}=\frac{1-0.1^{2}}{200}=0.00495
-> $$
-> 
-> 
-> while under the null hypothesis of zero slope, $ r_{op} = 0 $ and hence $ \sigma^{2}(b_{op}) = 1/200 = 0.005 $. Equation A5.3 gives the power as
-> 
-> $$
-> \begin{aligned}\Pr\left(U>\frac{\mu_{o}-\mu_{1}}{\sigma_{1}}+z_{(1-\alpha)}\frac{\sigma_{o}}{\sigma_{1}}\right)&=\Pr\left(U>\frac{(0-0.1)}{\sqrt{0.00495}}+1.65\frac{\sqrt{0.005}}{\sqrt{0.00495}}\right)\\&=\Pr(U>0.236)=0.40\end{aligned}
-> $$
-> 
-> 
-> The false-negative rate for this design is $ \beta = 0.60 $, so that the majority of time the observed slope will not be judged to be significantly greater than zero.
-> 
-> Measuring only a single offspring per family $ (n = 1) $, how many families must be used to have 90% probability that the observed slope is significantly positive (using a test with $ \alpha = 0.05 $? To make use of Equation A5.4, first note that here $ \beta = 0.1 $, and from unit normal tables,
-> 
-> $$
-> P r(U\leq1.28)=0.9,\quad\mathrm{g i v i n g}\quad z_{(1-\beta)}=1.28
-> $$
-> 
-> 
-> hence
-> 
-> $$
-> \left(z_{(1-\alpha)}+z_{(1-\beta)}\right)^{2}=(1.65+1.28)^{2}=8.58
-> $$
-> 
-> 
-> Substituting this result into Equation A5.10 gives the required N as
-> 
-> $$
-> N=8.58\ \frac{(1-r_{op}^{2})}{b_{op}^{2}}\ \frac{\sigma^{2}(z_{o})}{\sigma^{2}(z_{p})}
-> $$
-> 
-> 
-> For a single-parent regression, $ b_{op} = r_{op} = h^{2}/2 = 0.1 $, and the required number of single-parent families is
-> 
-> $$
-> N=8.58\frac{\left(1-0.1^{2}\right)}{0.1^{2}}=850
-> $$
-> 
-> 
-> For a midparent-offspring regression, $ b_{o\overline{p}} = h^2 = 0.2 $, $ r_{o\overline{p}}^2 = b_{o\overline{p}}^2 / 2 = 0.02 $, and
-> 
-> $$
-> \frac{\sigma^{2}(z_{o})}{\sigma^{2}(z_{\overline{p}})}=\frac{\sigma^{2}(z_{o})}{\sigma^{2}(z_{p})/2}=2
-> $$
-> 
-> 
-> giving the required number of two-parent families as
-> 
-> $$
-> N=\frac{8.58\cdot2\left(1-0.02\right)}{0.2^{2}}=420
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:2:occ4]**
 
 
 ---
@@ -3053,62 +2351,7 @@ To find the sample size required to give this test power $ 1 - \beta $, we equat
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_appendix1:3:occ4` · source: `Genetics_appendix1_054.json` · blocks 19–35
->
-> Example 3. Consider a fixed-effect design with four factors (N = 4), and suppose that $ \sigma_{\tau}^2/\sigma_e^2 = 1/3 $, so that the treatment effects account for 25% of the total variance ( $ \sigma_{\tau}^2 + \sigma_e^2 $). If each treatment has a sample size of n = 5, what is the power to detect a significant treatment effect using a test of $ \alpha = 0.05 $? Here $ N(n - 1) = 16 $, and we find from F distribution tables that
-> 
-> $$
-> \Pr(F_{3,16}>3.24)=0.05
-> $$
-> 
-> 
-> so that the critical value for the test is $ F_{3,16,[0.95]} = 3.24 $. Likewise, the noncentrality parameter is
-> 
-> $$
-> \lambda=\left(N-1\right)n\left(\sigma_{\tau}^{2}/\sigma_{e}^{2}\right)=3\cdot5\cdot\left(1/3\right)=5
-> $$
-> 
-> 
-> and from noncentral F tables, the power is found to be
-> 
-> $$
-> \operatorname*{P r}(F_{3,16,5}>3.24)=0.353
-> $$
-> 
-> 
-> In the absence of noncentral $F$ tables or programs, one could instead use the normal approximation given by Equation A5.17b. Just how good is this? Here $F_{o}=3.24$, and substituting the degrees of freedom and $\lambda=5$ yields $A=1.625$ and $B=0.6075$, giving
-> 
-> $$
-> z_{o}=\frac{\sqrt{31\cdot0.6075}-\sqrt{2(3+5)-1.625}}{\sqrt{1.625+0.6075}}=.3669
-> $$
-> 
-> 
-> and hence
-> 
-> $$
-> \operatorname*{P r}(F_{3,16,5}>3.24)\simeq\operatorname*{P r}(U>0.3669)=0.357
-> $$
-> 
-> 
-> showing that this approximation works quite well.
-> 
-> What sample size n is required to give this test 90% power? Here $ \alpha = 0.05 $, $ N = 4 $, and $ \sigma_{\tau}^{2}/\sigma_{e}^{2} = 1/3 $ are fixed values. For n = 15, we find that $ N(n - 1) = 56 $,
-> 
-> $ \lambda = 15 $, and (from central F tables) $ F_{3,56,[0.95]} = 2.769 $. Substituting these values into Equation A5.23 and using noncentral F tables gives
-> 
-> $$
-> \Pr(F_{3,56,15}>2.769)=0.8957
-> $$
-> 
-> 
-> showing that a test with this sample size has a power of 89.6%. Increasing n to 16, $ N(n-1)=60 $, $ \lambda=16 $, and $ F_{3,60,[0.95]}=2.758 $, giving
-> 
-> $$
-> \operatorname{Pr}(F_{3,60,16}>2.758)=0.9167
-> $$
-> 
-> 
-> for a power of 91.7%.
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:3:occ4]**
 
 
 ---
@@ -3219,21 +2462,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_appendix1:4:occ4` · source: `Genetics_appendix1_055.json` · blocks 27–30
->
-> Example 4. Suppose we have a completely linked QTL $ (c=0) $ with $ \sigma_A^2/\sigma_e^2=0.1 $. With $ N=20 $ sires and $ n=35 $ sibs/sire, what is the power of this test to detect this QTL using a significance level of $ \alpha=0.05 $? Here $ N(n-2)=560 $, and from central F tables, we find $ F_{20,560,[0.95]}=1.589 $. Since $ \lambda=20\cdot36\cdot0.1/4=15 $, the power is
-> 
-> $$
-> \Pr(F_{20,560,15}>1.589)=0.60
-> $$
-> 
-> 
-> How many sigs are required per sire to have 90% power? Solving with increasing n values, we find that for n = 53, $ N(n-2) = 1020 $, $ F_{20,1020,[0.95]} = 1.581 $, and $ \lambda = 20 \cdot 36 \cdot 0.1 / 4 = 26.5 $ for a power of
-> 
-> $$
-> \Pr(F_{20,1020,26.5}>1.581)=0.90
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:4:occ4]**
 
 
 ---
@@ -3306,21 +2535,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_appendix1:5:occ4` · source: `Genetics_appendix1_056.json` · blocks 16–19
->
-> Example 5. Consider a random-effects model with design parameters similar to Example 3, with $ \sigma_e^2 / \sigma_e^2 = 1/3 $, $ N = 4 $, and $ n = 5 $. What is the power of this design for a test with $ \alpha = 0.05 $? Here $ F_{3,16,[0.95]} = 3.24 $ and $ 1 + n (\sigma_t^2 / \sigma_e^2) = 1 + 5/3 = 8/3 $. From Equation A5.30b, the power becomes
-> 
-> $$
-> \Pr\left(F_{3,16}>\frac{3.24}{8/3}=1.215\right)=0.103
-> $$
-> 
-> 
-> What value of $n$ is required to give 90% power? With increasing values of $n$, we find that for $n = 38$, $N(n - 1) = 148$, $1 + n(\sigma_{t}^{2}/\sigma_{e}^{2}) = 13.67$, and $F_{3,148,[0.95]} = 2.66$, giving
-> 
-> $$
-> \Pr\left(F_{3,148}>\frac{2.66}{13.67}=0.195\right)=0.90
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:5:occ4]**
 
 
 ---
@@ -3377,30 +2592,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 6** · ref: `Genetics_appendix1:6:occ3` · source: `Genetics_appendix1_057.json` · blocks 12–18
->
-> Example 6. Suppose $ h^2 = 0.25 $, so that the sire variance is $ \sigma_s^2 = h^2/4 = 0.0625 $. What is the probability of detecting a significant sire variance (with a test of $ \alpha = 0.05 $) using 10 sires, each mated to 5 dams? Here $ N = 10 $ and $ n = 5 $, and from $ F $ tables, the critical value of the test is $ F_{N-1,N(n-1),[1-\alpha]} = F_{9,40,[0.95]} = 2.12 $. Applying Equation A5.33c, the power of this design to detect a sire variance at least this large is
-> 
-> $$
-> \Pr\left[F_{9,40}>\frac{2.12}{1+5\cdot0.25/(4-0.25)}=1.59\right]=0.15
-> $$
-> 
-> 
-> Hence the power is very poor, with the test indicating a significant sire effect only 15 percent of the time.
-> 
-> If we keep the number of dams/sire constant at 5, how many sires are required to give this test 90% power? Trial and error shows that with $N = 255$ sires, the critical value becomes $F_{N-1,N(n-1),[1-\alpha]} = F_{254,1020,[0.95]} = 1.17$, and Equation A5.33c gives
-> 
-> $$
-> \Pr\left[F_{254,1020}>\frac{1.17}{1+5\cdot0.25/(4-0.25)}=0.88\right]=0.90
-> $$
-> 
-> 
-> Note from the form of Equation A5.33c that the number of dams/sire, n, appears to assert a more important role than N. Keeping N constant at 10, how many dams/sire are required to have 90% power? Again trial and error shows for n = 47 that $ F_{N-1,N(n-1),[1-\alpha]} = F_{9,460,[0.95]} = 1.90 $, and Equation A5.33c gives
-> 
-> $$
-> \Pr\left[F_{9,460}>\frac{1.90}{1+47\cdot0.25/(4-0.25)}=0.46\right]=0.90
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:6:occ3]**
 
 
 Finally, recall from Chapter 18 that if a total of $T$ individuals are measured, the optimal number of sires per dam is given by $n = 4/h^{4}$. Hence $N = T/n = Th^{2}/4$, and the power under the optimal design for $T$ individuals is
@@ -3415,9 +2607,7 @@ Table A5.1 gives the power under the optimal design for various values of T and 
 
 **[示例 Example]**
 
-> **Example 7** · ref: `Genetics_appendix1:7:occ2` · source: `Genetics_appendix1_057.json` · blocks 22–22
->
-> Example 7. For Example 6, where $ h^{2} = 0.25 $ and T = 50, the optimal number of dams/sire is $ 4/h^{2} = 16 $. Rounding up to approach T = 50, we take N = 3 and n = 17 for T = 51. Under this design, the power is computed to be 0.234. For N = 2 and N = 25 (T = 50) the power is 0.224, while for N = 4 and n = 12 (T = 48) the power is 0.211. As expected, the optimal design (n = 17) does indeed show the largest power.
+> **[UNRESOLVED EXAMPLE: Genetics_appendix1:7:occ2]**
 
 
 **[Table]**

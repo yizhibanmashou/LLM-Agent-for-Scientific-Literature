@@ -944,7 +944,9 @@ function extractDisplayMath(lines) {
 
 function resolveFigureSrc(src) {
   if (!src) return "";
-  if (/^(?:https?:)?\/\//i.test(src) || src.startsWith("/")) return src;
+  // Release data must be self-contained. Absolute or protocol-relative asset
+  // paths are not rendered, even if malformed source data reaches the client.
+  if (/^[a-z][a-z0-9+.-]*:/i.test(src) || src.startsWith("//") || src.startsWith("/")) return "";
   if (src.startsWith("figures/")) return `/data/textbook/${src}`;
   return `/data/textbook/figures/${src}`;
 }
@@ -1034,7 +1036,8 @@ function renderInline(rawValue, context = {}) {
 }
 
 function renderMathInTrustedHtml(rawHtml) {
-  return String(rawHtml || "").split(/(<[^>]+>)/g).map((part) => {
+  const safeHtml = sanitizeTableHtml(rawHtml);
+  return safeHtml.split(/(<[^>]+>)/g).map((part) => {
     if (!part || part.startsWith("<")) return part;
     const parsed = window.StudyMath?.tokenizeMath(part) || { tokens: [{ kind: "text", value: part }], diagnostics: [] };
     reportMathDiagnostics(parsed.diagnostics, part, "table");
@@ -1044,6 +1047,26 @@ function renderMathInTrustedHtml(rawHtml) {
       return `<span class="${className}" data-tex="${escapeAttribute(token.value)}"></span>`;
     }).join("");
   }).join("");
+}
+
+function sanitizeTableHtml(rawHtml) {
+  const allowedTags = new Set([
+    "TABLE", "THEAD", "TBODY", "TFOOT", "TR", "TH", "TD", "CAPTION",
+    "COLGROUP", "COL", "SPAN", "SUP", "SUB", "STRONG", "EM", "BR",
+  ]);
+  const allowedAttributes = new Set(["rowspan", "colspan", "scope"]);
+  const documentNode = new DOMParser().parseFromString(`<body>${String(rawHtml || "")}</body>`, "text/html");
+  const elements = Array.from(documentNode.body.querySelectorAll("*"));
+  elements.forEach((element) => {
+    if (!allowedTags.has(element.tagName)) {
+      element.replaceWith(documentNode.createTextNode(element.textContent || ""));
+      return;
+    }
+    Array.from(element.attributes).forEach((attribute) => {
+      if (!allowedAttributes.has(attribute.name.toLowerCase())) element.removeAttribute(attribute.name);
+    });
+  });
+  return documentNode.body.innerHTML;
 }
 
 function reportMathDiagnostics(diagnostics, source, surface) {

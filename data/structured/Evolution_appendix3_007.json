@@ -21,19 +21,129 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Simulated annealing was developed for finding the maximum of complex functions with multiple peaks where standard hill-climbing approaches may trap the algorithm on a less than optimal peak (Kirkpatrick et al. 1983). The idea is that when we initially start sampling the space, we will accept a reasonable probability of a down-hill move in order to explore the entire space. As the process proceeds, we decrease the probability of such down-hill moves. The analogy (and hence the term) is the annealing of a crystal as temperature decreases: initially there is a lot of movement, which gets smaller and smaller as the temperature cools. Simulated annealing is very closely related to Metropolis sampling, differing only in that the probability $ \\alpha $ of a move is given by $$ \\alpha_{S A}=\\min\\left[1,\\left(\\frac{f(\\theta^{*})}{f(\\theta_{t-1})}\\right)^{1/T(t)}\\right]=\\alpha^{1/T(t)} $$ where the function $ T(t) $ is called the cooling schedule (setting T = 1 recovers Metropolis sampling), and the particular value of T at any point in the chain is called the temperature. For example, suppose $ f(\\theta^*)/f(\\theta_{t-1}) = 0.5 $. If T = 100, $ \\alpha = 0.93 $, while for T = 1, $ \\alpha = 0.5 $, and for T = 1/10, $ \\alpha = 0.0098 $. Hence, we start off with a high probability of a jump and then cool down to a very low jump probability. Replacing $ \\alpha $ with the Hastings ratio (Equation A3.13) allows us to apply simulated annealing to Metropolis-Hastings."
+      "content": "Simulated annealing was developed for finding the maximum of complex functions with multiple peaks where standard hill-climbing approaches may trap the algorithm on a less than optimal peak (Kirkpatrick et al. 1983). The idea is that when we initially start sampling the space, we will accept a reasonable probability of a down-hill move in order to explore the entire space. As the process proceeds, we decrease the probability of such down-hill moves. The analogy (and hence the term) is the annealing of a crystal as temperature decreases: initially there is a lot of movement, which gets smaller and smaller as the temperature cools. Simulated annealing is very closely related to Metropolis sampling, differing only in that the probability $ \\alpha $ of a move is given by $$ \\alpha_{S A}=\\min\\left[1,\\left(\\frac{f(\\theta^{*})}{f(\\theta_{t-1})}\\right)^{1/T(t)}\\right]=\\alpha^{1/T(t)} $$ where the function $ T(t) $ is called the cooling schedule (setting T = 1 recovers Metropolis sampling), and the particular value of T at any point in the chain is called the temperature. For example, suppose $ f(\\theta^*)/f(\\theta_{t-1}) = 0.5 $. If T = 100, $ \\alpha = 0.93 $, while for T = 1, $ \\alpha = 0.5 $, and for T = 1/10, $ \\alpha = 0.0098 $. Hence, we start off with a high probability of a jump and then cool down to a very low jump probability. Replacing $ \\alpha $ with the Hastings ratio (Equation A3.13) allows us to apply simulated annealing to Metropolis-Hastings.",
+      "source_page": 1218,
+      "source_pages": [
+        1218
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p011:b3",
+        "Evolution_appendix3:p011:b4",
+        "Evolution_appendix3:p011:b5",
+        "Evolution_appendix3:p011:b7"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          308.0,
+          330.0,
+          331.0
+        ],
+        [
+          132.0,
+          338.0,
+          905.0,
+          548.0
+        ],
+        [
+          329.0,
+          564.0,
+          705.0,
+          627.0
+        ],
+        [
+          132.0,
+          647.0,
+          904.0,
+          786.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d3bb5c78e53cbc4d9c4f302ffd87144eb51b65505f54dd7c94d9dc1a22509398"
     },
     {
       "type": "discussion",
-      "content": "A function with geometric decline is typically used for $ T(t) $. For example, to start at $ T_{0} $ and cool down to a final temperature of $ T_{f} $ over n steps, we can set $$ T(t)=T_{0}\\left(\\frac{T_{f}}{T_{0}}\\right)^{t/n} $$"
+      "content": "A function with geometric decline is typically used for $ T(t) $. For example, to start at $ T_{0} $ and cool down to a final temperature of $ T_{f} $ over n steps, we can set $$ T(t)=T_{0}\\left(\\frac{T_{f}}{T_{0}}\\right)^{t/n} $$",
+      "source_page": 1218,
+      "source_pages": [
+        1218
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p011:b8",
+        "Evolution_appendix3:p011:b9"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          785.0,
+          903.0,
+          832.0
+        ],
+        [
+          431.0,
+          853.0,
+          603.0,
+          909.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0808ad8559bd1ad3a35bf18864e7a96f48c402d70b17b60d9f8eba55575411f3"
     },
     {
       "type": "discussion",
-      "content": "More generally, if we wish to cool off to $ T_{f} $ by time n and then keep the temperature constant at $ T_{f} $ for the rest of the run, we can take $$ T(t)=\\max\\left(T_{0}\\left(\\frac{T_{f}}{T_{0}}\\right)^{t/n},T_{f}\\right) $$"
+      "content": "More generally, if we wish to cool off to $ T_{f} $ by time n and then keep the temperature constant at $ T_{f} $ for the rest of the run, we can take $$ T(t)=\\max\\left(T_{0}\\left(\\frac{T_{f}}{T_{0}}\\right)^{t/n},T_{f}\\right) $$",
+      "source_page": 1218,
+      "source_pages": [
+        1218
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p011:b11",
+        "Evolution_appendix3:p011:b12"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          927.0,
+          904.0,
+          976.0
+        ],
+        [
+          380.0,
+          995.0,
+          652.0,
+          1056.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c15d17e276bbb4a22393bb75e5459a7d88889b0550000301a50cabddef1dce03"
     },
     {
       "type": "discussion",
-      "content": "In particular, to cool down to Metropolis sampling (by step n), we set $ T_{f} = 1 $ and the cooling schedule becomes $$ T(t)=\\max\\left(T_{0}^{1-t/n},1\\right) $$"
+      "content": "In particular, to cool down to Metropolis sampling (by step n), we set $ T_{f} = 1 $ and the cooling schedule becomes $$ T(t)=\\max\\left(T_{0}^{1-t/n},1\\right) $$",
+      "source_page": 1218,
+      "source_pages": [
+        1218
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p011:b14",
+        "Evolution_appendix3:p011:b15"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1076.0,
+          903.0,
+          1122.0
+        ],
+        [
+          414.0,
+          1116.0,
+          619.0,
+          1154.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "593f33bd59fa8d7bd925a62bc26348f52136c8d1ae5acd375995182cc6e13625"
     }
   ]
 }

@@ -100,20 +100,7 @@ It is important to realize that the labels “direct” and “indirect” apply
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter8:1` · source: `Genetics_chapter8_003.json` · blocks 9–13
->
-> Example 1. A morphological analysis of a pentatomid bug (Euschistus variolarius) population performed by Lande and Arnold (1983) provides a good example of the insight that can be gained from a multivariate approach. The bugs were collected along the shore of Lake Michigan after a storm. Of the 94 individuals that were recovered, 39 were alive. All individuals were measured for four characters: head and thorax width, and scutellum and forewing length. The data were then logarithmically transformed to more closely approximate normality (Chapter 11). All surviving bugs were assumed to have equal fitness (W = 1), and all dead bugs to have zero fitness (W = 0). Hence, mean fitness is the fraction p of individuals that survived, giving relative fitnesses, $ w = W / \overline{W} $, as
-> 
-> $$
-> w=\begin{cases}1/p&if the individual survived\\0&if the individual did not survive\end{cases}
-> $$
-> 
-> 
-> The selection differential for each of the characters is simply the difference between the mean phenotype of the 39 survivors and the mean of the entire sample. These are reported in units of phenotypic standard deviations in the following table, along with the partial regression coefficients of relative fitness on the four morphological characters. Here * and ** indicate significance at the 5% and 1% levels. All of the phenotypic correlations are highly significant.
-> 
-> <table><tr><td>Character</td><td>Selection Differential</td><td colspan="2">Partial Regression Coef. of Fitness</td><td colspan="3">Phenotypic Correlations</td></tr><tr><td>$ z_{i} $</td><td>$ S_{i} $</td><td>$ b_{i} $</td><td>H</td><td>T</td><td>S</td><td>F</td></tr><tr><td>Head (H)</td><td>-0.11</td><td>-0.7</td><td>1.00</td><td>0.72</td><td>0.50</td><td>0.60</td></tr><tr><td>Thorax (T)</td><td>-0.06</td><td>11.6 $ ^{**} $</td><td></td><td>1.00</td><td>0.59</td><td>0.71</td></tr><tr><td>Scutellum (S)</td><td>-0.28 $ ^{*} $</td><td>-2.8</td><td></td><td></td><td>1.00</td><td>0.62</td></tr><tr><td>Forewing (F)</td><td>-0.43 $ ^{**} $</td><td>-16.6 $ ^{**} $</td><td></td><td></td><td></td><td>1.00</td></tr></table>
-> 
-> The estimates of the partial regression coefficients nicely illustrate two points discussed earlier. First, despite the strong directional selection operating directly on thorax size, the selection differential for thorax size is negligible. This lack of apparent selection results because the positive correlation between thorax width and wing length is coupled with negative forces of selection on the latter character. Second, there is a significant negative selection differential on scutellum length even though there is no significant direct selection on the character. The negative selection differential is largely an indirect consequence of the strong selection for smaller wing length.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter8:1]**
 
 
 ---
@@ -252,42 +239,7 @@ Note that using this definition, the matrix product given by Equation 8.4 recove
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter8:2` · source: `Genetics_chapter8_009.json` · blocks 0–9
->
-> Example 2. Compute the product L = MN where
-> 
-> $$
-> \mathbf{M}=\begin{pmatrix}{{{3}}}&{{{1}}}&{{{2}}} \\{{{2}}}&{{{5}}}&{{{4}}} \\{{{1}}}&{{{1}}}&{{{2}}}\end{pmatrix}\qquad and\qquad\mathbf{N}=\begin{pmatrix}{{{4}}}&{{{1}}}&{{{0}}} \\{{{1}}}&{{{1}}}&{{{3}}} \\{{{3}}}&{{{2}}}&{{{2}}}\end{pmatrix}
-> $$
-> 
-> 
-> Writing $ \mathbf{M} = \begin{pmatrix} \mathbf{m}_{1} \\ \mathbf{m}_{2} \\ \mathbf{m}_{3} \end{pmatrix} $ and $ \mathbf{N} = (\mathbf{n}_{1} \quad \mathbf{n}_{2} \quad \mathbf{n}_{3}) $, we have
-> 
-> $$
-> \mathbf{m}_{1}=\begin{pmatrix}{{{3}}}&{{{1}}}&{{{2}}}\end{pmatrix},\quad\mathbf{m}_{2}=\begin{pmatrix}{{{2}}}&{{{5}}}&{{{4}}}\end{pmatrix},\quad\mathbf{m}_{3}=\begin{pmatrix}{{{1}}}&{{{1}}}&{{{2}}}\end{pmatrix}
-> $$
-> 
-> 
-> and
-> 
-> $$
-> \mathbf{n}_{1}=\begin{pmatrix}4\\ 1\\ 3\end{pmatrix},\quad\mathbf{n}_{2}=\begin{pmatrix}1\\ 1\\ 2\end{pmatrix},\quad\mathbf{n}_{3}=\begin{pmatrix}0\\ 3\\ 2\end{pmatrix}
-> $$
-> 
-> 
-> The resulting matrix $ \mathbf{L} $ is $ 3 \times 3 $. Applying Equation 8.6b, the element in the first row and first column of $ \mathbf{L} $ is the dot product of the first row vector of $ \mathbf{M} $ with the first column vector of $ \mathbf{N} $,
-> 
-> $$
-> \begin{aligned}L_{11}&=\mathbf{m_{1}}\cdot\mathbf{n_{1}}=\begin{pmatrix}3&1&2\end{pmatrix}\begin{pmatrix}4\\ 1\\ 3\end{pmatrix}=\sum_{k=1}^{3}M_{1k}N_{k1}\\&=M_{11}N_{11}+M_{12}N_{21}+M_{13}N_{31}=\left(3\times4\right)+\left(1\times1\right)+\left(2\times3\right)=19\end{aligned}
-> $$
-> 
-> 
-> Computing the other elements gives
-> 
-> $$
-> \mathbf{L}=\begin{pmatrix}{{{\mathbf{m}_{1}\cdot\mathbf{n}_{1}}}}&{{{\mathbf{m}_{1}\cdot\mathbf{n}_{2}}}}&{{{\mathbf{m}_{1}\cdot\mathbf{n}_{3}}}} \\{{{\mathbf{m}_{2}\cdot\mathbf{n}_{1}}}}&{{{\mathbf{m}_{2}\cdot\mathbf{n}_{2}}}}&{{{\mathbf{m}_{2}\cdot\mathbf{n}_{3}}}} \\{{{\mathbf{m}_{3}\cdot\mathbf{n}_{1}}}}&{{{\mathbf{m}_{3}\cdot\mathbf{n}_{2}}}}&{{{\mathbf{m}_{3}\cdot\mathbf{n}_{3}}}}\end{pmatrix}=\begin{pmatrix}{{{19}}}&{{{8}}}&{{{7}}} \\{{{25}}}&{{{15}}}&{{{23}}} \\{{{11}}}&{{{6}}}&{{{7}}}\end{pmatrix}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter8:2]**
 
 
 Certain dimensional properties must be satisfied when two matrices are to be multiplied. Specifically, since the dot product is defined only for vectors of the same length, for the matrix product MN to be defined, the number of columns in M must equal the number of rows in N. Thus, while
@@ -428,49 +380,7 @@ If $ ad = bc $, the inverse does not exist, as division by zero is undefined.
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter8:3` · source: `Genetics_chapter8_011.json` · blocks 16–27
->
-> Example 3. Consider the multiple regression of $y$ on two predictor variables, $z_1$ and $z_2$, so that $y = \alpha + \beta_1 z_1 + \beta_2 z_2 + e$. In the notation of Equation 8.5, we have
-> 
-> $$
-> \mathbf{c}=\begin{pmatrix}\sigma(y,z_{1})\\ \sigma(y,z_{2})\end{pmatrix}\qquad\mathbf{V}=\begin{pmatrix}\sigma^{2}(z_{1})&\sigma(z_{1},z_{2})\\ \sigma(z_{1},z_{2})&\sigma^{2}(z_{2})\end{pmatrix}
-> $$
-> 
-> 
-> Recalling that $ \sigma(z_{1}, z_{2}) = \rho_{12} \sigma(z_{1}) \sigma(z_{2}) $, Equation 8.11 gives
-> 
-> $$
-> \mathbf{V}^{-1}=\frac{1}{\sigma^{2}(z_{1})\sigma^{2}(z_{2})\left(1-\rho_{12}^{2}\right)}\begin{pmatrix}\sigma^{2}(z_{2})&-\sigma(z_{1},z_{2})\\-\sigma(z_{1},z_{2})&\sigma^{2}(z_{1})\end{pmatrix}
-> $$
-> 
-> 
-> The inverse exists provided both characters have nonzero variance and are not completely correlated ( $ |\rho_{12}| \neq 1 $). Recalling Equation 8.10b, the partial regression coefficients are given by $ \boldsymbol{\beta} = \mathbf{V}^{-1} \mathbf{c} $, or
-> 
-> $$
-> \begin{pmatrix}\beta_{1}\\\beta_{2}\end{pmatrix}=\frac{1}{\sigma^{2}(z_{1})\sigma^{2}(z_{2})\left(1-\rho_{12}^{2}\right)}\begin{pmatrix}\sigma^{2}(z_{2})&-\sigma(z_{1},z_{2})\\-\sigma(z_{1},z_{2})&\sigma^{2}(z_{1})\end{pmatrix}\begin{pmatrix}\sigma(y,z_{1})\\\sigma(y,z_{2})\end{pmatrix}
-> $$
-> 
-> 
-> Again using $ \sigma(z_{1}, z_{2}) = \rho_{12} \sigma(z_{1}) \sigma(z_{2}) $, this equation reduces to
-> 
-> $$
-> \beta_{1}=\frac{1}{1-\rho_{12}^{2}}\left[\frac{\sigma(y,z_{1})}{\sigma^{2}(z_{1})}-\rho_{12}\frac{\sigma(y,z_{2})}{\sigma(z_{1})\sigma(z_{2})}\right]
-> $$
-> 
-> 
-> and
-> 
-> $$
-> \beta_{2}=\frac{1}{1-\rho_{12}^{2}}\left[\frac{\sigma(y,z_{2})}{\sigma^{2}(z_{2})}-\rho_{12}\frac{\sigma(y,z_{1})}{\sigma(z_{1})\sigma(z_{2})}\right]
-> $$
-> 
-> 
-> Note that only when the predictor variables are uncorrelated ( $ \rho_{12} = 0 $), do the partial regression coefficients $ \beta_{1} $ and $ \beta_{2} $ reduce to the univariate regression slopes,
-> 
-> $$
-> \beta_{1}=\frac{\sigma(y,z_{1})}{\sigma^{2}(z_{1})}\quad and\quad\beta_{2}=\frac{\sigma(y,z_{2})}{\sigma^{2}(z_{2})}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter8:3]**
 
 
 ---
@@ -508,30 +418,7 @@ The next section shows how determinants are used in the computation of a matrix 
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter8:4` · source: `Genetics_chapter8_013.json` · blocks 0–6
->
-> Example 4. Compute the determinant of
-> 
-> $$
-> \mathbf{A}=\begin{pmatrix}{{{1}}}&{{{1}}}&{{{1}}} \\{{{1}}}&{{{3}}}&{{{2}}} \\{{{1}}}&{{{2}}}&{{{1}}}\end{pmatrix}
-> $$
-> 
-> 
-> Letting $i = 1$, i.e., using the elements in the first row of A,
-> 
-> $$
-> \left|\mathbf{A}\right|=1\cdot\left(-1\right)^{1+1}\left|\begin{matrix}{{{3}}}&{{{2}}} \\{{{2}}}&{{{1}}}\end{matrix}\right|+1\cdot\left(-1\right)^{1+2}\left|\begin{matrix}{{{1}}}&{{{2}}} \\{{{1}}}&{{{1}}}\end{matrix}\right|+1\cdot\left(-1\right)^{1+3}\left|\begin{matrix}{{{1}}}&{{{3}}} \\{{{1}}}&{{{2}}}\end{matrix}\right|
-> $$
-> 
-> 
-> Using Equation 8.12a to obtain the determinants of the $ 2 \times 2 $ matrices, this simplifies to
-> 
-> $$
-> \left|\mathbf{A}\right|=\left[1\times(3-4)\right]-\left[1\times(1-2)\right]+\left[1\times(2-3)\right]=-1
-> $$
-> 
-> 
-> The same answer is obtained regardless of which row is used, and expanding around a column, instead of a row, produces the same result. Thus, in order to reduce the number of computations required to obtain a determinant, it is useful to expand using the row or column that contains the most zeros.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter8:4]**
 
 
 ---
@@ -554,69 +441,7 @@ where $ A_{ij}^{-1} $ denotes the $ ij $th element of $ A^{-1} $, and $ A_{ij} $
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_chapter8:5` · source: `Genetics_chapter8_015.json` · blocks 0–15
->
-> Example 5. Compute the inverse of
-> 
-> $$
-> \mathbf{A}=\begin{pmatrix}{{{3}}}&{{{1}}}&{{{2}}} \\{{{2}}}&{{{5}}}&{{{4}}} \\{{{1}}}&{{{1}}}&{{{2}}}\end{pmatrix}
-> $$
-> 
-> 
-> First, find the determinants of the minors,
-> 
-> $$
-> \left|\mathbf{A}_{11}\right|=\left|\begin{matrix}{{{5}}}&{{{4}}} \\{{{1}}}&{{{2}}}\end{matrix}\right|=6\qquad\left|\mathbf{A}_{23}\right|=\left|\begin{matrix}{{{3}}}&{{{1}}} \\{{{1}}}&{{{1}}}\end{matrix}\right|=2
-> $$
-> 
-> 
-> $$
-> \left|\mathbf{A}_{12}\right|=\left|\begin{matrix}{{{2}}}&{{{4}}} \\{{{1}}}&{{{2}}}\end{matrix}\right|=0\qquad\left|\mathbf{A}_{31}\right|=\left|\begin{matrix}{{{1}}}&{{{2}}} \\{{{5}}}&{{{4}}}\end{matrix}\right|=-6
-> $$
-> 
-> 
-> $$
-> \left|\mathbf{A}_{13}\right|=\left|\begin{matrix}{{{2}}}&{{{5}}} \\{{{1}}}&{{{1}}}\end{matrix}\right|=-3\qquad\left|\mathbf{A}_{32}\right|=\left|\begin{matrix}{{{3}}}&{{{2}}} \\{{{2}}}&{{{4}}}\end{matrix}\right|=8
-> $$
-> 
-> 
-> $$
-> \left|\mathbf{A}_{21}\right|=\left|\begin{matrix}{{{1}}}&{{{2}}} \\{{{1}}}&{{{2}}}\end{matrix}\right|=0\qquad\left|\mathbf{A}_{33}\right|=\left|\begin{matrix}{{{3}}}&{{{1}}} \\{{{2}}}&{{{5}}}\end{matrix}\right|=13
-> $$
-> 
-> 
-> $$
-> \left|\mathbf{A}_{22}\right|=\left|\begin{matrix}{{{3}}}&{{{2}}} \\{{{1}}}&{{{2}}}\end{matrix}\right|=4
-> $$
-> 
-> 
-> Using Equation 8.12b and expanding using the first row of A gives
-> 
-> $$
-> \left|\mathbf{A}\right|=3\left|\mathbf{A}_{11}\right|-\left|\mathbf{A}_{12}\right|+2\left|\mathbf{A}_{13}\right|=12
-> $$
-> 
-> 
-> Returning to the matrix in brackets in Equation 8.13, we obtain
-> 
-> $$
-> \frac{1}{12}\begin{pmatrix}1\times6&-1\times0&1\times-3\\-1\times0&1\times4&-1\times2\\1\times-6&-1\times8&1\times13\end{pmatrix}=\frac{1}{12}\begin{pmatrix}6&0&-3\\0&4&-2\\-6&-8&13\end{pmatrix}
-> $$
-> 
-> 
-> and then taking the transpose,
-> 
-> $$
-> \mathbf{A}^{-1}=\frac{1}{12}\begin{pmatrix}6&0&-6\\0&4&-8\\-3&-2&13\end{pmatrix}
-> $$
-> 
-> 
-> To verify that this is indeed the inverse of A, multiply $ A^{-1} $ by A,
-> 
-> $$
-> \frac{1}{12}\left(\begin{array}{ccc}{{{6}}}&{{{0}}}&{{{-6}}} \\{{{0}}}&{{{4}}}&{{{-8}}} \\{{{-3}}}&{{{-2}}}&{{{13}}} \\\end{array}\right)\left(\begin{array}{ccc}{{{3}}}&{{{1}}}&{{{2}}} \\{{{2}}}&{{{5}}}&{{{4}}} \\{{{1}}}&{{{1}}}&{{{2}}} \\\end{array}\right)=\frac{1}{12}\left(\begin{array}{ccc}{{{12}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{12}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{12}}} \\\end{array}\right)=\left(\begin{array}{ccc}{{{1}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}} \\{{{0}}}&{{{0}}}&{{{1}}} \\\end{array}\right)
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter8:5]**
 
 
 ---
@@ -878,72 +703,12 @@ $$
 
 **[示例 Example]**
 
-> **Example 6** · ref: `Genetics_chapter8:6` · source: `Genetics_chapter8_019.json` · blocks 19–28
->
-> Example 6. Consider the regression of the phenotypic value of an offspring $ (z_{o}) $ on that of its parents $ (z_{s} $ and $ z_{d} $ for sire and dam, respectively). Assume that the joint distribution of $ z_{o} $, $ z_{s} $, and $ z_{d} $ is multivariate normal. For the simplest case of noninbred and unrelated parents, no epistasis or genotype-environment correlation, the covariance matrix can be obtained from the theory of correlation between relatives (Chapter 7), giving the joint distribution as
-> 
-> $$
-> \left(\begin{array}{l}{{{z_{o}}}} \\{{{z_{s}}}} \\{{{z_{d}}}}\end{array}\right)\sim\mathrm{M V N}\left[\left(\begin{array}{l}{{{\mu_{o}}}} \\{{{\mu_{s}}}} \\{{{\mu_{d}}}}\end{array}\right),\sigma_{z}^{2}\left(\begin{array}{c c c}{{{1}}}&{{{h^{2}/2}}}&{{{h^{2}/2}}} \\{{{h^{2}/2}}}&{{{1}}}&{{{0}}} \\{{{h^{2}/2}}}&{{{0}}}&{{{1}}}\end{array}\right)\right]
-> $$
-> 
-> 
-> Let
-> 
-> $$
-> \mathbf{x}_{1}=\left(z_{o}\right),\quad\mathbf{x}_{2}=\begin{pmatrix}z_{s}\\ z_{d}\end{pmatrix}
-> $$
-> 
-> 
-> giving
-> 
-> $$
-> \mathbf{V}_{\mathbf{X}_{1},\mathbf{X}_{1}}=\sigma_{z}^{2},\quad\mathbf{V}_{\mathbf{X}_{1},\mathbf{X}_{2}}=\frac{h^{2}\sigma_{z}^{2}}{2}\left(\begin{matrix}{1}&{1}\\ \end{matrix}\right),\quad\mathbf{V}_{\mathbf{X}_{2},\mathbf{X}_{2}}=\sigma_{z}^{2}\left(\begin{matrix}{1}&{0}\\ {0}&{1}\\ \end{matrix}\right)
-> $$
-> 
-> 
-> From Equation 8.29a, the regression of offspring value on parental values is linear and homoscedastic with
-> 
-> $$
-> \begin{aligned}z_{o}&=\mu_{o}+\frac{h^{2}\sigma_{z}^{2}}{2}\left(1\quad1\right)\sigma_{z}^{-2}\begin{pmatrix}{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}}\end{pmatrix}\begin{pmatrix}{{{z_{s}-\mu_{s}}}} \\{{{z_{d}-\mu_{d}}}}\end{pmatrix}+e\\&=\mu_{o}+\frac{h^{2}}{2}\left(z_{s}-\mu_{s}\right)+\frac{h^{2}}{2}\left(z_{d}-\mu_{d}\right)+e\end{aligned}
-> \tag{8.30a}
-> $$
-> 
-> 
-> where, from Equations 8.28 and 8.29b, the residual error is normally distributed with mean zero and variance
-> 
-> $$
-> \begin{aligned}\sigma_{e}^{2}&=\sigma_{z}^{2}-\frac{h^{2}\sigma_{z}^{2}}{2}\left(1\quad1\right)\sigma_{z}^{-2}\begin{pmatrix}{{{1}}}&{{{0}}} \\{{{0}}}&{{{1}}}\end{pmatrix}\frac{h^{2}\sigma_{z}^{2}}{2}\begin{pmatrix}{{{1}}} \\{{{1}}}\end{pmatrix}\\&=\sigma_{z}^{2}\left(1-\frac{h^{4}}{2}\right)\end{aligned}
-> \tag{8.30b}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter8:6]**
 
 
 **[示例 Example]**
 
-> **Example 7** · ref: `Genetics_chapter8:7` · source: `Genetics_chapter8_019.json` · blocks 29–34
->
-> Example 7. The previous example dealt with the prediction of the phenotypic value of an offspring given parental phenotypic values. The same approach can be used to predict an offspring’s additive genetic value $ A_{o} $ given knowledge of the parental values $ (A_{s}, A_{d}) $. Again assuming that the joint distribution is multivariate normal and that the parents are unrelated and noninbred, the joint distribution can be written as
-> 
-> $$
-> \begin{pmatrix}A_o\\A_s\\A_d\end{pmatrix}\sim\mathrm{MVN}\left[\begin{pmatrix}\mu_o\\\mu_s\\\mu_d\end{pmatrix},\sigma_A^2\begin{pmatrix}1&1/2&1/2\\1/2&1&0\\1/2&0&1\end{pmatrix}\right]
-> $$
-> 
-> 
-> Proceeding in the same fashion as in Example 6, the conditional distribution of offspring additive genetic values, given the parental values, is normal, so that the regression of offspring additive genetic value on parental value is linear and homoscedastic with
-> 
-> $$
-> A_{o}=\mu_{o}+\frac{A_{s}-\mu_{s}}{2}+\frac{A_{d}-\mu_{d}}{2}+e
-> \tag{8.31a}
-> $$
-> 
-> 
-> and
-> 
-> $$
-> e\sim\mathrm{N}(0,\sigma_{A}^{2}/2)
-> \tag{8.31b}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter8:7]**
 
 
 ---
@@ -993,28 +758,7 @@ where the design or incidence matrix X is $ n \times p $, and e is the vector of
 
 **[示例 Example]**
 
-> **Example 8** · ref: `Genetics_chapter8:8` · source: `Genetics_chapter8_020.json` · blocks 12–17
->
-> Example 8. Suppose that three different sires used in the above half-sib design have two, one, and three offspring, respectively. This can be expressed in GLM form, $ \mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{e} $ with
-> 
-> $$
-> \mathbf{y}=\begin{pmatrix}{{{y_{11}}}} \\{{{y_{12}}}} \\{{{y_{21}}}} \\{{{y_{31}}}} \\{{{y_{32}}}} \\{{{y_{33}}}}\end{pmatrix},\quad\mathbf{X}=\begin{pmatrix}{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}} \\{{{1}}}&{{{1}}}&{{{0}}}&{{{0}}} \\{{{1}}}&{{{0}}}&{{{1}}}&{{{0}}} \\{{{1}}}&{{{0}}}&{{{0}}}&{{{1}}} \\{{{1}}}&{{{0}}}&{{{0}}}&{{{1}}} \\{{{1}}}&{{{0}}}&{{{0}}}&{{{1}}}\end{pmatrix},\quad\boldsymbol{\beta}=\begin{pmatrix}{{{\mu}}} \\{{{s_{1}}}} \\{{{s_{2}}}} \\{{{s_{3}}}}\end{pmatrix},\quad and\quad\mathbf{e}=\begin{pmatrix}{{{e_{11}}}} \\{{{e_{12}}}} \\{{{e_{21}}}} \\{{{e_{31}}}} \\{{{e_{32}}}} \\{{{e_{33}}}}\end{pmatrix}
-> $$
-> 
-> 
-> Likewise, the multiple regression
-> 
-> $$
-> y_{i}=\alpha+\sum_{j=1}^{p}\beta_{j}x_{ij}+e_{i}
-> $$
-> 
-> 
-> can be written in GLM form with
-> 
-> $$
-> \mathbf{y}=\begin{pmatrix}y_{1}\\\vdots\\y_{n}\end{pmatrix},\quad\mathbf{X}=\begin{pmatrix}1&x_{11}&\cdots&x_{1p}\\1&x_{21}&\cdots&x_{2p}\\\vdots&\vdots&\ddots&\vdots\\1&x_{n1}&\cdots&x_{np}\end{pmatrix},\quad\boldsymbol{\beta}=\begin{pmatrix}\alpha\\\beta_{1}\\\vdots\\\beta_{p}\end{pmatrix},\quad and\quad\mathbf{e}=\begin{pmatrix}e_{1}\\\vdots\\e_{n}\end{pmatrix}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter8:8]**
 
 
 ---
@@ -1060,79 +804,12 @@ If the residuals follow a multivariate normal distribution with $ e \sim MVN(0, 
 
 **[示例 Example]**
 
-> **Example 9** · ref: `Genetics_chapter8:9` · source: `Genetics_chapter8_021.json` · blocks 11–17
->
-> Example 9. Consider a univariate regression where the predictor and response variable both have expected mean zero, so that the regression passes through the origin. The appropriate model becomes
-> 
-> $$
-> y_{i}=\beta x_{i}+e_{i}
-> $$
-> 
-> 
-> With observations on $n$ individuals, this relationship can be written in GLM form with $\boldsymbol{\beta} = \boldsymbol{\beta}$ and design matrix $\mathbf{X} = (x_{1}, x_{2}, \cdots x_{n})^{T}$, implying
-> 
-> $$
-> \mathbf{X}^{T}\mathbf{X}=\sum_{i=1}^{n}x_{i}^{2}\qquad\mathrm{a n d}\qquad\mathbf{X}^{T}\mathbf{y}=\sum_{i=1}^{n}x_{i}y_{i}
-> $$
-> 
-> 
-> Applying Equations 8.33a,b gives the OLS estimate of $ \beta $ and its sample variance (assuming the covariance matrix of e is $ \mathbf{I} \cdot \sigma_e^2 $) as
-> 
-> $$
-> \boldsymbol{b}=\left(\mathbf{X}^{T}\mathbf{X}\right)^{-1}\mathbf{X}^{T}\mathbf{y}=\frac{\sum x_{i}y_{i}}{\sum x_{i}^{2}},\qquad\sigma^{2}(b)=\left(\mathbf{X}^{T}\mathbf{X}\right)^{-1}\sigma_{e}^{2}=\frac{\sigma_{e}^{2}}{\sum x_{i}^{2}}
-> $$
-> 
-> 
-> This estimate of $ \beta $ differs from the standard univariate regression slope (Equation 3.14b) where the intercept value is not assumed to be equal to zero.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter8:9]**
 
 
 **[示例 Example]**
 
-> **Example 10** · ref: `Genetics_chapter8:10` · source: `Genetics_chapter8_021.json` · blocks 18–30
->
-> Example 10. Recall from Equation 8.10b that the vector of partial regression coefficients for a multivariate regression is defined to be $ \mathbf{b} = \mathbf{V}^{-1} \mathbf{c} $ (where $ \mathbf{V} $ is the estimated covariance matrix, and $ \mathbf{c} $ is the vector of estimated covariances between $ \mathbf{y} $ and $ \mathbf{z} $). Here we show that this expression is equivalent to the OLS estimator $ \mathbf{b} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y} $. Using the notation from Example 8, for the ith individual we observe $ y_i $ and the values of $ p $ predictor variables, $ z_{i1}, \cdots, z_{ip} $. Since the regression satisfies $ \bar{y} = \alpha + \beta_1 \bar{z}_1 + \cdots + \beta_p \bar{z}_p $, subtracting the mean from each observation removes the intercept, with
-> 
-> $$
-> y_{i}^{*}=\left(y_{i}-\bar{y}\right)=\beta_{1}(z_{i1}-\bar{z}_{1})+\cdots+\beta_{p}(z_{ip}-\bar{z}_{p})+e_{i}
-> $$
-> 
-> 
-> For $n$ observations, the resulting linear model $\mathbf{y}^{*}=\mathbf{X}\boldsymbol{\beta}+\mathbf{e}$ has
-> 
-> $$
-> \mathbf{y}^{*}=\begin{pmatrix}y_{1}-\overline{y}\\ \vdots\\ y_{n}-\overline{y}\end{pmatrix},\quad\boldsymbol{\beta}=\begin{pmatrix}\beta_{1}\\ \vdots\\ \beta_{p}\end{pmatrix},\quad\mathbf{X}=\begin{pmatrix}(z_{11}-\bar{z}_{1})&\cdots&(z_{1p}-\bar{z}_{p})\\ \vdots&\ddots&\vdots\\ (z_{n1}-\bar{z}_{1})&\cdots&(z_{np}-\bar{z}_{p})\end{pmatrix}
-> $$
-> 
-> 
-> where $ z_{ij} $ is the value of character j in the ith individual. Partitioning the design matrix $ \mathbf{X} $ into p column vectors corresponding to the n observations on each of the p predictor variables gives
-> 
-> $$
-> \mathbf{X}=\left(\mathbf{x}_{1},\quad\cdots,\quad\mathbf{x}_{p}\right)\quad where\quad\mathbf{x}_{j}=\begin{pmatrix}z_{1j}-\bar{z}_{j}\\z_{2j}-\bar{z}_{j}\\\vdots\\z_{nj}-\bar{z}_{j}\end{pmatrix}
-> $$
-> 
-> 
-> giving the jth element of the vector $ \mathbf{X}^t \mathbf{y}^* $ as
-> 
-> $$
-> \left(\mathbf{X}^{T}\mathbf{y}^{*}\right)_{j}=\mathbf{x}_{j}^{T}\mathbf{y}^{*}=\sum_{i=1}^{n}(y_{i}-\bar{y})(z_{ij}-\bar{z}_{j})=(n-1)\mathrm{Cov}(y,z_{j})
-> $$
-> 
-> 
-> and implying $ \mathbf{X}^T \mathbf{y}^* = (n - 1) \mathbf{c} $. Likewise, the $ j $th element of $ \mathbf{X}^T \mathbf{X} $ is
-> 
-> $$
-> \mathbf{x}_{j}^{T}\mathbf{x}_{k}=\sum_{i=1}^{n}(z_{ij}-\bar{z}_{j})(z_{ik}-\bar{z}_{k})=(n-1)\mathbf{Cov}(z_{j},z_{k})
-> $$
-> 
-> 
-> implying $ \mathbf{X}^T\mathbf{X} = (n - 1)\mathbf{V} $. Putting these results together gives
-> 
-> $$
-> (\mathbf{X}^{T}\mathbf{X})^{-1}\mathbf{X}^{T}\mathbf{y}^{*}=\mathbf{V}^{-1}\mathbf{c}
-> $$
-> 
-> 
-> showing that Equation 8.10b does indeed give the OLS estimates of the partial regression coefficients.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter8:10]**
 
 
 ---
@@ -1169,82 +846,7 @@ If residuals are independent and homoscedastic, $ \mathbf{R} = \mathbf{I} $, and
 
 **[示例 Example]**
 
-> **Example 11** · ref: `Genetics_chapter8:11` · source: `Genetics_chapter8_022.json` · blocks 8–25
->
-> Example 11. A common situation requiring weighted least-squares analysis occurs when residuals are independent but heteroscedastic with $ \sigma^2(e_i) = \sigma_e^2/w_i $, where $ w_i $ are known positive constants. For example, if each observation $ y_i $ is the mean of $ n_i $ independent observations (each with uncorrelated residuals with variance $ \sigma_e^2 $), then $ \sigma^2(e_i) = \sigma_e^2/n_i $, and hence $ w_i = n_i $. Here
-> 
-> $$
-> \mathbf{R}=\mathrm{D i a g}(w_{1}^{-1},w_{2}^{-1},\ldots,w_{n}^{-1})
-> $$
-> 
-> 
-> where Diag denotes a diagonal matrix, giving
-> 
-> $$
-> \mathbf{R}^{-1}=\mathbf{D i a g}(w_{1},w_{2},\ldots,w_{n})
-> $$
-> 
-> 
-> With this residual variance structure, consider the weighted least-squares estimate for the simple univariate regression model $ y = \alpha + \beta x + e $. In GLM form,
-> 
-> $$
-> \mathbf{y}=\begin{pmatrix}y_{1}\\\vdots\\y_{n}\end{pmatrix},\qquad\mathbf{X}=\begin{pmatrix}1&x_{1}\\\vdots&\vdots\\1&x_{n}\end{pmatrix},\qquad and\qquad\boldsymbol{\beta}=\begin{pmatrix}\alpha\\\boldsymbol{\beta}\end{pmatrix}
-> $$
-> 
-> 
-> Define the following weighted means and cross products,
-> 
-> $$
-> w=\sum_{i=1}^{n}w_{i},\quad\overline{x}_{w}=\sum_{i=1}^{n}\frac{w_{i}x_{i}}{w},\quad\overline{x^{2}}_{w}=\sum_{i=1}^{n}\frac{w_{i}x_{i}^{2}}{w}
-> $$
-> 
-> 
-> $$
-> \overline{y}_{w}=\sum_{i=1}^{n}\frac{w_{i}y_{i}}{w},\quad\overline{x}\overline{y}_{w}=\sum_{i=1}^{n}\frac{w_{i}x_{i}y_{i}}{w}
-> $$
-> 
-> 
-> With these definitions, matrix multiplication and a little simplification give
-> 
-> $$
-> \mathbf{X}^{T}\mathbf{R}^{-1}\mathbf{y}=w\begin{pmatrix}\overline{y}_{w}\\ \\\overline{x}\overline{y}_{w}\end{pmatrix}\qquad and\qquad\mathbf{X}^{T}\mathbf{R}^{-1}\mathbf{X}=w\begin{pmatrix}1&\overline{x}_{w}\\ \\\overline{x}_{w}&\overline{x^{2}}_{w}\end{pmatrix}
-> \tag{8.36a}
-> $$
-> 
-> 
-> Applying Equation 8.34, the GLS estimates of $ \alpha $ and $ \beta $ are
-> 
-> $$
-> a=\overline{y}_{w}-b\overline{x}_{w}
-> \tag{8.36a}
-> $$
-> 
-> 
-> $$
-> b=\frac{\overline{xy}_{w}-\overline{x}_{w}\overline{y}_{w}}{\overline{x}^{2}_{w}-\overline{x}^{2}_{w}}
-> \tag{8.36b}
-> $$
-> 
-> 
-> If all weights are equal ( $ w_{i} = c $), these expressions reduce to the standard (OLS) least-squares estimators given by Equation 3.14. Applying Equation 8.35, the sampling variances and covariance for these estimates are
-> 
-> $$
-> \sigma^{2}(a)=\frac{\sigma_{e}^{2}\cdot\overline{x^{2}}_{w}}{w\left(\overline{x^{2}}_{w}-\overline{x}_{w}^{2}\right)}
-> \tag{8.37a}
-> $$
-> 
-> 
-> $$
-> \sigma^{2}(b)=\frac{\sigma_{e}^{2}}{w\left(\overline{x^{2}}_{w}-\overline{x}_{w}^{2}\right)}
-> \tag{8.37b}
-> $$
-> 
-> 
-> $$
-> \sigma(a,b)=\frac{-\sigma_{e}^{2}\overline{x}_{w}}{w\left(\overline{x^{2}}_{w}-\overline{x}_{w}^{2}\right)}
-> \tag{8.37c}
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter8:11]**
 
 
 ---

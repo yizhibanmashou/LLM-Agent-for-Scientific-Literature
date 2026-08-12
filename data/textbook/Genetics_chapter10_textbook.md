@@ -116,9 +116,7 @@ where $\mu_0 = 2ap(1 + qk)$ is the mean genotypic value in the randomly mating b
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter10:1` · source: `Genetics_chapter10_003.json` · blocks 3–3
->
-> Example 1. A large empirical study with the flour beetle Tribolium castaneum provides some perspective on this principle. López-Fanjul and Jódar (1977) derived 105 lines from a large base population and maintained them by single brother-sister matings for 8 generations (to f = 0.785). Despite the large sample sizes, the authors could find no evidence that inbreeding causes a shift in the mean rate of egg laying by virgin females at 33 or 28°C. Independent estimates of the heritabilities for these traits, obtained by full-sib correlation and daughter-mother regression, were 0.34 ± 0.02 and 0.33 ± 0.01 at 33°C, and 0.33 ± 0.02 and 0.26 ± 0.02 at 28°C. Recalling from Chapter 7 that heritabilities estimated from full-sib analysis are inflated by dominance genetic variance relative to those obtained by parent-offspring analysis, only for the second temperature is there any evidence of dominance genetic variance, and this is slight. Thus, the absence of inbreeding depression for rate of egg laying by virgins is not surprising. However, the study population was not immune to the effects of inbreeding, since two other traits, the rate of egg laying by fertilized females and egg viability, exhibited substantial declines with inbreeding.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter10:1]**
 
 
 Since inbreeding depression is a consequence of nonlinear interactions between gene effects, it stands to reason that epistasis may complicate matters. However, provided the base population is in gametic phase equilibrium, only epistasis involving dominance contributes to inbreeding depression within populations (Anderson and Kempthorne 1954, Bulmer 1980, Hill 1982a, Lynch 1991). This result arises because although inbreeding causes a change in genotypic frequencies within loci, in the absence of selection and gametic phase disequilibrium, it does not alter the gametic frequencies in the population. With this in mind, a general expression for inbreeding depression can be acquired as follows.
@@ -310,11 +308,7 @@ Many of the preceding statistical problems can be avoided when data are availabl
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter10:2` · source: `Genetics_chapter10_006.json` · blocks 16–17
->
-> Example 2. Consider an experimental design in which the means of $L = 10$ full-sib mated lines are assayed from generation 0 with $f = 0$ to generation
-> 
-> 9 with $f(k) = 0.859$ (obtained using Equation 10.5b). Reading off Figure 10.5 at $f(k) = 0.859$, we find the point on the ordinate to be 2.5. The expected sampling variance of the slope $I$ under the null model of no inbreeding depression is obtained by multiplying 2.5 by $\sigma_A^2 / L$, which gives $\sigma_A^2 / 4$. If an estimate of $\sigma_A^2$ is available, then in this case, two standard errors of the slope is estimated by $\sqrt{\mathrm{Var}(A)}$. Since our treatment ignores environmental sources of variance, it is clear that with this design any regression coefficient whose absolute value is less than the square root of the additive genetic variance in the base population must be considered consistent with the null model of no inbreeding depression.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter10:2]**
 
 
 ---
@@ -637,7 +631,7 @@ Hedrick (1987b) has reviewed the extensive literature on genetic load in ferns. 
 >
 > Species | B | Reference
 > --- | --- | ---
-> Conifers |  | 
+> Conifers |  |
 > Nobel fir (Abies procera) | 1.7 | Sorensen et al. 1976
 > Tamarack (Larix laricina) | 5.4 | Park and Fowler 1982
 > Norway spruce (Picea abies) | 4.8 | Koski 1971
@@ -651,7 +645,7 @@ Hedrick (1987b) has reviewed the extensive literature on genetic load in ferns. 
 >  | 4.8 | Bishir and Namkoong 1987
 > Virginia pine (Pinus virginiana) | 5.0 | Bishir and Namkoong 1987
 > Douglas fir (Pseudotsuga menziesii) | 5.0 | Sorensen 1969
-> Short-lived angiosperms |  | 
+> Short-lived angiosperms |  |
 > Begonia hirsuta | 0.04 | Ågren and Schemske 1993
 > Begonia semiovata | 0.11 | Ågren and Schemske 1993
 > Clarkia tembloriensis | 0.07 | Holtsford and Ellstrand 1990

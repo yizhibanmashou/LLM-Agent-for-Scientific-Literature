@@ -21,19 +21,109 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Schlötterer and colleagues (Schlötterer et al. 1997; Harr et al. 2002; Schlötterer et al. 2002; Kauer et al. 2003; Schöfl and Schlötterer 2004) proposed several straightforward tests using k unlinked markers sampled from n populations. While their tests used STR/SSR data, this same approach can be applied to SNP data in nonoverlapping windows. ANOVA is used to obtain site- and population-specific values to correct (respectively) for variation in mutation rates over loci and variation in $ N_{e} $ over populations, and then test if a specific locus-population combination is unusual."
+      "content": "Schlötterer and colleagues (Schlötterer et al. 1997; Harr et al. 2002; Schlötterer et al. 2002; Kauer et al. 2003; Schöfl and Schlötterer 2004) proposed several straightforward tests using k unlinked markers sampled from n populations. While their tests used STR/SSR data, this same approach can be applied to SNP data in nonoverlapping windows. ANOVA is used to obtain site- and population-specific values to correct (respectively) for variation in mutation rates over loci and variation in $ N_{e} $ over populations, and then test if a specific locus-population combination is unusual.",
+      "source_page": 284,
+      "source_pages": [
+        284
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p027:b6",
+        "Evolution_chapter9:p027:b7"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          778.0,
+          573.0,
+          801.0
+        ],
+        [
+          132.0,
+          808.0,
+          904.0,
+          969.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "55adc4ae16e6e01515d8537ed084afa9950168930318ba10a3e462123f639c10"
     },
     {
       "type": "proposition",
-      "content": "Consider a set of STRs, and let $ V_{ij} $ denote the variance in repeat copy number at locus i in population j. Because variances typically have a skewed distribution, we work instead with $ v_{ij} = \\ln(V_{ij}) $, as a log transform reduces the effects of skew. The effects of locus-specific mutation rates are accounted for by averaging locus i over all populations ($ v_i $), while population-specific effects are accommodated by using the average ($ v_j $) of population j over all loci. Under the assumption of no locus $ \\times $ population effects and no LD between scored markers, the expected log-variance can be written as a simple ANOVA model. $$ v_{ij}=v_{i\\cdot}+v_{\\cdot j}-v_{\\cdot\\cdot}+e_{ij}\\quad for\\quad1\\leq i\\leq k,\\quad1\\leq j\\leq n $$"
+      "content": "Consider a set of STRs, and let $ V_{ij} $ denote the variance in repeat copy number at locus i in population j. Because variances typically have a skewed distribution, we work instead with $ v_{ij} = \\ln(V_{ij}) $, as a log transform reduces the effects of skew. The effects of locus-specific mutation rates are accounted for by averaging locus i over all populations ($ v_i $), while population-specific effects are accommodated by using the average ($ v_j $) of population j over all loci. Under the assumption of no locus $ \\times $ population effects and no LD between scored markers, the expected log-variance can be written as a simple ANOVA model. $$ v_{ij}=v_{i\\cdot}+v_{\\cdot j}-v_{\\cdot\\cdot}+e_{ij}\\quad for\\quad1\\leq i\\leq k,\\quad1\\leq j\\leq n $$",
+      "source_page": 284,
+      "source_pages": [
+        284
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p027:b8",
+        "Evolution_chapter9:p027:b9"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          970.0,
+          904.0,
+          1132.0
+        ],
+        [
+          292.0,
+          1150.0,
+          744.0,
+          1175.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "dd01ee1de01f9c4c20bc338200ebbdabc534f2d50b65f244739a4258d18ed4cf"
     },
     {
       "type": "discussion",
-      "content": "A sweep in population $j$ near the $i$th STR is indicated by a significant deficiency relative to the predicted value, $\\widehat{v}_{ij} = v_{i}. + v_{j} - v..$, which can be tested using a $t$-like statistic (Schlötterer et al. 1997)."
+      "content": "A sweep in population $j$ near the $i$th STR is indicated by a significant deficiency relative to the predicted value, $\\widehat{v}_{ij} = v_{i}. + v_{j} - v..$, which can be tested using a $t$-like statistic (Schlötterer et al. 1997).",
+      "source_page": 284,
+      "source_pages": [
+        284
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p027:b11"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          1193.0,
+          903.0,
+          1261.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "718c8f56f84ff48c7f62e9bfc7a2cb9d4de75f37e3019dcdf80a422a45fa2028"
     },
     {
       "type": "discussion",
-      "content": "A related approach is the Log RV statistic of Schlötterer (2002). For a single-step mutation model (meaning that STR repeat length is equally likely to change by plus or minus one following a mutation), the expected variance is $ \\sim 4N_{e}\\mu $ where $ \\mu $ is the locus-specific mutation rate (Slaktin 1995b). Thus, the locus-specific mutation rate cancels out in the ratio $ RV = V_{ij}/V_{i\\ell} = 4N_{j,e}\\mu/4N_{e,e}\\mu_i = N_{j,e}/N_{e,e} $ for the same locus (i) in two different populations (j and $ \\ell $), leaving only the ratio of effective population sizes. (The related Log RH statistic of Kauer et al. 2003 uses the ratio of heterozygosities, as opposed to copy-number variance.) Simulation studies showed that the distribution for the logs of these two ratios is approximately a normal under many demographic scenarios, with the exception of extreme bottlenecks. While similar in spirit to Equation 9.14, the Log RV and Log RH statistics are outlier approaches, computing all pairwise values and using outliers as potential sites of selection. Modifications have been proposed for two linked STRs (Harr et al. 2002), while Wiehe et al. (2007) proposed a follow-up statistic as an additional test for an STR showing signs of selection."
+      "content": "A related approach is the Log RV statistic of Schlötterer (2002). For a single-step mutation model (meaning that STR repeat length is equally likely to change by plus or minus one following a mutation), the expected variance is $ \\sim 4N_{e}\\mu $ where $ \\mu $ is the locus-specific mutation rate (Slaktin 1995b). Thus, the locus-specific mutation rate cancels out in the ratio $ RV = V_{ij}/V_{i\\ell} = 4N_{j,e}\\mu/4N_{e,e}\\mu_i = N_{j,e}/N_{e,e} $ for the same locus (i) in two different populations (j and $ \\ell $), leaving only the ratio of effective population sizes. (The related Log RH statistic of Kauer et al. 2003 uses the ratio of heterozygosities, as opposed to copy-number variance.) Simulation studies showed that the distribution for the logs of these two ratios is approximately a normal under many demographic scenarios, with the exception of extreme bottlenecks. While similar in spirit to Equation 9.14, the Log RV and Log RH statistics are outlier approaches, computing all pairwise values and using outliers as potential sites of selection. Modifications have been proposed for two linked STRs (Harr et al. 2002), while Wiehe et al. (2007) proposed a follow-up statistic as an additional test for an STR showing signs of selection.",
+      "source_page": 284,
+      "source_pages": [
+        284,
+        285
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p027:b12",
+        "Evolution_chapter9:p028:b2"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          1263.0,
+          905.0,
+          1472.0
+        ],
+        [
+          287.0,
+          206.0,
+          1059.0,
+          324.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "89fe63796f710caaef21e03112b80b90addc6b9f7de66386fb3ffded41d48eea"
     }
   ]
 }

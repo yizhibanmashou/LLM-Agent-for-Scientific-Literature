@@ -38,7 +38,7 @@
       "level": 2,
       "depth": 1,
       "anchor": "evolution_appendix4_003",
-      "text_preview": "[示例 Example] Example A4.1 · ref: A4.1 · source: Evolution appendix4 003.json · blocks 0–0 Example A4.1. Suppose five different groups collected data to test the same hypothesis, and these groups (perhaps using different methods of analysis) report p values of 0.10, 0.06, 0.15, 0.08, and 0.07. Notice that while none of…"
+      "text_preview": "Fisher (1932b) was among the first to offer a simple approach for combining $p$ values (along with Tippett 1931), based on the important concept that the distribution of realized $p$ values under the null follows a uniform distribution over $(0,1)$. Further, if $p \\sim \\text{Uniform}(0,1)$, then $-2 \\ln(p) \\sim \\chi {…"
     },
     {
       "id": "Evolution_appendix4_004",
@@ -48,7 +48,7 @@
       "level": 2,
       "depth": 1,
       "anchor": "evolution_appendix4_004",
-      "text_preview": "An alternative to Fisher’s approach for combining p values was offered by Stouffer et al. (1949), who transformed the individual p values into Z scores. The sum of k independent unit normals is itself normal, with a mean of zero and a variance of k. These results lead to Stouffer’s Z score method: assign a score of $…"
+      "text_preview": "An alternative to Fisher’s approach for combining $p$ values was offered by Stouffer et al. (1949), who transformed the individual $p$ values into $Z$ scores. The sum of $k$ independent unit normals is itself normal, with a mean of zero and a variance of $k$. These results lead to Stouffer’s $Z$ score method: assign a…"
     },
     {
       "id": "Evolution_appendix4_005",
@@ -108,7 +108,7 @@
       "level": 2,
       "depth": 1,
       "anchor": "evolution_appendix4_010",
-      "text_preview": "Hommel's method (1988) is slightly more complicated, but it is more powerful than the Simes-Hochberg correction (Hommel 1989). Under [示例 Example] Example A4.4 · ref: A4.4 · source: Evolution appendix4 010.json · blocks 1–1 Example A4.4. Suppose for n = 10 tests, the (ordered) p values are as follows: Inline Table 1 ·…"
+      "text_preview": "Hommel's method (1988) is slightly more complicated, but it is more powerful than the Simes-Hochberg correction (Hommel 1989). Under [示例 Example] (See Example A4.4.) Example A4.4 shows how all three of these methods are applied. ---"
     },
     {
       "id": "Evolution_appendix4_011",
@@ -148,7 +148,7 @@
       "level": 2,
       "depth": 1,
       "anchor": "evolution_appendix4_014",
-      "text_preview": "A simple graphical approach using the empirical distribution of $p$ values was suggested by Schweder and Spjøtvoll (1982). If one rank-orders the $p$ values from the smallest $p(1)$ to the largest $p(n)$, a plot of $p(i)$ versus $i$ is a straight line under a uniform. Because our interest is usually in detecting an ex…"
+      "text_preview": "Testing for an excessive number of significant tests is a rather crude indicator of the actual number ($n 0$) of the $n$ tests that are true nulls. It is very possible that $n 0 Figure A4.1 · page 10 · source: Evolution appendix4 Figure A4.1 A Schweder-Spjøtvoll plot is one approach for detecting departures from a uni…"
     },
     {
       "id": "Evolution_appendix4_015",
@@ -192,182 +192,124 @@
     },
     {
       "id": "Evolution_appendix4_019",
-      "title": "Appendix: Introduction / Morton's Posterior Error Rate (PER) and the FDR",
-      "nav_label": "Morton's Posterior Error Rate (PER) and the FDR",
-      "raw_title": "Evolution_appendix4_019 · Appendix: Introduction / Morton's Posterior Error Rate (PER) and the FDR",
+      "title": "FDR: THE FALSE-DISCOVERY RATE / A Technical Aside: Different Definitions of False-discovery Rate",
+      "nav_label": "A Technical Aside: Different Definitions of False-discovery Rate",
+      "raw_title": "Evolution_appendix4_019 · FDR: THE FALSE-DISCOVERY RATE / A Technical Aside: Different Definitions of False-discovery Rate",
       "level": 2,
       "depth": 1,
       "anchor": "evolution_appendix4_019",
-      "text_preview": "The Type-I error rate, $ \\alpha $, of a random test, and the PER for a significant test, which are often assumed to be the same, are actually very different. In addition to $ \\alpha $, the PER also depends on the power, $ \\beta $, of a test and the fraction, $ \\pi {0} $, of tests that are truly null (as these latter p…"
-    },
-    {
-      "id": "Evolution_appendix4_020",
-      "title": "FDR: THE FALSE-DISCOVERY RATE / A Technical Aside: Different Definitions of False-discovery Rate",
-      "nav_label": "A Technical Aside: Different Definitions of False-discovery Rate",
-      "raw_title": "Evolution_appendix4_020 · FDR: THE FALSE-DISCOVERY RATE / A Technical Aside: Different Definitions of False-discovery Rate",
-      "level": 2,
-      "depth": 1,
-      "anchor": "evolution_appendix4_020",
       "text_preview": "While the false-discovery rate for any experiment is simply F/S, there are several subtly different ways to formally define the expectation of this ratio. The original notion of a false-discovery rate is due to Benjamini and Hochberg (1995), with modifications suggested by a number of other workers, most notable Store…"
     },
     {
-      "id": "Evolution_appendix4_021",
+      "id": "Evolution_appendix4_020",
       "title": "FDR: THE FALSE-DISCOVERY RATE / The Benjamini-Hochberg FDR Estimator",
       "nav_label": "The Benjamini-Hochberg FDR Estimator",
-      "raw_title": "Evolution_appendix4_021 · FDR: THE FALSE-DISCOVERY RATE / The Benjamini-Hochberg FDR Estimator",
+      "raw_title": "Evolution_appendix4_020 · FDR: THE FALSE-DISCOVERY RATE / The Benjamini-Hochberg FDR Estimator",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix4_021",
+      "anchor": "evolution_appendix4_020",
       "text_preview": "The original estimator for the FDR was introduced by Benjamini and Hochberg (1995). Suppose we declare a test to be significant if its $p$ value is at or below some threshold value, $\\tau = p(k)$, in which case $k$ of the hypotheses will be declared significant (as $p[k]$ is the $k$th smallest $p$ value), and $S = k$.…"
     },
     {
-      "id": "Evolution_appendix4_022",
+      "id": "Evolution_appendix4_021",
       "title": "FDR: THE FALSE-DISCOVERY RATE / A (Slightly More) Formal Derivation of the Estimated FDR",
       "nav_label": "A (Slightly More) Formal Derivation of the Estimated FDR",
-      "raw_title": "Evolution_appendix4_022 · FDR: THE FALSE-DISCOVERY RATE / A (Slightly More) Formal Derivation of the Estimated FDR",
+      "raw_title": "Evolution_appendix4_021 · FDR: THE FALSE-DISCOVERY RATE / A (Slightly More) Formal Derivation of the Estimated FDR",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix4_022",
+      "anchor": "evolution_appendix4_021",
       "text_preview": "Following Storey and Tibshirani (2003), we consider the expected FDR for an experiment where we declare a hypothesis to be significant if its $p$ value is less than or equal to some threshold value, $\\tau$. Obviously, as $\\tau$ becomes smaller, the FDR is smaller (as significant nulls become increasingly less likely).…"
     },
     {
-      "id": "Evolution_appendix4_023",
+      "id": "Evolution_appendix4_022",
       "title": "FDR: THE FALSE-DISCOVERY RATE / Storey's q Value",
       "nav_label": "Storey's q Value",
-      "raw_title": "Evolution_appendix4_023 · FDR: THE FALSE-DISCOVERY RATE / Storey's q Value",
+      "raw_title": "Evolution_appendix4_022 · FDR: THE FALSE-DISCOVERY RATE / Storey's q Value",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix4_023",
+      "anchor": "evolution_appendix4_022",
       "text_preview": "While we can control the FDR for an entire set of experiments, we would also like to have an indication of the FDR for any particular experiment (or test) within this family of tests. Intuitively, tests with smaller p values should also have smaller associated FDR values. To address this, Storey (2002; Storey and Tibs…"
     },
     {
-      "id": "Evolution_appendix4_024",
+      "id": "Evolution_appendix4_023",
       "title": "FDR: THE FALSE-DISCOVERY RATE / Closing Caveats in Using the FDR",
       "nav_label": "Closing Caveats in Using the FDR",
-      "raw_title": "Evolution_appendix4_024 · FDR: THE FALSE-DISCOVERY RATE / Closing Caveats in Using the FDR",
+      "raw_title": "Evolution_appendix4_023 · FDR: THE FALSE-DISCOVERY RATE / Closing Caveats in Using the FDR",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix4_024",
+      "anchor": "evolution_appendix4_023",
       "text_preview": "While controlling the FDR is a very powerful approach for many multiple-comparison problems, it is not a panacea. One concern is correlations among tests. As mentioned, in this case the null distribution of p values can significantly depart from a uniform, giving biased estimates of $ \\pi {0} $ (and thus FDR). Further…"
     },
     {
-      "id": "Evolution_appendix4_025",
+      "id": "Evolution_appendix4_024",
       "title": "Appendix: Introduction / FORMAL META-ANALYSIS",
       "nav_label": "FORMAL META-ANALYSIS",
-      "raw_title": "Evolution_appendix4_025 · Appendix: Introduction / FORMAL META-ANALYSIS",
+      "raw_title": "Evolution_appendix4_024 · Appendix: Introduction / FORMAL META-ANALYSIS",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix4_025",
+      "anchor": "evolution_appendix4_024",
       "text_preview": "Another class of analysis involving multiple comparisons considers comparison across studies, rather than trying to adjust for multiple comparisons within a single study. Such an analysis of analyses, coined meta-analysis (MA) by Glass (1976), is a tool of expanding importance in quantitative genetics. While multiple-…"
     },
     {
-      "id": "Evolution_appendix4_026",
+      "id": "Evolution_appendix4_025",
       "title": "FORMAL META-ANALYSIS / Informal, or Narrative, Meta-analysis",
       "nav_label": "Informal, or Narrative, Meta-analysis",
-      "raw_title": "Evolution_appendix4_026 · FORMAL META-ANALYSIS / Informal, or Narrative, Meta-analysis",
+      "raw_title": "Evolution_appendix4_025 · FORMAL META-ANALYSIS / Informal, or Narrative, Meta-analysis",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix4_026",
+      "anchor": "evolution_appendix4_025",
       "text_preview": "Table A4.3 shows the canonical structure of the data for a meta-analysis: one has a number of studies, either published or unpublished, dealing with a specific question (such as the average strength of natural selection; Chapter 30). Study i reports an estimate, $ T i $, of an effect whose true (and unknown) value is…"
     },
     {
-      "id": "Evolution_appendix4_027",
+      "id": "Evolution_appendix4_026",
       "title": "FORMAL META-ANALYSIS / Standardizing Effect Sizes",
       "nav_label": "Standardizing Effect Sizes",
-      "raw_title": "Evolution_appendix4_027 · FORMAL META-ANALYSIS / Standardizing Effect Sizes",
+      "raw_title": "Evolution_appendix4_026 · FORMAL META-ANALYSIS / Standardizing Effect Sizes",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix4_027",
+      "anchor": "evolution_appendix4_026",
       "text_preview": "A formal meta-analysis proceeds by averaging over the standardized effect sizes for each study. As we will detail below, this weights each study by the strength (precision) of the evidence it provides. We will briefly review a few of the common standardizations here, pointing the reader to the general references cited…"
     },
     {
-      "id": "Evolution_appendix4_028",
+      "id": "Evolution_appendix4_027",
       "title": "FORMAL META-ANALYSIS / Fixed-effects, Random-effects, and Mixed-model Meta-analysis",
       "nav_label": "Fixed-effects, Random-effects, and Mixed-model Meta-analysis",
-      "raw_title": "Evolution_appendix4_028 · FORMAL META-ANALYSIS / Fixed-effects, Random-effects, and Mixed-model Meta-analysis",
+      "raw_title": "Evolution_appendix4_027 · FORMAL META-ANALYSIS / Fixed-effects, Random-effects, and Mixed-model Meta-analysis",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix4_028",
+      "anchor": "evolution_appendix4_027",
       "text_preview": "Once an appropriate summary statistic, along with its standard error, has been chosen, the next step is to decide if a fixed, random, or mixed meta-analysis should be used. For questions of interest to quantitative geneticists, a mixed-model analysis is likely the most appropriate. This is also the most general model,…"
     },
     {
-      "id": "Evolution_appendix4_029",
+      "id": "Evolution_appendix4_028",
       "title": "FORMAL META-ANALYSIS / Publication and Other Sources in Bias",
       "nav_label": "Publication and Other Sources in Bias",
-      "raw_title": "Evolution_appendix4_029 · FORMAL META-ANALYSIS / Publication and Other Sources in Bias",
+      "raw_title": "Evolution_appendix4_028 · FORMAL META-ANALYSIS / Publication and Other Sources in Bias",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix4_029",
+      "anchor": "evolution_appendix4_028",
       "text_preview": "The most common concern of a meta-analysis is the issue of publication bias, whereby the chosen sample of studies is nonrandom with respect to all of the actual studies that have been done. Before addressing this, we need to stress that the most serious MA problem is simply poor data reporting (Gurevitch and Hedges 19…"
     },
     {
-      "id": "Evolution_appendix4_030",
+      "id": "Evolution_appendix4_029",
       "title": "FORMAL META-ANALYSIS / Bias When Estimating Magnitudes",
       "nav_label": "Bias When Estimating Magnitudes",
-      "raw_title": "Evolution_appendix4_030 · FORMAL META-ANALYSIS / Bias When Estimating Magnitudes",
+      "raw_title": "Evolution_appendix4_029 · FORMAL META-ANALYSIS / Bias When Estimating Magnitudes",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix4_030",
-      "text_preview": "[Figure] Figure A4.8 · page 30 · source: Evolution appendix4 Figure A4.8 The consequences of considering the absolute value, $ \\theta $, of an effect. Here, the true size effect ( $ \\theta $) is normally distributed with a variance of $ \\sigma^2 $, whose distribution is indicated by the solid curves. Of course, we do…"
+      "anchor": "evolution_appendix4_029",
+      "text_preview": "Finally, consider a random-effects setting, in which the parameter of interest, $\\theta {ii}$ in a given study (i) is drawn from normal distribution with a mean of $\\mu$ and a variance of $\\sigma {\\mu}^{2}$, so $\\theta {i} \\sim N(\\mu, \\sigma {\\mu}^{2})$. Suppose we assume the observed effect, $T {i}$, for this study i…"
     }
   ],
   "assets": [
-    {
-      "kind": "example",
-      "id": "A4.1",
-      "anchor": "example-a4.1",
-      "label": "Example A4.1",
-      "section_id": "Evolution_appendix4_003",
-      "excerpt": "Example A4.1 · ref: A4.1 · source: Evolution appendix4 003.json · blocks 0–0 Example A4.1. Suppose five different groups collected data to test the same hypothesis, and these groups (perhaps using different methods of analysis) report p values of 0.10, 0.06, 0.15, 0.08, and 0.07. Notice that while none of these individual tests are significant, the trend is clearly that all are “close” to being significant ( $ \\bar{p} = 0.09 $). Fisher’s statistic returns a value of $$ X^{2}…"
-    },
-    {
-      "kind": "example",
-      "id": "A4.2",
-      "anchor": "example-a4.2",
-      "label": "Example A4.2",
-      "section_id": "Evolution_appendix4_004",
-      "excerpt": "Example A4.2 · ref: A4.2 · source: Evolution appendix4 004.json · blocks 1–2 Example A4.2. Reconsider the data from Example A4.1. The $ Z i $ values are easily obtained using $ R $, as the command $ \\text{qnorm}(1-\\text{p}) $ returns $ Z $ satisfying $ \\text{Pr}(U \\leq Z) = 1 - p $, or (equivalently) $ \\text{Pr}(U Z) = p $. For example, $ Z 1 $ is calculated by $ \\text{qnorm}(1-0.1) $, or 1.281. Similarly computing the other $ Z {i} $ values yields $$ \\sum {i=1}^{5}Z {i}=6.7…"
-    },
-    {
-      "kind": "example",
-      "id": "A4.3",
-      "anchor": "example-a4.3",
-      "label": "Example A4.3",
-      "section_id": "Evolution_appendix4_006",
-      "excerpt": "Example A4.3 · ref: A4.3 · source: Evolution appendix4 006.json · blocks 4–5 Example A4.3. Suppose we have $n = 100$ independent tests and wish to obtain an overall $\\pi$ value of 0.05. What value of $\\alpha$ should be used for each individual test to achieve an experiment-wide false-positive rate of 0.05? The Dunn-Sidak correction suggests $$ \\alpha=1-(1-0.05)^{1/100}=0.000512 $$ $$ \\alpha=0.05/100=0.0005 $$ while the Bonferroni correction is Note that using such small $ \\a…"
-    },
-    {
-      "kind": "example",
-      "id": "A4.4",
-      "anchor": "example-a4.4",
-      "label": "Example A4.4",
-      "section_id": "Evolution_appendix4_010",
-      "excerpt": "Example A4.4 · ref: A4.4 · source: Evolution appendix4 010.json · blocks 1–1 Example A4.4. Suppose for n = 10 tests, the (ordered) p values are as follows: Inline Table 1 · inline 1 · page 6 · source: Evolution appendix4 010 Inline Table 1 i 1 2 3 4 5 6 7 8 9 10 --- --- --- --- --- --- --- --- --- --- --- p(i) 0.0020 0.0045 0.0060 0.0080 0.0085 0.0090 0.0175 0.0250 0.1055 0.5350 $ \\frac{\\pi}{n-i+1} $ 0.0050 0.0056 0.0063 0.0071 0.0083 0.0100 0.0125 0.0167 0.0250 0.0500 For a…"
-    },
-    {
-      "kind": "example",
-      "id": "A4.5",
-      "anchor": "example-a4.5",
-      "label": "Example A4.5",
-      "section_id": "Evolution_appendix4_013",
-      "excerpt": "Example A4.5 · ref: A4.5 · source: Evolution appendix4 013.json · blocks 2–5 Example A4.5. Suppose 250 independent tests are performed, each with $ \\alpha = 0.025 $ (a 2.5% chance of declaring a result from the null hypothesis to be significant), and 15 tests are declared significant by this criteria. Is this number greater than expected by chance? The expected number of significant tests under the global null hypothesis is $ n\\alpha = 250 \\cdot 0.025 = 6.25 $. From Equation…"
-    },
     {
       "kind": "figure",
       "id": "A4.1",
       "anchor": "figure-a4.1",
       "label": "Figure A4.1",
-      "section_id": "Evolution_appendix4_015",
+      "section_id": "Evolution_appendix4_014",
       "src": "figures/Evolution_A4.1.png",
       "caption": "Figure A4.1 A Schweder-Spjøtvoll plot is one approach for detecting departures from a uniform distribution of p values. The p values are ordered from smallest, p(1), to largest, p(n), and one plot the rank of 1 - p(i) versus its value. These ranks are reversed from the ranks of p(i), as the rank of 1 - p(n), being the smallest value, is 1. Under a uniform, the result is a straight line passing through the origin and the point (1, n). The upper curve (solid triangles), generated by randomly sampling n = 100 values from a uniform (0,1), fits this pattern. The lower curve (open circles), generated by simulating p values for 80 true nulls and 20 tests where the alternative was correct, shows an inflation of p values near zero (1 - p values near one). This results in a strong departure from linearity near one. Ignoring this upturn and extrapolating the linear fit for the values below this inflection point gives an approximate value of 80 for the value of this projected line when 1 - p = 1. This is the estimate of  $ n_0 $."
-    },
-    {
-      "kind": "example",
-      "id": "A4.6",
-      "anchor": "example-a4.6",
-      "label": "Example A4.6",
-      "section_id": "Evolution_appendix4_015",
-      "excerpt": "Example A4.6 · ref: A4.6 · source: Evolution appendix4 015.json · blocks 6–9 Example A4.6. According to the data in Figure A4.3, what is $ n 0 $? Consider the bins centered around $ p = 0.5 $. Based on the central three bins (0.4, 0.5, and 0.6), a total of $ 60 + 46 + 48 = 154 $ tests have $ p $ values in this interval. From Equation A4.8b, $ 154 = n 0 \\cdot 0.3 \\cdot r 0 = 154/0.3 = 513 $, and hence a fraction, $ \\pi 0 = n 0/n = 513/644 = 0.80 $, of the tests are true nulls…"
     },
     {
       "kind": "figure",
@@ -406,43 +348,11 @@
       "caption": "Figure A4.5 Plot of the posterior error rate (Equation A4.15a) for  $ \\alpha = 0.05 $, as a function of  $ \\pi_0 $ (the fraction of cases where the null hypothesis holds) and  $ \\beta $ (the Type-II error, which is one minus the power). The solid curve corresponds to  $ \\beta = 0.9 $ (10% power), the short-dashed curve corresponds to  $ \\beta = 0.7 $ (30% power), and the long-dashed (lower) curve corresponds to  $ \\beta = 0 $ (100% power)."
     },
     {
-      "kind": "example",
-      "id": "A4.7",
-      "anchor": "example-a4.7",
-      "label": "Example A4.7",
-      "section_id": "Evolution_appendix4_019",
-      "excerpt": "Example A4.7 · ref: A4.7 · source: Evolution appendix4 019.json · blocks 2–4 Example A4.7. In Morton's original application, because there are 23 pairs of human chromosomes, he argued that two randomly chosen genes had a $ 1/23 \\simeq 0.05 $ prior probability of linkage, namely, $ 1 - \\pi 0 = 0.05 $, and thus $ \\pi 0 = 0.95 $. Assuming a Type-I error rate of $ \\alpha = 0.05 $ and 80% power to detect linkage ( $ \\beta = 0.20 $), applying Equation A4.15a yields a PER of $$ \\fr…"
-    },
-    {
-      "kind": "example",
-      "id": "A4.8",
-      "anchor": "example-a4.8",
-      "label": "Example A4.8",
-      "section_id": "Evolution_appendix4_019",
-      "excerpt": "Example A4.8 · ref: A4.8 · source: Evolution appendix4 019.json · blocks 5–8 Example A4.8. Suppose we set $ \\alpha = 0.005 $ for each test, and assume that the resulting power is essentially 1 (i.e., $ \\beta \\simeq 0 $). Consider 5000 tests under two different settings. First, suppose that the alternative is very rare, with $ n 1 = 1 $ ( $ \\pi 0 = 0.9998 $). Under this setting, we expect $ 4999 \\cdot 0.005 = 24.995 $ false positives and one true positive ( $ 1 \\cdot [1 - \\be…"
-    },
-    {
-      "kind": "example",
-      "id": "A4.9",
-      "anchor": "example-a4.9",
-      "label": "Example A4.9",
-      "section_id": "Evolution_appendix4_023",
-      "excerpt": "Example A4.9 · ref: A4.9 · source: Evolution appendix4 023.json · blocks 3–3 Example A4.9. Consider again the 10 ordered $p$ values from Example A4.4. Computing $n$ $p(k)/k = 10$ $p(k)/k$, where $k$ denotes the test with the $k$-th smallest $p$ value, yields the following table: Inline Table 3 · inline 3 · page 15 · source: Evolution appendix4 018 Inline Table 3 Parameter Definition --- --- $ \\alpha $ Comparison-wide Type-I error (false positive). $ \\beta $ Type-II error (fa…"
-    },
-    {
-      "kind": "example",
-      "id": "A4.10",
-      "anchor": "example-a4.10",
-      "label": "Example A4.10",
-      "section_id": "Evolution_appendix4_023",
-      "excerpt": "Example A4.10 · ref: A4.10 · source: Evolution appendix4 023.json · blocks 3–5 Example A4.10. As an example of the interplay between the family-wide error rate ($\\pi$), and the individual $p$ and $q$ values for a particular test, consider Storey and Tibshirani's (2003) analysis of a microarray dataset comparing BRCA1 and BRCA2 positive breast cancer tumors. A total of 3226 genes were examined. Setting a critical $p$ value of $\\alpha = 0.001$ detects 51 significant genes (i.e…"
-    },
-    {
       "kind": "figure",
       "id": "A4.6",
       "anchor": "figure-a4.6",
       "label": "Figure A4.6",
-      "section_id": "Evolution_appendix4_029",
+      "section_id": "Evolution_appendix4_028",
       "src": "figures/Evolution_A4.6.png",
       "caption": "Figure A4.6 A funnel plot contrasts the estimated effect size (on the horizontal axis) of a study versus a measure of its precision (such as the sample size or  $ 1/s_{i}^{2} $) on the vertical axis. A: An idealized funnel plot showing symmetry about the grand mean (dotted line). B: A funnel plot showing asymmetry, in this case an excess of larger effect-size estimates in studies with lower precision."
     },
@@ -451,7 +361,7 @@
       "id": "A4.7",
       "anchor": "figure-a4.7",
       "label": "Figure A4.7",
-      "section_id": "Evolution_appendix4_029",
+      "section_id": "Evolution_appendix4_028",
       "src": "figures/Evolution_A4.7.png",
       "caption": "Figure A4.7 Contour-enhanced funnel plots help in the interpretation of asymmetry. Both of the plots show asymmetry, with the open ellipse showing the area of “missing” studies that generates the asymmetry. Such missing values would be added under the trim-and-fill method. The contours (showing regions of statistical significance) show the expected likelihood of study values under the null of no effect. A: The “missing” studies are in a region where they are likely to occur by chance (p > 0.1), suggesting they are absent due to publication bias. B: Here, these studies will all fall into regions unlikely to be seen under the null (p < 0.05), and hence may be missing for reasons other than publication bias. (After Peters et al. 2008.)"
     },
@@ -460,17 +370,119 @@
       "id": "A4.8",
       "anchor": "figure-a4.8",
       "label": "Figure A4.8",
-      "section_id": "Evolution_appendix4_030",
+      "section_id": "Evolution_appendix4_029",
       "src": "figures/Evolution_A4.8.png",
       "caption": "Figure A4.8 The consequences of considering the absolute value,  $ |\\theta| $, of an effect. Here, the true size effect ( $ \\theta $) is normally distributed with a variance of  $ \\sigma^2 $, whose distribution is indicated by the solid curves. Of course, we do not observe the true value, but rather an estimate,  $ T $, which has the same mean as  $ \\theta $, but an additional sampling error,  $ \\sigma_e^2 $, so that while  $ \\theta \\sim N(\\mu, \\sigma^2) $,  $ T \\sim N(\\mu, \\sigma^2 + \\sigma_e^2) $, which (dashed curves) has a larger total variance. In (A) and (C),  $ \\mu = 0 $, while  $ \\mu > 0 $ in (B) and (D). The distribution of  $ |\\theta| $ is given by folding the distribution about zero, with  $ \\Pr(|\\theta|) = \\Pr(\\theta) + \\Pr(-\\theta) $ for  $ \\theta > 0 $, as shown in panels (C) and (D). While the sampling variance ( $ \\sigma_e^2 $) does not translate into bias when estimating the mean, as  $ E[T] = E[\\theta] $, it introduces bias when the absolute value of  $ \\theta $ is of interest, with  $ E[|T|] > E[|\\theta|] $ when  $ \\sigma_e^2 > 0 $, as shown in (C) and (D). (After Nakagawa and Lagisz 2016.)"
+    },
+    {
+      "kind": "example",
+      "id": "A4.1",
+      "anchor": "example-a4.1",
+      "label": "Example A4.1",
+      "section_id": "Evolution_appendix4_003",
+      "excerpt": "Example A4.1. Suppose five different groups collected data to test the same hypothesis, and these groups (perhaps using different methods of analysis) report p values of 0.10, 0.06, 0.15, 0.08, and 0.07. Notice that while none of these individual tests are significant, the trend is clearly that all are “close” to being significant ( $ \\bar{p} = 0.09 $). Fisher’s statistic returns a value of $$ X^{2}=-2\\sum {i=1}^{k}\\ln(p {i})=24.3921\\qquad with\\qquad\\Pr(\\chi {10}^{2}\\geq24.3…",
+      "content_markdown": "Example A4.1. Suppose five different groups collected data to test the same hypothesis, and these groups (perhaps using different methods of analysis) report p values of 0.10, 0.06, 0.15, 0.08, and 0.07. Notice that while none of these individual tests are significant, the trend is clearly that all are “close” to being significant ( $ \\bar{p} = 0.09 $). Fisher’s statistic returns a value of $$ X^{2}=-2\\sum_{i=1}^{k}\\ln(p_{i})=24.3921\\qquad with\\qquad\\Pr(\\chi_{10}^{2}\\geq24.39)=0.0066 $$ Hence, when taken together, these five tests show a highly significant p value.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A4.2",
+      "anchor": "example-a4.2",
+      "label": "Example A4.2",
+      "section_id": "Evolution_appendix4_004",
+      "excerpt": "Example A4.2. Reconsider the data from Example A4.1. The $ Z i $ values are easily obtained using $ R $, as the command $ \\text{qnorm}(1-\\text{p}) $ returns $ Z $ satisfying $ \\text{Pr}(U \\leq Z) = 1 - p $, or (equivalently) $ \\text{Pr}(U Z) = p $. For example, $ Z 1 $ is calculated by $ \\text{qnorm}(1-0.1) $, or 1.281. Similarly computing the other $ Z {i} $ values yields $$ \\sum {i=1}^{5}Z {i}=6.754,\\qquad hence\\qquad Z {s}=\\frac{6.754}{\\sqrt{5}}=3.020 $$ Because $ \\Pr(U 3…",
+      "content_markdown": "Example A4.2. Reconsider the data from Example A4.1. The $ Z_i $ values are easily obtained using $ R $, as the command $ \\text{qnorm}(1-\\text{p}) $ returns $ Z $ satisfying $ \\text{Pr}(U \\leq Z) = 1 - p $, or (equivalently) $ \\text{Pr}(U > Z) = p $. For example, $ Z_1 $ is calculated by $ \\text{qnorm}(1-0.1) $, or 1.281. Similarly computing the other $ Z_{i} $ values yields $$ \\sum_{i=1}^{5}Z_{i}=6.754,\\qquad hence\\qquad Z_{s}=\\frac{6.754}{\\sqrt{5}}=3.020 $$ Because $ \\Pr(U > 3.020) = 0.00126 $, as in Example A4.1, the combined p value is highly significant.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A4.3",
+      "anchor": "example-a4.3",
+      "label": "Example A4.3",
+      "section_id": "Evolution_appendix4_006",
+      "excerpt": "Example A4.3. Suppose we have $n = 100$ independent tests and wish to obtain an overall $\\pi$ value of 0.05. What value of $\\alpha$ should be used for each individual test to achieve an experiment-wide false-positive rate of 0.05? The Dunn-Sidak correction suggests $$ \\alpha=1-(1-0.05)^{1/100}=0.000512 $$ $$ \\alpha=0.05/100=0.0005 $$ while the Bonferroni correction is Note that using such small $ \\alpha $ values greatly reduces the power for any single test. For example, und…",
+      "content_markdown": "Example A4.3. Suppose we have $n = 100$ independent tests and wish to obtain an overall $\\pi$ value of 0.05. What value of $\\alpha$ should be used for each individual test to achieve an experiment-wide false-positive rate of 0.05? The Dunn-Sidak correction suggests $$ \\alpha=1-(1-0.05)^{1/100}=0.000512 $$ $$ \\alpha=0.05/100=0.0005 $$ while the Bonferroni correction is\n\nNote that using such small $ \\alpha $ values greatly reduces the power for any single test. For example, under a normal distribution, the 95% (two-sided) confidence interval(CI) for the true mean is $ \\overline{x} \\pm 1.96\\sqrt{\\text{Var}} $, where $ \\text{Var} $ denotes the variance of the sample mean. Moving to an $ \\alpha $ value of 0.0005 gives the associated CI as $ \\overline{x} \\pm 3.48\\sqrt{\\text{Var}} $, as $ \\text{Pr}(|z| \\geq 3.48) = 0.0005 $ for $ z \\sim N(0,1) $.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A4.4",
+      "anchor": "example-a4.4",
+      "label": "Example A4.4",
+      "section_id": "Evolution_appendix4_010",
+      "excerpt": "Example A4.4. Suppose for n = 10 tests, the (ordered) p values are as follows: [[TABLE:inline 1]] For an experiment-wide level of significance of $ \\pi = 0.05 $, the Bonferroni correction is $ \\alpha = 0.05 / 10 = 0.005 $. Hence, using a strict Bonferroni, we reject hypotheses 1 and 2, and we fail to reject (i.e., we accept) 3 through 10. To apply sequential methods, we use the associated $ \\pi/(n-i+1) $ values for $ \\pi = 0.05 $, which are given above in the table. Under Ho…",
+      "content_markdown": "Example A4.4. Suppose for n = 10 tests, the (ordered) p values are as follows: [[TABLE:inline_1]] For an experiment-wide level of significance of $ \\pi = 0.05 $, the Bonferroni correction is $ \\alpha = 0.05 / 10 = 0.005 $. Hence, using a strict Bonferroni, we reject hypotheses 1 and 2, and we fail to reject (i.e., we accept) 3 through 10. To apply sequential methods, we use the associated $ \\pi/(n-i+1) $ values for $ \\pi = 0.05 $, which are given above in the table. Under Holm's method, $ p(i) \\leq \\pi/(n-i+1) $ for $ i \\leq 3 $, and hence we reject $ H(1) $ through $ H(3) $ and accept the others. Under Simes-Hochberg, we fail to reject $ H(7) $ through $ H(10) $ [as $ p(i) > \\pi/(n-i+1) $], but because $ p(6) = 0.009 \\leq \\pi/(n-i+1) = 0.010 $, we reject $ H(6) $ through $ H(1) $. To apply Hommel's method, we reject all hypotheses whose $p$ values are less than or equal to $\\pi/k^{*}$, where $$ k^{*}=\\max_{i}\\left(p(n-i+j)>\\pi\\frac{j}{i}\\right)\\quad for all j=1,\\cdots,i $$ Solving $k^{*}$ requires an iterative approach, as follows. First, start with $i = 1$. Here, $(i = 1, j = 1)$, $p(10) = 0.5350 > \\pi \\cdot (1/1) = 0.05$. Now let us try $i = 2$, which yields (for $j = 1, 2)$, $p(9) = 0.1055 > \\pi(1/2) = 0.025$ and (as above) $p(10) > \\pi$. Hommel's condition still holds for $i = 3$, as $p(8) = 0.025 > \\pi \\cdot (1/3) = 0.0167$, $p(9) > \\pi \\cdot (2/3) = 0.033$, and $p(10) > \\pi$. However, it fails for $i = 4$, as while it holds for $p(7) = 0.175 > \\pi \\cdot (1/4) = 0.0125$, it fails for $(i = 4, j = 2)$ because $p(8) = 0.025 = \\pi \\cdot (1/2)$. Hence, $k^{*} = 3$ (because Hommel's condition holds for $k = 3$ but not for $k = 4$), and we reject all hypotheses whose $p$ values are $ \\leq 0.05/3 = 0.0167 $, which means $ H(1) $ through $ H(6) $. Note that a strict Bonferroni rejected the fewest null hypotheses and Simes-Hochberg and Hommel's rejected the most null hypotheses (i.e., declared them to be significant), and all methods controlled the experiment-wide false-positive rate at 0.05.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A4.5",
+      "anchor": "example-a4.5",
+      "label": "Example A4.5",
+      "section_id": "Evolution_appendix4_013",
+      "excerpt": "Example A4.5. Suppose 250 independent tests are performed, each with $ \\alpha = 0.025 $ (a 2.5% chance of declaring a result from the null hypothesis to be significant), and 15 tests are declared significant by this criteria. Is this number greater than expected by chance? The expected number of significant tests under the global null hypothesis is $ n\\alpha = 250 \\cdot 0.025 = 6.25 $. From Equation A4.5, the probability of observing 15 (or more) significant tests is $$ \\sum…",
+      "content_markdown": "Example A4.5. Suppose 250 independent tests are performed, each with $ \\alpha = 0.025 $ (a 2.5% chance of declaring a result from the null hypothesis to be significant), and 15 tests are declared significant by this criteria. Is this number greater than expected by chance? The expected number of significant tests under the global null hypothesis is $ n\\alpha = 250 \\cdot 0.025 = 6.25 $. From Equation A4.5, the probability of observing 15 (or more) significant tests is $$ \\sum_{j=15}^{250}\\Pr(j\\ false\\ positives)=\\sum_{j=15}^{250}\\frac{250!}{(250-j)!j!}(1-0.025)^{250-j}0.025^{j} $$ We could either sum this series directly or use the cumulative distribution function for a binomial. In R, the probability that a binomial with parameters n and p has a value of i or less is obtained by using the command pbinom(i,n,p). The probability of 15 or greater is one minus the probability of 14 or less, or 1 - pbinom(14,250,0.025), for which R returns 0.0018. A similar calculation can use the Poisson approximation (Equation A4.7), with 1ppois (14, 6.25) returning a value of 0.0021. Given that there is only a 0.2% chance of seeing this many significant tests under the global null, we expect that some of these significant tests are true discoveries (those whose associated null hypothesis is incorrect), not false positives. The critical question, of course, is which ones?",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A4.6",
+      "anchor": "example-a4.6",
+      "label": "Example A4.6",
+      "section_id": "Evolution_appendix4_015",
+      "excerpt": "Example A4.6. According to the data in Figure A4.3, what is $ n 0 $? Consider the bins centered around $ p = 0.5 $. Based on the central three bins (0.4, 0.5, and 0.6), a total of $ 60 + 46 + 48 = 154 $ tests have $ p $ values in this interval. From Equation A4.8b, $ 154 = n 0 \\cdot 0.3 \\cdot r 0 = 154/0.3 = 513 $, and hence a fraction, $ \\pi 0 = n 0/n = 513/644 = 0.80 $, of the tests are true nulls. Using the bins from 0.3 to 0.8 yields $ n 0 = 322/0.6 = 537 $, or $ \\pi 0 =…",
+      "content_markdown": "Example A4.6. According to the data in Figure A4.3, what is $ n_0 $? Consider the bins centered around $ p = 0.5 $. Based on the central three bins (0.4, 0.5, and 0.6), a total of $ 60 + 46 + 48 = 154 $ tests have $ p $ values in this interval. From Equation A4.8b, $ 154 = n_0 \\cdot 0.3 \\cdot r_0 = 154/0.3 = 513 $, and hence a fraction, $ \\pi_0 = n_0/n = 513/644 = 0.80 $, of the tests are true nulls. Using the bins from 0.3 to 0.8 yields $ n_0 = 322/0.6 = 537 $, or $ \\pi_0 = 537/644 = 0.83 $. Hence, it appears that around 80% of the tests are consistent with true nulls. Mosig et al. (2001; also see Nettleton et al. 2006) used an iterative approach (also based on bin counts in the $ p $-value histogram) and arrived at an estimate of $ n_0 = 500 $ (78%).",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A4.7",
+      "anchor": "example-a4.7",
+      "label": "Example A4.7",
+      "section_id": "Evolution_appendix4_018",
+      "excerpt": "Example A4.7. In Morton's original application, because there are 23 pairs of human chromosomes, he argued that two randomly chosen genes had a $ 1/23 \\simeq 0.05 $ prior probability of linkage, namely, $ 1 - \\pi 0 = 0.05 $, and thus $ \\pi 0 = 0.95 $. Assuming a Type-I error rate of $ \\alpha = 0.05 $ and 80% power to detect linkage ( $ \\beta = 0.20 $), applying Equation A4.15a yields a PER of $$ \\frac{0.05\\cdot0.95}{0.05\\cdot0.95+0.80\\cdot0.05}=0.54 $$ Hence, with a Type-I e…",
+      "content_markdown": "Example A4.7. In Morton's original application, because there are 23 pairs of human chromosomes, he argued that two randomly chosen genes had a $ 1/23 \\simeq 0.05 $ prior probability of linkage, namely, $ 1 - \\pi_0 = 0.05 $, and thus $ \\pi_0 = 0.95 $. Assuming a Type-I error rate of $ \\alpha = 0.05 $ and 80% power to detect linkage ( $ \\beta = 0.20 $), applying Equation A4.15a yields a PER of $$ \\frac{0.05\\cdot0.95}{0.05\\cdot0.95+0.80\\cdot0.05}=0.54 $$ Hence, with a Type-I error control of $ \\alpha = 0.05 $, a random test showing a significant result ( $ p \\leq 0.05 $) has a 54% chance of being a false positive. This occurs because most of the hypotheses are expected to be null—for example, if we draw 1000 random pairs of loci, 950 are expected to be unlinked and we expect $ 950 \\cdot 0.05 = 47.5 $ of these to show a false positive. Conversely, only 50 are expected to be linked, and we would declare $ 50 \\cdot 0.80 = 40 $ of these to be significant, so that $ 47.5 / 87.5 = 0.54 $ of the significant results are due to false positives. What value for $ \\alpha $ is needed under the above parameters to given a PER of 0.05? Solving for $ \\alpha $ in the expression $$ \\frac{\\alpha\\cdot0.95}{\\alpha\\cdot0.95+0.80\\cdot0.05}=0.05 $$ yields $ \\alpha = 0.0022 $, and hence, setting this as the Type-I error gives a PER of 5%.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A4.9",
+      "anchor": "example-a4.9",
+      "label": "Example A4.9",
+      "section_id": "Evolution_appendix4_018",
+      "excerpt": "Example A4.9. Consider again the 10 ordered $p$ values from Example A4.4. Computing $n$ $p(k)/k = 10$ $p(k)/k$, where $k$ denotes the test with the $k$-th smallest $p$ value, yields the following table: [[TABLE:inline 3]] Thus, if we wish an overall FDR value of $\\delta = 0.05$, we would reject hypotheses when $n p(k)/k \\leq \\delta = 0.05$, which is satisfied by H(1) through H(8). Notice that this procedure rejects more hypotheses (i.e., returns more discoveries) than any of…",
+      "content_markdown": "Example A4.9. Consider again the 10 ordered $p$ values from Example A4.4. Computing $n$ $p(k)/k = 10$ $p(k)/k$, where $k$ denotes the test with the $k$-th smallest $p$ value, yields the following table: [[TABLE:inline_3]] Thus, if we wish an overall FDR value of $\\delta = 0.05$, we would reject hypotheses when $n p(k)/k \\leq \\delta = 0.05$, which is satisfied by H(1) through H(8). Notice that this procedure rejects more hypotheses (i.e., returns more discoveries) than any of the sequential Bonferroni methods (Example A4.4).",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A4.8",
+      "anchor": "example-a4.8",
+      "label": "Example A4.8",
+      "section_id": "Evolution_appendix4_018",
+      "excerpt": "Example A4.8. Suppose we set $ \\alpha = 0.005 $ for each test, and assume that the resulting power is essentially 1 (i.e., $ \\beta \\simeq 0 $). Consider 5000 tests under two different settings. First, suppose that the alternative is very rare, with $ n 1 = 1 $ ( $ \\pi 0 = 0.9998 $). Under this setting, we expect $ 4999 \\cdot 0.005 = 24.995 $ false positives and one true positive ( $ 1 \\cdot [1 - \\beta] = 1 $), yielding an expected PER of $$ PER=\\frac{24.995}{24.995+1}=0.961…",
+      "content_markdown": "Example A4.8. Suppose we set $ \\alpha = 0.005 $ for each test, and assume that the resulting power is essentially 1 (i.e., $ \\beta \\simeq 0 $). Consider 5000 tests under two different settings. First, suppose that the alternative is very rare, with $ n_1 = 1 $ ( $ \\pi_0 = 0.9998 $). Under this setting, we expect $ 4999 \\cdot 0.005 = 24.995 $ false positives and one true positive ( $ 1 \\cdot [1 - \\beta] = 1 $), yielding an expected PER of $$ PER=\\frac{24.995}{24.995+1}=0.961 $$ Thus, a randomly chosen significant test has a 96.1% probability of being a false positive. Now suppose that the alternative is not especially rare, for example $ n_1 = 500 $ ( $ \\pi_0 = 0.9 $). The expected number of false positives is $ 4500 \\cdot 0.005 = 22.5 $, while the expected number of true positives is 500, yielding a PER of $$ PER=\\frac{22.5}{522.5}=0.043 $$ The PER is thus rather sensitive to $ \\pi_0 $, the fraction of all tests that are truly from the null hypothesis. If $ \\pi_0 $ is essentially 1, a PER of $ \\delta $ is obtained using the Bonferroni correction, $ \\alpha = \\delta/n $. However, if $ \\pi_0 $ departs even slightly from one (i.e., more than a few of the alternative hypotheses are correct), then the per-test level of $ \\alpha $ to achieve a desired PER rate is considerably larger (i.e., less stringent) than that given by the Bonferroni correction, namely, $ \\alpha(\\delta) > \\delta/n $. For example, for a 0.04 experiment-wide error rate, $ \\alpha = 0.04/5000 = 8 \\cdot 10^{-6} $, which is roughly 625 times smaller than the value of $ \\alpha = 0.005 $ required for a 4% FDR, highlighting the greatly increased power under the FDR framework. This increased power arises because the FDR approach acknowledges that some fraction of the tests are not from the null.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A4.10",
+      "anchor": "example-a4.10",
+      "label": "Example A4.10",
+      "section_id": "Evolution_appendix4_022",
+      "excerpt": "Example A4.10. As an example of the interplay between the family-wide error rate ($\\pi$), and the individual $p$ and $q$ values for a particular test, consider Storey and Tibshirani's (2003) analysis of a microarray dataset comparing BRCA1 and BRCA2 positive breast cancer tumors. A total of 3226 genes were examined. Setting a critical $p$ value of $\\alpha = 0.001$ detects 51 significant genes (i.e., those with differential expression between the two types of tumors). If we a…",
+      "content_markdown": "Example A4.10. As an example of the interplay between the family-wide error rate ($\\pi$), and the individual $p$ and $q$ values for a particular test, consider Storey and Tibshirani's (2003) analysis of a microarray dataset comparing BRCA1 and BRCA2 positive breast cancer tumors. A total of 3226 genes were examined. Setting a critical $p$ value of $\\alpha = 0.001$ detects 51 significant genes (i.e., those with differential expression between the two types of tumors). If we assume that the hypotheses being tested are independent (which is unlikely as expression can be highly correlated across sets of genes), the probability that there is at least one false positive is $\\pi = 1 - (1 - 0.0001)^{3226} = 0.96$, while the expected number of false positives is $0.001 \\cdot 3226 = 3.2$, or $6% (3.2 / 51)$ of the declared significant differences. After setting an FDR rate of $\\delta = 0.05$, Storey and Tibshirani detected 160 genes that showed significant differences in expression. Of these 160, 8 (5%) are expected to be false positives. Compared to the Bonferroni correction (51 genes, 6% false positives), over three times as many genes were detected, and with a lower FDR rate. Further, Storey and Tibshirani estimated the fraction, $\\pi_0$, of nulls (genes with no difference in expression) at 67%, which suggests that 33% (or roughly 1000 of the 3226 genes) are likely to be differentially expressed between the two tumor types.\n\nThis dramatic difference in performance between Bonferroni and FDR control arises because the former enforces very strict control over any false positives, resulting in a much smaller set of discoveries. Conversely, FDR is more concerned with the fraction of discoveries that are false, and by including more true discoveries, that fraction can be made smaller than under Bonferroni. Because the fraction of null hypotheses that are false in this study is rather substantial, a lower significance threshold includes more of these true discoveries, thus decreasing the FDR.\n\nTo contrast the distinction between the $p$ and $q$ values, consider the MSH2 gene, which has a $q$ value of 0.013 and a $p$ value of 5.50 $\\cdot$ $10^{-5}$. This $p$ value implies that the probability of seeing at least this level of difference in expression for a randomly drawn gene from the null hypothesis (no difference in expression) is $5.50 \\cdot 10^{-5}$. Conversely, $q = 0.013$ indicates that, for this experiment, 1.3% of genes that show differences in expression that are as, or more, extreme (i.e., whose $p$ values are at least as small) as that for MSH2 are expected to be false positives.",
+      "origin": "example-library"
     },
     {
       "kind": "example",
       "id": "A4.11",
       "anchor": "example-a4.11",
       "label": "Example A4.11",
-      "section_id": "Evolution_appendix4_030",
-      "excerpt": "Example A4.11 · ref: A4.11 · source: Evolution appendix4 030.json · blocks 1–1 Example A4.11. Hereford et al. (2004) and Morrissey (2016) presented general expressions for $ E[ x ] $ when $ x \\sim N(\\mu, \\sigma^2) $. As shown in Figure A4.8, the distribution of $ x $ is given by a folded normal distribution, from which it follows that $$ \\begin{align }E[ x ]=\\sigma\\sqrt{2\\over\\pi}\\exp\\left(-{\\mu^2\\over2\\sigma^2}\\right)+ \\mu \\cdot\\textrm{erf}\\left({\\mu \\over\\sigma\\sqrt{2}}\\ri…"
+      "section_id": "Evolution_appendix4_029",
+      "excerpt": "Example A4.11. Hereford et al. (2004) and Morrissey (2016) presented general expressions for $ E[ x ] $ when $ x \\sim N(\\mu, \\sigma^2) $. As shown in Figure A4.8, the distribution of $ x $ is given by a folded normal distribution, from which it follows that $$ \\begin{align }E[ x ]=\\sigma\\sqrt{2\\over\\pi}\\exp\\left(-{\\mu^2\\over2\\sigma^2}\\right)+ \\mu \\cdot\\textrm{erf}\\left({\\mu \\over\\sigma\\sqrt{2}}\\right)\\end{align } $$ (A4.38a) where $$ \\mathrm{erf}(x)=\\frac{2}{\\sqrt{\\pi}}\\int…",
+      "content_markdown": "Example A4.11. Hereford et al. (2004) and Morrissey (2016) presented general expressions for $ E[|x|] $ when $ x \\sim N(\\mu, \\sigma^2) $. As shown in Figure A4.8, the distribution of $ |x| $ is given by a folded normal distribution, from which it follows that $$ \\begin{align*}E[|x|]=\\sigma\\sqrt{2\\over\\pi}\\exp\\left(-{\\mu^2\\over2\\sigma^2}\\right)+|\\mu|\\cdot\\textrm{erf}\\left({\\mu|\\over\\sigma\\sqrt{2}}\\right)\\end{align*} $$ (A4.38a) where $$ \\mathrm{erf}(x)=\\frac{2}{\\sqrt{\\pi}}\\int_{0}^{x}\\exp(-t^{2})dt $$ is the error function. Taking $ \\mu = 0 $, Equation A4.38a reduces to Equation A4.37a. Likewise, when $ \\mu \\gg \\sigma^{2} $, Equation A4.38a reduces to $$ E[|x|]\\sim|\\mu| $$ (A4.38b) which follows because for large values of x, $ e^{-x} \\to 0 $ and $ \\mathrm{erf}(x) \\to 1 $.",
+      "origin": "example-library"
     },
     {
       "kind": "formula",
@@ -1162,13 +1174,6 @@
         "link_scope": "current-book"
       },
       {
-        "kind": "example",
-        "id": "A4.1",
-        "label": "Example A4.1",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
         "kind": "equation",
         "id": "A4.2c",
         "label": "Equation A4.2c",
@@ -1281,23 +1286,16 @@
         "label": "Example A4.5",
         "book_hint": "",
         "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A4.5",
-        "label": "Equation A4.5",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A4.7",
-        "label": "Equation A4.7",
-        "book_hint": "",
-        "link_scope": "current-book"
       }
     ],
     "Evolution_appendix4_014": [
+      {
+        "kind": "example",
+        "id": "A4.5",
+        "label": "Example A4.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
       {
         "kind": "figure",
         "id": "A4.1",
@@ -1309,15 +1307,29 @@
     "Evolution_appendix4_015": [
       {
         "kind": "figure",
-        "id": "A4.2",
-        "label": "Figure A4.2",
+        "id": "A4.2A",
+        "label": "Figure A4.2A",
         "book_hint": "",
         "link_scope": "current-book"
       },
       {
         "kind": "figure",
-        "id": "A4.1",
-        "label": "Figure A4.1",
+        "id": "A4.2B",
+        "label": "Figure A4.2B",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A4.2C",
+        "label": "Figure A4.2C",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A4.2",
+        "label": "Figure A4.2",
         "book_hint": "",
         "link_scope": "current-book"
       },
@@ -1437,9 +1449,7 @@
         "label": "Equation A4.4",
         "book_hint": "",
         "link_scope": "current-book"
-      }
-    ],
-    "Evolution_appendix4_019": [
+      },
       {
         "kind": "example",
         "id": "A4.7",
@@ -1448,9 +1458,9 @@
         "link_scope": "current-book"
       },
       {
-        "kind": "equation",
-        "id": "A4.15a",
-        "label": "Equation A4.15a",
+        "kind": "example",
+        "id": "A4.9",
+        "label": "Example A4.9",
         "book_hint": "",
         "link_scope": "current-book"
       },
@@ -1462,7 +1472,7 @@
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix4_020": [
+    "Evolution_appendix4_019": [
       {
         "kind": "table",
         "id": "A4.2",
@@ -1471,7 +1481,7 @@
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix4_021": [
+    "Evolution_appendix4_020": [
       {
         "kind": "equation",
         "id": "A4.8",
@@ -1487,7 +1497,7 @@
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix4_022": [
+    "Evolution_appendix4_021": [
       {
         "kind": "equation",
         "id": "A4.8a",
@@ -1524,18 +1534,11 @@
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix4_023": [
+    "Evolution_appendix4_022": [
       {
         "kind": "example",
         "id": "A4.9",
         "label": "Example A4.9",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "A4.4",
-        "label": "Example A4.4",
         "book_hint": "",
         "link_scope": "current-book"
       },
@@ -1547,7 +1550,7 @@
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix4_024": [
+    "Evolution_appendix4_023": [
       {
         "kind": "chapter",
         "id": "15",
@@ -1556,8 +1559,8 @@
         "link_scope": "lw"
       }
     ],
-    "Evolution_appendix4_025": [],
-    "Evolution_appendix4_026": [
+    "Evolution_appendix4_024": [],
+    "Evolution_appendix4_025": [
       {
         "kind": "chapter",
         "id": "30",
@@ -1573,7 +1576,7 @@
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix4_027": [
+    "Evolution_appendix4_026": [
       {
         "kind": "chapter",
         "id": "27",
@@ -1610,7 +1613,7 @@
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix4_028": [
+    "Evolution_appendix4_027": [
       {
         "kind": "chapter",
         "id": "8",
@@ -1703,7 +1706,7 @@
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix4_029": [
+    "Evolution_appendix4_028": [
       {
         "kind": "chapter",
         "id": "14",
@@ -1720,8 +1723,36 @@
       },
       {
         "kind": "figure",
+        "id": "A4.6A",
+        "label": "Figure A4.6A",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A4.6B",
+        "label": "Figure A4.6B",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
         "id": "A4.7",
         "label": "Figure A4.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A4.7A",
+        "label": "Figure A4.7A",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "figure",
+        "id": "A4.7B",
+        "label": "Figure A4.7B",
         "book_hint": "",
         "link_scope": "current-book"
       },
@@ -1733,7 +1764,7 @@
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix4_030": [
+    "Evolution_appendix4_029": [
       {
         "kind": "chapter",
         "id": "29",
@@ -1749,13 +1780,6 @@
         "link_scope": "current-book"
       },
       {
-        "kind": "figure",
-        "id": "A4.8",
-        "label": "Figure A4.8",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
         "kind": "example",
         "id": "A4.11",
         "label": "Example A4.11",
@@ -1763,16 +1787,9 @@
         "link_scope": "current-book"
       },
       {
-        "kind": "equation",
-        "id": "A4.38a",
-        "label": "Equation A4.38a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A4.37a",
-        "label": "Equation A4.37a",
+        "kind": "figure",
+        "id": "A4.8",
+        "label": "Figure A4.8",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -1810,8 +1827,8 @@
       "match_source": "chapter-overview"
     },
     {
-      "current_section_id": "Evolution_appendix4_024",
-      "current_anchor": "evolution_appendix4_024",
+      "current_section_id": "Evolution_appendix4_023",
+      "current_anchor": "evolution_appendix4_023",
       "source_chapter_id": "Genetics_chapter15",
       "label": "LW Chapter 15",
       "target_anchor": "genetics_chapter15_section_001",
@@ -1825,8 +1842,8 @@
       "match_source": "chapter-overview"
     },
     {
-      "current_section_id": "Evolution_appendix4_026",
-      "current_anchor": "evolution_appendix4_026",
+      "current_section_id": "Evolution_appendix4_025",
+      "current_anchor": "evolution_appendix4_025",
       "source_chapter_id": "Evolution_chapter30",
       "label": "Chapter 30",
       "target_anchor": "figure-30.7",
@@ -1840,8 +1857,8 @@
       "match_source": "llm-prerequisite"
     },
     {
-      "current_section_id": "Evolution_appendix4_027",
-      "current_anchor": "evolution_appendix4_027",
+      "current_section_id": "Evolution_appendix4_026",
+      "current_anchor": "evolution_appendix4_026",
       "source_chapter_id": "Genetics_chapter27",
       "label": "LW Chapter 27",
       "target_anchor": "genetics_chapter27_section_001",
@@ -1855,8 +1872,8 @@
       "match_source": "chapter-overview"
     },
     {
-      "current_section_id": "Evolution_appendix4_028",
-      "current_anchor": "evolution_appendix4_028",
+      "current_section_id": "Evolution_appendix4_027",
+      "current_anchor": "evolution_appendix4_027",
       "source_chapter_id": "Genetics_chapter8",
       "label": "LW Chapter 8",
       "target_anchor": "genetics_chapter8_section_001",
@@ -1870,8 +1887,8 @@
       "match_source": "chapter-overview"
     },
     {
-      "current_section_id": "Evolution_appendix4_028",
-      "current_anchor": "evolution_appendix4_028",
+      "current_section_id": "Evolution_appendix4_027",
+      "current_anchor": "evolution_appendix4_027",
       "source_chapter_id": "Evolution_chapter19",
       "label": "Chapter 19",
       "target_anchor": "evolution_chapter19_section_001",
@@ -1885,8 +1902,8 @@
       "match_source": "llm-prerequisite"
     },
     {
-      "current_section_id": "Evolution_appendix4_028",
-      "current_anchor": "evolution_appendix4_028",
+      "current_section_id": "Evolution_appendix4_027",
+      "current_anchor": "evolution_appendix4_027",
       "source_chapter_id": "Evolution_chapter20",
       "label": "Chapter 20",
       "target_anchor": "evolution_chapter20_section_001",
@@ -1900,8 +1917,8 @@
       "match_source": "chapter-overview"
     },
     {
-      "current_section_id": "Evolution_appendix4_028",
-      "current_anchor": "evolution_appendix4_028",
+      "current_section_id": "Evolution_appendix4_027",
+      "current_anchor": "evolution_appendix4_027",
       "source_chapter_id": "Genetics_chapter26",
       "label": "LW Chapter 26",
       "target_anchor": "genetics_chapter26_section_001",
@@ -1915,8 +1932,8 @@
       "match_source": "chapter-overview"
     },
     {
-      "current_section_id": "Evolution_appendix4_028",
-      "current_anchor": "evolution_appendix4_028",
+      "current_section_id": "Evolution_appendix4_027",
+      "current_anchor": "evolution_appendix4_027",
       "source_chapter_id": "Genetics_chapter27",
       "label": "LW Chapter 27",
       "target_anchor": "genetics_chapter27_section_001",
@@ -1930,8 +1947,8 @@
       "match_source": "chapter-overview"
     },
     {
-      "current_section_id": "Evolution_appendix4_029",
-      "current_anchor": "evolution_appendix4_029",
+      "current_section_id": "Evolution_appendix4_028",
+      "current_anchor": "evolution_appendix4_028",
       "source_chapter_id": "Evolution_chapter14",
       "label": "Chapter 14",
       "target_anchor": "evolution_chapter14_section_001",
@@ -1945,8 +1962,8 @@
       "match_source": "chapter-overview"
     },
     {
-      "current_section_id": "Evolution_appendix4_030",
-      "current_anchor": "evolution_appendix4_030",
+      "current_section_id": "Evolution_appendix4_029",
+      "current_anchor": "evolution_appendix4_029",
       "source_chapter_id": "Evolution_chapter29",
       "label": "Chapter 29",
       "target_anchor": "evolution_chapter29_section_001",
@@ -1956,12 +1973,12 @@
       "target_section_title": "Chapter 29 · Individual Fitness and the Measurement of Univariate Selection",
       "book_hint": "",
       "link_scope": "current-book",
-      "context_excerpt": "FORMAL META-ANALYSIS / Bias When Estimating Magnitudes [Figure] Figure A4.8 · page 30 · source: Evolution appendix4 Figure A4.8 The consequences of considering the absolute value, $ \\theta $, of an effect. Here, the true size effect ( $ \\theta $) is normally distributed with a variance of $ \\sigma^2 $, whose distribution is indicated by the solid curves. Of course, we do not observe the true value, but rather an est…",
+      "context_excerpt": "FORMAL META-ANALYSIS / Bias When Estimating Magnitudes Finally, consider a random-effects setting, in which the parameter of interest, $\\theta {ii}$ in a given study (i) is drawn from normal distribution with a mean of $\\mu$ and a variance of $\\sigma {\\mu}^{2}$, so $\\theta {i} \\sim N(\\mu, \\sigma {\\mu}^{2})$. Suppose we assume the observed effect, $T {i}$, for this study is also normal, but with an additional samplin…",
       "match_source": "chapter-overview"
     },
     {
-      "current_section_id": "Evolution_appendix4_030",
-      "current_anchor": "evolution_appendix4_030",
+      "current_section_id": "Evolution_appendix4_029",
+      "current_anchor": "evolution_appendix4_029",
       "source_chapter_id": "Evolution_chapter30",
       "label": "Chapter 30",
       "target_anchor": "figure-30.7",
@@ -1971,7 +1988,7 @@
       "target_section_title": "THE STRENGTH AND PATTERN OF SELECTION IN NATURAL POPULATIONS / Directional Selection: Strong or Weak?",
       "book_hint": "",
       "link_scope": "current-book",
-      "context_excerpt": "FORMAL META-ANALYSIS / Bias When Estimating Magnitudes [Figure] Figure A4.8 · page 30 · source: Evolution appendix4 Figure A4.8 The consequences of considering the absolute value, $ \\theta $, of an effect. Here, the true size effect ( $ \\theta $) is normally distributed with a variance of $ \\sigma^2 $, whose distribution is indicated by the solid curves. Of course, we do not observe the true value, but rather an est…",
+      "context_excerpt": "FORMAL META-ANALYSIS / Bias When Estimating Magnitudes Finally, consider a random-effects setting, in which the parameter of interest, $\\theta {ii}$ in a given study (i) is drawn from normal distribution with a mean of $\\mu$ and a variance of $\\sigma {\\mu}^{2}$, so $\\theta {i} \\sim N(\\mu, \\sigma {\\mu}^{2})$. Suppose we assume the observed effect, $T {i}$, for this study is also normal, but with an additional samplin…",
       "match_source": "llm-prerequisite"
     }
   ],
@@ -2128,7 +2145,7 @@
     "provider": "deepseek",
     "model": "deepseek-v4-flash",
     "cache_enabled": true,
-    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "cache_dir": "tmp/llm_cache",
     "max_remote_calls": 0,
     "max_prompt_chars_total": 0,
     "max_response_chars_total": 0,

@@ -1,5 +1,9 @@
 # paper2latex-mcp — spec.md
 
+> **ARCHIVED / UNSUPPORTED:** This is a historical design document. The MCP and
+> Web services described below are not release entry points and are excluded
+> from default CI. It must not be read as current startup or deployment guidance.
+
 > 目标：构建一个 MCP（Model Context Protocol）工具，将科学论文（PDF）尽可能自动化地转化为**可编译、可编辑**的 LaTeX 项目（含结构、引用、参考文献、公式 LaTeX、图表占位/抽取）。
 
 ---

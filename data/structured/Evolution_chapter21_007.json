@@ -21,35 +21,207 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Once the type of family (half-sib, full-sib, nested, or inbred $ S_i $) has been specified, there is still the issue of how to incorporate sib information when making selection decisions. To distinguish between a particular sib and the trait value of that sib, we use $ x_i $ to denote the ith sib and $ z_i $ to denote its trait value, and more generally, $ x_{ij} $ and $ z_{ij} $ for the jth individual. from the ith family. We select the uppermost fraction, p, of the relevant population, with m families each with n sibs, for a total of M = mn scored individuals, which we use to choose N parents. Four different approaches for weighting sib information are commonly used: 1. Among-family selection: Individuals are selected solely on the basis of their family means, $ \\overline{z}_{i} $, with the result that all individuals from the same family have the same selective rank. Here, the best N = pm families are chosen."
+      "content": "Once the type of family (half-sib, full-sib, nested, or inbred $ S_i $) has been specified, there is still the issue of how to incorporate sib information when making selection decisions. To distinguish between a particular sib and the trait value of that sib, we use $ x_i $ to denote the ith sib and $ z_i $ to denote its trait value, and more generally, $ x_{ij} $ and $ z_{ij} $ for the jth individual. from the ith family. We select the uppermost fraction, p, of the relevant population, with m families each with n sibs, for a total of M = mn scored individuals, which we use to choose N parents. Four different approaches for weighting sib information are commonly used: 1. Among-family selection: Individuals are selected solely on the basis of their family means, $ \\overline{z}_{i} $, with the result that all individuals from the same family have the same selective rank. Here, the best N = pm families are chosen.",
+      "source_page": 705,
+      "source_pages": [
+        705,
+        706
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p005:b11",
+        "Evolution_chapter21:p005:b12",
+        "Evolution_chapter21:p006:b2",
+        "Evolution_chapter21:p006:b3"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          1344.0,
+          417.0,
+          1367.0
+        ],
+        [
+          133.0,
+          1373.0,
+          904.0,
+          1468.0
+        ],
+        [
+          287.0,
+          206.0,
+          1059.0,
+          278.0
+        ],
+        [
+          315.0,
+          284.0,
+          1047.0,
+          357.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7e9920ff750a196b4066cb935e4ec04f6a421a787c8d2514f94f9e6a24545a0a"
     },
     {
       "type": "discussion",
-      "content": "2. Strict within-family (WF) selection. The best pn individuals from each family are chosen ($ N = pnm = pM $), so that individuals are ranked within each family. WF selection increases the effective population size because the among-family variance in offspring number is zero (Chapters 3 and 26)."
+      "content": "2. Strict within-family (WF) selection. The best pn individuals from each family are chosen ($ N = pnm = pM $), so that individuals are ranked within each family. WF selection increases the effective population size because the among-family variance in offspring number is zero (Chapters 3 and 26).",
+      "source_page": 706,
+      "source_pages": [
+        706
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p006:b4"
+      ],
+      "source_bboxes": [
+        [
+          313.0,
+          363.0,
+          1044.0,
+          456.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "74cd445c025057a0a1f735f59b977790e57d126bc4f094ab38f6946d352f3532"
     },
     {
       "type": "discussion",
-      "content": "3. Selection on within-family deviations (FD): Individuals are ranked solely on the basis of their within-family deviation, $ z_{ij} - \\overline{z}_i $. The $ N = pM $ individuals with the largest deviations (regardless of family) are chosen."
+      "content": "3. Selection on within-family deviations (FD): Individuals are ranked solely on the basis of their within-family deviation, $ z_{ij} - \\overline{z}_i $. The $ N = pM $ individuals with the largest deviations (regardless of family) are chosen.",
+      "source_page": 706,
+      "source_pages": [
+        706
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p006:b5"
+      ],
+      "source_bboxes": [
+        [
+          315.0,
+          463.0,
+          1043.0,
+          534.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ffa1e57202bc56910bee3e8b724cd2d9f8307523377c7f8917873e2791f686f4"
     },
     {
       "type": "discussion",
-      "content": "4. Family-index selection: Individuals are ranked using an index weighting within- and among-family components $$ I=b_{1}\\left(z_{i j}-\\overline{z}_{i}\\right)+b_{2}\\overline{z}_{i}=b_{1}z_{i j}+\\left(b_{2}-b_{1}\\right)\\overline{z}_{i} $$"
+      "content": "4. Family-index selection: Individuals are ranked using an index weighting within- and among-family components $$ I=b_{1}\\left(z_{i j}-\\overline{z}_{i}\\right)+b_{2}\\overline{z}_{i}=b_{1}z_{i j}+\\left(b_{2}-b_{1}\\right)\\overline{z}_{i} $$",
+      "source_page": 706,
+      "source_pages": [
+        706
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p006:b6",
+        "Evolution_chapter21:p006:b7"
+      ],
+      "source_bboxes": [
+        [
+          314.0,
+          541.0,
+          1043.0,
+          589.0
+        ],
+        [
+          507.0,
+          602.0,
+          895.0,
+          627.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "bc229ac751f3f8d6ca8299d134b3cd1ac27ba18778e7c09d2bc30ba354818120"
     },
     {
       "type": "discussion",
-      "content": "The $ pM $ individuals with the best index scores are chosen. Note that the index with weights $ (cb_1, cb_2) $ chooses the same individuals as an index with weights $ (b_1, b_2) $. Thus, one of the index weights is often set to one, as the indices with weights $ (b_1, b_2) $, $ (1, b_2/b_1) $, and $ (b_1/b_2, 1) $ are all equivalent (in that they all choose the same individuals). Individual selection, among-family selection, and selection on family deviations (FD) are special cases, being indices with weights $ (b_1, b_2) = (1,1) $, $ (0,1) $, and $ (1,0) $, respectively. Note, however, that strict within-family (WF) selection cannot be expressed in terms of an index. Family-index selection is also referred to as combined selection, which is unfortunate, as the same term is also used by breeders to refer to approaches that combine different types of selection schemes in a single cycle (such as modified ear-to-row selection, discussed below)."
+      "content": "The $ pM $ individuals with the best index scores are chosen. Note that the index with weights $ (cb_1, cb_2) $ chooses the same individuals as an index with weights $ (b_1, b_2) $. Thus, one of the index weights is often set to one, as the indices with weights $ (b_1, b_2) $, $ (1, b_2/b_1) $, and $ (b_1/b_2, 1) $ are all equivalent (in that they all choose the same individuals). Individual selection, among-family selection, and selection on family deviations (FD) are special cases, being indices with weights $ (b_1, b_2) = (1,1) $, $ (0,1) $, and $ (1,0) $, respectively. Note, however, that strict within-family (WF) selection cannot be expressed in terms of an index. Family-index selection is also referred to as combined selection, which is unfortunate, as the same term is also used by breeders to refer to approaches that combine different types of selection schemes in a single cycle (such as modified ear-to-row selection, discussed below).",
+      "source_page": 706,
+      "source_pages": [
+        706
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p006:b8"
+      ],
+      "source_bboxes": [
+        [
+          353.0,
+          638.0,
+          1046.0,
+          894.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6d60403ab1baaddbd07c3d6e76a174d82b9ba1dc67e9da55a4a4dd4aaca439a5"
     },
     {
       "type": "discussion",
-      "content": "The choice of the particular scheme has implications for the selection intensity (Example 21.1). When the fraction saved (p) is fixed, among-family and strict within-family selection have lower selection intensities than family-deviations, index, or mass selection. The former selects the best pm of m families and pn of n sibs, while the latter three select the best pM of M individuals. Because M is greater than either n or m, the finite-sample value for i is larger when sampling from M than from n or m (Chapter 14). $$ \\"
+      "content": "The choice of the particular scheme has implications for the selection intensity (Example 21.1). When the fraction saved (p) is fixed, among-family and strict within-family selection have lower selection intensities than family-deviations, index, or mass selection. The former selects the best pm of m families and pn of n sibs, while the latter three select the best pM of M individuals. Because M is greater than either n or m, the finite-sample value for i is larger when sampling from M than from n or m (Chapter 14). $$ \\begin{array}{ll}\\text{Individual selection (infinite population)}&\\text{Best 20\\%},\\ \\bar{\\imath}_{\\infty}=1.40\\\\\\text{Individual selection, index selection,}&\\\\\\text{family-deviations (FD) selection}&\\text{Best 20 of 100},\\ \\bar{\\imath}_{(20,100)}=1.39\\\\\\text{Among-family selection}&\\text{Best 4 of 20},\\ \\bar{\\imath}_{(4,20)}=1.33\\\\\\text{Strict within-family selection (WF)}&\\text{Best 1 of 5},\\ \\bar{\\imath}_{(1,5)}=1.16\\end{array} $$",
+      "source_page": 706,
+      "source_pages": [
+        706
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p006:b9",
+        "Evolution_chapter21:p006:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          910.0,
+          1059.0,
+          1052.0
+        ],
+        [
+          321.0,
+          1118.0,
+          1036.0,
+          1289.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d9d797645050d8a7c78f7d413b71465bdd1aacbcf4cfefababd2aaa74c2d86a2"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:21.1]]"
+      "content": "[[SEE_EXAMPLE:21.1]]",
+      "source_page": 706,
+      "source_pages": [
+        706
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p006:b9"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          910.0,
+          1059.0,
+          1052.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "022da8fe0dc9c92b16d6dd848ce31e64a687e0fbf8e5be616604b3641035b2a2"
     },
     {
       "type": "discussion",
-      "content": "Finally, the choice of the selection scheme also influences the long-term effective population size (and hence the long-term response; see Chapter 26), with schemes that place more weight on among-family components resulting in smaller effective population sizes (due to larger among-family offspring variances) than those that place more weight on within-family components (Chapter 3)."
+      "content": "Finally, the choice of the selection scheme also influences the long-term effective population size (and hence the long-term response; see Chapter 26), with schemes that place more weight on among-family components resulting in smaller effective population sizes (due to larger among-family offspring variances) than those that place more weight on within-family components (Chapter 3).",
+      "source_page": 707,
+      "source_pages": [
+        707
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p007:b7"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1098.0,
+          904.0,
+          1214.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "caa48d4388c6bcac4671bf7578ed58c723d46f84a07dcb461063edc20c12b4eb"
     }
   ]
 }

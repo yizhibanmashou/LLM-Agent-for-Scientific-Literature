@@ -9,59 +9,353 @@
     "source_file": "data\\paddle_output\\Evolution_chapter19_full\\main.tex",
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
-    "table_references": [],
+    "table_references": [
+      "inline_3",
+      "inline_4"
+    ],
     "section_level_1": "BAYESIAN MIXED-MODEL ANALYSIS",
     "section_level_2": "Computing Posteriors and Marginals: MCMC and the Gibbs Sampler",
     "heading_path": [
       "BAYESIAN MIXED-MODEL ANALYSIS",
       "Computing Posteriors and Marginals: MCMC and the Gibbs Sampler"
     ],
-    "display_heading": "Computing Posteriors and Marginals: MCMC and the Gibbs Sampler"
+    "display_heading": "Computing Posteriors and Marginals: MCMC and the Gibbs Sampler",
+    "table_reference_keys": [
+      "evolution_chapter19:inline_3",
+      "evolution_chapter19:inline_4"
+    ]
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Historically, the widespread implementation of Bayesian approaches was limited by the difficulty in obtaining marginal posterior distributions, which typically requires the integration of complex, high-dimensional functions (e.g., Equations 19.29a and 19.30). Markov Chain Monte Carlo (MCMC) approaches (Appendix 3) provide a solution by offering straightforward (although computationally demanding) procedures for generating random draws from very complex distributions. One such distribution is the posterior (given the data and the prior) in a Bayesian analysis, and it often turns out to be fairly easy to implement a sampler that allows draws from this distribution."
+      "content": "Historically, the widespread implementation of Bayesian approaches was limited by the difficulty in obtaining marginal posterior distributions, which typically requires the integration of complex, high-dimensional functions (e.g., Equations 19.29a and 19.30). Markov Chain Monte Carlo (MCMC) approaches (Appendix 3) provide a solution by offering straightforward (although computationally demanding) procedures for generating random draws from very complex distributions. One such distribution is the posterior (given the data and the prior) in a Bayesian analysis, and it often turns out to be fairly easy to implement a sampler that allows draws from this distribution.",
+      "source_page": 648,
+      "source_pages": [
+        648,
+        649
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p032:b11",
+        "Evolution_chapter19:p032:b12",
+        "Evolution_chapter19:p033:b2"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1392.0,
+          909.0,
+          1417.0
+        ],
+        [
+          288.0,
+          1421.0,
+          1059.0,
+          1472.0
+        ],
+        [
+          132.0,
+          207.0,
+          904.0,
+          343.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "aafcf4a068884dca26bddddb8328cac457769b2acb0955ece3ea5f7dd48c4316"
     },
     {
       "type": "discussion",
-      "content": "Simulating random vectors directly drawn from some complex target distribution (such as the posterior for a given model and particular data set) can be a very difficult task. The idea behind MCMC approaches is to successively draw samples from far simpler distributions in such a way that the distribution of the samples converges to the target distribution. These approaches are so named because one uses the previous sample value to randomly generate the next sample value, thus generating a Markov chain (Appendix 3). While there are a wide range of MCMC methods, two of the most commonly encountered in the quantitative-genetics literature are the Metropolis-Hastings algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953; Hastings 1970), and the Gibbs sampler (Geman and Geman 1984)."
+      "content": "Simulating random vectors directly drawn from some complex target distribution (such as the posterior for a given model and particular data set) can be a very difficult task. The idea behind MCMC approaches is to successively draw samples from far simpler distributions in such a way that the distribution of the samples converges to the target distribution. These approaches are so named because one uses the previous sample value to randomly generate the next sample value, thus generating a Markov chain (Appendix 3). While there are a wide range of MCMC methods, two of the most commonly encountered in the quantitative-genetics literature are the Metropolis-Hastings algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953; Hastings 1970), and the Gibbs sampler (Geman and Geman 1984).",
+      "source_page": 649,
+      "source_pages": [
+        649
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p033:b3"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          345.0,
+          905.0,
+          573.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "40a2cdca40200a4996f0ef5d375275c335c110c47e1cffe5b25ede1c31f762cf"
     },
     {
       "type": "discussion",
-      "content": "Under Metropolis-Hastings, one simulates draws from a complex target distribution by first drawing a random variable from a specified (and simpler) distribution and then using a probability-based decision rule to decide whether to keep that realization or reject it (details are in Appendix 3). The strength of Metropolis-Hastings is that it can be applied to a very wide range of problems, such as priors that do not conjugate with the likelihood (and hence do not have a simple form). Its weakness is that candidate values can end up being rejected with a very high probability, making the sampler very inefficient (requiring very long runs to produce a reasonably sized trimmed sequence with low correlation between elements), especially in a multivariate setting, where each simulated draw is a vector of random variables."
+      "content": "Under Metropolis-Hastings, one simulates draws from a complex target distribution by first drawing a random variable from a specified (and simpler) distribution and then using a probability-based decision rule to decide whether to keep that realization or reject it (details are in Appendix 3). The strength of Metropolis-Hastings is that it can be applied to a very wide range of problems, such as priors that do not conjugate with the likelihood (and hence do not have a simple form). Its weakness is that candidate values can end up being rejected with a very high probability, making the sampler very inefficient (requiring very long runs to produce a reasonably sized trimmed sequence with low correlation between elements), especially in a multivariate setting, where each simulated draw is a vector of random variables.",
+      "source_page": 649,
+      "source_pages": [
+        649
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p033:b4"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          575.0,
+          905.0,
+          803.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4914c4e850ae5df87723d4b48750c61670ed4dc7a01894229efefbacbeb61f51"
     },
     {
       "type": "discussion",
-      "content": "The Gibbs sampler is a special case of Metropolis-Hastings sampling wherein the random value is always accepted. The key to this sampler is that one only considers univariate conditional distributions—the distribution that results when all of the random variables but one are assigned fixed values. Typically, one uses conjugate priors to form a Gibbs sampler (see below). More generally, one can also use a block implementation of the sampler, generating draws using conditional multivariate distributions"
+      "content": "The Gibbs sampler is a special case of Metropolis-Hastings sampling wherein the random value is always accepted. The key to this sampler is that one only considers univariate conditional distributions—the distribution that results when all of the random variables but one are assigned fixed values. Typically, one uses conjugate priors to form a Gibbs sampler (see below). More generally, one can also use a block implementation of the sampler, generating draws using conditional multivariate distributions",
+      "source_page": 649,
+      "source_pages": [
+        649
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p033:b5"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          804.0,
+          904.0,
+          943.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "64e3ba160619515bb9e2e3c58d3db8e5fe1b922cbe888dc52574ed7d741c5bfe"
     },
     {
       "type": "discussion",
-      "content": "To introduce the Gibbs sampler, consider a bivariate random vector $ (x, y) $, and suppose we wish to compute one or both marginals, $ p(x) $ and $ p(y) $. The idea behind the sampler is that it is far easier to consider a sequence of conditional distributions, $ p(x \\mid y) $ and $ p(y \\mid x) $, than it is to obtain the marginal by integration of the joint density $ p(x, y) $, e.g., $ p(x) = \\int p(x, y) \\, dy $. The sampler starts with some initial value $ y_0 $ for $ y $ and obtains $ x_0 $ by generating a random variable from the conditional distribution, $ p(x \\mid y = y_0) $. The sampler then uses $ x_0 $ to generate a new value, $ y_1 $, drawing from the conditional distribution based on the value $ x_0 $, $ p(y \\mid x = x_0) $. The sampler proceeds as follows: $$ x_{i}\\sim p(x\\mid y=y_{i-1}) $$ $$ y_{i}\\sim p(y\\mid x=x_{i}) $$"
+      "content": "To introduce the Gibbs sampler, consider a bivariate random vector $ (x, y) $, and suppose we wish to compute one or both marginals, $ p(x) $ and $ p(y) $. The idea behind the sampler is that it is far easier to consider a sequence of conditional distributions, $ p(x \\mid y) $ and $ p(y \\mid x) $, than it is to obtain the marginal by integration of the joint density $ p(x, y) $, e.g., $ p(x) = \\int p(x, y) \\, dy $. The sampler starts with some initial value $ y_0 $ for $ y $ and obtains $ x_0 $ by generating a random variable from the conditional distribution, $ p(x \\mid y = y_0) $. The sampler then uses $ x_0 $ to generate a new value, $ y_1 $, drawing from the conditional distribution based on the value $ x_0 $, $ p(y \\mid x = x_0) $. The sampler proceeds as follows: $$ x_{i}\\sim p(x\\mid y=y_{i-1}) $$ $$ y_{i}\\sim p(y\\mid x=x_{i}) $$",
+      "source_page": 649,
+      "source_pages": [
+        649
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p033:b6",
+        "Evolution_chapter19:p033:b7",
+        "Evolution_chapter19:p033:b8"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          942.0,
+          903.0,
+          1127.0
+        ],
+        [
+          434.0,
+          1144.0,
+          602.0,
+          1167.0
+        ],
+        [
+          442.0,
+          1184.0,
+          592.0,
+          1207.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "eeba992f08bad7b6f7ff5e1c8fe1d03b553db41e0fa2c8b62b06bb8ec142ad74"
     },
     {
       "type": "discussion",
-      "content": "Repeating this process $k$ times generates a Gibbs sequence of length $k$, where a subset of points $(x_j, y_j)$ is taken to represent our simulated draws from the full joint distribution. To obtain the desired total of $m$ sample points, we first sample the chain after a sufficient burn-in period to remove the effects of the initial starting values and then at set time points (say, every $n$ samples) following the burn-in (trimming or thinning the sequence). For example, Wang et al. (1994b) created a Gibbs sampler for an animal model that generated a total of 1,205,000 sample vectors. The first 5000 were discarded (corresponding to the burn-in), and then every tenth subsequent iteration was saved (to reduce correlations between sample vectors), to yield a total sample of 120,000 vectors. The burn-in period, and sampling interval following the burn-in can be delicate, and careful analysis of the resulting Gibbs sequence using convergence diagnostic tools is critical (Appendix 3)."
+      "content": "Repeating this process $k$ times generates a Gibbs sequence of length $k$, where a subset of points $(x_j, y_j)$ is taken to represent our simulated draws from the full joint distribution. To obtain the desired total of $m$ sample points, we first sample the chain after a sufficient burn-in period to remove the effects of the initial starting values and then at set time points (say, every $n$ samples) following the burn-in (trimming or thinning the sequence). For example, Wang et al. (1994b) created a Gibbs sampler for an animal model that generated a total of 1,205,000 sample vectors. The first 5000 were discarded (corresponding to the burn-in), and then every tenth subsequent iteration was saved (to reduce correlations between sample vectors), to yield a total sample of 120,000 vectors. The burn-in period, and sampling interval following the burn-in can be delicate, and careful analysis of the resulting Gibbs sequence using convergence diagnostic tools is critical (Appendix 3).",
+      "source_page": 649,
+      "source_pages": [
+        649
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p033:b11"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1215.0,
+          904.0,
+          1473.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "35bcf89cbd73dd3016614e01818fe7f250856fe0b27d437b2c5563df77687263"
     },
     {
       "type": "discussion",
-      "content": "When more than two variables are involved, the sampler is extended in the obvious fashion. For example, if there are four variables, $ (w, x, y, z) $, the sampler becomes $$ \\begin{aligned}&w_{i}\\sim p(w\\mid x=x_{i-1},y=y_{i-1},z=z_{i-1})\\\\&x_{i}\\sim p(x\\mid w=w_{i},y=y_{i-1},z=z_{i-1})\\\\&y_{i}\\sim p(y\\mid w=w_{i},x=x_{i},z=z_{i-1})\\\\&z_{i}\\sim p(z\\mid w=w_{i},x=x_{i},y=y_{i})\\\\ \\end{aligned} $$"
+      "content": "When more than two variables are involved, the sampler is extended in the obvious fashion. For example, if there are four variables, $ (w, x, y, z) $, the sampler becomes $$ \\begin{aligned}&w_{i}\\sim p(w\\mid x=x_{i-1},y=y_{i-1},z=z_{i-1})\\\\&x_{i}\\sim p(x\\mid w=w_{i},y=y_{i-1},z=z_{i-1})\\\\&y_{i}\\sim p(y\\mid w=w_{i},x=x_{i},z=z_{i-1})\\\\&z_{i}\\sim p(z\\mid w=w_{i},x=x_{i},y=y_{i})\\\\ \\end{aligned} $$",
+      "source_page": 650,
+      "source_pages": [
+        650
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p034:b2",
+        "Evolution_chapter19:p034:b3"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          206.0,
+          1059.0,
+          255.0
+        ],
+        [
+          503.0,
+          275.0,
+          841.0,
+          382.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "fa044ec85337e9c5b2e323c9cea3194826bd0c98e34979451274107fce9a5fbd"
     },
     {
       "type": "discussion",
-      "content": "Any feature of interest for the marginals can be computed from the m realizations of the Gibbs sequence. For example, the expectation of any function, f, of the random variable, x, is approximated by $$ E[f(x)]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(x_{i}) $$ which is simply the average of the function evaluated over the points in the sampler. This is the Monte Carlo (MC) estimate of $ f(x) $, as $ E[f(x)]_m \\to E[f(x)] $ as $ m \\to \\infty $. Likewise, the MC estimate for any function of $ n $ variables $ (\\theta^{(1)}, \\cdots, \\theta^{(n)}) $ is given by $$ E[f(\\theta^{(1)},\\cdots,\\theta^{(n)})]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(\\theta^{(1)}_{i},\\cdots,\\theta^{(n)}_{i}) $$"
+      "content": "Any feature of interest for the marginals can be computed from the m realizations of the Gibbs sequence. For example, the expectation of any function, f, of the random variable, x, is approximated by $$ E[f(x)]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(x_{i}) $$ which is simply the average of the function evaluated over the points in the sampler. This is the Monte Carlo (MC) estimate of $ f(x) $, as $ E[f(x)]_m \\to E[f(x)] $ as $ m \\to \\infty $. Likewise, the MC estimate for any function of $ n $ variables $ (\\theta^{(1)}, \\cdots, \\theta^{(n)}) $ is given by $$ E[f(\\theta^{(1)},\\cdots,\\theta^{(n)})]_{m}=\\frac{1}{m}\\sum_{i=1}^{m}f(\\theta^{(1)}_{i},\\cdots,\\theta^{(n)}_{i}) $$",
+      "source_page": 650,
+      "source_pages": [
+        650
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p034:b4",
+        "Evolution_chapter19:p034:b5",
+        "Evolution_chapter19:p034:b7",
+        "Evolution_chapter19:p034:b8"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          403.0,
+          1060.0,
+          474.0
+        ],
+        [
+          568.0,
+          473.0,
+          779.0,
+          532.0
+        ],
+        [
+          287.0,
+          541.0,
+          1059.0,
+          612.0
+        ],
+        [
+          477.0,
+          632.0,
+          870.0,
+          690.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "df75d0f01b880ab6f543c69b5d89d638863c42e7ec3fc0e3092f640d15ea6078"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:19.11]]",
+      "source_page": 650,
+      "source_pages": [
+        650,
+        651
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p034:b10",
+        "Evolution_chapter19:p034:b12",
+        "Evolution_chapter19:p034:b13",
+        "Evolution_chapter19:p034:b14",
+        "Evolution_chapter19:p034:b15",
+        "Evolution_chapter19:p034:b16",
+        "Evolution_chapter19:p035:b2"
+      ],
+      "source_bboxes": [
+        [
+          321.0,
+          756.0,
+          1037.0,
+          864.0
+        ],
+        [
+          321.0,
+          1065.0,
+          1036.0,
+          1154.0
+        ],
+        [
+          438.0,
+          1171.0,
+          919.0,
+          1236.0
+        ],
+        [
+          323.0,
+          1255.0,
+          605.0,
+          1278.0
+        ],
+        [
+          580.0,
+          1294.0,
+          777.0,
+          1324.0
+        ],
+        [
+          324.0,
+          1345.0,
+          557.0,
+          1367.0
+        ],
+        [
+          167.0,
+          207.0,
+          881.0,
+          359.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "76e848494ab053b7f35a03bae25f47f849b2eb23822fa8ca83a70bd4fa6982af"
     },
     {
       "type": "discussion",
-      "content": "Here $ a(1) $ through $ a(4) $ correspond to the values (realizations of the posterior distribution) of the four breeding values in that particular iteration of the sampler, and $ \\sigma_A^2 $ and $ \\sigma_e^2 $ are, similarly, the realizations for the variances in that iteration. The mean and variance for the breeding value of these four individuals, in sample $ i $, are $$ \\overline{a}_{i}=\\frac{1}{4}\\sum_{j=1}^{4}a_{i}(j)\\quad and\\quad\\operatorname{Var}(a)_{i}=\\frac{1}{4-1}\\sum_{j=1}^{4}\\left[a_{i}(j)-\\overline{a}_{i}\\right]^{2} $$ and the base population heritability $$ h_{i}^{2}=\\sigma_{A,i}^{2}/(\\sigma_{A,i}^{2}+\\sigma_{e,i}^{2}) $$"
+      "content": "Using these three realizations",
+      "source_page": 650,
+      "source_pages": [
+        650
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p034:b16"
+      ],
+      "source_bboxes": [
+        [
+          324.0,
+          1345.0,
+          557.0,
+          1367.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ba9ff7b7847fa03c57b48e4ec2f31b235d5f74b97a5f62a49075f28a88b332a1"
     },
     {
       "type": "discussion",
-      "content": "Using these three realizations"
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, the sampler has returned three values for each of the quantities of interest. Of course, a full sampler consists of thousands to hundreds of thousands of such realization, allowing us to empirically generate the full distribution of any for these functions. For example, the mean of the marginal posterior for the mean breeding value over these four individuals is simply the mean of $ \\bar{a} $ over the entire sample from the Gibbs sequence. Likewise, the empirical histogram of $ h_i^2 $ values is the marginal posterior for the heritability, and thus accounts for any source of variation in estimating $ h^2 $ (given that the assumed model is correct)."
+      "content": "Thus, the sampler has returned three values for each of the quantities of interest. Of course, a full sampler consists of thousands to hundreds of thousands of such realization, allowing us to empirically generate the full distribution of any for these functions. For example, the mean of the marginal posterior for the mean breeding value over these four individuals is simply the mean of $ \\bar{a} $ over the entire sample from the Gibbs sequence. Likewise, the empirical histogram of $ h_i^2 $ values is the marginal posterior for the heritability, and thus accounts for any source of variation in estimating $ h^2 $ (given that the assumed model is correct).",
+      "source_page": 651,
+      "source_pages": [
+        651
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p035:b2"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          207.0,
+          881.0,
+          359.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8cd9cdeed0ee34d9c44fd8c28a81029ef3f38f10b3e14739effb1cd8b9579f17"
     }
   ]
 }

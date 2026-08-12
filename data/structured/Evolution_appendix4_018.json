@@ -26,75 +26,583 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Table A4.1 reminds the reader of the various test parameters that arise when multiple comparisons are considered. We now show how these are related. First, the relationship between $ \\alpha $, $ \\pi $, and $ F $ is as follows. Suppose we have set the false-positive rate (i.e., the Type-I error rate) for an individual test at $ \\alpha $. Such a $ p $-value threshold only guarantees that the expected number of false positives is bounded above by $ E[F] \\leq \\alpha \\cdot n $. For $ n $ independent tests, a $ \\pi $-level experiment-wide false-positive error (setting $ \\alpha = \\pi/n $; namely, the Bonferroni correction) implies that $ \\Pr(F \\geq 1) \\leq \\pi $, i.e., the probability of at least one false positive is no greater than $ \\pi $. To show how $ \\alpha $, $ \\beta $, $ \\pi_0 $, and $ \\delta $ are related, we first need to introduce the concept of the posterior error rate."
+      "content": "Table A4.1 reminds the reader of the various test parameters that arise when multiple comparisons are considered. We now show how these are related. First, the relationship between $ \\alpha $, $ \\pi $, and $ F $ is as follows. Suppose we have set the false-positive rate (i.e., the Type-I error rate) for an individual test at $ \\alpha $. Such a $ p $-value threshold only guarantees that the expected number of false positives is bounded above by $ E[F] \\leq \\alpha \\cdot n $. For $ n $ independent tests, a $ \\pi $-level experiment-wide false-positive error (setting $ \\alpha = \\pi/n $; namely, the Bonferroni correction) implies that $ \\Pr(F \\geq 1) \\leq \\pi $, i.e., the probability of at least one false positive is no greater than $ \\pi $. To show how $ \\alpha $, $ \\beta $, $ \\pi_0 $, and $ \\delta $ are related, we first need to introduce the concept of the posterior error rate.",
+      "source_page": 1243,
+      "source_pages": [
+        1243
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p014:b12",
+        "Evolution_appendix4:p014:b13"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1186.0,
+          724.0,
+          1209.0
+        ],
+        [
+          287.0,
+          1216.0,
+          1060.0,
+          1423.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "eba1b122d69dea787848420b668890726712e19275f6e5e1b15a1a068cb036dc"
     },
     {
       "type": "discussion",
-      "content": "Fernando et al. (2004) and Manly et al. (2004) both noted that FDR measures are closely related to Morton’s (1955) posterior error rate (PER), originally introduced in the context of linkage analysis in humans (this is also referred to as the false positive report probability [FPRP]; Wacholder et al. 2004). Morton’s PER is simply the probability that a single significant test is a false positive, $$ PER=Pr(F=1\\mid S=n=1) $$"
+      "content": "Fernando et al. (2004) and Manly et al. (2004) both noted that FDR measures are closely related to Morton’s (1955) posterior error rate (PER), originally introduced in the context of linkage analysis in humans (this is also referred to as the false positive report probability [FPRP]; Wacholder et al. 2004). Morton’s PER is simply the probability that a single significant test is a false positive, $$ PER=Pr(F=1\\mid S=n=1) $$",
+      "source_page": 1243,
+      "source_pages": [
+        1243,
+        1244
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p014:b14",
+        "Evolution_appendix4:p015:b0",
+        "Evolution_appendix4:p015:b1",
+        "Evolution_appendix4:p015:b2",
+        "Evolution_appendix4:p015:b3",
+        "Evolution_appendix4:p015:b4",
+        "Evolution_appendix4:p015:b5"
+      ],
+      "source_bboxes": [
+        [
+          325.0,
+          1423.0,
+          1059.0,
+          1447.0
+        ],
+        [
+          754.0,
+          160.0,
+          1001.0,
+          183.0
+        ],
+        [
+          1032.0,
+          161.0,
+          1076.0,
+          182.0
+        ],
+        [
+          132.0,
+          207.0,
+          904.0,
+          252.0
+        ],
+        [
+          137.0,
+          260.0,
+          904.0,
+          486.0
+        ],
+        [
+          132.0,
+          516.0,
+          905.0,
+          612.0
+        ],
+        [
+          391.0,
+          629.0,
+          644.0,
+          654.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7696114341b8604d651a42bcad96efd143d5cbbefb8b93efa928d327a1dc2419"
     },
     {
       "type": "discussion",
-      "content": "The connection between the FDR and the PER is that if we set the FDR to $ \\delta $, then the PER for a randomly drawn significant test is also $ \\delta $."
+      "content": "The connection between the FDR and the PER is that if we set the FDR to $ \\delta $, then the PER for a randomly drawn significant test is also $ \\delta $.",
+      "source_page": 1244,
+      "source_pages": [
+        1244
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p015:b7"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          674.0,
+          904.0,
+          721.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6c15fd6ccffdde4f4a2ed838c0036731e9a71447240ba1437846e60940c79c04"
     },
     {
       "type": "proposition",
-      "content": "Framing tests in terms of the PER highlights the screening paradox: “Type-I error control may not lead to a suitably low PER” (Manly et al. 2004). For example, we might choose $ \\alpha = 0.05 $, but the PER may be far higher, which means that a test that is declared to be significant may have a much larger probability than 5% of being a false positive. The key is that because we are conditioning on the test being significant (as opposed to conditioning on the hypothesis being a null, as occurs with $ \\alpha $), S may include either false positives or true positives. The relative fractions of each (and hence the probability of a false positive) is a function of the single test parameters, $ \\alpha $ and $ \\beta $, and the fraction, $ \\pi_0 $, of hypotheses that are truly null. To see this, we apply Bayes’ theorem (Equation A2.2a), which yields $$ PER=Pr(F=1\\mid S=n=1)=\\frac{Pr(false positive\\mid null true)\\cdot Pr(null)}{Pr(S=n=1)} $$"
+      "content": "Framing tests in terms of the PER highlights the screening paradox: “Type-I error control may not lead to a suitably low PER” (Manly et al. 2004). For example, we might choose $ \\alpha = 0.05 $, but the PER may be far higher, which means that a test that is declared to be significant may have a much larger probability than 5% of being a false positive. The key is that because we are conditioning on the test being significant (as opposed to conditioning on the hypothesis being a null, as occurs with $ \\alpha $), S may include either false positives or true positives. The relative fractions of each (and hence the probability of a false positive) is a function of the single test parameters, $ \\alpha $ and $ \\beta $, and the fraction, $ \\pi_0 $, of hypotheses that are truly null. To see this, we apply Bayes’ theorem (Equation A2.2a), which yields $$ PER=Pr(F=1\\mid S=n=1)=\\frac{Pr(false positive\\mid null true)\\cdot Pr(null)}{Pr(S=n=1)} $$",
+      "source_page": 1244,
+      "source_pages": [
+        1244
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p015:b8",
+        "Evolution_appendix4:p015:b9"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          722.0,
+          905.0,
+          932.0
+        ],
+        [
+          185.0,
+          948.0,
+          787.0,
+          997.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3655188b616beca8390669e1eb0caf79ad67bcd75be186fc024dae65e4e6b811"
     },
     {
       "type": "discussion",
-      "content": "Consider the numerator of Equation A4.13 first. Let $ \\pi_0 = n_0/n $ be the fraction of all hypotheses that are truly null. The probability that a null is declared significant is simply the Type-I error, $ \\alpha $, hence $$ \\Pr(false positive\\mid null true)\\cdot\\Pr(null)=\\alpha\\cdot\\pi_{0} $$"
+      "content": "Consider the numerator of Equation A4.13 first. Let $ \\pi_0 = n_0/n $ be the fraction of all hypotheses that are truly null. The probability that a null is declared significant is simply the Type-I error, $ \\alpha $, hence $$ \\Pr(false positive\\mid null true)\\cdot\\Pr(null)=\\alpha\\cdot\\pi_{0} $$",
+      "source_page": 1244,
+      "source_pages": [
+        1244
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p015:b11",
+        "Evolution_appendix4:p015:b12"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          1016.0,
+          905.0,
+          1088.0
+        ],
+        [
+          319.0,
+          1106.0,
+          718.0,
+          1132.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "024cf95429049779bfaefd5b478ffa6cd5aff820cc0ca9e76b094eb297016c18"
     },
     {
       "type": "discussion",
-      "content": "Turning to the denominator of Equation A4.13, what is the probability that a single (randomly chosen) test will be declared significant, $ \\Pr(S = n = 1) $? This event can occur because we choose to test a hypothesis that is truly null $ (\\pi_0) $ and have a Type-I error $ (\\alpha) $, or because we choose to test a hypothesis that is truly false $ (\\pi - \\pi_0) $ and avoid a Type-II error. For the latter, the power is simply $ T/n_1 $, the fraction of all tests under the alternative that is declared to be significant. If we write the power as $ 1 - \\beta $ ($ \\beta $ is the Type-II error), the resulting probability that a single (randomly drawn) test is significant is $$ \\Pr(S=n=1)=\\alpha\\pi_{0}+(1-\\beta)(1-\\pi_{0}) $$"
+      "content": "Turning to the denominator of Equation A4.13, what is the probability that a single (randomly chosen) test will be declared significant, $ \\Pr(S = n = 1) $? This event can occur because we choose to test a hypothesis that is truly null $ (\\pi_0) $ and have a Type-I error $ (\\alpha) $, or because we choose to test a hypothesis that is truly false $ (\\pi - \\pi_0) $ and avoid a Type-II error. For the latter, the power is simply $ T/n_1 $, the fraction of all tests under the alternative that is declared to be significant. If we write the power as $ 1 - \\beta $ ($ \\beta $ is the Type-II error), the resulting probability that a single (randomly drawn) test is significant is $$ \\Pr(S=n=1)=\\alpha\\pi_{0}+(1-\\beta)(1-\\pi_{0}) $$",
+      "source_page": 1244,
+      "source_pages": [
+        1244
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p015:b14",
+        "Evolution_appendix4:p015:b15"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          1152.0,
+          905.0,
+          1315.0
+        ],
+        [
+          349.0,
+          1333.0,
+          687.0,
+          1358.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "52b91e17b5cf61f8000dca28a2040507fcf79919abcd983640da34d3e6b4bdce"
     },
     {
       "type": "discussion",
-      "content": "Substituting Equations A4.14a and A4.14b into Equation A4.13 yields $$ PER=\\frac{\\alpha\\cdot\\pi_{0}}{\\alpha\\cdot\\pi_{0}+\\left(1-\\beta\\right)\\cdot\\left(1-\\pi_{0}\\right)}=\\left(1+\\frac{\\left(1-\\beta\\right)\\cdot\\left(1-\\pi_{0}\\right)}{\\alpha\\cdot\\pi_{0}}\\right)^{-1} $$"
+      "content": "Substituting Equations A4.14a and A4.14b into Equation A4.13 yields $$ PER=\\frac{\\alpha\\cdot\\pi_{0}}{\\alpha\\cdot\\pi_{0}+\\left(1-\\beta\\right)\\cdot\\left(1-\\pi_{0}\\right)}=\\left(1+\\frac{\\left(1-\\beta\\right)\\cdot\\left(1-\\pi_{0}\\right)}{\\alpha\\cdot\\pi_{0}}\\right)^{-1} $$",
+      "source_page": 1244,
+      "source_pages": [
+        1244
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p015:b17",
+        "Evolution_appendix4:p015:b18"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          1378.0,
+          730.0,
+          1403.0
+        ],
+        [
+          208.0,
+          1418.0,
+          753.0,
+          1473.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5a5e3424da8aa2fa3d6c42a01f73d41bbf8eb1c8d9c492dfcbade7be17ee9c29"
     },
     {
       "type": "discussion",
-      "content": "Figure A4.5 plots Equation A4.15a for various values of $ \\pi_{0} $ and $ \\beta $."
+      "content": "Figure A4.5 plots Equation A4.15a for various values of $ \\pi_{0} $ and $ \\beta $.",
+      "source_page": 1245,
+      "source_pages": [
+        1245
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p016:b4"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          651.0,
+          846.0,
+          676.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a672ad7adafd32656a1d5cb5c4cfe3afb19093998cbc0571f54a5a61c1f71488"
     },
     {
       "type": "discussion",
-      "content": "Sham and Purcell (2014) noted that one can rearrange Equation A4.15a to find the $ \\alpha $ value to obtain a desired PER value of $ \\gamma $, with $$ \\begin{align*}\\alpha=\\left({\\gamma\\over1-\\gamma}\\right)\\left({1-\\pi_0\\over\\pi_0}\\right)(1-\\beta)\\end{align*} $$"
+      "content": "Sham and Purcell (2014) noted that one can rearrange Equation A4.15a to find the $ \\alpha $ value to obtain a desired PER value of $ \\gamma $, with $$ \\begin{align*}\\alpha=\\left({\\gamma\\over1-\\gamma}\\right)\\left({1-\\pi_0\\over\\pi_0}\\right)(1-\\beta)\\end{align*} $$",
+      "source_page": 1245,
+      "source_pages": [
+        1245
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p016:b5",
+        "Evolution_appendix4:p016:b6"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          676.0,
+          1059.0,
+          722.0
+        ],
+        [
+          534.0,
+          741.0,
+          810.0,
+          794.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "edc2ed6690a69dbb1363c70444c9fee23e6bed0d90a4a8929a32a908f96ffbf7"
     },
     {
       "type": "discussion",
-      "content": "In particular, if there is complete power ($ \\beta = 0 $) and only one of the $ n $ tested hypotheses departs from the null ($ \\pi_0 = n/[n + 1] $), Equation A4.15c reduces to $$ \\begin{align*}\\alpha=\\left({\\gamma\\over1-\\gamma}\\right)\\left({1\\over n}\\right)\\simeq{\\gamma\\over n}\\end{align*} $$ which recovers the Bonferroni correction (Equation A4.4)."
+      "content": "In particular, if there is complete power ($ \\beta = 0 $) and only one of the $ n $ tested hypotheses departs from the null ($ \\pi_0 = n/[n + 1] $), Equation A4.15c reduces to $$ \\begin{align*}\\alpha=\\left({\\gamma\\over1-\\gamma}\\right)\\left({1\\over n}\\right)\\simeq{\\gamma\\over n}\\end{align*} $$ which recovers the Bonferroni correction (Equation A4.4).",
+      "source_page": 1245,
+      "source_pages": [
+        1245
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p016:b8",
+        "Evolution_appendix4:p016:b9",
+        "Evolution_appendix4:p016:b11"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          813.0,
+          1058.0,
+          862.0
+        ],
+        [
+          566.0,
+          881.0,
+          780.0,
+          933.0
+        ],
+        [
+          288.0,
+          953.0,
+          782.0,
+          976.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7435739443d9a5b8fa9c156b4776c289c00197eb800a43200aeec725aac2489d"
     },
     {
       "type": "discussion",
-      "content": "The Type-I error rate, $ \\alpha $, of a random test, and the PER for a significant test, which are often assumed to be the same, are actually very different. In addition to $ \\alpha $, the PER also depends on the power, $ \\beta $, of a test and the fraction, $ \\pi_{0} $, of tests that are truly null (as these latter parameters influence the probability that a test is declared to be significant). Manly et al. (2004) noted that the PER is acceptably low only if the fraction of alternative hypotheses $ (1 - \\pi_{0}) $ is well above $ \\alpha $."
+      "content": "The Type-I error rate, $ \\alpha $, of a random test, and the PER for a significant test, which are often assumed to be the same, are actually very different. In addition to $ \\alpha $, the PER also depends on the power, $ \\beta $, of a test and the fraction, $ \\pi_{0} $, of tests that are truly null (as these latter parameters influence the probability that a test is declared to be significant). Manly et al. (2004) noted that the PER is acceptably low only if the fraction of alternative hypotheses $ (1 - \\pi_{0}) $ is well above $ \\alpha $.",
+      "source_page": 1245,
+      "source_pages": [
+        1245
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p016:b12"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          976.0,
+          1059.0,
+          1114.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "bbe2d823c11f4e34283947805c3a79e45237fcc02369aa30ab4e968571e14bb9"
     },
     {
       "type": "discussion",
-      "content": "Thinking in terms of the PER allows us to consider multiple comparisons in a continuum from Bonferroni-type corrections to using FDR to control the PER. If $ \\pi_1 = 1 - \\pi_0 $ is very small, most tests will truly be from the null hypothesis, and we can control the overall false-positive rate with a Bonferroni-type correction. However, if some fraction of the hypotheses is expected to be false (i.e., $ 1 - \\pi_0 $ is at least of modest value), then using FDR corrections makes more sense for controlling the PER."
+      "content": "Thinking in terms of the PER allows us to consider multiple comparisons in a continuum from Bonferroni-type corrections to using FDR to control the PER. If $ \\pi_1 = 1 - \\pi_0 $ is very small, most tests will truly be from the null hypothesis, and we can control the overall false-positive rate with a Bonferroni-type correction. However, if some fraction of the hypotheses is expected to be false (i.e., $ 1 - \\pi_0 $ is at least of modest value), then using FDR corrections makes more sense for controlling the PER.",
+      "source_page": 1232,
+      "source_pages": [
+        1232,
+        1234,
+        1240,
+        1242,
+        1245,
+        1248,
+        1250,
+        1252,
+        1254,
+        1256,
+        1258,
+        1260
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p016:b13",
+        "Evolution_appendix4:p003:b0",
+        "Evolution_appendix4:p005:b0",
+        "Evolution_appendix4:p011:b0",
+        "Evolution_appendix4:p013:b0",
+        "Evolution_appendix4:p019:b0",
+        "Evolution_appendix4:p021:b0",
+        "Evolution_appendix4:p023:b0",
+        "Evolution_appendix4:p025:b0",
+        "Evolution_appendix4:p027:b0",
+        "Evolution_appendix4:p029:b0",
+        "Evolution_appendix4:p031:b0"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1115.0,
+          1059.0,
+          1253.0
+        ],
+        [
+          755.0,
+          160.0,
+          1001.0,
+          183.0
+        ],
+        [
+          756.0,
+          160.0,
+          1002.0,
+          183.0
+        ],
+        [
+          756.0,
+          160.0,
+          1002.0,
+          183.0
+        ],
+        [
+          756.0,
+          160.0,
+          1002.0,
+          183.0
+        ],
+        [
+          756.0,
+          160.0,
+          1002.0,
+          182.0
+        ],
+        [
+          755.0,
+          160.0,
+          1001.0,
+          183.0
+        ],
+        [
+          756.0,
+          160.0,
+          1002.0,
+          183.0
+        ],
+        [
+          756.0,
+          160.0,
+          1002.0,
+          183.0
+        ],
+        [
+          755.0,
+          160.0,
+          1001.0,
+          183.0
+        ],
+        [
+          755.0,
+          160.0,
+          1000.0,
+          183.0
+        ],
+        [
+          756.0,
+          161.0,
+          1001.0,
+          182.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9c505be8b62d92251543bbea57d880478be0ba9e32414069951ad742cdb86804"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A4.7]]"
+      "content": "[[SEE_EXAMPLE:A4.7]]",
+      "source_page": 1245,
+      "source_pages": [
+        1245,
+        1246
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p016:b14",
+        "Evolution_appendix4:p016:b15",
+        "Evolution_appendix4:p017:b2",
+        "Evolution_appendix4:p017:b3",
+        "Evolution_appendix4:p017:b4",
+        "Evolution_appendix4:p017:b5"
+      ],
+      "source_bboxes": [
+        [
+          323.0,
+          1319.0,
+          1035.0,
+          1408.0
+        ],
+        [
+          551.0,
+          1426.0,
+          810.0,
+          1474.0
+        ],
+        [
+          168.0,
+          207.0,
+          880.0,
+          334.0
+        ],
+        [
+          167.0,
+          333.0,
+          880.0,
+          377.0
+        ],
+        [
+          406.0,
+          376.0,
+          645.0,
+          423.0
+        ],
+        [
+          166.0,
+          430.0,
+          785.0,
+          455.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "af299bbb497e3e834e388995f7d607e243e9f66482c96e8d56022a1e9e301137"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A4.8]]"
+      "content": "[[SEE_EXAMPLE:A4.9]]",
+      "source_page": 1247,
+      "source_pages": [
+        1247
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p018:b14",
+        "Evolution_appendix4:p018:b16"
+      ],
+      "source_bboxes": [
+        [
+          321.0,
+          1132.0,
+          1035.0,
+          1197.0
+        ],
+        [
+          322.0,
+          1306.0,
+          1035.0,
+          1391.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2ff44d7a5d19ff3e9f5c80911a954b96e85982006a01c0d782b74a4fe1267906"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A4.9]]"
-    },
-    {
-      "type": "discussion",
-      "content": "Thus, a randomly chosen significant test has a 96.1% probability of being a false positive."
-    },
-    {
-      "type": "discussion",
-      "content": "Now suppose that the alternative is not especially rare, for example $ n_1 = 500 $ ($ \\pi_0 = 0.9 $). The expected number of false positives is $ 4500 \\cdot 0.005 = 22.5 $, while the expected number of true positives is 500, yielding a PER of $$ PER=\\frac{22.5}{522.5}=0.043 $$"
-    },
-    {
-      "type": "discussion",
-      "content": "The PER is thus rather sensitive to $ \\pi_0 $, the fraction of all tests that are truly from the null hypothesis. If $ \\pi_0 $ is essentially 1, a PER of $ \\delta $ is obtained using the Bonferroni correction, $ \\alpha = \\delta/n $. However, if $ \\pi_0 $ departs even slightly from one (i.e., more than a few of the alternative hypotheses are correct), then the per-test level of $ \\alpha $ to achieve a desired PER rate is considerably larger (i.e., less stringent) than that given by the Bonferroni correction, namely, $ \\alpha(\\delta) > \\delta/n $. For example, for a 0.04 experiment-wide error rate, $ \\alpha = 0.04/5000 = 8 \\cdot 10^{-6} $, which is roughly 625 times smaller than the value of $ \\alpha = 0.005 $ required for a 4% FDR, highlighting the greatly increased power under the FDR framework. This increased power arises because the FDR approach acknowledges that some fraction of the tests are not from the null."
+      "content": "[[SEE_EXAMPLE:A4.8]]",
+      "source_page": 1246,
+      "source_pages": [
+        1246
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p017:b10",
+        "Evolution_appendix4:p017:b11",
+        "Evolution_appendix4:p017:b6",
+        "Evolution_appendix4:p017:b7",
+        "Evolution_appendix4:p017:b8",
+        "Evolution_appendix4:p017:b9"
+      ],
+      "source_bboxes": [
+        [
+          431.0,
+          781.0,
+          617.0,
+          830.0
+        ],
+        [
+          166.0,
+          845.0,
+          881.0,
+          1040.0
+        ],
+        [
+          167.0,
+          521.0,
+          880.0,
+          626.0
+        ],
+        [
+          408.0,
+          622.0,
+          637.0,
+          668.0
+        ],
+        [
+          166.0,
+          676.0,
+          871.0,
+          701.0
+        ],
+        [
+          167.0,
+          698.0,
+          879.0,
+          765.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6d164201f5da104a2d2675c5d81a5e2f8b4837cb0c43952040776fccf6573be4"
     }
   ]
 }

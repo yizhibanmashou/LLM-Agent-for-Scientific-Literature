@@ -7,13 +7,12 @@ than one place.
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
 import html
 import json
 import re
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
-
 
 HTML_TAG_RE = re.compile(r"<[^>]+>")
 HTML_TABLE_ROW_RE = re.compile(r"<tr[^>]*>(?P<body>.*?)</tr>", re.IGNORECASE | re.DOTALL)

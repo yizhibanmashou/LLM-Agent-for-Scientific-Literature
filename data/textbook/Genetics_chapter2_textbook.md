@@ -30,32 +30,7 @@ If $z_{min}$ and $z_{max}$ are the upper and lower bounds to $z$, then $p(z) = 0
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter2:1` · source: `Genetics_chapter2_002.json` · blocks 7–14
->
-> Example 1. Suppose that z is continuously distributed in the range of 0 to $ \infty $ with probability density function
-> 
-> $$
-> p(z)=\frac{1}{\lambda}e^{-z/\lambda}
-> $$
-> 
-> 
-> This is the negative exponential distribution in which the density has a maximum at $z = 0$ and declines to zero as $z \to \infty$. Since the integral of $p(z)$ is $-e^{-z/\lambda}$,
-> 
-> $$
-> \int_{0}^{\infty}p(z)dz=\left.-e^{-z/\lambda}\right|_{0}^{\infty}=0-\left(-1\right)=1
-> $$
-> 
-> 
-> showing that $ p(z) $ fulfills the properties of a probability density.
-> 
-> What is the probability that a randomly drawn individual will have z in the range of 1/4 to 1/2?
-> 
-> $$
-> P(1/4\leq z\leq1/2)=\int_{1/4}^{1/2}p(z)dz=-e^{-z/\lambda}\bigg|_{1/4}^{1/2}=e^{-1/(4\lambda)}-e^{-1/(2\lambda)}
-> $$
-> 
-> 
-> The numerical answer depends on the parameter $ \lambda $. If, for example, $ \lambda = 1/2 $, then $ P(1/4 \leq z \leq 1/2) = 0.239 $.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter2:1]**
 
 
 Before moving on, we emphasize the importance of distinguishing between true parameters of distributions and estimates of those parameters obtained by sampling. True parameter values can only be obtained if every member of a population is measured with absolute accuracy. We must therefore almost always settle for approximations, the accuracy of which depends on the experimental setting, the measurement apparatus, and the sample size. Statisticians often denote parameters of a population with Greek symbols and to sample estimates with
@@ -79,16 +54,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter2:2` · source: `Genetics_chapter2_002.json` · blocks 21–23
->
-> Example 2. What is the mean of the distribution discussed in Example 1? Since the integral of $ (z/\lambda)e^{-z/\lambda} $ is $ -(z+\lambda)e^{-z/\lambda} $,
-> 
-> $$
-> \mu=\int_{0}^{\infty}z p(z)dz=-(z+\lambda)e^{-z/\lambda}\bigg|_{0}^{\infty}=\lambda
-> $$
-> 
-> 
-> Thus, the parameter $ \lambda $ is the mean of the distribution defined by the density function $ p(x) = (1/\lambda) e^{-z/\lambda} $.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter2:2]**
 
 
 Higher-order moments provide measures of the dispersion of a frequency distribution. The most familiar and useful such measure is the population variance (a term introduced in Fisher’s 1918 paper). Also known as the second moment about the mean, the variance is the expected squared deviation of an observation from its mean,
@@ -169,63 +135,7 @@ Finally, we note that when moments are calculated from data that are grouped int
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter2:3` · source: `Genetics_chapter2_002.json` · blocks 46–61
->
-> Example 3. Utilizing the data for maternal weight from Table 2.1, we now summarize the procedures for obtaining estimates of the first three moments.
-> 
-> <table><tr><td>grams $ ^{*} $</td><td>z</td><td>n(z)</td><td>z n(z)</td><td>z^{2} n(z)</td><td>z^{3} n(z)</td></tr><tr><td>50-</td><td>55</td><td>5</td><td>275</td><td>15,125</td><td>831,875</td></tr><tr><td>60-</td><td>65</td><td>9</td><td>585</td><td>38,025</td><td>2,471,625</td></tr><tr><td>70-</td><td>75</td><td>46</td><td>3,450</td><td>258,750</td><td>19,406,250</td></tr><tr><td>80-</td><td>85</td><td>63</td><td>5,355</td><td>455,175</td><td>38,689,875</td></tr><tr><td>90-</td><td>95</td><td>108</td><td>10,260</td><td>974,700</td><td>92,596,500</td></tr><tr><td>100-</td><td>105</td><td>146</td><td>15,330</td><td>1,609,650</td><td>169,013,250</td></tr><tr><td>110-</td><td>115</td><td>148</td><td>17,020</td><td>1,957,300</td><td>225,089,500</td></tr><tr><td>120-</td><td>125</td><td>151</td><td>18,875</td><td>2,359,375</td><td>294,921,875</td></tr><tr><td>130-</td><td>135</td><td>136</td><td>18,360</td><td>2,478,600</td><td>334,611,000</td></tr><tr><td>140-</td><td>145</td><td>83</td><td>12,035</td><td>1,745,075</td><td>253,035,875</td></tr><tr><td>150-</td><td>155</td><td>43</td><td>6,665</td><td>1,033,075</td><td>160,126,625</td></tr><tr><td>160-</td><td>165</td><td>41</td><td>6,765</td><td>1,116,225</td><td>184,177,125</td></tr><tr><td>170-</td><td>175</td><td>15</td><td>2,625</td><td>459,375</td><td>80,390,625</td></tr><tr><td>180-</td><td>185</td><td>8</td><td>1,480</td><td>273,800</td><td>50,653,000</td></tr><tr><td>190-</td><td>195</td><td>1</td><td>195</td><td>38,025</td><td>7,414,875</td></tr><tr><td>Totals</td><td></td><td>n =</td><td>$ \sum z n(z) = $</td><td>$ \sum z^{2} n(z) = $</td><td>$ \sum z^{3} n(z) = $</td></tr><tr><td></td><td></td><td>1,003</td><td>119,255</td><td>14,812,275</td><td>1,913,429,875</td></tr></table>
-> 
-> * For each weight category, $z$ is taken arbitrarily to be the midpoint of the measurement interval, so that for the interval 50-60, we take $z = 55$. The frequency of observations in each category, $f(z)$, is equal to $n(z)/n$, where $n(z)$ is the number of observations with phenotype $z$, and $n = \sum n(z)$ is the total sample size.
-> 
-> The moments about the origin are obtained by dividing the weighted sums in the table by n,
-> 
-> $$
-> \bar{z}=\sum zf(z)=\sum zn(z)/n=\frac{119,255}{1,003}=118.90
-> $$
-> 
-> 
-> $$
-> \overline{z^{2}}=\sum z^{2}f(z)=\sum z^{2}n(z)/n=\frac{14,812,275}{1,003}=14,767.97
-> $$
-> 
-> 
-> $$
-> \overline{z^{3}}=\sum z^{3}f(z)=\sum z^{3}n(z)/n=\frac{1,913,429,875}{1,003}=1,907,706.75
-> $$
-> 
-> 
-> The variance estimated from the pooled data is
-> 
-> $$
-> \mathrm{Var}(z)=\frac{n\left(\overline{z^{2}}-\bar{z}^{2}\right)}{n-1}=631.39
-> $$
-> 
-> 
-> and application of Sheppard's correction, with $ \omega = 10 $, reduces this to
-> 
-> $$
-> \mathrm{Var}(z)=631.39-\frac{\omega^{2}}{12}=623.06
-> $$
-> 
-> 
-> The coefficient of variation is then
-> 
-> $$
-> CV(z)=\frac{[\mathrm{Var}(z)]^{1/2}}{\bar{z}}=0.21
-> $$
-> 
-> 
-> Finally, the skewness and coefficient of skewness are
-> 
-> $$
-> Skw(z)=\frac{n^{2}\left(\overline{z^{3}}-3\overline{z^{2}}\bar{z}+2\bar{z}^{3}\right)}{(n-1)(n-2)}=1,805.40
-> $$
-> 
-> 
-> $$
-> k_{3}=\frac{Skw(z)}{\left[Var(z)\right]^{3/2}}=0.12
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter2:3]**
 
 
 > **Table 2.1** · `2.1` · page 37 · source: `Genetics_chapter2_002`
@@ -271,23 +181,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter2:4` · source: `Genetics_chapter2_003.json` · blocks 8–12
->
-> Example 4. It is known that if $y$ is a function of $z$, denoted by $f(z)$, then its probability density function is
-> 
-> $$
-> p(y)=\left|\frac{df(z)}{dz}\right|^{-1}p(z)
-> $$
-> 
-> 
-> where $ \left|\cdots\right| $ denotes absolute value. This transformation is valid provided that $ df(z)/dz $ exists and is nonzero for all $ z $ values for which $ p(z) > 0 $. This criterion is met by the standard normal deviate.
-> 
-> Letting $ z' = f(z) = (z - \mu)/\sigma $, then $ df(z)/dz = \sigma^{-1} $. Substituting the normal probability density function for $ p(z) $ recovers the standard normal or (unit normal) distribution,
-> 
-> $$
-> p(z^{\prime})=\left|\frac{1}{\sigma}\right|^{-1}\frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\left[-\frac{(z-\mu)^{2}}{2\sigma^{2}}\right]=(2\pi)^{-1/2}\exp\left[-\frac{(z^{\prime})^{2}}{2}\right]
-> $$
-> 
+> **[UNRESOLVED EXAMPLE: Genetics_chapter2:4]**
 
 
 Because the normal distribution is symmetrical, the third moment ( $ \mu_{3} $) is equal to zero. The fourth moment has an expected value equal to $ 3\sigma^{4} $. Thus, if we let Kur(z) be the sample estimate of $ \mu_{4} $, where Kur denotes kurtosis, the index
@@ -381,11 +275,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_chapter2:5` · source: `Genetics_chapter2_004.json` · blocks 16–17
->
-> Example 5. Equation 2.14 can be used to answer another interesting question. What is the average absolute deviation from the mean, $ E(|z - \mu|) $, for an individual drawn randomly from a normally distributed population?
-> 
-> Since the normal distribution is symmetrical, we can set $ \Phi_T = 0.5 $ to obtain the average deviation to the right of the mean; the average deviation to the left of the mean will be identical in absolute value, but opposite in sign. Since the truncation point is the mean, $ z' = 0 $, which when applied to Equation 2.11 yields $ p_T = (2\pi)^{-1/2} e^0 = 0.399 $. Substituting into Equation 2.14, we obtain $ (\mu_s - \mu) = 0.798 \sigma $. Thus, the average absolute value of individual deviations from the mean is about 80% of the standard deviation. This quantity is known as the most probable error. Early in this century it was widely used by statisticians, but now the simple standard deviation is usually reported.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter2:5]**
 
 
 ---

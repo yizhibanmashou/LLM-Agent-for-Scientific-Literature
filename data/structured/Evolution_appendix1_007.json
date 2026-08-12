@@ -21,43 +21,354 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "For completeness, we present a derivation of Equation A1.6, using the diffusion-approximation assumptions (Equations A1.1a–A1.1c). This section is a bit technical and can be skipped if readers desire. Consider the change from the probability distribution, $ \\varphi(x, t, p) $, at time $ t $ to a new distribution, $ \\varphi(x, t + \\delta_t, p) $, after some very small time interval, $ \\delta_t $. To arrive at $ x $ at time $ t + \\delta_t $, the frequency must have previously been at some value, $ x - \\delta_x $, and then moved by an amount, $ \\delta_x $, over the interval $ \\delta_t $. Let $ \\phi(\\delta_x, x, \\delta_t) $ be the probability of jumping by an amount, $ \\delta_x $, over the time $ \\delta_t $ given the starting point, $ x $. In our case, because we are assuming that there is a move from $ x - \\delta_x $ to $ x $, we consider $ \\phi(\\delta_x, x - \\delta_x, \\delta_t) $. Integrating over all possible jump values yields the Chapman-Kolmogorov equation $$ \\varphi(x,t+\\delta_{t},p)=\\int\\varphi(x-\\delta_{x},t,p)\\phi(\\delta_{x},x-\\delta_{x},\\delta_{t})d\\delta_{x} $$"
+      "content": "For completeness, we present a derivation of Equation A1.6, using the diffusion-approximation assumptions (Equations A1.1a–A1.1c). This section is a bit technical and can be skipped if readers desire. Consider the change from the probability distribution, $ \\varphi(x, t, p) $, at time $ t $ to a new distribution, $ \\varphi(x, t + \\delta_t, p) $, after some very small time interval, $ \\delta_t $. To arrive at $ x $ at time $ t + \\delta_t $, the frequency must have previously been at some value, $ x - \\delta_x $, and then moved by an amount, $ \\delta_x $, over the interval $ \\delta_t $. Let $ \\phi(\\delta_x, x, \\delta_t) $ be the probability of jumping by an amount, $ \\delta_x $, over the time $ \\delta_t $ given the starting point, $ x $. In our case, because we are assuming that there is a move from $ x - \\delta_x $ to $ x $, we consider $ \\phi(\\delta_x, x - \\delta_x, \\delta_t) $. Integrating over all possible jump values yields the Chapman-Kolmogorov equation $$ \\varphi(x,t+\\delta_{t},p)=\\int\\varphi(x-\\delta_{x},t,p)\\phi(\\delta_{x},x-\\delta_{x},\\delta_{t})d\\delta_{x} $$",
+      "source_page": 1174,
+      "source_pages": [
+        1174
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p004:b4",
+        "Evolution_appendix1:p004:b5",
+        "Evolution_appendix1:p004:b6"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          556.0,
+          725.0,
+          578.0
+        ],
+        [
+          287.0,
+          584.0,
+          1059.0,
+          796.0
+        ],
+        [
+          449.0,
+          812.0,
+          896.0,
+          855.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "68310c3f7d8d82a118b067af80f8f9554d8a87543dbc4a6a9bf9e1468059ffca"
     },
     {
       "type": "discussion",
-      "content": "To simplify notation in the following derivation, we write $ \\varphi(x,t,p) $ as $ \\varphi(x,t) $, although the dependence on the initial value p should be kept in mind."
+      "content": "To simplify notation in the following derivation, we write $ \\varphi(x,t,p) $ as $ \\varphi(x,t) $, although the dependence on the initial value p should be kept in mind.",
+      "source_page": 1174,
+      "source_pages": [
+        1174
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p004:b8"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          872.0,
+          1058.0,
+          919.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8ad6611bef760032f688a4eedc163eedbde3510119f56fa93fcc9c8577c03ae4"
     },
     {
       "type": "discussion",
-      "content": "To solve the Chapman-Kolmogorov equation, we start by using the Taylor series approximation $$ f(x-a)=f(x)-a\\frac{\\partial f(x)}{\\partial x}+\\frac{a^{2}}{2}\\frac{\\partial^{2}f(x)}{\\partial x^{2}}-\\frac{a^{3}}{6}\\frac{\\partial^{3}f(x)}{\\partial x^{3}}+o(a^{3}) $$"
+      "content": "To solve the Chapman-Kolmogorov equation, we start by using the Taylor series approximation $$ f(x-a)=f(x)-a\\frac{\\partial f(x)}{\\partial x}+\\frac{a^{2}}{2}\\frac{\\partial^{2}f(x)}{\\partial x^{2}}-\\frac{a^{3}}{6}\\frac{\\partial^{3}f(x)}{\\partial x^{3}}+o(a^{3}) $$",
+      "source_page": 1174,
+      "source_pages": [
+        1174
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p004:b9",
+        "Evolution_appendix1:p004:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          920.0,
+          1058.0,
+          966.0
+        ],
+        [
+          413.0,
+          980.0,
+          933.0,
+          1032.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ef304263aaf8f006e7afe36e2d5ca03c0ab7f2f774528ba6b91a5ec7cbc749e2"
     },
     {
       "type": "discussion",
-      "content": "Expanding the function in the integral about $ a = \\delta_{x} $ yields $$ \\begin{align*}\\varphi(x-\\delta_{x},t)\\phi(\\delta_{x},x-\\delta_{x},\\delta_{t})&=\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})-\\delta_{x}\\frac{\\partial\\big[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})\\big]}{\\partial x}\\\\&+\\frac{\\delta_{x}^{2}}{2}\\frac{\\partial^{2}\\big[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})\\big]}{\\partial x^{2}}-\\frac{\\delta_{x}^{3}}{6}\\frac{\\partial^{3}\\big[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})\\big]}{\\partial x^{3}}+o(\\delta_{x}^{3})\\end{align*} $$"
+      "content": "Expanding the function in the integral about $ a = \\delta_{x} $ yields $$ \\begin{align*}\\varphi(x-\\delta_{x},t)\\phi(\\delta_{x},x-\\delta_{x},\\delta_{t})&=\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})-\\delta_{x}\\frac{\\partial\\big[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})\\big]}{\\partial x}\\\\&+\\frac{\\delta_{x}^{2}}{2}\\frac{\\partial^{2}\\big[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})\\big]}{\\partial x^{2}}-\\frac{\\delta_{x}^{3}}{6}\\frac{\\partial^{3}\\big[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})\\big]}{\\partial x^{3}}+o(\\delta_{x}^{3})\\end{align*} $$",
+      "source_page": 1174,
+      "source_pages": [
+        1174
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p004:b11",
+        "Evolution_appendix1:p004:b12"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          1043.0,
+          790.0,
+          1068.0
+        ],
+        [
+          324.0,
+          1083.0,
+          1021.0,
+          1180.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2e0a31a31f44df8807a8bff79e137d9568580e9e88bf0eaf12204ccc9ca23321"
     },
     {
       "type": "discussion",
-      "content": "If we ignoring terms of $ o(\\delta_{x}^{3}) $, i.e., of order $ \\delta_{x}^{4} $ and higher, and integrate, the result is $$ \\begin{align*}\\int\\varphi(x-\\delta_{x},t)\\phi(\\delta_{x},x-\\delta_{x},\\delta_{t})d\\delta_{x}&\\simeq\\int\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}-\\int\\delta_{x}\\frac{\\partial[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})]}{\\partial x}d\\delta_{x}\\\\+\\int\\frac{\\delta_{x}^{2}}{2}\\frac{\\partial^{2}[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})]}{\\partial x^{2}}d\\delta_{x}-\\int\\frac{\\delta_{x}^{3}}{6}\\frac{\\partial^{3}[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})]}{\\partial x^{3}}d\\delta_{x}\\end{align*} $$ Because integration is done with respect to $ \\delta_{x} $, partials with respect to x can be moved outside of the integrals, as can functions not involving $ \\delta_{x} $, yielding $$ \\int\\varphi(x-\\delta_{x},t)\\phi(\\delta_{x},x-\\delta_{x},\\delta_{t})d\\delta_{x}=\\varphi(x,t)\\int\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}-\\frac{\\partial}{\\partial x}\\left(\\varphi(x,t)\\int\\delta_{x}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}\\right) $$ $$ +\\frac{1}{2}\\frac{\\partial^{2}}{\\partial x^{2}}\\left(\\varphi(x,t)\\int\\delta_{x}^{2}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}\\right)-\\frac{1}{6}\\frac{\\partial^{3}}{\\partial x^{3}}\\left(\\varphi(x,t)\\int\\delta_{x}^{3}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}\\right) $$ Because $ \\phi(\\delta_x, x, \\delta_t) $ is the probability distribution of moves of size $ \\delta_x $ over the time interval $ \\delta_t $ given we start at position $ x $, we have $$ \\int\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}=1 $$ $$ \\int\\delta_{x}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}=E\\left(\\delta_{x}\\mid x_{t}=x\\right)=m(x)\\delta_{t}+o(\\delta_{t}) $$"
+      "content": "If we ignoring terms of $ o(\\delta_{x}^{3}) $, i.e., of order $ \\delta_{x}^{4} $ and higher, and integrate, the result is $$ \\begin{align*}\\int\\varphi(x-\\delta_{x},t)\\phi(\\delta_{x},x-\\delta_{x},\\delta_{t})d\\delta_{x}&\\simeq\\int\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}-\\int\\delta_{x}\\frac{\\partial[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})]}{\\partial x}d\\delta_{x}\\\\+\\int\\frac{\\delta_{x}^{2}}{2}\\frac{\\partial^{2}[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})]}{\\partial x^{2}}d\\delta_{x}-\\int\\frac{\\delta_{x}^{3}}{6}\\frac{\\partial^{3}[\\varphi(x,t)\\phi(\\delta_{x},x,\\delta_{t})]}{\\partial x^{3}}d\\delta_{x}\\end{align*} $$ Because integration is done with respect to $ \\delta_{x} $, partials with respect to x can be moved outside of the integrals, as can functions not involving $ \\delta_{x} $, yielding $$ \\int\\varphi(x-\\delta_{x},t)\\phi(\\delta_{x},x-\\delta_{x},\\delta_{t})d\\delta_{x}=\\varphi(x,t)\\int\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}-\\frac{\\partial}{\\partial x}\\left(\\varphi(x,t)\\int\\delta_{x}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}\\right) $$ $$ +\\frac{1}{2}\\frac{\\partial^{2}}{\\partial x^{2}}\\left(\\varphi(x,t)\\int\\delta_{x}^{2}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}\\right)-\\frac{1}{6}\\frac{\\partial^{3}}{\\partial x^{3}}\\left(\\varphi(x,t)\\int\\delta_{x}^{3}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}\\right) $$ Because $ \\phi(\\delta_x, x, \\delta_t) $ is the probability distribution of moves of size $ \\delta_x $ over the time interval $ \\delta_t $ given we start at position $ x $, we have $$ \\int\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}=1 $$ $$ \\int\\delta_{x}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}=E\\left(\\delta_{x}\\mid x_{t}=x\\right)=m(x)\\delta_{t}+o(\\delta_{t}) $$",
+      "source_page": 1174,
+      "source_pages": [
+        1174,
+        1175
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p004:b13",
+        "Evolution_appendix1:p004:b14",
+        "Evolution_appendix1:p004:b15",
+        "Evolution_appendix1:p004:b16",
+        "Evolution_appendix1:p005:b2",
+        "Evolution_appendix1:p005:b4",
+        "Evolution_appendix1:p005:b5",
+        "Evolution_appendix1:p005:b7"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1195.0,
+          1001.0,
+          1220.0
+        ],
+        [
+          289.0,
+          1234.0,
+          1054.0,
+          1348.0
+        ],
+        [
+          287.0,
+          1358.0,
+          1059.0,
+          1406.0
+        ],
+        [
+          274.0,
+          1420.0,
+          1056.0,
+          1473.0
+        ],
+        [
+          160.0,
+          201.0,
+          810.0,
+          253.0
+        ],
+        [
+          132.0,
+          261.0,
+          903.0,
+          310.0
+        ],
+        [
+          427.0,
+          327.0,
+          611.0,
+          374.0
+        ],
+        [
+          297.0,
+          393.0,
+          757.0,
+          435.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f28c2041edce224ce1b7a838de8720f2c1117b909547f41d6673ec02f097ec58"
     },
     {
       "type": "proposition",
-      "content": "The first identity follows from the fact that the integral over a probability distribution is equal to one, and the second is simply our first diffusion assumption (Equation A1.1a). Next, if we recall that $ E(x^2) = \\sigma_x^2 + [E(x)]^2 $, we have $$ \\int\\delta_{x}^{2}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}=\\sigma^{2}(\\delta_{x})+[E(\\delta_{x})]^{2} $$ which, using the diffusion approximation (Equations A1.1a and A1.1b), reduces to $$ \\begin{align*}\\int\\delta_{x}^{2}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}&=[v(x)\\delta_{t}+o(\\delta_{t})]+[m(x)\\delta_{t}+o(\\delta_{t})]^{2}\\\\&=v(x)\\delta_{t}+o(\\delta_{t})\\end{align*} $$"
+      "content": "The first identity follows from the fact that the integral over a probability distribution is equal to one, and the second is simply our first diffusion assumption (Equation A1.1a). Next, if we recall that $ E(x^2) = \\sigma_x^2 + [E(x)]^2 $, we have $$ \\int\\delta_{x}^{2}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}=\\sigma^{2}(\\delta_{x})+[E(\\delta_{x})]^{2} $$ which, using the diffusion approximation (Equations A1.1a and A1.1b), reduces to $$ \\begin{align*}\\int\\delta_{x}^{2}\\phi(\\delta_{x},x,\\delta_{t})d\\delta_{x}&=[v(x)\\delta_{t}+o(\\delta_{t})]+[m(x)\\delta_{t}+o(\\delta_{t})]^{2}\\\\&=v(x)\\delta_{t}+o(\\delta_{t})\\end{align*} $$",
+      "source_page": 1175,
+      "source_pages": [
+        1175
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p005:b9",
+        "Evolution_appendix1:p005:b10",
+        "Evolution_appendix1:p005:b11",
+        "Evolution_appendix1:p005:b12"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          444.0,
+          903.0,
+          516.0
+        ],
+        [
+          349.0,
+          534.0,
+          688.0,
+          578.0
+        ],
+        [
+          132.0,
+          594.0,
+          839.0,
+          619.0
+        ],
+        [
+          273.0,
+          638.0,
+          764.0,
+          708.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a31ab253742a787df01bc1b2ff869d047f8c22627ab0cd6d92c03cef23775480"
     },
     {
       "type": "proposition",
-      "content": "The last step follows because the contribution from the squared change in the mean is $ o(\\delta_t) $, and we sweep all such terms into a single expression. Finally, under the diffusion assumption given by Equation A1.1c, moments of $ \\delta_x^3 $ and higher are negligible. Substituting the approximations given by Equations A1.8d and A1.8e into Equation A1.8b yields $$ \\varphi(x,t+\\delta_{t})=\\varphi(x,t)-\\frac{\\partial\\left\\{\\left[m(x)\\delta_{t}+o(\\delta_{t})\\right]\\varphi(x,t)\\right\\}}{\\partial x}+\\frac{1}{2}\\frac{\\partial^{2}\\left\\{\\left[v(x)\\delta_{t}+o(\\delta_{t})\\right]\\varphi(x,t)\\right\\}}{\\partial x^{2}} $$"
+      "content": "The last step follows because the contribution from the squared change in the mean is $ o(\\delta_t) $, and we sweep all such terms into a single expression. Finally, under the diffusion assumption given by Equation A1.1c, moments of $ \\delta_x^3 $ and higher are negligible. Substituting the approximations given by Equations A1.8d and A1.8e into Equation A1.8b yields $$ \\varphi(x,t+\\delta_{t})=\\varphi(x,t)-\\frac{\\partial\\left\\{\\left[m(x)\\delta_{t}+o(\\delta_{t})\\right]\\varphi(x,t)\\right\\}}{\\partial x}+\\frac{1}{2}\\frac{\\partial^{2}\\left\\{\\left[v(x)\\delta_{t}+o(\\delta_{t})\\right]\\varphi(x,t)\\right\\}}{\\partial x^{2}} $$",
+      "source_page": 1175,
+      "source_pages": [
+        1175
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p005:b14",
+        "Evolution_appendix1:p005:b15"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          727.0,
+          905.0,
+          822.0
+        ],
+        [
+          140.0,
+          835.0,
+          838.0,
+          886.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c4117b604cf433c4c42ac77019ee58e473975c04aee16962511b4d02368789d9"
     },
     {
       "type": "discussion",
-      "content": "Subtracting $ \\varphi(x,t) $ from both sides, dividing both by $ \\delta_{t} $, and taking the limit at $ \\delta_{t}\\to0 $ gives the left-hand size as $$ \\lim_{\\delta_{t}\\to0}\\frac{\\varphi(x,t+\\delta_{t})-\\varphi(x,t)}{\\delta_{t}}=\\frac{\\partial\\varphi(x,t)}{\\partial t} $$"
+      "content": "Subtracting $ \\varphi(x,t) $ from both sides, dividing both by $ \\delta_{t} $, and taking the limit at $ \\delta_{t}\\to0 $ gives the left-hand size as $$ \\lim_{\\delta_{t}\\to0}\\frac{\\varphi(x,t+\\delta_{t})-\\varphi(x,t)}{\\delta_{t}}=\\frac{\\partial\\varphi(x,t)}{\\partial t} $$",
+      "source_page": 1175,
+      "source_pages": [
+        1175
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p005:b17",
+        "Evolution_appendix1:p005:b18"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          899.0,
+          903.0,
+          945.0
+        ],
+        [
+          360.0,
+          940.0,
+          676.0,
+          988.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "541a9686b19fd6484735bf5a1ebf359410fa1fe53764d340ffddfcd242f08d46"
     },
     {
       "type": "discussion",
-      "content": "Likewise, recalling that $ \\lim_{\\delta_t \\to 0} o(\\delta_t)/\\delta_t = 0 $, the last two right-hand-side terms of Equation A1.9 simplify to $$ \\lim_{\\delta_{t}\\to0}\\frac{1}{\\delta_{t}}\\left(\\frac{\\partial\\left\\{\\left[m(x)\\delta_{t}+o(\\delta_{t})\\right]\\varphi(x,t)\\right\\}}{\\partial x}\\right)=\\frac{\\partial[m(x)\\varphi(x,t)]}{\\partial x} $$ $$ \\lim_{\\delta_{t}\\to0}\\frac{1}{\\delta_{t}}\\left(\\frac{\\partial^{2}\\left\\{\\left[v(x)\\delta_{t}+o(\\delta_{t})\\right]\\varphi(x,t)\\right\\}}{\\partial x^{2}}\\right)=\\frac{\\partial^{2}[v(x)\\varphi(x,t)]}{\\partial x^{2}} $$"
+      "content": "Likewise, recalling that $ \\lim_{\\delta_t \\to 0} o(\\delta_t)/\\delta_t = 0 $, the last two right-hand-side terms of Equation A1.9 simplify to $$ \\lim_{\\delta_{t}\\to0}\\frac{1}{\\delta_{t}}\\left(\\frac{\\partial\\left\\{\\left[m(x)\\delta_{t}+o(\\delta_{t})\\right]\\varphi(x,t)\\right\\}}{\\partial x}\\right)=\\frac{\\partial[m(x)\\varphi(x,t)]}{\\partial x} $$ $$ \\lim_{\\delta_{t}\\to0}\\frac{1}{\\delta_{t}}\\left(\\frac{\\partial^{2}\\left\\{\\left[v(x)\\delta_{t}+o(\\delta_{t})\\right]\\varphi(x,t)\\right\\}}{\\partial x^{2}}\\right)=\\frac{\\partial^{2}[v(x)\\varphi(x,t)]}{\\partial x^{2}} $$",
+      "source_page": 1175,
+      "source_pages": [
+        1175
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p005:b19",
+        "Evolution_appendix1:p005:b20",
+        "Evolution_appendix1:p005:b21"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          996.0,
+          903.0,
+          1042.0
+        ],
+        [
+          275.0,
+          1059.0,
+          760.0,
+          1111.0
+        ],
+        [
+          275.0,
+          1126.0,
+          760.0,
+          1178.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "16463e91400e6f94cdc88f097752d5255d0518df803bd65cd48ac7a268b89fc5"
     },
     {
       "type": "discussion",
-      "content": "Together, these simplifications imply $$ \\frac{\\partial\\varphi(x,t)}{\\partial t}=-\\frac{\\partial[m(x)\\varphi(x,t)]}{\\partial x}+\\frac{\\partial^{2}[v(x)\\varphi(x,t)]}{2\\partial x^{2}} $$ which recovers the Kolmogorov forward equation (Equation A1.6), provided we again recall that $ \\varphi(x,t) $ is really $ \\varphi(x,t,p) $."
+      "content": "Together, these simplifications imply $$ \\frac{\\partial\\varphi(x,t)}{\\partial t}=-\\frac{\\partial[m(x)\\varphi(x,t)]}{\\partial x}+\\frac{\\partial^{2}[v(x)\\varphi(x,t)]}{2\\partial x^{2}} $$ which recovers the Kolmogorov forward equation (Equation A1.6), provided we again recall that $ \\varphi(x,t) $ is really $ \\varphi(x,t,p) $.",
+      "source_page": 1175,
+      "source_pages": [
+        1175
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p005:b22",
+        "Evolution_appendix1:p005:b23",
+        "Evolution_appendix1:p005:b24"
+      ],
+      "source_bboxes": [
+        [
+          135.0,
+          1187.0,
+          453.0,
+          1212.0
+        ],
+        [
+          313.0,
+          1227.0,
+          722.0,
+          1277.0
+        ],
+        [
+          133.0,
+          1289.0,
+          903.0,
+          1338.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c9f9557e4720f4b553d93a0036412baa219fb646db28245370aabffd625a7502"
     }
   ]
 }

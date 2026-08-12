@@ -10,14 +10,13 @@ Usage:
 from __future__ import annotations
 
 import argparse
-from collections import Counter
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from difflib import SequenceMatcher
 import json
 import os
 import re
-import shutil
 import sys
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Iterable, List
 
@@ -48,23 +47,6 @@ from knowledge_engineering.core.common import (
     table_reference_key,
     table_sort_key,
 )
-from knowledge_engineering.pipeline.process_io import (
-    clear_directory,
-    derive_chapter_name,
-    find_latex_inputs,
-    get_split_artifact_dir,
-    save_split_artifacts,
-)
-from knowledge_engineering.pipeline.process_runtime import (
-    append_jsonl as _append_jsonl,
-    clamp_float as _clamp_float,
-    ensure_dir as _ensure_dir,
-    numeric_dict_delta as _numeric_dict_delta,
-    parse_chapter_allowlist as _parse_chapter_allowlist,
-    resolve_effective_llm_phase as _resolve_effective_llm_phase,
-    utc_now as _utc_now_iso,
-    write_json as _write_json,
-)
 from knowledge_engineering.core.runtime import (
     DEFAULT_SOURCE_TITLE,
     FormulaLibrary,
@@ -82,7 +64,36 @@ from knowledge_engineering.core.runtime import (
     clean_page_batch,
     extract_semantic_blocks,
 )
-
+from knowledge_engineering.pipeline.process_io import (
+    clear_directory,
+    derive_chapter_name,
+    find_latex_inputs,
+    save_split_artifacts,
+)
+from knowledge_engineering.pipeline.process_runtime import (
+    append_jsonl as _append_jsonl,
+)
+from knowledge_engineering.pipeline.process_runtime import (
+    clamp_float as _clamp_float,
+)
+from knowledge_engineering.pipeline.process_runtime import (
+    ensure_dir as _ensure_dir,
+)
+from knowledge_engineering.pipeline.process_runtime import (
+    numeric_dict_delta as _numeric_dict_delta,
+)
+from knowledge_engineering.pipeline.process_runtime import (
+    parse_chapter_allowlist as _parse_chapter_allowlist,
+)
+from knowledge_engineering.pipeline.process_runtime import (
+    resolve_effective_llm_phase as _resolve_effective_llm_phase,
+)
+from knowledge_engineering.pipeline.process_runtime import (
+    utc_now as _utc_now_iso,
+)
+from knowledge_engineering.pipeline.process_runtime import (
+    write_json as _write_json,
+)
 
 NOISE_PATTERNS = [
     r"^\d{1,4}$",
@@ -4474,6 +4485,8 @@ def main() -> None:
     if args.llm_example_boundaries:
         from knowledge_engineering.processors.llm_example_boundary import (
             DEFAULT_OUTPUT as LLM_EXAMPLE_DEFAULT_OUTPUT,
+        )
+        from knowledge_engineering.processors.llm_example_boundary import (
             parse_chapter_list,
             run_llm_example_boundary_trial,
         )

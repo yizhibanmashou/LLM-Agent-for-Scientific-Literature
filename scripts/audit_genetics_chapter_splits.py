@@ -10,14 +10,12 @@ import argparse
 import csv
 import hashlib
 import json
-import re
 import shutil
 from pathlib import Path
 from typing import Any
 
 import fitz
 from PIL import Image, ImageDraw, ImageFont
-
 
 ROOT = Path(__file__).resolve().parents[1]
 CORRECT_RANGES = {

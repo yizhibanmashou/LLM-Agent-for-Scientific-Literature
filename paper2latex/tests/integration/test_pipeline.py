@@ -1,11 +1,8 @@
 
 import logging
-import json
-import shutil
 from pathlib import Path
-import pytest
-from typing import Dict, Any
 
+import pytest
 from paper2latex.core.config import Config
 from paper2latex.pipeline import Pipeline
 

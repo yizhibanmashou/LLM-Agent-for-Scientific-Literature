@@ -24,51 +24,519 @@
       "28.39a",
       "28.39b"
     ],
-    "table_references": [],
+    "table_references": [
+      "inline_1"
+    ],
     "section_level_1": "MUTATION-STABILIZING SELECTION BALANCE: PLEIOTROPY",
     "section_level_2": "Gaussian Results",
     "heading_path": [
       "MUTATION-STABILIZING SELECTION BALANCE: PLEIOTROPY",
       "Gaussian Results"
     ],
-    "display_heading": "Gaussian Results"
+    "display_heading": "Gaussian Results",
+    "table_reference_keys": [
+      "evolution_chapter28:inline_1"
+    ]
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "To model multiple-trait selection with pleiotropic mutations, we follow the standard approach of working with a single-locus haploid model, whose results are then extended to a diploid multilocus model by summing over loci (i.e., assuming additivity and ignoring linkage disequilibrium). In order to proceed, several conceptual extensions are required to move from a single- to a k-trait model. While our discussion is for a particular locus, i, we will often suppress the subscript for ease of presentation."
+      "content": "To model multiple-trait selection with pleiotropic mutations, we follow the standard approach of working with a single-locus haploid model, whose results are then extended to a diploid multilocus model by summing over loci (i.e., assuming additivity and ignoring linkage disequilibrium). In order to proceed, several conceptual extensions are required to move from a single- to a k-trait model. While our discussion is for a particular locus, i, we will often suppress the subscript for ease of presentation.",
+      "source_page": 1031,
+      "source_pages": [
+        1031
+      ],
+      "source_block_ids": [
+        "Evolution_chapter28:p039:b3",
+        "Evolution_chapter28:p039:b4"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          480.0,
+          294.0,
+          502.0
+        ],
+        [
+          132.0,
+          510.0,
+          903.0,
+          646.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "47aba98d88a7d095eac05958c6006f81ac6e5e0f03e06f499cb87e1a751b99db"
     },
     {
       "type": "derivation",
-      "content": "First, the single effect, $ a $, of an allele on the focal trait is replaced by the vector of k allelic effects, a, whose jth element is the allelic effect for trait j. As a result, the variance of allelic effects at a given locus is replaced by a variance-covariance matrix, $ V_a $, of effects on all pairs of traits influenced by pleiotropic mutations (that involve the focal trait), where [[SEE_FORMULA:28.35a]] namely, the covariance between the effects of an allele at the focal locus on traits i and j."
+      "content": "First, the single effect, $ a $, of an allele on the focal trait is replaced by the vector of k allelic effects, a, whose jth element is the allelic effect for trait j. As a result, the variance of allelic effects at a given locus is replaced by a variance-covariance matrix, $ V_a $, of effects on all pairs of traits influenced by pleiotropic mutations (that involve the focal trait), where [[SEE_FORMULA:28.35a]] namely, the covariance between the effects of an allele at the focal locus on traits i and j.",
+      "source_page": 1031,
+      "source_pages": [
+        1031
+      ],
+      "source_block_ids": [
+        "Evolution_chapter28:p039:b5",
+        "Evolution_chapter28:p039:b6",
+        "Evolution_chapter28:p039:b7",
+        "Evolution_chapter28:p039:b8"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          647.0,
+          905.0,
+          742.0
+        ],
+        [
+          366.0,
+          758.0,
+          671.0,
+          786.0
+        ],
+        [
+          830.0,
+          760.0,
+          900.0,
+          782.0
+        ],
+        [
+          132.0,
+          802.0,
+          881.0,
+          827.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "132a1d3569ae8c5ede7cfa4d1b0a76d710fb8fe317debbec967931530bf71bac"
     },
     {
       "type": "derivation",
-      "content": "Second, under the incremental model, the vector of allelic effects following mutation becomes $ \\mathbf{a}' = \\mathbf{a} + \\alpha $, whose $ j $th element is $ a_j' = a_j + \\alpha_j $. As a result, the single-trait mutational effects variance, $ \\sigma_\\alpha^2 $, is replaced by a pleiotropic mutation matrix, $ \\mathbf{V}_m $, whose elements are given by [[SEE_FORMULA:28.35b]] where $ \\alpha_j $ is the mutational increment to trait $ j $. A critical point is that extensive pleiotropy can occur without any mutational covariance between traits, namely, with $ \\sigma(\\alpha_j, \\alpha_k) = 0 $ for all values of $ j $ and $ \\ell $, a condition referred to as hidden pleiotropy. For example, consider a locus that influences two traits, with all mutations having pleiotropic effects, but comprising a random collection of $ ++ $, $ \\text{--} $, $ \\text{+-} $ and $ \\text{--} $ effects on the two traits. The between-trait covariance for the mutational effects is zero, even though there is complete pleiotropy (all mutations impact both traits). Short of actually measuring the joint effects of individual mutations, the presence of hidden pleiotropy would be difficult, if not impossible, to detect, yet has dramatic consequences for mutation-selection balance, and for multivariate evolution in general (the latter discussed in detail in Volume 3)."
+      "content": "Second, under the incremental model, the vector of allelic effects following mutation becomes $ \\mathbf{a}' = \\mathbf{a} + \\alpha $, whose $ j $th element is $ a_j' = a_j + \\alpha_j $. As a result, the single-trait mutational effects variance, $ \\sigma_\\alpha^2 $, is replaced by a pleiotropic mutation matrix, $ \\mathbf{V}_m $, whose elements are given by [[SEE_FORMULA:28.35b]] where $ \\alpha_j $ is the mutational increment to trait $ j $. A critical point is that extensive pleiotropy can occur without any mutational covariance between traits, namely, with $ \\sigma(\\alpha_j, \\alpha_k) = 0 $ for all values of $ j $ and $ \\ell $, a condition referred to as hidden pleiotropy. For example, consider a locus that influences two traits, with all mutations having pleiotropic effects, but comprising a random collection of $ ++ $, $ \\text{--} $, $ \\text{+-} $ and $ \\text{--} $ effects on the two traits. The between-trait covariance for the mutational effects is zero, even though there is complete pleiotropy (all mutations impact both traits). Short of actually measuring the joint effects of individual mutations, the presence of hidden pleiotropy would be difficult, if not impossible, to detect, yet has dramatic consequences for mutation-selection balance, and for multivariate evolution in general (the latter discussed in detail in Volume 3).",
+      "source_page": 1031,
+      "source_pages": [
+        1031
+      ],
+      "source_block_ids": [
+        "Evolution_chapter28:p039:b10",
+        "Evolution_chapter28:p039:b11",
+        "Evolution_chapter28:p039:b12",
+        "Evolution_chapter28:p039:b9"
+      ],
+      "source_bboxes": [
+        [
+          362.0,
+          919.0,
+          676.0,
+          946.0
+        ],
+        [
+          132.0,
+          953.0,
+          904.0,
+          1185.0
+        ],
+        [
+          830.0,
+          920.0,
+          900.0,
+          942.0
+        ],
+        [
+          131.0,
+          830.0,
+          903.0,
+          919.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c09cd3adb9b7c19ccc994ee5906cd6aeb8206c424156ac3809523b73f5f58e93"
     },
     {
       "type": "derivation",
-      "content": "Finally, modeling selection requires a multivariate extension of Equation 28.3b. If z is the vector of k trait values, and $ \\theta $ a vector of optimum values, then [[SEE_FORMULA:28.36a]] where $ V_{\\omega} $ is a symmetric, positive-definite matrix (a matrix with all positive eigenvalues; see Chapter 30 and Appendix 5 for further details). For weak selection, expanding the quadratic product in the exponential gives [[SEE_FORMULA:28.36b]] where $ V_{j\\ell} $ is the $ j\\ell $th element of $ \\mathbf{V}_{\\omega}^{-1} $. From the assumed positive-definiteness of $ \\mathbf{V}_{\\omega} $, outside of $ \\mathbf{z} = \\theta $, this double summation is always positive (Equation A5.17a), resulting in fitness being maximized at $ \\mathbf{z} = \\theta $ and declining quadratically in any direction around $ \\theta $ (Chapter 30). Assuming environmental effects are multivariate normal, $ \\mathbf{z}|\\mathbf{a} \\sim \\text{MVN}(\\mathbf{a}, \\mathbf{V}_E) $, the multivariate version of Equation 28.3e gives the fitness associated with a as $ w(\\mathbf{a}) \\propto \\exp[-(\\mathbf{a} - \\theta)\\mathbf{V}_s^{-1}(\\mathbf{a} - \\theta)^T/2] $, where [[SEE_FORMULA:28.36c]] is the multivariate extension of Equation 28.3f. Below, we will use the weak-selection approximation that $ \\mathbf{V}_\\omega + \\mathbf{V}_z \\simeq \\mathbf{V}_s $ and $ \\mathbf{V}_\\omega + \\mathbf{V}_a \\simeq \\mathbf{V}_s $."
+      "content": "Finally, modeling selection requires a multivariate extension of Equation 28.3b. If z is the vector of k trait values, and $ \\theta $ a vector of optimum values, then [[SEE_FORMULA:28.36a]] where $ V_{\\omega} $ is a symmetric, positive-definite matrix (a matrix with all positive eigenvalues; see Chapter 30 and Appendix 5 for further details). For weak selection, expanding the quadratic product in the exponential gives [[SEE_FORMULA:28.36b]] where $ V_{j\\ell} $ is the $ j\\ell $th element of $ \\mathbf{V}_{\\omega}^{-1} $. From the assumed positive-definiteness of $ \\mathbf{V}_{\\omega} $, outside of $ \\mathbf{z} = \\theta $, this double summation is always positive (Equation A5.17a), resulting in fitness being maximized at $ \\mathbf{z} = \\theta $ and declining quadratically in any direction around $ \\theta $ (Chapter 30). Assuming environmental effects are multivariate normal, $ \\mathbf{z}|\\mathbf{a} \\sim \\text{MVN}(\\mathbf{a}, \\mathbf{V}_E) $, the multivariate version of Equation 28.3e gives the fitness associated with a as $ w(\\mathbf{a}) \\propto \\exp[-(\\mathbf{a} - \\theta)\\mathbf{V}_s^{-1}(\\mathbf{a} - \\theta)^T/2] $, where [[SEE_FORMULA:28.36c]] is the multivariate extension of Equation 28.3f. Below, we will use the weak-selection approximation that $ \\mathbf{V}_\\omega + \\mathbf{V}_z \\simeq \\mathbf{V}_s $ and $ \\mathbf{V}_\\omega + \\mathbf{V}_a \\simeq \\mathbf{V}_s $.",
+      "source_page": 1031,
+      "source_pages": [
+        1031,
+        1032
+      ],
+      "source_block_ids": [
+        "Evolution_chapter28:p039:b13",
+        "Evolution_chapter28:p039:b14",
+        "Evolution_chapter28:p039:b15",
+        "Evolution_chapter28:p039:b16",
+        "Evolution_chapter28:p039:b17",
+        "Evolution_chapter28:p039:b18",
+        "Evolution_chapter28:p040:b2",
+        "Evolution_chapter28:p040:b3",
+        "Evolution_chapter28:p040:b4",
+        "Evolution_chapter28:p040:b5"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1184.0,
+          903.0,
+          1230.0
+        ],
+        [
+          354.0,
+          1249.0,
+          679.0,
+          1301.0
+        ],
+        [
+          830.0,
+          1264.0,
+          900.0,
+          1287.0
+        ],
+        [
+          131.0,
+          1318.0,
+          904.0,
+          1390.0
+        ],
+        [
+          339.0,
+          1408.0,
+          697.0,
+          1469.0
+        ],
+        [
+          830.0,
+          1426.0,
+          900.0,
+          1450.0
+        ],
+        [
+          286.0,
+          206.0,
+          1059.0,
+          347.0
+        ],
+        [
+          603.0,
+          364.0,
+          743.0,
+          390.0
+        ],
+        [
+          987.0,
+          365.0,
+          1056.0,
+          390.0
+        ],
+        [
+          286.0,
+          410.0,
+          1058.0,
+          457.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "086de7c3d002a4388468ac4a39df4c91963cfb730ffe92a83635f4812e3e91cb"
     },
     {
       "type": "derivation",
-      "content": "Assuming that the vector of phenotypes is multivariate normal, $ \\mathbf{z} \\sim \\text{MVN}(0, \\mathbf{V}_z) $, the multivariate analog for the change by selection in the (univariate) phenotypic variance (Equation 28.3g) is given by the change in the phenotypic covariance matrix, $ \\mathbf{V}_z $, where [[SEE_FORMULA:28.36d]]"
+      "content": "Assuming that the vector of phenotypes is multivariate normal, $ \\mathbf{z} \\sim \\text{MVN}(0, \\mathbf{V}_z) $, the multivariate analog for the change by selection in the (univariate) phenotypic variance (Equation 28.3g) is given by the change in the phenotypic covariance matrix, $ \\mathbf{V}_z $, where [[SEE_FORMULA:28.36d]]",
+      "source_page": 1032,
+      "source_pages": [
+        1032
+      ],
+      "source_block_ids": [
+        "Evolution_chapter28:p040:b6",
+        "Evolution_chapter28:p040:b7",
+        "Evolution_chapter28:p040:b8"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          456.0,
+          1058.0,
+          528.0
+        ],
+        [
+          481.0,
+          543.0,
+          865.0,
+          570.0
+        ],
+        [
+          985.0,
+          545.0,
+          1056.0,
+          569.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7d0605944c239a6d0f8f17f4508a0c61d96543fc20545186f34c21313d518232"
     },
     {
       "type": "derivation",
-      "content": "Similarly, when a is multivariate normal, the change in the covariances for the vector of allelic effects following selection becomes [[SEE_FORMULA:28.36e]]"
+      "content": "Similarly, when a is multivariate normal, the change in the covariances for the vector of allelic effects following selection becomes [[SEE_FORMULA:28.36e]]",
+      "source_page": 1032,
+      "source_pages": [
+        1032
+      ],
+      "source_block_ids": [
+        "Evolution_chapter28:p040:b10",
+        "Evolution_chapter28:p040:b11",
+        "Evolution_chapter28:p040:b9"
+      ],
+      "source_bboxes": [
+        [
+          464.0,
+          654.0,
+          883.0,
+          683.0
+        ],
+        [
+          987.0,
+          656.0,
+          1055.0,
+          680.0
+        ],
+        [
+          287.0,
+          589.0,
+          1059.0,
+          637.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2e317a998562319d814edbbbcdf55ecf08ff28cd73160baa694c190258e8a09a"
     },
     {
       "type": "derivation",
-      "content": "Following Lande (1980), the change in $ V_{a} $ from the joint action of selection and mutation is [[SEE_FORMULA:28.37a]] which is zero at equilibrium. Note that $ \\mathbf{V}_{m} $ is the multivariate extension of $ \\sigma_{\\alpha}^{2} $, and hence is multiplied by the mutation rate at the ith locus, $ \\mu_{i} $."
+      "content": "Following Lande (1980), the change in $ V_{a} $ from the joint action of selection and mutation is [[SEE_FORMULA:28.37a]] which is zero at equilibrium. Note that $ \\mathbf{V}_{m} $ is the multivariate extension of $ \\sigma_{\\alpha}^{2} $, and hence is multiplied by the mutation rate at the ith locus, $ \\mu_{i} $.",
+      "source_page": 1032,
+      "source_pages": [
+        1032
+      ],
+      "source_block_ids": [
+        "Evolution_chapter28:p040:b12",
+        "Evolution_chapter28:p040:b13",
+        "Evolution_chapter28:p040:b14",
+        "Evolution_chapter28:p040:b15"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          700.0,
+          1059.0,
+          726.0
+        ],
+        [
+          565.0,
+          743.0,
+          781.0,
+          771.0
+        ],
+        [
+          986.0,
+          745.0,
+          1056.0,
+          769.0
+        ],
+        [
+          287.0,
+          790.0,
+          1057.0,
+          836.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "087f117772f8a723a165af296ca49607b7d4418138cafe45c03fd6ecf75a0c86"
     },
     {
       "type": "derivation",
-      "content": "Recalling Equation 28.36e, the removal of genetic variances and covariances by selection balances the input from new mutation when [[SEE_FORMULA:28.37b]] which has the solution [[SEE_FORMULA:28.37c]] where $ \\mathbf{V}^{1/2} $ denotes the square root of $ \\mathbf{V} $ (where $ \\mathbf{V}^{1/2}\\mathbf{V}^{1/2} = \\mathbf{V} $; see Equation A5.11b). If $ \\mathbf{V}_s $ and $ \\mathbf{V}_m $ are diagonal matrices (corresponding to no correlations in the fitness function and no pleiotropic covariance between mutational effects, respectively), Equation 28.37c gives the equilibrium variance for trait $ j $ at locus $ i $ as [[SEE_FORMULA:28.38a]] where $ \\sigma_{\\alpha,j,i}^{2} $ is the variance in the effects on trait j from new mutations at locus i. This is simply Kimura's result for a single trait (Equation 28.22d), and Lande's key finding: under the Gaussian assumption, the equilibrium additive variance of a trait is unaffected by selection on uncorrelated (both selectively and mutationally) traits. As noted by Turelli (1985), the condition for the multivariate Gaussian approximation to be reasonable is that [[SEE_FORMULA:28.38b]] for all loci and all traits. The presence of any locus-trait combination that violates this condition invalidates the Gaussian approximation. A second restriction on the plausibility of the Gaussian approximation is the realistic number of functionally distinct alleles that can be maintained at a locus. Turelli (1984) found that a locus with roughly 20 alleles can fairly closely match the continuum-of-alleles model for a single trait. However, with two traits, allowing over 100 alleles still did not provide sufficient granularity to capture the bivariate continuum-of-alleles structure. This problem becomes increasingly more acute as the number of traits that a pleiotropic mutant impacts grows."
+      "content": "Recalling Equation 28.36e, the removal of genetic variances and covariances by selection balances the input from new mutation when [[SEE_FORMULA:28.37b]] which has the solution [[SEE_FORMULA:28.37c]] where $ \\mathbf{V}^{1/2} $ denotes the square root of $ \\mathbf{V} $ (where $ \\mathbf{V}^{1/2}\\mathbf{V}^{1/2} = \\mathbf{V} $; see Equation A5.11b). If $ \\mathbf{V}_s $ and $ \\mathbf{V}_m $ are diagonal matrices (corresponding to no correlations in the fitness function and no pleiotropic covariance between mutational effects, respectively), Equation 28.37c gives the equilibrium variance for trait $ j $ at locus $ i $ as [[SEE_FORMULA:28.38a]] where $ \\sigma_{\\alpha,j,i}^{2} $ is the variance in the effects on trait j from new mutations at locus i. This is simply Kimura's result for a single trait (Equation 28.22d), and Lande's key finding: under the Gaussian assumption, the equilibrium additive variance of a trait is unaffected by selection on uncorrelated (both selectively and mutationally) traits. As noted by Turelli (1985), the condition for the multivariate Gaussian approximation to be reasonable is that [[SEE_FORMULA:28.38b]] for all loci and all traits. The presence of any locus-trait combination that violates this condition invalidates the Gaussian approximation. A second restriction on the plausibility of the Gaussian approximation is the realistic number of functionally distinct alleles that can be maintained at a locus. Turelli (1984) found that a locus with roughly 20 alleles can fairly closely match the continuum-of-alleles model for a single trait. However, with two traits, allowing over 100 alleles still did not provide sufficient granularity to capture the bivariate continuum-of-alleles structure. This problem becomes increasingly more acute as the number of traits that a pleiotropic mutant impacts grows.",
+      "source_page": 1032,
+      "source_pages": [
+        1032,
+        1033
+      ],
+      "source_block_ids": [
+        "Evolution_chapter28:p040:b16",
+        "Evolution_chapter28:p040:b17",
+        "Evolution_chapter28:p040:b18",
+        "Evolution_chapter28:p040:b19",
+        "Evolution_chapter28:p040:b20",
+        "Evolution_chapter28:p040:b21",
+        "Evolution_chapter28:p040:b22",
+        "Evolution_chapter28:p040:b23",
+        "Evolution_chapter28:p040:b24",
+        "Evolution_chapter28:p040:b25",
+        "Evolution_chapter28:p040:b26",
+        "Evolution_chapter28:p040:b27",
+        "Evolution_chapter28:p040:b28",
+        "Evolution_chapter28:p040:b29",
+        "Evolution_chapter28:p041:b2"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          837.0,
+          1059.0,
+          884.0
+        ],
+        [
+          583.0,
+          902.0,
+          762.0,
+          932.0
+        ],
+        [
+          985.0,
+          907.0,
+          1055.0,
+          931.0
+        ],
+        [
+          289.0,
+          951.0,
+          489.0,
+          974.0
+        ],
+        [
+          498.0,
+          991.0,
+          848.0,
+          1032.0
+        ],
+        [
+          987.0,
+          1002.0,
+          1055.0,
+          1025.0
+        ],
+        [
+          286.0,
+          1053.0,
+          1059.0,
+          1150.0
+        ],
+        [
+          567.0,
+          1170.0,
+          777.0,
+          1206.0
+        ],
+        [
+          985.0,
+          1176.0,
+          1055.0,
+          1199.0
+        ],
+        [
+          286.0,
+          1225.0,
+          1059.0,
+          1319.0
+        ],
+        [
+          288.0,
+          1319.0,
+          1058.0,
+          1365.0
+        ],
+        [
+          622.0,
+          1359.0,
+          722.0,
+          1412.0
+        ],
+        [
+          985.0,
+          1375.0,
+          1055.0,
+          1399.0
+        ],
+        [
+          287.0,
+          1421.0,
+          1060.0,
+          1471.0
+        ],
+        [
+          132.0,
+          206.0,
+          905.0,
+          347.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "295ea0246e850bd3a37abf0594ee47e0d37a22357116db3e41b51240a589fd72"
     },
     {
       "type": "example",
-      "content": "[[EXAMPLE:28.9]]"
+      "content": "[[SEE_EXAMPLE:28.9]]",
+      "source_page": 1033,
+      "source_pages": [
+        1033
+      ],
+      "source_block_ids": [
+        "Evolution_chapter28:p041:b10",
+        "Evolution_chapter28:p041:b11",
+        "Evolution_chapter28:p041:b13",
+        "Evolution_chapter28:p041:b3",
+        "Evolution_chapter28:p041:b4",
+        "Evolution_chapter28:p041:b5",
+        "Evolution_chapter28:p041:b6",
+        "Evolution_chapter28:p041:b8"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          763.0,
+          880.0,
+          828.0
+        ],
+        [
+          364.0,
+          838.0,
+          678.0,
+          892.0
+        ],
+        [
+          352.0,
+          915.0,
+          692.0,
+          969.0
+        ],
+        [
+          167.0,
+          414.0,
+          881.0,
+          521.0
+        ],
+        [
+          397.0,
+          530.0,
+          647.0,
+          583.0
+        ],
+        [
+          166.0,
+          593.0,
+          881.0,
+          637.0
+        ],
+        [
+          209.0,
+          647.0,
+          837.0,
+          700.0
+        ],
+        [
+          314.0,
+          728.0,
+          733.0,
+          756.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f0320efa89585920b0efde4793189cc04c42d10538dbfd45ad8c893cf09f149e"
     }
   ]
 }

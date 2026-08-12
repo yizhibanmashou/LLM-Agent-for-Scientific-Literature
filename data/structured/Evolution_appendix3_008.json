@@ -21,19 +21,116 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "The Metropolis sampler works with any symmetric proposal (or jumping) distribution, while Metropolis-Hastings allows for more general distributions. So how do we determine our best option for a proposal distribution? There are two general approaches: random walks and independent chain sampling. Under a sampler using a proposal distribution based on a random-walk chain, the new value, y, equals the current value, x, plus a random variable, namely, z, $$ y=x+z $$"
+      "content": "The Metropolis sampler works with any symmetric proposal (or jumping) distribution, while Metropolis-Hastings allows for more general distributions. So how do we determine our best option for a proposal distribution? There are two general approaches: random walks and independent chain sampling. Under a sampler using a proposal distribution based on a random-walk chain, the new value, y, equals the current value, x, plus a random variable, namely, z, $$ y=x+z $$",
+      "source_page": 1218,
+      "source_pages": [
+        1218
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p011:b17",
+        "Evolution_appendix3:p011:b18",
+        "Evolution_appendix3:p011:b19"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1196.0,
+          530.0,
+          1220.0
+        ],
+        [
+          131.0,
+          1225.0,
+          904.0,
+          1366.0
+        ],
+        [
+          475.0,
+          1367.0,
+          562.0,
+          1387.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "46fd6ffb7e745939741cb02c737d727d2ee114773923d2488a11a73c594c9915"
     },
     {
       "type": "discussion",
-      "content": "In this case, $ q(x, y) = g(y - x) = g(z) $, the density associated with the random variable z. If $ g(z) = g(-z) $, i.e., the density for the random variable z is symmetric (as occurs with a normal or multivariate normal with a mean of zero, or a uniform centered around zero), then we can use Metropolis sampling, as $ q(x,y)/q(y,x) = g(z)/g(-z) = 1 $. The variance of the proposal distribution can be thought of as a tuning parameter that is adjusted to achieve better mixing."
+      "content": "In this case, $ q(x, y) = g(y - x) = g(z) $, the density associated with the random variable z. If $ g(z) = g(-z) $, i.e., the density for the random variable z is symmetric (as occurs with a normal or multivariate normal with a mean of zero, or a uniform centered around zero), then we can use Metropolis sampling, as $ q(x,y)/q(y,x) = g(z)/g(-z) = 1 $. The variance of the proposal distribution can be thought of as a tuning parameter that is adjusted to achieve better mixing.",
+      "source_page": 1218,
+      "source_pages": [
+        1218,
+        1219
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p011:b20",
+        "Evolution_appendix3:p012:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1398.0,
+          904.0,
+          1447.0
+        ],
+        [
+          287.0,
+          207.0,
+          1059.0,
+          298.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a8b3802154d863ac3075489152f25a685972990422c267d49b04d6f32122b20f"
     },
     {
       "type": "discussion",
-      "content": "Under a proposal distribution using an independent chain, the probability of jumping to point y is independent of the current position $ (x) $ of the chain, namely, $ q(x,y) = g(y) $. The candidate value is simply drawn from a proposal distribution, independent of the current value (see Examples A3.3 and A3.5). Again, any number of standard distributions can be used for $ g(y) $. Note that in this case, except for a uniform, the proposal distribution is generally not symmetric, as $ g(x) $ is generally not equal to $ g(y) $ (for $ x \\neq y $), and Metropolis-Hastings sampling must be used. As mentioned, we can tune the proposal distribution to adjust the mixing, and in particular the acceptance probability, of the chain. This is generally accomplished by adjusting the standard deviation (SD) of the proposal distribution. This can be done by adjusting the variance for a normal or adjusting the eigenvalues of the covariance matrix for a multivariate normal. Likewise, one can increase or decrease the range, $ (-a, a) $, if a uniform is used, or change the degrees of freedom (df) if a $ \\chi^{2} $ is used (variance increases with the df). To increase the acceptance probability, one decreases the proposal distribution SD. There is a tradeoff in that if the SD is too large, jumps are potentially large (which is good), but are usually not accepted (which is a problem). This leads to high autocorrelation (see below) and very poor mixing, requiring much longer chains. On the other hand, if the proposal SD is too small, moves will generally be accepted (there is a high acceptance probability), but they will also be small, again generating high autocorrelations and poor mixing."
+      "content": "Under a proposal distribution using an independent chain, the probability of jumping to point y is independent of the current position $ (x) $ of the chain, namely, $ q(x,y) = g(y) $. The candidate value is simply drawn from a proposal distribution, independent of the current value (see Examples A3.3 and A3.5). Again, any number of standard distributions can be used for $ g(y) $. Note that in this case, except for a uniform, the proposal distribution is generally not symmetric, as $ g(x) $ is generally not equal to $ g(y) $ (for $ x \\neq y $), and Metropolis-Hastings sampling must be used. As mentioned, we can tune the proposal distribution to adjust the mixing, and in particular the acceptance probability, of the chain. This is generally accomplished by adjusting the standard deviation (SD) of the proposal distribution. This can be done by adjusting the variance for a normal or adjusting the eigenvalues of the covariance matrix for a multivariate normal. Likewise, one can increase or decrease the range, $ (-a, a) $, if a uniform is used, or change the degrees of freedom (df) if a $ \\chi^{2} $ is used (variance increases with the df). To increase the acceptance probability, one decreases the proposal distribution SD. There is a tradeoff in that if the SD is too large, jumps are potentially large (which is good), but are usually not accepted (which is a problem). This leads to high autocorrelation (see below) and very poor mixing, requiring much longer chains. On the other hand, if the proposal SD is too small, moves will generally be accepted (there is a high acceptance probability), but they will also be small, again generating high autocorrelations and poor mixing.",
+      "source_page": 1219,
+      "source_pages": [
+        1219
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p012:b3",
+        "Evolution_appendix3:p012:b4"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          299.0,
+          1058.0,
+          459.0
+        ],
+        [
+          287.0,
+          460.0,
+          1060.0,
+          740.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "977edf8d53f1296080f1486fb45ac7600133aec55c1396b6c16e288708e3ba7c"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A3.5]]"
+      "content": "[[SEE_EXAMPLE:A3.5]]",
+      "source_page": 1216,
+      "source_pages": [
+        1216
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p009:b5"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          487.0,
+          881.0,
+          594.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a7ec191f9e202b0d3af9cf0d5965aa63c1243d7826c3ae815b43d515ddbf23b1"
     }
   ]
 }

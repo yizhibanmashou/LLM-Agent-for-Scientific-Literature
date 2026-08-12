@@ -26,19 +26,157 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "With a binomial, each trial (observation) has two possible outcomes and the likelihood is a function of the sample size (number of trials), $ n $, and a single success probability, $ p $ (as the two outcomes on any given trial have probabilities of $ p $ and $ 1 - p $). The generalization of this model is the multinomial distribution, where now each trial has $ k $ possible outcomes, and which requires $ k - 1 $ success probabilities to describe the likelihood. In particular, for a total of $ n $ observations, the probability that $ n_1 $ are in category 1, $ n_2 $ in category 2, $ \\cdots $, and $ n_k $ in category $ k $ is $$ p(n_{1},\\cdots n_{k})=\\frac{n!}{n_{1}!n_{2}!\\cdots n_{k}!}p_{1}^{n_{1}}\\cdots p_{k}^{n_{k}}\\quad where\\quad\\sum_{i}n_{i}=n\\quad and\\quad\\sum_{i}p_{i}=1 $$"
+      "content": "With a binomial, each trial (observation) has two possible outcomes and the likelihood is a function of the sample size (number of trials), $ n $, and a single success probability, $ p $ (as the two outcomes on any given trial have probabilities of $ p $ and $ 1 - p $). The generalization of this model is the multinomial distribution, where now each trial has $ k $ possible outcomes, and which requires $ k - 1 $ success probabilities to describe the likelihood. In particular, for a total of $ n $ observations, the probability that $ n_1 $ are in category 1, $ n_2 $ in category 2, $ \\cdots $, and $ n_k $ in category $ k $ is $$ p(n_{1},\\cdots n_{k})=\\frac{n!}{n_{1}!n_{2}!\\cdots n_{k}!}p_{1}^{n_{1}}\\cdots p_{k}^{n_{k}}\\quad where\\quad\\sum_{i}n_{i}=n\\quad and\\quad\\sum_{i}p_{i}=1 $$",
+      "source_page": 1205,
+      "source_pages": [
+        1205
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p017:b19",
+        "Evolution_appendix2:p017:b20",
+        "Evolution_appendix2:p017:b21"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1215.0,
+          464.0,
+          1237.0
+        ],
+        [
+          132.0,
+          1244.0,
+          905.0,
+          1408.0
+        ],
+        [
+          141.0,
+          1417.0,
+          821.0,
+          1471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f1be7b56fc41e7da52eb68e05193ee3aa28942552f389858aa361750ebbbc90b"
     },
     {
       "type": "discussion",
-      "content": "The conjugate prior for the multinomial likelihood is the Dirichlet distribution. If we let $ \\mathbf{x} = (x_1, x_2, \\cdots, x_k) $ denote the $ k $ success probabilities, when pdf for $ \\mathbf{x} \\sim \\text{Dirichlet}(\\alpha_1, \\cdots, \\alpha_k) $ is $$ \\begin{align*}p(x_1,\\cdots x_k\\mid\\alpha_1,\\cdots,\\alpha_k)=\\frac{\\Gamma(\\alpha_0)}{\\Gamma(\\alpha_1)\\cdots\\Gamma(\\alpha_k)}x_1^{\\alpha_1-1}\\cdots x_k^{\\alpha_k-1}\\end{align*} $$ where $$ \\alpha_{0}=\\sum_{i=1}^{k}\\alpha_{i}\\quad with\\quad\\alpha_{i}>0,\\quad and\\quad\\sum_{i=1}^{k}x_{i}=1\\quad with\\quad0\\leq x_{i}\\leq1 $$"
+      "content": "The conjugate prior for the multinomial likelihood is the Dirichlet distribution. If we let $ \\mathbf{x} = (x_1, x_2, \\cdots, x_k) $ denote the $ k $ success probabilities, when pdf for $ \\mathbf{x} \\sim \\text{Dirichlet}(\\alpha_1, \\cdots, \\alpha_k) $ is $$ \\begin{align*}p(x_1,\\cdots x_k\\mid\\alpha_1,\\cdots,\\alpha_k)=\\frac{\\Gamma(\\alpha_0)}{\\Gamma(\\alpha_1)\\cdots\\Gamma(\\alpha_k)}x_1^{\\alpha_1-1}\\cdots x_k^{\\alpha_k-1}\\end{align*} $$ where $$ \\alpha_{0}=\\sum_{i=1}^{k}\\alpha_{i}\\quad with\\quad\\alpha_{i}>0,\\quad and\\quad\\sum_{i=1}^{k}x_{i}=1\\quad with\\quad0\\leq x_{i}\\leq1 $$",
+      "source_page": 1206,
+      "source_pages": [
+        1206
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p018:b4",
+        "Evolution_appendix2:p018:b5",
+        "Evolution_appendix2:p018:b7",
+        "Evolution_appendix2:p018:b8"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          662.0,
+          1053.0,
+          711.0
+        ],
+        [
+          388.0,
+          730.0,
+          880.0,
+          779.0
+        ],
+        [
+          288.0,
+          797.0,
+          350.0,
+          819.0
+        ],
+        [
+          353.0,
+          837.0,
+          920.0,
+          899.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e3610759dd03bd0be87865fe2adeaa0ae762f3bbc2a6a1ff1f11bd00297151e4"
     },
     {
       "type": "discussion",
-      "content": "At first glance, this looks like the multinomial density function (with $ \\alpha_i - 1 = n_i $). The difference is that the multinomial is calculated over a set of discrete random variables ($ n_i $), thus returning the expected probabilities for any vector of discrete numbers of counts (successes) in each category. Conversely, the Dirichlet treats an equivalent of the vector of outcomes (generalized to non-integers) as fixed and returns the continuous distribution for all possible configurations of the success parameters given this data, which means that the data ($ \\alpha_i $) is fixed, and the success parameters ($ x_i $) are random. A few key moments of this distribution are $$ \\begin{align*}\\mu_{x_i}={\\alpha_i\\over\\alpha_0},\\quad\\sigma^2(x_i)={\\alpha_i(\\alpha_0-\\alpha_i)\\over\\alpha_0^2(\\alpha_0+1)},\\quad{\\rm and}\\quad\\sigma(x_i,x_j)=-{\\alpha_i\\alpha_j\\over\\alpha_0^2(\\alpha_0+1)}\\end{align*} $$"
+      "content": "At first glance, this looks like the multinomial density function (with $ \\alpha_i - 1 = n_i $). The difference is that the multinomial is calculated over a set of discrete random variables ($ n_i $), thus returning the expected probabilities for any vector of discrete numbers of counts (successes) in each category. Conversely, the Dirichlet treats an equivalent of the vector of outcomes (generalized to non-integers) as fixed and returns the continuous distribution for all possible configurations of the success parameters given this data, which means that the data ($ \\alpha_i $) is fixed, and the success parameters ($ x_i $) are random. A few key moments of this distribution are $$ \\begin{align*}\\mu_{x_i}={\\alpha_i\\over\\alpha_0},\\quad\\sigma^2(x_i)={\\alpha_i(\\alpha_0-\\alpha_i)\\over\\alpha_0^2(\\alpha_0+1)},\\quad{\\rm and}\\quad\\sigma(x_i,x_j)=-{\\alpha_i\\alpha_j\\over\\alpha_0^2(\\alpha_0+1)}\\end{align*} $$",
+      "source_page": 1206,
+      "source_pages": [
+        1206
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p018:b10",
+        "Evolution_appendix2:p018:b11"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          917.0,
+          1061.0,
+          1100.0
+        ],
+        [
+          345.0,
+          1118.0,
+          926.0,
+          1167.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8e1116d2f2aff5730a9c0b5e6e87fe42a756d3b82285b4093b118359b686ee2c"
     },
     {
       "type": "discussion",
-      "content": "An important special case of the Dirichlet (for k = 2 classes) is the beta distribution, whose pdf is given by $$ \\begin{align*}p(x)=\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}\\; x^{\\alpha-1}(1-x)^{\\beta-1}\\quad{\\rm for}\\quad0\\le x\\le1,\\quad\\alpha,\\;\\beta>0\\end{align*} $$ which has a mean and a variance of $$ \\begin{align*}\\mu=\\frac{\\alpha}{\\alpha+\\beta}\\qquad{\\rm and}\\qquad\\sigma^2=\\frac{\\alpha\\beta}{(\\alpha+\\beta)^2(\\alpha+\\beta-1)}\\end{align*} $$ As Figure A2.3 illustrates, the beta distribution is extremely flexible, and can be flat, unimodal, U-, or L-shaped, depending on the choice of $ \\alpha $ and $ \\beta $."
+      "content": "An important special case of the Dirichlet (for k = 2 classes) is the beta distribution, whose pdf is given by $$ \\begin{align*}p(x)=\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}\\; x^{\\alpha-1}(1-x)^{\\beta-1}\\quad{\\rm for}\\quad0\\le x\\le1,\\quad\\alpha,\\;\\beta>0\\end{align*} $$ which has a mean and a variance of $$ \\begin{align*}\\mu=\\frac{\\alpha}{\\alpha+\\beta}\\qquad{\\rm and}\\qquad\\sigma^2=\\frac{\\alpha\\beta}{(\\alpha+\\beta)^2(\\alpha+\\beta-1)}\\end{align*} $$ As Figure A2.3 illustrates, the beta distribution is extremely flexible, and can be flat, unimodal, U-, or L-shaped, depending on the choice of $ \\alpha $ and $ \\beta $.",
+      "source_page": 1206,
+      "source_pages": [
+        1206
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p018:b13",
+        "Evolution_appendix2:p018:b14",
+        "Evolution_appendix2:p018:b16",
+        "Evolution_appendix2:p018:b17",
+        "Evolution_appendix2:p018:b19"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1183.0,
+          1058.0,
+          1232.0
+        ],
+        [
+          369.0,
+          1249.0,
+          904.0,
+          1300.0
+        ],
+        [
+          289.0,
+          1318.0,
+          602.0,
+          1340.0
+        ],
+        [
+          459.0,
+          1357.0,
+          884.0,
+          1406.0
+        ],
+        [
+          287.0,
+          1421.0,
+          1059.0,
+          1471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d9ce3c859ef55d15a62d70e27f48d3b612a30c552bbf4ad30c93f7ee9c1c7b35"
     }
   ]
 }

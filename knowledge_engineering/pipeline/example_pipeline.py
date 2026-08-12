@@ -6,11 +6,12 @@ the knowledge-engineering pipeline while keeping the extraction rules unchanged.
 
 from __future__ import annotations
 
+import logging
+import re
+import time
 from collections import Counter, defaultdict
 from difflib import SequenceMatcher
 from pathlib import Path
-import re
-import time
 from typing import Any
 
 from knowledge_engineering.core.common import (
@@ -23,39 +24,40 @@ from knowledge_engineering.core.common import (
 )
 from knowledge_engineering.core.runtime import FormulaLibrary
 from knowledge_engineering.processors.example_extraction import (
-    PROJECT_ROOT,
-    ExampleCandidate,
     EXAMPLE_HEAD_RE,
     EXAMPLE_PLACEHOLDER_RE,
     PADDLE_EXAMPLE_LABELS,
     PADDLE_PAGE_NOISE_LABELS,
+    PROJECT_ROOT,
+    ExampleCandidate,
     build_structured_context,
     chapter_sort_key,
+    clean_ref_id,
     collapse_ws,
     existing_library_row_to_candidate,
-    extract_external_refs,
     extract_examples_for_structured_dir,
+    extract_external_refs,
     extract_figure_refs,
     extract_formula_refs,
     extract_table_refs,
     is_example_heading_match,
     is_standalone_numbered_table_placeholder,
     load_unit_files,
+    looks_like_post_example_body,
     looks_truncated,
     natural_key,
     normalize_heading_prefix,
     normalize_match_text,
     ordered_paddle_records,
-    recover_examples_from_paddle_raw,
     raw_example_start_match,
+    recover_examples_from_paddle_raw,
     sha256_file,
     source_table_refs,
     strip_html,
     strip_structured_refs,
-    looks_like_post_example_body,
-    clean_ref_id,
 )
 
+logger = logging.getLogger(__name__)
 
 TOKEN_RE = re.compile(r"[0-9A-Za-z]+")
 TABLE_PLACEHOLDER_RE = re.compile(r"\[\[(?:SEE_)?TABLE\s*:\s*([^\]\n\r]+?)\s*\]\]", re.IGNORECASE)
@@ -611,7 +613,8 @@ def _figure_standalone_positions(structured_dir: Path, figure_id: str) -> list[d
     for path in load_unit_files(structured_dir):
         try:
             data = read_json(path)
-        except Exception:
+        except Exception as exc:
+            logger.warning("Skipping unreadable structured unit %s: %s", path, exc)
             continue
         blocks = data.get("blocks") if isinstance(data, dict) else []
         if not isinstance(blocks, list):
@@ -659,7 +662,8 @@ def _remove_standalone_figure_placeholders(
             continue
         try:
             data = read_json(path)
-        except Exception:
+        except Exception as exc:
+            logger.warning("Skipping unreadable structured unit %s: %s", path, exc)
             continue
         blocks = data.get("blocks") if isinstance(data, dict) else []
         if not isinstance(blocks, list):
@@ -1323,15 +1327,36 @@ def _missing_raw_sequence_targets(
     project_root: Path,
     rows: list[dict[str, Any]],
 ) -> set[tuple[str, str]]:
-    row_targets = _sequence_gap_targets_from_rows(rows)
-    if not row_targets:
+    """Return every formal raw-layout Example absent from the library.
+
+    The old implementation considered only numeric holes between two existing
+    rows.  That missed leading examples (for example 10.1/10.2) and trailing
+    examples (for example 8.17).  The authoritative Paddle layout is already
+    constrained to explicit ``Example N.N`` headings, so compare that complete
+    source inventory directly with active formal rows.
+    """
+    existing: set[tuple[str, str]] = set()
+    chapters: set[str] = set()
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        replacement = row.get("replacement") if isinstance(row.get("replacement"), dict) else {}
+        if replacement.get("status") == "restored":
+            continue
+        chapter = str(row.get("chapter") or "").strip().lower()
+        example_id = clean_ref_id(str(row.get("example_id") or ""))
+        if not chapter or not example_id:
+            continue
+        chapters.add(chapter)
+        existing.add((chapter, example_id.lower()))
+    if not chapters:
         return set()
-    chapters = {chapter for chapter, _ in row_targets}
     raw_ids_by_chapter = _raw_example_ids_by_chapter(project_root, chapters)
     return {
         (chapter, example_id)
-        for chapter, example_id in row_targets
-        if example_id in raw_ids_by_chapter.get(chapter, set())
+        for chapter, example_ids in raw_ids_by_chapter.items()
+        for example_id in example_ids
+        if (chapter, example_id.lower()) not in existing
     }
 
 
@@ -1542,7 +1567,7 @@ def _split_missing_examples_from_existing_library(
 ) -> dict[str, Any]:
     targets = [
         target
-        for target in _existing_sequence_gap_targets(rows)
+        for target in _missing_raw_sequence_targets(project_root=project_root, rows=rows)
         if not exclude_chapters or target[0] not in exclude_chapters
     ]
     stats: dict[str, Any] = {
@@ -2560,7 +2585,8 @@ def _candidate_source_unit_for_raw_order(
     for path in load_unit_files(structured_dir):
         try:
             data = read_json(path)
-        except Exception:
+        except Exception as exc:
+            logger.warning("Skipping unreadable structured unit %s: %s", path, exc)
             continue
         metadata = data.get("metadata") if isinstance(data, dict) else {}
         unit_chapter = str(metadata.get("chapter") or path.stem.split("_", 1)[0]).strip().lower()
@@ -2797,7 +2823,8 @@ def _repair_example_heading_units_from_raw_order(
     for unit_path in load_unit_files(structured_dir):
         try:
             unit_data = read_json(unit_path)
-        except Exception:
+        except Exception as exc:
+            logger.warning("Skipping unreadable structured unit %s: %s", unit_path, exc)
             continue
         if not isinstance(unit_data, dict):
             continue
@@ -3438,7 +3465,6 @@ def _relocate_out_of_order_existing_examples(
         if chapter:
             by_chapter[chapter].append(row)
 
-    context = build_structured_context(structured_dir)
     for chapter, chapter_rows in by_chapter.items():
         ordered_rows = sorted(
             chapter_rows,
@@ -3975,7 +4001,8 @@ def _row_placeholder_locations(structured_dir: Path, row: dict[str, Any]) -> lis
             continue
         try:
             data = read_json(path)
-        except Exception:
+        except Exception as exc:
+            logger.warning("Skipping unreadable structured unit %s: %s", path, exc)
             continue
         blocks = data.get("blocks") if isinstance(data, dict) else []
         if not isinstance(blocks, list):
@@ -6078,9 +6105,6 @@ def _summarize_existing_example_library(
         dry_run=dry_run,
         exclude_chapters=exclude_chapters,
     )
-    # Fix 4: if rows have stale indexes (placeholder blocks missing), signal fallback to re-extraction
-    stale_count = repair_stats.get("index_validation", {}).get("stale", 0)
-    total = len(rows)
     table_source_rebind_stats = _rebind_inline_table_sources_from_examples(
         structured_path,
         rows,
@@ -6100,16 +6124,25 @@ def _summarize_existing_example_library(
         dry_run=dry_run,
         exclude_chapters=exclude_chapters,
     )
+    excluded = {
+        str(chapter).strip().lower()
+        for chapter in (exclude_chapters or set())
+        if str(chapter).strip()
+    }
+    active_rows = [
+        row
+        for row in rows
+        if str(row.get("chapter") or "").strip().lower() not in excluded
+    ]
     status_counts = _status_counts_for_rows(rows)
-    placeholder_stats = _existing_placeholder_stats(structured_path, rows)
-    split_stats = repair_stats.get("sequence_gap_split", {}) if isinstance(repair_stats.get("sequence_gap_split"), dict) else {}
-    row_sequence_targets = _missing_raw_sequence_targets(project_root=project_root, rows=rows)
+    placeholder_stats = _existing_placeholder_stats(structured_path, active_rows)
+    row_sequence_targets = _missing_raw_sequence_targets(project_root=project_root, rows=active_rows)
     current_row_ids = {
         (
             str(row.get("chapter") or "").strip().lower(),
             str(row.get("example_id") or "").strip(),
         )
-        for row in rows
+        for row in active_rows
         if isinstance(row, dict)
         and str(row.get("chapter") or "").strip()
         and str(row.get("example_id") or "").strip()

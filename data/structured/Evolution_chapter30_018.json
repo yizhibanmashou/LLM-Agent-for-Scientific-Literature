@@ -26,15 +26,102 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Most of the approaches presented in this chapter (and in much of Chapter 29) make normality assumptions, which come in two different flavors: first, the assumed multivariate normality (MVN) of the distribution of trait values, z; and second, the assumed MVN for the distribution of residuals in the fitness regression, $ \\mathbf{e} = w(\\mathbf{z}) - \\widehat{w}(\\mathbf{z}) $. We address these in turn. As summarized in [[SEE_TABLE:30.1]], when $ z \\sim MVN $, a variety of results hold that relate $ \\beta $ and $ \\gamma $ to measures of the geometries of the individual fitness surface and the mean fitness landscape. Further, as with the univariate case, for $ \\beta $ and $ \\gamma $ to equal, respectively, the linear and quadratic coefficients in a quadratic fitness regression also requires z to be MVN (lack of skew and the kurtosis of a normal, see Equations 29.28a and 29.28b)."
+      "content": "Most of the approaches presented in this chapter (and in much of Chapter 29) make normality assumptions, which come in two different flavors: first, the assumed multivariate normality (MVN) of the distribution of trait values, z; and second, the assumed MVN for the distribution of residuals in the fitness regression, $ \\mathbf{e} = w(\\mathbf{z}) - \\widehat{w}(\\mathbf{z}) $. We address these in turn. As summarized in [[SEE_TABLE:30.1]], when $ z \\sim MVN $, a variety of results hold that relate $ \\beta $ and $ \\gamma $ to measures of the geometries of the individual fitness surface and the mean fitness landscape. Further, as with the univariate case, for $ \\beta $ and $ \\gamma $ to equal, respectively, the linear and quadratic coefficients in a quadratic fitness regression also requires z to be MVN (lack of skew and the kurtosis of a normal, see Equations 29.28a and 29.28b).",
+      "source_page": 1125,
+      "source_pages": [
+        1125,
+        1134
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p012:b2",
+        "Evolution_chapter30:p012:b3",
+        "Evolution_chapter30:p021:b11",
+        "Evolution_chapter30:p021:b12",
+        "Evolution_chapter30:p021:b13"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          206.0,
+          1058.0,
+          251.0
+        ],
+        [
+          323.0,
+          273.0,
+          810.0,
+          330.0
+        ],
+        [
+          133.0,
+          1232.0,
+          565.0,
+          1256.0
+        ],
+        [
+          131.0,
+          1261.0,
+          904.0,
+          1354.0
+        ],
+        [
+          132.0,
+          1354.0,
+          905.0,
+          1470.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "12888d3e05ef08867214fd3dab1034e692d40dd94b493b0684095ea5924815f5"
     },
     {
       "type": "proposition",
-      "content": "Perhaps the more critical normality assumption involves the distributional behavior of the fitness residuals. As mentioned in Chapter 29, the assumption that $ z \\sim MVN $ is not required to fit a regression, although when z is MVN, one can then equate estimated regression coefficients with the properties just mentioned. However, the assumption of multivariate normality of the fitness residuals is required, either directly (for hypotheses testing and constructing confidence intervals) or indirectly (the OLS assumption of homoscedastic residues is satisfied when residuals are MVN). Unfortunately, as mentioned in Chapter 29, most biologically realistic models for fitness components generate residuals that are both heteroscedastic and nonnormal. As introduced in Chapter 29, Aster models (Geyer et al. 2007; Geyer and Shaw 2008, 2010a, 2010b; Shaw et al. 2008; Geyer 2010; Shaw and Geyer 2010) allow for a very wide range of distributional assumptions for the fitness-component residuals, and allow one to build up the distribution of total fitness by convoluting distributions across selection episodes. By fully, and correctly, accounting for the residua error structure, Aster models are far more statistically rigorous than Lande-Arnold estimation and can result in less bias when estimating the fitness surface. For example, in a simulated two-trait dataset fit by Shaw and Geyer (2010), Aster models correctly detected multivariate stabilizing selection (two negative eigenvalues for $ \\gamma $), while a Lande-Arnold regression of the same dataset suggested a saddle point (one positive and one negative eigenvalue). An OLS regression assumes that each value is equally weighted (the homoscedastic residual assumption), but when observations vary in their quality (such as heteroscedastic fitness residuals), weighting them properly (as done in Aster models) reduces bias."
+      "content": "Perhaps the more critical normality assumption involves the distributional behavior of the fitness residuals. As mentioned in Chapter 29, the assumption that $ z \\sim MVN $ is not required to fit a regression, although when z is MVN, one can then equate estimated regression coefficients with the properties just mentioned. However, the assumption of multivariate normality of the fitness residuals is required, either directly (for hypotheses testing and constructing confidence intervals) or indirectly (the OLS assumption of homoscedastic residues is satisfied when residuals are MVN). Unfortunately, as mentioned in Chapter 29, most biologically realistic models for fitness components generate residuals that are both heteroscedastic and nonnormal. As introduced in Chapter 29, Aster models (Geyer et al. 2007; Geyer and Shaw 2008, 2010a, 2010b; Shaw et al. 2008; Geyer 2010; Shaw and Geyer 2010) allow for a very wide range of distributional assumptions for the fitness-component residuals, and allow one to build up the distribution of total fitness by convoluting distributions across selection episodes. By fully, and correctly, accounting for the residua error structure, Aster models are far more statistically rigorous than Lande-Arnold estimation and can result in less bias when estimating the fitness surface. For example, in a simulated two-trait dataset fit by Shaw and Geyer (2010), Aster models correctly detected multivariate stabilizing selection (two negative eigenvalues for $ \\gamma $), while a Lande-Arnold regression of the same dataset suggested a saddle point (one positive and one negative eigenvalue). An OLS regression assumes that each value is equally weighted (the homoscedastic residual assumption), but when observations vary in their quality (such as heteroscedastic fitness residuals), weighting them properly (as done in Aster models) reduces bias.",
+      "source_page": 1135,
+      "source_pages": [
+        1135
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p022:b2",
+        "Evolution_chapter30:p022:b3"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          207.0,
+          1060.0,
+          413.0
+        ],
+        [
+          287.0,
+          415.0,
+          1059.0,
+          713.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6623d324ef7d8b843c653b0ed123c775c96183b7ceb0736933a05c29c846c2b6"
     },
     {
       "type": "discussion",
-      "content": "While Aster models accommodate complex residual structures, they are not a panacea when it comes to estimating nonlinear fitness surfaces. In the fitness-estimation literature, nonlinear is often taken as synonymous with quadratic, but we have seen how misleading quadratic approximations can be (Figure 29.10). While the link functions used by the GLMs of an Aster model (transforming some underlying linear model into the expected data scale; Chapter 29) can induce nonlinearities (curvature), the transformation is also monotonic (Geyer et al 2007; Geyer 2010, Shaw and Geyer 2010). Hence, while nonlinearities may be introduced, additional peaks are not. In their current form, Aster models assume a quadratic geometry (at most, a single extremum) when the underlying input is a quadratic function of trait values. Hence, many of the issues involved in estimating a fitness landscape by assuming a quadratic geometry remain when using the current Aster framework."
+      "content": "While Aster models accommodate complex residual structures, they are not a panacea when it comes to estimating nonlinear fitness surfaces. In the fitness-estimation literature, nonlinear is often taken as synonymous with quadratic, but we have seen how misleading quadratic approximations can be (Figure 29.10). While the link functions used by the GLMs of an Aster model (transforming some underlying linear model into the expected data scale; Chapter 29) can induce nonlinearities (curvature), the transformation is also monotonic (Geyer et al 2007; Geyer 2010, Shaw and Geyer 2010). Hence, while nonlinearities may be introduced, additional peaks are not. In their current form, Aster models assume a quadratic geometry (at most, a single extremum) when the underlying input is a quadratic function of trait values. Hence, many of the issues involved in estimating a fitness landscape by assuming a quadratic geometry remain when using the current Aster framework.",
+      "source_page": 1135,
+      "source_pages": [
+        1135
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p022:b4"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          713.0,
+          1060.0,
+          968.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b49655aefb5ae585d3a5e07ef20c00f941e1fd29561452866856be55cce3c869"
     }
   ]
 }

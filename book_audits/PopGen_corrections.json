@@ -1,0 +1,96 @@
+{
+  "schema": "book_corrections.v1",
+  "book": "PopGen",
+  "version": 1,
+  "corrections": [
+    {
+      "id": "popgen-c2-p61-p62-cross-page-001",
+      "operation": "merge_adjacent_blocks",
+      "unit_id": "PopGen_chapter2_003",
+      "block_index": 0,
+      "source_block_id": "PopGen_chapter2:p003:b4",
+      "additional_source_block_ids": ["PopGen_chapter2:p004:b2"],
+      "master_page": 61,
+      "chapter_page": 3,
+      "bbox": [100.0, 416.0, 787.0, 734.0],
+      "source_content_sha256": "5ed3142cc45a31fa3415766a7acbdd33e4aa1755d4b4c7bf1db3ccc4c3faca75",
+      "original": [
+        "One of the most important mathematical models in population genetics is the nonoverlapping generation model, in which the cycle of birth, maturation, and death includes the death of all organisms present in each generation before the members of the next generation mature. The nonoverlapping generation model is diagrammed in Figure 2.1. The model applies literally only to organisms with a very simple sort of life history, such as certain short-lived insects or annual plants that have a short growing season. In such plants, all members of any generation germinate at about the same time, mature together, shed their pollen, are fertilized almost simultaneously, and die immediately after producing the new generation. This sort of hypothetical population, with its simple life history, is used in population genetics as a first approximation to populations that have more complex life histories. Although at first glance the model seems hopelessly oversimplified, calculations of expected",
+        "緁 genotype frequencies based on this model are adequate for many purposes. In some applications, the nonoverlapping generation model turns out to be a useful approximation even for populations with a long and complex life history, such as human beings."
+      ],
+      "replacement": "One of the most important mathematical models in population genetics is the nonoverlapping generation model, in which the cycle of birth, maturation, and death includes the death of all organisms present in each generation before the members of the next generation mature. The nonoverlapping generation model is diagrammed in Figure 2.1. The model applies literally only to organisms with a very simple sort of life history, such as certain short-lived insects or annual plants that have a short growing season. In such plants, all members of any generation germinate at about the same time, mature together, shed their pollen, are fertilized almost simultaneously, and die immediately after producing the new generation. This sort of hypothetical population, with its simple life history, is used in population genetics as a first approximation to populations that have more complex life histories. Although at first glance the model seems hopelessly oversimplified, calculations of expected genotype frequencies based on this model are adequate for many purposes. In some applications, the nonoverlapping generation model turns out to be a useful approximation even for populations with a long and complex life history, such as human beings.",
+      "reason": "Master pages 61–62 contain one continuous paragraph; remove the unsupported U+7DC1 character and merge the cross-page continuation."
+    },
+    {
+      "id": "popgen-c2-table-2.1-bottom-equations-002",
+      "operation": "patch_table",
+      "table_id": "2.1",
+      "chapter": "PopGen_chapter2",
+      "source_block_id": "PopGen_chapter2:p007:b3",
+      "additional_source_block_ids": ["PopGen_chapter2:p007:b4", "PopGen_chapter2:p007:b5", "PopGen_chapter2:p007:b6", "PopGen_chapter2:p007:b7"],
+      "master_page": 65,
+      "chapter_page": 7,
+      "bbox": [100.0, 198.0, 777.0, 506.0],
+      "source_content_sha256": "8fe81b5fe01ac3ee1e5eaeebfff24c2fe3c5a76a1131ad436e6ac87db5419ab9",
+      "original_delivery_sha256": "59236a49b4771b38c6836f50b088f5258e36e84ed1901ed9c8ad7287d4225d4a",
+      "original": "The logical table ended at the P-prime/Q-prime/R-prime totals row and omitted the three derivations printed below the word therefore.",
+      "replacement": {
+        "html": "<table><tr><td rowspan=\"2\">Mating</td><td rowspan=\"2\">Frequency of mating (parents)</td><td colspan=\"3\">Frequency of zygotes (progeny)</td></tr><tr><td>AA</td><td>Aa</td><td>aa</td></tr><tr><td>AA $ \\times $ AA</td><td>$ P^{2} $</td><td>1</td><td>0</td><td>0</td></tr><tr><td>AA $ \\times $ Aa</td><td>2PQ</td><td>$ \\frac{1}{2} $</td><td>$ \\frac{1}{2} $</td><td>0</td></tr><tr><td>AA $ \\times $ aa</td><td>2PR</td><td>0</td><td>1</td><td>0</td></tr><tr><td>Aa $ \\times $ Aa</td><td>$ Q^{2} $</td><td>$ \\frac{1}{4} $</td><td>$ \\frac{1}{2} $</td><td>$ \\frac{1}{4} $</td></tr><tr><td>Aa $ \\times $ aa</td><td>2QR</td><td>0</td><td>$ \\frac{1}{2} $</td><td>$ \\frac{1}{2} $</td></tr><tr><td>aa $ \\times $ aa</td><td>$ R^{2} $</td><td>0</td><td>0</td><td>1</td></tr><tr><td></td><td>Totals (next generation)</td><td>$ P' $</td><td>$ Q' $</td><td>$ R' $</td></tr><tr><td>therefore</td><td colspan=\"4\">$ P'=P^{2}+\\frac{2PQ}{2}+\\frac{Q^{2}}{4}=(P+\\frac{Q}{2})^{2}=p^{2} $</td></tr><tr><td></td><td colspan=\"4\">$ Q'=\\frac{2PQ}{2}+2PR+\\frac{Q^{2}}{2}+\\frac{2QR}{2}=2(P+\\frac{Q}{2})(R+\\frac{Q}{2})=2pq $</td></tr><tr><td></td><td colspan=\"4\">$ R'=\\frac{Q^{2}}{4}+\\frac{2QR}{2}+R^{2}=(R+\\frac{Q}{2})^{2}=q^{2} $</td></tr></table>",
+        "rows": [["Mating", "Frequency of mating (parents)", "Frequency of zygotes (progeny)"], ["AA", "Aa", "aa"], ["AA $ \\times $ AA", "$ P^{2} $", "1", "0", "0"], ["AA $ \\times $ Aa", "2PQ", "$ \\frac{1}{2} $", "$ \\frac{1}{2} $", "0"], ["AA $ \\times $ aa", "2PR", "0", "1", "0"], ["Aa $ \\times $ Aa", "$ Q^{2} $", "$ \\frac{1}{4} $", "$ \\frac{1}{2} $", "$ \\frac{1}{4} $"], ["Aa $ \\times $ aa", "2QR", "0", "$ \\frac{1}{2} $", "$ \\frac{1}{2} $"], ["aa $ \\times $ aa", "$ R^{2} $", "0", "0", "1"], ["", "Totals (next generation)", "$ P' $", "$ Q' $", "$ R' $"], ["therefore", "$ P'=P^{2}+\\frac{2PQ}{2}+\\frac{Q^{2}}{4}=(P+\\frac{Q}{2})^{2}=p^{2} $"], ["", "$ Q'=\\frac{2PQ}{2}+2PR+\\frac{Q^{2}}{2}+\\frac{2QR}{2}=2(P+\\frac{Q}{2})(R+\\frac{Q}{2})=2pq $"], ["", "$ R'=\\frac{Q^{2}}{4}+\\frac{2QR}{2}+R^{2}=(R+\\frac{Q}{2})^{2}=q^{2} $"]],
+        "source": {"chapter": "PopGen_chapter2", "page": 7, "bbox": [100, 198, 777, 626], "caption_bbox": [103, 179, 754, 209], "extraction_channel": "paddle_raw_layout_plus_visual_bottom_equations", "unit_id": "PopGen_chapter2_005", "subsection": "Random Mating of Genotypes versus Random Union of Gametes", "has_physical_placeholder": true}
+      },
+      "reason": "The master page shows the three derivations inside the ruled Table 2.1 area; include source blocks 4–7 in the logical table."
+    },
+    {
+      "id": "popgen-c2-p69-observed-expected-inline-table-003",
+      "operation": "replace_block_range",
+      "unit_id": "PopGen_chapter2_007",
+      "block_index": 3,
+      "source_block_id": "PopGen_chapter2:p011:b3",
+      "additional_source_block_ids": ["PopGen_chapter2:p011:b4", "PopGen_chapter2:p011:b5", "PopGen_chapter2:p011:b6", "PopGen_chapter2:p011:b7", "PopGen_chapter2:p011:b8"],
+      "master_page": 69,
+      "chapter_page": 11,
+      "bbox": [137.0, 492.0, 751.0, 515.0],
+      "source_content_sha256": "18b65d3f9b48f134244a952c149afb77090ede9ff8f808fe4e8e4c97745ec204",
+      "original": [
+        {"type": "discussion", "content": "At this point, it is convenient to tabulate the data into three columns: Arg/Arg Observed number 166 Expected number 160.6"},
+        {"type": "discussion", "content": "Arg/Pro Observed number 120"},
+        {"type": "discussion", "content": "Expected number 130.8"},
+        {"type": "discussion", "content": "Pro/Pro Observed number 32 Expected number 26.6 With the data so arrayed, it is evident that the fit between the observed numbers and the expected numbers, though not perfect because of chance statistical fluctuations in the number of each genotype that may be included in any given sample, is nevertheless very close. To verify this conclusion, we will apply a conventional statistical test to the data in order to assess quantitatively the closeness of fit. A test commonly employed in population genetics is called the chi-square test, which is based on the value of a number, called $ \\chi^{2} $, calculated from the data as $$ \\chi^{2}=\\sum\\frac{(observed-expected)^{2}}{expected} $$ where observed and expected refer to the observed and expected numbers in any genotypic class, and the $ \\Sigma $ sign denotes that the values are to be summed over all genotypic classes. In the case at hand, $$ \\begin{aligned}\\chi^{2}&=(166-160.6)^{2}/160.6\\\\&\\quad+(120-130.8)^{2}/130.8\\\\&\\quad+(32-26.6)^{2}/26.6\\\\&=2.17\\end{aligned} $$"}
+      ],
+      "replacement": [
+        {"type": "discussion", "content": "At this point, it is convenient to tabulate the data into three columns:"},
+        {"type": "table", "content": "[[TABLE:inline_p53_observed_expected]]"},
+        {"type": "discussion", "content": "With the data so arrayed, it is evident that the fit between the observed numbers and the expected numbers, though not perfect because of chance statistical fluctuations in the number of each genotype that may be included in any given sample, is nevertheless very close. To verify this conclusion, we will apply a conventional statistical test to the data in order to assess quantitatively the closeness of fit. A test commonly employed in population genetics is called the chi-square test, which is based on the value of a number, called $ \\chi^{2} $, calculated from the data as $$ \\chi^{2}=\\sum\\frac{(observed-expected)^{2}}{expected} $$ where observed and expected refer to the observed and expected numbers in any genotypic class, and the $ \\Sigma $ sign denotes that the values are to be summed over all genotypic classes. In the case at hand, $$ \\begin{aligned}\\chi^{2}&=(166-160.6)^{2}/160.6\\\\&\\quad+(120-130.8)^{2}/130.8\\\\&\\quad+(32-26.6)^{2}/26.6\\\\&=2.17\\end{aligned} $$"}
+      ],
+      "table_entry": {
+        "id": "inline_p53_observed_expected", "label_format": "Inline table", "title": "Observed and expected p53 genotype counts", "table_type": "inline",
+        "html": "<table><tr><th>Genotype</th><th>Observed number</th><th>Expected number</th></tr><tr><td>Arg/Arg</td><td>166</td><td>160.6</td></tr><tr><td>Arg/Pro</td><td>120</td><td>130.8</td></tr><tr><td>Pro/Pro</td><td>32</td><td>26.6</td></tr></table>",
+        "rows": [["Genotype", "Observed number", "Expected number"], ["Arg/Arg", "166", "160.6"], ["Arg/Pro", "120", "130.8"], ["Pro/Pro", "32", "26.6"]],
+        "source": {"chapter": "PopGen_chapter2", "page": 11, "bbox": [137, 492, 743, 603], "extraction_channel": "manual_visual_logical_table_recovery", "unit_id": "PopGen_chapter2_007", "subsection": "2.3 TESTING FOR HARDY-WEINBERG EQUILIBRIUM", "has_physical_placeholder": true},
+        "description": "Three-column observed-versus-expected genotype count table printed on master page 69.", "book": "PopGen", "asset_key": "PopGen:PopGen_chapter2:inline_p53_observed_expected"
+      },
+      "reason": "The master page explicitly says the values are tabulated in three columns; preserve the 3×3 logical table instead of splitting its rows across prose blocks."
+    },
+    {
+      "id": "popgen-c2-p69-observed-expected-inline-table-resource-004",
+      "operation": "add_inline_table",
+      "source_block_id": "PopGen_chapter2:p011:b3",
+      "master_page": 69,
+      "chapter_page": 11,
+      "bbox": [137.0, 492.0, 751.0, 515.0],
+      "source_content_sha256": "18b65d3f9b48f134244a952c149afb77090ede9ff8f808fe4e8e4c97745ec204",
+      "original": "No logical table resource existed.",
+      "replacement": "Add inline_p53_observed_expected from the exact page-69 rows.",
+      "table_entry": {
+        "id": "inline_p53_observed_expected", "label_format": "Inline table", "title": "Observed and expected p53 genotype counts", "table_type": "inline",
+        "html": "<table><tr><th>Genotype</th><th>Observed number</th><th>Expected number</th></tr><tr><td>Arg/Arg</td><td>166</td><td>160.6</td></tr><tr><td>Arg/Pro</td><td>120</td><td>130.8</td></tr><tr><td>Pro/Pro</td><td>32</td><td>26.6</td></tr></table>",
+        "rows": [["Genotype", "Observed number", "Expected number"], ["Arg/Arg", "166", "160.6"], ["Arg/Pro", "120", "130.8"], ["Pro/Pro", "32", "26.6"]],
+        "source": {"chapter": "PopGen_chapter2", "page": 11, "bbox": [137, 492, 743, 603], "extraction_channel": "manual_visual_logical_table_recovery", "unit_id": "PopGen_chapter2_007", "subsection": "2.3 TESTING FOR HARDY-WEINBERG EQUILIBRIUM", "has_physical_placeholder": true},
+        "description": "Three-column observed-versus-expected genotype count table printed on master page 69.", "book": "PopGen", "asset_key": "PopGen:PopGen_chapter2:inline_p53_observed_expected"
+      },
+      "reason": "Create the dedicated logical-table resource referenced by correction 003."
+    }
+  ],
+  "policy": "Corrections must identify master_page, chapter_page, source_block_id, bbox, original, replacement, and reason. Evidence drift is an error; fuzzy whole-book replacement is forbidden."
+}

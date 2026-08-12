@@ -145,11 +145,7 @@ with multimodal, overly peaked, and skewed distributions all exhibiting characte
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter11:1` · source: `Genetics_chapter11_004.json` · blocks 16–17
->
-> Example 1. Fisher (1958) gives the following data set (based on unpublished work of Ford and Bull) on the number of vertebrae in herrings. Ignoring the discrete nature of the data, does the normal distribution give a reasonable fit?
-> 
-> <table><tr><td rowspan="2"></td><td colspan="6">Number of vertebrae</td></tr><tr><td>53</td><td>54</td><td>55</td><td>56</td><td>57</td><td>58</td></tr><tr><td>Population frequency (%)</td><td>0.08</td><td>1.06</td><td>28.36</td><td>61.30</td><td>8.91</td><td>0.29</td></tr><tr><td>Cumulative frequency, $ q $ (%)</td><td>0.08</td><td>1.14</td><td>29.50</td><td>90.80</td><td>99.71</td><td>100.00</td></tr><tr><td>prb( $ q $)</td><td>-3.14</td><td>-1.22</td><td>-0.54</td><td>1.33</td><td>2.76</td><td>$ \infty $</td></tr></table>
+> **[UNRESOLVED EXAMPLE: Genetics_chapter11:1]**
 
 
 The cumulative frequency associated with a particular character value is the sum of all frequencies up to that point (e.g., the cumulative frequency associated with 55 vertebrae is $ 0.08 + 1.06 + 28.36 = 29.50\% $). Plotting cumulative frequency as a function of vertebrae number gives a sigmoidal plot, as shown in the accompanying figure, suggesting a normal distribution. Using unit normal tables, the cumulative frequencies can be transformed to a normal probability scale. For example, the cumulative frequency associated with 55 vertebrae is $ q = 0.2950 $. Interpolating from the normal distribution table, we find that for a unit normal U, $ \Pr(U < -0.54) = 0.2950 $, so the $ \text{prb}(q) $ value associated with 55 vertebrae is -0.54 (0.54 standard deviations below the mean assuming a normal distribution). Plotting $ \text{prb}(q) $ versus vertebrae number gives a good linear relationship (see the following figure), suggesting that the normal distribution provides a reasonable description of the data.
@@ -175,8 +171,8 @@ The cumulative frequency associated with a particular character value is the sum
 > $ \delta $ | 0.000 | 0.099 | 0.191 | 0.273 | 0.341 | 0.394 | 0.433 | 0.460 | 0.477
 > --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
 > $ \text{prb}(0.5 + \delta) $ | 0.000 | 0.250 | 0.500 | 0.750 | 1.000 | 1.250 | 1.500 | 1.750 | 2.000
-> $ \delta $ | 0.488 | 0.494 | 0.497 | 0.4987 | 0.4994 | 0.4998 | 0.4999 | 0.5000 | 
-> $ \text{prb}(0.5 + \delta) $ | 2.250 | 2.500 | 2.750 | 3.0000 | 3.2500 | 3.5000 | 3.7500 | $ \infty $ | 
+> $ \delta $ | 0.488 | 0.494 | 0.497 | 0.4987 | 0.4994 | 0.4998 | 0.4999 | 0.5000 |
+> $ \text{prb}(0.5 + \delta) $ | 2.250 | 2.500 | 2.750 | 3.0000 | 3.2500 | 3.5000 | 3.7500 | $ \infty $ |
 >
 > Note: Values of $ \delta < 0 $ follow from the identity $ \text{prb}(0.5 - \delta) = -\text{prb}(0.5 + \delta) $.
 
@@ -196,16 +192,7 @@ Kleckowski (1949) suggested a simple way to eliminate this problem. If the stand
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter11:2` · source: `Genetics_chapter11_006.json` · blocks 2–4
->
-> Example 2. Consider the $ U_{ta} $ data in Figure 11.4. The intercept and slope of the least-squares regression, $ \mathrm{SD}(z) = 0.33 + 0.052\overline{z} $, are highly significant (W. C. Kerfoot, pers. comm.). Since the relationship between the standard deviation and the mean closely approximates linearity, the transformation
-> 
-> $$
-> y=\ln(z+0.33/0.052)=\ln(z+6.35)
-> $$
-> 
-> 
-> renders the variance of different populations independent of the mean.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter11:2]**
 
 
 ---
@@ -224,16 +211,7 @@ where $C$ is an arbitrary nonnegative constant, generally chosen to set the resc
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter11:3` · source: `Genetics_chapter11_007.json` · blocks 3–5
->
-> Example 3. Suppose $\mathrm{SD}(z) = a + b\bar{z}$. Applying Equation 11.8, the variance-stabilizing transform is given by
-> 
-> $$
-> y=C\int\frac{dz}{a+b\cdot z}=\frac{C}{b}\ln\left(z+\frac{a}{b}\right)
-> $$
-> 
-> 
-> Note that there is no unique solution for y, as we can multiply y by any constant and still have a variance-stabilizing transform. Letting $C = b$ recovers Kleck-owski's correction, $y = \ln(z + a/b)$.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter11:3]**
 
 
 ---
@@ -348,9 +326,7 @@ Because nonadditive interactions (e.g., genotype × environment interaction, dom
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter11:4` · source: `Genetics_chapter11_011.json` · blocks 1–1
->
-> Example 4. Suppose the genotypes BB, Bb, and bb have genotypic values of 1, 4, and 9 on the original scale of measurement. Applying the square-root transformation, the genotypic values on this new scale of measurement become 1, 2, and 3. Thus, while B is slightly dominant to b on the original scale, the gene action is perfectly additive on the transformed scale. The square-root transformation condensed the scale between Bb and bb relative to that between BB and Bb, resulting in additivity on the new scale. Provided the genotypic value of Bb lies within the range of BB and bb, a scale will always exist for which Bb can be made exactly intermediate to BB and bb.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter11:4]**
 
 
 In the genetic analysis of populations, nonadditive interactions between alleles (dominance) do not usually cause any insurmountable difficulties. However, because epistasis comes in many forms, all of which are quite difficult to quantify with precision, it is highly desirable to work on a scale for which a model involving no more than additive and dominance effects can be shown to be adequate. In some cases, the appropriateness of a particular transformation in removing nonadditive effects can be examined using joint-scaling tests (Chapter 9).
@@ -442,11 +418,7 @@ where $ p(x) = \exp(-x^2/2)/\sqrt{2\pi} $ is the unit normal density function.
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_chapter11:5` · source: `Genetics_chapter11_013.json` · blocks 14–15
->
-> Example 5. Sheldon et al. (1964) examined scutellar bristle number in Drosophila melanogaster in a number of isogenic lines derived from a common ancestral population. Consider the following data for females from their isogenic line 5, which have 3, 4, or 5 bristles with the following frequencies:
-> 
-> <table><tr><td>Class</td><td>Observed</td><td>Frequency</td><td>Cumulative frequency</td><td>$ \text{prb}[q(m)] $</td></tr><tr><td>3</td><td>1</td><td>0.00012</td><td>0.00012</td><td>-3.70</td></tr><tr><td>4</td><td>8124</td><td>0.99693</td><td>0.99705</td><td>2.74</td></tr><tr><td>5</td><td>24</td><td>0.00295</td><td>1.00000</td><td>—</td></tr></table>
+> **[UNRESOLVED EXAMPLE: Genetics_chapter11:5]**
 
 
 Here $n=8149$, $x_{3}=\text{prb}[0.00012]=-3.70$, and $x_{4}=\text{prb}[0.99705]=+2.74$. Applying Equation 11.12a, the estimated width of the developmental map for class 4 is

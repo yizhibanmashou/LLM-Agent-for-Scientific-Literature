@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import logging
+import os
 import re
 import subprocess
 import sys
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -18,6 +21,9 @@ OUTPUT_DIR = APP_DIR / "data" / "generated"
 STUDY_DATASET_PATH = OUTPUT_DIR / "study_dataset.json"
 PREREQUISITE_AUDIT_PATH = OUTPUT_DIR / "prerequisite_audit.json"
 CHAPTER_DATA_DIR = OUTPUT_DIR / "chapters"
+BUILD_PROVENANCE_PATH = OUTPUT_DIR / "build_provenance.json"
+FORMULA_CORRECTIONS_PATH = APP_DIR / "formula_corrections.json"
+logger = logging.getLogger(__name__)
 
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
@@ -400,6 +406,7 @@ def normalize_latex_for_katex(latex: str) -> str:
     }
     for source, target in replacements.items():
         value = value.replace(source, target)
+    value = re.sub(r"(\\(?:qquad|quad|;|,|:))(?=[A-Za-z])", r"\1 ", value)
     value = re.sub(r"\\begin\{align\*\}", r"\\begin{aligned}", value)
     value = re.sub(r"\\end\{align\*\}", r"\\end{aligned}", value)
     value = re.sub(r"\\begin\{align\}", r"\\begin{aligned}", value)
@@ -491,6 +498,14 @@ def extract_formula_library_assets(
         if asset.get("kind") == "formula"
     }
     assets: list[dict[str, Any]] = []
+    corrections: dict[str, dict[str, str]] = {}
+    if FORMULA_CORRECTIONS_PATH.is_file():
+        payload = json.loads(FORMULA_CORRECTIONS_PATH.read_text(encoding="utf-8"))
+        corrections = {
+            str(key): value
+            for key, value in (payload.get("corrections") or {}).items()
+            if isinstance(value, dict)
+        }
     for record in formula_library_by_chapter.get(chapter_id, []):
         latex = str(record.get("latex") or "").strip()
         if not latex:
@@ -500,6 +515,15 @@ def extract_formula_library_assets(
         for ref_id in formula_ref_ids_from_record(record, chapter_id):
             if ref_id.lower() in existing_formula_ids:
                 continue
+            correction = corrections.get(f"{chapter_id}:{ref_id}")
+            if correction:
+                source_hash = hashlib.sha256(latex.encode("utf-8")).hexdigest()
+                replacement = str(correction.get("replacement") or "")
+                if source_hash != correction.get("source_sha256") and latex != replacement:
+                    raise RuntimeError(
+                        f"Formula-library record drifted before correction: {chapter_id}:{ref_id}"
+                    )
+                latex = replacement
             assets.append(
                 {
                     "kind": "formula",
@@ -678,7 +702,8 @@ def enhance_formula_assets_with_llm(assets: list[dict[str, Any]], *, skip_llm: b
         original = str(next_assets[index].get("latex_render") or next_assets[index].get("latex") or "")
         try:
             repaired = repair_formula_with_llm(client, original)
-        except Exception:
+        except Exception as exc:
+            logger.warning("Formula LLM repair failed at asset %s: %s", index, exc)
             continue
         if repaired:
             next_assets[index]["latex_render"] = repaired
@@ -1037,6 +1062,25 @@ def extract_paddle_formula_assets(
         for asset in existing_assets
         if asset.get("kind") == "formula"
     }
+    corrections: dict[str, dict[str, str]] = {}
+    if FORMULA_CORRECTIONS_PATH.is_file():
+        payload = json.loads(FORMULA_CORRECTIONS_PATH.read_text(encoding="utf-8"))
+        corrections = {
+            str(key): value
+            for key, value in (payload.get("corrections") or {}).items()
+            if isinstance(value, dict)
+        }
+
+    def corrected_latex(ref_id: str, latex: str) -> str:
+        key = f"{chapter_id}:{ref_id}"
+        correction = corrections.get(key)
+        if not correction:
+            return latex
+        old_hash = hashlib.sha256(latex.encode("utf-8")).hexdigest()
+        replacement = str(correction.get("replacement") or "")
+        if old_hash != correction.get("source_sha256") and latex != replacement:
+            raise RuntimeError(f"Paddle formula drifted before correction: {key}")
+        return replacement
     paddle_path = structured_dir.parent / "paddle_output" / f"{chapter_id}_full" / "intermediate" / "paddle_raw_response.json"
     try:
         pages = json.loads(paddle_path.read_text(encoding="utf-8-sig"))
@@ -1075,7 +1119,7 @@ def extract_paddle_formula_assets(
                     break
             if not ref_id or ref_id.lower() in existing_formula_ids:
                 continue
-            latex = latex_chunks[0]
+            latex = corrected_latex(ref_id, latex_chunks[0])
             assets.append(
                 {
                     "kind": "formula",
@@ -1102,6 +1146,7 @@ def extract_paddle_formula_assets(
                 ),
             )
             display_index, display_block, latex = nearest
+            latex = corrected_latex(ref_id, latex)
             distance = abs(block_center_y(display_block, display_index) - number_y)
             if distance > 240:
                 continue
@@ -1458,7 +1503,8 @@ def enhance_prerequisites_with_llm(
         try:
             raw = client._post_chat_completion(messages=messages, json_mode=True)  # noqa: SLF001
             parsed = json.loads(raw)
-        except Exception:
+        except Exception as exc:
+            logger.warning("Prerequisite LLM adjudication failed for %s: %s", item.get("id"), exc)
             continue
         if not parse_keep_flag(parsed.get("keep")):
             continue
@@ -1724,6 +1770,7 @@ def build_dataset(
     all_llm: bool,
     skip_llm: bool,
     existing_dataset_override: dict[str, Any] | None = None,
+    release: bool = False,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     existing_dataset, existing_audit = existing_generated_payloads()
     if existing_dataset_override:
@@ -1793,6 +1840,13 @@ def build_dataset(
             previous_llm = existing_payload.get("llm")
             if isinstance(previous_llm, dict):
                 llm_metrics = {**previous_llm, "preserved_from_previous_build": True}
+        if release and isinstance(llm_metrics, dict):
+            cache_dir = str(llm_metrics.get("cache_dir") or "")
+            if cache_dir:
+                try:
+                    llm_metrics["cache_dir"] = Path(cache_dir).resolve().relative_to(ROOT_DIR).as_posix()
+                except (OSError, ValueError):
+                    llm_metrics["cache_dir"] = "external-cache"
         print(
             f"[{index}/{len(chapter_ids)}] {chapter_id}: "
             f"candidates={len(candidate_prerequisites)} validated={len(prerequisites)} "
@@ -1857,9 +1911,15 @@ def build_dataset(
             "llm": llm_metrics,
         }
 
+    generated_at = (
+        datetime.fromtimestamp(int(os.environ.get("SOURCE_DATE_EPOCH", "0")), timezone.utc).isoformat()
+        if release else datetime.now().isoformat(timespec="seconds")
+    )
     dataset = {
-        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "generated_at": generated_at,
         "version": 4,
+        "build_mode": "offline-release" if release else "development",
+        "remote_llm_calls_allowed": not release,
         "books": books,
         "textbook_dir": markdown_url(textbook_dir),
         "default_book": str(config.get("default_book") or (books[0]["id"] if books else DEFAULT_BOOK_PREFIX)),
@@ -1871,7 +1931,8 @@ def build_dataset(
     audit = {
         "generated_at": dataset["generated_at"],
         "books": [book["id"] for book in books],
-        "llm_mode": "all" if all_llm else ("chapters" if llm_chapters else "default"),
+        "llm_mode": "offline-release" if release else ("all" if all_llm else ("chapters" if llm_chapters else "default")),
+        "remote_llm_calls_allowed": not release,
         "rows": audit_rows,
     }
     return dataset, audit
@@ -1892,6 +1953,24 @@ def parse_chapter_arg(raw_value: str) -> set[str]:
     return parse_csv_arg(raw_value)
 
 
+def release_cache_fingerprint() -> dict[str, Any]:
+    files = [STUDY_DATASET_PATH, PREREQUISITE_AUDIT_PATH, FORMULA_CORRECTIONS_PATH]
+    files.extend(sorted(CHAPTER_DATA_DIR.glob("*.json")))
+    entries = {}
+    for path in files:
+        if path.is_file():
+            entries[path.relative_to(ROOT_DIR).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
+    return {
+        "schema": "study_reader_release_cache.v1",
+        "prompt_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "model": "cached-results-only",
+        "cache_sha256": hashlib.sha256(
+            json.dumps(entries, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        ).hexdigest(),
+        "entries": entries,
+    }
+
+
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="Build the Study Reader dataset.")
     parser.add_argument("--books", default="", help="Comma-separated book ids to index, e.g. Evolution,Genetics.")
@@ -1899,11 +1978,23 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--all-llm", action="store_true", help="Run LLM prerequisite adjudication for every indexed chapter.")
     parser.add_argument("--skip-llm", action="store_true", help="Build rules-only prerequisites.")
     parser.add_argument(
+        "--release", action="store_true",
+        help="Deterministic offline release build; forbids remote LLM calls and records cache provenance.",
+    )
+    parser.add_argument(
         "--legacy-dataset",
         default="",
         help="Optional v3 inline dataset path or git:<revision>:<repo-path> used only to preserve prior LLM results.",
     )
     args = parser.parse_args(argv)
+    if args.release and (args.all_llm or args.chapters or not args.skip_llm):
+        parser.error("--release requires --skip-llm and cannot be combined with --all-llm/--chapters")
+    if args.release:
+        for name in (
+            "OPENAI_API_KEY", "ANTHROPIC_API_KEY", "GOOGLE_API_KEY", "GEMINI_API_KEY",
+            "AZURE_OPENAI_API_KEY", "DEEPSEEK_API_KEY",
+        ):
+            os.environ.pop(name, None)
 
     config = load_config()
     selected_books = parse_csv_arg(args.books) or None
@@ -1915,10 +2006,13 @@ def main(argv: list[str] | None = None) -> None:
         all_llm=args.all_llm,
         skip_llm=args.skip_llm,
         existing_dataset_override=load_legacy_dataset(args.legacy_dataset),
+        release=args.release,
     )
     chapter_data = dataset.pop("_chapter_data", {})
     write_split_dataset(dataset, chapter_data)
     write_json(PREREQUISITE_AUDIT_PATH, audit)
+    if args.release:
+        write_json(BUILD_PROVENANCE_PATH, release_cache_fingerprint())
     print(f"Study dataset written: {STUDY_DATASET_PATH}")
     print(f"Prerequisite audit written: {PREREQUISITE_AUDIT_PATH}")
     print(f"Chapters indexed: {len(dataset['chapters'])}")

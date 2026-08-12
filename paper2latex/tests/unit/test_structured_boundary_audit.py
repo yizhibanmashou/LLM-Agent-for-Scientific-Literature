@@ -1,19 +1,11 @@
-import importlib.util
 import unittest
 from pathlib import Path
 
-
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
-AUDIT_PATH = PROJECT_ROOT / "tmp" / "structured_boundary_audit" / "audit_boundaries.py"
+from knowledge_engineering.audits import structured_boundary as audit
 
 
 def load_audit_module():
-    spec = importlib.util.spec_from_file_location("structured_boundary_audit_for_tests", AUDIT_PATH)
-    if spec is None or spec.loader is None:
-        raise RuntimeError("cannot load audit_boundaries.py")
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
+    return audit
 
 
 class StructuredBoundaryAuditTests(unittest.TestCase):

@@ -726,6 +726,13 @@ where m is the mean number of lethals per autosome.
 
 20. The accompanying illustration shows a coalescent tree for a sample of size $n = 3$. What are the expected lengths, in units of generations, along each of the labeled branches? Show that the expected total length of all the branches taken together equals $4N a$, where $a = 1 + \frac{1}{2} = \frac{3}{2}$. Show also that the expected length of all the external branches equals $4N$ and that the expected length of all the internal branches equals $4N(a - 1)$. Use the principle that the expected time in generations for $k$ neutral alleles to coalesce into $k - 1$ alleles equals $4N/[k(k - 1)]$.
 
+> **Figure problem_4.20** · page 45 · source: `PopGen_chapter4`
+>
+> ![Figure problem_4.20](figures/PopGen_problem_4.20.png)
+>
+> Problem 4.20 diagram from the authoritative chapter PDF.
+
+
 21. One might naively think that samples from an infinite-alleles neutral model should contain roughly equal numbers of the alleles represented. But this is far from the truth. The expected sample configurations are very unequal, because the representation of each allele depends on the time in evolutionary history when it was created by mutation and the manner in which its frequency was affected by random genetic drift. To take a specific example, consider a sample of size $n = 6$ from a population evolving according to the infinite-alleles neutral model, and suppose that the sample contains only $k = 2$ different alleles. Let the configuration of alleles in the sample be represented as $(a_1, a_2, a_3, a_4, a_5)$, where $a_i$ is the number of alleles represented exactly $i$ times, with $\Sigma a_i = 6$. It can be shown from Ewen's sampling formula that the probability of the configuration $(a_1, a_2, a_3, a_4, a_5)$ equals
 
 $$

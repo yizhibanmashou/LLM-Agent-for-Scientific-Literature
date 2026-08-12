@@ -8,7 +8,6 @@ from knowledge_engineering.processors.gold_textbook_repair import (
     compare_gold_to_textbook,
 )
 
-
 TEST_RUNTIME_ROOT = Path(__file__).resolve().parents[3] / "tmp" / "test_runtime" / "gold_textbook_repair"
 TEST_RUNTIME_ROOT.mkdir(parents=True, exist_ok=True)
 

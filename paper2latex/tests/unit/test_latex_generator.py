@@ -2,8 +2,7 @@
 Tests for LaTeX generator.
 """
 
-import pytest
-from paper2latex.core.models import Document, Section, Block, BlockType, BibEntry
+from paper2latex.core.models import BibEntry, Block, BlockType, Document, Section
 from paper2latex.generators.latex_generator import LaTeXGenerator
 
 

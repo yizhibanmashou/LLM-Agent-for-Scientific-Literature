@@ -7,30 +7,31 @@ import cv2
 import numpy as np
 import pytest
 
+from scripts.audit_genetics_accuracy import source_text_for_comparison
 from scripts.build_genetics_staging import (
+    FIGURE_CAPTION_RE,
+    NON_BODY_FIGURE_LABEL_BLOCKS,
+    NON_FORMULA_DISPLAY_BLOCKS,
+    SOURCE_FORMULA_CORRECTIONS,
+    TABLE_CAPTION_RE,
     apply_source_block_correction,
     apply_source_block_split,
     apply_source_text_corrections,
     choose_figure_deskew,
     choose_page_deskew,
     clean_text,
+    estimate_axis_skew,
     is_source_heading,
-    starts_example_unit,
+    join_adjacent_source_text,
     mark_index_terms,
     merge_cross_page_hyphenations,
     normalize_heading_text,
-    join_adjacent_source_text,
     rotate_expanded,
-    estimate_axis_skew,
     source_caption_match,
-    FIGURE_CAPTION_RE,
-    TABLE_CAPTION_RE,
-    SOURCE_FORMULA_CORRECTIONS,
-    NON_FORMULA_DISPLAY_BLOCKS,
-    NON_BODY_FIGURE_LABEL_BLOCKS,
+    starts_example_unit,
 )
-from scripts.audit_genetics_accuracy import source_text_for_comparison
-from scripts.rebuild_genetics_book import ROOT as PROJECT_ROOT, RANGES, is_genetics_install_target, non_genetics_examples
+from scripts.rebuild_genetics_book import RANGES, is_genetics_install_target, non_genetics_examples
+from scripts.rebuild_genetics_book import ROOT as PROJECT_ROOT
 from textbook_exporter import export_textbooks
 
 

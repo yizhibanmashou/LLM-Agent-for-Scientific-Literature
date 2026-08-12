@@ -4,7 +4,6 @@ from pathlib import Path
 
 import pytest
 
-
 PAPER2LATEX_ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE_ROOT = PAPER2LATEX_ROOT.parent
 for path in (PAPER2LATEX_ROOT / "src", WORKSPACE_ROOT):

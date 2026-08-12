@@ -21,35 +21,454 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "In the index shown by Equation 22.28a, g is the fraction of weight placed on a random individual from the group that interacts with the focal individual. If this weight is zero, the index reduces to individual selection, while if this weight is 1, all individuals in the group are weighted equally in the selection decision and there is group selection. An obvious question is to determine the optimal value for g that maximizes the selection response. From Equation 22.28g, we see that the optimal response occurs by using those weights in I that maximizes the correlation, $ \\rho(A_T, I) $, between I and $ A_T $. To find these optimal weights, we start with the index $$ I=b_{1}z+b_{2}\\sum_{j\\neq i}z_{j} $$ with no restrictions placed on the ranges of $ b_{1} $ and $ b_{2} $. Selection on this index is equivalent to selection using the index $$ I=z+\\frac{b_{2}}{b_{1}}\\sum_{j\\neq i}z_{j} $$"
+      "content": "In the index shown by Equation 22.28a, g is the fraction of weight placed on a random individual from the group that interacts with the focal individual. If this weight is zero, the index reduces to individual selection, while if this weight is 1, all individuals in the group are weighted equally in the selection decision and there is group selection. An obvious question is to determine the optimal value for g that maximizes the selection response. From Equation 22.28g, we see that the optimal response occurs by using those weights in I that maximizes the correlation, $ \\rho(A_T, I) $, between I and $ A_T $. To find these optimal weights, we start with the index $$ I=b_{1}z+b_{2}\\sum_{j\\neq i}z_{j} $$ with no restrictions placed on the ranges of $ b_{1} $ and $ b_{2} $. Selection on this index is equivalent to selection using the index $$ I=z+\\frac{b_{2}}{b_{1}}\\sum_{j\\neq i}z_{j} $$",
+      "source_page": 775,
+      "source_pages": [
+        775
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p025:b15",
+        "Evolution_chapter22:p025:b16",
+        "Evolution_chapter22:p025:b17",
+        "Evolution_chapter22:p025:b19",
+        "Evolution_chapter22:p025:b20"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          926.0,
+          304.0,
+          950.0
+        ],
+        [
+          132.0,
+          956.0,
+          904.0,
+          1140.0
+        ],
+        [
+          437.0,
+          1135.0,
+          599.0,
+          1185.0
+        ],
+        [
+          132.0,
+          1195.0,
+          904.0,
+          1242.0
+        ],
+        [
+          443.0,
+          1241.0,
+          592.0,
+          1296.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "aa476120120d2ccf78b956a4d31ccf81295387fc070f3f0a4d1323b3c3da373d"
     },
     {
       "type": "discussion",
-      "content": "Hence, the connection between Equations 22.28a and 22.33a is that $ g = b_2/b_1 $. The difference is that we no longer restrict consideration of $ g $ to between zero and one. All of the previous results for selection response on Equation 22.28a hold for any value of $ g $, but we focused on the range of zero to one given the transition from individual to group selection. More generally, we could have negative weights, or a $ g $ value exceeding one. In the former case, negative $ g $ values correspond to a weighted within-group deviation (e.g., Equation 22.28c). In the latter case ($ g > 1 $), we place more weight on a random individual from the interacting group than on the focal individual. This might occur when associative effects are much larger than direct effects, and hence group members provide more information than the focal individual about the value of $ A_{T} $ for that focal individual."
+      "content": "Hence, the connection between Equations 22.28a and 22.33a is that $ g = b_2/b_1 $. The difference is that we no longer restrict consideration of $ g $ to between zero and one. All of the previous results for selection response on Equation 22.28a hold for any value of $ g $, but we focused on the range of zero to one given the transition from individual to group selection. More generally, we could have negative weights, or a $ g $ value exceeding one. In the former case, negative $ g $ values correspond to a weighted within-group deviation (e.g., Equation 22.28c). In the latter case ($ g > 1 $), we place more weight on a random individual from the interacting group than on the focal individual. This might occur when associative effects are much larger than direct effects, and hence group members provide more information than the focal individual about the value of $ A_{T} $ for that focal individual.",
+      "source_page": 775,
+      "source_pages": [
+        775,
+        776
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p025:b22",
+        "Evolution_chapter22:p026:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1308.0,
+          904.0,
+          1472.0
+        ],
+        [
+          287.0,
+          207.0,
+          1059.0,
+          275.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b11262a2738313fb574dc4bcce13025562ec4ee1bc81f395b36247abe628394a"
     },
     {
       "type": "discussion",
-      "content": "In Chapter 21, we were able to obtain straightforward expressions for optimal weights in a family index (Equation 21.54). Index selection theory (Volume 3) gives the optimal index weights in the form of a matrix expression (Equation 22.35a), which is greatly simplified under simple family selection (i.e., with no associative effects). Unfortunately, such is not the case here, and so we (very briefly) introduce the machinery for obtaining an optimal index, deferring the full development of the theory to Volume 3. The idea is that there are two potentially different indices: the index I, used for selection (i.e., to choose individuals to form the next generation), and the index H, whose response we wish to maximize. Specifically, we select on some index $ I = b^T x $ where $ x_i $ is the value of trait $ i $ used to make selection decisions and $ b_i $ is the weight placed on that trait in the index. In keeping with Equation 22.33a, the vector of phenotypes for individual $ i $ is $$ \\mathbf{x}=\\left(\\sum_{j\\neq i}^{z_{i}}z_{j}\\right) $$"
+      "content": "In Chapter 21, we were able to obtain straightforward expressions for optimal weights in a family index (Equation 21.54). Index selection theory (Volume 3) gives the optimal index weights in the form of a matrix expression (Equation 22.35a), which is greatly simplified under simple family selection (i.e., with no associative effects). Unfortunately, such is not the case here, and so we (very briefly) introduce the machinery for obtaining an optimal index, deferring the full development of the theory to Volume 3. The idea is that there are two potentially different indices: the index I, used for selection (i.e., to choose individuals to form the next generation), and the index H, whose response we wish to maximize. Specifically, we select on some index $ I = b^T x $ where $ x_i $ is the value of trait $ i $ used to make selection decisions and $ b_i $ is the weight placed on that trait in the index. In keeping with Equation 22.33a, the vector of phenotypes for individual $ i $ is $$ \\mathbf{x}=\\left(\\sum_{j\\neq i}^{z_{i}}z_{j}\\right) $$",
+      "source_page": 776,
+      "source_pages": [
+        776
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p026:b3",
+        "Evolution_chapter22:p026:b4"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          278.0,
+          1060.0,
+          535.0
+        ],
+        [
+          605.0,
+          559.0,
+          737.0,
+          647.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6823c9fb3859bf2cbd05de5c8694392cb2e3ff2a3f757d4529a968f027ba371b"
     },
     {
       "type": "discussion",
-      "content": "Using this index to make selection decisions, we wish to find the weights, b, that maximize the selection response for some weighted combination of variables, $ H = c^T a $. Here the elements of c are the weights and a is the vector of breeding values for the traits of interest. In our case, we wish to maximize response in the total breeding value, which means that $$ \\boldsymbol{H}=\\boldsymbol{A}_{T}=\\boldsymbol{A}_{d}+(n-1)\\boldsymbol{A}_{s}=\\mathbf{c}^{T}\\mathbf{a} $$ where $$ \\mathbf{a}=\\begin{pmatrix}A_{d}\\\\ A_{s}\\end{pmatrix}\\qquad and\\qquad\\mathbf{c}=\\begin{pmatrix}1\\\\ n-1\\end{pmatrix} $$"
+      "content": "Using this index to make selection decisions, we wish to find the weights, b, that maximize the selection response for some weighted combination of variables, $ H = c^T a $. Here the elements of c are the weights and a is the vector of breeding values for the traits of interest. In our case, we wish to maximize response in the total breeding value, which means that $$ \\boldsymbol{H}=\\boldsymbol{A}_{T}=\\boldsymbol{A}_{d}+(n-1)\\boldsymbol{A}_{s}=\\mathbf{c}^{T}\\mathbf{a} $$ where $$ \\mathbf{a}=\\begin{pmatrix}A_{d}\\\\ A_{s}\\end{pmatrix}\\qquad and\\qquad\\mathbf{c}=\\begin{pmatrix}1\\\\ n-1\\end{pmatrix} $$",
+      "source_page": 776,
+      "source_pages": [
+        776
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p026:b6",
+        "Evolution_chapter22:p026:b7",
+        "Evolution_chapter22:p026:b9",
+        "Evolution_chapter22:p026:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          671.0,
+          1059.0,
+          766.0
+        ],
+        [
+          528.0,
+          789.0,
+          821.0,
+          815.0
+        ],
+        [
+          288.0,
+          841.0,
+          351.0,
+          864.0
+        ],
+        [
+          507.0,
+          862.0,
+          836.0,
+          913.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e69a7e71d8e912192e20f332e48498bce479294a7009cb9dccf887345cedd5b4"
     },
     {
       "type": "discussion",
-      "content": "The optimal weights $ b_{s} $ in I for maximizing response in H (i.e., to obtain the highest correlation between $ A_{T} $ and I) are given by the Smith-Hazel index (Smith 1936; Hazel 1943), which is derived in Example A6.8, where $$ \\mathbf{b}_{s}=\\mathbf{P}^{-1}\\mathbf{G}^{T}\\mathbf{c} $$"
+      "content": "The optimal weights $ b_{s} $ in I for maximizing response in H (i.e., to obtain the highest correlation between $ A_{T} $ and I) are given by the Smith-Hazel index (Smith 1936; Hazel 1943), which is derived in Example A6.8, where $$ \\mathbf{b}_{s}=\\mathbf{P}^{-1}\\mathbf{G}^{T}\\mathbf{c} $$",
+      "source_page": 776,
+      "source_pages": [
+        776
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p026:b12",
+        "Evolution_chapter22:p026:b13"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          927.0,
+          1059.0,
+          999.0
+        ],
+        [
+          607.0,
+          1021.0,
+          740.0,
+          1048.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a4832d62291cc19e8a60151a59b302158f08a6db67c0f3012b9cbde5c90f9169"
     },
     {
       "type": "discussion",
-      "content": "P is the phenotypic covariance matrix for the elements in x, which in our case becomes $$ \\begin{aligned}\\mathbf{P}=&\\begin{pmatrix}\\sigma^{2}(z)&\\sigma\\left(z_{i},\\sum_{j\\neq i}z_{j}\\right)\\\\\\sigma\\left(z_{i},\\sum_{j\\neq i}z_{j}\\right)&\\sigma\\left(\\sum_{j\\neq i}z_{j},\\sum_{j\\neq i}z_{j}\\right)\\end{pmatrix}\\\\=&\\begin{pmatrix}\\sigma^{2}(z)&(n-1)\\sigma(z_{i},z_{j})\\ $ n-1)\\sigma(z_{i},z_{j})&(n-1)\\left[\\sigma_{z}^{2}+(n-2)\\sigma(z_{i},z_{j})\\right]\\end{pmatrix}\\end{aligned} $$ where we have used Equations 22.30b and 22.30c. G is the matrix of covariances between the breeding values in the index H and the trait values in the index I, with $ G_{ij} = \\sigma(a_i, x_j) $. Because different traits can be involved in the two indices, G need not be symmetric. For our case, $$ \\mathbf{G}^{T}=\\begin{pmatrix}\\sigma\\left(A_{d_{i}},z_{i}\\right)&\\sigma\\left(A_{s_{i}},z_{i}\\right)\\\\ \\sigma\\left(A_{d_{i}},\\sum_{j\\neq i}z_{j}\\right)&\\sigma\\left(A_{s_{i}},\\sum_{j\\neq i}z_{j}\\right)\\end{pmatrix} $$ where $$ \\sigma\\left(A_{d_{i}},z_{i}\\right)=\\sigma^{2}(A_{d})+r(n-1)\\sigma(A_{d},A_{s}) $$ $$ \\sigma\\left(A_{s_{i}},z_{i}\\right)=\\sigma(A_{d},A_{s})+r(n-1)\\sigma^{2}(A_{s}) $$ $$ \\sigma\\Big(A_{d_{i}},\\sum_{j\\neq i}z_{j}\\Big)=(n-1)\\sigma(A_{d},A_{s})+r(n-1)\\left[\\sigma^{2}(A_{d})+(n-2)\\sigma(A_{d},A_{s})\\right] $$ $$ \\sigma\\Biggl(A_{s_{i}},\\sum_{j\\neq i}z_{j}\\Biggr)=(n-1)\\sigma^{2}(A_{s})+r(n-1)\\left[\\sigma(A_{d},A_{s})+(n-2)\\sigma^{2}(A_{s})\\right] $$"
+      "content": "P is the phenotypic covariance matrix for the elements in x, which in our case becomes $$ \\begin{aligned}\\mathbf{P}=&\\begin{pmatrix}\\sigma^{2}(z)&\\sigma\\left(z_{i},\\sum_{j\\neq i}z_{j}\\right)\\\\\\sigma\\left(z_{i},\\sum_{j\\neq i}z_{j}\\right)&\\sigma\\left(\\sum_{j\\neq i}z_{j},\\sum_{j\\neq i}z_{j}\\right)\\end{pmatrix}\\\\=&\\begin{pmatrix}\\sigma^{2}(z)&(n-1)\\sigma(z_{i},z_{j})\\\\(n-1)\\sigma(z_{i},z_{j})&(n-1)\\left[\\sigma_{z}^{2}+(n-2)\\sigma(z_{i},z_{j})\\right]\\end{pmatrix}\\end{aligned} $$ where we have used Equations 22.30b and 22.30c. G is the matrix of covariances between the breeding values in the index H and the trait values in the index I, with $ G_{ij} = \\sigma(a_i, x_j) $. Because different traits can be involved in the two indices, G need not be symmetric. For our case, $$ \\mathbf{G}^{T}=\\begin{pmatrix}\\sigma\\left(A_{d_{i}},z_{i}\\right)&\\sigma\\left(A_{s_{i}},z_{i}\\right)\\\\ \\sigma\\left(A_{d_{i}},\\sum_{j\\neq i}z_{j}\\right)&\\sigma\\left(A_{s_{i}},\\sum_{j\\neq i}z_{j}\\right)\\end{pmatrix} $$ where $$ \\sigma\\left(A_{d_{i}},z_{i}\\right)=\\sigma^{2}(A_{d})+r(n-1)\\sigma(A_{d},A_{s}) $$ $$ \\sigma\\left(A_{s_{i}},z_{i}\\right)=\\sigma(A_{d},A_{s})+r(n-1)\\sigma^{2}(A_{s}) $$ $$ \\sigma\\Big(A_{d_{i}},\\sum_{j\\neq i}z_{j}\\Big)=(n-1)\\sigma(A_{d},A_{s})+r(n-1)\\left[\\sigma^{2}(A_{d})+(n-2)\\sigma(A_{d},A_{s})\\right] $$ $$ \\sigma\\Biggl(A_{s_{i}},\\sum_{j\\neq i}z_{j}\\Biggr)=(n-1)\\sigma^{2}(A_{s})+r(n-1)\\left[\\sigma(A_{d},A_{s})+(n-2)\\sigma^{2}(A_{s})\\right] $$",
+      "source_page": 776,
+      "source_pages": [
+        776,
+        777
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p026:b15",
+        "Evolution_chapter22:p026:b17",
+        "Evolution_chapter22:p026:b19",
+        "Evolution_chapter22:p026:b20",
+        "Evolution_chapter22:p027:b2",
+        "Evolution_chapter22:p027:b3",
+        "Evolution_chapter22:p027:b5",
+        "Evolution_chapter22:p027:b7",
+        "Evolution_chapter22:p027:b9"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1075.0,
+          1034.0,
+          1100.0
+        ],
+        [
+          429.0,
+          1124.0,
+          913.0,
+          1297.0
+        ],
+        [
+          288.0,
+          1318.0,
+          1058.0,
+          1410.0
+        ],
+        [
+          470.0,
+          1411.0,
+          872.0,
+          1473.0
+        ],
+        [
+          134.0,
+          208.0,
+          195.0,
+          229.0
+        ],
+        [
+          226.0,
+          246.0,
+          573.0,
+          273.0
+        ],
+        [
+          226.0,
+          275.0,
+          573.0,
+          301.0
+        ],
+        [
+          182.0,
+          308.0,
+          812.0,
+          360.0
+        ],
+        [
+          183.0,
+          368.0,
+          789.0,
+          423.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "513e385e94476ef8f8216e010e6324cea027fd8312b7504b12129b562dae5b61"
     },
     {
       "type": "discussion",
-      "content": "Equations 22.37b through 22.37e follow from the approach used throughout this chapter of a term-by-term evaluation of the covariance. The use of index selection machinery to find the optimal value of g was initially outlined by Ellen et al. (2007)."
+      "content": "Equations 22.37b through 22.37e follow from the approach used throughout this chapter of a term-by-term evaluation of the covariance. The use of index selection machinery to find the optimal value of g was initially outlined by Ellen et al. (2007).",
+      "source_page": 777,
+      "source_pages": [
+        777
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p027:b11"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          440.0,
+          905.0,
+          512.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "617c51e0a086de76302aaf2493f15e6a223c8c85261d60f5af9957228bda4dea"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:22.9]]"
+      "content": "[[SEE_EXAMPLE:22.9]]",
+      "source_page": 777,
+      "source_pages": [
+        777,
+        778
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p027:b12",
+        "Evolution_chapter22:p027:b13",
+        "Evolution_chapter22:p027:b14",
+        "Evolution_chapter22:p027:b15",
+        "Evolution_chapter22:p027:b16",
+        "Evolution_chapter22:p027:b17",
+        "Evolution_chapter22:p027:b18",
+        "Evolution_chapter22:p027:b19",
+        "Evolution_chapter22:p027:b20",
+        "Evolution_chapter22:p027:b21",
+        "Evolution_chapter22:p027:b22",
+        "Evolution_chapter22:p027:b23",
+        "Evolution_chapter22:p027:b24",
+        "Evolution_chapter22:p027:b25",
+        "Evolution_chapter22:p028:b10",
+        "Evolution_chapter22:p028:b2",
+        "Evolution_chapter22:p028:b3",
+        "Evolution_chapter22:p028:b4",
+        "Evolution_chapter22:p028:b5",
+        "Evolution_chapter22:p028:b6",
+        "Evolution_chapter22:p028:b7",
+        "Evolution_chapter22:p028:b8",
+        "Evolution_chapter22:p028:b9"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          579.0,
+          880.0,
+          688.0
+        ],
+        [
+          246.0,
+          701.0,
+          797.0,
+          753.0
+        ],
+        [
+          168.0,
+          766.0,
+          549.0,
+          789.0
+        ],
+        [
+          384.0,
+          804.0,
+          660.0,
+          854.0
+        ],
+        [
+          167.0,
+          869.0,
+          878.0,
+          914.0
+        ],
+        [
+          243.0,
+          932.0,
+          800.0,
+          985.0
+        ],
+        [
+          167.0,
+          999.0,
+          880.0,
+          1023.0
+        ],
+        [
+          432.0,
+          1037.0,
+          614.0,
+          1089.0
+        ],
+        [
+          167.0,
+          1105.0,
+          880.0,
+          1151.0
+        ],
+        [
+          223.0,
+          1167.0,
+          817.0,
+          1219.0
+        ],
+        [
+          167.0,
+          1234.0,
+          811.0,
+          1258.0
+        ],
+        [
+          437.0,
+          1272.0,
+          610.0,
+          1324.0
+        ],
+        [
+          167.0,
+          1338.0,
+          880.0,
+          1403.0
+        ],
+        [
+          217.0,
+          1419.0,
+          825.0,
+          1472.0
+        ],
+        [
+          322.0,
+          581.0,
+          1035.0,
+          625.0
+        ],
+        [
+          322.0,
+          208.0,
+          530.0,
+          231.0
+        ],
+        [
+          531.0,
+          248.0,
+          826.0,
+          303.0
+        ],
+        [
+          321.0,
+          322.0,
+          952.0,
+          346.0
+        ],
+        [
+          447.0,
+          360.0,
+          910.0,
+          386.0
+        ],
+        [
+          322.0,
+          403.0,
+          582.0,
+          425.0
+        ],
+        [
+          390.0,
+          441.0,
+          967.0,
+          466.0
+        ],
+        [
+          322.0,
+          483.0,
+          694.0,
+          507.0
+        ],
+        [
+          484.0,
+          520.0,
+          873.0,
+          569.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ef3516ee28f752ef8be4da36716378d627a451f1b88a41bf392eb01ea0592b2c"
     }
   ]
 }

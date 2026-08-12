@@ -21,63 +21,418 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Maximum-likelihood (ML) methods following the evolution of a codon over a phylogenetic tree were introduced by Goldman and Yang (1994) and Muse and Gaut (1994). While conceptually straightforward, they involve a fair bit of bookkeeping. They assume that each site is evolving independently, which can be compromised by two rather different factors. First, a substitution at one site can change the nature of selection at other sites (epistasis). Second, high levels of recombination can lead to false signals of selection, as recombination results different parts of the gene having different coalescent structures (Anisimova et al. 2003). While generally not an issue, this can be problematic with viral populations that have high sequence diversity and frequent recombination."
+      "content": "Maximum-likelihood (ML) methods following the evolution of a codon over a phylogenetic tree were introduced by Goldman and Yang (1994) and Muse and Gaut (1994). While conceptually straightforward, they involve a fair bit of bookkeeping. They assume that each site is evolving independently, which can be compromised by two rather different factors. First, a substitution at one site can change the nature of selection at other sites (epistasis). Second, high levels of recombination can lead to false signals of selection, as recombination results different parts of the gene having different coalescent structures (Anisimova et al. 2003). While generally not an issue, this can be problematic with viral populations that have high sequence diversity and frequent recombination.",
+      "source_page": 373,
+      "source_pages": [
+        373
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p038:b4",
+        "Evolution_chapter10:p038:b5"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          755.0,
+          655.0,
+          777.0
+        ],
+        [
+          286.0,
+          785.0,
+          1060.0,
+          993.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "246206430e3d63d45b53d90bd315e8a1f2c018ec7cab6eaf6d331ae61355b51f"
     },
     {
       "type": "discussion",
-      "content": "ML methods require a specific probability model for the movement among the 64 different codons. They start with a vector representing the 61 different nonstop codon states (stop codons are assumed lethal). At any point in time, a codon can mutate to one of nine other codons following a single base change (Figure 10.4). The model given by Goldman and Yang (1994) defines the following relative rates for movement between codons i and j, $$ Q_{ij}=\\left\\{\\begin{aligned}&0&if i and j differ at more than one position\\\\&\\pi_{j}&for a silent transversion\\\\&\\kappa\\pi_{j}&for a silent transition\\\\&\\omega\\pi_{j}&for a replacement transversion\\\\&\\omega\\kappa\\pi_{j}&for a replacement transition\\end{aligned}\\right.\\quad for1\\leq i,j\\leq61 $$"
+      "content": "ML methods require a specific probability model for the movement among the 64 different codons. They start with a vector representing the 61 different nonstop codon states (stop codons are assumed lethal). At any point in time, a codon can mutate to one of nine other codons following a single base change (Figure 10.4). The model given by Goldman and Yang (1994) defines the following relative rates for movement between codons i and j, $$ Q_{ij}=\\left\\{\\begin{aligned}&0&if i and j differ at more than one position\\\\&\\pi_{j}&for a silent transversion\\\\&\\kappa\\pi_{j}&for a silent transition\\\\&\\omega\\pi_{j}&for a replacement transversion\\\\&\\omega\\kappa\\pi_{j}&for a replacement transition\\end{aligned}\\right.\\quad for1\\leq i,j\\leq61 $$",
+      "source_page": 373,
+      "source_pages": [
+        373
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p038:b6",
+        "Evolution_chapter10:p038:b7"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          992.0,
+          1060.0,
+          1108.0
+        ],
+        [
+          325.0,
+          1114.0,
+          966.0,
+          1253.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "45c0963480d75b8eccccc2e3c4e9f2ddc692142eb4985f456b44261e7ed889cc"
     },
     {
       "type": "discussion",
-      "content": "The $ 61 \\times 61 $ Q matrix is specified by Equation 10.18. The $ \\pi_j $ are the equilibrium frequencies of codon $ j $ (often calculated from the nucleotide frequencies at the three codon positions), while $ \\kappa $ and $ \\omega $ are estimated parameters intended to account for biases in codon changes. Potential differences in transition versus transversion rates are accounted for by $ \\kappa $. One takes the currently observed codons over the phylogeny, and then runs the model backward in time by considering all possible ancestral codons at each of the internal nodes (ancestors) in the tree. The model thus corrects for multiple hits. The key parameter of interest is $ \\omega $, the strength of selection on replacement substitutions. In the early models using this approach, $ \\omega $ was a fixed constant over all genes, but later models allowed $ \\omega $ to vary over sites (nicely paralleling the development of extensions of the Poisson random field model to allow $ \\gamma $ to vary over genes/alleles), a point upon which we will expand shortly. Figure 10.4 shows the basic structure of these various state changes for a particular codon. The mutational structure in Equation 10.18 (where mutation rates are functions of $ \\kappa $ and $ \\pi_j $) is known in the molecular evolution literature as the Hasegawa-Kishino-Yano, or HKY, model (Hasegawa et al. 1985)."
+      "content": "The $ 61 \\times 61 $ Q matrix is specified by Equation 10.18. The $ \\pi_j $ are the equilibrium frequencies of codon $ j $ (often calculated from the nucleotide frequencies at the three codon positions), while $ \\kappa $ and $ \\omega $ are estimated parameters intended to account for biases in codon changes. Potential differences in transition versus transversion rates are accounted for by $ \\kappa $. One takes the currently observed codons over the phylogeny, and then runs the model backward in time by considering all possible ancestral codons at each of the internal nodes (ancestors) in the tree. The model thus corrects for multiple hits. The key parameter of interest is $ \\omega $, the strength of selection on replacement substitutions. In the early models using this approach, $ \\omega $ was a fixed constant over all genes, but later models allowed $ \\omega $ to vary over sites (nicely paralleling the development of extensions of the Poisson random field model to allow $ \\gamma $ to vary over genes/alleles), a point upon which we will expand shortly. Figure 10.4 shows the basic structure of these various state changes for a particular codon. The mutational structure in Equation 10.18 (where mutation rates are functions of $ \\kappa $ and $ \\pi_j $) is known in the molecular evolution literature as the Hasegawa-Kishino-Yano, or HKY, model (Hasegawa et al. 1985).",
+      "source_page": 373,
+      "source_pages": [
+        373,
+        374
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p038:b9",
+        "Evolution_chapter10:p039:b4"
+      ],
+      "source_bboxes": [
+        [
+          285.0,
+          1262.0,
+          1060.0,
+          1449.0
+        ],
+        [
+          132.0,
+          721.0,
+          903.0,
+          881.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "aaf1ac4268b11856b83fb70f6e20d1e960b529350471fae4d408bd0c37a44e32"
     },
     {
       "type": "discussion",
-      "content": "Tests for directional selection on a gene are accomplished by using this codon model superimposed on the phylogenetic tree to run the likelihood calculation (over all codons) to find the ML solutions for the Q matrix parameters. This allows for a direct test that $ \\omega > 1 $ using the likelihood-ratio approach (LW Appendix 4). The key to these likelihood calculations is that $ \\mathbf{P}(t) $, the codon state matrix at time t, is related to the instantaneous rate matrix, Q, by $$ \\mathbf{P}(t)=\\exp(\\mathbf{Q}t) $$"
+      "content": "Tests for directional selection on a gene are accomplished by using this codon model superimposed on the phylogenetic tree to run the likelihood calculation (over all codons) to find the ML solutions for the Q matrix parameters. This allows for a direct test that $ \\omega > 1 $ using the likelihood-ratio approach (LW Appendix 4). The key to these likelihood calculations is that $ \\mathbf{P}(t) $, the codon state matrix at time t, is related to the instantaneous rate matrix, Q, by $$ \\mathbf{P}(t)=\\exp(\\mathbf{Q}t) $$",
+      "source_page": 374,
+      "source_pages": [
+        374
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p039:b5",
+        "Evolution_chapter10:p039:b6"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          882.0,
+          904.0,
+          1021.0
+        ],
+        [
+          450.0,
+          1019.0,
+          586.0,
+          1043.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "56e2edf34c27a8064585b4056a74d792aaf470cc4754522df741d0bf85d45c6f"
     },
     {
       "type": "discussion",
-      "content": "The corresponding elements of the $ 61 \\times 61 $ matrix P are $$ P_{ij}(t)=\\Pr(\\mathrm{codon}=i\\mathrm{at}\\mathrm{time}t|\\mathrm{codon}\\mathrm{is}j\\mathrm{at}\\mathrm{time}t=0) $$"
+      "content": "The corresponding elements of the $ 61 \\times 61 $ matrix P are $$ P_{ij}(t)=\\Pr(\\mathrm{codon}=i\\mathrm{at}\\mathrm{time}t|\\mathrm{codon}\\mathrm{is}j\\mathrm{at}\\mathrm{time}t=0) $$",
+      "source_page": 374,
+      "source_pages": [
+        374
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p039:b8",
+        "Evolution_chapter10:p039:b9"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          1054.0,
+          614.0,
+          1078.0
+        ],
+        [
+          275.0,
+          1097.0,
+          761.0,
+          1122.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f0867d2497c5f710be59ac7d84a37ac1fe72d0e76dfbf88b0c0b94b4432f580e"
     },
     {
       "type": "discussion",
-      "content": "The matrix exponential, $ \\exp(\\mathbf{Q}t) $, is computed by diagonalizing the Q matrix by writing $ \\mathbf{Q} = U\\Lambda\\mathbf{U}^{T} $, where $ \\Lambda $ is a diagonal matrix, whose $ i $th diagonal element is the eigenvalue $ \\lambda_{i} $ of $ \\mathbf{Q} $ (Equation A5.10a), and $ \\mathbf{U} $ is a matrix of the eigenvectors of $ \\mathbf{Q} $ (Equation A5.10c). With this transformation, Equation 10.19 now becomes $$ \\exp(\\mathbf{Q}t)=\\mathbf{U}\\exp(t\\boldsymbol{\\Lambda})\\mathbf{U}^{T} $$ where $$ \\begin{align*}\\exp(t\\boldsymbol{\\Lambda})=\\begin{pmatrix}e^{t\\lambda_1}&0&\\cdots&0\\\\0&e^{t\\lambda_2}&\\cdots&0\\\\\\vdots&&\\ddots&\\vdots\\\\0&\\cdots&\\cdots&e^{t\\lambda_n}\\end{pmatrix}\\end{align*} $$"
+      "content": "The matrix exponential, $ \\exp(\\mathbf{Q}t) $, is computed by diagonalizing the Q matrix by writing $ \\mathbf{Q} = U\\Lambda\\mathbf{U}^{T} $, where $ \\Lambda $ is a diagonal matrix, whose $ i $th diagonal element is the eigenvalue $ \\lambda_{i} $ of $ \\mathbf{Q} $ (Equation A5.10a), and $ \\mathbf{U} $ is a matrix of the eigenvectors of $ \\mathbf{Q} $ (Equation A5.10c). With this transformation, Equation 10.19 now becomes $$ \\exp(\\mathbf{Q}t)=\\mathbf{U}\\exp(t\\boldsymbol{\\Lambda})\\mathbf{U}^{T} $$ where $$ \\begin{align*}\\exp(t\\boldsymbol{\\Lambda})=\\begin{pmatrix}e^{t\\lambda_1}&0&\\cdots&0\\\\0&e^{t\\lambda_2}&\\cdots&0\\\\\\vdots&&\\ddots&\\vdots\\\\0&\\cdots&\\cdots&e^{t\\lambda_n}\\end{pmatrix}\\end{align*} $$",
+      "source_page": 374,
+      "source_pages": [
+        374
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p039:b11",
+        "Evolution_chapter10:p039:b12",
+        "Evolution_chapter10:p039:b13",
+        "Evolution_chapter10:p039:b14"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1141.0,
+          903.0,
+          1233.0
+        ],
+        [
+          409.0,
+          1251.0,
+          627.0,
+          1277.0
+        ],
+        [
+          134.0,
+          1296.0,
+          195.0,
+          1318.0
+        ],
+        [
+          357.0,
+          1312.0,
+          673.0,
+          1412.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e4e5417ae1b30e7df492ee5af91125b0bb020cad4f7230ded3953411934ecb7d"
     },
     {
       "type": "discussion",
-      "content": "A variety of likelihood models based on Equation 10.19 are typically tested (much in the same way that one tests subsets of complex segregation analysis models; see LW Chapter"
+      "content": "A variety of likelihood models based on Equation 10.19 are typically tested (much in the same way that one tests subsets of complex segregation analysis models; see LW Chapter",
+      "source_page": 374,
+      "source_pages": [
+        374
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p039:b16"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1422.0,
+          904.0,
+          1471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "015043dc28ec38e98d179f5d6ff53ae1a155d3ce68613cfc027b299bc23b9355"
     },
     {
       "type": "discussion",
-      "content": "13), adding additional factors (i.e., $ \\kappa \\neq 1 $, etc.) if they improve the model fit (i.e., give a significantly better likelihood ratio). Evidence for positive selection on a gene is indicated if the likelihood-ratio test for $ \\omega > 1 $ is significant."
+      "content": "13), adding additional factors (i.e., $ \\kappa \\neq 1 $, etc.) if they improve the model fit (i.e., give a significantly better likelihood ratio). Evidence for positive selection on a gene is indicated if the likelihood-ratio test for $ \\omega > 1 $ is significant.",
+      "source_page": 375,
+      "source_pages": [
+        375
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p040:b2"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          206.0,
+          1059.0,
+          275.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ac562921242fad383ee139141ada0d3696ca63ad2430b8d6e660286f20e9432d"
     },
     {
       "type": "discussion",
-      "content": "The base model (Equation 10.18) assumes that all codons within a given gene have the same ω value, which is not only unreasonable but also destroys most of the power of this approach, as it returns an estimate of ω based on a gene-wide average. Given that ω < 1 for most codons, the signal from the majority of codons then masks the signal from any small fraction of codons where indeed ω > 1 (e.g., Example 10.2). Nielsen and Yang (1998) and Yang et al. (2000) extended the base model by assuming a mixture-model (LW Chapter 13), with the codons in a sequence being drawn from one of several selection categories, each with different ω values. For codons from selection category k, Equation 10.18 becomes $$ Q_{ij}^{(k)}=\\begin{cases}0&if i and j differ at more than one position\\\\\\pi_{j}&for a silent transversion\\\\\\kappa\\pi_{j}&for a silent transition\\\\\\omega^{(k)}\\pi_{j}&for a replacement transversion\\\\\\omega^{(k)}\\kappa\\pi_{j}&for a replacement transition\\end{cases} $$"
+      "content": "The base model (Equation 10.18) assumes that all codons within a given gene have the same ω value, which is not only unreasonable but also destroys most of the power of this approach, as it returns an estimate of ω based on a gene-wide average. Given that ω < 1 for most codons, the signal from the majority of codons then masks the signal from any small fraction of codons where indeed ω > 1 (e.g., Example 10.2). Nielsen and Yang (1998) and Yang et al. (2000) extended the base model by assuming a mixture-model (LW Chapter 13), with the codons in a sequence being drawn from one of several selection categories, each with different ω values. For codons from selection category k, Equation 10.18 becomes $$ Q_{ij}^{(k)}=\\begin{cases}0&if i and j differ at more than one position\\\\\\pi_{j}&for a silent transversion\\\\\\kappa\\pi_{j}&for a silent transition\\\\\\omega^{(k)}\\pi_{j}&for a replacement transversion\\\\\\omega^{(k)}\\kappa\\pi_{j}&for a replacement transition\\end{cases} $$",
+      "source_page": 375,
+      "source_pages": [
+        375
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p040:b3",
+        "Evolution_chapter10:p040:b4"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          276.0,
+          1060.0,
+          462.0
+        ],
+        [
+          375.0,
+          481.0,
+          897.0,
+          619.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "43616c9796d02889ac192e77d594beda15ee256d5b63a5a022863673164fdeb3"
     },
     {
       "type": "discussion",
-      "content": "The simplest version of biological interest has three selection classes, with codons either being neutral (with probability $ p_0 $), deleterious (with probability $ p_d $), or advantageous (with probability $ p_b = 1 - p_n - p_d $). Within each class there is a fixed selective value, with $$ \\omega^{(k)}=\\left\\{\\begin{aligned}&0&\\quad\\text{deleterious class}\\\\ &1&\\quad\\text{neutral class}\\\\ &\\omega>1&\\quad\\text{positively selected class}\\end{aligned}\\right. $$"
+      "content": "The simplest version of biological interest has three selection classes, with codons either being neutral (with probability $ p_0 $), deleterious (with probability $ p_d $), or advantageous (with probability $ p_b = 1 - p_n - p_d $). Within each class there is a fixed selective value, with $$ \\omega^{(k)}=\\left\\{\\begin{aligned}&0&\\quad\\text{deleterious class}\\\\ &1&\\quad\\text{neutral class}\\\\ &\\omega>1&\\quad\\text{positively selected class}\\end{aligned}\\right. $$",
+      "source_page": 375,
+      "source_pages": [
+        375
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p040:b6",
+        "Evolution_chapter10:p040:b7"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          638.0,
+          1059.0,
+          711.0
+        ],
+        [
+          491.0,
+          730.0,
+          849.0,
+          815.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "efefc164988c35b52431afcbcca2952ba5fa56e2d27d12213b7a8a0e4a3e9bd8"
     },
     {
       "type": "discussion",
-      "content": "The parameters $ p_{0} $, $ p_{d} $, and $ \\omega $ are estimated from the data by maximum likelihood (LW Chapter 13 examines ML on mixture models). The idea is that one fits a base model (allowing only neutral and deleterious classes), and then fits the full model (Equation 10.22b or other extensions), using a likelihood-ratio test to see if the fit is significantly improved. If so, this is taken as support for a history of repeated positive selection on a subset of codons in the gene of interest."
+      "content": "The parameters $ p_{0} $, $ p_{d} $, and $ \\omega $ are estimated from the data by maximum likelihood (LW Chapter 13 examines ML on mixture models). The idea is that one fits a base model (allowing only neutral and deleterious classes), and then fits the full model (Equation 10.22b or other extensions), using a likelihood-ratio test to see if the fit is significantly improved. If so, this is taken as support for a history of repeated positive selection on a subset of codons in the gene of interest.",
+      "source_page": 375,
+      "source_pages": [
+        375
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p040:b9"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          834.0,
+          1059.0,
+          972.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "acee6ee12b7f99e31498048661cb7ffa2ca1582ef92fb21449eb1157d53092e8"
     },
     {
       "type": "discussion",
-      "content": "While Equation 10.22b is clearly an improvement over models assuming a single value of $ \\omega $ for all replacement mutations, assigning all codons in the deleterious class an $ \\omega $ value of 0 (i.e., no substitutions) is clearly too restrictive, as is assigning all codons in the advantageous class the same $ \\omega $ value. Nielsen and Yang (1998) and Yang et al. (2000) further expanded Equation 10.22b by taking $$ \\omega^{(k)}=\\left\\{\\begin{array}{ll}w^{(d)}\\sim(0,1)&deleterious class\\\\1&neutral class\\\\w^{(a)}\\sim(1,\\infty)&positively selected class\\end{array}\\right. $$ where now the fitness values, $ \\omega^{(k)} $, for any particular codon in class k are random draws from some specified distribution (as opposed to Equation 10.22b, which assumed they are unknown constants) whose parameters are again estimated by maximum likelihood. This is exactly the approach used previously to allow $ \\gamma $ to vary over genes in the PRF model (e.g., Equations 10.17a and 10.17b). A number of candidate distributions for $ \\omega $ are possible, depending on whether we wish to restrict values to between $ (0, 1) $ or to $ (1, \\infty) $, for codons in the deleterious and positively selected classes (respectively). For example, Nielsen and Yang (1998) and Yang et al. (2000) used either a beta or truncated gamma distribution (restricted to returning values of $ 0 < \\omega < 1 $) for the deleterious class and a truncated gamma (restricted to returning values of $ \\omega > 1 $) for the positively selected class (Appendix 2 reviews the beta and gamma distributions). Again, a model-fitting approach is used where one first fits a lower-order model, and then progressively adds in additional parameters to see if the fit is significantly improved."
+      "content": "While Equation 10.22b is clearly an improvement over models assuming a single value of $ \\omega $ for all replacement mutations, assigning all codons in the deleterious class an $ \\omega $ value of 0 (i.e., no substitutions) is clearly too restrictive, as is assigning all codons in the advantageous class the same $ \\omega $ value. Nielsen and Yang (1998) and Yang et al. (2000) further expanded Equation 10.22b by taking $$ \\omega^{(k)}=\\left\\{\\begin{array}{ll}w^{(d)}\\sim(0,1)&deleterious class\\\\1&neutral class\\\\w^{(a)}\\sim(1,\\infty)&positively selected class\\end{array}\\right. $$ where now the fitness values, $ \\omega^{(k)} $, for any particular codon in class k are random draws from some specified distribution (as opposed to Equation 10.22b, which assumed they are unknown constants) whose parameters are again estimated by maximum likelihood. This is exactly the approach used previously to allow $ \\gamma $ to vary over genes in the PRF model (e.g., Equations 10.17a and 10.17b). A number of candidate distributions for $ \\omega $ are possible, depending on whether we wish to restrict values to between $ (0, 1) $ or to $ (1, \\infty) $, for codons in the deleterious and positively selected classes (respectively). For example, Nielsen and Yang (1998) and Yang et al. (2000) used either a beta or truncated gamma distribution (restricted to returning values of $ 0 < \\omega < 1 $) for the deleterious class and a truncated gamma (restricted to returning values of $ \\omega > 1 $) for the positively selected class (Appendix 2 reviews the beta and gamma distributions). Again, a model-fitting approach is used where one first fits a lower-order model, and then progressively adds in additional parameters to see if the fit is significantly improved.",
+      "source_page": 375,
+      "source_pages": [
+        375,
+        376
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p040:b10",
+        "Evolution_chapter10:p040:b11",
+        "Evolution_chapter10:p040:b13",
+        "Evolution_chapter10:p041:b2"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          972.0,
+          1060.0,
+          1090.0
+        ],
+        [
+          459.0,
+          1107.0,
+          882.0,
+          1193.0
+        ],
+        [
+          288.0,
+          1215.0,
+          1060.0,
+          1473.0
+        ],
+        [
+          132.0,
+          207.0,
+          903.0,
+          252.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8fa0b6530781b68ebd82a0cc85001bfc488eef00fc1d6e561fb9d4914beca262"
     },
     {
       "type": "discussion",
-      "content": "The power of the basic ML approach was examined by Anisimova et al. (2001, 2002, 2003) and Wong et al. (2004), and is a function of two different sample sizes: the number of codons in the sequence, and the number of actual sequences (number of taxa in the phylogeny). The more codons in a gene the better, although 100 seems to give reasonable power. Power is more efficiently increased by adding more sequences (species), as opposed to looking at longer genes. For moderately long sequences (~100 codons) with a modest phylogeny (10–20 species), power can be quite reasonable, at least under the parameters simulated (typically 5–10% adaptive codons, each with $ \\omega $ around 5). They also found that the $ \\chi^{2} $ test used to compute the significance of likelihood ratios is conservative, and hence can be safely used, albeit suffering some reduction in power. As might be expected, this basic framework can be modified in a number of ways, for example by letting some branches of the phylogeny be under selection and others not (Yang and Nielsen 2002; Zhang et al. 2005). Branch models assume the same value of $ \\omega $ over all sites, but allow $ \\omega $ to vary over branches; site models (our main focus here) allow $ \\omega $ to vary over sites, but not branches; while branch-site models allow $ \\omega $ to vary over both (e.g., Kosakovsky Pond and Frost 2005; Anisimova and Yang 2007; Kosiol et al. 2008; Kosakovsky Pond et al. 2011). These ML approaches can also be used to estimate the strength of selection on particular substitutions (Halpern and Bruno 1998; Yang and Nielsen 2008; Rodriguez et al. 2010; Tamuri et al. 2011)."
+      "content": "The power of the basic ML approach was examined by Anisimova et al. (2001, 2002, 2003) and Wong et al. (2004), and is a function of two different sample sizes: the number of codons in the sequence, and the number of actual sequences (number of taxa in the phylogeny). The more codons in a gene the better, although 100 seems to give reasonable power. Power is more efficiently increased by adding more sequences (species), as opposed to looking at longer genes. For moderately long sequences (~100 codons) with a modest phylogeny (10–20 species), power can be quite reasonable, at least under the parameters simulated (typically 5–10% adaptive codons, each with $ \\omega $ around 5). They also found that the $ \\chi^{2} $ test used to compute the significance of likelihood ratios is conservative, and hence can be safely used, albeit suffering some reduction in power. As might be expected, this basic framework can be modified in a number of ways, for example by letting some branches of the phylogeny be under selection and others not (Yang and Nielsen 2002; Zhang et al. 2005). Branch models assume the same value of $ \\omega $ over all sites, but allow $ \\omega $ to vary over branches; site models (our main focus here) allow $ \\omega $ to vary over sites, but not branches; while branch-site models allow $ \\omega $ to vary over both (e.g., Kosakovsky Pond and Frost 2005; Anisimova and Yang 2007; Kosiol et al. 2008; Kosakovsky Pond et al. 2011). These ML approaches can also be used to estimate the strength of selection on particular substitutions (Halpern and Bruno 1998; Yang and Nielsen 2008; Rodriguez et al. 2010; Tamuri et al. 2011).",
+      "source_page": 376,
+      "source_pages": [
+        376
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p041:b3",
+        "Evolution_chapter10:p041:b4"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          254.0,
+          905.0,
+          481.0
+        ],
+        [
+          132.0,
+          483.0,
+          904.0,
+          689.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "48fbd67a54bf3c1de86199163682845cae933eed5acfb9c89bb42cae1e2a4816"
     },
     {
       "type": "proposition",
-      "content": "ML methods are not foolproof, and their robustness to the underlying distributional assumptions (for $ \\omega $) remains unclear (Suzuki and Nei 2004; Nozawa et al. 2009). For example, Zhang (2004) found 20–70% false positives in a branch model by Yang and Nielsen (2002) that allowed selection to operate on some branches but not others. By simply replacing the assumption of $ \\omega = 0 $ for the deleterious class with $ \\omega $ being an unknown to be estimated that lies within the interval $ (0,1) $, Zhang et al. (2005) obtained much better branch-model behavior (also see Yang and dos Reis 2011). These results point out how fragile some of these models can be, with essentially no internal controls to check for model consistency."
+      "content": "ML methods are not foolproof, and their robustness to the underlying distributional assumptions (for $ \\omega $) remains unclear (Suzuki and Nei 2004; Nozawa et al. 2009). For example, Zhang (2004) found 20–70% false positives in a branch model by Yang and Nielsen (2002) that allowed selection to operate on some branches but not others. By simply replacing the assumption of $ \\omega = 0 $ for the deleterious class with $ \\omega $ being an unknown to be estimated that lies within the interval $ (0,1) $, Zhang et al. (2005) obtained much better branch-model behavior (also see Yang and dos Reis 2011). These results point out how fragile some of these models can be, with essentially no internal controls to check for model consistency.",
+      "source_page": 376,
+      "source_pages": [
+        376
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p041:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          689.0,
+          904.0,
+          873.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ddcd8fd70d2df3cd9e16ab58894747d8bf77271486fd3ed07c8fbf04310a0865"
     },
     {
       "type": "discussion",
-      "content": "Finally, while our discussion of phylogeny-based divergence tests has focused exclusively on coding sequences, such a restriction is not essential. Wong and Nielsen (2004) extended the logic of codon-based models to noncoding regions. Here the test is the substitution rate in noncoding regions versus the rate at nearby silent sites. Using this approach, Wong and Nielsen found little signal of selection on noncoding regions of the sequences from 13 viral data sets, but strong signals of positive selection in protein-coding regions in five of these data sets. As noted above, the major complication with using noncoding sequences is alignment, as homologous positions need to be compared over a phylogeny. Given that insertions and deletions are common in such regions, the time window for unambiguous alignment tends to be rather short."
+      "content": "Finally, while our discussion of phylogeny-based divergence tests has focused exclusively on coding sequences, such a restriction is not essential. Wong and Nielsen (2004) extended the logic of codon-based models to noncoding regions. Here the test is the substitution rate in noncoding regions versus the rate at nearby silent sites. Using this approach, Wong and Nielsen found little signal of selection on noncoding regions of the sequences from 13 viral data sets, but strong signals of positive selection in protein-coding regions in five of these data sets. As noted above, the major complication with using noncoding sequences is alignment, as homologous positions need to be compared over a phylogeny. Given that insertions and deletions are common in such regions, the time window for unambiguous alignment tends to be rather short.",
+      "source_page": 376,
+      "source_pages": [
+        376
+      ],
+      "source_block_ids": [
+        "Evolution_chapter10:p041:b6"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          873.0,
+          905.0,
+          1105.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "464b8515398856f5989527d8d0a5c2ca02f09d40b4f113ce30145772edb4a7bc"
     }
   ]
 }

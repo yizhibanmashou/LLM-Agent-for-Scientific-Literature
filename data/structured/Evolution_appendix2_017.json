@@ -21,11 +21,130 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "If we put all these pieces together, the posterior density for draws from a normal with unknown mean and variance is obtained as follows. First, we write the joint prior by conditioning on the variance, $$ p(\\mu,\\sigma^{2})=p(\\mu\\mid\\sigma^{2})\\cdot p(\\sigma^{2}) $$ As above, we assume a scaled inverse chi-square distribution for the variance and, conditioned on the variance, a Gaussian prior for the mean with hyperparameters of $ \\mu_0 $ and $ \\sigma^2/\\kappa_0 $, namely, $$ \\sigma^{2}\\sim\\chi_{\\nu_{0},\\sigma_{0}^{2}}^{-2}\\qquad\\mathrm{a n d}\\qquad\\mu\\mid\\sigma^{2}\\sim\\mathrm{N}\\left(\\mu_{0},\\frac{\\sigma^{2}}{\\kappa_{0}}\\right) $$"
+      "content": "If we put all these pieces together, the posterior density for draws from a normal with unknown mean and variance is obtained as follows. First, we write the joint prior by conditioning on the variance, $$ p(\\mu,\\sigma^{2})=p(\\mu\\mid\\sigma^{2})\\cdot p(\\sigma^{2}) $$ As above, we assume a scaled inverse chi-square distribution for the variance and, conditioned on the variance, a Gaussian prior for the mean with hyperparameters of $ \\mu_0 $ and $ \\sigma^2/\\kappa_0 $, namely, $$ \\sigma^{2}\\sim\\chi_{\\nu_{0},\\sigma_{0}^{2}}^{-2}\\qquad\\mathrm{a n d}\\qquad\\mu\\mid\\sigma^{2}\\sim\\mathrm{N}\\left(\\mu_{0},\\frac{\\sigma^{2}}{\\kappa_{0}}\\right) $$",
+      "source_page": 1204,
+      "source_pages": [
+        1204,
+        1205
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p016:b19",
+        "Evolution_appendix2:p016:b20",
+        "Evolution_appendix2:p016:b21",
+        "Evolution_appendix2:p016:b22",
+        "Evolution_appendix2:p017:b2",
+        "Evolution_appendix2:p017:b3",
+        "Evolution_appendix2:p017:b4",
+        "Evolution_appendix2:p017:b5"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1347.0,
+          830.0,
+          1370.0
+        ],
+        [
+          287.0,
+          1376.0,
+          1059.0,
+          1446.0
+        ],
+        [
+          559.0,
+          1443.0,
+          786.0,
+          1471.0
+        ],
+        [
+          980.0,
+          1446.0,
+          1056.0,
+          1469.0
+        ],
+        [
+          130.0,
+          207.0,
+          904.0,
+          273.0
+        ],
+        [
+          241.0,
+          288.0,
+          805.0,
+          520.0
+        ],
+        [
+          132.0,
+          566.0,
+          904.0,
+          635.0
+        ],
+        [
+          324.0,
+          635.0,
+          708.0,
+          683.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a9f2449ab98d7c0491cc3d1c975828e5d3ecb845b4d036f0f15aba19690aac07"
     },
     {
       "type": "discussion",
-      "content": "We write the variance for the conditional mean prior in this way because $ \\sigma^{2} $ is known (as we condition on it) and we scale $ \\sigma^{2} $ by the hyperparameter, $ \\kappa_{0} $. The resulting marginal posterior becomes $$ \\sigma^{2}\\left|\\textbf{x}\\sim\\chi_{\\nu_{n},\\sigma_{n}^{2}}^{-2}\\right.\\quad\\mathrm{a n d}\\quad\\mu\\left|\\textbf{x}\\sim\\textbf{t}_{\\nu_{n}}\\left(\\mu_{n},\\frac{\\sigma_{n}^{2}}{\\kappa_{n}}\\right)\\right. $$ where $ t_{n}(\\mu,\\sigma^{2}) $ denotes a t distribution with n degrees of freedom, mean $ \\mu $, and scale parameter $ \\sigma^{2} $, and where $$ \\nu_{n}=\\nu_{0}+n,\\qquad\\kappa_{n}=\\kappa_{0}+n $$ $$ \\mu_{n}=\\mu_{0}\\frac{\\kappa_{0}}{\\kappa_{n}}+\\overline{x}\\frac{n}{\\kappa_{n}}=\\mu_{0}\\frac{\\kappa_{0}}{\\kappa_{0}+n}+\\overline{x}\\frac{n}{\\kappa_{0}+n} $$ $$ \\sigma_{n}^{2}=\\frac{1}{\\nu_{n}}\\left(\\nu_{0}\\sigma_{0}^{2}+\\sum_{i=1}^{n}\\left(x_{i}-\\overline{x}\\right)^{2}+\\frac{\\kappa_{0}n}{\\kappa_{n}}\\left(\\overline{x}-\\mu_{0}\\right)^{2}\\right) $$"
+      "content": "We write the variance for the conditional mean prior in this way because $ \\sigma^{2} $ is known (as we condition on it) and we scale $ \\sigma^{2} $ by the hyperparameter, $ \\kappa_{0} $. The resulting marginal posterior becomes $$ \\sigma^{2}\\left|\\textbf{x}\\sim\\chi_{\\nu_{n},\\sigma_{n}^{2}}^{-2}\\right.\\quad\\mathrm{a n d}\\quad\\mu\\left|\\textbf{x}\\sim\\textbf{t}_{\\nu_{n}}\\left(\\mu_{n},\\frac{\\sigma_{n}^{2}}{\\kappa_{n}}\\right)\\right. $$ where $ t_{n}(\\mu,\\sigma^{2}) $ denotes a t distribution with n degrees of freedom, mean $ \\mu $, and scale parameter $ \\sigma^{2} $, and where $$ \\nu_{n}=\\nu_{0}+n,\\qquad\\kappa_{n}=\\kappa_{0}+n $$ $$ \\mu_{n}=\\mu_{0}\\frac{\\kappa_{0}}{\\kappa_{n}}+\\overline{x}\\frac{n}{\\kappa_{n}}=\\mu_{0}\\frac{\\kappa_{0}}{\\kappa_{0}+n}+\\overline{x}\\frac{n}{\\kappa_{0}+n} $$ $$ \\sigma_{n}^{2}=\\frac{1}{\\nu_{n}}\\left(\\nu_{0}\\sigma_{0}^{2}+\\sum_{i=1}^{n}\\left(x_{i}-\\overline{x}\\right)^{2}+\\frac{\\kappa_{0}n}{\\kappa_{n}}\\left(\\overline{x}-\\mu_{0}\\right)^{2}\\right) $$",
+      "source_page": 1205,
+      "source_pages": [
+        1205
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p017:b7",
+        "Evolution_appendix2:p017:b8",
+        "Evolution_appendix2:p017:b10",
+        "Evolution_appendix2:p017:b11",
+        "Evolution_appendix2:p017:b13",
+        "Evolution_appendix2:p017:b15"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          691.0,
+          904.0,
+          761.0
+        ],
+        [
+          331.0,
+          756.0,
+          701.0,
+          804.0
+        ],
+        [
+          131.0,
+          813.0,
+          902.0,
+          861.0
+        ],
+        [
+          391.0,
+          862.0,
+          646.0,
+          883.0
+        ],
+        [
+          330.0,
+          888.0,
+          705.0,
+          933.0
+        ],
+        [
+          300.0,
+          941.0,
+          732.0,
+          999.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b1cb4c9d94d390c1c86742c735a2a2d9fbd9d0517ca4fe6387f8acea04889f6c"
     }
   ]
 }

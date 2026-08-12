@@ -8,20 +8,23 @@ The tendency of modern scientific teaching is to neglect the great books, to lay
 
 Quantitative traits—be they morphological or physiological characters, aspects of behavior, or genome-level features such as the amount of RNA or protein expression for a specific gene—usually show considerable variation within and among populations. A central (perhaps the central) question in evolution is the nature of the underlying forces generating this variation, be it the standing variation within a population or the divergence between species. Fully interwoven into this question is the corollary of how best to achieve targeted changes in organisms exploited for human welfare, namely breed improvement (Figures 1.1 and 1.2). The importance of this applied aspect cannot be overstated. The most important technology developed by humans is agriculture, as all of our other impressive advances rest upon the foundation of a stable and sustainable food system. At present, despite significant improvements in yield (e.g., Evenson and Gollin 2003; Thornton 2010), there is considerable uncertainty about our ability to keep pace with projected global needs (Ray et al. 2012, 2013).
 
-It is against this background that we attempt to present a modern, unified theory of quantitative genetics. Such a theory must draw heavily from population genetics, statistical theory, mathematical modeling, genetics, and genomics. It must also be built upon empirical observations from a very wide range of fields. As such, it must consider changes in complex traits in populations of organisms ranging from long-term laboratory studies on viral and bacterial evolution, much shorter-term selection experiments on metazoans, the exhaustive experience of breeders of a wide range of domesticated plants and animals, recent information from human biology, and a growing number of model (and also non-model) species in wild populations. Quantitative-genetics theory also needs to consider the full range of mating systems: inbred and outbred populations of sexual species and the clonal populations of asexual species, and it must also be applicable to haploids, diploids, and polyploids. It should be flexible and extensible, being able to incorporate new sources of information as they become available (e.g., functional-genomics features). Finally, such a theory should be empirically testable, making predictions (such as selection response) based on quantities that we have some hope of estimating.
-
-Given the vast diversity of stakeholders in quantitative genetics, it is not surprising that very useful ideas, results, and machinery developed in one subfield may only slowly (if at all) migrate out into the broader community of users. A critical goal of this book is to facilitate this dissemination. For example, it is not fully appreciated that modern quantitative genetics is now fully merged with population genetics and is a growing part of genomics. Indeed, despite concerns of being outdated and in need of major revision (e.g., Nelson et al. 2013), the field is extremely robust and quite healthy. Modern quantitative genetics is the glue that connects many disciplines, especially given its ability to model uncertainty while fully accounting for known genetic and genomic features.
-
-This introductory chapter starts with a historical overview of considerations of the evolution of quantitative traits. We then briefly comment on the theoretical foundations of evolutionary biology as they relate to qualitative traits (addressing some common misconceptions). We conclude with an overview and road map of this volume.
-
-**[Figure]**
-
 > **Figure 1.1** · page 4 · source: `Evolution_chapter1`
 >
 > ![Figure 1.1](figures/Evolution_1.1.png)
 >
 > Figure 1.1 A striking example of the power of artificial selection is seen in lines of broilers, chickens selected for meat production. The figure compares the performance of a representative base line from 1957, an improved line from 1978, and a recent line from 2005, all raised in the same environment. Besides these extremely impressive differences in growth, there are equally important improvements in feed-to-protein conversion efficiency. (After Zuidhof et al. 2014.)
 
+> **Figure 1.2** · page 5 · source: `Evolution_chapter1`
+>
+> ![Figure 1.2](figures/Evolution_1.2.png)
+>
+> Figure 1.2 Yield (measured in tons per hectare) in maize hybrid lines as a function of year of release. Using remnant seed, all lines were grown in the same set of years, with 1992 being highly favorable, 1993 cool and extremely wet, and 2001 hot and dry. Note that the response is parallel over the three different environments (years), suggesting little genotype × environment interaction. Such “common-garden” experiments are the cleanest way to separate an observed gain into genetic versus environmental components (Chapters 19 and 20 present alternative mixed-model approaches that can also accomplish this goal). This separation is critical, as a yield improvement over time could simply reflect improved agronomic practices, rather than genetic gain. In maize, hybrid improvement accounts for between 50 and 70% of the total improvement in yield, with the remainder due to improved farming practices (Duvick 2001). (After Duvick 2005.)
+
+It is against this background that we attempt to present a modern, unified theory of quantitative genetics. Such a theory must draw heavily from population genetics, statistical theory, mathematical modeling, genetics, and genomics. It must also be built upon empirical observations from a very wide range of fields. As such, it must consider changes in complex traits in populations of organisms ranging from long-term laboratory studies on viral and bacterial evolution, much shorter-term selection experiments on metazoans, the exhaustive experience of breeders of a wide range of domesticated plants and animals, recent information from human biology, and a growing number of model (and also non-model) species in wild populations. Quantitative-genetics theory also needs to consider the full range of mating systems: inbred and outbred populations of sexual species and the clonal populations of asexual species, and it must also be applicable to haploids, diploids, and polyploids. It should be flexible and extensible, being able to incorporate new sources of information as they become available (e.g., functional-genomics features). Finally, such a theory should be empirically testable, making predictions (such as selection response) based on quantities that we have some hope of estimating.
+
+Given the vast diversity of stakeholders in quantitative genetics, it is not surprising that very useful ideas, results, and machinery developed in one subfield may only slowly (if at all) migrate out into the broader community of users. A critical goal of this book is to facilitate this dissemination. For example, it is not fully appreciated that modern quantitative genetics is now fully merged with population genetics and is a growing part of genomics. Indeed, despite concerns of being outdated and in need of major revision (e.g., Nelson et al. 2013), the field is extremely robust and quite healthy. Modern quantitative genetics is the glue that connects many disciplines, especially given its ability to model uncertainty while fully accounting for known genetic and genomic features.
+
+This introductory chapter starts with a historical overview of considerations of the evolution of quantitative traits. We then briefly comment on the theoretical foundations of evolutionary biology as they relate to qualitative traits (addressing some common misconceptions). We conclude with an overview and road map of this volume.
 
 ---
 
@@ -29,7 +32,13 @@ This introductory chapter starts with a historical overview of considerations of
 
 Although the histories of population and quantitative genetics are highly intertwined, they have experienced long periods of apparent separation. Their initially separate trajectories trace back to the bitter debate between the biometricians and the Mendelians following the rediscovery of Mendel in the early 1900s (Provine 1971, 2000; Tabery 2004). Motivated by Mendel's work on the inheritance of major genetic factors, the Mendelians believed that evolution was saltational: moving only by major leaps via the appearance of new mutations. The biometricians (supporters of Darwin and the founders of modern statistics) introduced concepts such as regressions and correlations to quantify continuous variation, and they thought that evolution occurred in very small steps by exploiting this variation. This initial schism between inheritance (Mendel) and evolution (Darwin) was largely driven by antagonistic personalities in the different camps (Provine 1971; although see Hogben 1974 for a different perspective), and significantly delayed the modern synthesis—the fusion of Darwin's evolution by natural selection with Mendelian inheritance. Vestiges of this difference between the gene-based focus of the Mendelians and the continuous-trait focus of the biometricians still persist today.
 
-The first population-genetics paper, which predated the rediscovery of Mendel (and hence was published well before any considerations of the actual dynamics of genes), was concerned with a quantitative-genetics question. Fleeming Jenkin, Regius Professor of Engineering at the University of Edinburgh, was asked to write a review of Darwin's Origin of Species. Jenkin was a polyglot, and, among other things, invented the cable car and was an actor and an artist. Jenkin (1867) pointed out that, under blending inheritance, half of any variation is removed in each generation. Thus, any change achieved via natural selection would quickly be diluted away by the assumed nature of inheritance (also see Bulmer 2004). Phrased in terms of modern statistics, and recalling that the variance of a product of a constant (a) times a random variable (x) is $ \sigma^2(ax) = a^2 \sigma^2(x) $, his argument was that $$ \begin{align*}\sigma^2(z_o)=\sigma^2\left({z_f+z_m\over2}\right)={\sigma^2(z_f)\over2^2}+{\sigma^2(z_m)\over2^2}={\sigma^2(z)\over2}\end{align*} $$ where $ z_f $ and $ z_m $ are the (assumed to be uncorrelated) paternal and maternal trait values, $ z_o $ is the offspring value, and we assume that the trait variance is the same in both sexes, so that $ \sigma^2(z_f) = \sigma^2(z_m) = \sigma^2(z) $. Mendelian genetics provides the solution to this quandary of reduced variation following reproduction, as the segregation variance (variation generated by the transmission of alternative alleles in the gametes of heterozygous parents) completely restores the genetic variance in each generation (Chapter 16).
+The first population-genetics paper, which predated the rediscovery of Mendel (and hence was published well before any considerations of the actual dynamics of genes), was concerned with a quantitative-genetics question. Fleeming Jenkin, Regius Professor of Engineering at the University of Edinburgh, was asked to write a review of Darwin's Origin of Species. Jenkin was a polyglot, and, among other things, invented the cable car and was an actor and an artist. Jenkin (1867) pointed out that, under blending inheritance, half of any variation is removed in each generation. Thus, any change achieved via natural selection would quickly be diluted away by the assumed nature of inheritance (also see Bulmer 2004). Phrased in terms of modern statistics, and recalling that the variance of a product of a constant (a) times a random variable (x) is $ \sigma^2(ax) = a^2 \sigma^2(x) $, his argument was that
+
+$$
+\begin{align*}\sigma^2(z_o)=\sigma^2\left({z_f+z_m\over2}\right)={\sigma^2(z_f)\over2^2}+{\sigma^2(z_m)\over2^2}={\sigma^2(z)\over2}\end{align*}
+$$
+
+where $ z_f $ and $ z_m $ are the (assumed to be uncorrelated) paternal and maternal trait values, $ z_o $ is the offspring value, and we assume that the trait variance is the same in both sexes, so that $ \sigma^2(z_f) = \sigma^2(z_m) = \sigma^2(z) $. Mendelian genetics provides the solution to this quandary of reduced variation following reproduction, as the segregation variance (variation generated by the transmission of alternative alleles in the gametes of heterozygous parents) completely restores the genetic variance in each generation (Chapter 16).
 
 Given the nature of Jenkin's argument, it is fitting that the term variance was first introduced in the foundational paper of the field of quantitative genetics (Fisher 1918). Fisher's brilliant (yet technically difficult) paper formed the conceptual bridge between Mendelian inheritance with discrete genes and evolution acting on continuous traits (ideas hinted at earlier by Yule 1902, 1906). Despite its enormous importance, Fisher wrote this paper as a high school teacher in 1916, and it was initially rejected by the Royal Society of London. As Crow (1972) succinctly stated, "It was apparently too mathematical for the Mendelists and too Mendelian for the biometricians." It was eventually published by the Royal Society of Edinburgh with the help of Leonard Darwin, Charles's son.
 
@@ -52,15 +61,6 @@ Finally, the foundations for the field of molecular population genetics were lai
 Realizing that stochastic forces are extremely important in molecular evolution, Kimura marshaled the power of diffusion approximations (Appendix 1) to examine the interactions of evolutionary forces in finite populations, culminating with his neutral theory of molecular evolution (Kimura 1968b, 1983). Again, as with other fields that at first were perceived as only tangential, there were early applications of this molecularly driven theory to quantitative genetics. Robertson (1960a) realized that Kimura's (1957) results on the fixation probability of an allele under drift and selection were directly applicable to breeding. This led to his remarkably simple expression for the expected limit to the selection response: the expected total long-term response (ignoring new mutations) is bounded above by $ 2N_{e}R(1) $, where $ N_{e} $ is the effective population size (Chapter 3) and $ R(1) $ is the expected response to selection in the first generation (Chapters 13 and 26).
 
 A watershed event in molecular population genetics was Kingman's (1982a, 1982b) introduction of the powerful concept of the coalescent (treating a sample of alleles from a population as a genealogy, which eventually coalesces to a common ancestral sequence at some point in the past; Chapter 2). This approach allowed for the development of statistical tests on the nature of forces shaping sequence evolution (Chapters 4 and 8–10). The very slow trickle of molecular data on which to apply this theory in those early days has now become a veritable tsunami of whole-genome sequences at the population level. It is this very flood of population-genomics data that is now driving the fusion of molecular and quantitative genetics. Much of the theoretical foundations for this fusion derive from results originally developed for, and envisioned as being restricted to, molecular population genetics.
-
-**[Figure]**
-
-> **Figure 1.2** · page 5 · source: `Evolution_chapter1`
->
-> ![Figure 1.2](figures/Evolution_1.2.png)
->
-> Figure 1.2 Yield (measured in tons per hectare) in maize hybrid lines as a function of year of release. Using remnant seed, all lines were grown in the same set of years, with 1992 being highly favorable, 1993 cool and extremely wet, and 2001 hot and dry. Note that the response is parallel over the three different environments (years), suggesting little genotype × environment interaction. Such “common-garden” experiments are the cleanest way to separate an observed gain into genetic versus environmental components (Chapters 19 and 20 present alternative mixed-model approaches that can also accomplish this goal). This separation is critical, as a yield improvement over time could simply reflect improved agronomic practices, rather than genetic gain. In maize, hybrid improvement accounts for between 50 and 70% of the total improvement in yield, with the remainder due to improved farming practices (Duvick 2001). (After Duvick 2005.)
-
 
 ---
 
@@ -144,25 +144,21 @@ Another argument raised against the adequacy of evolutionary theory involves the
 
 Most remarkable is the EESer claim that the key flaw of contemporary evolutionary theory is the assumption that change in allele frequencies is a necessary component of the response to selection, their counterview being that “the direction of evolution does not depend on selection alone, and need not start with mutation” (Laland et al. 2014). Whereas it has long been appreciated that evolution can, and sometimes does, occur in the absence of selection (for example, by random genetic drift of neutral traits), we await an explanation as to how any sustained form of evolution (aside from cultural evolution) can occur in the absence of genetic variation. Technically speaking, evolution can occur in the absence of allele-frequency change, but only via changes in the form of allelic associations across loci (e.g., via LD, which necessarily implies genotype-frequency change), and this does not appear to be what the dissenters have in mind.
 
----
-
-## Evolution_chapter1_008 · Changes in Quantitative Traits Over Time: Introduction / The Completeness of Evolutionary Theory
-
 Finally, we note that unlike the laws of physics and the features of chemical elements, biology is subject to historical contingencies, and for virtually every set of general observations, one can find some kind of exception. Aficionados of such exceptions are sometimes tempted to claim that their observations are sufficient to dismantle the previous theoretical framework for broadscale patterns. However, more often than not, a deeper look almost always reveals explanations for exceptions that are fully compatible with the rules of life. The discovery of mitochondrial DNA and nuclear epigenetic effects did not alter our basic understanding of maternal effects, and the discovery of transposable elements did not alter our appreciation of the mutational process. Such observations simply provided a deeper molecular explanation of modes of production of phenotypic variation. Because evolution is a stochastic process, no theoretical framework can ever be expected to predict the exact trajectories of evolution at the molecular, cellular, or developmental levels. As Haldane (1964) pointed out, if population genetics could make such specific predictions, it would not be a branch of biology—it would be the entirety of biology.
 
-Far from providing a weak and/or incomplete caricature of evolving genetic systems, population- and quantitative-genetic theory has provided powerful, general, and sometimes unexpected mechanistic explanations for trait variation and phenotypic evolution. We note several of these in [[SEE_TABLE:1.1]], and emphasize that few of these issues would have ever been revealed and/or resolved with simple verbal arguments. Indeed, as noted above, it was Fisher's (1918) paper that rescued the previously verbalized theory of evolution from the high seas of obfuscation. Having resisted quantitative thinking derived from first principles in genetics, developmental biology, from which many of the pleas for novel theory emanate, remains in many respects in a pre-population-genetics mode of confusion.
+Far from providing a weak and/or incomplete caricature of evolving genetic systems, population- and quantitative-genetic theory has provided powerful, general, and sometimes unexpected mechanistic explanations for trait variation and phenotypic evolution. We note several of these in *[See Table 1.1 at the end of this section.]*, and emphasize that few of these issues would have ever been revealed and/or resolved with simple verbal arguments. Indeed, as noted above, it was Fisher's (1918) paper that rescued the previously verbalized theory of evolution from the high seas of obfuscation. Having resisted quantitative thinking derived from first principles in genetics, developmental biology, from which many of the pleas for novel theory emanate, remains in many respects in a pre-population-genetics mode of confusion.
 
-Although our specific railing on the EES ideology may be offensive to some or seem like pandering to trivia to others, the implication that a century's worth of theoreticians have been woefully misled is a gross misrepresentation of the facts. Repeated peddling of this view by individuals with no intention of confronting the facts belies reality. As outlined in [[SEE_TABLE:1.1]] and expanded upon in the following chapters, the structure of evolutionary theory that has been developed over the past century has, to this point, found no boundaries in terms of applications, has not been challenged by novel findings in the molecular era, and continues to make predictions that are bolstered by empirical observations. While conflict and cooperation are the engines that keep science running, conflict engineered under false pretenses and incessantly repeated with no evidence is generally motivated by nonscientific goals.
+Although our specific railing on the EES ideology may be offensive to some or seem like pandering to trivia to others, the implication that a century's worth of theoreticians have been woefully misled is a gross misrepresentation of the facts. Repeated peddling of this view by individuals with no intention of confronting the facts belies reality. As outlined in *[See Table 1.1 at the end of this section.]* and expanded upon in the following chapters, the structure of evolutionary theory that has been developed over the past century has, to this point, found no boundaries in terms of applications, has not been challenged by novel findings in the molecular era, and continues to make predictions that are bolstered by empirical observations. While conflict and cooperation are the engines that keep science running, conflict engineered under false pretenses and incessantly repeated with no evidence is generally motivated by nonscientific goals.
 
 ---
 
-## Evolution_chapter1_009 · THE THEORETICAL FOUNDATIONS OF EVOLUTIONARY BIOLOGY / Nonadaptive Hypotheses and our Understanding of Evolution
+## Evolution_chapter1_008 · THE THEORETICAL FOUNDATIONS OF EVOLUTIONARY BIOLOGY / Nonadaptive Hypotheses and our Understanding of Evolution
 
 Darwin’s and Wallace’s grand views of selection as a natural force for the emergence of adaptive change marked a key moment in the history of biology. So convincing were they, and their popular-science writing disciples such as Dawkins, that most people (including most biologists) view all aspects of biology to be necessary products of natural selection. As it channels the entire field away from a landscape of unbiased study, this dogmatic adherence to the unbounded power of natural selection constitutes one of the most significant problems in evolutionary science. Whereas natural selection is one of the most pervasive forces in the biological world, it is not all-powerful. As is evident throughout the following pages, the genetic paths open to exploitation by selection are strongly influenced by another pervasive force—the noise in the evolutionary process imposed by random genetic drift which is caused by both the fact that there are finite numbers of individuals within populations and the physical linkage of different nucleotide sites on chromosomes. If the power of selection is weak relative to that of drift, as is often the case at the molecular level, evolution will proceed in an effectively neutral manner. Biased mutation pressure can also play a role here if it is sufficiently strong relative to selection, steering evolution in the direction of mutation bias.
 
 Even if selection were to be pervasive, in order to understand the degree to which natural selection molds the features of populations, it is essential to know what to expect in the absence of selection. It is for this reason that neutral models have been repeatedly exploited in population- and quantitative-genetic analyses. Under such models, random genetic drift, mutation, and recombination are the sole evolutionary forces, with the resultant formulations then providing null models for testing for natural selection. As noted above, such
 
-[[SEE_TABLE:1.1]] models have been particularly useful in attempts to understand long-term phenotypic changes recorded in the fossil record, where seemingly dramatic changes that have elicited selection arguments are found to be less than impressive when evaluated in the proper context of drift and mutation (Lande 1976; Lynch 1990; Chapter 12). Neutral models are particularly easy to develop for DNA-level features, as mutation can be explicitly defined in terms of the possible nucleotide substitutions. Although neutral models can become more challenging in the case of more complex traits, where the baseline features of mutations can be more difficult to define, this is not a justification for ignoring the matter.
+*[See Table 1.1 at the end of this section.]* models have been particularly useful in attempts to understand long-term phenotypic changes recorded in the fossil record, where seemingly dramatic changes that have elicited selection arguments are found to be less than impressive when evaluated in the proper context of drift and mutation (Lande 1976; Lynch 1990; Chapter 12). Neutral models are particularly easy to develop for DNA-level features, as mutation can be explicitly defined in terms of the possible nucleotide substitutions. Although neutral models can become more challenging in the case of more complex traits, where the baseline features of mutations can be more difficult to define, this is not a justification for ignoring the matter.
 
 **[命题 Proposition]**
 
@@ -176,7 +172,9 @@ The call for a selection theory of evolution, like the call for an extended evol
 
 **[Table]**
 
-> **Table 1.1** · `1.1` · page 15 · source: `Evolution_chapter1_009`
+*[See Table 1.1 at the end of this section.]*
+
+> **Table 1.1** · `1.1` · page 15 · source: `Evolution_chapter1_008`
 > Table 1.1 A few key areas in evolutionary biology where the mathematical/statistical theory of population and quantitative genetics has enhanced our understanding of the mechanistic basis of trait variation and provided novel predictions. This list is by no means complete, and many of the references are simply exemplars, rather than a full literature citation.
 >
 > Topic | References
@@ -210,20 +208,21 @@ The call for a selection theory of evolution, like the call for an extended evol
 > Enhanced evolutionary divergence under uniform selection. | Cohan 1984b; Lynch 1986
 > Doubling the effective population size by equalizing family sizes. | Crow and Kimura 1970
 
-
 ---
 
-## Evolution_chapter1_010 · Changes in Quantitative Traits Over Time: Introduction / OVERVIEW AND PATHWAYS THROUGH THIS VOLUME
+## Evolution_chapter1_009 · Changes in Quantitative Traits Over Time: Introduction / OVERVIEW AND PATHWAYS THROUGH THIS VOLUME
 
 Given the scope (and length) of this volume, we conclude our introduction by providing a brief roadmap and overview of the material presented in the following chapters. We envision the users of this book to be a very diverse community: animal, crop, and tree breeders; evolutionary biologists, human geneticists, and population and statistical geneticists. Given this eclectic audience, our challenge has been to present both the necessary material a user
 
-[[SEE_TABLE:1.2]] might be searching for, while also highlighting connections with other areas that may not initially have been considered relevant.
+*[See Table 1.2 at the end of this section.]* might be searching for, while also highlighting connections with other areas that may not initially have been considered relevant.
 
-We assume that the reader has some basic knowledge of the foundations of the genetics of complex traits, which is covered in our first volume (Lynch and Walsh 1998). Given that we extensively refer back to this volume, for brevity it is denoted throughout the current volume by LW. While LW focused on the genetics of complex traits, the current volume examines the forces behind the evolution of such traits: drift, mutation, recombination, and selection. Our treatment of the field will conclude in our final (third) volume, which largely deals with multivariate traits, plus a few specialized, but important, topics (such as genotype × environment interactions, inbred-line development, and breeding for heterosis). [[SEE_TABLE:1.2]] offers some suggested pathways through this volume, and our overview below is organized by the major sections of this book.
+We assume that the reader has some basic knowledge of the foundations of the genetics of complex traits, which is covered in our first volume (Lynch and Walsh 1998). Given that we extensively refer back to this volume, for brevity it is denoted throughout the current volume by LW. While LW focused on the genetics of complex traits, the current volume examines the forces behind the evolution of such traits: drift, mutation, recombination, and selection. Our treatment of the field will conclude in our final (third) volume, which largely deals with multivariate traits, plus a few specialized, but important, topics (such as genotype × environment interactions, inbred-line development, and breeding for heterosis). *[See Table 1.2 at the end of this section.]* offers some suggested pathways through this volume, and our overview below is organized by the major sections of this book.
 
 **[Table]**
 
-> **Table 1.2** · `1.2` · page 17 · source: `Evolution_chapter1_010`
+*[See Table 1.2 at the end of this section.]*
+
+> **Table 1.2** · `1.2` · page 17 · source: `Evolution_chapter1_009`
 > Table 1.2 Suggested topic-specific pathways through this book.
 >
 > Topic | Suggested Chapters
@@ -234,10 +233,9 @@ We assume that the reader has some basic knowledge of the foundations of the gen
 > Population genetics of selection response | 5-10, 24-28, Appendix 1
 > Detection of selection with genomic data | 2-5, 7-12, 27, Appendices 1-4
 
-
 ---
 
-## Evolution_chapter1_011 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Evolution at One and Two Loci
+## Evolution_chapter1_010 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Evolution at One and Two Loci
 
 The next nine chapters develop the population-genetic theory that underpins most analyses of the evolution of quantitative traits, serving as the foundation for the remainder of this volume. Chapter 2 begins this excursion by examining drift and mutation-drift interaction, including important concepts such as the infinite-sites and infinite-alleles models of sequence evolution and the extremely powerful tool of the coalescent for treating drift.
 
@@ -257,7 +255,7 @@ Chapters 8–10 apply the concepts developed in these early chapters in the sear
 
 ---
 
-## Evolution_chapter1_012 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Drift and Quantitative Traits
+## Evolution_chapter1_011 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Drift and Quantitative Traits
 
 Paralleling our development of population-genetics theory (where we first considered the roles of drift and mutation before examining the impact of selection), before we turn to selection acting on traits, Chapters 11 and 12 examine trait evolution under drift and mutation alone. Chapter 11 examines the impact of drift and mutation on the additive-genetic variance within a population. In order to fully address this issue, it also develops the rather intricate covariances between relatives that arise under general schemes of inbreeding.
 
@@ -265,7 +263,7 @@ Chapter 12 examines the among-population divergence in trait means under drift a
 
 ---
 
-## Evolution_chapter1_013 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Short-term Response on a Single Character
+## Evolution_chapter1_012 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Short-term Response on a Single Character
 
 The remainder of this volume examines the role of selection in changing the distribution of trait values for a quantitative character. We start by considering the short-term changes in a single trait. By short-term, we mean the first few generations, where selection-induced changes in allele frequencies at underlying loci are sufficiently small to be ignored.
 
@@ -289,7 +287,7 @@ Chapter 20 examines the expected selection response in natural populations. Here
 
 ---
 
-## Evolution_chapter1_014 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Selection in Structured Populations
+## Evolution_chapter1_013 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Selection in Structured Populations
 
 Chapters 21–23 conclude our treatment of short-term response on a single trait, considering situations other than mass selection (wherein individuals are selected based on their phenotypic value alone) under random mating. Chapter 21 examines family-based selection schemes, wherein information from families—such as family means over a set of environments or deviations within a given family—are used in selection decisions.
 
@@ -299,7 +297,7 @@ Chapter 23 concludes our discussion of structured populations by considering the
 
 ---
 
-## Evolution_chapter1_015 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Population-genetic Models of Trait Response
+## Evolution_chapter1_014 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Population-genetic Models of Trait Response
 
 Chapters 13–23 consider short-term response, wherein either allele-frequency change is sufficiently small to be ignored, or is modified in very predictable ways, largely independent of the selection scheme (such as the decline in $ \sigma_{A}^{2} $ under drift). Building on the results from Chapters 5 and 7, Chapters 24–28 examine the theory of long-term selection response in the face of significant allele-frequency change. Long-term response is far less predictable than short-term response. Indeed, it is entirely unpredictable from knowledge of just the base population genetic variances alone.
 
@@ -315,7 +313,7 @@ Chapter 28, perhaps the most technical chapter in this volume, examines the exte
 
 ---
 
-## Evolution_chapter1_016 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Measuring Selection on Traits
+## Evolution_chapter1_015 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Measuring Selection on Traits
 
 We conclude with the estimation of individual fitnesses in natural populations and the search for specific traits, or trait-combinations, currently under selection. In many ways, these last two chapters are the complement of Chapters 9 and 10. The tests from these previous chapters are trait-independent and require only sequence information, while the methods in Chapters 29 and 30 require estimates of the fitnesses of individuals (which are far from trivial to obtain), as well as the phenotypic values of candidate traits. The search for traits under selection in natural populations is a major focus of much of evolutionary and ecological genetics.
 
@@ -325,7 +323,7 @@ Chapter 30 extends the univariate analysis of fitness-trait associations to mult
 
 ---
 
-## Evolution_chapter1_017 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Appendices
+## Evolution_chapter1_016 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Appendices
 
 Our six appendices introduce and review important mathematical and statistical tools used throughout this volume. Appendix 1 reviews diffusions, a class of approximations from probability theory widely used in population genetics to handle complex models with random features, notably the interaction of drift and selection.
 
@@ -339,13 +337,13 @@ Appendix 6 concludes with a few brief results on the calculus of matrix and vect
 
 ---
 
-## Evolution_chapter1_018 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Volume
+## Evolution_chapter1_017 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Volume
 
 The advanced reader might have noticed that a number of important topics are not covered in this volume. As mentioned at the start of this chapter, our treatment of selection response on quantitative traits concludes in Volume 3, which covers important topics in applied breeding such as the development and selection of pure lines and selection programs for hybrid breeding. The bulk of Volume 3, however, is multivariate, examining multivariate selection response in detail. We consider both the change in the mean vector and in the G matrix of the additive-genetic variances and covariances for the vector of traits of interest and examine methods for comparing the stability of G over populations. We conclude with a variety of applications of multivariate methods, such as the theory of index selection, BLUP and genomic selection, dealing with genotype × environment interactions, and selection on longitudinal traits (those whose phenotypes change over time, such as a growth curve or milk yield). The latter are often called function-valued traits, and can they be modeled by random-regressions which is an extension of BLUP methodology.
 
 ---
 
-## Evolution_chapter1_019 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Notation
+## Evolution_chapter1_018 · OVERVIEW AND PATHWAYS THROUGH THIS VOLUME / Notation
 
 Finally, we need to briefly comment on the bane of almost every theoretical treatment: notation. One of our greatest challenges in trying to forge a cross-disciplinary synthesis spanning the full breadth of quantitative genetics was dealing with the considerable amount of overlapping notational symbols found in the literature. For example, $ \theta $ is widely used for very different quantities in different subfields of quantitative and population genetics. While we could have created new notation for the various quantities with overlapping symbols, this would have introduced an additional level of complexity. Hence, we have tried (as much as possible) to follow the common usage in the relevant literature for a given field at the expense of some notational overlap. Hopefully, any slight ambiguity introduced by the recycling of some of the notational symbols across different chapters can be distinguished from the context of the presentation.
 

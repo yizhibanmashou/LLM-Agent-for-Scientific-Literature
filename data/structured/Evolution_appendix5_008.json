@@ -21,39 +21,346 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "$$ \\mathbf{A}=\\mathbf{U}\\mathbf{A}\\mathbf{U}^{T} $$ where $ \\Lambda $ is a diagonal matrix and $ \\mathbf{U} $ is an orthonormal matrix $ (\\mathbf{U}^{-1} = \\mathbf{U}^T) $. If $ \\lambda_i $ and $ \\mathbf{e}_i $ are the $ i $th eigenvalue and its associated unit eigenvector of $ \\mathbf{A} $, then $$ \\boldsymbol{A}=diag(\\lambda_{1},\\lambda_{2},\\cdots,\\lambda_{n})=\\begin{pmatrix}{{{\\lambda_{1}}}}&{{{0}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{0}}}&{{{\\lambda_{2}}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{\\vdots}}}&{{{\\ddots}}}&{{{\\vdots}}} \\\\{{{0}}}&{{{\\cdots}}}&{{{\\cdots}}}&{{{\\lambda_{n}}}}\\end{pmatrix} $$ and $$ \\mathbf{U}=\\left(\\mathbf{e}_{1},\\mathbf{e}_{2},\\cdots,\\mathbf{e}_{n}\\right) $$"
+      "content": "$$ \\mathbf{A}=\\mathbf{U}\\mathbf{A}\\mathbf{U}^{T} $$ where $ \\Lambda $ is a diagonal matrix and $ \\mathbf{U} $ is an orthonormal matrix $ (\\mathbf{U}^{-1} = \\mathbf{U}^T) $. If $ \\lambda_i $ and $ \\mathbf{e}_i $ are the $ i $th eigenvalue and its associated unit eigenvector of $ \\mathbf{A} $, then $$ \\boldsymbol{A}=diag(\\lambda_{1},\\lambda_{2},\\cdots,\\lambda_{n})=\\begin{pmatrix}{{{\\lambda_{1}}}}&{{{0}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{0}}}&{{{\\lambda_{2}}}}&{{{\\cdots}}}&{{{0}}} \\\\{{{\\vdots}}}&{{{\\ddots}}}&{{{\\vdots}}} \\\\{{{0}}}&{{{\\cdots}}}&{{{\\cdots}}}&{{{\\lambda_{n}}}}\\end{pmatrix} $$ and $$ \\mathbf{U}=\\left(\\mathbf{e}_{1},\\mathbf{e}_{2},\\cdots,\\mathbf{e}_{n}\\right) $$",
+      "source_page": 1268,
+      "source_pages": [
+        1268
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p008:b2",
+        "Evolution_appendix5:p008:b4",
+        "Evolution_appendix5:p008:b5",
+        "Evolution_appendix5:p008:b6",
+        "Evolution_appendix5:p008:b7",
+        "Evolution_appendix5:p008:b8",
+        "Evolution_appendix5:p008:b9"
+      ],
+      "source_bboxes": [
+        [
+          299.0,
+          207.0,
+          739.0,
+          231.0
+        ],
+        [
+          629.0,
+          248.0,
+          739.0,
+          272.0
+        ],
+        [
+          333.0,
+          292.0,
+          1031.0,
+          341.0
+        ],
+        [
+          433.0,
+          360.0,
+          855.0,
+          460.0
+        ],
+        [
+          953.0,
+          398.0,
+          1030.0,
+          423.0
+        ],
+        [
+          335.0,
+          482.0,
+          376.0,
+          503.0
+        ],
+        [
+          593.0,
+          503.0,
+          773.0,
+          528.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8c4917b76c64d5869e4f525830d8a09a67a995f5ed8408c1d4124d2ba0508259"
     },
     {
       "type": "discussion",
-      "content": "Geometrically, U is a unity matrix and thus describes a rigid rotation of the original coordinate system to a new coordinate system given by the eigenvectors of $ \\mathbf{A} $, while the diagonal elements of $ \\mathbf{A} $ give the amount by which vectors of unit length in the original coordinate system are scaled in the transformed system. If we use the decomposition $ \\mathbf{A} = \\sum_{i=1}^{n} \\mathbf{A}_i $, where $ \\mathbf{A}_i $ is a diagonal matrix whose elements are all zero, except for $ \\lambda_i $, then Equation A5.10a becomes $$ \\mathbf{A}=\\mathbf{U}\\left(\\sum_{i=1}^{n}\\boldsymbol{\\Lambda}_{i}\\right)\\mathbf{U}^{T}=\\sum_{i=1}^{n}\\mathbf{U}\\boldsymbol{\\Lambda}_{i}\\mathbf{U}^{T}=\\sum_{i=1}^{n}\\lambda_{i}\\mathbf{e}_{i}\\mathbf{e}_{i}^{T} $$ recovering the spectral decomposition (Equation A5.9a). The last step in Equation A5.10d follows because $ \\mathbf{e}_i^T \\mathbf{e}_j = 0 $ for $ i \\neq j $. Because of this feature, Equation A5.10a is also called the spectral factorization or eigendecomposition of A."
+      "content": "Geometrically, U is a unity matrix and thus describes a rigid rotation of the original coordinate system to a new coordinate system given by the eigenvectors of $ \\mathbf{A} $, while the diagonal elements of $ \\mathbf{A} $ give the amount by which vectors of unit length in the original coordinate system are scaled in the transformed system. If we use the decomposition $ \\mathbf{A} = \\sum_{i=1}^{n} \\mathbf{A}_i $, where $ \\mathbf{A}_i $ is a diagonal matrix whose elements are all zero, except for $ \\lambda_i $, then Equation A5.10a becomes $$ \\mathbf{A}=\\mathbf{U}\\left(\\sum_{i=1}^{n}\\boldsymbol{\\Lambda}_{i}\\right)\\mathbf{U}^{T}=\\sum_{i=1}^{n}\\mathbf{U}\\boldsymbol{\\Lambda}_{i}\\mathbf{U}^{T}=\\sum_{i=1}^{n}\\lambda_{i}\\mathbf{e}_{i}\\mathbf{e}_{i}^{T} $$ recovering the spectral decomposition (Equation A5.9a). The last step in Equation A5.10d follows because $ \\mathbf{e}_i^T \\mathbf{e}_j = 0 $ for $ i \\neq j $. Because of this feature, Equation A5.10a is also called the spectral factorization or eigendecomposition of A.",
+      "source_page": 1268,
+      "source_pages": [
+        1268
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p008:b11",
+        "Evolution_appendix5:p008:b12",
+        "Evolution_appendix5:p008:b14"
+      ],
+      "source_bboxes": [
+        [
+          334.0,
+          538.0,
+          1034.0,
+          678.0
+        ],
+        [
+          433.0,
+          696.0,
+          858.0,
+          759.0
+        ],
+        [
+          334.0,
+          775.0,
+          1034.0,
+          847.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2f34de765bedf64314a0872857f8d9461ace02485cf3bfc07acf4a0319145af2"
     },
     {
       "type": "discussion",
-      "content": "Using Equation A5.10a, it is easy to show that $$ \\mathbf{A}^{-1}=\\mathbf{U}\\boldsymbol{\\Lambda}^{-1}\\mathbf{U}^{T} $$"
+      "content": "Using Equation A5.10a, it is easy to show that $$ \\mathbf{A}^{-1}=\\mathbf{U}\\boldsymbol{\\Lambda}^{-1}\\mathbf{U}^{T} $$",
+      "source_page": 1268,
+      "source_pages": [
+        1268
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p008:b15",
+        "Evolution_appendix5:p008:b16"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          867.0,
+          686.0,
+          893.0
+        ],
+        [
+          597.0,
+          907.0,
+          750.0,
+          934.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "486a1a2aabd2e80ed0ce24d0e71b9d0bc2476fd40484a2ec4b54f849b726314c"
     },
     {
       "type": "discussion",
-      "content": "To see this, note that $$ \\mathbf{A}^{-1}\\mathbf{A}=\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{-1}\\mathbf{U}^{T}\\right)\\left(\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T}\\right)=\\mathbf{U}\\boldsymbol{\\Lambda}^{-1}\\left(\\mathbf{U}^{T}\\mathbf{U}\\right)\\boldsymbol{\\Lambda}\\mathbf{U}^{T}=\\mathbf{U}\\boldsymbol{\\Lambda}^{-1}\\boldsymbol{\\Lambda}\\mathbf{U}^{T}=\\mathbf{U}\\mathbf{U}^{T}=\\mathbf{I} $$"
+      "content": "To see this, note that $$ \\mathbf{A}^{-1}\\mathbf{A}=\\left(\\mathbf{U}\\boldsymbol{\\Lambda}^{-1}\\mathbf{U}^{T}\\right)\\left(\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T}\\right)=\\mathbf{U}\\boldsymbol{\\Lambda}^{-1}\\left(\\mathbf{U}^{T}\\mathbf{U}\\right)\\boldsymbol{\\Lambda}\\mathbf{U}^{T}=\\mathbf{U}\\boldsymbol{\\Lambda}^{-1}\\boldsymbol{\\Lambda}\\mathbf{U}^{T}=\\mathbf{U}\\mathbf{U}^{T}=\\mathbf{I} $$",
+      "source_page": 1268,
+      "source_pages": [
+        1268
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p008:b18",
+        "Evolution_appendix5:p008:b19"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          955.0,
+          471.0,
+          978.0
+        ],
+        [
+          317.0,
+          995.0,
+          1029.0,
+          1035.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "783f3954ab64578a227dba2822c96bb35d2f6c76ba7227c9d2cb366c963a92ea"
     },
     {
       "type": "discussion",
-      "content": "Similar logic yields $$ \\mathbf{A}^{1/2}=\\mathbf{U}\\boldsymbol{\\Lambda}^{1/2}\\mathbf{U}^{T} $$ $$ \\mathbf{A}^{-1/2}=\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\mathbf{U}^{T} $$ $$ \\mathbf{A}^{k}=\\mathbf{U}\\mathbf{A}^{k}\\mathbf{U}^{T}\\quad for any integer k $$ where the square root matrix, $ A^{1/2} $, satisfies $ A^{1/2}A^{1/2} = A $, and $ A^{-1/2} $ satisfies $ A^{-1/2}A = AA^{-1/2} = A^{1/2} $, as well as $ A^{-1/2}A^{1/2} = A^{1/2}A^{-1/2} = I $. Because $\\Lambda$ is diagonal, the $i$th diagonal elements of $\\Lambda^{-1}$, $\\Lambda^{1/2}$, $\\Lambda^{-1/2}$, and $\\Lambda^{k}$ are $\\lambda_{i}^{-1}$, $\\lambda_{i}^{1/2}$, $\\lambda_{i}^{-1/2}$, and $\\lambda_{i}^{k}$, respectively, implying that if $\\lambda_{i}$ is an eigenvalue of $\\mathbf{A}$, then $\\lambda_{i}^{-1}$, $\\lambda_{i}^{1/2}$, $\\lambda_{i}^{-1/2}$, and $\\lambda_{i}^{k}$, respectively, are eigenvalues of the matrices $\\mathbf{A}^{-1}$, $\\mathbf{A}^{1/2}$, $\\mathbf{A}^{-1/2}$, and $\\mathbf{A}^{k}$. Note that Equations A5.11a–A5.11d further imply that the matrices $\\mathbf{A}$, $\\mathbf{A}^{-1}$, $\\mathbf{A}^{1/2}$, $\\mathbf{A}^{-1/2}$, and $\\mathbf{A}^{k}$ all have the same eigenvectors, namely the columns of $\\mathbf{U}$. Finally, using Equation A5.10a, we see that premultiplying $\\mathbf{A}$ by $\\mathbf{U}^{T}$ and then postmultiplying by $\\mathbf{U}$ gives a diagonal matrix whose elements are the eigenvalues of $\\mathbf{A}$. $$ \\mathbf{U}^{T}\\mathbf{A}\\mathbf{U}=\\mathbf{U}^{T}(\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T})\\mathbf{U}=(\\mathbf{U}^{T}\\mathbf{U})\\boldsymbol{\\Lambda}(\\mathbf{U}^{T}\\mathbf{U})=\\boldsymbol{\\Lambda} $$"
+      "content": "Similar logic yields $$ \\mathbf{A}^{1/2}=\\mathbf{U}\\boldsymbol{\\Lambda}^{1/2}\\mathbf{U}^{T} $$ $$ \\mathbf{A}^{-1/2}=\\mathbf{U}\\boldsymbol{\\Lambda}^{-1/2}\\mathbf{U}^{T} $$ $$ \\mathbf{A}^{k}=\\mathbf{U}\\mathbf{A}^{k}\\mathbf{U}^{T}\\quad for any integer k $$ where the square root matrix, $ A^{1/2} $, satisfies $ A^{1/2}A^{1/2} = A $, and $ A^{-1/2} $ satisfies $ A^{-1/2}A = AA^{-1/2} = A^{1/2} $, as well as $ A^{-1/2}A^{1/2} = A^{1/2}A^{-1/2} = I $. Because $\\Lambda$ is diagonal, the $i$th diagonal elements of $\\Lambda^{-1}$, $\\Lambda^{1/2}$, $\\Lambda^{-1/2}$, and $\\Lambda^{k}$ are $\\lambda_{i}^{-1}$, $\\lambda_{i}^{1/2}$, $\\lambda_{i}^{-1/2}$, and $\\lambda_{i}^{k}$, respectively, implying that if $\\lambda_{i}$ is an eigenvalue of $\\mathbf{A}$, then $\\lambda_{i}^{-1}$, $\\lambda_{i}^{1/2}$, $\\lambda_{i}^{-1/2}$, and $\\lambda_{i}^{k}$, respectively, are eigenvalues of the matrices $\\mathbf{A}^{-1}$, $\\mathbf{A}^{1/2}$, $\\mathbf{A}^{-1/2}$, and $\\mathbf{A}^{k}$. Note that Equations A5.11a–A5.11d further imply that the matrices $\\mathbf{A}$, $\\mathbf{A}^{-1}$, $\\mathbf{A}^{1/2}$, $\\mathbf{A}^{-1/2}$, and $\\mathbf{A}^{k}$ all have the same eigenvectors, namely the columns of $\\mathbf{U}$. Finally, using Equation A5.10a, we see that premultiplying $\\mathbf{A}$ by $\\mathbf{U}^{T}$ and then postmultiplying by $\\mathbf{U}$ gives a diagonal matrix whose elements are the eigenvalues of $\\mathbf{A}$. $$ \\mathbf{U}^{T}\\mathbf{A}\\mathbf{U}=\\mathbf{U}^{T}(\\mathbf{U}\\boldsymbol{\\Lambda}\\mathbf{U}^{T})\\mathbf{U}=(\\mathbf{U}^{T}\\mathbf{U})\\boldsymbol{\\Lambda}(\\mathbf{U}^{T}\\mathbf{U})=\\boldsymbol{\\Lambda} $$",
+      "source_page": 1268,
+      "source_pages": [
+        1268
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p008:b20",
+        "Evolution_appendix5:p008:b21",
+        "Evolution_appendix5:p008:b23",
+        "Evolution_appendix5:p008:b25",
+        "Evolution_appendix5:p008:b27",
+        "Evolution_appendix5:p008:b28",
+        "Evolution_appendix5:p008:b29"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1051.0,
+          460.0,
+          1076.0
+        ],
+        [
+          526.0,
+          1094.0,
+          688.0,
+          1121.0
+        ],
+        [
+          516.0,
+          1124.0,
+          699.0,
+          1151.0
+        ],
+        [
+          543.0,
+          1155.0,
+          832.0,
+          1182.0
+        ],
+        [
+          288.0,
+          1203.0,
+          1056.0,
+          1251.0
+        ],
+        [
+          288.0,
+          1242.0,
+          1057.0,
+          1427.0
+        ],
+        [
+          462.0,
+          1441.0,
+          887.0,
+          1470.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2961c941cc833ffed4b46c028fb8988011081b9ecc596c36008043580a1237f8"
     },
     {
       "type": "proposition",
-      "content": "5. The Rayleigh-Ritz theorem gives useful bounds on quadratic products associated with the symmetric matrix A. It states that if the eigenvalues of A are ordered as $ \\lambda_{max} = \\lambda_1 \\geq \\lambda_2 \\geq \\cdots \\geq \\lambda_n = \\lambda_{min} $, then for any vector of constants $ \\mathbf{c} $ (for $ \\|\\mathbf{c}\\| > 0 $) $$ \\lambda_{1}\\left|\\left|\\mathbf{c}\\right|\\right|\\geq\\mathbf{c}^{T}\\mathbf{A}\\mathbf{c}\\geq\\lambda_{n}\\left|\\left|\\mathbf{c}\\right|\\right| $$"
+      "content": "5. The Rayleigh-Ritz theorem gives useful bounds on quadratic products associated with the symmetric matrix A. It states that if the eigenvalues of A are ordered as $ \\lambda_{max} = \\lambda_1 \\geq \\lambda_2 \\geq \\cdots \\geq \\lambda_n = \\lambda_{min} $, then for any vector of constants $ \\mathbf{c} $ (for $ \\|\\mathbf{c}\\| > 0 $) $$ \\lambda_{1}\\left|\\left|\\mathbf{c}\\right|\\right|\\geq\\mathbf{c}^{T}\\mathbf{A}\\mathbf{c}\\geq\\lambda_{n}\\left|\\left|\\mathbf{c}\\right|\\right| $$",
+      "source_page": 1269,
+      "source_pages": [
+        1269
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p009:b2",
+        "Evolution_appendix5:p009:b3"
+      ],
+      "source_bboxes": [
+        [
+          146.0,
+          206.0,
+          877.0,
+          278.0
+        ],
+        [
+          420.0,
+          297.0,
+          638.0,
+          325.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5ca0d5bca19b8d35109f7e5c9617ee801e119ce1d9a655858f4aebc8ace9d799"
     },
     {
       "type": "discussion",
-      "content": "If c is of unit length, then all quadratic products are bounded by $$ \\lambda_{1}\\geq\\mathbf{c}^{T}\\mathbf{A}\\mathbf{c}\\geq\\lambda_{n} $$"
+      "content": "If c is of unit length, then all quadratic products are bounded by $$ \\lambda_{1}\\geq\\mathbf{c}^{T}\\mathbf{A}\\mathbf{c}\\geq\\lambda_{n} $$",
+      "source_page": 1269,
+      "source_pages": [
+        1269
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p009:b5",
+        "Evolution_appendix5:p009:b6"
+      ],
+      "source_bboxes": [
+        [
+          178.0,
+          346.0,
+          730.0,
+          371.0
+        ],
+        [
+          453.0,
+          392.0,
+          602.0,
+          418.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "abd1814942bff96fef0e819c03c48940ce839fd1d5084967c31b2142009e3c47"
     },
     {
       "type": "discussion",
-      "content": "The maximum and minimum quadratic products occur, respectively, when $ c = e_1 $ and $ c = e_n $, the eigenvectors associated with $ \\lambda_1 $ and $ \\lambda_n $. This is a useful result for bounding variances. Consider a univariate random variable, $ y = c^T x $, formed by a linear combination of the elements of a random vector, x. Recall from LW Equation 8.19 that the variance of a sum $ y = c^T x $ is $ \\sigma^2(y) = c^T V_x c $, where $ V_x $ is the covariance matrix for x. If we apply Equation A5.13a we obtain $$ \\lambda_{1}||\\mathbf{c}||^{2}\\geq\\sigma^{2}(y)\\geq\\lambda_{n}||\\mathbf{c}||^{2} $$ where $ \\lambda_{1} $ is the largest (leading or dominant) eigenvalue and $ \\lambda_{n} $ is the smallest eigenvalue of the covariance matrix $ V_{X} $."
+      "content": "The maximum and minimum quadratic products occur, respectively, when $ c = e_1 $ and $ c = e_n $, the eigenvectors associated with $ \\lambda_1 $ and $ \\lambda_n $. This is a useful result for bounding variances. Consider a univariate random variable, $ y = c^T x $, formed by a linear combination of the elements of a random vector, x. Recall from LW Equation 8.19 that the variance of a sum $ y = c^T x $ is $ \\sigma^2(y) = c^T V_x c $, where $ V_x $ is the covariance matrix for x. If we apply Equation A5.13a we obtain $$ \\lambda_{1}||\\mathbf{c}||^{2}\\geq\\sigma^{2}(y)\\geq\\lambda_{n}||\\mathbf{c}||^{2} $$ where $ \\lambda_{1} $ is the largest (leading or dominant) eigenvalue and $ \\lambda_{n} $ is the smallest eigenvalue of the covariance matrix $ V_{X} $.",
+      "source_page": 1269,
+      "source_pages": [
+        1269
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p009:b8",
+        "Evolution_appendix5:p009:b9",
+        "Evolution_appendix5:p009:b11"
+      ],
+      "source_bboxes": [
+        [
+          178.0,
+          441.0,
+          879.0,
+          582.0
+        ],
+        [
+          415.0,
+          600.0,
+          642.0,
+          629.0
+        ],
+        [
+          178.0,
+          651.0,
+          879.0,
+          699.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5f2fcc5c9003ef7bcb7031fba5237904de20654ff57aad0771d6ec7a568fc349"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A5.3]]"
+      "content": "[[SEE_EXAMPLE:A5.3]]",
+      "source_page": 1269,
+      "source_pages": [
+        1269
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p009:b12",
+        "Evolution_appendix5:p009:b13",
+        "Evolution_appendix5:p009:b14"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          766.0,
+          881.0,
+          832.0
+        ],
+        [
+          205.0,
+          851.0,
+          839.0,
+          903.0
+        ],
+        [
+          167.0,
+          924.0,
+          879.0,
+          998.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "73304128ecaa02dfe713fb79f5e36b5ee4a4a3d3aa53450eafa0f94e64a22573"
     }
   ]
 }

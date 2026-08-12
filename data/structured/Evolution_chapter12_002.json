@@ -26,27 +26,207 @@
   "blocks": [
     {
       "type": "proposition",
-      "content": "We start with the special case in which all gene action is additive and random genetic drift is the only evolutionary force. Most of the predictions of this model can be expressed in terms of two observable quantities: the additive genetic variance in the base population, $ \\sigma_A^2(0) $, and the effective population sizes, $ N_e $, of the isolated lineages. The expected among-population genetic variance, $ \\sigma_B^2(t) $, under neutrality is obtained by noting that the mean genotypic value at a diallelic locus i is $ 2a_i p_i $ (there being two genes per locus, each with additive effect $ t_i $) with probability of $ p_i $, and effect 0 with probability $ 1 - p_i $. The variance among populations for this locus is (from the definition of the variance), $ E\\{[2a_i p_i(t)]^2\\} - \\{E[2a_i p_i(t)]\\}^2 $, which simplifies to $$ 4a_{i}^{2}\\left(E\\{[p_{i}(t)]^{2}\\}-\\{E[p_{i}(t)]\\}^{2}\\right)=4a_{i}^{2}\\sigma_{p_{i}}^{2}(t), $$ where $ \\sigma_{p_i}^2(t) $ is the expected among-population variance in allele frequency. Summing over all loci, assuming negligible gametic-phase disequilibrium, and substituting from Equation 2.14a yields $$ \\begin{aligned}\\sigma_{B}^{2}(t)&=4\\sum_{i=1}^{n}a_{i}^{2}p_{i}(0)[1-p_{i}(0)]\\left\\{\\frac{1}{N_{fo}}+\\left[1-\\left(1-\\frac{1}{2N_{e}}\\right)^{t}\\right]\\right\\}\\\\&=\\left(\\frac{1}{N_{fo}}+2f_{t}\\right)\\sigma_{A}^{2}(0)\\end{aligned} $$ where $ N_{fo} $ is the effective number of founders per line, the inbreeding coefficient ($ f_t $) follows from Equation 2.4c, and the time index is defined such that t = 0 denotes the final generation of the base population and t = 1 denotes the founding generation for the isolated lines. Equation 12.1 shows that, under the assumptions of this ideal model, the expected variance among genotypic means of isolated populations increases linearly with the inbreeding coefficient, asymptotically approaching a limit (as $ f_t \\to 1 $) that is very close to twice the additive genetic variance in the base population (Wright 1951). Under the assumption of additivity, Equation 12.1b holds regardless of the number of alleles at the underlying loci."
+      "content": "We start with the special case in which all gene action is additive and random genetic drift is the only evolutionary force. Most of the predictions of this model can be expressed in terms of two observable quantities: the additive genetic variance in the base population, $ \\sigma_A^2(0) $, and the effective population sizes, $ N_e $, of the isolated lineages. The expected among-population genetic variance, $ \\sigma_B^2(t) $, under neutrality is obtained by noting that the mean genotypic value at a diallelic locus i is $ 2a_i p_i $ (there being two genes per locus, each with additive effect $ t_i $) with probability of $ p_i $, and effect 0 with probability $ 1 - p_i $. The variance among populations for this locus is (from the definition of the variance), $ E\\{[2a_i p_i(t)]^2\\} - \\{E[2a_i p_i(t)]\\}^2 $, which simplifies to $$ 4a_{i}^{2}\\left(E\\{[p_{i}(t)]^{2}\\}-\\{E[p_{i}(t)]\\}^{2}\\right)=4a_{i}^{2}\\sigma_{p_{i}}^{2}(t), $$ where $ \\sigma_{p_i}^2(t) $ is the expected among-population variance in allele frequency. Summing over all loci, assuming negligible gametic-phase disequilibrium, and substituting from Equation 2.14a yields $$ \\begin{aligned}\\sigma_{B}^{2}(t)&=4\\sum_{i=1}^{n}a_{i}^{2}p_{i}(0)[1-p_{i}(0)]\\left\\{\\frac{1}{N_{fo}}+\\left[1-\\left(1-\\frac{1}{2N_{e}}\\right)^{t}\\right]\\right\\}\\\\&=\\left(\\frac{1}{N_{fo}}+2f_{t}\\right)\\sigma_{A}^{2}(0)\\end{aligned} $$ where $ N_{fo} $ is the effective number of founders per line, the inbreeding coefficient ($ f_t $) follows from Equation 2.4c, and the time index is defined such that t = 0 denotes the final generation of the base population and t = 1 denotes the founding generation for the isolated lines. Equation 12.1 shows that, under the assumptions of this ideal model, the expected variance among genotypic means of isolated populations increases linearly with the inbreeding coefficient, asymptotically approaching a limit (as $ f_t \\to 1 $) that is very close to twice the additive genetic variance in the base population (Wright 1951). Under the assumption of additivity, Equation 12.1b holds regardless of the number of alleles at the underlying loci.",
+      "source_page": 417,
+      "source_pages": [
+        417
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p002:b2",
+        "Evolution_chapter12:p002:b3",
+        "Evolution_chapter12:p002:b4",
+        "Evolution_chapter12:p002:b5",
+        "Evolution_chapter12:p002:b6",
+        "Evolution_chapter12:p002:b9"
+      ],
+      "source_bboxes": [
+        [
+          290.0,
+          206.0,
+          566.0,
+          228.0
+        ],
+        [
+          287.0,
+          252.0,
+          1058.0,
+          462.0
+        ],
+        [
+          487.0,
+          456.0,
+          859.0,
+          486.0
+        ],
+        [
+          286.0,
+          491.0,
+          1059.0,
+          563.0
+        ],
+        [
+          412.0,
+          574.0,
+          931.0,
+          690.0
+        ],
+        [
+          287.0,
+          702.0,
+          1059.0,
+          888.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "61685ff775e41b75e0f3c05d5ea0b57c40246fe11fec00d17ac734085e36305f"
     },
     {
       "type": "discussion",
-      "content": "If we ignore the generally minor contribution $ (N_{fo}^{-1}) $ from the baseline founder effect, this limiting result may be obtained in a simpler manner. Because the probability of fixation of a neutral allele is equal to its initial frequency, when the process of random drift is completed, a proportion $ p_i(0) $ of the populations will have genotypic value $ 2a_i $, while the remaining proportion, $ 1 - p_i(0) $, will have genotypic value 0. The mean genotypic value is, therefore, $ 2a_i p_i(0) $ and the mean squared value is $ (2a_i)^2 p_i(0) $, which yields the among-population variance, $ 4a_i^2 p_i(0)[1 - p_i(0)] = 2\\sigma_{A_i}^2(0) $."
+      "content": "If we ignore the generally minor contribution $ (N_{fo}^{-1}) $ from the baseline founder effect, this limiting result may be obtained in a simpler manner. Because the probability of fixation of a neutral allele is equal to its initial frequency, when the process of random drift is completed, a proportion $ p_i(0) $ of the populations will have genotypic value $ 2a_i $, while the remaining proportion, $ 1 - p_i(0) $, will have genotypic value 0. The mean genotypic value is, therefore, $ 2a_i p_i(0) $ and the mean squared value is $ (2a_i)^2 p_i(0) $, which yields the among-population variance, $ 4a_i^2 p_i(0)[1 - p_i(0)] = 2\\sigma_{A_i}^2(0) $.",
+      "source_page": 417,
+      "source_pages": [
+        417
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p002:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          888.0,
+          1060.0,
+          1048.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "de7f37628a369ba93649b82e1bb051d2c8fa010e264fac163252cb6e6a45b94a"
     },
     {
       "type": "discussion",
-      "content": "The expression for $ \\sigma_B^2(t) $ given by Equation 12.1 only considers the true genetic divergence among lines (the evolutionary variance), which can, in principle, be obtained by an analysis of variance of phenotypic variation within and among lines. If, however, one simply focuses on the raw variance of the observed means, additional sources of variation associated with finite sample sizes also contribute to the observed divergence (Hill 1972a; Lynch 1988a). For example, when the mean phenotype of each line is estimated using n progeny from N/2 matings (involving N/2 males and females, for a total parental sample size of N), there can be three additional sources of variance to add to Equation 12.1: (i) The segregational variance, $ (1 - f_{t-1})\\sigma_A^2(0)/(Nn) $, of the mean offspring value about the mean breeding value of their parents resulting from the sampling of $ Nn/2 $ individuals. This follows because the segregational variance (in the absence of linkage disequilibrium) equals half the additive variance (Chapters 16 and 24); (ii) The maternal sampling variance, $ \\sigma_{E_m}^2/(N/2) $, associated with any maternal effects resulting from the sampling of $ N/2 $ mothers; (iii) The residual variance, $ \\sigma_{E_{s}}^{2}/(Nn/2) $, associated with special environmental effects averaged over the entire progeny pool."
+      "content": "The expression for $ \\sigma_B^2(t) $ given by Equation 12.1 only considers the true genetic divergence among lines (the evolutionary variance), which can, in principle, be obtained by an analysis of variance of phenotypic variation within and among lines. If, however, one simply focuses on the raw variance of the observed means, additional sources of variation associated with finite sample sizes also contribute to the observed divergence (Hill 1972a; Lynch 1988a). For example, when the mean phenotype of each line is estimated using n progeny from N/2 matings (involving N/2 males and females, for a total parental sample size of N), there can be three additional sources of variance to add to Equation 12.1: (i) The segregational variance, $ (1 - f_{t-1})\\sigma_A^2(0)/(Nn) $, of the mean offspring value about the mean breeding value of their parents resulting from the sampling of $ Nn/2 $ individuals. This follows because the segregational variance (in the absence of linkage disequilibrium) equals half the additive variance (Chapters 16 and 24); (ii) The maternal sampling variance, $ \\sigma_{E_m}^2/(N/2) $, associated with any maternal effects resulting from the sampling of $ N/2 $ mothers; (iii) The residual variance, $ \\sigma_{E_{s}}^{2}/(Nn/2) $, associated with special environmental effects averaged over the entire progeny pool.",
+      "source_page": 417,
+      "source_pages": [
+        417
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p002:b11",
+        "Evolution_chapter12:p002:b12",
+        "Evolution_chapter12:p002:b13",
+        "Evolution_chapter12:p002:b14"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1048.0,
+          1060.0,
+          1233.0
+        ],
+        [
+          310.0,
+          1252.0,
+          1038.0,
+          1341.0
+        ],
+        [
+          311.0,
+          1356.0,
+          1038.0,
+          1404.0
+        ],
+        [
+          311.0,
+          1422.0,
+          1036.0,
+          1470.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6d9312b22339e17bf31c4a16cabbd50df6dbafc7da7fbd9375584950aedb2d84"
     },
     {
       "type": "discussion",
-      "content": "Finally, the among-line variances in consecutive generations will be correlated as a consequence of shared ancestry, $$ \\sigma_{B}(t,t^{\\prime})=\\left(\\frac{1}{N_{f o}}+2f_{t}\\right)\\sigma_{A}^{2}(0)\\qquad for0<t<t^{\\prime} $$"
+      "content": "Finally, the among-line variances in consecutive generations will be correlated as a consequence of shared ancestry, $$ \\sigma_{B}(t,t^{\\prime})=\\left(\\frac{1}{N_{f o}}+2f_{t}\\right)\\sigma_{A}^{2}(0)\\qquad for0<t<t^{\\prime} $$",
+      "source_page": 418,
+      "source_pages": [
+        418
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p003:b2",
+        "Evolution_chapter12:p003:b3"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          207.0,
+          902.0,
+          255.0
+        ],
+        [
+          308.0,
+          265.0,
+          729.0,
+          315.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c06d27863c37d05ee8bc847b388fbd54b4f747ec2f2ec3b25b6a0f44dc76eb49"
     },
     {
       "type": "discussion",
-      "content": "Equation 12.2 assumes no transmission of maternal effects across generations, which, if present, would further inflate this covariance."
+      "content": "Equation 12.2 assumes no transmission of maternal effects across generations, which, if present, would further inflate this covariance.",
+      "source_page": 418,
+      "source_pages": [
+        418
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p003:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          324.0,
+          905.0,
+          371.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9a5a3509b241eeaa41916067dd143d175d8565bf262b54831a06f09cb6e8b4fd"
     },
     {
       "type": "discussion",
-      "content": "A few words should also be said about the potential importance of nonadditive gene action. From [[SEE_TABLE:11.3]], it can be seen that in the presence of dominance, the among-population variance (in the absence of any new mutation) eventually asymptotes at $ \\sigma_{B}^{2} = 2\\sigma_{A}^{2} + 2\\sigma_{ADI} + \\sigma_{DI}^{2} $. Thus, dominance can magnify or reduce the among-population variance depending upon the magnitudes of $ \\sigma_{D1}^{2} $ and $ \\sigma_{ADI} $ and on the sign of the latter. In addition, the asymptotic contribution from epistatic interactions involving additive effects is equal to $ 2^{n}\\sigma_{A}^{2} $ for $ n $-locus epistasis, i.e., $ 4\\sigma_{AA}^{2} $ for additive × additive epistasis, and $ 8\\sigma_{AA}^{2} $ for additive × additive × additive epistasis (again, all based on the base-population values). Thus, epistasis involving large numbers of loci can, in principle, greatly magnify the among-population variance, even if it appears to be of relatively minor importance within the populations."
+      "content": "A few words should also be said about the potential importance of nonadditive gene action. From [[SEE_TABLE:11.3]], it can be seen that in the presence of dominance, the among-population variance (in the absence of any new mutation) eventually asymptotes at $ \\sigma_{B}^{2} = 2\\sigma_{A}^{2} + 2\\sigma_{ADI} + \\sigma_{DI}^{2} $. Thus, dominance can magnify or reduce the among-population variance depending upon the magnitudes of $ \\sigma_{D1}^{2} $ and $ \\sigma_{ADI} $ and on the sign of the latter. In addition, the asymptotic contribution from epistatic interactions involving additive effects is equal to $ 2^{n}\\sigma_{A}^{2} $ for $ n $-locus epistasis, i.e., $ 4\\sigma_{AA}^{2} $ for additive × additive epistasis, and $ 8\\sigma_{AA}^{2} $ for additive × additive × additive epistasis (again, all based on the base-population values). Thus, epistasis involving large numbers of loci can, in principle, greatly magnify the among-population variance, even if it appears to be of relatively minor importance within the populations.",
+      "source_page": 388,
+      "source_pages": [
+        388,
+        418
+      ],
+      "source_block_ids": [
+        "Evolution_chapter11:p007:b2",
+        "Evolution_chapter11:p007:b3",
+        "Evolution_chapter12:p003:b6"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          207.0,
+          904.0,
+          421.0
+        ],
+        [
+          140.0,
+          432.0,
+          895.0,
+          885.0
+        ],
+        [
+          131.0,
+          371.0,
+          904.0,
+          625.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c70144640ecd7a578ee974d9a23ee5d03e868c0861dcdefc38e345cddddd5f26"
     }
   ]
 }

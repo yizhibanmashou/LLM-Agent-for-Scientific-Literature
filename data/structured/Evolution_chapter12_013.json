@@ -26,71 +26,564 @@
   "blocks": [
     {
       "type": "proposition",
-      "content": "Under the Brownian-motion model, the mean phenotype $ \\mu_t \\sim N(\\mu_0, \\sigma_t^2) $, providing the basis for tests of either too much, or too little, divergence based on simple normal theory. Suppose an absolute divergence of $ d = |\\mu(t) - \\mu(0)| $ is observed, where $ \\mu(t) $ and $ \\mu(0) $ are the means from two samples from the same population taken $ t $ generations apart. The probability of this level of divergence under drift alone is given by $$ \\Pr\\left(\\mid\\mu(t)-\\mu(0)\\mid\\leq d\\right)=\\Pr\\left(\\frac{\\mid\\mu(t)-\\mu(0)\\mid}{\\sigma_{t}}\\leq\\frac{d}{\\sigma_{t}}\\right)=\\Pr\\left(\\mid U\\mid\\leq\\frac{d}{\\sigma_{t}}\\right) $$ where $U$ is a unit normal random variable. Lande’s (1976) original test (distinct from his 1977 $F_{CV}$ test; Equation 12.9a) was based on the constant variance assumption, $\\sigma_t^2 = th^2 \\sigma_z^2 / N_e$. Recalling that $\\Pr(|U| \\leq 1.96) = 0.95$, Lande’s critical effective population size below which there is a $< 5%$ probability of an absolute deviation as large as $d$ satisfies $$ 1.96=\\frac{d}{\\sqrt{th^{2}\\sigma_{z}^{2}/N_{e}}},\\quad implying\\quad(1.96)^{2}th^{2}\\sigma_{z}^{2}=N_{e}d^{2} $$"
+      "content": "Under the Brownian-motion model, the mean phenotype $ \\mu_t \\sim N(\\mu_0, \\sigma_t^2) $, providing the basis for tests of either too much, or too little, divergence based on simple normal theory. Suppose an absolute divergence of $ d = |\\mu(t) - \\mu(0)| $ is observed, where $ \\mu(t) $ and $ \\mu(0) $ are the means from two samples from the same population taken $ t $ generations apart. The probability of this level of divergence under drift alone is given by $$ \\Pr\\left(\\mid\\mu(t)-\\mu(0)\\mid\\leq d\\right)=\\Pr\\left(\\frac{\\mid\\mu(t)-\\mu(0)\\mid}{\\sigma_{t}}\\leq\\frac{d}{\\sigma_{t}}\\right)=\\Pr\\left(\\mid U\\mid\\leq\\frac{d}{\\sigma_{t}}\\right) $$ where $U$ is a unit normal random variable. Lande’s (1976) original test (distinct from his 1977 $F_{CV}$ test; Equation 12.9a) was based on the constant variance assumption, $\\sigma_t^2 = th^2 \\sigma_z^2 / N_e$. Recalling that $\\Pr(|U| \\leq 1.96) = 0.95$, Lande’s critical effective population size below which there is a $< 5%$ probability of an absolute deviation as large as $d$ satisfies $$ 1.96=\\frac{d}{\\sqrt{th^{2}\\sigma_{z}^{2}/N_{e}}},\\quad implying\\quad(1.96)^{2}th^{2}\\sigma_{z}^{2}=N_{e}d^{2} $$",
+      "source_page": 432,
+      "source_pages": [
+        432
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p017:b10",
+        "Evolution_chapter12:p017:b11",
+        "Evolution_chapter12:p017:b12",
+        "Evolution_chapter12:p017:b14",
+        "Evolution_chapter12:p017:b15"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          862.0,
+          525.0,
+          885.0
+        ],
+        [
+          132.0,
+          908.0,
+          904.0,
+          1026.0
+        ],
+        [
+          189.0,
+          1049.0,
+          785.0,
+          1103.0
+        ],
+        [
+          133.0,
+          1127.0,
+          904.0,
+          1220.0
+        ],
+        [
+          284.0,
+          1247.0,
+          752.0,
+          1299.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0be5d861d97572e6abbd095e52a597a495c597837a3daf6007f74bf1fa11202a"
     },
     {
       "type": "discussion",
-      "content": "Equation 12.18a allows one to determine critical values for either divergence time, $ t $, heritability, $ h^2 $, or $ N_e $ that are consistent with drift. For example, solving for the upper bound, $ N_{e,u} $ on the effective population size that is compatible with drift yields $$ N_{e,u}=\\frac{t\\cdot h^{2}\\cdot1.96^{2}}{d_{*}^{2}}=3.84\\cdot\\frac{t h^{2}}{d_{*}^{2}} $$ where $ d_s = d/\\sigma_z $ is the divergence scaled in phenotypic standard deviations. Drift with $ N_e > N_{e,u} $ is unlikely to generate the observed amount of divergence. For a test with an arbitrary $ \\alpha $, one replaces 1.96 by $ z_{1-\\alpha/2} $, where $ z_p $ satisfies $ \\Pr(U \\leq z_p) = p $ for a unit normal $ U $ ($ \\alpha/2 $ is used, as we are considering an absolute difference). Likewise, if one is comparing the means of two species with a common ancestor $ \\tau $ generations ago, then $ t = 2\\tau $ and $ d $ is the absolute difference between their means. For historical reasons, the above discussion has been framed in terms of $ d^2 $. Recalling Equation 12.8e, more generally, the ANOVA-based estimate $ V_B $ of the between-group variance can be used in place of $ d^2/2 $. As noted by Turelli et al. (1988), the population-size test for departures from drift given by Equation 12.18b is really two-sided. Lande's original test examines whether $ N_e $ is too large to account for the observed divergence (as might occur if directional selection was changing the mean). However, any formal test of departures from neutral trait drift must also inquire as to whether the stability of population means is too great to be compatible with neutrality (too little divergence). For a two-tailed test of neutrality with an $ \\alpha = 5% $ overall significance level, we use a 2.5% probability cutoff for the observed divergence being too small to be consistent with drift and a 2.5% cutoff for excessively high divergence. Because $ \\Pr(|U| \\geq 2.24) = 0.025 $ for a unit-normal random variable $ U $, the critical upper bound, $ N_{e,u} $, on population size in a test that evolution has been too fast for drift is $$ \\begin{align*}N_{e,u}\\le{t\\cdot h^2\\cdot2.24^2\\over d_*\\over=5.02\\cdot{t\\over d_*\\over=}\\end{align*} $$ Because populations with smaller $ N_e $ should show more drift (and divergence), Equation 12.19a gives the largest value of $ N_e $ that is consistent with drift generating the observed amount of divergence. If the assumed $ N_e $ exceeds $ N_{e,u} $, we reject the hypothesis that drift can account for this fast a divergence. Likewise, because $ \\Pr(|U| < 0.03) = 0.025 $, the critical lower-bound population size $ N_{e,l} $ in a test that evolution has been too slow (support for stabilizing selection) is $$ N_{e,l}\\geq\\frac{t\\cdot h^{2}\\cdot0.03^{2}}{d_{*}^{2}}=0.0009\\cdot\\frac{t h^{2}}{d_{*}^{2}} $$"
+      "content": "Equation 12.18a allows one to determine critical values for either divergence time, $ t $, heritability, $ h^2 $, or $ N_e $ that are consistent with drift. For example, solving for the upper bound, $ N_{e,u} $ on the effective population size that is compatible with drift yields $$ N_{e,u}=\\frac{t\\cdot h^{2}\\cdot1.96^{2}}{d_{*}^{2}}=3.84\\cdot\\frac{t h^{2}}{d_{*}^{2}} $$ where $ d_s = d/\\sigma_z $ is the divergence scaled in phenotypic standard deviations. Drift with $ N_e > N_{e,u} $ is unlikely to generate the observed amount of divergence. For a test with an arbitrary $ \\alpha $, one replaces 1.96 by $ z_{1-\\alpha/2} $, where $ z_p $ satisfies $ \\Pr(U \\leq z_p) = p $ for a unit normal $ U $ ($ \\alpha/2 $ is used, as we are considering an absolute difference). Likewise, if one is comparing the means of two species with a common ancestor $ \\tau $ generations ago, then $ t = 2\\tau $ and $ d $ is the absolute difference between their means. For historical reasons, the above discussion has been framed in terms of $ d^2 $. Recalling Equation 12.8e, more generally, the ANOVA-based estimate $ V_B $ of the between-group variance can be used in place of $ d^2/2 $. As noted by Turelli et al. (1988), the population-size test for departures from drift given by Equation 12.18b is really two-sided. Lande's original test examines whether $ N_e $ is too large to account for the observed divergence (as might occur if directional selection was changing the mean). However, any formal test of departures from neutral trait drift must also inquire as to whether the stability of population means is too great to be compatible with neutrality (too little divergence). For a two-tailed test of neutrality with an $ \\alpha = 5% $ overall significance level, we use a 2.5% probability cutoff for the observed divergence being too small to be consistent with drift and a 2.5% cutoff for excessively high divergence. Because $ \\Pr(|U| \\geq 2.24) = 0.025 $ for a unit-normal random variable $ U $, the critical upper bound, $ N_{e,u} $, on population size in a test that evolution has been too fast for drift is $$ N_{e,u}\\leq\\frac{t\\cdot h^2\\cdot2.24^2}{d_*^2}=5.02\\cdot\\frac{t h^2}{d_*^2} $$ Because populations with smaller $ N_e $ should show more drift (and divergence), Equation 12.19a gives the largest value of $ N_e $ that is consistent with drift generating the observed amount of divergence. If the assumed $ N_e $ exceeds $ N_{e,u} $, we reject the hypothesis that drift can account for this fast a divergence. Likewise, because $ \\Pr(|U| < 0.03) = 0.025 $, the critical lower-bound population size $ N_{e,l} $ in a test that evolution has been too slow (support for stabilizing selection) is $$ N_{e,l}\\geq\\frac{t\\cdot h^{2}\\cdot0.03^{2}}{d_{*}^{2}}=0.0009\\cdot\\frac{t h^{2}}{d_{*}^{2}} $$",
+      "source_page": 432,
+      "source_pages": [
+        432,
+        433
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p017:b17",
+        "Evolution_chapter12:p017:b18",
+        "Evolution_chapter12:p018:b4",
+        "Evolution_chapter12:p018:b5",
+        "Evolution_chapter12:p018:b6",
+        "Evolution_chapter12:p018:b8",
+        "Evolution_chapter12:p018:b9"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1324.0,
+          904.0,
+          1395.0
+        ],
+        [
+          377.0,
+          1419.0,
+          658.0,
+          1474.0
+        ],
+        [
+          287.0,
+          706.0,
+          1059.0,
+          891.0
+        ],
+        [
+          287.0,
+          892.0,
+          1060.0,
+          1123.0
+        ],
+        [
+          533.0,
+          1143.0,
+          813.0,
+          1198.0
+        ],
+        [
+          288.0,
+          1218.0,
+          1060.0,
+          1357.0
+        ],
+        [
+          525.0,
+          1357.0,
+          821.0,
+          1410.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "515a2b41cea7050b9dcbeebc70cffc3038cd0eea44c223f6360d0f5e6d6d3a76"
     },
     {
       "type": "discussion",
-      "content": "If our assumed $ N_{e} $ is less than $ N_{e,l} $, we reject the hypothesis that drift can account for this slow a divergence."
+      "content": "If our assumed $ N_{e} $ is less than $ N_{e,l} $, we reject the hypothesis that drift can account for this slow a divergence.",
+      "source_page": 433,
+      "source_pages": [
+        433
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p018:b11"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1422.0,
+          1059.0,
+          1470.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d2fa96878ec9b25514ce16d1c8c7ba04c611bf13c47d2b2dc29b59e981c3a686"
     },
     {
       "type": "discussion",
-      "content": "More generally, for a two-sided test at overall significance level $ \\alpha $ ($ \\alpha/2 $ for too much absolute divergence and $ \\alpha/2 $ for too little absolute divergence), the above values of 2.24 and 0.03 are replaced by $ z_{1-(\\alpha/4)} $ and $ z_{0.5+\\alpha/4} $ (Figure 12.5). To see how these critical values arise, first consider the probability of excessive absolute divergence, which means that either the difference between means is too negative or too positive. Because $ \\alpha/2 $ is the critical value for either of these two events occurring, we set the negative lower limit (the difference between means is too negative) to occur with probability $ (\\alpha/2)/2 = \\alpha/4 $ (i.e., the probability of divergence in the lower tail is less than $ \\alpha/4 $), and likewise set the upper positive limit (the difference between means is too positive) also at $ \\alpha/4 $. Given the symmetry of the normal, we can compactly express the total probability for excessive divergence in either direction as $$ \\Pr\\left(|U|\\geq z_{1-(\\alpha/4)}\\right)=\\alpha/2 $$"
+      "content": "More generally, for a two-sided test at overall significance level $ \\alpha $ ($ \\alpha/2 $ for too much absolute divergence and $ \\alpha/2 $ for too little absolute divergence), the above values of 2.24 and 0.03 are replaced by $ z_{1-(\\alpha/4)} $ and $ z_{0.5+\\alpha/4} $ (Figure 12.5). To see how these critical values arise, first consider the probability of excessive absolute divergence, which means that either the difference between means is too negative or too positive. Because $ \\alpha/2 $ is the critical value for either of these two events occurring, we set the negative lower limit (the difference between means is too negative) to occur with probability $ (\\alpha/2)/2 = \\alpha/4 $ (i.e., the probability of divergence in the lower tail is less than $ \\alpha/4 $), and likewise set the upper positive limit (the difference between means is too positive) also at $ \\alpha/4 $. Given the symmetry of the normal, we can compactly express the total probability for excessive divergence in either direction as $$ \\Pr\\left(|U|\\geq z_{1-(\\alpha/4)}\\right)=\\alpha/2 $$",
+      "source_page": 434,
+      "source_pages": [
+        434
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p019:b2",
+        "Evolution_chapter12:p019:b3"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          206.0,
+          904.0,
+          461.0
+        ],
+        [
+          405.0,
+          458.0,
+          632.0,
+          485.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e2381d2554c3524411e360e56af3e65b40ba911408c3641acf408853b4feafd7"
     },
     {
       "type": "discussion",
-      "content": "Turning to tests of too little divergence, instead of focusing on the tails of the normal, we focus around its mode (its mean, which corresponds to $ z_{0.5} $), with a section of probability $ \\alpha/4 $ below the mean and a corresponding section above the mean, where the total area in the region of too little divergence corresponds to $ \\alpha/2 $. Putting these together, $$ \\Pr\\left(|U|\\leq z_{0.5+\\alpha/4}\\right)=\\alpha/2 $$"
+      "content": "Turning to tests of too little divergence, instead of focusing on the tails of the normal, we focus around its mode (its mean, which corresponds to $ z_{0.5} $), with a section of probability $ \\alpha/4 $ below the mean and a corresponding section above the mean, where the total area in the region of too little divergence corresponds to $ \\alpha/2 $. Putting these together, $$ \\Pr\\left(|U|\\leq z_{0.5+\\alpha/4}\\right)=\\alpha/2 $$",
+      "source_page": 434,
+      "source_pages": [
+        434
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p019:b4",
+        "Evolution_chapter12:p019:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          493.0,
+          904.0,
+          589.0
+        ],
+        [
+          404.0,
+          605.0,
+          633.0,
+          632.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c5b9b98f42f701f2ab307800d7010f16df7f9758fab4ae54d5eca59ed83b36ad"
     },
     {
       "type": "discussion",
-      "content": "Figure 12.5 illustrates this logic."
+      "content": "Figure 12.5 illustrates this logic.",
+      "source_page": 434,
+      "source_pages": [
+        434
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p019:b6"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          649.0,
+          409.0,
+          676.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b863bfbcc1aeee7381bf95cb3be837e577ddb9f92167074661a9a8d47997bf42"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:12.3]]"
+      "content": "[[SEE_EXAMPLE:12.3]]",
+      "source_page": 434,
+      "source_pages": [
+        434
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p019:b10",
+        "Evolution_chapter12:p019:b7",
+        "Evolution_chapter12:p019:b8",
+        "Evolution_chapter12:p019:b9"
+      ],
+      "source_bboxes": [
+        [
+          154.0,
+          999.0,
+          884.0,
+          1136.0
+        ],
+        [
+          155.0,
+          718.0,
+          881.0,
+          808.0
+        ],
+        [
+          311.0,
+          822.0,
+          726.0,
+          874.0
+        ],
+        [
+          156.0,
+          892.0,
+          880.0,
+          1003.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "949286051092f4750ff408e1e390bbab6a87592ed45bbe7d65a696168aafc163"
     },
     {
       "type": "discussion",
-      "content": "The structure of the tests given by Equations 12.17 through 12.19 depends on $ N_e $ and $ h^2 $. A second approach is to instead base tests on the mutational variance, $ \\sigma_m^2 $, alone. The idea is that if $ N_e $ has been roughly constant for a sufficient amount of time, then the additive-genetic variance for a neutral trait approaches its mutation-drift equilibrium value, $ 2N_e\\sigma_m^2 $ (Equation 11.20c). Under this condition, Equation 12.16b shows that the among-group variance becomes $ \\sigma_B^2 = 2t\\sigma_m^2 $, giving the MDE (mutation-drift equilibrium) version of Lande's F test (Equation 12.9a) as $$ F_{MDE}=\\frac{V_{B}(t)}{2t\\sigma_{m}^{2}} $$"
+      "content": "The structure of the tests given by Equations 12.17 through 12.19 depends on $ N_e $ and $ h^2 $. A second approach is to instead base tests on the mutational variance, $ \\sigma_m^2 $, alone. The idea is that if $ N_e $ has been roughly constant for a sufficient amount of time, then the additive-genetic variance for a neutral trait approaches its mutation-drift equilibrium value, $ 2N_e\\sigma_m^2 $ (Equation 11.20c). Under this condition, Equation 12.16b shows that the among-group variance becomes $ \\sigma_B^2 = 2t\\sigma_m^2 $, giving the MDE (mutation-drift equilibrium) version of Lande's F test (Equation 12.9a) as $$ F_{MDE}=\\frac{V_{B}(t)}{2t\\sigma_{m}^{2}} $$",
+      "source_page": 434,
+      "source_pages": [
+        434
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p019:b11",
+        "Evolution_chapter12:p019:b12"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          1201.0,
+          904.0,
+          1365.0
+        ],
+        [
+          449.0,
+          1363.0,
+          586.0,
+          1412.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "400fe0edcdac72080e108b9774ef8b42dab9e1f130493c32bda48716bfd3525e"
     },
     {
       "type": "discussion",
-      "content": "We can also arrive at this test by substituting $ 2N_e\\sigma_m^2 $ for $ V_A(0) $ in Equation 12.9a. As above, $ V_B $ is best estimated from the among-group variance in a one-way ANOVA (Equation 12.9f)."
+      "content": "We can also arrive at this test by substituting $ 2N_e\\sigma_m^2 $ for $ V_A(0) $ in Equation 12.9a. As above, $ V_B $ is best estimated from the among-group variance in a one-way ANOVA (Equation 12.9f).",
+      "source_page": 434,
+      "source_pages": [
+        434
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p019:b14"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          1421.0,
+          903.0,
+          1471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4f52c593764c963fea6974ed0f3c2449553fca545cba6f62bff51c8c0ad47c0a"
     },
     {
       "type": "discussion",
-      "content": "When $ V_B $ is based on more than two lineages, Equation 12.20a assumes a star phylogeny (Chapter 8). If the phylogeny is more complex, one has to place the lineage relationships into a phylogenetic framework to account for the covariance structure imparted by shared common ancestry (Felsenstein 1985, 2004, 2008; Lynch 1991; Gu 2004). Using the same logic leading to Equation 12.9e with $ L $ lineages (under a star phylogeny), Equation 12.5a gives $ (L - 1)V_B(t) \\sim 2t\\sigma_m^2\\chi_L-1 $, and Equation 12.6c yields $$ \\Pr\\left[\\left(\\frac{L-1}{X_{1-\\alpha/2,L-1}}\\right)V_{B}(t)\\leq2t\\sigma_{m}^{2}\\leq\\left(\\frac{L-1}{X_{\\alpha/2,L-1}}\\right)V_{B}(t)\\right]=1-\\alpha $$ where $ X_{p,n} $ satisfies $ \\Pr(\\chi_n^2 \\leq X_{p,n}) = p $. Thus, if an estimate of $ t $ is available, one can test the neutral hypothesis without an estimate of $ N_e $ by inquiring whether there has been too little or too much divergence given some assumed value of $ \\sigma_m^2 $ (Turelli et al. 1988). We can also frame the test in terms of the mutational heritability $ h_m^2 = \\sigma_m^2 / \\sigma_e^2 $ by dividing all terms in Equation 12.20b by $ 2t\\sigma_e^2 $, yielding $$ \\Pr\\left[\\left(\\frac{L-1}{X_{1-\\alpha/2,L-1}}\\right)\\frac{V_{B}(t)}{2t\\sigma_{e}^{2}}\\leq h_{m}^{2}\\leq\\left(\\frac{L-1}{X_{\\alpha/2,L-1}}\\right)\\frac{V_{B}(t)}{2t\\sigma_{e}^{2}}\\right]=1-\\alpha $$"
+      "content": "When $ V_B $ is based on more than two lineages, Equation 12.20a assumes a star phylogeny (Chapter 8). If the phylogeny is more complex, one has to place the lineage relationships into a phylogenetic framework to account for the covariance structure imparted by shared common ancestry (Felsenstein 1985, 2004, 2008; Lynch 1991; Gu 2004). Using the same logic leading to Equation 12.9e with $ L $ lineages (under a star phylogeny), Equation 12.5a gives $ (L - 1)V_B(t) \\sim 2t\\sigma_m^2\\chi_L-1 $, and Equation 12.6c yields $$ \\Pr\\left[\\left(\\frac{L-1}{X_{1-\\alpha/2,L-1}}\\right)V_{B}(t)\\leq2t\\sigma_{m}^{2}\\leq\\left(\\frac{L-1}{X_{\\alpha/2,L-1}}\\right)V_{B}(t)\\right]=1-\\alpha $$ where $ X_{p,n} $ satisfies $ \\Pr(\\chi_n^2 \\leq X_{p,n}) = p $. Thus, if an estimate of $ t $ is available, one can test the neutral hypothesis without an estimate of $ N_e $ by inquiring whether there has been too little or too much divergence given some assumed value of $ \\sigma_m^2 $ (Turelli et al. 1988). We can also frame the test in terms of the mutational heritability $ h_m^2 = \\sigma_m^2 / \\sigma_e^2 $ by dividing all terms in Equation 12.20b by $ 2t\\sigma_e^2 $, yielding $$ \\Pr\\left[\\left(\\frac{L-1}{X_{1-\\alpha/2,L-1}}\\right)\\frac{V_{B}(t)}{2t\\sigma_{e}^{2}}\\leq h_{m}^{2}\\leq\\left(\\frac{L-1}{X_{\\alpha/2,L-1}}\\right)\\frac{V_{B}(t)}{2t\\sigma_{e}^{2}}\\right]=1-\\alpha $$",
+      "source_page": 435,
+      "source_pages": [
+        435
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p020:b2",
+        "Evolution_chapter12:p020:b3",
+        "Evolution_chapter12:p020:b5",
+        "Evolution_chapter12:p020:b6"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          207.0,
+          1059.0,
+          347.0
+        ],
+        [
+          360.0,
+          362.0,
+          918.0,
+          417.0
+        ],
+        [
+          286.0,
+          435.0,
+          1059.0,
+          553.0
+        ],
+        [
+          364.0,
+          567.0,
+          915.0,
+          621.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "120890fdfce298344d59241e5bae7e85e83ad5029ca740db3b11e69b2499eb5a"
     },
     {
       "type": "discussion",
-      "content": "A slightly different formulation of this test is based in terms of the observed rate of divergence (Lynch 1990). Letting $ \\Delta = (V_B/t)/\\sigma_e^2 $ be the estimated rate of divergence scaled in units of the environmental variance, Equation 12.20c becomes $$ \\Pr\\left[\\left(\\frac{(L-1)/2}{X_{1-\\alpha/2,L-1}}\\right)\\Delta\\leq h_{m}^{2}\\leq\\left(\\frac{(L-1)/2}{X_{\\alpha/2,L-1}}\\right)\\Delta\\right]=1-\\alpha $$ yielding the upper and lower bounds on the mutational heritability $ h_{m}^{2} $ consistent with drift. For $ \\alpha = 0.05 $ and $ L = 2 $, Equation 12.20b becomes $$ \\mathrm{P r}\\left(0.10\\cdot\\Delta\\leq h_{m}^{2}\\leq509\\cdot\\Delta\\right)=0.95 $$"
+      "content": "A slightly different formulation of this test is based in terms of the observed rate of divergence (Lynch 1990). Letting $ \\Delta = (V_B/t)/\\sigma_e^2 $ be the estimated rate of divergence scaled in units of the environmental variance, Equation 12.20c becomes $$ \\Pr\\left[\\left(\\frac{(L-1)/2}{X_{1-\\alpha/2,L-1}}\\right)\\Delta\\leq h_{m}^{2}\\leq\\left(\\frac{(L-1)/2}{X_{\\alpha/2,L-1}}\\right)\\Delta\\right]=1-\\alpha $$ yielding the upper and lower bounds on the mutational heritability $ h_{m}^{2} $ consistent with drift. For $ \\alpha = 0.05 $ and $ L = 2 $, Equation 12.20b becomes $$ \\mathrm{P r}\\left(0.10\\cdot\\Delta\\leq h_{m}^{2}\\leq509\\cdot\\Delta\\right)=0.95 $$",
+      "source_page": 435,
+      "source_pages": [
+        435
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p020:b8",
+        "Evolution_chapter12:p020:b9",
+        "Evolution_chapter12:p020:b11",
+        "Evolution_chapter12:p020:b12"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          638.0,
+          1059.0,
+          707.0
+        ],
+        [
+          431.0,
+          724.0,
+          915.0,
+          778.0
+        ],
+        [
+          287.0,
+          796.0,
+          1057.0,
+          843.0
+        ],
+        [
+          517.0,
+          860.0,
+          828.0,
+          888.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9f4296240cd18832222b446379764df38a620738dee5171d9cac81d87325e7e2"
     },
     {
       "type": "discussion",
-      "content": "Thus, the hypothesis of drift is rejected (at $ \\alpha = 0.05 $) if the mutational heritability is too small to account for the observed divergence rate, namely $$ h_{m}^{2}<0.10\\cdot\\Delta\\simeq0.10\\cdot\\frac{d_{*}^{2}}{t} $$"
+      "content": "Thus, the hypothesis of drift is rejected (at $ \\alpha = 0.05 $) if the mutational heritability is too small to account for the observed divergence rate, namely $$ h_{m}^{2}<0.10\\cdot\\Delta\\simeq0.10\\cdot\\frac{d_{*}^{2}}{t} $$",
+      "source_page": 435,
+      "source_pages": [
+        435
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p020:b14",
+        "Evolution_chapter12:p020:b15"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          905.0,
+          1059.0,
+          953.0
+        ],
+        [
+          562.0,
+          970.0,
+          783.0,
+          1018.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1ef5e2033f2035f10b66ff3bb253889b88e77bb7688444b44bda88d3d0374127"
     },
     {
       "type": "discussion",
-      "content": "Just as a smaller $N_e$ allows for more divergence (and hence we set a critical upper value for $N_e$ in Equation 12.18a), so does a larger mutational heritability, $h_m^2$, and we set a critical lower value, above which drift can account for the observed divergence. Given that a typical upper-range value is $h_m^2 = 0.05$ (LW Table 12.1), if $0.05 < 0.10 \\cdot \\Delta$ (i.e., $\\Delta > 0.5$), the rate of divergence is too high to reasonably be accounted for by drift."
+      "content": "Just as a smaller $N_e$ allows for more divergence (and hence we set a critical upper value for $N_e$ in Equation 12.18a), so does a larger mutational heritability, $h_m^2$, and we set a critical lower value, above which drift can account for the observed divergence. Given that a typical upper-range value is $h_m^2 = 0.05$ (LW Table 12.1), if $0.05 < 0.10 \\cdot \\Delta$ (i.e., $\\Delta > 0.5$), the rate of divergence is too high to reasonably be accounted for by drift.",
+      "source_page": 435,
+      "source_pages": [
+        435
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p020:b17"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1032.0,
+          1059.0,
+          1148.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e65cd8234cf83ad3feae8a2bcc753ef87ad0fdcfae81cd48d0c33349d2d7fbe0"
     },
     {
       "type": "discussion",
-      "content": "Conversely, the divergence is too slow to be accounted for by drift if the assumed mutational heritability is too high to account for the observed divergence rate, or when $$ h_{m}^{2}\\geq509\\cdot\\Delta\\simeq509\\cdot\\frac{d_{*}^{2}}{t} $$"
+      "content": "Conversely, the divergence is too slow to be accounted for by drift if the assumed mutational heritability is too high to account for the observed divergence rate, or when $$ h_{m}^{2}\\geq509\\cdot\\Delta\\simeq509\\cdot\\frac{d_{*}^{2}}{t} $$",
+      "source_page": 435,
+      "source_pages": [
+        435
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p020:b18",
+        "Evolution_chapter12:p020:b19"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1147.0,
+          1058.0,
+          1194.0
+        ],
+        [
+          568.0,
+          1212.0,
+          778.0,
+          1261.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "75478113ec07742e608f2d9a9baf145e8a40b55e6e95e4d539b81a2676722697"
     },
     {
       "type": "discussion",
-      "content": "A mutational heritability above this value would lead to significantly more divergence than observed. There is one minor bookkeeping detail with both Equations 12.21a and 12.21b. The careful reader might recall Equation 12.8c, where we showed that $ V_B = d^2/2 $. So why did we assume that $ \\Delta \\simeq d_*/t $ in these two equations? Recalling that $ \\sigma_e^2 = (1 - h^2)\\sigma_z^2 $, we have $$ \\Delta=\\frac{V_{B}}{t\\sigma_{e}^{2}}=\\frac{d^{2}}{2t(1-h^{2})\\sigma_{z}^{2}}=\\frac{1}{2(1-h^{2})}\\frac{d_{*}^{2}}{t}\\simeq\\frac{d_{*}^{2}}{t} $$ with the last step following when $ h^2 \\simeq 1/2 $."
+      "content": "A mutational heritability above this value would lead to significantly more divergence than observed. There is one minor bookkeeping detail with both Equations 12.21a and 12.21b. The careful reader might recall Equation 12.8c, where we showed that $ V_B = d^2/2 $. So why did we assume that $ \\Delta \\simeq d_*/t $ in these two equations? Recalling that $ \\sigma_e^2 = (1 - h^2)\\sigma_z^2 $, we have $$ \\Delta=\\frac{V_{B}}{t\\sigma_{e}^{2}}=\\frac{d^{2}}{2t(1-h^{2})\\sigma_{z}^{2}}=\\frac{1}{2(1-h^{2})}\\frac{d_{*}^{2}}{t}\\simeq\\frac{d_{*}^{2}}{t} $$ with the last step following when $ h^2 \\simeq 1/2 $.",
+      "source_page": 435,
+      "source_pages": [
+        435
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p020:b21",
+        "Evolution_chapter12:p020:b22",
+        "Evolution_chapter12:p020:b24"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1275.0,
+          1058.0,
+          1388.0
+        ],
+        [
+          475.0,
+          1384.0,
+          871.0,
+          1435.0
+        ],
+        [
+          289.0,
+          1444.0,
+          662.0,
+          1470.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b59eb68bbe2debc309f415ca101b86eca88357310e1c7b1598572d78ac619e2b"
     },
     {
       "type": "discussion",
-      "content": "One important caveat for $ \\sigma_m^2 $-based tests of stabilizing selection is that estimates of $ h_m^2 $ are obtained using very small effective population sizes, and hence most mutations are likely effectively neutral in these settings (Chapter 7). Because even a completely neutral trait may have underlying loci with deleterious pleiotropic fitness effects, the evolutionarily relevant fraction of $ h_m^2 $ may be far less than that suggested from laboratory experiments. Hence, using laboratory estimates for the polygenic mutation rate may generate a considerable number of false positives for stabilizing selection (the mutation rate is too large relative to the small amount of divergence), so this test should be used with considerable caution."
+      "content": "One important caveat for $ \\sigma_m^2 $-based tests of stabilizing selection is that estimates of $ h_m^2 $ are obtained using very small effective population sizes, and hence most mutations are likely effectively neutral in these settings (Chapter 7). Because even a completely neutral trait may have underlying loci with deleterious pleiotropic fitness effects, the evolutionarily relevant fraction of $ h_m^2 $ may be far less than that suggested from laboratory experiments. Hence, using laboratory estimates for the polygenic mutation rate may generate a considerable number of false positives for stabilizing selection (the mutation rate is too large relative to the small amount of divergence), so this test should be used with considerable caution.",
+      "source_page": 436,
+      "source_pages": [
+        436
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p021:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          206.0,
+          905.0,
+          393.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2b618cf6b2c801dcc917586059b73a9a7314eaa3854d17a5a35d953749106bf7"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:12.4]]"
+      "content": "[[SEE_EXAMPLE:12.4]]",
+      "source_page": 436,
+      "source_pages": [
+        436
+      ],
+      "source_block_ids": [
+        "Evolution_chapter12:p021:b3",
+        "Evolution_chapter12:p021:b4",
+        "Evolution_chapter12:p021:b5",
+        "Evolution_chapter12:p021:b6"
+      ],
+      "source_bboxes": [
+        [
+          155.0,
+          447.0,
+          881.0,
+          534.0
+        ],
+        [
+          335.0,
+          538.0,
+          700.0,
+          586.0
+        ],
+        [
+          155.0,
+          590.0,
+          879.0,
+          633.0
+        ],
+        [
+          155.0,
+          635.0,
+          880.0,
+          783.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "da0e248371cc0f8033402d1950797cf22a814bc5bfece308c44213646da8a56a"
     }
   ]
 }

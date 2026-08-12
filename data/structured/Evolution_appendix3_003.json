@@ -21,15 +21,158 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Consider any distribution whose probability density function, $ p(x) $, has the same support as some target density, $ q(x) $ (i.e., is nonzero over the same range of x values). Then, $$ \\int f(x)q(x)dx=\\int f(x)\\left(\\frac{q(x)}{p(x)}\\right)p(x)dx=E_{p(x)}\\left[f(x)\\left(\\frac{q(x)}{p(x)}\\right)\\right] $$"
+      "content": "Consider any distribution whose probability density function, $ p(x) $, has the same support as some target density, $ q(x) $ (i.e., is nonzero over the same range of x values). Then, $$ \\int f(x)q(x)dx=\\int f(x)\\left(\\frac{q(x)}{p(x)}\\right)p(x)dx=E_{p(x)}\\left[f(x)\\left(\\frac{q(x)}{p(x)}\\right)\\right] $$",
+      "source_page": 1210,
+      "source_pages": [
+        1210
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p003:b14",
+        "Evolution_appendix3:p003:b15",
+        "Evolution_appendix3:p003:b16"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          802.0,
+          332.0,
+          826.0
+        ],
+        [
+          132.0,
+          832.0,
+          903.0,
+          880.0
+        ],
+        [
+          210.0,
+          894.0,
+          761.0,
+          948.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2442d172a22893ab5f2c5c207b420801183d8fbd7fe1e7cc3117d0b0d5cdbe42"
     },
     {
       "type": "discussion",
-      "content": "This forms the basis for the method of importance sampling, with $$ \\int f(x)q(x)dx\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(x_{i})\\left(\\frac{q(x_{i})}{p(x_{i})}\\right) $$ where again the $ x_i $ values are drawn from the distribution given by $ p(x) $. For example, if we are interested in a marginal density as a function of $ y $, $ J(y) = \\int f(y | x) q(x) dx $, we approximate this by $$ J(y)\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(y\\mid x_{i})\\left(\\frac{q(x_{i})}{p(x_{i})}\\right) $$ where $ x_{i} $ are drawn from the approximating density p."
+      "content": "This forms the basis for the method of importance sampling, with $$ \\int f(x)q(x)dx\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(x_{i})\\left(\\frac{q(x_{i})}{p(x_{i})}\\right) $$ where again the $ x_i $ values are drawn from the distribution given by $ p(x) $. For example, if we are interested in a marginal density as a function of $ y $, $ J(y) = \\int f(y | x) q(x) dx $, we approximate this by $$ J(y)\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(y\\mid x_{i})\\left(\\frac{q(x_{i})}{p(x_{i})}\\right) $$ where $ x_{i} $ are drawn from the approximating density p.",
+      "source_page": 1210,
+      "source_pages": [
+        1210
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p003:b18",
+        "Evolution_appendix3:p003:b19",
+        "Evolution_appendix3:p003:b21",
+        "Evolution_appendix3:p003:b22",
+        "Evolution_appendix3:p003:b24"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          962.0,
+          703.0,
+          986.0
+        ],
+        [
+          354.0,
+          1004.0,
+          680.0,
+          1062.0
+        ],
+        [
+          132.0,
+          1078.0,
+          904.0,
+          1151.0
+        ],
+        [
+          384.0,
+          1150.0,
+          650.0,
+          1206.0
+        ],
+        [
+          132.0,
+          1217.0,
+          600.0,
+          1239.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "fd3b80dd115c8c788eff276ac6b2fead67d2f34095fa2dda1c994c19189c6fd7"
     },
     {
       "type": "discussion",
-      "content": "This method is so named in that a judicious choice of $ p(x) $ ensures that values for which $ f(x) $ is large (important) are appropriately sampled, which can result in a smaller Monte Carlo variance, and hence a more accurate estimate of the integral. Further, it can be faster to carry out in cases where p is more straightforward to sample from than q. Ideally, we would like $ p(x) $ to be large when $ f(x)q(x) $ is large, namely, $ p(x) \\propto f(x)q(x) $, although assessing when $ q(x) $ is large may be problematic. One issue that can arise is when $ q(x) $ denotes a posterior distribution whose integration constant is unknown, and hence $ q(x) $, as presented, will not be a formal probability distribution if $ \\int q(x) \\neq 1 $. If $ C^{-1} = \\int q(x) $, then $ Cq(x) $ is formally a pdf. Fortunately, a simple trick allows us to use importance sampling to obtain $C$. Since $C \\int q(x) dx = 1$, then $$ C^{-1}=\\int q(x)d x\\simeq\\frac{1}{n}\\sum_{i=1}^{n}w_{i}\\quad\\mathrm{w h e r e}\\quad w_{i}=\\frac{q(x_{i})}{p(x_{i})} $$ with the $ x_{i} $ drawn from $ p(x) $. Hence $$ C\\cdot\\int f(x)q(x)dx\\simeq\\widehat{I}=\\sum_{i=1}^{n}w_{i}f(x_{i})\\bigg/\\sum_{i=1}^{n}w_{i} $$ which has an associated Monte Carlo variance of $$ \\mathrm{Var}\\left(\\widehat{I}\\right)=\\sum_{i=1}^{n}w_{i}\\left[f(x_{i})-\\widehat{I}\\right]^{2}\\bigg/\\sum_{i=1}^{n}w_{i} $$"
+      "content": "This method is so named in that a judicious choice of $ p(x) $ ensures that values for which $ f(x) $ is large (important) are appropriately sampled, which can result in a smaller Monte Carlo variance, and hence a more accurate estimate of the integral. Further, it can be faster to carry out in cases where p is more straightforward to sample from than q. Ideally, we would like $ p(x) $ to be large when $ f(x)q(x) $ is large, namely, $ p(x) \\propto f(x)q(x) $, although assessing when $ q(x) $ is large may be problematic. One issue that can arise is when $ q(x) $ denotes a posterior distribution whose integration constant is unknown, and hence $ q(x) $, as presented, will not be a formal probability distribution if $ \\int q(x) \\neq 1 $. If $ C^{-1} = \\int q(x) $, then $ Cq(x) $ is formally a pdf. Fortunately, a simple trick allows us to use importance sampling to obtain $C$. Since $C \\int q(x) dx = 1$, then $$ C^{-1}=\\int q(x)d x\\simeq\\frac{1}{n}\\sum_{i=1}^{n}w_{i}\\quad\\mathrm{w h e r e}\\quad w_{i}=\\frac{q(x_{i})}{p(x_{i})} $$ with the $ x_{i} $ drawn from $ p(x) $. Hence $$ C\\cdot\\int f(x)q(x)dx\\simeq\\widehat{I}=\\sum_{i=1}^{n}w_{i}f(x_{i})\\bigg/\\sum_{i=1}^{n}w_{i} $$ which has an associated Monte Carlo variance of $$ \\mathrm{Var}\\left(\\widehat{I}\\right)=\\sum_{i=1}^{n}w_{i}\\left[f(x_{i})-\\widehat{I}\\right]^{2}\\bigg/\\sum_{i=1}^{n}w_{i} $$",
+      "source_page": 1210,
+      "source_pages": [
+        1210,
+        1211
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p003:b25",
+        "Evolution_appendix3:p003:b26",
+        "Evolution_appendix3:p004:b2",
+        "Evolution_appendix3:p004:b3",
+        "Evolution_appendix3:p004:b5",
+        "Evolution_appendix3:p004:b6",
+        "Evolution_appendix3:p004:b8",
+        "Evolution_appendix3:p004:b9"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1239.0,
+          904.0,
+          1377.0
+        ],
+        [
+          132.0,
+          1378.0,
+          904.0,
+          1448.0
+        ],
+        [
+          287.0,
+          207.0,
+          1053.0,
+          232.0
+        ],
+        [
+          455.0,
+          251.0,
+          890.0,
+          307.0
+        ],
+        [
+          288.0,
+          328.0,
+          601.0,
+          352.0
+        ],
+        [
+          479.0,
+          370.0,
+          867.0,
+          431.0
+        ],
+        [
+          289.0,
+          447.0,
+          713.0,
+          471.0
+        ],
+        [
+          502.0,
+          486.0,
+          843.0,
+          546.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "30f03386c2d0b2367ba9cd8ff6142abdd4fd02b29a7fafc71a5ff2fa7d103fc6"
     }
   ]
 }

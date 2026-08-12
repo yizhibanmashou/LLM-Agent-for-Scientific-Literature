@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import difflib
 import json
+import logging
 import re
 import shutil
 import sys
@@ -12,13 +13,13 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
-
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from textbook_exporter import export_textbooks
 
+logger = logging.getLogger(__name__)
 
 CHUNK_FILE_RE = re.compile(r"^((?:chapter|appendix)\d+)_(\d+)\.json$", re.IGNORECASE)
 FIGURE_REF_RE = re.compile(r"\bFigure(?:s)?\s+(?P<id>(?:A\d+|\d+)\.\d+[a-z]?)\b", re.IGNORECASE)
@@ -98,7 +99,8 @@ def repair_copied_formula_library_metadata(patch_dir: Path, records: list[dict[s
             continue
         try:
             chunk = load_json(chunk_path)
-        except Exception:
+        except Exception as exc:
+            logger.warning("Skipping unreadable chunk %s: %s", chunk_path, exc)
             continue
         metadata = chunk.get("metadata") if isinstance(chunk.get("metadata"), dict) else {}
         heading = str(metadata.get("display_heading") or metadata.get("section_level_2") or "").strip()

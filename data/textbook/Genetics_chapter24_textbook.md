@@ -200,20 +200,7 @@ High values for these correlations suggest a high degree of overlap in the sets 
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter24:1` · source: `Genetics_chapter24_005.json` · blocks 23–27
->
-> Example 1. In one of the few attempts to evaluate the contribution of sex-linked loci and sex-modified gene expression to patterns of phenotypic variation, Cowley et al. (1986) and Cowley and Atchley (1988) performed a nested sib analysis on various morphological traits in Drosophila melanogaster. The experiment was quite large, involving analyses on 1482 flies of each sex, sampled from 988 full-sib families and 494 paternal half-sib families. By scoring phenotypes in both male and female progeny, six estimates of covariance between relatives were obtained — full sibs and paternal half sibs, within each sex and between the sexes.
-> 
-> Under the assumptions that the autosomal additive genetic variance and the variance due to common environment was the same in both sexes, and that there was no significant dominance genetic variance, the causal relationships outlined in Table 24.1 were used to obtain estimates of $ \sigma^{2}(A) $, $ \sigma^{2}(A'_{M}) $, $ \sigma^{2}(A'_{F}) $, $ \sigma(A_{M}, A_{F}) $, and $ \sigma(A'_{M}, A'_{F}) $.
-> 
-> The results in the following table are averages for groups of adult characters derived from different imaginal disks (the embryonic precursors of adult tissues). The heritabilities are defined as $ [\mathrm{Var}(A) + \mathrm{Var}(A_x')] / \mathrm{Var}(z_x) $, where $ \mathrm{Var}(A_x') $ and $ \mathrm{Var}(z_x) $ are, respectively, the sex-linked additive genetic variance and the total phenotypic variance in the xth sex. The genetic correlations across the sexes include both the autosomal and sex-linked components of additive genetic covariance and variance, i.e., they are estimates of
-> 
-> $$
-> \rho_{F M}(A+A^{\prime})=\frac{\sigma(A_{F},A_{M})+\sigma(A_{F}^{\prime},A_{M}^{\prime})}{\sqrt{[\sigma^{2}(A)+\sigma^{2}(A_{F}^{\prime})][\sigma^{2}(A)+\sigma^{2}(A_{M}^{\prime})]}}
-> $$
-> 
-> 
-> <table><tr><td></td><td colspan="2">Heritability</td><td colspan="2">$ \text{Var}(A'_{x})/\text{Var}(z_{x}) $</td><td rowspan="2">$ r_{FM}(A+A') $</td></tr><tr><td>Disc</td><td>Males</td><td>Females</td><td>Males</td><td>Females</td></tr><tr><td>Labial</td><td>0.38</td><td>0.36</td><td>0.12</td><td>0.05</td><td>0.67</td></tr><tr><td>Clypeo-labral</td><td>0.66</td><td>0.65</td><td>0.20</td><td>0.18</td><td>0.84</td></tr><tr><td>Eye/antenna</td><td>0.43</td><td>0.44</td><td>0.07</td><td>0.08</td><td>0.91</td></tr><tr><td>Wing</td><td>0.54</td><td>0.44</td><td>0.08</td><td>0.00</td><td>0.76</td></tr><tr><td>Mesothoracic leg</td><td>0.44</td><td>0.42</td><td>0.12</td><td>0.07</td><td>0.86</td></tr></table>
+> **[UNRESOLVED EXAMPLE: Genetics_chapter24:1]**
 
 
 The estimated heritabilities in males average only a few percent greater than those in females. Averaged over all characters, sex-linked loci account for about 12% of the phenotypic variance among males and 8% among females. The total additive genetic correlations across the sexes are quite high, suggesting that an average of approximately 81% of the additive variance in the two sexes is caused by shared genes.
@@ -221,15 +208,15 @@ The estimated heritabilities in males average only a few percent greater than th
 > **Table 24.1** · `24.1` · page 733 · source: `Genetics_chapter24_005`
 > Table 24.1 Coefficients needed for the expressions describing the expected phenotypic covariance between relatives in a model that includes sex-linkage and sex-dependent gene expression.
 >
-> Male-male relationships | 2 $ \Theta_{xy} $ | $ \Delta_{xy} $ | $ \phi_{xy} $ | 
+> Male-male relationships | 2 $ \Theta_{xy} $ | $ \Delta_{xy} $ | $ \phi_{xy} $ |
 > --- | --- | --- | --- | ---
-> Father-son | 1/2 | 0 | 1/4 | 
-> Full brothers | 1/2 | 1/4 | 1/2 | 
-> Paternal half brothers | 1/4 | 0 | 0 | 
-> Maternal half brothers | 1/4 | 0 | 1/2 | 
-> Paternal grandfather-grandson | 1/4 | 0 | 0 | 
-> Maternal grandfather-grandson | 1/4 | 0 | 1/2 | 
-> Monozygotic twins | 1 | 1 | 1 | 
+> Father-son | 1/2 | 0 | 1/4 |
+> Full brothers | 1/2 | 1/4 | 1/2 |
+> Paternal half brothers | 1/4 | 0 | 0 |
+> Maternal half brothers | 1/4 | 0 | 1/2 |
+> Paternal grandfather-grandson | 1/4 | 0 | 0 |
+> Maternal grandfather-grandson | 1/4 | 0 | 1/2 |
+> Monozygotic twins | 1 | 1 | 1 |
 > Female-female relationships | 2 $ \Theta_{xy} $ | $ \Delta_{xy} $ | 2 $ \Theta'_{xy} $ | $ \Delta'_{xy} $
 > Mother-daughter | 1/2 | 0 | 1/2 | 0
 > Full sisters | 1/2 | 1/4 | 3/4 | 1/2
@@ -238,15 +225,15 @@ The estimated heritabilities in males average only a few percent greater than th
 > Paternal grandmother-granddaughter | 1/4 | 0 | 1/2 | 0
 > Maternal grandmother-granddaughter | 1/4 | 0 | 1/4 | 0
 > Monozygotic twins | 1 | 1 | 1 | 1
-> Male-female relationships | 2 $ \Theta_{xy} $ | $ \Delta_{xy} $ | $ \gamma_{xy} $ | 
-> Father-daughter | 1/2 | 0 | 1 | 
-> Mother-son | 1/2 | 0 | 1 | 
-> Full brother and sister | 1/2 | 1/4 | 1/2 | 
-> Paternal half brother and sister | 1/4 | 0 | 0 | 
-> Maternal half brother and sister | 1/4 | 0 | 1/2 | 
-> Paternal grandfather-granddaughter | 1/4 | 0 | 0 | 
-> Maternal grandfather-granddaughter | 1/4 | 0 | 1/2 | 
-> Paternal grandmother-grandson | 1/4 | 0 | 0 | 
+> Male-female relationships | 2 $ \Theta_{xy} $ | $ \Delta_{xy} $ | $ \gamma_{xy} $ |
+> Father-daughter | 1/2 | 0 | 1 |
+> Mother-son | 1/2 | 0 | 1 |
+> Full brother and sister | 1/2 | 1/4 | 1/2 |
+> Paternal half brother and sister | 1/4 | 0 | 0 |
+> Maternal half brother and sister | 1/4 | 0 | 1/2 |
+> Paternal grandfather-granddaughter | 1/4 | 0 | 0 |
+> Maternal grandfather-granddaughter | 1/4 | 0 | 1/2 |
+> Paternal grandmother-grandson | 1/4 | 0 | 0 |
 > Maternal grandmother-grandson | 1/4 | 0 | 1/2 |
 
 ---
@@ -267,11 +254,7 @@ all three of the components on the right having been defined in the previous sec
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter24:2` · source: `Genetics_chapter24_006.json` · blocks 4–5
->
-> Example 2. Under the assumptions of no dominance or epistasis and no contribution from sex-linked loci, Eisen and Legates (1966) estimated the components of Equation 24.9 by performing a nested sib analysis on a laboratory strain of random-bred mice. As in the preceding example, the design was quite large, involving approximately 100 sires, 200 dams, and 800 male and 800 female offspring. As can be seen in the second and third columns of the following table, significant sexual dimorphism exists for body weight in the mouse, and this becomes more pronounced as the animals mature. Significant additive genetic variation exists in both of the sexes, but the additive effects of the genes in the two sexes are correlated nearly perfectly. Consequently, the estimated additive genetic variance for sexual dimorphism, $ V(A_{M-F}) $, is not significantly different from zero, although it approaches significance at 8 weeks. Similar conclusions were reached by Hanrahan and Eisen (1973) in a later, even larger study with the same strain.
-> 
-> <table><tr><td></td><td colspan="2">Mean Weight (g)</td><td rowspan="2">V(A_{M})</td><td rowspan="2">V(A_{F})</td><td rowspan="2">C(A_{F}, A_{M})</td><td rowspan="2">r_{FM}(A)</td><td rowspan="2">V(A_{M-F})</td></tr><tr><td>Age</td><td>Male</td><td>Female</td></tr><tr><td>3</td><td>11.4 (0.1)</td><td>11.1 (0.1)</td><td>0.04 (1.1)</td><td>0.02 (0.9)</td><td>0.02 (0.9)</td><td>0.64 (0.4)</td><td>0.02 (1.0)</td></tr><tr><td>6</td><td>30.0 (0.1)</td><td>25.4 (0.1)</td><td>4.52 (2.0)</td><td>1.40 (0.9)</td><td>2.27 (1.0)</td><td>0.90 (0.1)</td><td>1.38 (1.0)</td></tr><tr><td>8</td><td>34.0 (0.1)</td><td>27.8 (0.1)</td><td>5.76 (2.3)</td><td>1.39 (1.0)</td><td>2.25 (1.0)</td><td>0.80 (0.1)</td><td>2.65 (1.4)</td></tr></table>
+> **[UNRESOLVED EXAMPLE: Genetics_chapter24:2]**
 
 
 Numbers in parentheses are standard errors of the estimates, ages are in weeks, and V and C denote Var and Cov, respectively.
@@ -282,16 +265,7 @@ Some exceptions to this pattern of $ r_{FM}(A) = 1 $ have emerged. For example, 
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter24:3` · source: `Genetics_chapter24_006.json` · blocks 9–11
->
-> Example 3. Simmons and Ward (1991) estimated the four possible parent-offspring regressions for hind tibia length (a measure of body size) in a population of dung flies (Scathophaga stercoraria) raised in a common laboratory environment. Prior to analysis, male and female data were transformed to have equal variances. The regressions of sons on fathers ( $ b_{sf} = 0.24 $) and daughters on mothers ( $ b_{dm} = 0.21 $) were much larger than those for sons on mothers ( $ b_{sm} = 0.11 $) and daughters on fathers ( $ b_{df} = 0.05 $). Assuming the resemblance between relatives is due entirely to autosomal additive gene effects, the expected value of the regressions across the sexes are $ \sigma(A_F, A_M)/2\sigma_z^2 $, whereas the expectations for the same-sex regressions are $ E(b_{sf}) = \sigma^2(A_M)/2\sigma_z^2 $ and $ E(b_{dm}) = \sigma^2(A_F)/2\sigma_z^2 $. Therefore, an estimate of the genetic correlation across the sexes is
-> 
-> $$
-> r_{FM}(A)=\frac{b_{sm}+b_{df}}{2\sqrt{b_{sf}\cdot b_{dm}}}=0.36
-> $$
-> 
-> 
-> The fact that $ r_{FM}(A) $ is much less than one implies the existence of substantial genetic variation for sexual dimorphism in body size in this species. The character studied did exhibit sexual dimorphism, with females being $ \sim 80\% $ of the size of males.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter24:3]**
 
 
 ---

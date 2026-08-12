@@ -1,7 +1,8 @@
 
 import unittest
+
 from paper2latex.converters.structure_parser import StructureParser
-from paper2latex.core.models import BlockType
+
 
 class TestStructureParser(unittest.TestCase):
     def setUp(self):

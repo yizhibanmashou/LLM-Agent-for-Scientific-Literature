@@ -111,57 +111,7 @@ where $N$ is the number of chromosomes in a haploid set, $L_i$ is the genetic ma
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter9:1` · source: `Genetics_chapter9_002.json` · blocks 29–44
->
-> Example 1. All of the composite effects described above are defined in a least-squares sense, and the nice symmetry whereby all effects have the same absolute value but differ in sign is a consequence of all contrasting pairs of alleles having frequency 0.5 in the $ F_{2} $ generation. We now provide a formal derivation of the additive × additive composite effects in the context of a reference population that is both in Hardy-Weinberg and gametic phase equilibrium. We denote the four gamete types as $ C_{11} $, $ C_{12} $, $ C_{21} $, and $ C_{22} $, where the subscripts refer to the parental sources of alleles at the first and second locus. All four gamete types have frequencies equal to 0.25. Let the additive × additive effects associated with these gametes be $ \alpha_{11} $, $ \alpha_{12} $, $ \alpha_{21} $, and $ \alpha_{22} $. The effect $ \alpha_{ij} $ is defined to be the average residual effect associated with a gamete containing a $ P_{i} $-derived allele at the first locus and a $ P_{j} $-derived allele at the second locus, after the additive effects of the two genes have been accounted for (see Equation 5.4).
-> 
-> Under a least-squares framework, the mean residual error is defined to be zero (Chapter 3), which implies
-> 
-> $$
-> \alpha_{11}+\alpha_{12}+\alpha_{21}+\alpha_{22}=0
-> $$
-> 
-> 
-> Furthermore, the mean squared error is minimized. Noting that the previous expression implies that $ \alpha_{22} = -\alpha_{11} - \alpha_{12} - \alpha_{21} $, the function to be minimized is
-> 
-> $$
-> M=\alpha_{11}^{2}+\alpha_{12}^{2}+\alpha_{21}^{2}+(-\alpha_{11}-\alpha_{12}-\alpha_{21})^{2}
-> $$
-> 
-> 
-> Taking the partial derivative with respect to $ \alpha_{11} $ and setting it equal to zero, we obtain
-> 
-> $$
-> 2\alpha_{11}+\alpha_{12}+\alpha_{21}=0
-> $$
-> 
-> 
-> Subtracting Equation 1a from this expression, we find that the epistatic effects associated with each of the parental chromosome types are equal, i.e., $ \alpha_{11} = \alpha_{22} $. By similar means, it can be shown that $ \alpha_{12} = \alpha_{21} $, which when applied to Equation 1a implies that
-> 
-> $$
-> \alpha_{11}=\alpha_{22}=-\alpha_{12}=-\alpha_{21}
-> $$
-> 
-> 
-> Thus, the additive × additive effects associated with both recombinant chromosome types are equal and opposite in sign to those of the parental chromosomes. Since, in a diploid, there are four combinations of genes at two loci (two within and two between the uniting gametes), we define the effects as
-> 
-> $$
-> \begin{aligned}\alpha_{11}&=\alpha_{22}=+\alpha_{2}^{c}/4\\\alpha_{12}&=\alpha_{21}=-\alpha_{2}^{c}/4\end{aligned}
-> $$
-> 
-> 
-> In both the $ P_1 $ and $ P_2 $ populations, all additive $ \times $ additive interactions within and between chromosomes are of parental type ( $ \alpha_{ii} $), and the composite effect of such interactions is $ 4(\alpha_2^c/4) = \alpha_2^c $. In the $ F_1 $ generation, the two interactions within chromosomes are of parental type, but the pairs of nonalleles between chromosomes are of different parental type, so the composite effect is $ 2(\alpha_2^c/4) + 2(-\alpha_2^c/4) = 0 $.
-> 
-> Now consider the situation in the $F_2$ generation. Under free recombination, all four gametes are equally frequent, and with random mating, the average additive × additive epistatic effect within and between uniting gametes is equal to zero, as noted above. Suppose, however, that the two loci are linked, so that a fraction $c$ of gametes are recombinant, and a fraction $(1-c)$ are nonrecombinant. The gamete frequencies are then $p(C_{12}) = p(C_{21}) = c/2$, and $p(C_{11}) = p(C_{22}) = (1-c)/2$. Assuming random mating, the paternal source of an individual's allele at one locus is independent of the maternal source of an allele at a second locus. Thus, the average composite effects associated with additive × additive interactions between uniting gametes is equal to zero. However, because the parental sources of genes within gametes will not have been completely randomized, the composite additive × additive effect within gametes is not zero, but
-> 
-> $$
-> 2[c(-\alpha_{2}^{c}/4)+(1-c)(\alpha_{2}^{c}/4)]=(1-2c)\alpha_{2}^{c}/2
-> $$
-> 
-> 
-> giving the term in Equation 9.2a.
-> 
-> These results can be extended to the backcross generations. Consider, for example, the situation when $ F_1 $ individuals are crossed to members of parental line $ P_1 $, creating the $ B_1 $ backcross generation. The $ F_1 $ parent can contribute each of the four possible gametes, while the $ P_1 $ parent contributes only $ C_{11} $ gametes. With probability $ (1 - c)/2 $, the offspring genotype is $ C_{11}/C_{11} $, and each of the four possible two-locus interactions involves two $ P_1 $ alleles; each such interaction contributes $ \alpha_2^c/4 $, giving $ (1 - c)\alpha_2^c/2 $. Likewise, with probability $ c/2 $ the genotype is $ C_{12}/C_{11} $. Here, there are two $ P_1/P_1 $ interactions $ (2\alpha_2^c/4) $ and two $ P_1/P_2 $ interactions $ (-2\alpha_2^c/4) $, yielding a total contribution for this genotype of $ (c/2)(2\alpha_2^c/4 - 2\alpha_2^c/4) = 0 $. In a similar fashion, expectations for the other two genotypes are found to be equal to zero, giving the total contribution in the $ B_1 $ backcross as $ (1 - c)\alpha_2^c/2 $.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter9:1]**
 
 
 > **Table 9.1** · `9.1` · page 225 · source: `Genetics_chapter9_002`
@@ -373,89 +323,7 @@ If the additive-dominance model is rejected on the basis of an overly large valu
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter9:2` · source: `Genetics_chapter9_004.json` · blocks 28–53
->
-> Example 2. We now use the joint-scaling test to study the genetic basis of human skin color. The sample consists primarily of residents of Liverpool, England (Harrison and Owen 1964). Pigmentation was measured as the reflectance of the medial aspect of the right upper arm at 545 mμ. The P₁ consists of individuals of West African origin and the P₂ of individuals of European descent.
-> 
-> <table><tr><td></td><td>$ P_{1} $</td><td>$ P_{2} $</td><td>$ F_{1} $</td><td>$ F_{2} $</td><td>$ B_{1} $</td><td>$ B_{2} $</td></tr><tr><td>$ \bar{z}_{i} $</td><td>14.4</td><td>41.0</td><td>28.4</td><td>30.3</td><td>24.2</td><td>34.7</td></tr><tr><td>SE( $ \bar{z}_{i} $)</td><td>0.611</td><td>0.453</td><td>0.581</td><td>1.483</td><td>1.334</td><td>1.122</td></tr></table>
-> 
-> There is a threefold range of variation in the standard errors of the mean phenotypes, and this translates into a tenfold range in the sampling variances. Clearly, weighted least-squares regression is desirable in this situation.
-> 
-> We start by considering the simplest genetic model, assuming that all gene action is additive within and between loci. The coefficients for the effects $ \mu_{0} $ and $ \alpha^{c} $ are given by
-> 
-> $$
-> \mathbf{M}=\begin{pmatrix}{{{1}}}&{{{1}}} \\{{{1}}}&{{{-1}}} \\{{{1}}}&{{{0}}} \\{{{1}}}&{{{0}}} \\{{{1}}}&{{{0.5}}} \\{{{1}}}&{{{-0.5}}}\end{pmatrix}
-> $$
-> 
-> 
-> The sampling covariance matrix for the line means is diagonal with $ V_{ii} = [\mathrm{SE}(\bar{z}_i)]^2 $,
-> 
-> $$
-> \mathbf{V}=\begin{pmatrix}0.373&0.000&0.000&0.000&0.000&0.000\\0.000&0.205&0.000&0.000&0.000&0.000\\0.000&0.000&0.338&0.000&0.000&0.000\\0.000&0.000&0.000&2.199&0.000&0.000\\0.000&0.000&0.000&0.000&1.780&0.000\\0.000&0.000&0.000&0.000&0.000&1.259\end{pmatrix}
-> $$
-> 
-> 
-> These lead to
-> 
-> $$
-> \mathbf{M}^{T}\mathbf{V}^{-1}\mathbf{M}=\begin{pmatrix}12.325&-2.311\\ -2.311&7.891\end{pmatrix}
-> $$
-> 
-> 
-> which yields the sampling covariance matrix for the parameter estimates (Equation 9.8b),
-> 
-> $$
-> \mathbf{C}=(\mathbf{M}^{T}\mathbf{V}^{-1}\mathbf{M})^{-1}=\begin{pmatrix}0.086&0.025\\ 0.025&0.134\end{pmatrix}
-> $$
-> 
-> 
-> and from Equation 9.8a, the parameter estimates
-> 
-> $$
-> \widehat{\mathbf{a}}=\begin{pmatrix}\widehat{\mu}_{0}\\ \widehat{\alpha}^{c}\end{pmatrix}=\begin{pmatrix}28.17\\ -13.07\end{pmatrix}
-> $$
-> 
-> 
-> The standard errors of the parameter estimates are equal to the square roots of the diagonal elements of C,
-> 
-> $$
-> \begin{aligned}&\mathrm{SE}(\widehat{\mu}_{0})=(0.086)^{1/2}=0.29\\&\mathrm{SE}(\widehat{\alpha}^{c})=(0.134)^{1/2}=0.37\\ \end{aligned}
-> $$
-> 
-> 
-> The line means predicted by the model are obtained as $ \widehat{\mathbf{z}} = \mathbf{M}\widehat{\mathbf{a}} $, and the sampling variances and covariances of predicted values by Equation 9.9b,
-> 
-> $$
-> \mathbf{V a r}(\widehat{\mathbf{z}})=\mathbf{M}(\mathbf{M}^{T}\mathbf{V}^{-1}\mathbf{M})^{-1}\mathbf{M}^{T}
-> $$
-> 
-> 
-> The square roots of the diagonal elements of this latter matrix are the estimated standard errors of the predicted means. In all cases, the predicted values are very close to the observed means:
-> 
-> <table><tr><td></td><td>$ P_{1} $</td><td>$ P_{2} $</td><td>$ F_{1} $</td><td>$ F_{2} $</td><td>$ B_{1} $</td><td>$ B_{2} $</td></tr><tr><td>$ \widehat{z} $</td><td>15.2</td><td>41.2</td><td>28.2</td><td>28.2</td><td>21.6</td><td>34.7</td></tr><tr><td>$ \widetilde{z}-\widehat{z} $</td><td>-0.8</td><td>-0.2</td><td>0.2</td><td>2.1</td><td>2.6</td><td>0.0</td></tr><tr><td>SE( $ \widehat{z} $)</td><td>0.52</td><td>0.41</td><td>0.29</td><td>0.29</td><td>0.38</td><td>0.31</td></tr></table>
-> 
-> The test statistic, $ \chi_A^2 = 7.510 $, with four degrees of freedom, is not significant as $ \Pr(\chi_4^2 \geq 7.510) = 0.11 $. Thus, the fitted model with $ \widehat{\mu}_0 = 28.17 $ and $ \widehat{\alpha}^c = -13.07 $ appears to adequately explain the data. Reevaluation of the data with the additive-dominance model confirms this conclusion. In this case, the analysis proceeds with
-> 
-> $$
-> \mathbf{M}=\begin{pmatrix}{{{1}}}&{{{1}}}&{{{-1}}} \\{{{1}}}&{{{-1}}}&{{{-1}}} \\{{{1}}}&{{{0}}}&{{{1}}} \\{{{1}}}&{{{0}}}&{{{0}}} \\{{{1}}}&{{{0.5}}}&{{{0}}} \\{{{1}}}&{{{-0.5}}}&{{{0}}}\end{pmatrix}
-> $$
-> 
-> 
-> and
-> 
-> $$
-> \mathbf{a}=\begin{pmatrix}\mu_{0}\\ \alpha^{c}\\ \delta^{c}\end{pmatrix}
-> $$
-> 
-> 
-> yielding the parameter estimates (and associated standard errors):
-> 
-> $$
-> \widehat{\mu}_{0}=28.32\left(0.32\right),\quad\widehat{\alpha}^{c}=-13.14\left(0.37\right),\quad\widehat{\delta}^{c}=0.44\left(0.34\right)
-> $$
-> 
-> 
-> Notice that the estimates $ \widehat{\mu}_0 $ and $ \widehat{\alpha}^c $ are very close to those obtained under the purely additive model, and that $ \widehat{\delta}^c $ is only slightly greater than its standard error. The test statistic for this analysis is $ \chi_{AD}^2 = 5.879 $. The likelihood-ratio test statistic, $ \Lambda = \chi_A^2 - \chi_{AD}^2 = 1.631 $, provides a test of the hypothesis that dominance accounts for a significant proportion of the variance among line means. With one degree of freedom, $ \Lambda $ is not significant, as $ \Pr(\chi_1^2 \geq 1.631) = 0.20 $.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter9:2]**
 
 
 ---
@@ -504,28 +372,28 @@ A summary of results from some other line-cross studies is given in Table 9.5. I
 >
 > Character | $ \widehat{\mu}_{0} $ | $ \widehat{\alpha}_{1}^{c} $ | $ \widehat{\delta}_{1}^{c} $ | $ \widehat{\alpha}_{2}^{c} $ | $ \widehat{\alpha}_{1}^{c}\widehat{\delta}_{1}^{c} $ | $ \widehat{\delta}_{2}^{c} $ | Reference
 > --- | --- | --- | --- | --- | --- | --- | ---
-> Corn |  |  |  |  |  |  | 
+> Corn |  |  |  |  |  |  |
 > time to silking | 65.19 | 0.20 | -6.16 | -4.40 | 7.33 | 5.92 | Mohamed 1959
-> time to shed pollen | 62.88 | -1.57 | -4.36 | -1.94 | 4.74 | 3.69 | 
-> Lima beans |  |  |  |  |  |  | 
+> time to shed pollen | 62.88 | -1.57 | -4.36 | -1.94 | 4.74 | 3.69 |
+> Lima beans |  |  |  |  |  |  |
 > seed size | 0.57 | -0.25 | -0.16 | 0.04 | 0.30 | 0.19 | Ryder 1958
-> Tomatos |  |  |  |  |  |  | 
+> Tomatos |  |  |  |  |  |  |
 > $ \log_{10}(\text{fruit weight}) $ | 0.69 | -0.87 | 0.02 | 0.12 | -0.03 |  | Powers 1951
-> Pitcher-plant mosquito |  |  |  |  |  |  | 
-> $ \log_{10}(\text{critical photoperiod}) $ |  |  |  |  |  |  | 
+> Pitcher-plant mosquito |  |  |  |  |  |  |
+> $ \log_{10}(\text{critical photoperiod}) $ |  |  |  |  |  |  |
 >  | -1.84 | -4.45 | 0.40 |  | 1.79 | 4.18 | Hard et al. 1992
-> Drosophila melanogaster |  |  |  |  |  |  | 
+> Drosophila melanogaster |  |  |  |  |  |  |
 > $ \ln(\text{longevity}) $ | 1.79 | -0.06 | 0.01 | 0.03 |  |  | Luckinbill et al. 1988
-> Drosophila tripunctata |  |  |  |  |  |  | 
+> Drosophila tripunctata |  |  |  |  |  |  |
 > ovipos. site pref. | 0.31 | -0.12 | 0.05 | 0.18 |  |  | Jaenike 1987
-> D. heteroneura $ \times $ D. sylvestris |  |  |  |  |  |  | 
+> D. heteroneura $ \times $ D. sylvestris |  |  |  |  |  |  |
 > $ \ln(\text{head length}) $ | 3.00 | 0.09 |  |  |  |  | Templeton 1977
-> $ \ln(\text{head width}) $ | 3.96 | -0.01 |  |  |  |  | 
-> Astyanax (cave fish) |  |  |  |  |  |  | 
+> $ \ln(\text{head width}) $ | 3.96 | -0.01 |  |  |  |  |
+> Astyanax (cave fish) |  |  |  |  |  |  |
 > eye diameter | 4.72 | -2.43 | 1.62 | 1.10 | -1.57 | -1.24 | Wilkens 1971
-> Mice |  |  |  |  |  |  | 
+> Mice |  |  |  |  |  |  |
 > $ \log_{10}(\text{body weight}) $ | 1.39 | 0.18 | -0.01 | -0.07 | -0.01 | 0.01 | Chai 1956
-> Chickens |  |  |  |  |  |  | 
+> Chickens |  |  |  |  |  |  |
 > weight | 3.49 | -0.12 | -0.06 | -0.08 | 0.08 | 0.05 | Waters 1931
 >
 > Note: The results reported for each analysis describe the most parsimonious genetic model, and all recorded effects are statistically significant. The motivation for the use of logarithmic transformations in some cases is discussed in Chapter 11.
@@ -570,13 +438,7 @@ isolating the contributions of local adaptation and coadapted gene complexes to 
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter9:3` · source: `Genetics_chapter9_007.json` · blocks 13–15
->
-> Example 3. Moll et al. (1965) produced $ F_1 $ and $ F_2 $ generations from crosses between several lines of maize with varying degrees of genetic divergence "based on ancestral relationships and differences in adaptation." As illustrated in the following figure, when assayed in a common environment, all crosses exhibited heterosis for grain yield in the $ F_1 $ and $ F_2 $ generations, but this was most pronounced in crosses involving lines with intermediate degrees of divergence. Moreover, at the highest levels of divergence, the performance of the $ F_1 $ and $ F_2 $ lines converged (in the figure, the data from all crosses have been standardized so that $ \bar{z}(F_2) = 1 $).
-> 
-> ![Source illustration p242 b2](figures/examples/Genetics_p242_b2.png)
-> 
-> Can any insight into the mode of gene action be inferred from these results? Assuming that $ \bar{c} \simeq 0.5 $, as suggested by the results in Table 9.2, then $ \bar{z}(F_1) - \bar{z}(F_2) \simeq \delta_1^c + \delta_2^c $, the sum of the composite dominance and dominance $ \times $ dominance effects. In addition, $ \bar{z}(F_1) - 2\bar{z}(F_2) + \bar{z}(\bar{P}) \simeq \alpha_2^c + 2\delta_2^c $, which is the net loss of performance due to segregation and recombination of parental line gene combinations. As shown in the figure, application of these two formulae suggests that the net effects of dominance between parental lines have a positive influence on grain yield at all levels of divergence, but that the magnitude of this effect is maximized at an intermediate genetic distance. On the other hand, except at the lowest levels of divergence, the estimates of $ \alpha_2^c + 2\delta_2^c $ are negative and roughly constant, suggesting favorable epistatic effects between genes from different sources, contrary to the expectation if individual lines were harboring coadapted gene complexes.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter9:3]**
 
 
 ---
@@ -711,42 +573,7 @@ where the $ \widehat{v}_{j} $ are the final estimates of the $ \sigma_{j}^{2} $,
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter9:4` · source: `Genetics_chapter9_008.json` · blocks 34–46
->
-> Example 4. We now apply the joint-scaling test for variances to Harrison and Owen's (1964) data on human skin color. Recall from Example 2 that the analysis of means supports the idea that this character has an additive genetic basis. On the other hand, the phenotypic variances, recorded in the following table, appear to be rather inconsistent with the additive model. For example, the $ F_{1} $ variance is much higher than the average of the $ P_{1} $ and $ P_{2} $ variances, and even exceeds that of the $ F_{2} $. However, since the sampling variance of a variance is quite large (as can be seen in the third row of the following table), there is some question as to the significance of these differences.
-> 
-> <table><tr><td></td><td>$ P_{1} $</td><td>$ P_{2} $</td><td>$ F_{1} $</td><td>$ F_{2} $</td><td>$ B_{1} $</td><td>$ B_{2} $</td></tr><tr><td>$ v_{j} $</td><td>14.918</td><td>21.098</td><td>31.748</td><td>26.382</td><td>37.366</td><td>37.766</td></tr><tr><td>$ n_{j} $</td><td>40</td><td>103</td><td>94</td><td>12</td><td>21</td><td>30</td></tr><tr><td>$ 2v_{j}^{2}/(n_{j}+2) $</td><td>10.597</td><td>8.479</td><td>20.999</td><td>99.430</td><td>121.410</td><td>89.142</td></tr></table>
-> 
-> The coefficients for the variance components in the model, $ \sigma^{2}(P_{1}) $, $ \sigma^{2}(P_{2}) $ and $ \sigma_{S}^{2} $, are obtained from Equation 9.18,
-> 
-> $$
-> \mathbf{M}=\begin{pmatrix}{{{1}}}&{{{0}}}&{{{0}}} \\{{{0}}}&{{{1}}}&{{{0}}} \\{{{0.5}}}&{{{0.5}}}&{{{0}}} \\{{{0.5}}}&{{{0.5}}}&{{{1}}} \\{{{0.75}}}&{{{0.25}}}&{{{0.5}}} \\{{{0.25}}}&{{{0.75}}}&{{{0.5}}}\end{pmatrix}.
-> $$
-> 
-> 
-> Inserting the values from the table above, the initial sampling covariance matrix is
-> 
-> $$
-> \mathbf{V}=\begin{pmatrix}10.597&0.000&0.000&0.000&0.000&0.000\\0.000&8.479&0.000&0.000&0.000&0.000\\0.000&0.000&20.999&0.000&0.000&0.000\\0.000&0.000&0.000&99.430&0.000&0.000\\0.000&0.000&0.000&0.000&121.410&0.000\\0.000&0.000&0.000&0.000&0.000&89.142\end{pmatrix}
-> $$
-> 
-> 
-> Substituting into Equation 9.21, we obtain the initial set of least-squares parameter estimates,
-> 
-> $$
-> \widehat{\mathbf{a}}=(\mathbf{M}^{T}\mathbf{V}^{-1}\mathbf{M})^{-1}\mathbf{M}^{T}\mathbf{V}^{-1}\mathbf{v}=\begin{pmatrix}18.120\\ 23.681\\ 14.441\end{pmatrix}
-> $$
-> 
-> 
-> The following table shows how the parameter estimates change over the next several rounds of iterations,
-> 
-> <table><tr><td rowspan="2">Estimates</td><td colspan="6">Iteration</td><td rowspan="2">Final SE</td></tr><tr><td>2</td><td>3</td><td>5</td><td>10</td><td>15</td><td>20</td></tr><tr><td>$ \text{Var}(P_{1}) $</td><td>22.199</td><td>22.930</td><td>23.446</td><td>23.583</td><td>23.586</td><td>23.586</td><td>4.207</td></tr><tr><td>$ \text{Var}(P_{2}) $</td><td>25.994</td><td>25.505</td><td>25.185</td><td>25.103</td><td>25.102</td><td>25.102</td><td>3.166</td></tr><tr><td>$ \text{Var}(S) $</td><td>17.163</td><td>17.038</td><td>16.876</td><td>16.830</td><td>16.829</td><td>16.829</td><td>10.411</td></tr><tr><td>$ \chi^{2} $</td><td>14.135</td><td>10.432</td><td>10.175</td><td>10.102</td><td>10.101</td><td>10.101</td><td></td></tr></table>
-> 
-> The standard errors are the square roots of the diagonal elements of the final estimate of $ (\mathbf{M}^T\mathbf{V}^{-1}\mathbf{M})^{-1} $. Using the final set of parameter estimates, the predicted line variances $ (\widehat{v}_j) $, obtained from Equation 9.18, and their standard errors, obtained as the square roots of the diagonal elements of $ \mathbf{M}(\mathbf{M}^T\mathbf{V}^{-1}\mathbf{M})^{-1}\mathbf{M}^T $, are
-> 
-> <table><tr><td></td><td>$ P_{1} $</td><td>$ P_{2} $</td><td>$ F_{1} $</td><td>$ F_{2} $</td><td>$ B_{1} $</td><td>$ B_{2} $</td></tr><tr><td>$ \widehat{v}_{j} $</td><td>23.586</td><td>25.102</td><td>24.344</td><td>41.172</td><td>32.379</td><td>33.137</td></tr><tr><td>SE</td><td>4.207</td><td>3.166</td><td>2.306</td><td>9.845</td><td>5.042</td><td>5.187</td></tr></table>
-> 
-> The final $ \chi^{2} $ value (10.101) is rather large, but because of possible nonnormality of the data, its statistical interpretation is somewhat questionable. Since the difference between observed and expected line variances is less than two standard errors $ (2[\mathrm{SE}(v_{j})^{2} + \mathrm{SE}(\widehat{v}_{j})^{2}]^{1/2}) $ for all lines, there seems to be no strong justification for rejecting the additive model.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter9:4]**
 
 
 A graphical comparison of the observed and predicted means and variances of human skin color (Figure 9.2) serves to illustrate two important points. First, due to the large standard errors of variance estimates, scaling tests based on variances are much less powerful than those based on means. Thus, while the preceding methodology can be generalized to compute the dominance and epistatic components of the segregational variance (Mather and Jinks 1982), the statistical reliability of such analyses is very low, and we will not pursue it.
@@ -896,20 +723,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 5** · ref: `Genetics_chapter9:5` · source: `Genetics_chapter9_010.json` · blocks 37–41
->
-> Example 5. In previous examples involving human skin color, we found that $ \bar{z}(P_1) = 14.4 $ and $ \bar{z}(P_2) = 41.0 $. Squaring the standard errors of the means, $ \text{Var}[\bar{z}(P_1)] = 0.205 $ and $ \text{Var}[\bar{z}(P_2)] = 0.373 $. The estimated segregational variance (Example 3) is $ \text{Var}(S) = 17.264 $, and its sampling variance is obtained by squaring its standard error, $ \text{Var}[\text{Var}(S)] = 11.033^2 = 121.724 $. Substituting into Equation 9.24, we obtain $ \widehat{n}_e = 5.1 $. Substituting into Equation 9.25,
-> 
-> Var( $ \widehat{n}_e $) = 10.703, giving the standard error of $ \widehat{n}_e $ as $ 10.703^{1/2} \simeq 3.3 $. Thus, the data suggest the hypothesis that the majority of the genetic difference in skin color between the major races of man is a consequence of a very small number of segregating factors. It should be kept in mind, however, that because of the low degree of accuracy of the estimated segregational variance, $ \widehat{n}_e $ is a highly uncertain measure of the effective number of factors.
-> 
-> Supposing, for heuristic purposes, that the estimate $ \widehat{n}_{e} $ is accurate, what might the actual number of loci $ (n) $ contributing to the character be? From Table 9.2, we know that the mean recombination fraction for randomly distributed genes is extremely high in humans $ (\bar{c}=0.49) $. Substituting this and $ n_{e}=5 $ into Equation 9.27, we obtain
-> 
-> $$
-> n=\frac{4.9+4C_{\alpha}}{0.9}
-> $$
-> 
-> 
-> Assuming that all loci have equal effects $ (C_{\alpha}=0) $, which seems unlikely, then n=10. For $ C_{\alpha}=1 $, 10, and 100, n=10, 50, and 450. Thus, if the squared coefficient of variation of effects is much greater than one, the actual number of loci may greatly exceed the effective number of factors.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter9:5]**
 
 
 A survey of estimates of $ \widehat{n}_{e} $ is given in Table 9.6. Here it should be emphasized that each estimate only applies to the specific pair of parental lines and that substantial differences would be likely if other parental stocks were used. Furthermore, the data are adequately described by an additive model in only a few cases, so most of the estimates are definitely biased in the downward direction by nonadditive gene action. Despite these limitations, while several of the analyses imply that a dozen or more loci are responsible for the differentiation of characters between parental lines, a number of cases suggest the possibility that a single major factor is involved. The latter conclusion may, of course, be substantially in error due to the approximate and biased nature of the biometrical approach. Nevertheless, the Castle-Wright model serves as a flag for situations in which a leading-factor (major gene) hypothesis (Chapter 13) warrants consideration.
@@ -937,41 +751,7 @@ Zeng (1992) suggested an alternative approach to predicting the effects of leadi
 
 **[示例 Example]**
 
-> **Example 6** · ref: `Genetics_chapter9:6` · source: `Genetics_chapter9_011.json` · blocks 6–16
->
-> Example 6. Here we present an alternative analytical approach for estimating the number of leading factors and their effects. This approach assumes that something is known about the form of the distribution of allelic effects. Let $ p(\alpha) $ be the probability density function of the effects, $ \alpha_{i} $, and let $ F(\alpha) $ be the cumulative frequency distribution, the probability that the effect of a randomly drawn gene is less than $ \alpha $. By definition, $ dF(\alpha)/d\alpha = p(\alpha) $. Suppose now that n genes are randomly drawn from the distribution $ p(\alpha) $, and rank ordered in terms of increasing effect, such that $ \alpha_{1} $ is the smallest effect and $ \alpha_{n} $ is the largest effect (the leading factor). From the perspective of genetic analysis, one would like to know the expected effects of $ \alpha_{n} $, $ \alpha_{n-1} $, $ \alpha_{n-2} $, and so on. The theory of order statistics provides a potential solution.
-> 
-> Consider the $ r^{th} $ smallest value in the set of random draws of $ n $ genes. The probability that at least $ r $ draws in a sample do not exceed the value $ \alpha $ is
-> 
-> $$
-> F_{r}(\alpha)=\sum_{i=r}^{n}\binom{n}{i}[F(\alpha)]^{i}[1-F(\alpha)]^{n-i}
-> $$
-> 
-> 
-> which leads to the probability density function for the $ r^{th} $ order statistic,
-> 
-> $$
-> p_{r}(\alpha)=\frac{dF_{r}(\alpha)}{d\alpha}=\frac{n!}{(r-1)!(n-r)!}[F(\alpha)]^{r-1}[1-F(\alpha)]^{n-r}p(\alpha)
-> $$
-> 
-> 
-> Thus, the expected value of the $ r^{th} $ smallest factor is given by
-> 
-> $$
-> E(\alpha_{r})=\int_{-\infty}^{+\infty}\alpha p_{r}(\alpha)d\alpha
-> $$
-> 
-> 
-> which, for the leading factor, reduces to
-> 
-> $$
-> E(\alpha_{n})=n\int_{-\infty}^{+\infty}\alpha[F(\alpha)]^{n-1}p(\alpha)d\alpha
-> $$
-> 
-> 
-> An estimate of the proportional contribution of the leading factor to the line differentiation is $ 2E(\alpha_{n})/[\bar{z}(\mathrm{P}_{1}) - \bar{z}(\mathrm{P}_{2})] $.
-> 
-> These expressions only outline a general approach. Their actual implementation requires that one define the form of the probability density function $ p(\alpha) $ (for example, a normal or a gamma distribution), and then characterize the function in terms of its parameters (usually the mean and variance of effects). Once an estimate of the number of loci $ (n) $ has been acquired (for example, by the use of Equation 9.27), these parameters are specified. The mean effect is estimated by $ \bar{\alpha} = [\bar{z}(P_1) - \bar{z}(P_2)]/2n $, and the variance is defined by $ \bar{\alpha}^2 C_\alpha $.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter9:6]**
 
 
 > **Table 9.6** · `9.6` · page 255 · source: `Genetics_chapter9_011`
@@ -1004,11 +784,7 @@ A very similar strategy can be employed with doubled-haploid lines. Such lines, 
 
 **[示例 Example]**
 
-> **Example 7** · ref: `Genetics_chapter9:7` · source: `Genetics_chapter9_012.json` · blocks 6–7
->
-> Example 7. Croft and Simchen (1965) isolated dikaryotic mycelia from wild populations of the fungus Collybia velutipes and from these extracted asexually and sexually derived monokaryotic spores. (A dikaryotic mycelium is a filament comprised of fused cells of two different parental origins, each containing a haploid nucleus). The growth rates of germinating spores were then assayed on a laboratory medium. Barring mutations, the growth rate of each asexual propagule is expected to be representative of one of the parental lines, since these propagules contain a single, nonrecombinant nucleus. On the other hand, the sexually derived progeny will exhibit segregational variance. Frequency distributions are given below for both types of offspring for one particular isolate. The mean growth rates of the two parental types differ by $ \bar{z}(P_1) - \bar{z}(P_2) = 39.45 $ (mm/10 days), and the sampling variances of the two means are $ \mathrm{Var}[\bar{z}(P_1)] = 2.43 $ and $ \mathrm{Var}[\bar{z}(P_2)] = 0.53 $. The variance of growth rate among haploid replicates is 26.80, while the excess variance among sexual propagules is 277.80. Taking the latter quantity to be an estimate of the segregational variance, $ \mathrm{Var}(S) $, substitution into Equation 9.24 (multiplied by 2) yields $ \widehat{n}_e = 1.4 $. The standard error is approximately 0.5. These results are reasonably consistent with those obtained from four other isolates: $ 1 \pm 0.2 $, $ 5 \pm 0.8 $, $ 3 \pm 0.3 $, and $ 1 \pm 0.1 $. Thus, it seems likely that most of the growth rate differences among parental strains may be attributable to one to three loci.
-> 
-> ![Source illustration p259 b4](figures/examples/Genetics_p259_b4.png)
+> **[UNRESOLVED EXAMPLE: Genetics_chapter9:7]**
 
 
 > **Table 9.7** · `9.7` · page 258 · source: `Genetics_chapter9_012`
@@ -1071,15 +847,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 8** · ref: `Genetics_chapter9:8` · source: `Genetics_chapter9_014.json` · blocks 10–13
->
-> Example 8. Wehrhahn and Allard (1965) crossed two pure lines of wheat (Ramona and Baart 46) with very different heading dates (flowering times). Two successive backcrosses were made to Ramona, followed by three generations of selfing, to produce 69 inbred backcross lines. How many lines are expected to contain any specific Baart 46 gene?
-> 
-> Since $k = 2$, we have $p_k = (1/2)^3 = 1/8$, and since there are 69 total lines, $69/8 = 8.6$ of these are expected to carry a Baart 46 gene at a specified locus. From the properties of the binomial distribution, the standard error of the estimate is $ [69p_k(1 - p_k)]^{1/2} = 2.8$. The distribution of heading date in the derived lines shows three groups of deviants from the Ramona distribution: (1) a group of eight very late lines that appear to contain a factor with major effect, (2) a group of 14 lines with slightly late heading dates, and (3) a group of three lines with earlier heading dates. (The means and 95% confidence limits for the parental lines are given by the vertical and horizontal lines, and the three groups of deviants from the Ramona (recurrent) line are differentially shaded.)
-> 
-> ![Source illustration p262 b2](figures/examples/Genetics_p262_b2.png)
-> 
-> By other means, the authors showed rather convincingly that the group of 14 was heterogeneous for two factors. Thus, the difference in heading date between the two parental lines is caused by at least four effective factors, one of which operates in a direction opposite to the others. These four factors accounted for 96% of the line differentiation (80% was due to the leading factor), so if additional loci are involved, their effects must be very small. To see that the observations in the figure are consistent with Equation 9.31, let $ \widehat{p}(r \geq 1) = (8 + 14 + 3)/69 = 0.362 $. We then obtain $ \widehat{n}_{WA} = 3.4 $, which rounds up to 4.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter9:8]**
 
 
 > **Table 9.8** · `9.8` · page 261 · source: `Genetics_chapter9_014`

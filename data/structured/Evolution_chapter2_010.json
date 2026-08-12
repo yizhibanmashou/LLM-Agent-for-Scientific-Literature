@@ -21,35 +21,448 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "In the preceding pages, we were largely concerned with the dynamics of gene-frequency change owing to the effects of random genetic drift alone. Under this model, finite population size eventually results in the complete loss of genetic variation (and covariation) within populations, at which point all loci are fixed for ancestral alleles with probabilities equal to their initial frequencies. In reality, however, mutation will always introduce variation at a low rate, which not only offsets some of the loss resulting from drift, but also ensures that neutral loci will continue to diverge among isolated populations. If the time scale of the problem under consideration is short ($ t \\ll 2N $) and the initial level of within-population variation is high (relative to the mutational rate of production of new heterozygosity per generation), the contribution from mutation will be negligible, and the preceding expressions will be quite adequate. However, for longer-term evolutionary issues, such as the maintenance of variation in natural populations and interspecific divergence, mutation cannot be ignored."
+      "content": "In the preceding pages, we were largely concerned with the dynamics of gene-frequency change owing to the effects of random genetic drift alone. Under this model, finite population size eventually results in the complete loss of genetic variation (and covariation) within populations, at which point all loci are fixed for ancestral alleles with probabilities equal to their initial frequencies. In reality, however, mutation will always introduce variation at a low rate, which not only offsets some of the loss resulting from drift, but also ensures that neutral loci will continue to diverge among isolated populations. If the time scale of the problem under consideration is short ($ t \\ll 2N $) and the initial level of within-population variation is high (relative to the mutational rate of production of new heterozygosity per generation), the contribution from mutation will be negligible, and the preceding expressions will be quite adequate. However, for longer-term evolutionary issues, such as the maintenance of variation in natural populations and interspecific divergence, mutation cannot be ignored.",
+      "source_page": 44,
+      "source_pages": [
+        44,
+        45
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p022:b14",
+        "Evolution_chapter2:p022:b15",
+        "Evolution_chapter2:p023:b2"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          1260.0,
+          617.0,
+          1285.0
+        ],
+        [
+          286.0,
+          1307.0,
+          1060.0,
+          1472.0
+        ],
+        [
+          132.0,
+          207.0,
+          905.0,
+          344.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4a9b848423bb15c985fc24c9e590d27c0522fb7d63462c0c81233379753ab34f"
     },
     {
       "type": "discussion",
-      "content": "The incorporation of mutation into a neutral model of evolution is relatively straightforward. For example, suppose there are $ k $ possible alleles at a locus, each with a mutation rate $ u $ per generation (the $ k $-exchangeable alleles model). The dynamics of heterozygosity can then be obtained by recalling from above that the expected frequency of heterozygotes in generation $ t + 1 $ in the absence of mutation is $ [1 - (1/2N)]H_t = \\lambda_{1H_t} $, whereas the expected frequency of homozygotes is $ 1 - \\lambda_{1H_t} $. Following mutation, the heterozygous state will be retained if: (1) neither allele mutated, the probability of which is $ (1 - 2u) $, ignoring the very small probability of double mutations to the same state; or (2) one of the alleles mutated to a different state than the other, the probability of which is $ [2u(k - 2)/(k - 1)] $, assuming that all allelic types are equally mutationally exchangeable. On the other hand, homozygotes will be mutationally converted to heterozygotes at a rate of $ 2u $. Thus, the expected dynamics of heterozygosity can be expressed as $$ H_{t+1}=H_{t}\\lambda_{1}\\left((1-2u)+\\frac{2u(k-2)}{k-1}\\right)+2u(1-\\lambda_{1}H_{t}) $$"
+      "content": "The incorporation of mutation into a neutral model of evolution is relatively straightforward. For example, suppose there are $ k $ possible alleles at a locus, each with a mutation rate $ u $ per generation (the $ k $-exchangeable alleles model). The dynamics of heterozygosity can then be obtained by recalling from above that the expected frequency of heterozygotes in generation $ t + 1 $ in the absence of mutation is $ [1 - (1/2N)]H_t = \\lambda_{1H_t} $, whereas the expected frequency of homozygotes is $ 1 - \\lambda_{1H_t} $. Following mutation, the heterozygous state will be retained if: (1) neither allele mutated, the probability of which is $ (1 - 2u) $, ignoring the very small probability of double mutations to the same state; or (2) one of the alleles mutated to a different state than the other, the probability of which is $ [2u(k - 2)/(k - 1)] $, assuming that all allelic types are equally mutationally exchangeable. On the other hand, homozygotes will be mutationally converted to heterozygotes at a rate of $ 2u $. Thus, the expected dynamics of heterozygosity can be expressed as $$ H_{t+1}=H_{t}\\lambda_{1}\\left((1-2u)+\\frac{2u(k-2)}{k-1}\\right)+2u(1-\\lambda_{1}H_{t}) $$",
+      "source_page": 45,
+      "source_pages": [
+        45
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p023:b3",
+        "Evolution_chapter2:p023:b4"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          346.0,
+          904.0,
+          623.0
+        ],
+        [
+          288.0,
+          640.0,
+          749.0,
+          692.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c25bf5e3b8335cc7053d965790d3ae18fec5b60b030f6f40b14416686ee14dc6"
     },
     {
       "type": "discussion",
-      "content": "Setting $ H_{t+1} = H_t $, the expected value of heterozygosity under drift-mutation balance is found to be $$ E(H)=\\frac{\\theta}{1+[\\theta k/(k-1)]} $$ where $ \\theta = 4N u $, a result first given by Kimura (1968a). Note that $ \\theta $ has the pleasing interpretation of being the ratio of the rates of mutational production of heterozygotes from homozygotes (2u) and the rate of loss of heterozygosity by drift (1/2N). If a large number of alternative alleles ($ k \\gg 1 $) is assumed, as is reasonable when the unit of analysis is an entire gene, Equation 2.24a reduces to $$ E(H)\\simeq\\frac{\\theta}{1+\\theta} $$ which is equivalent to the infinite-alleles model of Kimura and Crow (1964). On the other hand, if the unit of analysis is a nucleotide site, then k = 4, and $$ E(H)=\\frac{\\theta}{1+(4/3)\\theta} $$ where $u$ is now the mutation rate per nucleotide site. Equation 2.24a needs to be modified if alleles mutate at different rates or are not equally mutationally accessible (Kimura 1983; Nei and Kumar 2000), but provided $2Nu \\ll 1$, as seems to be generally the case (Chapter 4), then $E[H] \\simeq \\theta$ regardless of the model assumed. As $2Nu \\to \\infty$, the infinite-alleles model implies $E(H) \\to 1.0$, whereas the $k = 4$ model implies $E(H) \\to 0.75$. The latter result is a simple consequence of four segregating alleles with equal frequencies (0.25) when the power of drift is overwhelmed by mutation. A number of other mutational models are possible, and a very general treatment is given by Cockerham (1984c), who also considered the transient approach to equilibrium. As these drift-mutation models play a central role in the neutral theory of molecular evolution (Kimura 1983), substantial attention has been given to additional details that are obscured by the summary statistic of average heterozygosity. For example, $ \\theta $ is the expected average heterozygosity over a large number of loci; this is not likely to be exactly realized at any particular site. Because of the stochastic nature of both mutation and drift, the allele frequencies at any neutral locus are expected to wander stochastically over time, with some loci being transiently fixed for one particular allele, and others being distributed over the remaining spectrum of allele frequencies. Kimura (1968a) obtained an expression analogous to Equation 2.8 for the complete probability distribution of the frequency of an allele under the symmetric mutation model described above, starting from an arbitrary allele frequency. Although this expression is quite complicated, a highly useful result is that regardless of the starting point, a steady-state distribution of allele frequencies p is eventually attained. $$ \\phi(p)=\\frac{\\Gamma(\\theta+\\beta)}{\\Gamma(\\theta)\\Gamma(\\beta)}(1-p)^{\\theta-1}p^{\\beta-1} $$ where $ \\theta = 4Nu $, $ \\beta = 4Nu/(k - 1) $, with $$ \\Gamma(\\alpha)=\\int_{0}^{\\infty}x^{\\alpha-1}e^{-x}d x $$ being the gamma function (Appendix 2). Equation 2.25a may be viewed as either the expected distribution of allele frequencies over all neutral loci within a single population in mutation-drift equilibrium or as the distribution of allele frequencies at a particular locus among replicate populations (or species) with identical N and u. Nei and Li (1976) presented the theory necessary for predicting the approach to the equilibrium state."
+      "content": "Setting $ H_{t+1} = H_t $, the expected value of heterozygosity under drift-mutation balance is found to be $$ E(H)=\\frac{\\theta}{1+[\\theta k/(k-1)]} $$ where $ \\theta = 4N u $, a result first given by Kimura (1968a). Note that $ \\theta $ has the pleasing interpretation of being the ratio of the rates of mutational production of heterozygotes from homozygotes (2u) and the rate of loss of heterozygosity by drift (1/2N). If a large number of alternative alleles ($ k \\gg 1 $) is assumed, as is reasonable when the unit of analysis is an entire gene, Equation 2.24a reduces to $$ E(H)\\simeq\\frac{\\theta}{1+\\theta} $$ which is equivalent to the infinite-alleles model of Kimura and Crow (1964). On the other hand, if the unit of analysis is a nucleotide site, then k = 4, and $$ E(H)=\\frac{\\theta}{1+(4/3)\\theta} $$ where $u$ is now the mutation rate per nucleotide site. Equation 2.24a needs to be modified if alleles mutate at different rates or are not equally mutationally accessible (Kimura 1983; Nei and Kumar 2000), but provided $2Nu \\ll 1$, as seems to be generally the case (Chapter 4), then $E[H] \\simeq \\theta$ regardless of the model assumed. As $2Nu \\to \\infty$, the infinite-alleles model implies $E(H) \\to 1.0$, whereas the $k = 4$ model implies $E(H) \\to 0.75$. The latter result is a simple consequence of four segregating alleles with equal frequencies (0.25) when the power of drift is overwhelmed by mutation. A number of other mutational models are possible, and a very general treatment is given by Cockerham (1984c), who also considered the transient approach to equilibrium. As these drift-mutation models play a central role in the neutral theory of molecular evolution (Kimura 1983), substantial attention has been given to additional details that are obscured by the summary statistic of average heterozygosity. For example, $ \\theta $ is the expected average heterozygosity over a large number of loci; this is not likely to be exactly realized at any particular site. Because of the stochastic nature of both mutation and drift, the allele frequencies at any neutral locus are expected to wander stochastically over time, with some loci being transiently fixed for one particular allele, and others being distributed over the remaining spectrum of allele frequencies. Kimura (1968a) obtained an expression analogous to Equation 2.8 for the complete probability distribution of the frequency of an allele under the symmetric mutation model described above, starting from an arbitrary allele frequency. Although this expression is quite complicated, a highly useful result is that regardless of the starting point, a steady-state distribution of allele frequencies p is eventually attained. $$ \\phi(p)=\\frac{\\Gamma(\\theta+\\beta)}{\\Gamma(\\theta)\\Gamma(\\beta)}(1-p)^{\\theta-1}p^{\\beta-1} $$ where $ \\theta = 4Nu $, $ \\beta = 4Nu/(k - 1) $, with $$ \\Gamma(\\alpha)=\\int_{0}^{\\infty}x^{\\alpha-1}e^{-x}d x $$ being the gamma function (Appendix 2). Equation 2.25a may be viewed as either the expected distribution of allele frequencies over all neutral loci within a single population in mutation-drift equilibrium or as the distribution of allele frequencies at a particular locus among replicate populations (or species) with identical N and u. Nei and Li (1976) presented the theory necessary for predicting the approach to the equilibrium state.",
+      "source_page": 45,
+      "source_pages": [
+        45,
+        46
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p023:b6",
+        "Evolution_chapter2:p023:b7",
+        "Evolution_chapter2:p023:b9",
+        "Evolution_chapter2:p023:b10",
+        "Evolution_chapter2:p023:b12",
+        "Evolution_chapter2:p023:b13",
+        "Evolution_chapter2:p023:b15",
+        "Evolution_chapter2:p023:b16",
+        "Evolution_chapter2:p024:b2",
+        "Evolution_chapter2:p024:b3",
+        "Evolution_chapter2:p024:b5",
+        "Evolution_chapter2:p024:b6",
+        "Evolution_chapter2:p024:b8"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          711.0,
+          903.0,
+          758.0
+        ],
+        [
+          408.0,
+          753.0,
+          626.0,
+          800.0
+        ],
+        [
+          131.0,
+          809.0,
+          904.0,
+          928.0
+        ],
+        [
+          454.0,
+          946.0,
+          582.0,
+          993.0
+        ],
+        [
+          131.0,
+          1011.0,
+          903.0,
+          1059.0
+        ],
+        [
+          433.0,
+          1079.0,
+          603.0,
+          1127.0
+        ],
+        [
+          131.0,
+          1147.0,
+          905.0,
+          1355.0
+        ],
+        [
+          131.0,
+          1354.0,
+          905.0,
+          1472.0
+        ],
+        [
+          287.0,
+          207.0,
+          1061.0,
+          370.0
+        ],
+        [
+          535.0,
+          388.0,
+          809.0,
+          438.0
+        ],
+        [
+          288.0,
+          458.0,
+          631.0,
+          482.0
+        ],
+        [
+          570.0,
+          500.0,
+          777.0,
+          552.0
+        ],
+        [
+          287.0,
+          570.0,
+          1059.0,
+          685.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "530d867bdee5847f385538192f965aa758c9033cdeed952d5e6e403cc0e8bce3"
     },
     {
       "type": "discussion",
-      "content": "The expected value of any function of population allele frequencies (e.g., homozygosity) can be obtained by simply integrating the function over the density distribution $ \\phi(p) $. It is useful that Equation 2.25a defines a beta distribution (Appendix 2), as many of its properties are already well known. For example, the mean of the distribution, which is the expected allele frequency, is $$ E(p)=\\frac{\\beta}{\\theta+\\beta}=\\frac{1}{k} $$ and the allele-frequency variance among replicates is $$ \\sigma^{2}(p)=\\frac{\\theta\\beta}{(\\theta+\\beta)^{2}(\\theta+\\beta+1)}=\\frac{k-1}{k^{2}[2N u k(k-1)+1]} $$"
+      "content": "The expected value of any function of population allele frequencies (e.g., homozygosity) can be obtained by simply integrating the function over the density distribution $ \\phi(p) $. It is useful that Equation 2.25a defines a beta distribution (Appendix 2), as many of its properties are already well known. For example, the mean of the distribution, which is the expected allele frequency, is $$ E(p)=\\frac{\\beta}{\\theta+\\beta}=\\frac{1}{k} $$ and the allele-frequency variance among replicates is $$ \\sigma^{2}(p)=\\frac{\\theta\\beta}{(\\theta+\\beta)^{2}(\\theta+\\beta+1)}=\\frac{k-1}{k^{2}[2N u k(k-1)+1]} $$",
+      "source_page": 46,
+      "source_pages": [
+        46
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p024:b9",
+        "Evolution_chapter2:p024:b10",
+        "Evolution_chapter2:p024:b12",
+        "Evolution_chapter2:p024:b13"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          686.0,
+          1059.0,
+          801.0
+        ],
+        [
+          592.0,
+          799.0,
+          756.0,
+          845.0
+        ],
+        [
+          287.0,
+          856.0,
+          748.0,
+          881.0
+        ],
+        [
+          449.0,
+          899.0,
+          895.0,
+          951.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4ba083af1c350ae291b41447a662f88804b30fca8af04e3749c63df4e1ce4004"
     },
     {
       "type": "discussion",
-      "content": "Expressions for the variance of heterozygosity for a population en route to equilibrium were derived by Li and Nei (1975) and Lessard (1981), and at equilibrium $$ \\sigma^{2}(H)=\\frac{2\\theta[1+(\\theta/\\ell)]}{[1+\\theta+(\\theta/\\ell)]^{2}[2+\\theta+(\\theta/\\ell)][3+\\theta+(\\theta/\\ell)]} $$ where $ \\ell = k - 1 $ (Stewart 1976). Note that as $ k \\to \\infty $ (the infinite-alleles model), $$ \\sigma^{2}(H)=\\frac{2\\theta}{(1+\\theta)^{2}(2+\\theta)(3+\\theta)} $$ which reduces to about $ \\theta/3 $ for $ \\theta \\ll 1 $."
+      "content": "Expressions for the variance of heterozygosity for a population en route to equilibrium were derived by Li and Nei (1975) and Lessard (1981), and at equilibrium $$ \\sigma^{2}(H)=\\frac{2\\theta[1+(\\theta/\\ell)]}{[1+\\theta+(\\theta/\\ell)]^{2}[2+\\theta+(\\theta/\\ell)][3+\\theta+(\\theta/\\ell)]} $$ where $ \\ell = k - 1 $ (Stewart 1976). Note that as $ k \\to \\infty $ (the infinite-alleles model), $$ \\sigma^{2}(H)=\\frac{2\\theta}{(1+\\theta)^{2}(2+\\theta)(3+\\theta)} $$ which reduces to about $ \\theta/3 $ for $ \\theta \\ll 1 $.",
+      "source_page": 46,
+      "source_pages": [
+        46
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p024:b15",
+        "Evolution_chapter2:p024:b16",
+        "Evolution_chapter2:p024:b18",
+        "Evolution_chapter2:p024:b19",
+        "Evolution_chapter2:p024:b21"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          968.0,
+          1059.0,
+          1017.0
+        ],
+        [
+          443.0,
+          1036.0,
+          900.0,
+          1088.0
+        ],
+        [
+          287.0,
+          1104.0,
+          965.0,
+          1128.0
+        ],
+        [
+          536.0,
+          1148.0,
+          808.0,
+          1197.0
+        ],
+        [
+          289.0,
+          1216.0,
+          613.0,
+          1238.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5be39e6cce4629397ca59ecb695f39b4bdeb0b25006c9c3202205d31d8663064"
     },
     {
       "type": "discussion",
-      "content": "Although the preceding results lead to predicted equilibrium allele frequencies, heterozygosities, etc., when viewed in isolation, such results obscure the long-term dynamics of neutral mutations. Given a population of size N, on average $ 2N_u $ new mutations arise per nucleotide site per generation, each with initial frequency $ 1/(2N) $. As noted earlier, the probability of fixation of a neutral allele is simply equal to its initial frequency, so that in the long run, at a neutral site, there is an average turnover rate of $ 2N_u \\cdot 1/(2N) = u $ mutations per generation. This simple but powerful result tells us that the long-term rate of nucleotide substitution at a neutral site is equal to the mutation rate, regardless of the size of the population, a hallmark of the neutral theory of molecular evolution (Kimura 1983). This long-term flux occurs in the face of the maintenance of quasi-steady-state within-population heterozygosity, which arises as a consequence of the per-generation balance between the loss of variation by fixation and replenishment by recurrent mutation."
+      "content": "Although the preceding results lead to predicted equilibrium allele frequencies, heterozygosities, etc., when viewed in isolation, such results obscure the long-term dynamics of neutral mutations. Given a population of size N, on average $ 2N_u $ new mutations arise per nucleotide site per generation, each with initial frequency $ 1/(2N) $. As noted earlier, the probability of fixation of a neutral allele is simply equal to its initial frequency, so that in the long run, at a neutral site, there is an average turnover rate of $ 2N_u \\cdot 1/(2N) = u $ mutations per generation. This simple but powerful result tells us that the long-term rate of nucleotide substitution at a neutral site is equal to the mutation rate, regardless of the size of the population, a hallmark of the neutral theory of molecular evolution (Kimura 1983). This long-term flux occurs in the face of the maintenance of quasi-steady-state within-population heterozygosity, which arises as a consequence of the per-generation balance between the loss of variation by fixation and replenishment by recurrent mutation.",
+      "source_page": 46,
+      "source_pages": [
+        46,
+        47
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p024:b22",
+        "Evolution_chapter2:p025:b2"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1240.0,
+          1060.0,
+          1473.0
+        ],
+        [
+          132.0,
+          207.0,
+          903.0,
+          252.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2e6a8f6de7297645dedf84aaca4279cc7e58874efd9cc8be8fb6e7bcede1fc10"
     },
     {
       "type": "discussion",
-      "content": "Finally, Ohta and Kimura (1971) and Hill (1975) obtained expressions for the expected values of the two-locus moments described in Equation 2.20, under the infinite-alleles model at stochastic drift-mutation equilibrium. Letting $ \\rho = 4Nc $ and $ \\theta = 4Nu $, where c is the recombination rate between sites, and u is the mutation rate per site, Hill's expressions reduce to $$ \\begin{aligned}E[p(1-p)q(1-q)]&=M(22+13\\rho+32\\theta+\\rho^{2}+6\\rho\\theta+8\\theta^{2})\\\\E[D(1-2p)(1-2q)]&=8M\\\\E[D^{2}]&=M(10+\\rho+4\\theta)\\end{aligned} $$ where $$ M=\\theta^{2}/[(\\theta+1)(18+13\\rho+54\\theta^{2}+\\rho^{2}+19\\rho\\theta+40\\theta^{2}+6\\rho\\theta^{2}+8\\theta)], $$ and the standardized linkage disequilibrium is given by $$ E(r^{2})=\\frac{10+\\rho+4\\theta}{22+13\\rho+32\\theta+\\rho^{2}+6\\rho\\theta+8\\theta^{2}} $$ As will be seen in Chapter 4, for individual nucleotide sites $ \\theta $ is generally substantially smaller than one, whereas for sites separated by hundreds of base pairs or more, $ \\rho $ is generally greater than one. Under such conditions, $$ E(r^{2})\\simeq\\frac{10+\\rho}{22+13\\rho+\\rho^{2}} $$ which asymptotically approaches $ 1/\\rho $ for large $ \\rho $. Additional theoretical points of interest were developed in Strobeck and Morgan (1978) and Golding and Strobeck (1980). A more daunting problem is obtaining expressions for the evolutionary variances of these statistics. As the components in Equation 2.28a already involve fourth-order moments of allele frequencies within and between loci, their variances are functions of moments up to the eighth order. Hill and Weir (1988) tackled this problem."
+      "content": "Finally, Ohta and Kimura (1971) and Hill (1975) obtained expressions for the expected values of the two-locus moments described in Equation 2.20, under the infinite-alleles model at stochastic drift-mutation equilibrium. Letting $ \\rho = 4Nc $ and $ \\theta = 4Nu $, where c is the recombination rate between sites, and u is the mutation rate per site, Hill's expressions reduce to $$ \\begin{aligned}E[p(1-p)q(1-q)]&=M(22+13\\rho+32\\theta+\\rho^{2}+6\\rho\\theta+8\\theta^{2})\\\\E[D(1-2p)(1-2q)]&=8M\\\\E[D^{2}]&=M(10+\\rho+4\\theta)\\end{aligned} $$ where $$ M=\\theta^{2}/[(\\theta+1)(18+13\\rho+54\\theta^{2}+\\rho^{2}+19\\rho\\theta+40\\theta^{2}+6\\rho\\theta^{2}+8\\theta)], $$ and the standardized linkage disequilibrium is given by $$ E(r^{2})=\\frac{10+\\rho+4\\theta}{22+13\\rho+32\\theta+\\rho^{2}+6\\rho\\theta+8\\theta^{2}} $$ As will be seen in Chapter 4, for individual nucleotide sites $ \\theta $ is generally substantially smaller than one, whereas for sites separated by hundreds of base pairs or more, $ \\rho $ is generally greater than one. Under such conditions, $$ E(r^{2})\\simeq\\frac{10+\\rho}{22+13\\rho+\\rho^{2}} $$ which asymptotically approaches $ 1/\\rho $ for large $ \\rho $. Additional theoretical points of interest were developed in Strobeck and Morgan (1978) and Golding and Strobeck (1980). A more daunting problem is obtaining expressions for the evolutionary variances of these statistics. As the components in Equation 2.28a already involve fourth-order moments of allele frequencies within and between loci, their variances are functions of moments up to the eighth order. Hill and Weir (1988) tackled this problem.",
+      "source_page": 47,
+      "source_pages": [
+        47
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p025:b3",
+        "Evolution_chapter2:p025:b4",
+        "Evolution_chapter2:p025:b6",
+        "Evolution_chapter2:p025:b7",
+        "Evolution_chapter2:p025:b9",
+        "Evolution_chapter2:p025:b10",
+        "Evolution_chapter2:p025:b12",
+        "Evolution_chapter2:p025:b13",
+        "Evolution_chapter2:p025:b15"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          253.0,
+          905.0,
+          368.0
+        ],
+        [
+          261.0,
+          386.0,
+          776.0,
+          470.0
+        ],
+        [
+          133.0,
+          490.0,
+          195.0,
+          512.0
+        ],
+        [
+          202.0,
+          530.0,
+          774.0,
+          558.0
+        ],
+        [
+          132.0,
+          577.0,
+          617.0,
+          602.0
+        ],
+        [
+          341.0,
+          619.0,
+          695.0,
+          669.0
+        ],
+        [
+          132.0,
+          684.0,
+          900.0,
+          758.0
+        ],
+        [
+          418.0,
+          773.0,
+          617.0,
+          822.0
+        ],
+        [
+          132.0,
+          838.0,
+          904.0,
+          980.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1d765204584ee1e2d6c029c7add4499d0000d07312e73f708684bca9e67eccd7"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:2.7]]"
+      "content": "[[SEE_EXAMPLE:2.7]]",
+      "source_page": 47,
+      "source_pages": [
+        47,
+        48
+      ],
+      "source_block_ids": [
+        "Evolution_chapter2:p025:b16",
+        "Evolution_chapter2:p025:b17",
+        "Evolution_chapter2:p025:b18",
+        "Evolution_chapter2:p025:b19",
+        "Evolution_chapter2:p026:b2",
+        "Evolution_chapter2:p026:b3",
+        "Evolution_chapter2:p026:b4",
+        "Evolution_chapter2:p026:b5",
+        "Evolution_chapter2:p026:b6"
+      ],
+      "source_bboxes": [
+        [
+          155.0,
+          1069.0,
+          879.0,
+          1113.0
+        ],
+        [
+          395.0,
+          1129.0,
+          642.0,
+          1178.0
+        ],
+        [
+          154.0,
+          1194.0,
+          882.0,
+          1363.0
+        ],
+        [
+          155.0,
+          1363.0,
+          880.0,
+          1470.0
+        ],
+        [
+          310.0,
+          207.0,
+          1035.0,
+          296.0
+        ],
+        [
+          482.0,
+          338.0,
+          861.0,
+          388.0
+        ],
+        [
+          310.0,
+          431.0,
+          721.0,
+          456.0
+        ],
+        [
+          494.0,
+          498.0,
+          851.0,
+          550.0
+        ],
+        [
+          309.0,
+          592.0,
+          1037.0,
+          786.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ca2351cd716029cde32c9d1b0642e1090bda6aad7d0ae89fa0a94271941882ac"
     }
   ]
 }

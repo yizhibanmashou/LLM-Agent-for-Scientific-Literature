@@ -4,11 +4,9 @@
 from __future__ import annotations
 
 import argparse
-import copy
 import html
 import json
 import math
-import os
 import re
 import shutil
 import sys
@@ -25,8 +23,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from textbook_exporter import export_textbooks
 from scripts.rebuild_genetics_book import RANGES, write_json
+from textbook_exporter import export_textbooks
 
 HEADING_LABELS = {"doc_title", "paragraph_title"}
 SKIP_LABELS = {"header", "number", "footer", "page_number"}

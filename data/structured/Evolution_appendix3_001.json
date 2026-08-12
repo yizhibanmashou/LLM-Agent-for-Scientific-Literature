@@ -13,28 +13,145 @@
     "heading_path": [
       "Appendix: Introduction"
     ],
-    "display_heading": "Appendix: Introduction"
+    "display_heading": "Appendix: Introduction",
+    "heading_source": {
+      "source_block_ids": [
+        "Evolution_appendix3:p001:b0",
+        "Evolution_appendix3:p001:b1"
+      ]
+    },
+    "source_heading_aliases": [
+      "Appendix 3",
+      "Markov Chain Monte Carlo and Gibbs Sampling"
+    ]
   },
   "blocks": [
     {
       "type": "discussion",
-      "content": "Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise. Tukey (1962)"
+      "content": "Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise. Tukey (1962)",
+      "source_page": 1208,
+      "source_pages": [
+        1208,
+        1213
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p001:b0",
+        "Evolution_appendix3:p001:b1",
+        "Evolution_appendix3:p006:b2",
+        "Evolution_appendix3:p001:b2"
+      ],
+      "source_bboxes": [
+        [
+          362.0,
+          198.0,
+          675.0,
+          263.0
+        ],
+        [
+          297.0,
+          296.0,
+          739.0,
+          387.0
+        ],
+        [
+          323.0,
+          209.0,
+          362.0,
+          229.0
+        ],
+        [
+          183.0,
+          401.0,
+          851.0,
+          451.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1edfd0b6ad084381565a659cff7954cce077d8ac58d24c7d6753eb22ca9057ce"
     },
     {
       "type": "discussion",
-      "content": "We are convinced nevertheless that Monte Carlo methods will one day reach an impressive maturity. Hammersley and Handscomb (1964)"
+      "content": "We are convinced nevertheless that Monte Carlo methods will one day reach an impressive maturity. Hammersley and Handscomb (1964)",
+      "source_page": 1208,
+      "source_pages": [
+        1208
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p001:b3"
+      ],
+      "source_bboxes": [
+        [
+          240.0,
+          468.0,
+          794.0,
+          518.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9e996bb60bfd80fcf0d4b0c7f7072ad79587c44253570c98d11444a969520690"
     },
     {
       "type": "discussion",
-      "content": "The practice of MCMC is simple. Set up a Markov chain having the required invariant distribution, and run it on a computer. The folklore of simulation makes this seem more complicated that it really is. None of this folklore is justified by theory and none of it actually helps users do good simulations. Geyer (2011)"
+      "content": "The practice of MCMC is simple. Set up a Markov chain having the required invariant distribution, and run it on a computer. The folklore of simulation makes this seem more complicated that it really is. None of this folklore is justified by theory and none of it actually helps users do good simulations. Geyer (2011)",
+      "source_page": 1208,
+      "source_pages": [
+        1208
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p001:b4"
+      ],
+      "source_bboxes": [
+        [
+          180.0,
+          535.0,
+          860.0,
+          634.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1e353b19cc57859ae8f71f14b8fe776448456e889ab0977555fd691b6aa75346"
     },
     {
       "type": "discussion",
-      "content": "A historical impediment to the more widespread use of Bayesian methods was computational: obtaining the posterior distribution requires the integration of high-dimensional functions. This can be very difficult, but several analytic approximations short of direct integration have been proposed (reviewed by Smith 1991; Evans and Swartz 1995; Tanner 1996). Now, however, the widespread development of Markov Chain Monte Carlo (MCMC) methods has made obtaining very complex posteriors relatively easy from a conceptual standpoint (although they may still be rather computationally demanding). Indeed, MCMC allows Bayesian approaches to handle much higher-dimensional problems than other methods. MCMC approaches are so named because one uses the current sample value to randomly generate the next sample value, thus generating a Markov chain."
+      "content": "A historical impediment to the more widespread use of Bayesian methods was computational: obtaining the posterior distribution requires the integration of high-dimensional functions. This can be very difficult, but several analytic approximations short of direct integration have been proposed (reviewed by Smith 1991; Evans and Swartz 1995; Tanner 1996). Now, however, the widespread development of Markov Chain Monte Carlo (MCMC) methods has made obtaining very complex posteriors relatively easy from a conceptual standpoint (although they may still be rather computationally demanding). Indeed, MCMC allows Bayesian approaches to handle much higher-dimensional problems than other methods. MCMC approaches are so named because one uses the current sample value to randomly generate the next sample value, thus generating a Markov chain.",
+      "source_page": 1208,
+      "source_pages": [
+        1208
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p001:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          650.0,
+          904.0,
+          881.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cc60c878bab7b1874f47f6ff9381607cc00bd14a4c68188cc7a649587df363d3"
     },
     {
       "type": "discussion",
-      "content": "The realization in the early 1990s (Gelfand and Smith 1990) that one particular MCMC method, the Gibbs sampler, is widely applicable to a broad class of Bayesian problems sparked much of the current expansion in the use of Bayesian analysis. MCMC methods have their roots in the Metropolis algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953), an attempt by physicists to compute complex integrals by expressing them as expectations of a much simpler distribution and then estimating this expectation by drawing samples from that distribution. While the Gibbs sampler had its origins outside of statistics, it is still somewhat surprising that the powerful machinery of MCMC had essentially no impact on the field of statistics until rather recently. MCMC methods were reviewed by Tanner (1996), Gammerman (1997), Chen et al. (2000), Robert and Casella (2004), and Brooks et al. (2011). The types of MCMC machinery used in quantitative genetics (often Gibbs samplers on linear mixed-models, e.g., Chapters 19 and 20) tend to be a bit different from those used in molecular population genetics (ABC methods for treating complex likelihoods, e.g., Chapters 9 and 10). Sorensen and Gianola (2002) extensively reviewed the former, while Marjoram and Tavaré (2006) provided a brief review of the latter. The roundtable discussion on practical issues of MCMC by Kass et al. (1998) is required reading for anyone using MCMC analysis, as is Geyer (2011). Finally, Robert and Casella (2011) presented a nice historical overview of the development of MCMC methods."
+      "content": "The realization in the early 1990s (Gelfand and Smith 1990) that one particular MCMC method, the Gibbs sampler, is widely applicable to a broad class of Bayesian problems sparked much of the current expansion in the use of Bayesian analysis. MCMC methods have their roots in the Metropolis algorithm (Metropolis and Ulam 1949; Metropolis et al. 1953), an attempt by physicists to compute complex integrals by expressing them as expectations of a much simpler distribution and then estimating this expectation by drawing samples from that distribution. While the Gibbs sampler had its origins outside of statistics, it is still somewhat surprising that the powerful machinery of MCMC had essentially no impact on the field of statistics until rather recently. MCMC methods were reviewed by Tanner (1996), Gammerman (1997), Chen et al. (2000), Robert and Casella (2004), and Brooks et al. (2011). The types of MCMC machinery used in quantitative genetics (often Gibbs samplers on linear mixed-models, e.g., Chapters 19 and 20) tend to be a bit different from those used in molecular population genetics (ABC methods for treating complex likelihoods, e.g., Chapters 9 and 10). Sorensen and Gianola (2002) extensively reviewed the former, while Marjoram and Tavaré (2006) provided a brief review of the latter. The roundtable discussion on practical issues of MCMC by Kass et al. (1998) is required reading for anyone using MCMC analysis, as is Geyer (2011). Finally, Robert and Casella (2011) presented a nice historical overview of the development of MCMC methods.",
+      "source_page": 1208,
+      "source_pages": [
+        1208
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p001:b6"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          880.0,
+          904.0,
+          1295.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "114cd0a8db23757d363fd7665d9075a95ed43a9438bc04ef8cf31523b54222c3"
     }
   ]
 }

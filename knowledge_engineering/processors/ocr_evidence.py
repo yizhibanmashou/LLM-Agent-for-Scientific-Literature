@@ -7,25 +7,24 @@ and audits can reason about caption/body binding without channel-specific code.
 
 from __future__ import annotations
 
-from collections import defaultdict
-from dataclasses import dataclass, field
-from difflib import SequenceMatcher
 import hashlib
 import html
 import json
 import re
+from collections import defaultdict
+from dataclasses import dataclass, field
+from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Iterable
 
 from knowledge_engineering.core.common import (
-    collapse_ws,
     HTML_TAG_RE,
+    collapse_ws,
     rows_from_html_table,
     strip_html,
     table_body_text_from_rows,
 )
 from knowledge_engineering.core.runtime import TableEntry
-
 
 TABLE_LABEL_RE = re.compile(r"\bTable\s+(?P<label>\d+\.\d+(?:\.\d+)?[A-Za-z]?)\b", re.IGNORECASE)
 FORMULA_NUMBER_RE = re.compile(r"\(\s*(?P<label>\d+\.\d+(?:\.\d+)?[A-Za-z]?)\s*\)")

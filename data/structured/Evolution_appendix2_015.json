@@ -21,15 +21,108 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Suppose data are drawn from a normal distribution with a known mean, $ \\mu $, but unknown variance, $ \\sigma^{2} $. The resulting likelihood function can be expressed as $$ \\ell(\\sigma^{2}\\mid\\mathbf{x},\\mu)\\propto(\\sigma^{2})^{-n/2}\\exp\\left(-\\frac{nS^{2}}{2\\sigma^{2}}\\right) $$ where $$ S^{2}=\\frac{1}{n}\\sum_{i=1}^{n}\\left(x_{i}-\\mu\\right)^{2} $$"
+      "content": "Suppose data are drawn from a normal distribution with a known mean, $ \\mu $, but unknown variance, $ \\sigma^{2} $. The resulting likelihood function can be expressed as $$ \\ell(\\sigma^{2}\\mid\\mathbf{x},\\mu)\\propto(\\sigma^{2})^{-n/2}\\exp\\left(-\\frac{nS^{2}}{2\\sigma^{2}}\\right) $$ where $$ S^{2}=\\frac{1}{n}\\sum_{i=1}^{n}\\left(x_{i}-\\mu\\right)^{2} $$",
+      "source_page": 1203,
+      "source_pages": [
+        1203
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p015:b18",
+        "Evolution_appendix2:p015:b19",
+        "Evolution_appendix2:p015:b20",
+        "Evolution_appendix2:p015:b22",
+        "Evolution_appendix2:p015:b23"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          885.0,
+          770.0,
+          909.0
+        ],
+        [
+          133.0,
+          917.0,
+          902.0,
+          963.0
+        ],
+        [
+          364.0,
+          982.0,
+          670.0,
+          1031.0
+        ],
+        [
+          134.0,
+          1051.0,
+          195.0,
+          1072.0
+        ],
+        [
+          426.0,
+          1069.0,
+          610.0,
+          1126.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b4a3c2bce36ba2cc9410e8132dc3a555df0c2aade03087319e390dc65b1ffacd"
     },
     {
       "type": "discussion",
-      "content": "Notice that since we condition on x and μ (i.e., their values are known), $ S^2 $ is a constant. Further observe that, as a function of the unknown variance, $ \\sigma^2 $, the likelihood is proportional to a scaled inverse $ \\chi^2 $ distribution (Equation A2.30a). If we take the prior for the unknown variance also as a scaled inverse $ \\chi^2 $ with hyperparameters $ \\nu_0 $ and $ \\sigma_0^2 $, the posterior becomes $$ \\begin{align*}p(\\sigma^{2}\\mid\\mathbf{x},\\mu)&\\propto(\\sigma^{2})^{-n/2}\\exp\\left(-\\frac{nS^{2}}{2\\sigma^{2}}\\right)(\\sigma^{2})^{-\\nu_{0}/2-1}\\cdot\\exp\\left(-\\frac{\\sigma_{0}^{2}}{2\\sigma^{2}}\\right)\\\\&=(\\sigma^{2})^{-(n+\\nu_{0})/2-1}\\exp\\left(-\\frac{nS^{2}+\\sigma_{0}^{2}}{2\\sigma^{2}}\\right)\\end{align*} $$"
+      "content": "Notice that since we condition on x and μ (i.e., their values are known), $ S^2 $ is a constant. Further observe that, as a function of the unknown variance, $ \\sigma^2 $, the likelihood is proportional to a scaled inverse $ \\chi^2 $ distribution (Equation A2.30a). If we take the prior for the unknown variance also as a scaled inverse $ \\chi^2 $ with hyperparameters $ \\nu_0 $ and $ \\sigma_0^2 $, the posterior becomes $$ \\begin{align*}p(\\sigma^{2}\\mid\\mathbf{x},\\mu)&\\propto(\\sigma^{2})^{-n/2}\\exp\\left(-\\frac{nS^{2}}{2\\sigma^{2}}\\right)(\\sigma^{2})^{-\\nu_{0}/2-1}\\cdot\\exp\\left(-\\frac{\\sigma_{0}^{2}}{2\\sigma^{2}}\\right)\\\\&=(\\sigma^{2})^{-(n+\\nu_{0})/2-1}\\exp\\left(-\\frac{nS^{2}+\\sigma_{0}^{2}}{2\\sigma^{2}}\\right)\\end{align*} $$",
+      "source_page": 1203,
+      "source_pages": [
+        1203
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p015:b25",
+        "Evolution_appendix2:p015:b26"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1137.0,
+          904.0,
+          1233.0
+        ],
+        [
+          248.0,
+          1248.0,
+          784.0,
+          1353.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1bfd855a621cab66df2511a9bf9c1f36480aa358121ee565cf5b772a507a08d8"
     },
     {
       "type": "discussion",
-      "content": "Equation A2.30a shows the resulting posterior is also a scaled inverse $ \\chi^2 $ distribution with parameters $ \\nu_n = (n + \\nu_0) $ and $ \\sigma_n^2 = (nS^2 + \\sigma_0^2) $. Hence, $$ \\begin{array}{r l}{\\mathrm{t h e~p r i o r~}\\sigma^{2}\\sim\\chi_{\\nu_{0},\\sigma_{0}^{2}}^{-2}}&{{}\\mathrm{y i e l d s~t h e~p o s t e r i o r}\\quad\\sigma^{2}\\mid(\\mathbf{x},\\mu)\\sim\\chi_{\\nu_{n},\\sigma_{n}^{2}}^{-2}}\\end{array} $$"
+      "content": "Equation A2.30a shows the resulting posterior is also a scaled inverse $ \\chi^2 $ distribution with parameters $ \\nu_n = (n + \\nu_0) $ and $ \\sigma_n^2 = (nS^2 + \\sigma_0^2) $. Hence, $$ \\begin{array}{r l}{\\mathrm{t h e~p r i o r~}\\sigma^{2}\\sim\\chi_{\\nu_{0},\\sigma_{0}^{2}}^{-2}}&{{}\\mathrm{y i e l d s~t h e~p o s t e r i o r}\\quad\\sigma^{2}\\mid(\\mathbf{x},\\mu)\\sim\\chi_{\\nu_{n},\\sigma_{n}^{2}}^{-2}}\\end{array} $$",
+      "source_page": 1203,
+      "source_pages": [
+        1203
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p015:b28",
+        "Evolution_appendix2:p015:b29"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1374.0,
+          903.0,
+          1423.0
+        ],
+        [
+          220.0,
+          1437.0,
+          758.0,
+          1470.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "87f988c56e3850f7dcc93acac3a031abe0b7f2ca3e8a5caf0f66567230b51cc0"
     }
   ]
 }

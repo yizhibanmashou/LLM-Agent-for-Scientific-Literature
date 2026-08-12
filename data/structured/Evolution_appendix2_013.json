@@ -21,39 +21,326 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "As a starting point, assume that the variance, $ \\sigma^2 $, is known, while the mean, $ \\mu $, is unknown. For a Bayesian analysis, it remains to specify the prior for $ \\mu $, $ p(\\mu) $. Suppose we assume a Gaussian prior, $ \\mu \\sim \\mathrm{N}(\\mu_0, \\sigma_0^2) $, with $$ p(\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma_{0}^{2}}}\\exp\\left(-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}\\right) $$"
+      "content": "As a starting point, assume that the variance, $ \\sigma^2 $, is known, while the mean, $ \\mu $, is unknown. For a Bayesian analysis, it remains to specify the prior for $ \\mu $, $ p(\\mu) $. Suppose we assume a Gaussian prior, $ \\mu \\sim \\mathrm{N}(\\mu_0, \\sigma_0^2) $, with $$ p(\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma_{0}^{2}}}\\exp\\left(-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}\\right) $$",
+      "source_page": 1199,
+      "source_pages": [
+        1199
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p011:b14",
+        "Evolution_appendix2:p011:b15",
+        "Evolution_appendix2:p011:b16"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          944.0,
+          709.0,
+          965.0
+        ],
+        [
+          132.0,
+          974.0,
+          904.0,
+          1044.0
+        ],
+        [
+          367.0,
+          1068.0,
+          664.0,
+          1122.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e5d4b4b6e5576b7111f9b8f392d012e0c7dbb51e01692ea7d28c229692a09b66"
     },
     {
       "type": "discussion",
-      "content": "The mean and variance of the prior, $ \\mu_0 $ and $ \\sigma_0^2 $, are referred to as hyperparameters. Here, $ \\mu_0 $ specifies a prior location for the parameter (the unknown mean, $ \\mu $), while $ \\sigma_0^2 $ specifies our uncertainty in this prior location—the larger $ \\sigma_0^2 $, the greater is our uncertainty. In the limit as $ \\sigma_0^2 \\to \\infty $, $ p(\\mu) $ approaches a flat (and in this case, improper) prior."
+      "content": "The mean and variance of the prior, $ \\mu_0 $ and $ \\sigma_0^2 $, are referred to as hyperparameters. Here, $ \\mu_0 $ specifies a prior location for the parameter (the unknown mean, $ \\mu $), while $ \\sigma_0^2 $ specifies our uncertainty in this prior location—the larger $ \\sigma_0^2 $, the greater is our uncertainty. In the limit as $ \\sigma_0^2 \\to \\infty $, $ p(\\mu) $ approaches a flat (and in this case, improper) prior.",
+      "source_page": 1199,
+      "source_pages": [
+        1199
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p011:b18"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1148.0,
+          903.0,
+          1242.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2508b3ccf6ad7873aff049f2d9b5064ad454435113500045d70be1ffb8af0405"
     },
     {
       "type": "discussion",
-      "content": "A useful device when calculating the posterior distribution is to ignore terms that are constants with respect to the unknown parameters. Suppose x denotes the data and $ \\Theta_1 $ is a vector of known model parameters, while $ \\Theta_2 $ is a vector of unknown parameters. If we can write the posterior as $$ p(\\boldsymbol{\\Theta}_{2}\\mid\\mathbf{x},\\boldsymbol{\\Theta}_{1})=f(\\mathbf{x},\\boldsymbol{\\Theta}_{1})\\cdot g(\\mathbf{x},\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{2}) $$ then $$ p(\\boldsymbol{\\Theta}_{2}\\mid\\mathbf{x},\\boldsymbol{\\Theta}_{1})\\propto g(\\mathbf{x},\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{2}) $$ which follows since $ f(\\mathbf{x}, \\boldsymbol{\\Theta}_{1}) $ is constant with respect to $ \\boldsymbol{\\Theta}_{2} $. With the prior given by Equation A2.19, we can express the resulting posterior distribution as $$ \\begin{aligned}p(\\mu\\mid\\mathbf{x})&\\propto\\ell(\\mu\\mid\\mathbf{x})\\cdot p(\\mu)\\\\&\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}-\\frac{1}{2\\sigma^{2}}\\left(\\sum_{i=1}^{n}x_{i}^{2}-2\\mu n\\overline{x}+n\\mu^{2}\\right)\\right]\\end{aligned} $$"
+      "content": "A useful device when calculating the posterior distribution is to ignore terms that are constants with respect to the unknown parameters. Suppose x denotes the data and $ \\Theta_1 $ is a vector of known model parameters, while $ \\Theta_2 $ is a vector of unknown parameters. If we can write the posterior as $$ p(\\boldsymbol{\\Theta}_{2}\\mid\\mathbf{x},\\boldsymbol{\\Theta}_{1})=f(\\mathbf{x},\\boldsymbol{\\Theta}_{1})\\cdot g(\\mathbf{x},\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{2}) $$ then $$ p(\\boldsymbol{\\Theta}_{2}\\mid\\mathbf{x},\\boldsymbol{\\Theta}_{1})\\propto g(\\mathbf{x},\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{2}) $$ which follows since $ f(\\mathbf{x}, \\boldsymbol{\\Theta}_{1}) $ is constant with respect to $ \\boldsymbol{\\Theta}_{2} $. With the prior given by Equation A2.19, we can express the resulting posterior distribution as $$ \\begin{aligned}p(\\mu\\mid\\mathbf{x})&\\propto\\ell(\\mu\\mid\\mathbf{x})\\cdot p(\\mu)\\\\&\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}-\\frac{1}{2\\sigma^{2}}\\left(\\sum_{i=1}^{n}x_{i}^{2}-2\\mu n\\overline{x}+n\\mu^{2}\\right)\\right]\\end{aligned} $$",
+      "source_page": 1199,
+      "source_pages": [
+        1199,
+        1200
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p011:b19",
+        "Evolution_appendix2:p011:b20",
+        "Evolution_appendix2:p011:b22",
+        "Evolution_appendix2:p011:b23",
+        "Evolution_appendix2:p011:b25",
+        "Evolution_appendix2:p012:b1",
+        "Evolution_appendix2:p012:b2",
+        "Evolution_appendix2:p012:b3"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1242.0,
+          904.0,
+          1333.0
+        ],
+        [
+          355.0,
+          1336.0,
+          680.0,
+          1361.0
+        ],
+        [
+          134.0,
+          1378.0,
+          180.0,
+          1399.0
+        ],
+        [
+          397.0,
+          1405.0,
+          637.0,
+          1429.0
+        ],
+        [
+          134.0,
+          1446.0,
+          638.0,
+          1469.0
+        ],
+        [
+          197.0,
+          160.0,
+          317.0,
+          182.0
+        ],
+        [
+          286.0,
+          206.0,
+          1058.0,
+          255.0
+        ],
+        [
+          399.0,
+          273.0,
+          905.0,
+          363.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e4d8dc33464043f294a7cb409082afd3f46cf18014bb6effb804d4d409a5d01a"
     },
     {
       "type": "discussion",
-      "content": "We can factor out additional terms not involving $ \\mu $ to obtain $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left(-\\frac{\\mu^{2}}{2\\sigma_{0}^{2}}+\\frac{\\mu\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{\\mu n\\overline{x}}{\\sigma^{2}}-\\frac{n\\mu^{2}}{2\\sigma^{2}}\\right) $$"
+      "content": "We can factor out additional terms not involving $ \\mu $ to obtain $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left(-\\frac{\\mu^{2}}{2\\sigma_{0}^{2}}+\\frac{\\mu\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{\\mu n\\overline{x}}{\\sigma^{2}}-\\frac{n\\mu^{2}}{2\\sigma^{2}}\\right) $$",
+      "source_page": 1200,
+      "source_pages": [
+        1200
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p012:b5",
+        "Evolution_appendix2:p012:b6"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          380.0,
+          806.0,
+          405.0
+        ],
+        [
+          479.0,
+          422.0,
+          864.0,
+          475.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8c15ce54434fa7f41c91249662806320010b9d2663248ce5d6b6517b24c8a8a7"
     },
     {
       "type": "discussion",
-      "content": "Factoring in terms of $ \\mu $, the term in the exponential becomes $$ -\\frac{\\mu^{2}}{2}\\left(\\frac{1}{\\sigma_{0}^{2}}+\\frac{n}{\\sigma^{2}}\\right)+\\mu\\left(\\frac{\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{n\\overline{x}}{\\sigma^{2}}\\right)=-\\frac{\\mu^{2}}{\\sigma_{*}^{2}}+\\frac{2\\mu\\mu_{*}}{2\\sigma_{*}^{2}} $$ where $$ \\sigma_{*}^{2}=\\left(\\frac{1}{\\sigma_{0}^{2}}+\\frac{n}{\\sigma^{2}}\\right)^{-1}\\quad and\\quad\\mu_{*}=\\sigma_{*}^{2}\\left(\\frac{\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{n\\overline{x}}{\\sigma^{2}}\\right) $$"
+      "content": "Factoring in terms of $ \\mu $, the term in the exponential becomes $$ -\\frac{\\mu^{2}}{2}\\left(\\frac{1}{\\sigma_{0}^{2}}+\\frac{n}{\\sigma^{2}}\\right)+\\mu\\left(\\frac{\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{n\\overline{x}}{\\sigma^{2}}\\right)=-\\frac{\\mu^{2}}{\\sigma_{*}^{2}}+\\frac{2\\mu\\mu_{*}}{2\\sigma_{*}^{2}} $$ where $$ \\sigma_{*}^{2}=\\left(\\frac{1}{\\sigma_{0}^{2}}+\\frac{n}{\\sigma^{2}}\\right)^{-1}\\quad and\\quad\\mu_{*}=\\sigma_{*}^{2}\\left(\\frac{\\mu_{0}}{\\sigma_{0}^{2}}+\\frac{n\\overline{x}}{\\sigma^{2}}\\right) $$",
+      "source_page": 1200,
+      "source_pages": [
+        1200
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p012:b8",
+        "Evolution_appendix2:p012:b9",
+        "Evolution_appendix2:p012:b11",
+        "Evolution_appendix2:p012:b12"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          492.0,
+          807.0,
+          517.0
+        ],
+        [
+          460.0,
+          534.0,
+          886.0,
+          587.0
+        ],
+        [
+          289.0,
+          605.0,
+          351.0,
+          627.0
+        ],
+        [
+          461.0,
+          622.0,
+          882.0,
+          676.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "690808cc7dee3564ce1de31f1689208059510f2d5572db15c3489578aac5116e"
     },
     {
       "type": "discussion",
-      "content": "Finally, by completing the square, we have $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{*})^{2}}{2\\sigma_{*}^{2}}+f(\\mathbf{x},\\mu_{0},\\sigma^{2},\\sigma_{0}^{2})\\right] $$"
+      "content": "Finally, by completing the square, we have $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{*})^{2}}{2\\sigma_{*}^{2}}+f(\\mathbf{x},\\mu_{0},\\sigma^{2},\\sigma_{0}^{2})\\right] $$",
+      "source_page": 1200,
+      "source_pages": [
+        1200
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p012:b14",
+        "Evolution_appendix2:p012:b15"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          684.0,
+          659.0,
+          710.0
+        ],
+        [
+          477.0,
+          727.0,
+          864.0,
+          780.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7d84ea37c61f19bb1fc19c047055c71717caa0259c41514443d4a73b6bef61e9"
     },
     {
       "type": "discussion",
-      "content": "Recalling Equation A2.20b, we can ignore the second term in the exponential (as it does not involve $ \\mu $), and the resulting posterior for $ \\mu $ (given the observed data x) becomes $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{*})^{2}}{2\\sigma_{*}^{2}}\\right] $$ demonstrating that the posterior density function for $ \\mu $ is a normal with a mean of $ \\mu_{*} $ and a variance of $ \\sigma_{*}^{2} $, namely, $$ \\mu\\mid(\\mathbf{x},\\sigma^{2})\\sim\\mathrm{N}\\left(\\mu_{*},\\sigma_{*}^{2}\\right) $$"
+      "content": "Recalling Equation A2.20b, we can ignore the second term in the exponential (as it does not involve $ \\mu $), and the resulting posterior for $ \\mu $ (given the observed data x) becomes $$ p(\\mu\\mid\\mathbf{x})\\propto\\exp\\left[-\\frac{(\\mu-\\mu_{*})^{2}}{2\\sigma_{*}^{2}}\\right] $$ demonstrating that the posterior density function for $ \\mu $ is a normal with a mean of $ \\mu_{*} $ and a variance of $ \\sigma_{*}^{2} $, namely, $$ \\mu\\mid(\\mathbf{x},\\sigma^{2})\\sim\\mathrm{N}\\left(\\mu_{*},\\sigma_{*}^{2}\\right) $$",
+      "source_page": 1200,
+      "source_pages": [
+        1200
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p012:b17",
+        "Evolution_appendix2:p012:b18",
+        "Evolution_appendix2:p012:b20",
+        "Evolution_appendix2:p012:b21"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          796.0,
+          1059.0,
+          845.0
+        ],
+        [
+          550.0,
+          861.0,
+          792.0,
+          915.0
+        ],
+        [
+          287.0,
+          931.0,
+          1057.0,
+          978.0
+        ],
+        [
+          574.0,
+          976.0,
+          769.0,
+          1003.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3ff4a9cad1bba208879096a79661cbb52afb2e890b93483ce2b26392f7ca94e8"
     },
     {
       "type": "discussion",
-      "content": "Notice that the posterior density is in the same form as the prior. This occurred because the prior conjugated with the likelihood function—the product of the prior and likelihood returned a distribution in the same family as the prior (but with different distribution parameters). The use of such conjugate priors associated with a given family of likelihood functions is a key concept in Bayesian analysis, and we will explore it more fully below."
+      "content": "Notice that the posterior density is in the same form as the prior. This occurred because the prior conjugated with the likelihood function—the product of the prior and likelihood returned a distribution in the same family as the prior (but with different distribution parameters). The use of such conjugate priors associated with a given family of likelihood functions is a key concept in Bayesian analysis, and we will explore it more fully below.",
+      "source_page": 1200,
+      "source_pages": [
+        1200
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p012:b23"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1012.0,
+          1059.0,
+          1128.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "dd823b8de1ecffae75a662da75a95905c509cfeaf90552bcb4916da6f486718e"
     },
     {
       "type": "discussion",
-      "content": "We are now in a position to inquire about the relative importance of the prior versus the data. Under the assumed prior, the mean (and in this case, the mode as well) of the posterior distribution is $$ \\mu_{*}=\\mu_{0}\\frac{\\sigma_{*}^{2}}{\\sigma_{0}^{2}}+\\overline{x}\\frac{\\sigma_{*}^{2}}{\\sigma^{2}/n} $$ With a very diffuse prior on $ \\mu $ (i.e., $ \\sigma_0^2 \\gg \\sigma^2 $), $ \\sigma_*\\to \\sigma^2/n $ and $ \\mu_*\\to \\overline{x} $. Also note from Equation A2.22b that as we collect enough data (i.e., achieve a sufficiently large value of $ n $), $ \\sigma_*\\to \\sigma^2/n $ and again $ \\mu_*\\to \\overline{x} $, implying that primarily the data, rather than the prior, will influence the posterior when the value of $ n $ is sufficiently large."
+      "content": "We are now in a position to inquire about the relative importance of the prior versus the data. Under the assumed prior, the mean (and in this case, the mode as well) of the posterior distribution is $$ \\mu_{*}=\\mu_{0}\\frac{\\sigma_{*}^{2}}{\\sigma_{0}^{2}}+\\overline{x}\\frac{\\sigma_{*}^{2}}{\\sigma^{2}/n} $$ With a very diffuse prior on $ \\mu $ (i.e., $ \\sigma_0^2 \\gg \\sigma^2 $), $ \\sigma_*\\to \\sigma^2/n $ and $ \\mu_*\\to \\overline{x} $. Also note from Equation A2.22b that as we collect enough data (i.e., achieve a sufficiently large value of $ n $), $ \\sigma_*\\to \\sigma^2/n $ and again $ \\mu_*\\to \\overline{x} $, implying that primarily the data, rather than the prior, will influence the posterior when the value of $ n $ is sufficiently large.",
+      "source_page": 1200,
+      "source_pages": [
+        1200
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p012:b24",
+        "Evolution_appendix2:p012:b25",
+        "Evolution_appendix2:p012:b27"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1128.0,
+          1059.0,
+          1198.0
+        ],
+        [
+          579.0,
+          1195.0,
+          765.0,
+          1246.0
+        ],
+        [
+          288.0,
+          1256.0,
+          1058.0,
+          1352.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e429554ed8895fce2475a657ffec33b6e605a8e1bbcf59840a2dc75b8cd63fe6"
     }
   ]
 }

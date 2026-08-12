@@ -1,11 +1,12 @@
 
-import logging
 import json
-import pytest
+import logging
 import os
 from pathlib import Path
-from paper2latex.core.config import Config
+
+import pytest
 from paper2latex.converters.layout_analysis import PaddleOCR
+from paper2latex.core.config import Config
 
 logger = logging.getLogger(__name__)
 

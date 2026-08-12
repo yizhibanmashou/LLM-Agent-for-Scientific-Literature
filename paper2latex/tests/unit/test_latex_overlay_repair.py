@@ -8,7 +8,6 @@ from knowledge_engineering.processors.latex_overlay_repair import (
     build_overlay_patch,
 )
 
-
 TEST_RUNTIME_ROOT = Path(__file__).resolve().parents[3] / "tmp" / "test_runtime" / "latex_overlay_repair"
 TEST_RUNTIME_ROOT.mkdir(parents=True, exist_ok=True)
 

@@ -1,8 +1,6 @@
-"""
-Entry point for running paper2latex MCP server.
-"""
+"""The historical paper2latex service entry point is intentionally disabled."""
 
-from .server import mcp
-
-if __name__ == "__main__":
-    mcp.run(transport="streamable-http", json_response=True)
+raise SystemExit(
+    "paper2latex MCP/Web is unsupported legacy code in this repository. "
+    "Use the maintained batch conversion modules from scripts instead."
+)

@@ -6,7 +6,6 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-
 ANCHORS = {
     "Genetics_chapter5_008.json": ("5.6", "This point is made clear with the extreme example in Figure 5.6"),
     "Genetics_chapter7_013.json": ("7.8", "path diagrams for four specific relationships (Figure 7.8)."),

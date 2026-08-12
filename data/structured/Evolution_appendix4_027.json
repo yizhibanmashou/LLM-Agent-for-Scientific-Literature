@@ -26,55 +26,431 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Once an appropriate summary statistic, along with its standard error, has been chosen, the next step is to decide if a fixed, random, or mixed meta-analysis should be used. For questions of interest to quantitative geneticists, a mixed-model analysis is likely the most appropriate. This is also the most general model, with the fixed-effects and random-effects models following as special cases. However, it will be useful to first consider the structure of these simpler models."
+      "content": "Once an appropriate summary statistic, along with its standard error, has been chosen, the next step is to decide if a fixed, random, or mixed meta-analysis should be used. For questions of interest to quantitative geneticists, a mixed-model analysis is likely the most appropriate. This is also the most general model, with the fixed-effects and random-effects models following as special cases. However, it will be useful to first consider the structure of these simpler models.",
+      "source_page": 1253,
+      "source_pages": [
+        1253
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p024:b2",
+        "Evolution_appendix4:p024:b3"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          207.0,
+          850.0,
+          230.0
+        ],
+        [
+          287.0,
+          237.0,
+          1059.0,
+          373.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "81e14ff0d754c40f58851ac7c2b8c8d4df191d67fdaa1d206833369b50abf766"
     },
     {
       "type": "discussion",
-      "content": "Under a fixed-effects meta-analysis (also called the common-effect model), we assume that the actual effect size is the same over all studies ($ \\theta_i = \\theta $), which yields $$ T_{i}=\\theta+e_{i} $$ where we assume that the residuals are independent but heteroscedastic, as $ \\sigma^{2}(e_{i}) = s_{i}^{2} $. Under the fixed-effects model, our interest is in combining studies to obtain a better estimate of the common (fixed) effect, $ \\theta $. This simply involves generalized least-squares (GLS; LW Chapter 8), with the resulting meta-analysis global estimate of $ \\theta $ (given the k studies) being $$ \\overline{T}=\\frac{\\sum_{i=1}^{k}w_{i}T_{i}}{\\sum_{i=1}^{k}w_{i}},\\quad\\mathrm{w h e r e}\\quad w_{i}=\\frac{1}{s_{i}^{2}} $$"
+      "content": "Under a fixed-effects meta-analysis (also called the common-effect model), we assume that the actual effect size is the same over all studies ($ \\theta_i = \\theta $), which yields $$ T_{i}=\\theta+e_{i} $$ where we assume that the residuals are independent but heteroscedastic, as $ \\sigma^{2}(e_{i}) = s_{i}^{2} $. Under the fixed-effects model, our interest is in combining studies to obtain a better estimate of the common (fixed) effect, $ \\theta $. This simply involves generalized least-squares (GLS; LW Chapter 8), with the resulting meta-analysis global estimate of $ \\theta $ (given the k studies) being $$ \\overline{T}=\\frac{\\sum_{i=1}^{k}w_{i}T_{i}}{\\sum_{i=1}^{k}w_{i}},\\quad\\mathrm{w h e r e}\\quad w_{i}=\\frac{1}{s_{i}^{2}} $$",
+      "source_page": 1253,
+      "source_pages": [
+        1253
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p024:b4",
+        "Evolution_appendix4:p024:b5",
+        "Evolution_appendix4:p024:b7",
+        "Evolution_appendix4:p024:b8"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          374.0,
+          1059.0,
+          421.0
+        ],
+        [
+          621.0,
+          439.0,
+          725.0,
+          463.0
+        ],
+        [
+          287.0,
+          480.0,
+          1058.0,
+          579.0
+        ],
+        [
+          516.0,
+          593.0,
+          827.0,
+          652.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f6b349dd351ec39711950c175787a2d42cf9da7004488a55f42c5985d9529990"
     },
     {
       "type": "discussion",
-      "content": "In other words, we use a weighted average, with each study weighted by its precision (studies with smaller standard errors receive larger weights). The meta-analysis standard error, $ s_{\\overline{T}} $, for the global estimate, $ \\overline{T} $, is $$ s_{T}^{2}=\\frac{1}{\\sum_{i=1}^{k}w_{i}} $$"
+      "content": "In other words, we use a weighted average, with each study weighted by its precision (studies with smaller standard errors receive larger weights). The meta-analysis standard error, $ s_{\\overline{T}} $, for the global estimate, $ \\overline{T} $, is $$ s_{T}^{2}=\\frac{1}{\\sum_{i=1}^{k}w_{i}} $$",
+      "source_page": 1253,
+      "source_pages": [
+        1253
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p024:b10",
+        "Evolution_appendix4:p024:b11"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          667.0,
+          1059.0,
+          739.0
+        ],
+        [
+          608.0,
+          755.0,
+          737.0,
+          810.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ea4cd0cbcc563fc6f675e7ea6c4ccbefdb2ad8bef6ee4a730156946913bf4303"
     },
     {
       "type": "discussion",
-      "content": "For the situation where we assume that each individual observation in a given study has the same variance, so $ \\sigma^2(T_i) = \\sigma^2/n_i $, then for $ k $ studies, each of size $ n $, $$ \\sigma^{2}(\\overline{T})=\\frac{\\sigma^{2}}{nk} $$"
+      "content": "For the situation where we assume that each individual observation in a given study has the same variance, so $ \\sigma^2(T_i) = \\sigma^2/n_i $, then for $ k $ studies, each of size $ n $, $$ \\sigma^{2}(\\overline{T})=\\frac{\\sigma^{2}}{nk} $$",
+      "source_page": 1253,
+      "source_pages": [
+        1253
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p024:b13",
+        "Evolution_appendix4:p024:b14"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          824.0,
+          1059.0,
+          872.0
+        ],
+        [
+          617.0,
+          887.0,
+          728.0,
+          938.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "17f77964281ddf3e06a31667dfe25e8cfcb35f3a800a97f30aa7a10689cf9bfd"
     },
     {
       "type": "proposition",
-      "content": "An obvious next line of inquiry is whether the assumption of a common effect over all studies is reasonable. This can be examined using the Cochran Q test of heterogeneity, $$ Q=\\sum_{i=1}^{k}\\frac{\\left(T_{i}-\\overline{T}\\right)^{2}}{s_{i}^{2}} $$ where (under the null of $ \\theta_1 = \\cdots = \\theta_k $, and assuming that the values of $ T_i $ are normally distributed), the distribution of $ Q $ is $ \\chi^2 $ with $ (k-1) $ degrees of freedom."
+      "content": "An obvious next line of inquiry is whether the assumption of a common effect over all studies is reasonable. This can be examined using the Cochran Q test of heterogeneity, $$ Q=\\sum_{i=1}^{k}\\frac{\\left(T_{i}-\\overline{T}\\right)^{2}}{s_{i}^{2}} $$ where (under the null of $ \\theta_1 = \\cdots = \\theta_k $, and assuming that the values of $ T_i $ are normally distributed), the distribution of $ Q $ is $ \\chi^2 $ with $ (k-1) $ degrees of freedom.",
+      "source_page": 1253,
+      "source_pages": [
+        1253
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p024:b16",
+        "Evolution_appendix4:p024:b17",
+        "Evolution_appendix4:p024:b19"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          950.0,
+          1059.0,
+          999.0
+        ],
+        [
+          590.0,
+          1014.0,
+          755.0,
+          1079.0
+        ],
+        [
+          287.0,
+          1095.0,
+          1057.0,
+          1141.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1dbf06d4c1caa03fa53ca78ce90b104d3dd8f9dee5cc3947c3d1663eca2c951b"
     },
     {
       "type": "discussion",
-      "content": "One potential reason for a significant Q is that the study consists of different subsets of groups (say, males versus females), with a common effect that was the same in each group but differed among groups. In this case, we can extend the basic model by including a regression on moderator variables, $$ T_{i}=\\theta+\\sum_{j=1}^{m}b_{j}M_{ij}+e_{i} $$"
+      "content": "One potential reason for a significant Q is that the study consists of different subsets of groups (say, males versus females), with a common effect that was the same in each group but differed among groups. In this case, we can extend the basic model by including a regression on moderator variables, $$ T_{i}=\\theta+\\sum_{j=1}^{m}b_{j}M_{ij}+e_{i} $$",
+      "source_page": 1253,
+      "source_pages": [
+        1253
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p024:b20",
+        "Evolution_appendix4:p024:b21"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1142.0,
+          1059.0,
+          1236.0
+        ],
+        [
+          571.0,
+          1251.0,
+          776.0,
+          1314.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4ca19fa5f93c8fbc39f0b4bc7179682af5b2412ec2d42ff70d87615de9018e13"
     },
     {
       "type": "discussion",
-      "content": "Often the values of $ M_{ij} $ are simply zero-one indicator variables (e.g., 0 for male, 1 for female), but they can be more general regression slopes as well. For example, $ M_{1j} $ could be the age of individuals within study j, with a significantly nonzero value of $ b_1 $ in Equation A4.32 indicating that the treatment mean varies with age. Again Equation A4.32 is simply a GLS regression, and one can test for moderator-variable effects ($ b_j \\neq 0 $) in the standard regression fashion."
+      "content": "Often the values of $ M_{ij} $ are simply zero-one indicator variables (e.g., 0 for male, 1 for female), but they can be more general regression slopes as well. For example, $ M_{1j} $ could be the age of individuals within study j, with a significantly nonzero value of $ b_1 $ in Equation A4.32 indicating that the treatment mean varies with age. Again Equation A4.32 is simply a GLS regression, and one can test for moderator-variable effects ($ b_j \\neq 0 $) in the standard regression fashion.",
+      "source_page": 1253,
+      "source_pages": [
+        1253
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p024:b23"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1329.0,
+          1060.0,
+          1472.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "012b77b8c3e50fd59829be378d5239d51318895e82dea3a4863cadd732b01ed0"
     },
     {
       "type": "proposition",
-      "content": "In most biological settings, the assumption of a single common value for the treatment mean over all studies is unrealistic. For example, in a meta-analysis of the strength of selection, we expect $ \\theta_{i} $ to vary over studies, and our interest shifts to the variance among the actual effects. This leads to the random-effects meta-analysis model $$ T_{i}=\\mu+u_{i}+e_{i} $$ where $ \\mu_i \\sim (0, \\sigma_u^2) $. Typically, the effect sizes $ (\\theta_i = \\mu + u_i) $ are assumed to be drawn from a normal, $ \\theta_i \\sim \\mathrm{N}(\\mu, \\sigma_u^2) $, and are independent of the residuals (which remain heteroscedastic). Under a random-effects analysis, our interest is the variation, $ \\sigma_u^2 $, among the realized effects, in addition to their overall grand mean, $ \\mu $. The estimate for the latter is also of the form of Equation A4.30b, but with a critical difference. Under a random-effects model, the weights are now given by $$ w_{i}=\\frac{1}{s_{i}^{2}+\\widehat{\\sigma}_{u}^{2}} $$ where $ \\widehat{\\sigma}_{u}^{2} $ is the estimate of $ \\sigma_{u}^{2} $. One option for obtaining this variance is the DerSimonian-Laird estimator, which is based on Cochran's Q value (Equation A4.31), $$ \\widehat{\\sigma}_{u}^{2}=\\frac{Q-(k-1)}{S_{1}-(S_{2}/S_{1})},\\quad\\mathrm{w h e r e}\\quad S_{j}=\\sum_{i=1}^{k}s_{i}^{-2j} $$ which is set to zero if it is negative (DerSimonian and Laird 1986), although other approaches (e.g., REML) could also be used."
+      "content": "In most biological settings, the assumption of a single common value for the treatment mean over all studies is unrealistic. For example, in a meta-analysis of the strength of selection, we expect $ \\theta_{i} $ to vary over studies, and our interest shifts to the variance among the actual effects. This leads to the random-effects meta-analysis model $$ T_{i}=\\mu+u_{i}+e_{i} $$ where $ \\mu_i \\sim (0, \\sigma_u^2) $. Typically, the effect sizes $ (\\theta_i = \\mu + u_i) $ are assumed to be drawn from a normal, $ \\theta_i \\sim \\mathrm{N}(\\mu, \\sigma_u^2) $, and are independent of the residuals (which remain heteroscedastic). Under a random-effects analysis, our interest is the variation, $ \\sigma_u^2 $, among the realized effects, in addition to their overall grand mean, $ \\mu $. The estimate for the latter is also of the form of Equation A4.30b, but with a critical difference. Under a random-effects model, the weights are now given by $$ w_{i}=\\frac{1}{s_{i}^{2}+\\widehat{\\sigma}_{u}^{2}} $$ where $ \\widehat{\\sigma}_{u}^{2} $ is the estimate of $ \\sigma_{u}^{2} $. One option for obtaining this variance is the DerSimonian-Laird estimator, which is based on Cochran's Q value (Equation A4.31), $$ \\widehat{\\sigma}_{u}^{2}=\\frac{Q-(k-1)}{S_{1}-(S_{2}/S_{1})},\\quad\\mathrm{w h e r e}\\quad S_{j}=\\sum_{i=1}^{k}s_{i}^{-2j} $$ which is set to zero if it is negative (DerSimonian and Laird 1986), although other approaches (e.g., REML) could also be used.",
+      "source_page": 1254,
+      "source_pages": [
+        1254
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p025:b2",
+        "Evolution_appendix4:p025:b3",
+        "Evolution_appendix4:p025:b5",
+        "Evolution_appendix4:p025:b6",
+        "Evolution_appendix4:p025:b8",
+        "Evolution_appendix4:p025:b9",
+        "Evolution_appendix4:p025:b11"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          207.0,
+          904.0,
+          300.0
+        ],
+        [
+          447.0,
+          316.0,
+          589.0,
+          338.0
+        ],
+        [
+          132.0,
+          353.0,
+          904.0,
+          494.0
+        ],
+        [
+          457.0,
+          490.0,
+          578.0,
+          539.0
+        ],
+        [
+          132.0,
+          545.0,
+          903.0,
+          595.0
+        ],
+        [
+          327.0,
+          610.0,
+          709.0,
+          670.0
+        ],
+        [
+          132.0,
+          685.0,
+          903.0,
+          732.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e5ec45857c475280bd964e8cd5768c0b30708e6d6d8cf5930b33ac578a67a9b5"
     },
     {
       "type": "discussion",
-      "content": "This difference in weighting schemes under fixed effects (Equation A4.30b) versus random effects (Equation A4.33b) can have profound implications (a nice review was presented by Borenstein et al. 2010b). In particular, the presence of $ \\widehat{\\sigma}_u^2 $ makes the random-effect weights more equal over studies, especially when $ \\widehat{\\sigma}_u^2 $ is of the same order as an average value of $ s_i^2 $. Under a fixed-effects setting, larger studies (i.e., those with smaller values of $ s_i^2 $) are given more weight than smaller studies. In a random-effects setting, this difference in weights is reduced such that larger studies lose influence and smaller studies gain influence. In the extreme when $ \\sigma_u^2 $ is large relative to all of the $ s_i^2 $ values, all studies are given roughly equal weight, independent of their sample size."
+      "content": "This difference in weighting schemes under fixed effects (Equation A4.30b) versus random effects (Equation A4.33b) can have profound implications (a nice review was presented by Borenstein et al. 2010b). In particular, the presence of $ \\widehat{\\sigma}_u^2 $ makes the random-effect weights more equal over studies, especially when $ \\widehat{\\sigma}_u^2 $ is of the same order as an average value of $ s_i^2 $. Under a fixed-effects setting, larger studies (i.e., those with smaller values of $ s_i^2 $) are given more weight than smaller studies. In a random-effects setting, this difference in weights is reduced such that larger studies lose influence and smaller studies gain influence. In the extreme when $ \\sigma_u^2 $ is large relative to all of the $ s_i^2 $ values, all studies are given roughly equal weight, independent of their sample size.",
+      "source_page": 1254,
+      "source_pages": [
+        1254
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p025:b12"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          731.0,
+          904.0,
+          938.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "bd55cec57176e735ab1a926280276d816619b027a16bf3b31b5ec426646e518a"
     },
     {
       "type": "discussion",
-      "content": "To see why this occurs, assume we are using the same design that led to Equation A4.30d, namely, k studies all of size n, and all with a common residual variance ($ \\sigma^{2} $) for each observation. In this case, the variance of the estimate of $ \\mu $ becomes $$ \\sigma^{2}(\\overline{T})=\\frac{\\sigma^{2}}{nk}+\\frac{\\sigma_{u}^{2}}{k} $$ showing (unlike the fixed-effects case; Equation A4.30d) that the actual number $ (k) $ of studies is at least as important as the total number $ (nk) $ of observations over all studies. Under a fixed-effects design, all that matters is $ nk $, as the only error is in estimating the common mean, with the contribution from any particular study being proportional to its sample size. Under a random-effects model, there is an additional error from the among-study variance, in that the mean realization for each study, $ \\theta_i = \\mu + u_i $, differs, with each new study providing additional information on the among-study variance. This leads to the second important consideration for a random-effects model: power is as much a function of the number of studies $ (k) $ as it is of the precision of any particular study $ (n_i) $. Indeed, if $ \\theta_i $ is measured without error in any particular study, one still needs a reasonable number of $ \\theta_i $ values to estimate their variance with any precision. Hence, not surprisingly, random-effects models have lower power than fixed-effects models."
+      "content": "To see why this occurs, assume we are using the same design that led to Equation A4.30d, namely, k studies all of size n, and all with a common residual variance ($ \\sigma^{2} $) for each observation. In this case, the variance of the estimate of $ \\mu $ becomes $$ \\sigma^{2}(\\overline{T})=\\frac{\\sigma^{2}}{nk}+\\frac{\\sigma_{u}^{2}}{k} $$ showing (unlike the fixed-effects case; Equation A4.30d) that the actual number $ (k) $ of studies is at least as important as the total number $ (nk) $ of observations over all studies. Under a fixed-effects design, all that matters is $ nk $, as the only error is in estimating the common mean, with the contribution from any particular study being proportional to its sample size. Under a random-effects model, there is an additional error from the among-study variance, in that the mean realization for each study, $ \\theta_i = \\mu + u_i $, differs, with each new study providing additional information on the among-study variance. This leads to the second important consideration for a random-effects model: power is as much a function of the number of studies $ (k) $ as it is of the precision of any particular study $ (n_i) $. Indeed, if $ \\theta_i $ is measured without error in any particular study, one still needs a reasonable number of $ \\theta_i $ values to estimate their variance with any precision. Hence, not surprisingly, random-effects models have lower power than fixed-effects models.",
+      "source_page": 1254,
+      "source_pages": [
+        1254
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p025:b13",
+        "Evolution_appendix4:p025:b14",
+        "Evolution_appendix4:p025:b16"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          938.0,
+          904.0,
+          1008.0
+        ],
+        [
+          438.0,
+          1019.0,
+          596.0,
+          1068.0
+        ],
+        [
+          132.0,
+          1078.0,
+          904.0,
+          1354.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "154b725845359cd1f70c84e5d8611d2d03633c9e727510f8ac7650b5a1e71765"
     },
     {
       "type": "proposition",
-      "content": "Given the lower power of a random-effects model, one might be tempted to start with a fixed-effects analysis and only considered random-effects when the fixed-effects model generates a significant Q value (Equation A4.31). Borenstein et al. (2010b) strongly caution against this approach. First, if the number of studies is small to moderate, Q can have poor power, so a failure to reject homogeneity among studies could simply be due to low power, and not an absence of among-study variation. Second, although there are costs (lower power) with a random-effects model, this arises because such models make a less stringent assumption: they allow the effect size to vary over studies. This is generally closer to reality, as the assumption of a constant $ \\theta $ value over all studies is unlikely to be correct."
+      "content": "Given the lower power of a random-effects model, one might be tempted to start with a fixed-effects analysis and only considered random-effects when the fixed-effects model generates a significant Q value (Equation A4.31). Borenstein et al. (2010b) strongly caution against this approach. First, if the number of studies is small to moderate, Q can have poor power, so a failure to reject homogeneity among studies could simply be due to low power, and not an absence of among-study variation. Second, although there are costs (lower power) with a random-effects model, this arises because such models make a less stringent assumption: they allow the effect size to vary over studies. This is generally closer to reality, as the assumption of a constant $ \\theta $ value over all studies is unlikely to be correct.",
+      "source_page": 1254,
+      "source_pages": [
+        1254,
+        1255
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p025:b17",
+        "Evolution_appendix4:p026:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1354.0,
+          905.0,
+          1449.0
+        ],
+        [
+          286.0,
+          207.0,
+          1060.0,
+          322.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7bbb3ae2cb9fcd8c9ac8166d4ec42d1799676500fd1a04d8c09d34361754f2c3"
     },
     {
       "type": "discussion",
-      "content": "Finally, in many settings, we might expect the grand mean to vary over different categories, as when the selection gradient differs between males and females. Similarly, we may wish to examine whether the strength of selection varies between life-history versus morphological traits. The potential of different means over different major categories can be accommodated in a meta-analysis model by the use of moderator variables (cofactors). These adjust the mean for a particular class, leading to a mixed-model meta-analysis. Suppose that there are $ m \\ll k $ moderators. The resulting mixed-model is $$ T_{i}=\\mu+\\sum_{j=1}^{m}b_{j}M_{ij}+u_{i}+e_{i} $$ where $ b_{j} $ is the effect of a moderator, j, which has a value of $ M_{ij} $ in study i. Equations A4.32 and A4.33a are special cases of Equation A4.35a, which we can write in general-linear-model form (LW Chapter 8) as $$ \\mathbf{y}=\\mathbf{M}\\mathbf{b}+\\mathbf{u}+\\mathbf{e} $$ where $ y_i = T_i $, and the $ i $th row of the $ k \\times m $ matrix, $ \\mathbf{M} $, contains the values of the moderator variables associated with study $ i $. The vectors, $ \\mathbf{u} $ and $ \\mathbf{e} $, of random effects are assumed uncorrelated, with $ \\mathbf{e} \\sim (\\mathbf{0}, \\mathbf{R}) $ and $ \\mathbf{u} \\sim (\\mathbf{0}, \\mathbf{G}) $, where $ \\mathbf{R} $ is a known diagonal matrix, $ \\text{diag}(s_1^2, s_2^3, \\cdots, s_k^2) $, and $ \\mathbf{G} = \\sigma_u^2 \\mathbf{C} $, where $ \\mathbf{C} $ is a matrix of known constants."
+      "content": "Finally, in many settings, we might expect the grand mean to vary over different categories, as when the selection gradient differs between males and females. Similarly, we may wish to examine whether the strength of selection varies between life-history versus morphological traits. The potential of different means over different major categories can be accommodated in a meta-analysis model by the use of moderator variables (cofactors). These adjust the mean for a particular class, leading to a mixed-model meta-analysis. Suppose that there are $ m \\ll k $ moderators. The resulting mixed-model is $$ T_{i}=\\mu+\\sum_{j=1}^{m}b_{j}M_{ij}+u_{i}+e_{i} $$ where $ b_{j} $ is the effect of a moderator, j, which has a value of $ M_{ij} $ in study i. Equations A4.32 and A4.33a are special cases of Equation A4.35a, which we can write in general-linear-model form (LW Chapter 8) as $$ \\mathbf{y}=\\mathbf{M}\\mathbf{b}+\\mathbf{u}+\\mathbf{e} $$ where $ y_i = T_i $, and the $ i $th row of the $ k \\times m $ matrix, $ \\mathbf{M} $, contains the values of the moderator variables associated with study $ i $. The vectors, $ \\mathbf{u} $ and $ \\mathbf{e} $, of random effects are assumed uncorrelated, with $ \\mathbf{e} \\sim (\\mathbf{0}, \\mathbf{R}) $ and $ \\mathbf{u} \\sim (\\mathbf{0}, \\mathbf{G}) $, where $ \\mathbf{R} $ is a known diagonal matrix, $ \\text{diag}(s_1^2, s_2^3, \\cdots, s_k^2) $, and $ \\mathbf{G} = \\sigma_u^2 \\mathbf{C} $, where $ \\mathbf{C} $ is a matrix of known constants.",
+      "source_page": 1255,
+      "source_pages": [
+        1255
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p026:b3",
+        "Evolution_appendix4:p026:b4",
+        "Evolution_appendix4:p026:b6",
+        "Evolution_appendix4:p026:b7",
+        "Evolution_appendix4:p026:b9"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          322.0,
+          1060.0,
+          485.0
+        ],
+        [
+          548.0,
+          492.0,
+          796.0,
+          551.0
+        ],
+        [
+          286.0,
+          560.0,
+          1059.0,
+          632.0
+        ],
+        [
+          598.0,
+          631.0,
+          748.0,
+          653.0
+        ],
+        [
+          286.0,
+          660.0,
+          1058.0,
+          754.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1eb6b240125aa0e93550e8b41735b7cb955a8356b632ec64d7f612cea7c994cd"
     },
     {
       "type": "discussion",
-      "content": "While typically it is assumed that $ \\mathbf{C} = \\mathbf{I} $ (i.e., effects are uncorrelated and homoscedastic), we can easily incorporate $ \\mathbf{C} $ matrices that account for phylogenetic relationships (i.e., correlations) when comparisons are made between species (Hadfield and Nakagawa 2010; Nakagawa and Santos 2012). In such settings, one could use either a Brownian-motion model (Equation A1.31) for the elements of $ \\mathbf{C} $ (divergence under drift) or an Ornstein-Uhlenbeck model (Equation A1.33) (divergence under drift and stabilizing selection). The bottom line is that our previous discussions on the great flexibility of mixed models (Chapters 19 and 20; LW Chapters 26 and 27) also hold when we conduct a meta-analysis using a mixed-model framework."
+      "content": "While typically it is assumed that $ \\mathbf{C} = \\mathbf{I} $ (i.e., effects are uncorrelated and homoscedastic), we can easily incorporate $ \\mathbf{C} $ matrices that account for phylogenetic relationships (i.e., correlations) when comparisons are made between species (Hadfield and Nakagawa 2010; Nakagawa and Santos 2012). In such settings, one could use either a Brownian-motion model (Equation A1.31) for the elements of $ \\mathbf{C} $ (divergence under drift) or an Ornstein-Uhlenbeck model (Equation A1.33) (divergence under drift and stabilizing selection). The bottom line is that our previous discussions on the great flexibility of mixed models (Chapters 19 and 20; LW Chapters 26 and 27) also hold when we conduct a meta-analysis using a mixed-model framework.",
+      "source_page": 1255,
+      "source_pages": [
+        1255
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p026:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          753.0,
+          1059.0,
+          961.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f9531392d7aaba4a696456728acb602cb1795c99127c36030b6539b4c8e6772b"
     }
   ]
 }

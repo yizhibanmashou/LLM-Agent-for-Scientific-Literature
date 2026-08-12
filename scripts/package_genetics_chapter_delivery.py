@@ -16,7 +16,6 @@ from collections import Counter
 from pathlib import Path
 from typing import Any, Iterable
 
-
 ROOT = Path(__file__).resolve().parents[1]
 BOOK = "Genetics"
 CHAPTER_RE = re.compile(r"Genetics_chapter(\d+)\.pdf", re.IGNORECASE)

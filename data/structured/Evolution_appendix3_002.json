@@ -21,19 +21,243 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "To better understand the historical roots of MCMC, we digress for a moment to discuss the original Monte Carlo approach, which used random-number generation to approximate integrals. Suppose we wish to compute a complex integral, $$ \\int_{a}^{b}h(x)dx $$"
+      "content": "To better understand the historical roots of MCMC, we digress for a moment to discuss the original Monte Carlo approach, which used random-number generation to approximate integrals. Suppose we wish to compute a complex integral, $$ \\int_{a}^{b}h(x)dx $$",
+      "source_page": 1208,
+      "source_pages": [
+        1208,
+        1209
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p001:b7",
+        "Evolution_appendix3:p001:b8",
+        "Evolution_appendix3:p002:b2",
+        "Evolution_appendix3:p002:b3"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          1338.0,
+          441.0,
+          1361.0
+        ],
+        [
+          132.0,
+          1384.0,
+          905.0,
+          1434.0
+        ],
+        [
+          287.0,
+          206.0,
+          795.0,
+          232.0
+        ],
+        [
+          625.0,
+          251.0,
+          724.0,
+          304.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5b7c88b3dc02d85afc30f18bdcbf579ba33da47434e7ba067ed6b2ca1c099811"
     },
     {
       "type": "discussion",
-      "content": "If we can decompose $ h(x) $ into the product of a function, $ f(x) $, and a probability density function, $ p(x) $, defined over the interval $ (a, b) $, then $$ \\int_{a}^{b}h(x)dx=\\int_{a}^{b}f(x)p(x)dx=E_{p(x)}[f(x)] $$ which means that the integral can be expressed as the expectation of $ f(x) $ over the density $ p(x) $. After sampling a large number of random variables, $ (x_{1},\\cdots,x_{n}) $, from the density $ p(x) $, we have that $$ \\int_{a}^{b}h(x)dx=E_{p(x)}[f(x)]\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(x_{i}) $$"
+      "content": "If we can decompose $ h(x) $ into the product of a function, $ f(x) $, and a probability density function, $ p(x) $, defined over the interval $ (a, b) $, then $$ \\int_{a}^{b}h(x)dx=\\int_{a}^{b}f(x)p(x)dx=E_{p(x)}[f(x)] $$ which means that the integral can be expressed as the expectation of $ f(x) $ over the density $ p(x) $. After sampling a large number of random variables, $ (x_{1},\\cdots,x_{n}) $, from the density $ p(x) $, we have that $$ \\int_{a}^{b}h(x)dx=E_{p(x)}[f(x)]\\simeq\\frac{1}{n}\\sum_{i=1}^{n}f(x_{i}) $$",
+      "source_page": 1209,
+      "source_pages": [
+        1209
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p002:b5",
+        "Evolution_appendix3:p002:b6",
+        "Evolution_appendix3:p002:b8",
+        "Evolution_appendix3:p002:b9"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          320.0,
+          1058.0,
+          369.0
+        ],
+        [
+          484.0,
+          386.0,
+          863.0,
+          442.0
+        ],
+        [
+          287.0,
+          457.0,
+          1058.0,
+          527.0
+        ],
+        [
+          501.0,
+          527.0,
+          847.0,
+          585.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c275325fa3ef65d04fcb3ea3e6f5818e0be4db93abdd503c6509501ad725b531"
     },
     {
       "type": "discussion",
-      "content": "This approach is referred to as Monte Carlo integration, and it can be used to approximate posterior (or marginal posterior) distributions required for a Bayesian analysis. Consider the integral $ I(y) = \\int f(y \\mid x) p(x) \\, dx $, which we approximate by $$ \\widehat{I}(y)=\\frac{1}{n}\\sum_{i=1}^{n}f(y\\mid x_{i}) $$ where again $ x_{i} $ are draws from the density $ p(x) $. Since we have framed this integral as an expectation, individual random draws have expected value equal to the integral. The spread of those values around their mean allows us to estimate a Monte Carlo standard error for our approximation, with $$ \\mathrm{SE}^{2}[\\widehat{I}(y)]=\\frac{1}{n}\\left[\\frac{1}{n-1}\\sum_{i=1}^{n}\\left(f(y\\mid x_{i})-\\widehat{I}(y)\\right)^{2}\\right] $$ where the inner term estimates the sampling variance, $ \\sigma^2 $. Notice from Equation A3.1e that the standard error scales as $ \\sigma/\\sqrt{n} $, namely, with the square root of the sample size. Thus, a tenfold improvement in precision requires a hundredfold increase in the sample size."
+      "content": "This approach is referred to as Monte Carlo integration, and it can be used to approximate posterior (or marginal posterior) distributions required for a Bayesian analysis. Consider the integral $ I(y) = \\int f(y \\mid x) p(x) \\, dx $, which we approximate by $$ \\widehat{I}(y)=\\frac{1}{n}\\sum_{i=1}^{n}f(y\\mid x_{i}) $$ where again $ x_{i} $ are draws from the density $ p(x) $. Since we have framed this integral as an expectation, individual random draws have expected value equal to the integral. The spread of those values around their mean allows us to estimate a Monte Carlo standard error for our approximation, with $$ \\mathrm{SE}^{2}[\\widehat{I}(y)]=\\frac{1}{n}\\left[\\frac{1}{n-1}\\sum_{i=1}^{n}\\left(f(y\\mid x_{i})-\\widehat{I}(y)\\right)^{2}\\right] $$ where the inner term estimates the sampling variance, $ \\sigma^2 $. Notice from Equation A3.1e that the standard error scales as $ \\sigma/\\sqrt{n} $, namely, with the square root of the sample size. Thus, a tenfold improvement in precision requires a hundredfold increase in the sample size.",
+      "source_page": 1209,
+      "source_pages": [
+        1209
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p002:b11",
+        "Evolution_appendix3:p002:b12",
+        "Evolution_appendix3:p002:b13",
+        "Evolution_appendix3:p002:b15",
+        "Evolution_appendix3:p002:b16",
+        "Evolution_appendix3:p002:b18"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          595.0,
+          1058.0,
+          642.0
+        ],
+        [
+          327.0,
+          641.0,
+          952.0,
+          667.0
+        ],
+        [
+          579.0,
+          686.0,
+          767.0,
+          745.0
+        ],
+        [
+          286.0,
+          764.0,
+          1059.0,
+          859.0
+        ],
+        [
+          470.0,
+          875.0,
+          873.0,
+          940.0
+        ],
+        [
+          287.0,
+          958.0,
+          1059.0,
+          1030.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c509288fac3453caacff4e001ecefa18e585257491dc384a3f2b4d8d23ed7eba"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A3.1]]"
+      "content": "[[SEE_EXAMPLE:A3.1]]",
+      "source_page": 1209,
+      "source_pages": [
+        1209,
+        1210
+      ],
+      "source_block_ids": [
+        "Evolution_appendix3:p002:b19",
+        "Evolution_appendix3:p002:b20",
+        "Evolution_appendix3:p002:b22",
+        "Evolution_appendix3:p003:b10",
+        "Evolution_appendix3:p003:b11",
+        "Evolution_appendix3:p003:b13",
+        "Evolution_appendix3:p003:b2",
+        "Evolution_appendix3:p003:b3",
+        "Evolution_appendix3:p003:b5",
+        "Evolution_appendix3:p003:b6",
+        "Evolution_appendix3:p003:b8",
+        "Evolution_appendix3:p003:b9"
+      ],
+      "source_bboxes": [
+        [
+          322.0,
+          1098.0,
+          1036.0,
+          1308.0
+        ],
+        [
+          540.0,
+          1303.0,
+          819.0,
+          1353.0
+        ],
+        [
+          322.0,
+          1362.0,
+          1035.0,
+          1449.0
+        ],
+        [
+          168.0,
+          530.0,
+          704.0,
+          553.0
+        ],
+        [
+          192.0,
+          570.0,
+          787.0,
+          629.0
+        ],
+        [
+          167.0,
+          646.0,
+          880.0,
+          736.0
+        ],
+        [
+          167.0,
+          207.0,
+          878.0,
+          252.0
+        ],
+        [
+          423.0,
+          252.0,
+          624.0,
+          277.0
+        ],
+        [
+          168.0,
+          286.0,
+          791.0,
+          311.0
+        ],
+        [
+          351.0,
+          329.0,
+          695.0,
+          384.0
+        ],
+        [
+          166.0,
+          403.0,
+          880.0,
+          448.0
+        ],
+        [
+          349.0,
+          461.0,
+          696.0,
+          515.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1882713f50319ea08089be9cb82ce9e71bd5f2936909146381eed18082f28b68"
     }
   ]
 }

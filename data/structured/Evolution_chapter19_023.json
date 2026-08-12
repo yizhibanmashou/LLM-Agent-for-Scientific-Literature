@@ -10,8 +10,7 @@
     "source_title": "Evolution and Selection of Quantitative Traits",
     "formula_references": [],
     "table_references": [
-      "inline_2",
-      "inline_4"
+      "inline_2"
     ],
     "section_level_1": "BAYESIAN MIXED-MODEL ANALYSIS",
     "section_level_2": "Introduction to Bayesian Statistics",
@@ -28,67 +27,377 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "While very deep (and subtle) differences in philosophy separate hard-core Bayesians from hard-core frequentists (Glymour 1981; Efron 1986), our treatment here of Bayesian methods is motivated simply by their use as a powerful statistical tool. Their introduction into quantitative genetics can be largely credited to the influential paper of Gianola and Fernando (1986), which reviewed Bayesian applications to animal breeding. Blasco (2001, 2017) provided nice overviews of Bayesian versus frequentist approaches in quantitative genetics and both are highly recommended, while a detailed treatment of applications to quantitative genetics was provided by Sorensen and Gianola (2002). Gianola and Rosa (2015) presented an excellent review of the history of statistical methods in animal breeding, culminating with the wide acceptance of Bayesian approaches."
+      "content": "While very deep (and subtle) differences in philosophy separate hard-core Bayesians from hard-core frequentists (Glymour 1981; Efron 1986), our treatment here of Bayesian methods is motivated simply by their use as a powerful statistical tool. Their introduction into quantitative genetics can be largely credited to the influential paper of Gianola and Fernando (1986), which reviewed Bayesian applications to animal breeding. Blasco (2001, 2017) provided nice overviews of Bayesian versus frequentist approaches in quantitative genetics and both are highly recommended, while a detailed treatment of applications to quantitative genetics was provided by Sorensen and Gianola (2002). Gianola and Rosa (2015) presented an excellent review of the history of statistical methods in animal breeding, culminating with the wide acceptance of Bayesian approaches.",
+      "source_page": 645,
+      "source_pages": [
+        645
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p029:b6",
+        "Evolution_chapter19:p029:b7"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          939.0,
+          442.0,
+          962.0
+        ],
+        [
+          132.0,
+          969.0,
+          904.0,
+          1199.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ad1b31a8c5a193b521a73df3d153621abe5b5ef315f165cf1399b5978356a0b7"
     },
     {
       "type": "proposition",
-      "content": "The foundation of Bayesian statistics is $ \\mathbf{Bayes'} $ $ \\text{theorem} $ (Appendix 2), which provides the relationship between $ \\Pr(x \\mid y) $ and $ \\Pr(y \\mid x) $, namely, the flipped conditional probabilities. The continuous, vector-valued version of this theorem is $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{y})=\\frac{p(\\mathbf{y}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{p(\\mathbf{y})}=\\frac{p(\\mathbf{y}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{\\int p(\\mathbf{y},\\boldsymbol{\\Theta})d\\boldsymbol{\\Theta}} $$ where $ \\boldsymbol{\\Theta}^{T} = (\\theta^{(1)}, \\theta^{(2)}, \\cdots, \\theta^{(k)}) $ is a vector of $ k $ random variables. Here $ p(\\boldsymbol{\\Theta}) $ is our prior belief (prior for short) about the distribution of the unknown values, $ \\boldsymbol{\\Theta} $, while $ p(\\mathbf{y} | \\boldsymbol{\\Theta}) $ is simply a standard likelihood function for the probability density of the observed vector of data, $ \\mathbf{y} $, given that the unknown parameters have a specified value of $ \\boldsymbol{\\Theta} $ (LW Appendix 4). The product of these two variables, normalized by $ p(\\mathbf{y}) $ to form a proper probability distribution (i.e., that integrates to 1), is our posterior belief (the posterior), $ p(\\boldsymbol{\\Theta} \\mid \\mathbf{y}) $, for the distribution of the unknown parameters, given both the data, y, and the prior information, $ p(\\boldsymbol{\\Theta}) $. Because $ p(\\mathbf{y}) $, the probability of the data vector $ \\mathbf{y} $, is a constant independent of $ \\boldsymbol{\\Theta} $, it is typically ignored, and the posterior is often simply written as $$ p(\\boldsymbol{\\Theta}\\"
+      "content": "The foundation of Bayesian statistics is $ \\mathbf{Bayes'} $ $ \\text{theorem} $ (Appendix 2), which provides the relationship between $ \\Pr(x \\mid y) $ and $ \\Pr(y \\mid x) $, namely, the flipped conditional probabilities. The continuous, vector-valued version of this theorem is $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{y})=\\frac{p(\\mathbf{y}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{p(\\mathbf{y})}=\\frac{p(\\mathbf{y}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta})}{\\int p(\\mathbf{y},\\boldsymbol{\\Theta})d\\boldsymbol{\\Theta}} $$ where $ \\boldsymbol{\\Theta}^{T} = (\\theta^{(1)}, \\theta^{(2)}, \\cdots, \\theta^{(k)}) $ is a vector of $ k $ random variables. Here $ p(\\boldsymbol{\\Theta}) $ is our prior belief (prior for short) about the distribution of the unknown values, $ \\boldsymbol{\\Theta} $, while $ p(\\mathbf{y} | \\boldsymbol{\\Theta}) $ is simply a standard likelihood function for the probability density of the observed vector of data, $ \\mathbf{y} $, given that the unknown parameters have a specified value of $ \\boldsymbol{\\Theta} $ (LW Appendix 4). The product of these two variables, normalized by $ p(\\mathbf{y}) $ to form a proper probability distribution (i.e., that integrates to 1), is our posterior belief (the posterior), $ p(\\boldsymbol{\\Theta} \\mid \\mathbf{y}) $, for the distribution of the unknown parameters, given both the data, y, and the prior information, $ p(\\boldsymbol{\\Theta}) $. Because $ p(\\mathbf{y}) $, the probability of the data vector $ \\mathbf{y} $, is a constant independent of $ \\boldsymbol{\\Theta} $, it is typically ignored, and the posterior is often simply written as $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{y})\\propto p(\\mathbf{y}\\mid\\boldsymbol{\\Theta})p(\\boldsymbol{\\Theta}) $$",
+      "source_page": 645,
+      "source_pages": [
+        645,
+        646
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p029:b8",
+        "Evolution_chapter19:p029:b9",
+        "Evolution_chapter19:p029:b10",
+        "Evolution_chapter19:p030:b2",
+        "Evolution_chapter19:p030:b3"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1198.0,
+          903.0,
+          1268.0
+        ],
+        [
+          341.0,
+          1281.0,
+          693.0,
+          1335.0
+        ],
+        [
+          131.0,
+          1352.0,
+          904.0,
+          1472.0
+        ],
+        [
+          288.0,
+          206.0,
+          1057.0,
+          301.0
+        ],
+        [
+          569.0,
+          320.0,
+          777.0,
+          346.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7029a8db3255e2c55eb7b804f1c4d51203c0501ea3e9a793c6664f8c36d4bb78"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:19.8]]"
+      "content": "[[SEE_EXAMPLE:19.8]]",
+      "source_page": 646,
+      "source_pages": [
+        646,
+        647
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p030:b12",
+        "Evolution_chapter19:p030:b13",
+        "Evolution_chapter19:p031:b10",
+        "Evolution_chapter19:p031:b11",
+        "Evolution_chapter19:p031:b12",
+        "Evolution_chapter19:p031:b13",
+        "Evolution_chapter19:p031:b2",
+        "Evolution_chapter19:p031:b3",
+        "Evolution_chapter19:p031:b4",
+        "Evolution_chapter19:p031:b5",
+        "Evolution_chapter19:p031:b6",
+        "Evolution_chapter19:p031:b7",
+        "Evolution_chapter19:p031:b8",
+        "Evolution_chapter19:p031:b9"
+      ],
+      "source_bboxes": [
+        [
+          322.0,
+          1262.0,
+          1035.0,
+          1392.0
+        ],
+        [
+          502.0,
+          1410.0,
+          850.0,
+          1472.0
+        ],
+        [
+          168.0,
+          887.0,
+          879.0,
+          1014.0
+        ],
+        [
+          167.0,
+          1013.0,
+          880.0,
+          1057.0
+        ],
+        [
+          430.0,
+          1074.0,
+          615.0,
+          1127.0
+        ],
+        [
+          167.0,
+          1144.0,
+          880.0,
+          1296.0
+        ],
+        [
+          166.0,
+          208.0,
+          858.0,
+          232.0
+        ],
+        [
+          373.0,
+          249.0,
+          669.0,
+          303.0
+        ],
+        [
+          166.0,
+          320.0,
+          880.0,
+          385.0
+        ],
+        [
+          167.0,
+          385.0,
+          880.0,
+          534.0
+        ],
+        [
+          314.0,
+          551.0,
+          731.0,
+          579.0
+        ],
+        [
+          168.0,
+          598.0,
+          879.0,
+          662.0
+        ],
+        [
+          395.0,
+          661.0,
+          648.0,
+          688.0
+        ],
+        [
+          168.0,
+          697.0,
+          880.0,
+          887.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7f9b1537766942d3e53e54ad3370a32f2a2039b3a7ac9ea45a242b03690960c6"
     },
     {
       "type": "discussion",
-      "content": "In words, the posterior is the product of the likelihood and the prior multiplied by a normalization constant to return a proper probability distribution."
+      "content": "In words, the posterior is the product of the likelihood and the prior multiplied by a normalization constant to return a proper probability distribution.",
+      "source_page": 646,
+      "source_pages": [
+        646
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p030:b5"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          365.0,
+          1058.0,
+          411.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "43c2786e5811ba89ee59e0453dc78cc4f06750ff16e6bdb8960eea0928593300"
     },
     {
       "type": "discussion",
-      "content": "Often, only a subset of the unknown variables is of concern, with the rest being regarded as nuisance variables (or nuisance parameters) that we wish to remove (or at least ignore). To see how this can be accomplished, partition the vector of unknown parameters as $ \\boldsymbol{\\Theta}^T = (\\boldsymbol{\\Theta}_1^T, \\boldsymbol{\\Theta}_{nu}^T) $, where $ \\boldsymbol{\\Theta}_{nu} $ is the column vector of nuisance variables. Integrating the full posterior over $ \\boldsymbol{\\Theta}_{nu} $ yields the marginal posterior distribution for the variables of interest, $ \\boldsymbol{\\Theta}_1 $, as $$ \\begin{aligned}p(\\boldsymbol{\\Theta}_{1}\\mid\\mathbf{y})&=\\int p(\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{nu}\\mid\\mathbf{y})d\\boldsymbol{\\Theta}_{nu}\\\\&=\\int p(\\boldsymbol{\\Theta}_{1}\\mid\\boldsymbol{\\Theta}_{nu},\\mathbf{y})p(\\boldsymbol{\\Theta}_{nu}\\mid\\mathbf{y})d\\boldsymbol{\\Theta}_{nu}\\\\&=E_{\\boldsymbol{\\Theta}_{nu}}\\left[p(\\boldsymbol{\\Theta}_{1}\\mid\\boldsymbol{\\Theta}_{nu},\\mathbf{y})\\right]\\\\ \\end{aligned} $$"
+      "content": "Often, only a subset of the unknown variables is of concern, with the rest being regarded as nuisance variables (or nuisance parameters) that we wish to remove (or at least ignore). To see how this can be accomplished, partition the vector of unknown parameters as $ \\boldsymbol{\\Theta}^T = (\\boldsymbol{\\Theta}_1^T, \\boldsymbol{\\Theta}_{nu}^T) $, where $ \\boldsymbol{\\Theta}_{nu} $ is the column vector of nuisance variables. Integrating the full posterior over $ \\boldsymbol{\\Theta}_{nu} $ yields the marginal posterior distribution for the variables of interest, $ \\boldsymbol{\\Theta}_1 $, as $$ \\begin{aligned}p(\\boldsymbol{\\Theta}_{1}\\mid\\mathbf{y})&=\\int p(\\boldsymbol{\\Theta}_{1},\\boldsymbol{\\Theta}_{nu}\\mid\\mathbf{y})d\\boldsymbol{\\Theta}_{nu}\\\\&=\\int p(\\boldsymbol{\\Theta}_{1}\\mid\\boldsymbol{\\Theta}_{nu},\\mathbf{y})p(\\boldsymbol{\\Theta}_{nu}\\mid\\mathbf{y})d\\boldsymbol{\\Theta}_{nu}\\\\&=E_{\\boldsymbol{\\Theta}_{nu}}\\left[p(\\boldsymbol{\\Theta}_{1}\\mid\\boldsymbol{\\Theta}_{nu},\\mathbf{y})\\right]\\\\ \\end{aligned} $$",
+      "source_page": 646,
+      "source_pages": [
+        646
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p030:b6",
+        "Evolution_chapter19:p030:b7"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          412.0,
+          1060.0,
+          550.0
+        ],
+        [
+          482.0,
+          569.0,
+          863.0,
+          693.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2bf5c8e2d4d96a539b10a90d4ed86204fb6584eba5aa382dd8a0dfbac58f7683"
     },
     {
       "type": "discussion",
-      "content": "The last line highlights the fact that the marginal posterior is the conditional distribution of the parameters of interest, averaged over the distribution of nuisance parameters."
+      "content": "The last line highlights the fact that the marginal posterior is the conditional distribution of the parameters of interest, averaged over the distribution of nuisance parameters.",
+      "source_page": 646,
+      "source_pages": [
+        646
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p030:b9"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          711.0,
+          1059.0,
+          758.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "27c6ac831d254f1749c13b1d08210ce07127dd6f49d379054b785349cdef519a"
     },
     {
       "type": "discussion",
-      "content": "The marginal posterior is a very powerful tool, as it accounts for how uncertainty in the nuisance variables influences the level of uncertainty in the variable or variables of interest. This marginal probability calculation illustrates both the strength and the weakness of a Bayesian analysis before the advent of MCMC approaches. The strength is that obtaining such a marginal is very powerful for inference. The weakness is that the integration to obtain this marginal can be daunting (at best). Fortunately, MCMC techniques allow one to easily simulate draws from most marginal distributions (Appendix 3)."
+      "content": "The marginal posterior is a very powerful tool, as it accounts for how uncertainty in the nuisance variables influences the level of uncertainty in the variable or variables of interest. This marginal probability calculation illustrates both the strength and the weakness of a Bayesian analysis before the advent of MCMC approaches. The strength is that obtaining such a marginal is very powerful for inference. The weakness is that the integration to obtain this marginal can be daunting (at best). Fortunately, MCMC techniques allow one to easily simulate draws from most marginal distributions (Appendix 3).",
+      "source_page": 646,
+      "source_pages": [
+        646
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p030:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          758.0,
+          1059.0,
+          919.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "962df47444953c66549634acab25665e6258928d2a23e665e8942d51ea25c151"
     },
     {
       "type": "discussion",
-      "content": "The dependence of the posterior on the prior (which can be partly assessed by examining the posterior's stability over different priors) provides an indication of how much information on one or more unknown variables is contained in the data. If the posterior is highly dependent on the prior, the data likely will have little signal, while if the posterior is largely unaffected by the shape of the assumed prior, the data will be highly informative. Such explorations of the effects of a prior under a careful Bayesian analysis offer some protection from incorrect conclusions based on weak likelihoods (a flat likelihood surface) or an overly strong prior. It is not uncommon to find, in the same analyses, that the marginal posterior for some variables is very robust to the choice of priors (with the data containing a strong signal generating a highly peaked likelihood surface for these variables), while for other variables, the marginal is highly dependent on the prior (with very little information contained in the data on these variables, generating a flat likelihood surface). $$ p(\\mathbf{y}\\mid\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma^{2}}}\\exp\\left(-\\sum_{i=1}^{n}\\frac{(y_{i}-\\mu)^{2}}{2\\sigma^{2}}\\right) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Suppose we assume a Gaussian prior for the location of the mean, $ \\mu \\sim \\mathrm{N}(\\mu_0, \\sigma_0^2) $, so that $$ p(\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma_{0}^{2}}}\\exp\\left(-\\frac{(\\mu-\\mu_{0})^{2}}{2\\sigma_{0}^{2}}\\right) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "While $ \\mu $ is treated as a fixed (but unknown) value in a standard (frequentist) analysis, it is treated as a random variable in a Bayesian analysis. There are no fixed effects in a Bayesian analysis, as everything is treated as a random variable."
-    },
-    {
-      "type": "discussion",
-      "content": "The mean, $\\mu_0$, and variance, $\\sigma_0^2$, are referred to as the prior hyperparameters, where $\\mu_0$ specifies a prior location for the mean and $\\sigma_0^2$ specifies the uncertainty in this prior location. The larger is this variance, the greater is our uncertainty. In the limit (as $\\sigma_0^2 \\to \\infty$), this corresponds to $p(\\mu) = c$, a constant, which is a uniform or flat prior, where all values of $\\mu$ between some upper and lower value are assumed to be equally likely. (Keynes 1921 called this the principle of indifference—all possible outcomes are equally probable.) A little algebra (Appendix 2) yields $$ p(\\mu\\mid\\mathbf{y})\\propto p(\\mathbf{y}\\mid\\mu)p(\\mu)\\propto\\exp\\left\\{-(\\mu-\\mu_{*})^{2}/[2\\sigma_{*}^{2}]\\right\\} $$ where the expressions for $ \\mu_* $ and $ \\sigma_* $ are given in Appendix 2 (Equation A2.22b). Thus, the posterior density function for $ \\mu $ is a normal with a mean of $ \\mu_* $ and variance of $ \\sigma_* $, which can be formally expressed as $$ \\mu\\mid\\left(\\mathbf{y},\\sigma^{2},\\mu_{0},\\sigma_{0}^{2}\\right)\\sim\\mathrm{N}\\left(\\mu_{*},\\sigma_{*}^{2}\\right) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Notice that our Gaussian prior for $ \\mu $ conjugated with the likelihood function, with the product of the prior and likelihood returning a distribution in the same family as the prior (but whose distribution parameters, which here are the mean and the variance, have been changed from their values in the prior by the data). The use of such conjugate priors (for a given likelihood), which is a key tool in Bayesian analysis, is explored in detail in Appendix 2. For example, with normally distributed data and an unknown variance, using a scaled inverse- $ \\chi^2 $ prior for the variance also conjugates the likelihood, with the posterior distribution for the variance also following a scaled inverse- $ \\chi^2 $, but (as above) also with different distribution parameters (i.e., the shape and scale parameters are changed; Appendix 2)."
-    },
-    {
-      "type": "discussion",
-      "content": "A Bayesian analysis returns distributions, rather than point estimates. A number of summary statistics can be reported for the posterior, such as its mean, median (50% value), and mode (most frequent value, which is equivalent to the MLE in a likelihood analysis). More generally, when closed-form analytical expressions are not available, one can simply plot the posterior distribution via a histogram from values generated through MCMC methods (as discussed in Appendix 3)."
-    },
-    {
-      "type": "discussion",
-      "content": "What is the relative importance of the prior information, $ p(\\mu) $, compared to the actual data, y? Equation A2.22b gives the mean of the posterior distribution as $$ \\mu_{*}=\\mu_{0}\\frac{\\sigma_{*}^{2}}{\\sigma_{0}^{2}}+\\overline{y}\\frac{\\sigma_{*}^{2}}{\\sigma^{2}/n} $$ With a very diffuse prior on $\\mu$ (i.e., $\\sigma_0^2 \\gg \\sigma^2$), Equation A2.22b shows that $\\sigma_2^* \\to \\sigma^2/n$ and thus $\\mu_* \\to \\overline{y}$, so with very weak prior information, the mean of the posterior distribution is close to the usual estimate of $\\mu$, which is the sample mean, $\\overline{y}$. Conversely, as we collect enough data (i.e., large $n$), $\\sigma_*\\to \\sigma^2/n$ and again $\\mu_*\\to \\overline{y}$. Thus, even with a very strong prior belief about the location of the mean ($\\sigma_0^2$ is small), as our sample size becomes sufficiently large, the mean of the posterior approaches the sample mean. With a modest prior and data (meaning that $\\sigma_0^2$ and $n$ are modest), this expression shows how these two contributions are weighted."
+      "content": "The dependence of the posterior on the prior (which can be partly assessed by examining the posterior's stability over different priors) provides an indication of how much information on one or more unknown variables is contained in the data. If the posterior is highly dependent on the prior, the data likely will have little signal, while if the posterior is largely unaffected by the shape of the assumed prior, the data will be highly informative. Such explorations of the effects of a prior under a careful Bayesian analysis offer some protection from incorrect conclusions based on weak likelihoods (a flat likelihood surface) or an overly strong prior. It is not uncommon to find, in the same analyses, that the marginal posterior for some variables is very robust to the choice of priors (with the data containing a strong signal generating a highly peaked likelihood surface for these variables), while for other variables, the marginal is highly dependent on the prior (with very little information contained in the data on these variables, generating a flat likelihood surface). $$ p(\\mathbf{y}\\mid\\mu)=\\frac{1}{\\sqrt{2\\pi\\sigma^{2}}}\\exp\\left(-\\sum_{i=1}^{n}\\frac{(y_{i}-\\mu)^{2}}{2\\sigma^{2}}\\right) $$",
+      "source_page": 646,
+      "source_pages": [
+        646
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p030:b11",
+        "Evolution_chapter19:p030:b12"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          919.0,
+          1060.0,
+          1197.0
+        ],
+        [
+          322.0,
+          1262.0,
+          1035.0,
+          1392.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "aa9f9096fdbe9be62ae5e1e96fe7d4e931024a661b4f2139faf0df517c2576ae"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:19.9]]"
+      "content": "[[SEE_EXAMPLE:19.9]]",
+      "source_page": 647,
+      "source_pages": [
+        647,
+        648
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p031:b14",
+        "Evolution_chapter19:p032:b2",
+        "Evolution_chapter19:p032:b4",
+        "Evolution_chapter19:p032:b5"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          1362.0,
+          881.0,
+          1470.0
+        ],
+        [
+          323.0,
+          204.0,
+          1035.0,
+          277.0
+        ],
+        [
+          323.0,
+          432.0,
+          1035.0,
+          623.0
+        ],
+        [
+          321.0,
+          622.0,
+          1037.0,
+          729.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "318e0b4d95a1e55cb34417c018e40ffb33f777d716679ad4e4d7d26b6b6ba822"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:19.10]]"
+      "content": "[[SEE_EXAMPLE:19.10]]",
+      "source_page": 627,
+      "source_pages": [
+        627
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p011:b9"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1259.0,
+          905.0,
+          1472.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "073b2a6f3a1d8e4f915675bba4a1510c903a6980cd0a4d733949a28b4ca43f9c"
     }
   ]
 }

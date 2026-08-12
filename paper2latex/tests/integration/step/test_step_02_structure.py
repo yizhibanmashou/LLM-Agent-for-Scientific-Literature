@@ -1,7 +1,8 @@
-import logging
 import json
-import pytest
+import logging
 from pathlib import Path
+
+import pytest
 from paper2latex.converters.structure_parser import StructureParser
 
 logger = logging.getLogger(__name__)

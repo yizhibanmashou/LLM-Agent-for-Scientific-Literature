@@ -21,43 +21,299 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "As suggested by the Schweder-Spötvoll plot, the distribution of $p$ values offers insight into the number of truly null hypotheses, $n_{0}$. While this plot offers either a simple visual, or a more formal regression-based, estimator of $n_{0}$, it tends to overestimate the number of nulls. Further, it can be difficult to specify exactly where the upturn in the plotted values begins. A number of other estimators have been suggested, again based on a uniform distribution of $p$ values for those tests under the null. Recall that the histogram from a sufficiently large number of draws from a uniform distribution is flat, as all values are equally likely (Figure A4.2A). However, if the null is false for at least some of the tests, then the distribution of $p$ values is shifted away from uniform, and usually with a skew toward smaller values (Figure A4.2B), but potentially also skewed toward one (for example, if one-tailed tests are used when a two-tailed test is appropriate; Figure A4.2C)."
+      "content": "As suggested by the Schweder-Spötvoll plot, the distribution of $p$ values offers insight into the number of truly null hypotheses, $n_{0}$. While this plot offers either a simple visual, or a more formal regression-based, estimator of $n_{0}$, it tends to overestimate the number of nulls. Further, it can be difficult to specify exactly where the upturn in the plotted values begins. A number of other estimators have been suggested, again based on a uniform distribution of $p$ values for those tests under the null. Recall that the histogram from a sufficiently large number of draws from a uniform distribution is flat, as all values are equally likely (Figure A4.2A). However, if the null is false for at least some of the tests, then the distribution of $p$ values is shifted away from uniform, and usually with a skew toward smaller values (Figure A4.2B), but potentially also skewed toward one (for example, if one-tailed tests are used when a two-tailed test is appropriate; Figure A4.2C).",
+      "source_page": 1238,
+      "source_pages": [
+        1238
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p009:b8",
+        "Evolution_appendix4:p009:b9"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          1144.0,
+          649.0,
+          1168.0
+        ],
+        [
+          133.0,
+          1173.0,
+          904.0,
+          1427.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1215ea9177b31f6f307a7fe5177a36166e47b2f019199a0cf196edbf43becf48"
     },
     {
       "type": "discussion",
-      "content": "If the collection of tests contains some alternative hypotheses mixed in with true nulls, we expect the distribution to be a mixture, with fraction, $ \\pi_0 = n_0/n $, consisting of draws from a uniform and the remaining fraction, $ (1 - n_0/n) $, from some other distribution. Figure A4.3 plots the empirical distribution of $ p $ values from a study by Mosig et al. (2001) on marker-trait associations. While the middle of the distribution appears to be consistent with random sampling around a flat average, there is a large excess of values near zero."
+      "content": "If the collection of tests contains some alternative hypotheses mixed in with true nulls, we expect the distribution to be a mixture, with fraction, $ \\pi_0 = n_0/n $, consisting of draws from a uniform and the remaining fraction, $ (1 - n_0/n) $, from some other distribution. Figure A4.3 plots the empirical distribution of $ p $ values from a study by Mosig et al. (2001) on marker-trait associations. While the middle of the distribution appears to be consistent with random sampling around a flat average, there is a large excess of values near zero.",
+      "source_page": 1238,
+      "source_pages": [
+        1238,
+        1239
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p009:b10",
+        "Evolution_appendix4:p010:b3",
+        "Evolution_appendix4:p010:b4"
+      ],
+      "source_bboxes": [
+        [
+          169.0,
+          1427.0,
+          904.0,
+          1450.0
+        ],
+        [
+          321.0,
+          593.0,
+          1036.0,
+          829.0
+        ],
+        [
+          287.0,
+          873.0,
+          1060.0,
+          987.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ec55e429288cd32914065b566e4debe8aa70bd4171e3a37d73833c859edfff46"
     },
     {
       "type": "discussion",
-      "content": "One simple approach for estimating $ n_{0} $ is to use the average height for the middle range of the p-value histogram. Presumably, these p values are almost entirely drawn from null hypotheses, though this may not be the case for values near zero (and potentially one). Recall that the probability density function for a uniform over $ (0,1) $ has a very simple form $$ \\phi_{u}(p)=1\\quad for\\quad0\\leq p\\leq1 $$"
+      "content": "One simple approach for estimating $ n_{0} $ is to use the average height for the middle range of the p-value histogram. Presumably, these p values are almost entirely drawn from null hypotheses, though this may not be the case for values near zero (and potentially one). Recall that the probability density function for a uniform over $ (0,1) $ has a very simple form $$ \\phi_{u}(p)=1\\quad for\\quad0\\leq p\\leq1 $$",
+      "source_page": 1239,
+      "source_pages": [
+        1239
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p010:b5",
+        "Evolution_appendix4:p010:b6"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          989.0,
+          1059.0,
+          1081.0
+        ],
+        [
+          555.0,
+          1096.0,
+          792.0,
+          1120.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "15e5c23bd4b0c0b87770d306dc5ae9ef114af5d8693850cc4d2eb2a73393b9fa"
     },
     {
       "type": "discussion",
-      "content": "If there are $ n_0 $ truly null tests, then the expected number of $ p $ values from these tests that fall within an interval $ 0 \\leq a < b \\leq 1 $ is simply $$ \\begin{align*}n_0\\int_a^b\\phi_u(p)dp=n_0\\int_a^b1\\cdot dp=n_0(b-a)\\end{align*} $$"
+      "content": "If there are $ n_0 $ truly null tests, then the expected number of $ p $ values from these tests that fall within an interval $ 0 \\leq a < b \\leq 1 $ is simply $$ \\begin{align*}n_0\\int_a^b\\phi_u(p)dp=n_0\\int_a^b1\\cdot dp=n_0(b-a)\\end{align*} $$",
+      "source_page": 1239,
+      "source_pages": [
+        1239
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p010:b8",
+        "Evolution_appendix4:p010:b9"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1137.0,
+          1058.0,
+          1183.0
+        ],
+        [
+          495.0,
+          1198.0,
+          850.0,
+          1252.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "76cbe6a5250b05a7b1ed5724aa1d197e9b6e18c2ed78ee999ee32814c9f4f28c"
     },
     {
       "type": "discussion",
-      "content": "Hence $$ \\widehat{n}_{0}(a,b)=\\frac{Number of p(i)values in(a,b)}{b-a} $$"
+      "content": "Hence $$ \\widehat{n}_{0}(a,b)=\\frac{Number of p(i)values in(a,b)}{b-a} $$",
+      "source_page": 1239,
+      "source_pages": [
+        1239
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p010:b11",
+        "Evolution_appendix4:p010:b12"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          1264.0,
+          353.0,
+          1285.0
+        ],
+        [
+          495.0,
+          1280.0,
+          849.0,
+          1326.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "21ec9134f80a115563e64b3991f9a798508c86c3050d66cfcf8ea8b4e7b27025"
     },
     {
       "type": "discussion",
-      "content": "Likewise, an estimate for the fraction $ \\pi_{0}=n_{0}/n $ of true nulls is $$ \\begin{aligned}\\widehat{\\pi}_{0}(a,b)&=\\frac{\\text{Number of}p(i)\\text{values in}(a,b)}{n(b-a)}\\\\&=\\frac{\\text{Fraction of}p(i)\\text{values in}(a,b)}{b-a}\\end{aligned} $$"
+      "content": "Likewise, an estimate for the fraction $ \\pi_{0}=n_{0}/n $ of true nulls is $$ \\begin{aligned}\\widehat{\\pi}_{0}(a,b)&=\\frac{\\text{Number of}p(i)\\text{values in}(a,b)}{n(b-a)}\\\\&=\\frac{\\text{Fraction of}p(i)\\text{values in}(a,b)}{b-a}\\end{aligned} $$",
+      "source_page": 1239,
+      "source_pages": [
+        1239
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p010:b14",
+        "Evolution_appendix4:p010:b15"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1335.0,
+          828.0,
+          1358.0
+        ],
+        [
+          495.0,
+          1372.0,
+          848.0,
+          1469.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ebabeced1a3d04d72ec381a37cf2d259481928e8cdc9636e6c299fb9fc60d9e2"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A4.6]]"
+      "content": "[[SEE_EXAMPLE:A4.6]]",
+      "source_page": 1240,
+      "source_pages": [
+        1240
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p011:b11"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          1114.0,
+          880.0,
+          1285.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5b1cbb15571e2cef381e3f35775f78be792a4c3e744aee4a85a1da44fdf46dc7"
     },
     {
       "type": "discussion",
-      "content": "Storey and Tibshirani (2003) considered the number of $p$ values exceeding some tunable parameter value, $\\lambda$ (taking $a = \\lambda$ and $b = 1$ in Equation A4.8b), on the logic that for larger values of $\\lambda$, most of these draws are from the uniform corresponding to draws from the null. Let $\\widehat{\\pi}_0(\\lambda)$ denote the estimated fraction of truly null hypotheses based on using a tuning value of $ \\lambda $, then $$ \\widehat{\\pi}_{0}(\\lambda)=\\frac{Number of p(i)values>\\lambda}{n(1-\\lambda)} $$ and $$ \\widehat{n}_{0}(\\lambda)=n\\cdot\\widehat{\\pi}_{0}(\\lambda)=\\frac{Number of p(i)values>\\lambda}{1-\\lambda} $$"
+      "content": "Storey and Tibshirani (2003) considered the number of $p$ values exceeding some tunable parameter value, $\\lambda$ (taking $a = \\lambda$ and $b = 1$ in Equation A4.8b), on the logic that for larger values of $\\lambda$, most of these draws are from the uniform corresponding to draws from the null. Let $\\widehat{\\pi}_0(\\lambda)$ denote the estimated fraction of truly null hypotheses based on using a tuning value of $ \\lambda $, then $$ \\widehat{\\pi}_{0}(\\lambda)=\\frac{Number of p(i)values>\\lambda}{n(1-\\lambda)} $$ and $$ \\widehat{n}_{0}(\\lambda)=n\\cdot\\widehat{\\pi}_{0}(\\lambda)=\\frac{Number of p(i)values>\\lambda}{1-\\lambda} $$",
+      "source_page": 1240,
+      "source_pages": [
+        1240,
+        1241
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p011:b12",
+        "Evolution_appendix4:p012:b2",
+        "Evolution_appendix4:p012:b3",
+        "Evolution_appendix4:p012:b4",
+        "Evolution_appendix4:p012:b5",
+        "Evolution_appendix4:p012:b6"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1349.0,
+          903.0,
+          1445.0
+        ],
+        [
+          288.0,
+          207.0,
+          430.0,
+          230.0
+        ],
+        [
+          514.0,
+          225.0,
+          830.0,
+          274.0
+        ],
+        [
+          990.0,
+          239.0,
+          1056.0,
+          263.0
+        ],
+        [
+          289.0,
+          284.0,
+          331.0,
+          305.0
+        ],
+        [
+          467.0,
+          297.0,
+          878.0,
+          346.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1d2546d2569e1817f9c9497786c8d5b4dce78abf384030d4849ecca3a7995ac5"
     },
     {
       "type": "discussion",
-      "content": "By focusing on the interval $(\\lambda, 1)$, the Storey-Tibshirani estimator is potentially biased when there are an excess of $p$ values near one. This can happen for a variety of reasons, such as inappropriate assumptions for the test statistic (e.g., the use of one-sided tests when two-sided tests are more appropriate). Both Equation A4.8c and the Storey-Tibshirani estimator (Equation A4.9b) rely on tuning parameters $(a, b$, and $\\lambda$, respectively) which define the region of the distribution of $p$ values assumed to be drawn from a uniform (i.e., almost all $p$ values in this interval are assumed to be generated under the null). Nettleton et al. (2006) reviewed these and other approaches for estimating $n_{0}$ from sampling parts of a presumed uniform and elaborated on their strengths and weaknesses."
+      "content": "By focusing on the interval $(\\lambda, 1)$, the Storey-Tibshirani estimator is potentially biased when there are an excess of $p$ values near one. This can happen for a variety of reasons, such as inappropriate assumptions for the test statistic (e.g., the use of one-sided tests when two-sided tests are more appropriate). Both Equation A4.8c and the Storey-Tibshirani estimator (Equation A4.9b) rely on tuning parameters $(a, b$, and $\\lambda$, respectively) which define the region of the distribution of $p$ values assumed to be drawn from a uniform (i.e., almost all $p$ values in this interval are assumed to be generated under the null). Nettleton et al. (2006) reviewed these and other approaches for estimating $n_{0}$ from sampling parts of a presumed uniform and elaborated on their strengths and weaknesses.",
+      "source_page": 1241,
+      "source_pages": [
+        1241
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p012:b8"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          352.0,
+          1059.0,
+          559.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "082a9b1806bfb502743f9e201a29a7365147c63543f5a3f5c0ee4ff4e84b8833"
     },
     {
       "type": "discussion",
-      "content": "One significant concern is that correlated tests can result in either an under- or over-dispersion of p values under the global null hypothesis, resulting in significant departure from a uniform distribution (Efron 2007; Hu et al. 2011; Leek and Storey 2011). This in turn compromises estimates of $ n_{0} $."
+      "content": "One significant concern is that correlated tests can result in either an under- or over-dispersion of p values under the global null hypothesis, resulting in significant departure from a uniform distribution (Efron 2007; Hu et al. 2011; Leek and Storey 2011). This in turn compromises estimates of $ n_{0} $.",
+      "source_page": 1241,
+      "source_pages": [
+        1241
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p012:b9"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          559.0,
+          1060.0,
+          653.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e961b81953738709e3e8d8ec9ff072252ee6c614d1864fc31929d550ab74209e"
     }
   ]
 }

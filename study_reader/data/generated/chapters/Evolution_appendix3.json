@@ -38,7 +38,7 @@
       "level": 2,
       "depth": 1,
       "anchor": "evolution_appendix3_003",
-      "text_preview": "$$ \\int f(x)q(x)dx=\\int f(x)\\left(\\frac{q(x)}{p(x)}\\right)p(x)dx=E {p(x)}\\left[f(x)\\left(\\frac{q(x)}{p(x)}\\right)\\right] $$ This forms the basis for the method of importance sampling, with $$ \\int f(x)q(x)dx\\simeq\\frac{1}{n}\\sum {i=1}^{n}f(x {i})\\left(\\frac{q(x {i})}{p(x {i})}\\right) $$ where again the $ x i $ values…"
+      "text_preview": "Consider any distribution whose probability density function, $ p(x) $, has the same support as some target density, $ q(x) $ (i.e., is nonzero over the same range of x values). Then, $$ \\int f(x)q(x)dx=\\int f(x)\\left(\\frac{q(x)}{p(x)}\\right)p(x)dx=E {p(x)}\\left[f(x)\\left(\\frac{q(x)}{p(x)}\\right)\\right] $$ This forms…"
     },
     {
       "id": "Evolution_appendix3_004",
@@ -52,254 +52,243 @@
     },
     {
       "id": "Evolution_appendix3_005",
-      "title": "Appendix: Introduction / INTRODUCTION TO MARKOV CHAINS",
-      "nav_label": "INTRODUCTION TO MARKOV CHAINS",
-      "raw_title": "Evolution_appendix3_005 · Appendix: Introduction / INTRODUCTION TO MARKOV CHAINS",
+      "title": "Appendix: Introduction / THE METROPOLIS-HASTINGS ALGORITHM",
+      "nav_label": "THE METROPOLIS-HASTINGS ALGORITHM",
+      "raw_title": "Evolution_appendix3_005 · Appendix: Introduction / THE METROPOLIS-HASTINGS ALGORITHM",
       "level": 2,
       "depth": 1,
       "anchor": "evolution_appendix3_005",
-      "text_preview": "[示例 Example] Example A3.2 · ref: A3.2 · source: Evolution appendix3 005.json · blocks 0–9 Example A3.2. Suppose the state space consists of three possible weather conditions (Rain, Sunny, Cloudy) and that weather patterns follow a Markov process (of course, they do not!). Under this assumption, the probability of tomo…"
-    },
-    {
-      "id": "Evolution_appendix3_006",
-      "title": "Appendix: Introduction / THE METROPOLIS-HASTINGS ALGORITHM",
-      "nav_label": "THE METROPOLIS-HASTINGS ALGORITHM",
-      "raw_title": "Evolution_appendix3_006 · Appendix: Introduction / THE METROPOLIS-HASTINGS ALGORITHM",
-      "level": 2,
-      "depth": 1,
-      "anchor": "evolution_appendix3_006",
       "text_preview": "The roots of MCMC methods trace back to a problem faced by mathematical physicists in applying Monte Carlo integration, namely, generating random samples from some complex distribution in order to apply Equation A3.1. Their solution was the Metropolis-Hastings algorithm (Metropolis and Ulam 1949; Metropolis et al. 195…"
     },
     {
-      "id": "Evolution_appendix3_008",
+      "id": "Evolution_appendix3_006",
       "title": "THE METROPOLIS-HASTINGS ALGORITHM / Burning-in the Sampler",
       "nav_label": "Burning-in the Sampler",
-      "raw_title": "Evolution_appendix3_008 · THE METROPOLIS-HASTINGS ALGORITHM / Burning-in the Sampler",
+      "raw_title": "Evolution_appendix3_006 · THE METROPOLIS-HASTINGS ALGORITHM / Burning-in the Sampler",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix3_008",
+      "anchor": "evolution_appendix3_006",
       "text_preview": "A key issue in the successful implementation of Metropolis-Hastings, or any other MCMC sampler, is the number of steps (iterations) until the chain approaches stationarity (the length of the burn-in period), as initial values are somewhat dependent upon the starting position. Typically the first 1,000 to 50,000 (or mo…"
     },
     {
-      "id": "Evolution_appendix3_009",
+      "id": "Evolution_appendix3_007",
       "title": "THE METROPOLIS-HASTINGS ALGORITHM / Simulated Annealing",
       "nav_label": "Simulated Annealing",
-      "raw_title": "Evolution_appendix3_009 · THE METROPOLIS-HASTINGS ALGORITHM / Simulated Annealing",
+      "raw_title": "Evolution_appendix3_007 · THE METROPOLIS-HASTINGS ALGORITHM / Simulated Annealing",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix3_009",
+      "anchor": "evolution_appendix3_007",
       "text_preview": "Simulated annealing was developed for finding the maximum of complex functions with multiple peaks where standard hill-climbing approaches may trap the algorithm on a less than optimal peak (Kirkpatrick et al. 1983). The idea is that when we initially start sampling the space, we will accept a reasonable probability o…"
     },
     {
-      "id": "Evolution_appendix3_010",
+      "id": "Evolution_appendix3_008",
       "title": "THE METROPOLIS-HASTINGS ALGORITHM / Choosing a Jumping (Proposal) Distribution",
       "nav_label": "Choosing a Jumping (Proposal) Distribution",
-      "raw_title": "Evolution_appendix3_010 · THE METROPOLIS-HASTINGS ALGORITHM / Choosing a Jumping (Proposal) Distribution",
+      "raw_title": "Evolution_appendix3_008 · THE METROPOLIS-HASTINGS ALGORITHM / Choosing a Jumping (Proposal) Distribution",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix3_010",
+      "anchor": "evolution_appendix3_008",
       "text_preview": "The Metropolis sampler works with any symmetric proposal (or jumping) distribution, while Metropolis-Hastings allows for more general distributions. So how do we determine our best option for a proposal distribution? There are two general approaches: random walks and independent chain sampling. Under a sampler using a…"
     },
     {
-      "id": "Evolution_appendix3_011",
+      "id": "Evolution_appendix3_009",
       "title": "THE METROPOLIS-HASTINGS ALGORITHM / Autocorrelation and Sample Size Inflation",
       "nav_label": "Autocorrelation and Sample Size Inflation",
-      "raw_title": "Evolution_appendix3_011 · THE METROPOLIS-HASTINGS ALGORITHM / Autocorrelation and Sample Size Inflation",
+      "raw_title": "Evolution_appendix3_009 · THE METROPOLIS-HASTINGS ALGORITHM / Autocorrelation and Sample Size Inflation",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix3_011",
-      "text_preview": "[Figure] Figure A3.2 · page 13 · source: Evolution appendix3 Figure A3.2 Trace plots for the two samplers discussed in Example A3.5. A: The proposal distribution is a $ \\chi {10}^{2} $. B: The proposal distribution is a $ \\chi {2}^{2} $. We often expect adjacent members from an MCMC sequence to be positively correlate…"
+      "anchor": "evolution_appendix3_009",
+      "text_preview": "We often expect adjacent members from an MCMC sequence to be positively correlated, and we can quantify the nature of this correlation by using an autocorrelation function. Consider a sequence, $(\\theta 1, \\cdots, \\theta n)$, of length $n$. Correlations can occur between adjacent members, $\\rho(\\theta i, \\theta {i+1})…"
     },
     {
-      "id": "Evolution_appendix3_012",
+      "id": "Evolution_appendix3_010",
       "title": "THE METROPOLIS-HASTINGS ALGORITHM / The Monte Carlo Variance of a MCMC-Based Estimate",
       "nav_label": "The Monte Carlo Variance of a MCMC-Based Estimate",
-      "raw_title": "Evolution_appendix3_012 · THE METROPOLIS-HASTINGS ALGORITHM / The Monte Carlo Variance of a MCMC-Based Estimate",
+      "raw_title": "Evolution_appendix3_010 · THE METROPOLIS-HASTINGS ALGORITHM / The Monte Carlo Variance of a MCMC-Based Estimate",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix3_012",
+      "anchor": "evolution_appendix3_010",
       "text_preview": "Suppose we are interested in using a burned-in MCMC sequence, $ (\\theta 1, \\cdots, \\theta n) $, to estimate some function, $ h(\\theta) $, of the target distribution, such as a mean, variance, or specific quantile (namely, a specific cumulative probability value). Since we are drawing random variables, associated with…"
     },
     {
-      "id": "Evolution_appendix3_013",
+      "id": "Evolution_appendix3_011",
       "title": "Appendix: Introduction / CONVERGENCE DIAGNOSTICS",
       "nav_label": "CONVERGENCE DIAGNOSTICS",
-      "raw_title": "Evolution_appendix3_013 · Appendix: Introduction / CONVERGENCE DIAGNOSTICS",
+      "raw_title": "Evolution_appendix3_011 · Appendix: Introduction / CONVERGENCE DIAGNOSTICS",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix3_013",
+      "anchor": "evolution_appendix3_011",
       "text_preview": "The careful reader will note that we have still not answered the fundamental, and vexing, question of how to determine whether the sampler has reached its stationary distribution. Many tests for stationarity have been proposed, and all can indeed show that stationarity has not yet been reached. However, it is importan…"
     },
     {
-      "id": "Evolution_appendix3_014",
+      "id": "Evolution_appendix3_012",
       "title": "CONVERGENCE DIAGNOSTICS / Visual Analysis",
       "nav_label": "Visual Analysis",
-      "raw_title": "Evolution_appendix3_014 · CONVERGENCE DIAGNOSTICS / Visual Analysis",
+      "raw_title": "Evolution_appendix3_012 · CONVERGENCE DIAGNOSTICS / Visual Analysis",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix3_014",
-      "text_preview": "As shown in Figure A3.1 and Figure A3.2, one should always examine the time series trace, the plot of the random variable being generated versus the number of iterations. In addition to showing evidence for poor mixing, such traces can also suggest a minimum burn-in period for some starting value. For example, suppose…"
+      "anchor": "evolution_appendix3_012",
+      "text_preview": "As shown in Figures A3.1 and A3.2, one should always examine the time series trace, the plot of the random variable being generated versus the number of iterations. In addition to showing evidence for poor mixing, such traces can also suggest a minimum burn-in period for some starting value. For example, suppose the t…"
     },
     {
-      "id": "Evolution_appendix3_015",
+      "id": "Evolution_appendix3_013",
       "title": "CONVERGENCE DIAGNOSTICS / More Formal Approaches",
       "nav_label": "More Formal Approaches",
-      "raw_title": "Evolution_appendix3_015 · CONVERGENCE DIAGNOSTICS / More Formal Approaches",
+      "raw_title": "Evolution_appendix3_013 · CONVERGENCE DIAGNOSTICS / More Formal Approaches",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix3_015",
+      "anchor": "evolution_appendix3_013",
       "text_preview": "Gelman and Rubin's (1992) proposal was to first generate m separate chains at initial locations that are widely dispersed in the parameter space, with each returning a burned-in and thinned (such that autocorrelations between estimates are near zero) sequence of length n. Their approach is essentially an ANOVA, contra…"
     },
     {
-      "id": "Evolution_appendix3_016",
+      "id": "Evolution_appendix3_014",
       "title": "CONVERGENCE DIAGNOSTICS / Practical MCMC: How Many Chains and How Long Should They Run?",
       "nav_label": "Practical MCMC: How Many Chains and How Long Should They Run?",
-      "raw_title": "Evolution_appendix3_016 · CONVERGENCE DIAGNOSTICS / Practical MCMC: How Many Chains and How Long Should They Run?",
+      "raw_title": "Evolution_appendix3_014 · CONVERGENCE DIAGNOSTICS / Practical MCMC: How Many Chains and How Long Should They Run?",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix3_016",
+      "anchor": "evolution_appendix3_014",
       "text_preview": "One can either use a single long chain (Geyer 1992; Raftery and Lewis 1992b) or multiple chains, with each starting from different initial values (Gelman and Rubin 1992). Note that with parallel processing, using multiple chains may be computationally more efficient (given a fixed amount of analysis time) than a singl…"
     },
     {
-      "id": "Evolution_appendix3_017",
+      "id": "Evolution_appendix3_015",
       "title": "Appendix: Introduction / THE GIBBS SAMPLER",
       "nav_label": "THE GIBBS SAMPLER",
-      "raw_title": "Evolution_appendix3_017 · Appendix: Introduction / THE GIBBS SAMPLER",
+      "raw_title": "Evolution_appendix3_015 · Appendix: Introduction / THE GIBBS SAMPLER",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix3_017",
+      "anchor": "evolution_appendix3_015",
       "text_preview": "The Gibbs sampler (introduced in the context of image processing by Geman and Geman 1984), is a special case of Metropolis-Hastings sampling wherein the random value is always accepted (i.e., $ \\alpha = 1 $). The key to the Gibbs sampler is that, at any point in the process, one only considers univariate conditional d…"
     },
     {
-      "id": "Evolution_appendix3_018",
-      "title": "Appendix: Introduction / THE GIBBS SAMPLER",
-      "nav_label": "THE GIBBS SAMPLER",
-      "raw_title": "Evolution_appendix3_018 · Appendix: Introduction / THE GIBBS SAMPLER",
-      "level": 2,
-      "depth": 1,
-      "anchor": "evolution_appendix3_018",
-      "text_preview": "(v) $ x {2} $ is obtained from a B(n, $ y {2} $) = B(10, 0.56) random variable, returning $ x {2} = 7 $. When more than two variables are involved, the sampler is extended in the obvious fashion. In particular, the value of the $ k $th variable is drawn from the distribution $ p(\\theta^{(k)} \\mid \\boldsymbol{\\Theta}^{…"
-    },
-    {
-      "id": "Evolution_appendix3_019",
+      "id": "Evolution_appendix3_016",
       "title": "THE GIBBS SAMPLER / Using the Gibbs Sampler to Approximate Marginal Distributions",
       "nav_label": "Using the Gibbs Sampler to Approximate Marginal Distributions",
-      "raw_title": "Evolution_appendix3_019 · THE GIBBS SAMPLER / Using the Gibbs Sampler to Approximate Marginal Distributions",
+      "raw_title": "Evolution_appendix3_016 · THE GIBBS SAMPLER / Using the Gibbs Sampler to Approximate Marginal Distributions",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix3_019",
+      "anchor": "evolution_appendix3_016",
       "text_preview": "Any feature of interest for the marginals can be computed from the m realizations of the Gibbs sequence. If $ \\theta 1, \\cdots, \\theta m $ is an appropriately burned-in set of realizations from a Gibbs sampler, the expectation of any function, $ f $, of the random variable $ \\theta $ is approximated by $$ E[f(\\theta)]…"
     },
     {
-      "id": "Evolution_appendix3_020",
+      "id": "Evolution_appendix3_017",
       "title": "Appendix: Introduction / REJECTION SAMPLING AND APPROXIMATE BAYESIAN COMPUTATION (ABC)",
       "nav_label": "REJECTION SAMPLING AND APPROXIMATE BAYESIAN COMPUTATION (ABC)",
-      "raw_title": "Evolution_appendix3_020 · Appendix: Introduction / REJECTION SAMPLING AND APPROXIMATE BAYESIAN COMPUTATION (ABC)",
+      "raw_title": "Evolution_appendix3_017 · Appendix: Introduction / REJECTION SAMPLING AND APPROXIMATE BAYESIAN COMPUTATION (ABC)",
       "level": 2,
       "depth": 1,
-      "anchor": "evolution_appendix3_020",
-      "text_preview": "[Figure] Figure A3.3 · page 21 · source: Evolution appendix3 Figure A3.3 The approximation of the marginal posterior distribution for x for the distribution given in Example A3.6 using a Gibbs sequence. The open bars represent the approximation using a binomial with the Gibbs-sequence mean value of y as the success pa…"
+      "anchor": "evolution_appendix3_017",
+      "text_preview": "In the words of Marjoram and Tavaré (2006), for many estimation problems in modern population genetics it is “far easier to simulate than to calculate.” Consider the number of segregating sites in a sample of alleles from a population that went through a bottleneck of undetermined width at some unknown time in the pas…"
     }
   ],
   "assets": [
-    {
-      "kind": "example",
-      "id": "A3.1",
-      "anchor": "example-a3.1",
-      "label": "Example A3.1",
-      "section_id": "Evolution_appendix3_002",
-      "excerpt": "Example A3.1 · ref: A3.1 · source: Evolution appendix3 002.json · blocks 3–7 Example A3.1. An interesting quantitative-genetic application of Monte Carlo integration was suggested by Ovaskainen et al. (2008) for comparing whether two G matrices are similar. As we detail in Volume 3, there are many proposed methods for comparing matrices, but Ovaskainen et al. suggested a (conceptually) simple approach. The G matrix for a given population is really a description of the distri…"
-    },
-    {
-      "kind": "example",
-      "id": "A3.2",
-      "anchor": "example-a3.2",
-      "label": "Example A3.2",
-      "section_id": "Evolution_appendix3_005",
-      "excerpt": "Example A3.2 · ref: A3.2 · source: Evolution appendix3 005.json · blocks 0–9 Example A3.2. Suppose the state space consists of three possible weather conditions (Rain, Sunny, Cloudy) and that weather patterns follow a Markov process (of course, they do not!). Under this assumption, the probability of tomorrow's weather simply depends on today's weather, and not on any other previous days. If this is the case, the observation that it has rained for three straight days does no…"
-    },
     {
       "kind": "figure",
       "id": "A3.1",
       "anchor": "figure-a3.1",
       "label": "Figure A3.1",
-      "section_id": "Evolution_appendix3_006",
+      "section_id": "Evolution_appendix3_012",
       "src": "figures/Evolution_A3.1.png",
       "caption": "Figure A3.1 Traces for the samplers discussed in Example A3.3. A: A sample run when the candidate-generating distribution is a uniform over  $ (0, 100) $. B: A sample run when the candidate-generating distribution is a  $ \\chi_{1}^{2} $."
-    },
-    {
-      "kind": "example",
-      "id": "A3.3",
-      "anchor": "example-a3.3",
-      "label": "Example A3.3",
-      "section_id": "Evolution_appendix3_006",
-      "excerpt": "Example A3.3 · ref: A3.3 · source: Evolution appendix3 006.json · blocks 9–9 Example A3.3. As a toy example, consider the scaled inverse- $ \\chi^2 $ distribution (Equation A2.30a), $$ \\begin{align }p(x)=C\\cdot x^{-(n/2+1)}\\cdot\\exp\\left({-a\\over2x}\\right)\\end{align } $$ We wish to use the Metropolis algorithm to simulate draws from this distribution with n = 3 degrees of freedom and a scaling factor of a = 4. Here $$ f(x)=x^{-5/2}\\exp[-4/(2x)]=x^{-2.5}\\exp[-2/x] $$ Suppose w…"
-    },
-    {
-      "kind": "example",
-      "id": "A3.4",
-      "anchor": "example-a3.4",
-      "label": "Example A3.4",
-      "section_id": "Evolution_appendix3_006",
-      "excerpt": "Example A3.4 · ref: A3.4 · source: Evolution appendix3 006.json · blocks 11–11 Example A3.4. This rather technical example shows that the Markov chain generated by the Metropolis-Hastings algorithm has a stationary distribution which corresponds to $ p(x) $. Hence, draws from the stationary phase of this chain correspond to random draws from the distribution given by $ p(x) $. We do so by showing that, under this chain, $ p(x) $ satisfies the detailed balance equation (A3.10…"
-    },
-    {
-      "kind": "example",
-      "id": "A3.5",
-      "anchor": "example-a3.5",
-      "label": "Example A3.5",
-      "section_id": "Evolution_appendix3_010",
-      "excerpt": "Example A3.5 · ref: A3.5 · source: Evolution appendix3 010.json · blocks 3–6 Example A3.5. Suppose we wish to use a $ \\chi^2 $ as our proposal distribution. Recall from Equation A2.27b, that for $ x \\sim \\chi n^2 $, $$ g(x)\\propto x^{n/2-1}e^{-x/2} $$ Thus, $ q(x, y) = g(y) = C \\cdot y^{n/2-1} e^{-y/2} $. Note that $ q(x, y) $ is not symmetric, as $ q(y, x) = g(x) \\neq g(y) = q(x, y) $. Hence, we must use Metropolis-Hastings sampling, with an acceptance probability of $$ \\al…"
     },
     {
       "kind": "figure",
       "id": "A3.2",
       "anchor": "figure-a3.2",
       "label": "Figure A3.2",
-      "section_id": "Evolution_appendix3_011",
+      "section_id": "Evolution_appendix3_012",
       "src": "figures/Evolution_A3.2.png",
       "caption": "Figure A3.2 Trace plots for the two samplers discussed in Example A3.5. A: The proposal distribution is a  $ \\chi_{10}^{2} $. B: The proposal distribution is a  $ \\chi_{2}^{2} $."
+    },
+    {
+      "kind": "example",
+      "id": "A3.1",
+      "anchor": "example-a3.1",
+      "label": "Example A3.1",
+      "section_id": "Evolution_appendix3_002",
+      "excerpt": "Example A3.1. An interesting quantitative-genetic application of Monte Carlo integration was suggested by Ovaskainen et al. (2008) for comparing whether two G matrices are similar. As we detail in Volume 3, there are many proposed methods for comparing matrices, but Ovaskainen et al. suggested a (conceptually) simple approach. The G matrix for a given population is really a description of the distribution of breeding values, and, as such we can think of comparing G matrices…",
+      "content_markdown": "Example A3.1. An interesting quantitative-genetic application of Monte Carlo integration was suggested by Ovaskainen et al. (2008) for comparing whether two G matrices are similar. As we detail in Volume 3, there are many proposed methods for comparing matrices, but Ovaskainen et al. suggested a (conceptually) simple approach. The G matrix for a given population is really a description of the distribution of breeding values, and, as such we can think of comparing G matrices as being akin to comparing two multivariate population distributions, whose densities are denoted by f and g. If x denotes a draw from one of these distributions, the probability that it originates from distribution g is simply $ g(\\mathbf{x}) / |g(\\mathbf{x}) + f(\\mathbf{x})| $. Hence, the probability q, that a random draw from f will be incorrectly assigned to g is calculated as $$ q(f,g)=\\int\\frac{g(\\mathbf{x})}{g(\\mathbf{x})+f(\\mathbf{x})}f(\\mathbf{x})d\\mathbf{x} $$ (A3.2a) If the two probability distributions are essentially indistinguishable, then $ q(f,g) = 0.5 $, while if they are completely distinguishable then $ q(f,g) = 0 $. Hence, $ 1 - 2q(f,g) $, which ranges from zero (indistinguishable) to one (fully distinguishable), provides a simple metric of the difference between them, and hence the difference between the two G matrices that comprise the distributions of f versus g. Ovaskainen et al. modified this idea further, suggesting the metric $$ d(f,g)=\\sqrt{1-2q(f,g)} $$ (A3.2b) While Equation A3.2a involves a complex integral, Equation A3.1d suggests that $$ \\widehat{q}(f,g)=\\frac{1}{n}\\sum_{i=1}^{n}\\frac{g(\\mathbf{x}_{i})}{g(\\mathbf{x}_{i})+f(\\mathbf{x}_{i})}\\rightarrow q(f,g) $$ (A3.2c) where $ \\mathbf{x}_1, \\cdots, \\mathbf{x}_n $ are random draws from $ f $. For example, if $ f $ is a multivariate normal with a mean vector of 0 and a variance-covariance matrix of $ \\mathbf{G}_1 $, then $$ f(\\mathbf{x})=(2\\pi)^{-n/2}|\\mathbf{G}_{1}|\\exp\\left(-\\frac{\\mathbf{x}^{T}\\mathbf{G}_{1}^{-1}\\mathbf{x}}{2}\\right) $$ where g is similarly defined, but with $ G_{2} $ replacing $ G_{1} $, which yields $$ \\widehat{q}(f,g)=\\frac{1}{n}\\sum_{i=1}^{n}\\frac{\\mid\\mathbf{G}_{2}\\mid\\exp\\left(-\\mathbf{x}_{i}^{T}\\mathbf{G}_{2}^{-1}\\mathbf{x}_{i}/2\\right)}{\\mid\\mathbf{G}_{2}\\mid\\exp\\left(-\\mathbf{x}_{i}^{T}\\mathbf{G}_{2}^{-1}\\mathbf{x}_{i}/2\\right)+\\mid\\mathbf{G}_{1}\\mid\\exp\\left(-\\mathbf{x}_{i}^{T}\\mathbf{G}_{1}^{-1}\\mathbf{x}_{i}/2\\right)} $$ (A3.2d) The expression in the sum is not nearly as imposing as it appears. Both of the determinants, $ |\\mathbf{G}_1| $ and $ |\\mathbf{G}_2| $, are fixed constants, and they only need to be computed once. Likewise, $ \\mathbf{G}_1^{-1} $ and $ \\mathbf{G}_2^{-1} $ need only be inverted once and then can be stored. Monte Carlo integration proceeds by generating a set of random vectors, $ (\\mathbf{x}_1, \\cdots, \\mathbf{x}_n) $, from a MVN $ \\sim(\\mathbf{0}, \\mathbf{G}_1) $.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A3.2",
+      "anchor": "example-a3.2",
+      "label": "Example A3.2",
+      "section_id": "Evolution_appendix3_004",
+      "excerpt": "Example A3.2. Suppose the state space consists of three possible weather conditions (Rain, Sunny, Cloudy) and that weather patterns follow a Markov process (of course, they do not!). Under this assumption, the probability of tomorrow's weather simply depends on today's weather, and not on any other previous days. If this is the case, the observation that it has rained for three straight days does not alter the probability of tomorrow's weather compared to the situation where…",
+      "content_markdown": "Example A3.2. Suppose the state space consists of three possible weather conditions (Rain, Sunny, Cloudy) and that weather patterns follow a Markov process (of course, they do not!). Under this assumption, the probability of tomorrow's weather simply depends on today's weather, and not on any other previous days. If this is the case, the observation that it has rained for three straight days does not alter the probability of tomorrow's weather compared to the situation where (say) it rained today but was sunny for the last week. Suppose the probability transitions given that today is rainy are $$ \\begin{array}{l}P(Rain tomorrow\\mid Rain today)=0.5\\\\ P(Sunny tomorrow\\mid Rain today)=0.25\\\\ P(Cloudy tomorrow\\mid Rain today)=0.25\\end{array} $$\n\nThis results in the first row of the transition probability matrix being $ (0.5, 0.25, 0.25) $. Now suppose that the full transition matrix is $$ \\mathbf{P}=\\begin{pmatrix}0.5&0.25&0.25\\\\0.5&0&0.5\\\\0.25&0.25&0.5\\end{pmatrix} $$\n\nNote that this Markov chain is irreducible, as all states communicate with each other. Suppose today is sunny. What is the weather expected to be like two days from now? Seven days? Here $ \\pi(0) = (0 \\quad 1 \\quad 0) $, which yields $$ \\boldsymbol{\\pi}(2)=\\boldsymbol{\\pi}(0)\\mathbf{P}^{2}=(0.375\\quad0.25\\quad0.375) $$ and $$ \\boldsymbol{\\pi}(7)=\\boldsymbol{\\pi}(0)\\mathbf{P}^{7}=(0.4\\quad0.2\\quad0.4) $$\n\nConversely, suppose today is rainy, so $ \\pi(0) = (1 \\quad 0 \\quad 0) $. The expected future weather becomes $$ \\pi(2)=\\begin{pmatrix}0.4375&0.1875&0.375\\end{pmatrix}\\quad and\\quad\\pi(7)=\\begin{pmatrix}0.4&0.2&0.4\\end{pmatrix} $$\n\nNote that after a sufficient amount of time, the expected weather is independent of the starting value. In other words, the chain has reached a stationary distribution, where the state space probability values are independent of the actual starting value.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A3.3",
+      "anchor": "example-a3.3",
+      "label": "Example A3.3",
+      "section_id": "Evolution_appendix3_005",
+      "excerpt": "Example A3.3. As a toy example, consider the scaled inverse- $ \\chi^2 $ distribution (Equation A2.30a), $$ \\begin{align }p(x)=C\\cdot x^{-(n/2+1)}\\cdot\\exp\\left({-a\\over2x}\\right)\\end{align } $$ We wish to use the Metropolis algorithm to simulate draws from this distribution with n = 3 degrees of freedom and a scaling factor of a = 4. Here $$ f(x)=x^{-5/2}\\exp[-4/(2x)]=x^{-2.5}\\exp[-2/x] $$ Suppose we take as our candidate-generating distribution a uniform over $ (0, 100) $.…",
+      "content_markdown": "Example A3.3. As a toy example, consider the scaled inverse- $ \\chi^2 $ distribution (Equation A2.30a), $$ \\begin{align*}p(x)=C\\cdot x^{-(n/2+1)}\\cdot\\exp\\left({-a\\over2x}\\right)\\end{align*} $$\n\nWe wish to use the Metropolis algorithm to simulate draws from this distribution with n = 3 degrees of freedom and a scaling factor of a = 4. Here $$ f(x)=x^{-5/2}\\exp[-4/(2x)]=x^{-2.5}\\exp[-2/x] $$\n\nSuppose we take as our candidate-generating distribution a uniform over $ (0, 100) $. Clearly, there is probability mass above 100 for the scaled inverse- $ \\chi^2 $, but we assume this is sufficiently small that we can ignore it. Now let's run the algorithm. Take $ \\theta_0 = 1 $ as our starting value, and suppose the uniform returns a candidate value of $ \\theta^* = 39.82 $. Computing\n\n$ \\alpha, $ $$ \\alpha=\\min\\left(\\frac{f(\\theta^{*})}{f(\\theta_{t-1})},1\\right)=\\min\\left(\\frac{(39.82)^{-2.5}\\cdot\\exp(-2/39.82)}{(1)^{-2.5}\\cdot\\exp(-2/2\\cdot1)},1\\right)=0.0007 $$\n\nSince $ \\alpha < 1 $, the candidate value, $ \\theta^* $, is accepted with a probability of 0.0007: we randomly draw $ U $ from a uniform $ (0,1) $ distribution and accept $ \\theta^* $ if $ U \\leq \\alpha = 0.0007 $. If $ U > \\alpha $, the candidate value is rejected, and we draw another candidate value from the proposal distribution and continue as above. A sample run resulting from first 500 values of $ \\theta $ is plotted in Figure A3.1A. Notice that there are long flat periods (corresponding to all candidate values, $ \\theta^* $, being rejected). Such a chain is said to be poorly mixing (showing long periods between jumps) and is numerically inefficient for sampling the entire probability space defined by the target distribution. Conversely, balancing the poor mixing is the fact that when jumps occur, they tend to be large, thus exploring the extreme values of this distribution.\n\nIn contrast, suppose our proposal distribution is a $ \\chi_1^2 $. As this distribution is not symmetric, we must employ Metropolis-Hastings (see Example A3.5 for the details). A resulting Metropolis-Hastings sampling run is shown in Figure A3.1B. Note that the time series looks like white noise, and the chain is said to be well mixing. However, note that most jumps are small (< 5), with fewer extreme values sampled than under the uniform proposal distribution.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A3.4",
+      "anchor": "example-a3.4",
+      "label": "Example A3.4",
+      "section_id": "Evolution_appendix3_005",
+      "excerpt": "Example A3.4. This rather technical example shows that the Markov chain generated by the Metropolis-Hastings algorithm has a stationary distribution which corresponds to $ p(x) $. Hence, draws from the stationary phase of this chain correspond to random draws from the distribution given by $ p(x) $. We do so by showing that, under this chain, $ p(x) $ satisfies the detailed balance equation (A3.10), and hence it must be the stationary distribution for the Markov chain. Under…",
+      "content_markdown": "Example A3.4. This rather technical example shows that the Markov chain generated by the Metropolis-Hastings algorithm has a stationary distribution which corresponds to $ p(x) $. Hence, draws from the stationary phase of this chain correspond to random draws from the distribution given by $ p(x) $. We do so by showing that, under this chain, $ p(x) $ satisfies the detailed balance equation (A3.10), and hence it must be the stationary distribution for the Markov chain. Under Metropolis-Hasting, we sample from $ q(x, y) = \\Pr(x \\to y \\mid q) $ and then accept the move with probability $ \\alpha(x, y) $, so the transition probability kernel is given by $$ \\Pr(x\\rightarrow y)=q(x,y)\\alpha(x,y)=q(x,y)\\cdot\\min\\left[\\frac{p(y)q(y,x)}{p(x)q(x,y)},1\\right] $$ (A3.14a) If the Metropolis-Hasting kernel satisfies $ P(x \\to y) p(x) = P(y \\to x) p(y) $, or $$ q(x,y)\\alpha(x,y)p(x)=q(y,x)\\alpha(y,x)p(y)\\quad for all x,y $$ (A3.14b) then the stationary distribution from this kernel corresponds to draws from the target distribution, $ p(x) $. We show that the balance equation is indeed satisfied with this kernel by considering the three possible cases for any particular $ (x, y) $ pair: 1. $ q(x, y) p(x) = q(y, x) p(y) $. Here $ \\alpha(x, y) = \\alpha(y, x) = 1 $ implying $$ P(x\\rightarrow y)p(x)=q(x,y)p(x)\\quad and\\quad P(y\\rightarrow x)p(y)=q(y,x)p(y) $$ Under our assumption that $ q(x, y) p(x) = q(y, x) p(y) $, this reduces to $ P(x \\to y) p(x) = P(y \\to x) p(y) $, showing that (for this case), the 2. $ q(x, y) p(x) > q(y, x) p(y) $, in which case $$ \\alpha(x,y)=\\frac{p(y)q(y,x)}{p(x)q(x,y)}\\quad and\\quad\\alpha(y,x)=1 $$ Hence, $$ \\begin{aligned}P(x\\rightarrow y)p(x)&=q(x,y)\\alpha(x,y)p(x)\\\\&=q(x,y)\\frac{p(y)q(y,x)}{p(x)q(x,y)}p(x)\\\\&=q(y,x)p(y)=q(y,x)\\alpha(y,x)p(y)\\\\&=P(y\\rightarrow x)p(y)\\\\ \\end{aligned} $$ 3. $ q(x, y) p(x) < q(y, x) p(y) $. Here $$ \\alpha(x,y)=1\\quad and\\quad\\alpha(y,x)=\\frac{q(x,y)p(x)}{q(y,x)p(y)} $$ Following the same logic just used yields $$ \\begin{aligned}P(y\\rightarrow x)p(y)&=q(y,x)\\alpha(y,x)p(y)\\\\&=q(y,x)\\left(\\frac{q(x,y)p(x)}{q(y,x)p(y)}\\right)p(y)\\\\&=q(x,y)p(x)=q(x,y)\\alpha(x,y)p(x)\\\\&=P(x\\rightarrow y)p(x)\\\\ \\end{aligned} $$ which concludes the proof.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A3.5",
+      "anchor": "example-a3.5",
+      "label": "Example A3.5",
+      "section_id": "Evolution_appendix3_008",
+      "excerpt": "Example A3.5. Suppose we wish to use a $ \\chi^2 $ as our proposal distribution. Recall from Equation A2.27b, that for $ x \\sim \\chi n^2 $, $$ g(x)\\propto x^{n/2-1}e^{-x/2} $$ Thus, $ q(x, y) = g(y) = C \\cdot y^{n/2-1} e^{-y/2} $. Note that $ q(x, y) $ is not symmetric, as $ q(y, x) = g(x) \\neq g(y) = q(x, y) $. Hence, we must use Metropolis-Hastings sampling, with an acceptance probability of $$ \\alpha(x,y)=\\min\\left[\\frac{p(y)q(y,x)}{p(x)q(x,y)},1\\right]=\\min\\left[\\frac{p(y…",
+      "content_markdown": "Example A3.5. Suppose we wish to use a $ \\chi^2 $ as our proposal distribution. Recall from Equation A2.27b, that for $ x \\sim \\chi_n^2 $, $$ g(x)\\propto x^{n/2-1}e^{-x/2} $$\n\nThus, $ q(x, y) = g(y) = C \\cdot y^{n/2-1} e^{-y/2} $. Note that $ q(x, y) $ is not symmetric, as $ q(y, x) = g(x) \\neq g(y) = q(x, y) $. Hence, we must use Metropolis-Hastings sampling, with an acceptance probability of $$ \\alpha(x,y)=\\min\\left[\\frac{p(y)q(y,x)}{p(x)q(x,y)},1\\right]=\\min\\left[\\frac{p(y)g(x)}{p(x)g(y)},1\\right]=\\min\\left[\\frac{p(y)x^{n/2-1}e^{-x/2}}{p(x)y^{n/2-1}e^{-y/2}},1\\right] $$\n\nIf we use the same target distribution as in Example A3.3 (a scaled inverse- $ \\chi^2 $), $ p(x) = C \\cdot x^{-2.5} e^{-2/x} $, the rejection probability becomes $$ \\alpha(x,y)=\\min\\left[\\frac{\\left(y^{-2.5}e^{-2/y}\\right)\\left(x^{n/2-1}e^{-x/2}\\right)}{\\left(x^{-2.5}e^{-2/x}\\right)\\left(y^{n/2-1}e^{-y/2}\\right)},1\\right] $$\n\nResults for a run of the sampler under two different proposal distributions (a $ \\chi_2^2 $ and a $ \\chi_{10}^2 $) are plotted in Figure A3.2. The $ \\chi_2^2 $ has the smaller variance, and thus a higher acceptance probability. Further, it seems to explore more of the distribution space than a $ \\chi_{10}^2 $ (compare the number of values above 4 in both traces).",
+      "origin": "example-library"
     },
     {
       "kind": "example",
       "id": "A3.6",
       "anchor": "example-a3.6",
       "label": "Example A3.6",
-      "section_id": "Evolution_appendix3_017",
-      "excerpt": "Example A3.6 · ref: A3.6 · source: Evolution appendix3 017.json · blocks 3–9 Example A3.6. Consider the following distribution from Casella and George (1992). Suppose the joint distribution of $ x = 0, 1, \\cdots, n $ and $ 0 \\leq y \\leq 1 $ is given by $$ p(x,y)=\\frac{n!}{(n-x)!x!}\\ y^{x+\\alpha-1}\\left(1-y\\right)^{n-x+\\beta-1} $$ Note that x is discrete and y continuous. While the joint density is complex, the conditional densities are simple distributions. To see this, firs…"
+      "section_id": "Evolution_appendix3_015",
+      "excerpt": "Example A3.6. Consider the following distribution from Casella and George (1992). Suppose the joint distribution of $ x = 0, 1, \\cdots, n $ and $ 0 \\leq y \\leq 1 $ is given by $$ p(x,y)=\\frac{n!}{(n-x)!x!}\\ y^{x+\\alpha-1}\\left(1-y\\right)^{n-x+\\beta-1} $$ Note that x is discrete and y continuous. While the joint density is complex, the conditional densities are simple distributions. To see this, first recall that a discrete binomial random variable z has a density proportiona…",
+      "content_markdown": "Example A3.6. Consider the following distribution from Casella and George (1992). Suppose the joint distribution of $ x = 0, 1, \\cdots, n $ and $ 0 \\leq y \\leq 1 $ is given by $$ p(x,y)=\\frac{n!}{(n-x)!x!}\\ y^{x+\\alpha-1}\\left(1-y\\right)^{n-x+\\beta-1} $$\n\nNote that x is discrete and y continuous. While the joint density is complex, the conditional densities are simple distributions. To see this, first recall that a discrete binomial random variable z has a density proportional to $$ p(z\\mid q,n)\\propto\\frac{q^{z}(1-q)^{n-z}}{z!(n-z)!}\\quad for\\quad0\\leq z\\leq n $$ where 0 < q < 1 is the success parameter and n the number of traits, which we denote by $ z \\sim \\mathrm{B}(n, p) $. Likewise, recall the density for $ z \\sim \\mathrm{Beta}(a, b) $, a beta distribution (Equation A2.38a) with shape parameters a and b is given by $$ p(z\\mid a,b)\\propto z^{a-1}(1-z)^{b-1}\\quad for\\quad0\\leq z\\leq1 $$\n\nObserve that the conditional distribution of $x$ (treating $y$ as a fixed constant) is $x \\mid y \\sim \\mathrm{B}(n, y)$, while $y \\mid x \\sim \\mathrm{Beta}(x + \\alpha, n - x + \\beta)$.\n\nThe power of the Gibbs sampler is that by computing a sequence of these univariate conditional random variables (a binomial and then a beta), we can compute any feature of either marginal distribution. Suppose $ n = 10 $ and $ \\alpha = 1 $, $ \\beta = 2 $. We start the sampler with (say) $ y_0 = 1/2 $ and then take it through three full iterations.\n\n(i) $ x_{0} $ is obtained by generating a random $ \\mathrm{B}(n, y_{0}) = \\mathrm{B}(10, 1/2) $ random variable, returning $ x_{0} = 5 $ in our simulation.\n\n(ii) $ y_{1} $ is obtained from a Beta $ (x_{0}+\\alpha, n-x_{0}+\\beta)=\\mathrm{Beta}(5+1, 10-5+2) $ random variable, returning $ y_{1}=0.33 $.\n\n(iii) $ x_{1} $ is a realization of a $ \\mathrm{B}(n, y_{1}) = \\mathrm{B}(10, 0.33) $ random variable, returning $ x_{1} = 3 $.\n\n(iv) $ y_{2} $ is obtained from a Beta $ (x_{1}+\\alpha, n-x_{1}+\\beta)=\\mathrm{Beta}(3+1, 10-3+2) $ random variable, returning $ u_{2}=0.56 $.\n\n(v) $ x_{2} $ is obtained from a B(n, $ y_{2} $) = B(10, 0.56) random variable, returning $ x_{2} = 7 $.\n\nOur particular realization of the Gibbs sequence after three iterations is thus $ (5, 0.5) $, $ (3, 0.33) $, $ (7, 0.56) $. We can continue this process to generate a chain of the desired length. Obviously, the initial values in the chain are dependent upon the value of $ y_{0} $ chosen to start the chain. This dependence decays as the sequence length increases, so we typically start recording the sequence only after a sufficient number of burn-in iterations have occurred.",
+      "origin": "example-library"
     },
     {
       "kind": "example",
       "id": "A3.7",
       "anchor": "example-a3.7",
       "label": "Example A3.7",
-      "section_id": "Evolution_appendix3_019",
-      "excerpt": "Example A3.7 · ref: A3.7 · source: Evolution appendix3 019.json · blocks 2–4 Example A3.7. Although the sequence of length 3 that was computed in Example A3.6 is too short (and too dependent on the starting value) to be a proper Gibbs sequence, for illustrative purposes we can use it to compute Monte-Carlo estimates. The MC estimates of the means of x and y are $$ \\overline{x} {3}=\\frac{5+3+7}{3}=5,\\quad\\overline{y} {3}=\\frac{0.5+0.33+0.56}{3}=0.46 $$ We use the subscript 3…"
+      "section_id": "Evolution_appendix3_016",
+      "excerpt": "Example A3.7. Although the sequence of length 3 that was computed in Example A3.6 is too short (and too dependent on the starting value) to be a proper Gibbs sequence, for illustrative purposes we can use it to compute Monte-Carlo estimates. The MC estimates of the means of x and y are $$ \\overline{x} {3}=\\frac{5+3+7}{3}=5,\\quad\\overline{y} {3}=\\frac{0.5+0.33+0.56}{3}=0.46 $$ We use the subscript 3 throughout to remind the reader of the sample size of this particular Gibbs s…",
+      "content_markdown": "Example A3.7. Although the sequence of length 3 that was computed in Example A3.6 is too short (and too dependent on the starting value) to be a proper Gibbs sequence, for illustrative purposes we can use it to compute Monte-Carlo estimates. The MC estimates of the means of x and y are $$ \\overline{x}_{3}=\\frac{5+3+7}{3}=5,\\quad\\overline{y}_{3}=\\frac{0.5+0.33+0.56}{3}=0.46 $$\n\nWe use the subscript 3 throughout to remind the reader of the sample size of this particular Gibbs sampler. Similarly, $ (\\overline{x}^2)_3 = 27.67, (\\overline{y}^2)_3 = 0.22 $, and $ (\\overline{xy})_3 = 2.47 $, returning the MC estimates of the variances of $ x $ and $ y $ as $$ \\mathrm{Var}(x)_{3}=(\\overline{x^{2}})_{3}-(\\overline{x}_{3})^{2}=2.67,\\qquad\\mathrm{Var}(y)_{3}=(\\overline{y^{2}})_{3}-(\\overline{y}_{3})^{2}=0.25 $$ and their covariance as $$ \\mathrm{Cov}(x,y)_{3}=(\\overline{xy})_{3}-\\overline{x}_{3}\\cdot\\overline{y}_{3}=2.47-5\\cdot0.46=0.16 $$",
+      "origin": "example-library"
     },
     {
       "kind": "example",
       "id": "A3.8",
       "anchor": "example-a3.8",
       "label": "Example A3.8",
-      "section_id": "Evolution_appendix3_019",
-      "excerpt": "Example A3.8 · ref: A3.8 · source: Evolution appendix3 019.json · blocks 5–5 Example A3.8. Returning to the Gibbs sequence generated in Example A3.6, recall that the distribution of x given y is binomial, with $ x \\mid y \\sim \\mathrm{B}(n, y) $. If we apply Equation A3.27b, the estimate (based on this sequence) of the marginal distribution of x is the weighted sum of three binomials with success parameters of 0.5, 0.33, and 0.56, yielding $$ p {3}(x)=\\frac{10!}{x!(10-x)!}\\le…"
-    },
-    {
-      "kind": "figure",
-      "id": "A3.3",
-      "anchor": "figure-a3.3",
-      "label": "Figure A3.3",
-      "section_id": "Evolution_appendix3_020",
-      "src": "figures/Evolution_A3.3.png",
-      "caption": "Figure A3.3 The approximation of the marginal posterior distribution for x for the distribution given in Example A3.6 using a Gibbs sequence. The open bars represent the approximation using a binomial with the Gibbs-sequence mean value of y as the success parameter, while the solid bars represent the approximation based on a weighted sum of binomials. See Example A3.8 for details."
+      "section_id": "Evolution_appendix3_016",
+      "excerpt": "Example A3.8. Returning to the Gibbs sequence generated in Example A3.6, recall that the distribution of x given y is binomial, with $ x \\mid y \\sim \\mathrm{B}(n, y) $. If we apply Equation A3.27b, the estimate (based on this sequence) of the marginal distribution of x is the weighted sum of three binomials with success parameters of 0.5, 0.33, and 0.56, yielding $$ p {3}(x)=\\frac{10!}{x!(10-x)!}\\left[\\frac{0.5^{x}(1-0.5)^{10-x}+0.33^{x}(1-0.33)^{10-x}+0.56^{x}(1-0.56)^{10-x…",
+      "content_markdown": "Example A3.8. Returning to the Gibbs sequence generated in Example A3.6, recall that the distribution of x given y is binomial, with $ x \\mid y \\sim \\mathrm{B}(n, y) $. If we apply Equation A3.27b, the estimate (based on this sequence) of the marginal distribution of x is the weighted sum of three binomials with success parameters of 0.5, 0.33, and 0.56, yielding $$ p_{3}(x)=\\frac{10!}{x!(10-x)!}\\left[\\frac{0.5^{x}(1-0.5)^{10-x}+0.33^{x}(1-0.33)^{10-x}+0.56^{x}(1-0.56)^{10-x}}{3}\\right] $$ As Figure A3.3 shows, the resulting distribution (filled bars), although a weighted sum of binomials, departs substantially from the binomial based on the average (here 0.46) of the success parameter (open bars).",
+      "origin": "example-library"
     },
     {
       "kind": "example",
       "id": "A3.9",
       "anchor": "example-a3.9",
       "label": "Example A3.9",
-      "section_id": "Evolution_appendix3_020",
-      "excerpt": "Example A3.9 · ref: A3.9 · source: Evolution appendix3 020.json · blocks 5–6 Example A3.9. Recall from Chapter 8 that an issue of much evolutionary interest concerns both the rate of selective sweeps and the average strength of selection for the swept allele. We can quantify the rate of sweeps by estimating the per-nucleotide adaptive evolution rate, $ \\lambda $, and quantify their strength by estimating the average selective advantage, s, of a swept allele. As discussed in…"
+      "section_id": "Evolution_appendix3_017",
+      "excerpt": "Example A3.9. Recall from Chapter 8 that an issue of much evolutionary interest concerns both the rate of selective sweeps and the average strength of selection for the swept allele. We can quantify the rate of sweeps by estimating the per-nucleotide adaptive evolution rate, $ \\lambda $, and quantify their strength by estimating the average selective advantage, s, of a swept allele. As discussed in Chapter 8, most standard estimates based on polymorphism and divergence data…",
+      "content_markdown": "Example A3.9. Recall from Chapter 8 that an issue of much evolutionary interest concerns both the rate of selective sweeps and the average strength of selection for the swept allele. We can quantify the rate of sweeps by estimating the per-nucleotide adaptive evolution rate, $ \\lambda $, and quantify their strength by estimating the average selective advantage, s, of a swept allele. As discussed in Chapter 8, most standard estimates based on polymorphism and divergence data usually confound these two parameters. Jensen et al. (2008) developed an ABC approach to obtain separate estimates of $ \\lambda $ and s. Their idea was to jointly consider the means and variances of several summary statistics measuring various sweep features from sequence polymorphism data. The features they included were nucleotide diversity, $ \\pi $, and number of segregating sites, S, for polymorphism levels; $ \\theta_H $ for departures in the site-frequency spectrum (Equations 9.27); and $ Z_{n,S} $ for the local structure of LD (Equation 9.36b).\n\nTheir ABC approach proceeds as follows: First, values of $ \\lambda $ and s are drawn from some joint prior, and then are used to generate a simulation of the sweep. The summary statistics of interest are then computed on this simulated data, and if they are sufficiently close to their observed values, the joint $ \\lambda $ and s values are kept; otherwise, they are rejected and new values are drawn. This procedure is repeated to obtain (at least) several thousand accepted values to generate a joint empirical posterior distribution of $ \\lambda $ and s values that is consistent with the observed data.",
+      "origin": "example-library"
     },
     {
       "kind": "formula",
@@ -888,20 +877,6 @@
         "label": "Example A3.1",
         "book_hint": "",
         "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A3.2a",
-        "label": "Equation A3.2a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A3.1d",
-        "label": "Equation A3.1d",
-        "book_hint": "",
-        "link_scope": "current-book"
       }
     ],
     "Evolution_appendix3_003": [],
@@ -919,9 +894,7 @@
         "label": "Example 2.1",
         "book_hint": "",
         "link_scope": "current-book"
-      }
-    ],
-    "Evolution_appendix3_005": [
+      },
       {
         "kind": "example",
         "id": "A3.2",
@@ -951,7 +924,7 @@
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix3_006": [
+    "Evolution_appendix3_005": [
       {
         "kind": "equation",
         "id": "A3.1",
@@ -967,20 +940,6 @@
         "link_scope": "current-book"
       },
       {
-        "kind": "figure",
-        "id": "A3.1",
-        "label": "Figure A3.1",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "A3.3",
-        "label": "Example A3.3",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
         "kind": "equation",
         "id": "A3.13",
         "label": "Equation A3.13",
@@ -988,30 +947,9 @@
         "link_scope": "current-book"
       },
       {
-        "kind": "equation",
-        "id": "A2.30a",
-        "label": "Equation A2.30a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "A3.1A",
-        "label": "Figure A3.1A",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
         "kind": "example",
-        "id": "A3.5",
-        "label": "Example A3.5",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "A3.1B",
-        "label": "Figure A3.1B",
+        "id": "A3.3",
+        "label": "Example A3.3",
         "book_hint": "",
         "link_scope": "current-book"
       },
@@ -1023,8 +961,8 @@
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix3_008": [],
-    "Evolution_appendix3_009": [
+    "Evolution_appendix3_006": [],
+    "Evolution_appendix3_007": [
       {
         "kind": "equation",
         "id": "A3.13",
@@ -1033,7 +971,7 @@
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix3_010": [
+    "Evolution_appendix3_008": [
       {
         "kind": "example",
         "id": "A3.3",
@@ -1047,37 +985,9 @@
         "label": "Example A3.5",
         "book_hint": "",
         "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A2.27b",
-        "label": "Equation A2.27b",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "A3.2",
-        "label": "Figure A3.2",
-        "book_hint": "",
-        "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix3_011": [
-      {
-        "kind": "figure",
-        "id": "A3.2",
-        "label": "Figure A3.2",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "A3.5",
-        "label": "Example A3.5",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
+    "Evolution_appendix3_009": [
       {
         "kind": "equation",
         "id": "A3.16",
@@ -1086,7 +996,7 @@
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix3_012": [
+    "Evolution_appendix3_010": [
       {
         "kind": "equation",
         "id": "A3.1e",
@@ -1109,12 +1019,19 @@
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix3_013": [],
-    "Evolution_appendix3_014": [
+    "Evolution_appendix3_011": [],
+    "Evolution_appendix3_012": [
       {
         "kind": "figure",
         "id": "A3.1",
         "label": "Figure A3.1",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A3.3",
+        "label": "Example A3.3",
         "book_hint": "",
         "link_scope": "current-book"
       },
@@ -1124,11 +1041,18 @@
         "label": "Figure A3.2",
         "book_hint": "",
         "link_scope": "current-book"
+      },
+      {
+        "kind": "example",
+        "id": "A3.5",
+        "label": "Example A3.5",
+        "book_hint": "",
+        "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix3_015": [],
-    "Evolution_appendix3_016": [],
-    "Evolution_appendix3_017": [
+    "Evolution_appendix3_013": [],
+    "Evolution_appendix3_014": [],
+    "Evolution_appendix3_015": [
       {
         "kind": "table",
         "id": "A2.2",
@@ -1142,17 +1066,9 @@
         "label": "Example A3.6",
         "book_hint": "",
         "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A2.38a",
-        "label": "Equation A2.38a",
-        "book_hint": "",
-        "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix3_018": [],
-    "Evolution_appendix3_019": [
+    "Evolution_appendix3_016": [
       {
         "kind": "example",
         "id": "A3.7",
@@ -1162,80 +1078,17 @@
       },
       {
         "kind": "example",
-        "id": "A3.6",
-        "label": "Example A3.6",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
         "id": "A3.8",
         "label": "Example A3.8",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A3.27b",
-        "label": "Equation A3.27b",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "A3.3",
-        "label": "Figure A3.3",
         "book_hint": "",
         "link_scope": "current-book"
       }
     ],
-    "Evolution_appendix3_020": [
-      {
-        "kind": "chapter",
-        "id": "8",
-        "label": "Chapter 8",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "A3.3",
-        "label": "Figure A3.3",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "A3.6",
-        "label": "Example A3.6",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "A3.8",
-        "label": "Example A3.8",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
+    "Evolution_appendix3_017": [
       {
         "kind": "example",
         "id": "A3.9",
         "label": "Example A3.9",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "9.27",
-        "label": "Equation 9.27",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "9.36b",
-        "label": "Equation 9.36b",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -1300,21 +1153,6 @@
       "book_hint": "",
       "link_scope": "current-book",
       "context_excerpt": "Appendix: Introduction Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise. Tukey (1962) We are convinced nevertheless that Monte Carlo methods will one day reach an impressive maturity. Hammersley and Handscomb (1964) The practice of MCMC is simple. Set up a Markov chain having the required invariant distribution,…",
-      "match_source": "chapter-overview"
-    },
-    {
-      "current_section_id": "Evolution_appendix3_020",
-      "current_anchor": "evolution_appendix3_020",
-      "source_chapter_id": "Evolution_chapter8",
-      "label": "Chapter 8",
-      "target_anchor": "evolution_chapter8_section_001",
-      "target_label": "Chapter 8",
-      "target_ref_type": "chapter",
-      "target_ref_id": "8",
-      "target_section_title": "Chapter 8 · Hitchhiking and Selective Sweeps",
-      "book_hint": "",
-      "link_scope": "current-book",
-      "context_excerpt": "2), but this is a very active research area with no current clean answer. [示例 Example] Example A3.9 · ref: A3.9 · source: Evolution appendix3 020.json · blocks 5–6 Example A3.9. Recall from Chapter 8 that an issue of much evolutionary interest concerns both the rate of selective sweeps and the average strength of selection for the swept allele. We can quantify the rate of sweeps by estimating the per-nucle",
       "match_source": "chapter-overview"
     }
   ],
@@ -1434,7 +1272,7 @@
     "provider": "deepseek",
     "model": "deepseek-v4-flash",
     "cache_enabled": true,
-    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "cache_dir": "tmp/llm_cache",
     "max_remote_calls": 0,
     "max_prompt_chars_total": 0,
     "max_response_chars_total": 0,

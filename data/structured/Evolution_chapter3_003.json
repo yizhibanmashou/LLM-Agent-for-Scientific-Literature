@@ -21,55 +21,415 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "To illustrate the mathematical approach to deriving expressions for $ N_{e} $, we first generalize the concept of a monoecious, self-compatible population to allow for arbitrary gamete production by different individuals. As a reminder, monoecious (a botanical term) individuals are equivalent to hermaphrodites (a zoological term), with both terms referring to the situation in which individuals produce male and female gametes."
+      "content": "To illustrate the mathematical approach to deriving expressions for $ N_{e} $, we first generalize the concept of a monoecious, self-compatible population to allow for arbitrary gamete production by different individuals. As a reminder, monoecious (a botanical term) individuals are equivalent to hermaphrodites (a zoological term), with both terms referring to the situation in which individuals produce male and female gametes.",
+      "source_page": 60,
+      "source_pages": [
+        60
+      ],
+      "source_block_ids": [
+        "Evolution_chapter3:p003:b3",
+        "Evolution_chapter3:p003:b4"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          413.0,
+          248.0,
+          435.0
+        ],
+        [
+          132.0,
+          459.0,
+          904.0,
+          574.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "283a930a597592be78f7ff76afd9834f2320d0ca345f6abcf663d9b48ae71eaf"
     },
     {
       "type": "discussion",
-      "content": "Let $ k_i $ be the number of gametes that the $ i $th parent contributes to offspring that survive to maturity, $ \\mu_k $ and $ \\sigma_k^2 $ be the mean and variance of successful gamete production per individual, and $ N_{t-1} $ be the number of reproducing parents. Assuming that mating is random and isogamous (so that there is no distinction between male and female gametes), there are $ k_i(k_i - 1) $ ways in which the gametes of parent $ i $ can unite with each other, and summing over all parents, $ \\sum_{i=1}^{N_{t-1}} k_i(k_i - 1) $ total ways by which gametes can unite by self-fertilization. Because a total of $ N_{t-1}\\mu_k $ successful gametes are produced, the expected fraction of zygotes derived from the same parent is $$ P_{t}=\\frac{1}{N_{e}}=\\frac{\\sum\\limits_{i=1}^{N_{t-1}}k_{i}(k_{i}-1)}{N_{t-1}\\mu_{k}(N_{t-1}\\mu_{k}-1)} $$ where the denominator is the total number of pairs of uniting gametes necessary to produce the next generation. This expression can be simplified greatly by noting that $ \\sum_{i=1}^{N_{t-1}} k_i(k_i - 1)/N_{t-1} = E(k^2) - \\mu_k = \\sigma_k^2 + \\mu_k(\\mu_k - 1) $, and that because all zygotes are derived from two gametes, $ N_{t-1}\\mu_k = 2N_t $. Substituting into Equation 3.2 and inverting, $$ N_{e}=\\frac{2N_{t}-1}{(\\sigma_{k}^{2}/\\mu_{k})+\\mu_{k}-1} $$"
+      "content": "Let $ k_i $ be the number of gametes that the $ i $th parent contributes to offspring that survive to maturity, $ \\mu_k $ and $ \\sigma_k^2 $ be the mean and variance of successful gamete production per individual, and $ N_{t-1} $ be the number of reproducing parents. Assuming that mating is random and isogamous (so that there is no distinction between male and female gametes), there are $ k_i(k_i - 1) $ ways in which the gametes of parent $ i $ can unite with each other, and summing over all parents, $ \\sum_{i=1}^{N_{t-1}} k_i(k_i - 1) $ total ways by which gametes can unite by self-fertilization. Because a total of $ N_{t-1}\\mu_k $ successful gametes are produced, the expected fraction of zygotes derived from the same parent is $$ P_{t}=\\frac{1}{N_{e}}=\\frac{\\sum\\limits_{i=1}^{N_{t-1}}k_{i}(k_{i}-1)}{N_{t-1}\\mu_{k}(N_{t-1}\\mu_{k}-1)} $$ where the denominator is the total number of pairs of uniting gametes necessary to produce the next generation. This expression can be simplified greatly by noting that $ \\sum_{i=1}^{N_{t-1}} k_i(k_i - 1)/N_{t-1} = E(k^2) - \\mu_k = \\sigma_k^2 + \\mu_k(\\mu_k - 1) $, and that because all zygotes are derived from two gametes, $ N_{t-1}\\mu_k = 2N_t $. Substituting into Equation 3.2 and inverting, $$ N_{e}=\\frac{2N_{t}-1}{(\\sigma_{k}^{2}/\\mu_{k})+\\mu_{k}-1} $$",
+      "source_page": 60,
+      "source_pages": [
+        60
+      ],
+      "source_block_ids": [
+        "Evolution_chapter3:p003:b5",
+        "Evolution_chapter3:p003:b6",
+        "Evolution_chapter3:p003:b8",
+        "Evolution_chapter3:p003:b9"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          574.0,
+          904.0,
+          764.0
+        ],
+        [
+          375.0,
+          782.0,
+          659.0,
+          875.0
+        ],
+        [
+          133.0,
+          889.0,
+          904.0,
+          988.0
+        ],
+        [
+          415.0,
+          1003.0,
+          619.0,
+          1055.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f42b39ce143ac32152a8bcb384ccd1448ba8351f28823465e9fa778e67c95cc0"
     },
     {
       "type": "discussion",
-      "content": "This shows that for a randomly mating monoecious population with discrete generations, the effective population size is a function of three measurable quantities: the actual population size ($ N_t $) and the mean ($ \\mu_k $) and variance ($ \\sigma_k^2 $) of successful gamete production. All other things being equal, variance in gamete production causes a reduction in $ N_e $, as this inflates the representation of a fraction of the population in the descendant gene pool. Because such variation is expected to be the rule in natural populations occupying environments that are heterogeneous with respect to resource availability, on this basis alone, we can generally expect $ N_e $ to be less than the number of reproducing adults."
+      "content": "This shows that for a randomly mating monoecious population with discrete generations, the effective population size is a function of three measurable quantities: the actual population size ($ N_t $) and the mean ($ \\mu_k $) and variance ($ \\sigma_k^2 $) of successful gamete production. All other things being equal, variance in gamete production causes a reduction in $ N_e $, as this inflates the representation of a fraction of the population in the descendant gene pool. Because such variation is expected to be the rule in natural populations occupying environments that are heterogeneous with respect to resource availability, on this basis alone, we can generally expect $ N_e $ to be less than the number of reproducing adults.",
+      "source_page": 60,
+      "source_pages": [
+        60
+      ],
+      "source_block_ids": [
+        "Evolution_chapter3:p003:b11"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1072.0,
+          903.0,
+          1256.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5ed117f2fc71bd57ddc68313e34a594d0017d47e0c39a1bd1df95ab7c77f24b9"
     },
     {
       "type": "discussion",
-      "content": "Equation 3.2 simplifies greatly under a number of conditions. For example, populations that are stable in size have, on average, two successful gametes per parent ($ \\mu_k = 2 $), leading to $$ N_{e}=\\frac{4N-2}{\\sigma_{k}^{2}+2} $$"
+      "content": "Equation 3.2 simplifies greatly under a number of conditions. For example, populations that are stable in size have, on average, two successful gametes per parent ($ \\mu_k = 2 $), leading to $$ N_{e}=\\frac{4N-2}{\\sigma_{k}^{2}+2} $$",
+      "source_page": 60,
+      "source_pages": [
+        60
+      ],
+      "source_block_ids": [
+        "Evolution_chapter3:p003:b12",
+        "Evolution_chapter3:p003:b13"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1256.0,
+          904.0,
+          1324.0
+        ],
+        [
+          458.0,
+          1318.0,
+          578.0,
+          1367.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f6e8e91d7eeb4476d8b0c3d87b678b04223f1b7427d417c856b34ce8ca821e51"
     },
     {
       "type": "discussion",
-      "content": "If we further assume that each parent produces the same number of potential gametes (returning us to the ideal random-mating population), an explicit statement can also be made about $ \\sigma_k^2 $. In this case, for any particular draw from the gamete pool, the variance in the number of gametes derived from a particular parent (0 or 1) is $ (1/N)[1 - (1/N)] $."
+      "content": "If we further assume that each parent produces the same number of potential gametes (returning us to the ideal random-mating population), an explicit statement can also be made about $ \\sigma_k^2 $. In this case, for any particular draw from the gamete pool, the variance in the number of gametes derived from a particular parent (0 or 1) is $ (1/N)[1 - (1/N)] $.",
+      "source_page": 60,
+      "source_pages": [
+        60
+      ],
+      "source_block_ids": [
+        "Evolution_chapter3:p003:b15"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1376.0,
+          904.0,
+          1471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ee6d99f2e3a4664c6b68c66ef6eec702ab13404469c2cb3a474835c3ae854a5c"
     },
     {
       "type": "discussion",
-      "content": "(from the properties of a binomial distribution), and because a total of 2N gametes are drawn, $ \\sigma_k^2 = 2[1 - (1/N)] $. Note that this result is very close to the Poisson expectation of $ \\sigma_k^2 = 2 $ with completely random gamete production (because the variance of a Poisson equals the mean), with the slight deviation resulting because we assume a fixed population size. Substitution of the exact expression into Equation 3.4 yields $ N_e = N $, showing that the inbreeding effective size of an ideal random-mating population is indeed equal to the number of reproductive adults in the previous generation."
+      "content": "(from the properties of a binomial distribution), and because a total of 2N gametes are drawn, $ \\sigma_k^2 = 2[1 - (1/N)] $. Note that this result is very close to the Poisson expectation of $ \\sigma_k^2 = 2 $ with completely random gamete production (because the variance of a Poisson equals the mean), with the slight deviation resulting because we assume a fixed population size. Substitution of the exact expression into Equation 3.4 yields $ N_e = N $, showing that the inbreeding effective size of an ideal random-mating population is indeed equal to the number of reproductive adults in the previous generation.",
+      "source_page": 61,
+      "source_pages": [
+        61
+      ],
+      "source_block_ids": [
+        "Evolution_chapter3:p004:b2"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          207.0,
+          1059.0,
+          367.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1edcff48e2332f7693a127c631fd5ec9b2088e0a92ab5711970dc30fa78889d1"
     },
     {
       "type": "discussion",
-      "content": "In contrast, in the opposite, and extreme, situation in which all parents produce exactly two progeny (such that $ \\sigma_k^2 = 0 $ and $ \\mu_k = 2 $), $ N_e = 2N - 1 \\simeq 2N $. This shows that the elimination of variance in family size results in the effective population size being twice the actual number of breeding adults, a feature that is often exploited in breeding schemes to minimize the amount of inbreeding."
+      "content": "In contrast, in the opposite, and extreme, situation in which all parents produce exactly two progeny (such that $ \\sigma_k^2 = 0 $ and $ \\mu_k = 2 $), $ N_e = 2N - 1 \\simeq 2N $. This shows that the elimination of variance in family size results in the effective population size being twice the actual number of breeding adults, a feature that is often exploited in breeding schemes to minimize the amount of inbreeding.",
+      "source_page": 60,
+      "source_pages": [
+        60,
+        61,
+        62,
+        64,
+        76,
+        78
+      ],
+      "source_block_ids": [
+        "Evolution_chapter3:p004:b3",
+        "Evolution_chapter3:p003:b0",
+        "Evolution_chapter3:p005:b0",
+        "Evolution_chapter3:p007:b0",
+        "Evolution_chapter3:p019:b0",
+        "Evolution_chapter3:p021:b0"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          368.0,
+          1059.0,
+          482.0
+        ],
+        [
+          736.0,
+          159.0,
+          1019.0,
+          183.0
+        ],
+        [
+          736.0,
+          160.0,
+          1019.0,
+          183.0
+        ],
+        [
+          736.0,
+          160.0,
+          1019.0,
+          183.0
+        ],
+        [
+          736.0,
+          160.0,
+          1019.0,
+          183.0
+        ],
+        [
+          736.0,
+          160.0,
+          1019.0,
+          183.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3ddb2a35790517b41e89f8d4bb6de65d65c1482eeebe28cc217cef39aac25567"
     },
     {
       "type": "discussion",
-      "content": "There are a number of ways in which the breeding systems of a monoecious species can deviate from the assumptions made in the preceding derivations. Consider, for example, species with self-incompatibility, in which case identity-by-descent for pairs of uniting gametes comes through grandparents rather than parents. If we now let $ k_i $ be the number of successful gametes for individual $ i $ in generation $ t - 2 $, and again assume random mating, there are $ 2k_i(k_i - 1) $ ways in which pairs of genes from $ i $ can unite through matings in the parental generation $ t - 1 $ (the 2 arising because we assume that each individual can serve as a mother or father). Because there are $ N_{t-2\\mu_k}/2 $ parents in generation $ t - 1 $, there are $ 2(N_{t-2\\mu_k}/2)[(N_{t-2\\mu_k}/2) - 1] $ ways of drawing different parents, and $ 4 \\cdot 2(N_{t-2\\mu_k}/2)[(N_{t-2\\mu_k}/2) - 1] $ ways of drawing gene pairs (the 4 because each parent carries two genes). Therefore, the probability that a generation- $ t $ individual carries a pair of genes derived from the same grandparent is $$ P_{t}=\\frac{1}{N_{e}}=\\frac{\\sum\\limits_{i=1}^{N_{t-2}}k_{i}(k_{i}-1)}{N_{t-2}\\mu_{k}(N_{t-2}\\mu_{k}-2)} $$"
+      "content": "There are a number of ways in which the breeding systems of a monoecious species can deviate from the assumptions made in the preceding derivations. Consider, for example, species with self-incompatibility, in which case identity-by-descent for pairs of uniting gametes comes through grandparents rather than parents. If we now let $ k_i $ be the number of successful gametes for individual $ i $ in generation $ t - 2 $, and again assume random mating, there are $ 2k_i(k_i - 1) $ ways in which pairs of genes from $ i $ can unite through matings in the parental generation $ t - 1 $ (the 2 arising because we assume that each individual can serve as a mother or father). Because there are $ N_{t-2\\mu_k}/2 $ parents in generation $ t - 1 $, there are $ 2(N_{t-2\\mu_k}/2)[(N_{t-2\\mu_k}/2) - 1] $ ways of drawing different parents, and $ 4 \\cdot 2(N_{t-2\\mu_k}/2)[(N_{t-2\\mu_k}/2) - 1] $ ways of drawing gene pairs (the 4 because each parent carries two genes). Therefore, the probability that a generation- $ t $ individual carries a pair of genes derived from the same grandparent is $$ P_{t}=\\frac{1}{N_{e}}=\\frac{\\sum\\limits_{i=1}^{N_{t-2}}k_{i}(k_{i}-1)}{N_{t-2}\\mu_{k}(N_{t-2}\\mu_{k}-2)} $$",
+      "source_page": 61,
+      "source_pages": [
+        61
+      ],
+      "source_block_ids": [
+        "Evolution_chapter3:p004:b4",
+        "Evolution_chapter3:p004:b5"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          483.0,
+          1060.0,
+          762.0
+        ],
+        [
+          530.0,
+          778.0,
+          815.0,
+          871.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "97b57140acdf5b752ac0065d7baabdb83bf92a1a843ef6cd70980b799b8dba53"
     },
     {
       "type": "discussion",
-      "content": "Employing the same kinds of substitutions used for Equation 3.3, $$ N_{e}=\\frac{2(N_{t-1}-1)}{(\\sigma_{k}^{2}/\\mu_{k})+\\mu_{k}-1} $$ and for constant N (which implies $ \\mu_{k}=2 $), $$ N_{e}=\\frac{4(N-1)}{\\sigma_{k}^{2}+2} $$"
+      "content": "Employing the same kinds of substitutions used for Equation 3.3, $$ N_{e}=\\frac{2(N_{t-1}-1)}{(\\sigma_{k}^{2}/\\mu_{k})+\\mu_{k}-1} $$ and for constant N (which implies $ \\mu_{k}=2 $), $$ N_{e}=\\frac{4(N-1)}{\\sigma_{k}^{2}+2} $$",
+      "source_page": 61,
+      "source_pages": [
+        61
+      ],
+      "source_block_ids": [
+        "Evolution_chapter3:p004:b7",
+        "Evolution_chapter3:p004:b8",
+        "Evolution_chapter3:p004:b10",
+        "Evolution_chapter3:p004:b11"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          887.0,
+          850.0,
+          913.0
+        ],
+        [
+          571.0,
+          931.0,
+          775.0,
+          982.0
+        ],
+        [
+          289.0,
+          1000.0,
+          658.0,
+          1024.0
+        ],
+        [
+          605.0,
+          1043.0,
+          740.0,
+          1094.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7cb79e2afef144147570c610c91cb946a4995e915b6b67f2a77c5dc566a6a0bc"
     },
     {
       "type": "discussion",
-      "content": "For populations that are moderately large and stable in size, Equations 3.4 and 3.7 give essentially the same answer, $ N_e \\simeq 4N / (\\sigma_k^2 + 2) $, demonstrating that the prohibition of selfing has a negligible influence on $ N_e $ unless the total population size is tiny. The reason for this is that under random mating the increment in inbreeding resulting from self-fertilization is a transient event that can be completely undone in the following generation."
+      "content": "For populations that are moderately large and stable in size, Equations 3.4 and 3.7 give essentially the same answer, $ N_e \\simeq 4N / (\\sigma_k^2 + 2) $, demonstrating that the prohibition of selfing has a negligible influence on $ N_e $ unless the total population size is tiny. The reason for this is that under random mating the increment in inbreeding resulting from self-fertilization is a transient event that can be completely undone in the following generation.",
+      "source_page": 61,
+      "source_pages": [
+        61
+      ],
+      "source_block_ids": [
+        "Evolution_chapter3:p004:b13"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1112.0,
+          1059.0,
+          1228.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "acc21e878ba5b8c0d1cbc4a8ddbf508564c50b690205b61ff76f01a88e329040"
     },
     {
       "type": "discussion",
-      "content": "A second potential complication is that in most hermaphroditic species, there is a distinction between male and female gametes (anisogamy), so that even with selfing, only a fraction of potential gamete pairs are capable of spawning a successful zygote. When mating is random but selfing is prohibited, the effective population size is the same under isogamy and anisogamy, and Equation 3.6 still applies (Crow and Denniston 1988). However, with selfing permitted, $$ N_{e}=\\frac{N_{t-1}}{\\left(4\\sigma_{o,p}/\\mu_{k}^{2}\\right)+1} $$ where $ \\sigma_{o,p} $ is the covariance of the numbers of successful male $ (p,\\mathrm{pollen}) $ and female $ (o,\\mathrm{ovule}) $ gametes per parent (Crow and Denniston 1988). If $ \\sigma_{o,p} $ is positive, as might be expected in a spatially heterogeneous environment where some individuals acquire more resources than others, the effective population size will be less than the observed size. However, if $ \\sigma_{o,p} $ is negative, as might be expected when there is a trade-off between male and female function, $ N_{e} $ can exceed $ N_{t-1} $. This results because a negative covariance in male and female gamete production reduces the variance in family size."
+      "content": "A second potential complication is that in most hermaphroditic species, there is a distinction between male and female gametes (anisogamy), so that even with selfing, only a fraction of potential gamete pairs are capable of spawning a successful zygote. When mating is random but selfing is prohibited, the effective population size is the same under isogamy and anisogamy, and Equation 3.6 still applies (Crow and Denniston 1988). However, with selfing permitted, $$ N_{e}=\\frac{N_{t-1}}{\\left(4\\sigma_{o,p}/\\mu_{k}^{2}\\right)+1} $$ where $ \\sigma_{o,p} $ is the covariance of the numbers of successful male $ (p,\\mathrm{pollen}) $ and female $ (o,\\mathrm{ovule}) $ gametes per parent (Crow and Denniston 1988). If $ \\sigma_{o,p} $ is positive, as might be expected in a spatially heterogeneous environment where some individuals acquire more resources than others, the effective population size will be less than the observed size. However, if $ \\sigma_{o,p} $ is negative, as might be expected when there is a trade-off between male and female function, $ N_{e} $ can exceed $ N_{t-1} $. This results because a negative covariance in male and female gamete production reduces the variance in family size.",
+      "source_page": 61,
+      "source_pages": [
+        61,
+        62
+      ],
+      "source_block_ids": [
+        "Evolution_chapter3:p004:b14",
+        "Evolution_chapter3:p004:b15",
+        "Evolution_chapter3:p004:b17",
+        "Evolution_chapter3:p005:b2"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1228.0,
+          1059.0,
+          1368.0
+        ],
+        [
+          582.0,
+          1364.0,
+          763.0,
+          1414.0
+        ],
+        [
+          286.0,
+          1422.0,
+          1059.0,
+          1472.0
+        ],
+        [
+          132.0,
+          206.0,
+          904.0,
+          324.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "df954e3ef2f97829cc9ffc7772f46bdfb451f6c0abad8ef3e0f82fedcc746c9b"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:3.1]]"
+      "content": "[[SEE_EXAMPLE:3.1]]",
+      "source_page": 62,
+      "source_pages": [
+        62
+      ],
+      "source_block_ids": [
+        "Evolution_chapter3:p005:b3",
+        "Evolution_chapter3:p005:b4",
+        "Evolution_chapter3:p005:b5"
+      ],
+      "source_bboxes": [
+        [
+          156.0,
+          412.0,
+          881.0,
+          689.0
+        ],
+        [
+          175.0,
+          707.0,
+          860.0,
+          762.0
+        ],
+        [
+          155.0,
+          784.0,
+          880.0,
+          873.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "25b626ccb1ef0ba872adea7d550966baf72231a2d404ef9f8e6dfac3832bb304"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:3.2]]"
+      "content": "[[SEE_EXAMPLE:3.2]]",
+      "source_page": 62,
+      "source_pages": [
+        62
+      ],
+      "source_block_ids": [
+        "Evolution_chapter3:p005:b6"
+      ],
+      "source_bboxes": [
+        [
+          156.0,
+          964.0,
+          881.0,
+          1247.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "03d2cb1f9386be75a412c59d7aee25e9bd285f29d9126220a897c0c13b397ecb"
     }
   ]
 }

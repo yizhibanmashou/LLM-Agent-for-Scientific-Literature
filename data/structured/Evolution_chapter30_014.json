@@ -21,27 +21,197 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "While the curvature of a quadratic fitness surface is completely determined by $ \\gamma $, it is easy to be misled about the actual nature of the fitness surface if one attempts to infer its multivariate structure from a simple inspection of the diagonal elements of $ \\gamma $. As Figure 30.3 shows, even for two characters, visualizing the individual fitness surface is not trivial and can easily be extremely misleading. The problem is that the cross-product terms ($ \\gamma_{ij} $ for $ i \\neq j $) make the quadratic form difficult to interpret geometrically. Removing these terms by a change of variables, so that the axes of new variables coincide with the axes of symmetry of the quadratic form (its canonical axes), greatly facilitates visualization of the fitness surface."
+      "content": "While the curvature of a quadratic fitness surface is completely determined by $ \\gamma $, it is easy to be misled about the actual nature of the fitness surface if one attempts to infer its multivariate structure from a simple inspection of the diagonal elements of $ \\gamma $. As Figure 30.3 shows, even for two characters, visualizing the individual fitness surface is not trivial and can easily be extremely misleading. The problem is that the cross-product terms ($ \\gamma_{ij} $ for $ i \\neq j $) make the quadratic form difficult to interpret geometrically. Removing these terms by a change of variables, so that the axes of new variables coincide with the axes of symmetry of the quadratic form (its canonical axes), greatly facilitates visualization of the fitness surface.",
+      "source_page": 1129,
+      "source_pages": [
+        1129
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p016:b4",
+        "Evolution_chapter30:p016:b5"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          982.0,
+          566.0,
+          1005.0
+        ],
+        [
+          287.0,
+          1012.0,
+          1060.0,
+          1195.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "222e1e77b02f722383a0e5c28f166f70620243bd88d840b1370058a42d563350"
     },
     {
       "type": "discussion",
-      "content": "Motivated by this observation, Phillips and Arnold (1989) suggested using two slightly different versions of the canonical transformation of $ \\gamma $ to clarify the geometric structure of the best fitting quadratic fitness surface. Applying Equation 30.25, if we consider the matrix, U, whose columns are the eigenvectors of $ \\gamma $, then the transformation $ \\mathbf{y} = \\mathbf{U}^T \\mathbf{z} $ (and hence $ \\mathbf{z} = \\mathbf{U} \\mathbf{y} $, because $ \\mathbf{U}^{-1} = \\mathbf{U}^T $ as U is orthonormal) removes all the cross-product terms in the quadratic form, and returns $$ \\begin{aligned}w(\\mathbf{z})&=a+\\mathbf{b}^{T}\\mathbf{U}\\mathbf{y}+\\frac{1}{2}\\left(\\mathbf{U}\\mathbf{y}\\right)^{T}\\gamma(\\mathbf{U}\\mathbf{y})=a+\\mathbf{b}^{T}\\mathbf{U}\\mathbf{y}+\\frac{1}{2}\\mathbf{y}^{T}\\left(\\mathbf{U}^{T}\\gamma\\mathbf{U}\\right)\\mathbf{y}\\\\&=a+\\mathbf{b}^{T}\\mathbf{U}\\mathbf{y}+\\frac{1}{2}\\mathbf{y}^{T}\\mathbf{A}\\mathbf{y}=a+\\sum_{i=1}^{n}\\theta_{i}y_{i}+\\frac{1}{2}\\sum_{i=1}^{n}\\lambda_{i}y_{i}^{2}\\end{aligned} $$ where $ \\theta_i = \\mathbf{e}_i^T \\mathbf{b} $ and $"
+      "content": "Motivated by this observation, Phillips and Arnold (1989) suggested using two slightly different versions of the canonical transformation of $ \\gamma $ to clarify the geometric structure of the best fitting quadratic fitness surface. Applying Equation 30.25, if we consider the matrix, U, whose columns are the eigenvectors of $ \\gamma $, then the transformation $ \\mathbf{y} = \\mathbf{U}^T \\mathbf{z} $ (and hence $ \\mathbf{z} = \\mathbf{U} \\mathbf{y} $, because $ \\mathbf{U}^{-1} = \\mathbf{U}^T $ as U is orthonormal) removes all the cross-product terms in the quadratic form, and returns $$ \\begin{aligned}w(\\mathbf{z})&=a+\\mathbf{b}^{T}\\mathbf{U}\\mathbf{y}+\\frac{1}{2}\\left(\\mathbf{U}\\mathbf{y}\\right)^{T}\\gamma(\\mathbf{U}\\mathbf{y})=a+\\mathbf{b}^{T}\\mathbf{U}\\mathbf{y}+\\frac{1}{2}\\mathbf{y}^{T}\\left(\\mathbf{U}^{T}\\gamma\\mathbf{U}\\right)\\mathbf{y}\\\\&=a+\\mathbf{b}^{T}\\mathbf{U}\\mathbf{y}+\\frac{1}{2}\\mathbf{y}^{T}\\mathbf{A}\\mathbf{y}=a+\\sum_{i=1}^{n}\\theta_{i}y_{i}+\\frac{1}{2}\\sum_{i=1}^{n}\\lambda_{i}y_{i}^{2}\\end{aligned} $$ where $ \\theta_i = \\mathbf{e}_i^T \\mathbf{b} $ and $ y_i = \\mathbf{e}_i^T \\mathbf{z} $, with $ \\lambda_i $ and $ \\mathbf{e}_i $, respectively, representing the eigenvalues and associated unit eigenvectors of $ \\gamma $. Alternatively, if a stationary point, $ \\mathbf{z}_0 $, exists (e.g., $ \\gamma $ is nonsingular, all $ \\lambda_i \\neq 0 $), the change of variables, $ \\mathbf{y} = \\mathbf{U}^T(\\mathbf{z} - \\mathbf{z}_0) $, further removes all linear terms, so $$ w(\\mathbf{z})=w_0+\\frac{1}{2}\\mathbf{y}^T\\boldsymbol{\\Lambda}\\mathbf{y}=w_0+\\frac{1}{2}\\sum_{i=1}^{n}\\lambda_i y_i^2 $$ where $ y_i = \\mathbf{e}_i^T(\\mathbf{z} - \\mathbf{z}_0) $ and $ w_0 $ is shown by Equation 30.21b. Equation 30.26 is called the A canonical form and Equation 30.27 the B canonical form. Both forms represent a rotation of the original axes to the new set of coordinates (the canonical axes of $ \\gamma $) that align them with axes of symmetry of the original quadratic surface. The B canonical form further shifts the origin to the stationary point, $ \\mathbf{z}_0 $. Because the contribution to individual fitness from $ \\mathbf{b}^T\\mathbf{z} $ is a hyperplane, its effect is to tilt the fitness surface. The B canonical form effectively levels this tilting, allowing us to focus entirely on the curvature (quadratic) aspects of the fitness surface.",
+      "source_page": 1129,
+      "source_pages": [
+        1129,
+        1131
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p016:b6",
+        "Evolution_chapter30:p016:b7",
+        "Evolution_chapter30:p018:b2",
+        "Evolution_chapter30:p018:b3"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1196.0,
+          1060.0,
+          1333.0
+        ],
+        [
+          378.0,
+          1365.0,
+          970.0,
+          1469.0
+        ],
+        [
+          287.0,
+          205.0,
+          1059.0,
+          301.0
+        ],
+        [
+          496.0,
+          326.0,
+          851.0,
+          384.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "81352a599948d3d53257bba7b3fd4c58be604535b138b1931602b22e27f14b8d"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:30.5]]"
+      "content": "[[SEE_EXAMPLE:30.5]]",
+      "source_page": 1131,
+      "source_pages": [
+        1131,
+        1132
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p018:b10",
+        "Evolution_chapter30:p018:b9",
+        "Evolution_chapter30:p019:b3",
+        "Evolution_chapter30:p019:b4",
+        "Evolution_chapter30:p019:b5",
+        "Evolution_chapter30:p019:b6",
+        "Evolution_chapter30:p019:b7",
+        "Evolution_chapter30:p019:b8"
+      ],
+      "source_bboxes": [
+        [
+          360.0,
+          1421.0,
+          995.0,
+          1473.0
+        ],
+        [
+          322.0,
+          1332.0,
+          1036.0,
+          1398.0
+        ],
+        [
+          223.0,
+          244.0,
+          820.0,
+          295.0
+        ],
+        [
+          167.0,
+          314.0,
+          855.0,
+          339.0
+        ],
+        [
+          221.0,
+          357.0,
+          826.0,
+          385.0
+        ],
+        [
+          168.0,
+          403.0,
+          479.0,
+          426.0
+        ],
+        [
+          343.0,
+          445.0,
+          705.0,
+          488.0
+        ],
+        [
+          167.0,
+          504.0,
+          880.0,
+          594.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "90e9905326dbd59ae77fbac6d7829b4240e96c1c1d4efd58df01f493a976ed39"
     },
     {
       "type": "discussion",
-      "content": "The orientation (the principal, or major, axes) of the quadratic surface is determined by the eigenvectors $ (e_1, \\cdots, e_n) $ of $ \\gamma $, while the eigenvalues $ (\\lambda_1, \\cdots, \\lambda_n) $ of $ \\gamma $ determine the nature and amount of curvature of the surface along each canonical axis. Along the axis defined by $ y_i = e_i^T z $, the individual fitness function has positive curvature (is convex) if $ \\lambda_i > 0 $. It has negative curvature (is concave) if $ \\lambda_i < 0 $, and no curvature (is a plane) if $ \\lambda_i = 0 $. The amount of curvature is indicated by the magnitude of $ \\lambda_i $; the larger $ |\\lambda_i| $, the more extreme the curvature. An alternative way to envision the canonical transformation is that the original vector, $ \\mathbf{z} $, of $ n $ characters is transformed into a vector, $ \\mathbf{y} $, of $ n $ independent selection indices (Simms 1990). Directional selection on the index, $ y_i $, is measured by $ \\theta_i $, while quadratic selection on $ y_i $ is measured by $ \\lambda_i $."
+      "content": "The orientation (the principal, or major, axes) of the quadratic surface is determined by the eigenvectors $ (e_1, \\cdots, e_n) $ of $ \\gamma $, while the eigenvalues $ (\\lambda_1, \\cdots, \\lambda_n) $ of $ \\gamma $ determine the nature and amount of curvature of the surface along each canonical axis. Along the axis defined by $ y_i = e_i^T z $, the individual fitness function has positive curvature (is convex) if $ \\lambda_i > 0 $. It has negative curvature (is concave) if $ \\lambda_i < 0 $, and no curvature (is a plane) if $ \\lambda_i = 0 $. The amount of curvature is indicated by the magnitude of $ \\lambda_i $; the larger $ |\\lambda_i| $, the more extreme the curvature. An alternative way to envision the canonical transformation is that the original vector, $ \\mathbf{z} $, of $ n $ characters is transformed into a vector, $ \\mathbf{y} $, of $ n $ independent selection indices (Simms 1990). Directional selection on the index, $ y_i $, is measured by $ \\theta_i $, while quadratic selection on $ y_i $ is measured by $ \\lambda_i $.",
+      "source_page": 1131,
+      "source_pages": [
+        1131
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p018:b6"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          599.0,
+          1059.0,
+          827.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d2ccac1f515d35966c3565ff5dd00ca135891c1443c26e54c19f7188c6e54e5a"
     },
     {
       "type": "discussion",
-      "content": "Returning to Figure 30.3, we see that the axes of symmetry of the quadratic surface are the canonical axes of $ \\gamma $. For $ \\gamma_{12} = 0.25 $ (Figure 30.3A), $ \\lambda_1 = -2.06 $ and $ \\lambda_2 = -0.94 $, and so the fitness surface is concave along each canonical axis, with more extreme curvature along the $ y_1 $ axis. When $ \\gamma = \\sqrt{2} $ (Figure 30.3B), one eigenvalue is zero while the other is -3, so the surface shows no curvature along one axis (it is a plane) but is strongly concave along the other. Finally, when $ \\gamma_{12} = 4 $ (Figure 30.3C), the two eigenvalues differ in sign, as they are -5.53 and 2.53. This generates a saddle point, with a surface that is concave along one axis and convex along with other, and here with the concave curvature being more the extreme. From Equation 30.26, we can see that the fitness change along a particular axis ($ e_i $) is $ \\theta_i y_i + (\\lambda_i / 2) y_i^2 $. If $ |\\theta_i| \\gg |\\lambda_i| > 0 $, the curvature of the fitness surface along this axis is dominated by the effects of linear (as opposed to quadratic) selection for modest values of $ y_i = e_i^T z $. If $ \\lambda_i = 0 $, the fitness surface along $ y_i $ has no curvature, so the fitness surface is a ridge along this axis. If $ \\theta_i > 0 $, this is a rising ridge (fitness increases as $ y_i $ increases), whereas it is a falling ridge (fitness decreases as $ y_i $ increases) if $ \\theta_i < 0 $, and it is flat if $ \\theta_i = 0 $. Even if $ \\gamma $ is not singular, it may be nearly so, with some of the eigenvalues being very close to zero. In this case, the fitness surface shows little curvature along the axes given by the eigenvectors associated with these nearly zero eigenvalues. Further issues relating to the visualization of multivariate fitness surfaces are discussed in Phillips and Arnold (1989), while Box and Draper (1987) review the statistical foundations of this approach. $$ \\gamma_{1}=\\begin{pmatrix}{{{-2}}}&{{{0.25}}} \\\\{{{0.25}}}&{{{-1}}}\\end{pmatrix},\\quad\\mathbf{U}_{1}=\\begin{pmatrix}{{{0.230}}}&{{{0.973}}} \\\\{{{0.973}}}&{{{-0.230}}}\\end{pmatrix},\\quad\\mathbf{A}_{1}=\\begin{pmatrix}{{{-2.06}}}&{{{0}}} \\\\{{{0}}}&{{{-0.94}}}\\end{pmatrix} $$ and $$ \\boldsymbol{\\gamma}_{2}=\\begin{pmatrix}{{{-2}}}&{{{1.41}}} \\\\{{{1.41}}}&{{{-1}}}\\end{pmatrix},\\quad\\mathbf{U}_{2}=\\begin{pmatrix}{{{0.577}}}&{{{0.816}}} \\\\{{{0.816}}}&{{{-0.577}}}\\end{pmatrix},\\quad\\boldsymbol{\\Lambda}_{2}=\\begin{pmatrix}{{{0}}}&{{{0}}} \\\\{{{0}}}&{{{-3.00}}}\\end{pmatrix} $$ Because $ \\mathbf{U} = (\\mathbf{e}_1 \\mathbf{~e}_2) $, the transformed variables, $ y_i = \\mathbf{e}_i^T \\mathbf{z} $, for $ \\gamma_1 $ (for Figure 30.3A) are $$ y_{1}=\\mathbf{e}_{1}^{T}\\mathbf{z}=0.230\\cdot z_{1}+0.973\\cdot z_{2},\\qquad y_{2}=\\mathbf{e}_{2}^{T}\\mathbf{z}=0.973\\cdot z_{1}-0.230\\cdot z_{2} $$ where the quadratic term now becomes $$ \\frac{1}{2}\\left(-2.06y_{1}^{2}-0.94y_{2}^{2}\\right)=-1.03y_{1}^{2}-0.47y_{2}^{2} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "For $\\gamma_2$ (Figure 30.3B), there is a zero eigenvalue, corresponding to no curvature. This occurs in the direction of $y_1 = \\mathbf{e}_1^T \\mathbf{z} = 0.577 \\cdot z_1 + 0.816 \\cdot z_2$ (where $\\mathbf{e}_1$ is the eigenvector associated with the zero eigenvalue), while the curvature in the direction of $y_2 = \\mathbf{e}_2^T \\mathbf{z} = 0.816 \\cdot z_1 - 0.577 \\cdot z_2$ is given by $-(3.00/2)y_2^2$."
+      "content": "Returning to Figure 30.3, we see that the axes of symmetry of the quadratic surface are the canonical axes of $ \\gamma $. For $ \\gamma_{12} = 0.25 $ (Figure 30.3A), $ \\lambda_1 = -2.06 $ and $ \\lambda_2 = -0.94 $, and so the fitness surface is concave along each canonical axis, with more extreme curvature along the $ y_1 $ axis. When $ \\gamma = \\sqrt{2} $ (Figure 30.3B), one eigenvalue is zero while the other is -3, so the surface shows no curvature along one axis (it is a plane) but is strongly concave along the other. Finally, when $ \\gamma_{12} = 4 $ (Figure 30.3C), the two eigenvalues differ in sign, as they are -5.53 and 2.53. This generates a saddle point, with a surface that is concave along one axis and convex along with other, and here with the concave curvature being more the extreme. From Equation 30.26, we can see that the fitness change along a particular axis ($ e_i $) is $ \\theta_i y_i + (\\lambda_i / 2) y_i^2 $. If $ |\\theta_i| \\gg |\\lambda_i| > 0 $, the curvature of the fitness surface along this axis is dominated by the effects of linear (as opposed to quadratic) selection for modest values of $ y_i = e_i^T z $. If $ \\lambda_i = 0 $, the fitness surface along $ y_i $ has no curvature, so the fitness surface is a ridge along this axis. If $ \\theta_i > 0 $, this is a rising ridge (fitness increases as $ y_i $ increases), whereas it is a falling ridge (fitness decreases as $ y_i $ increases) if $ \\theta_i < 0 $, and it is flat if $ \\theta_i = 0 $. Even if $ \\gamma $ is not singular, it may be nearly so, with some of the eigenvalues being very close to zero. In this case, the fitness surface shows little curvature along the axes given by the eigenvectors associated with these nearly zero eigenvalues. Further issues relating to the visualization of multivariate fitness surfaces are discussed in Phillips and Arnold (1989), while Box and Draper (1987) review the statistical foundations of this approach.",
+      "metadata": {
+        "example_duplicate_prose_trimmed": "middle_fuzzy"
+      },
+      "source_page": 1131,
+      "source_pages": [
+        1131
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p018:b7",
+        "Evolution_chapter30:p018:b8"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          827.0,
+          1060.0,
+          1011.0
+        ],
+        [
+          288.0,
+          1009.0,
+          1059.0,
+          1266.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "acc0211d13cf217ed1738ebaf40a3056dceeb46853730e2063b9806ecd9f5d20"
     }
   ]
 }

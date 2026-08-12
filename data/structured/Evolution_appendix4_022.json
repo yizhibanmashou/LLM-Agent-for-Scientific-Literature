@@ -21,19 +21,115 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "While we can control the FDR for an entire set of experiments, we would also like to have an indication of the FDR for any particular experiment (or test) within this family of tests. Intuitively, tests with smaller p values should also have smaller associated FDR values. To address this, Storey (2002; Storey and Tibshirani 2003) introduced the concept of a q value (as opposed to the p value) for a particular test, where q is the expected FDR rate for tests within the current experiment whose p values are at least as extreme as the test of interest. The estimated q value is a function of the p value for that test and the distribution of the entire set of p values from the family of tests being considered, namely, $$ \\widehat{q}\\left[p(i)\\right]=\\min_{\\tau\\geq p(i)}\\widehat{F D R}(\\tau) $$"
+      "content": "While we can control the FDR for an entire set of experiments, we would also like to have an indication of the FDR for any particular experiment (or test) within this family of tests. Intuitively, tests with smaller p values should also have smaller associated FDR values. To address this, Storey (2002; Storey and Tibshirani 2003) introduced the concept of a q value (as opposed to the p value) for a particular test, where q is the expected FDR rate for tests within the current experiment whose p values are at least as extreme as the test of interest. The estimated q value is a function of the p value for that test and the distribution of the entire set of p values from the family of tests being considered, namely, $$ \\widehat{q}\\left[p(i)\\right]=\\min_{\\tau\\geq p(i)}\\widehat{F D R}(\\tau) $$",
+      "source_page": 1249,
+      "source_pages": [
+        1249
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p020:b2",
+        "Evolution_appendix4:p020:b3",
+        "Evolution_appendix4:p020:b4"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          207.0,
+          437.0,
+          230.0
+        ],
+        [
+          287.0,
+          237.0,
+          1060.0,
+          423.0
+        ],
+        [
+          567.0,
+          436.0,
+          778.0,
+          476.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c468a04e6405c665f3cfcdfac8f251af1ef169da43842a30d143d6cb3bb2748b"
     },
     {
       "type": "discussion",
-      "content": "In words, the $q$ value of a test is calculated by using the smallest FDR value over all significance threshold values ($\\tau$) such that this threshold is equal to, or greater than, the $p$ value, $p(i)$ of the test."
+      "content": "In words, the $q$ value of a test is calculated by using the smallest FDR value over all significance threshold values ($\\tau$) such that this threshold is equal to, or greater than, the $p$ value, $p(i)$ of the test.",
+      "source_page": 1249,
+      "source_pages": [
+        1249
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p020:b6"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          489.0,
+          1058.0,
+          559.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "be3d887987326dd24c3fd20ea5f9dbe204efc7ac14432013587f0b6c2260d8e5"
     },
     {
       "type": "definition",
-      "content": "To see why we used $ \\min_{\\tau \\geq p(i)} $ instead of simply setting $ q_i = FDR[p(i)] $, recall Example A4.9. This example used the Benjamini-Hochberg estimator for FDR value (which differs from other FDR estimators by a constant, $ n_0/n $). Notice that the smallest FDR occurs for hypothesis 6 (1.5%), and not for hypotheses with smaller p values. This reflects the tradeoff whereby increasing the threshold, $ \\tau $, for significance results in the declaration of more tests as discoveries, so the ratio $ \\tau/S(\\tau) $ need not monotonically increase as $ \\tau $ increases. As Example A4.9 shows, setting the threshold $ \\tau $ above the $ p(i) $ value may actually result in a smaller q value, and hence Storey's definition."
+      "content": "To see why we used $ \\min_{\\tau \\geq p(i)} $ instead of simply setting $ q_i = FDR[p(i)] $, recall Example A4.9. This example used the Benjamini-Hochberg estimator for FDR value (which differs from other FDR estimators by a constant, $ n_0/n $). Notice that the smallest FDR occurs for hypothesis 6 (1.5%), and not for hypotheses with smaller p values. This reflects the tradeoff whereby increasing the threshold, $ \\tau $, for significance results in the declaration of more tests as discoveries, so the ratio $ \\tau/S(\\tau) $ need not monotonically increase as $ \\tau $ increases. As Example A4.9 shows, setting the threshold $ \\tau $ above the $ p(i) $ value may actually result in a smaller q value, and hence Storey's definition.",
+      "source_page": 1249,
+      "source_pages": [
+        1249
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p020:b7"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          562.0,
+          1060.0,
+          748.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "268596bc56078034adbfcc9d1d6a25001a801608861a5722d2beb3277cca2ef2"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A4.10]]"
+      "content": "[[SEE_EXAMPLE:A4.10]]",
+      "source_page": 1249,
+      "source_pages": [
+        1249
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p020:b10",
+        "Evolution_appendix4:p020:b8",
+        "Evolution_appendix4:p020:b9"
+      ],
+      "source_bboxes": [
+        [
+          321.0,
+          1278.0,
+          1036.0,
+          1427.0
+        ],
+        [
+          322.0,
+          816.0,
+          1036.0,
+          1131.0
+        ],
+        [
+          322.0,
+          1131.0,
+          1034.0,
+          1277.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a18e4ab130370f2026f5abc372e6da2a3014fc3c6b2422783254abc80a1439f5"
     }
   ]
 }

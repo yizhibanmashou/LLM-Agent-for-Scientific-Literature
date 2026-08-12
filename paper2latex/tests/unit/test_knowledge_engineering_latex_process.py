@@ -5,28 +5,28 @@ from uuid import uuid4
 
 from knowledge_engineering.core.runtime import (
     CompositeChunk,
-    build_composite_chunks,
-    extract_semantic_blocks,
     FormulaLibrary,
     KnowledgeBlock,
     KnowledgeUnit,
     SemanticBlock,
     TableEntry,
     TableLibrary,
+    build_composite_chunks,
+    extract_semantic_blocks,
 )
 from knowledge_engineering.pipeline.process import (
     _create_missing_table_body_stubs,
     _extract_table_envs_and_replace,
     _extract_tables_from_paddle_raw,
-    _table_reference_key,
     _review_chunks_with_llm,
+    _table_reference_key,
     assign_table_sources_to_units,
     build_toc_outputs_from_text,
     derive_chapter_name,
     extract_tables_and_replace,
     preprocess_extracted_text,
-    refine_chunks_for_output,
     recover_paddle_footer_body_text,
+    refine_chunks_for_output,
     split_tex_book,
     strip_latex_markup,
 )

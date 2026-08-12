@@ -1,15 +1,14 @@
 import json
 import unittest
 from pathlib import Path
-from uuid import uuid4
 from unittest.mock import patch
+from uuid import uuid4
 
 import fitz
 
 from knowledge_engineering.pipeline.structured_fusion import apply_structured_fusion, audit_block_content
 from knowledge_engineering.processors.ocr_evidence import build_ocr_evidence_index
 from knowledge_engineering.processors.structured_repair import validate_candidate
-
 
 TEST_RUNTIME_ROOT = Path(__file__).resolve().parents[3] / "tmp" / "test_runtime" / "structured_fusion"
 TEST_RUNTIME_ROOT.mkdir(parents=True, exist_ok=True)

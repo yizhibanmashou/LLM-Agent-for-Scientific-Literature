@@ -21,27 +21,165 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "When different tests share correlated data, it introduces dependency between the $p$ values for these tests. How do we account for this? One approach (Cheverud 2001; Li and Ji 2005; Nyholt 2005) is to use the nature of the dependency structure of the data to estimate an effective number of independent tests, $n_{e}$. This value is then substituted for $n$ in the above methods; e.g., Equation A4.3b becomes $\\alpha = 1 - (1 - \\pi)^{1/n_{e}}$. A classic application of this approach is correcting for correlations among tests of marker-trait associations over a set of linked markers in either a QTL mapping experiment or a GWAS (LW Chapters 15 and 16)."
+      "content": "When different tests share correlated data, it introduces dependency between the $p$ values for these tests. How do we account for this? One approach (Cheverud 2001; Li and Ji 2005; Nyholt 2005) is to use the nature of the dependency structure of the data to estimate an effective number of independent tests, $n_{e}$. This value is then substituted for $n$ in the above methods; e.g., Equation A4.3b becomes $\\alpha = 1 - (1 - \\pi)^{1/n_{e}}$. A classic application of this approach is correcting for correlations among tests of marker-trait associations over a set of linked markers in either a QTL mapping experiment or a GWAS (LW Chapters 15 and 16).",
+      "source_page": 1236,
+      "source_pages": [
+        1236
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p007:b3",
+        "Evolution_appendix4:p007:b4"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          373.0,
+          774.0,
+          396.0
+        ],
+        [
+          132.0,
+          403.0,
+          904.0,
+          564.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "abe2b704b4bf87d6fb1ea4bd2ec05ee54f02165ba9defbe126cc9c053563a390"
     },
     {
       "type": "discussion",
-      "content": "To proceed, we need to introduce a few facts about the eigenstructure of a correlation matrix, C, whose eigenvalues are denoted (from largest to smallest) by $ \\lambda_1, \\cdots, \\lambda_n $. First, because C is a positive-semidefinite matrix, all $ \\lambda_i \\geq 0 $ (Appendix 5). Second, C is an $ n \\times n $ matrix with ones on its diagonal, which makes its trace (the sum of its diagonal elements; Appendix 5) equal to a value of n. The importance of this result is that the trace of a matrix equals the sum of its eigenvalues (Equation A5.8), which demonstrates that the average eigenvalue of C is $$ n^{-1}\\sum_{i=1}^{n}\\lambda_{i}=n^{-1}n=1 $$"
+      "content": "To proceed, we need to introduce a few facts about the eigenstructure of a correlation matrix, C, whose eigenvalues are denoted (from largest to smallest) by $ \\lambda_1, \\cdots, \\lambda_n $. First, because C is a positive-semidefinite matrix, all $ \\lambda_i \\geq 0 $ (Appendix 5). Second, C is an $ n \\times n $ matrix with ones on its diagonal, which makes its trace (the sum of its diagonal elements; Appendix 5) equal to a value of n. The importance of this result is that the trace of a matrix equals the sum of its eigenvalues (Equation A5.8), which demonstrates that the average eigenvalue of C is $$ n^{-1}\\sum_{i=1}^{n}\\lambda_{i}=n^{-1}n=1 $$",
+      "source_page": 1236,
+      "source_pages": [
+        1236
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p007:b5",
+        "Evolution_appendix4:p007:b6"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          565.0,
+          904.0,
+          727.0
+        ],
+        [
+          419.0,
+          725.0,
+          617.0,
+          783.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "688a9d536f304e043e75a6db08d506b6a774e779b68a0c867e1818fc2ddb5cf5"
     },
     {
       "type": "discussion",
-      "content": "When all of the underlying variables that generate C are uncorrelated, then $ \\lambda_1 = \\cdots = \\lambda_n = 1 $, while when all of the observations are completely correlated, then $ \\lambda_1 = n $ and $ \\lambda_2 = \\cdots = \\lambda_n = 0 $. These two cases represent the extremes of $ n $ independent tests (the former) and one independent test (the latter). As with principal components (Appendix 5), the spread of the eigenvalues tells us about dependency. One metric of this is the variance in the eigenvalues, $ \\sigma^2(\\lambda) $. If all of the eigenvalues are equal, then $ \\sigma^2(\\lambda) = 0 $, while if one eigenvalue is nonzero, then $ \\sigma^2(\\lambda) = n $."
+      "content": "When all of the underlying variables that generate C are uncorrelated, then $ \\lambda_1 = \\cdots = \\lambda_n = 1 $, while when all of the observations are completely correlated, then $ \\lambda_1 = n $ and $ \\lambda_2 = \\cdots = \\lambda_n = 0 $. These two cases represent the extremes of $ n $ independent tests (the former) and one independent test (the latter). As with principal components (Appendix 5), the spread of the eigenvalues tells us about dependency. One metric of this is the variance in the eigenvalues, $ \\sigma^2(\\lambda) $. If all of the eigenvalues are equal, then $ \\sigma^2(\\lambda) = 0 $, while if one eigenvalue is nonzero, then $ \\sigma^2(\\lambda) = n $.",
+      "source_page": 1236,
+      "source_pages": [
+        1236
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p007:b7"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          788.0,
+          903.0,
+          950.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d95968860396c977a774d00dc918463e348297a4950b00cb883db5f5e5f41f2f"
     },
     {
       "type": "discussion",
-      "content": "Motivated by the above eigenstructure observations, Cheverud's method (2001) computes the effective number of independent tests as $$ n_{e,Cheverud}=n\\left(1-\\frac{(n-1)\\sigma^{2}(\\lambda)}{n^{2}}\\right),\\qquad\\mathrm{where}\\qquad\\sigma^{2}(\\lambda)=\\frac{1}{n-1}\\sum_{i=1}^{n}(\\lambda_{i}-1)^{2} $$"
+      "content": "Motivated by the above eigenstructure observations, Cheverud's method (2001) computes the effective number of independent tests as $$ n_{e,Cheverud}=n\\left(1-\\frac{(n-1)\\sigma^{2}(\\lambda)}{n^{2}}\\right),\\qquad\\mathrm{where}\\qquad\\sigma^{2}(\\lambda)=\\frac{1}{n-1}\\sum_{i=1}^{n}(\\lambda_{i}-1)^{2} $$",
+      "source_page": 1236,
+      "source_pages": [
+        1236
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p007:b8",
+        "Evolution_appendix4:p007:b9"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          949.0,
+          903.0,
+          997.0
+        ],
+        [
+          145.0,
+          1008.0,
+          828.0,
+          1064.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "87b19de788a291353446c4f8c74145177bbd6362f9f34f8c2872ede27c89b77f"
     },
     {
       "type": "discussion",
-      "content": "This returns $ n_e = n $ when $ \\sigma^2(\\lambda) = 0 $ and $ n_e = 1 $ when $ \\sigma^2(\\lambda) = n $, which matches the expected results from the eigenvalue analysis for these extreme cases."
+      "content": "This returns $ n_e = n $ when $ \\sigma^2(\\lambda) = 0 $ and $ n_e = 1 $ when $ \\sigma^2(\\lambda) = n $, which matches the expected results from the eigenvalue analysis for these extreme cases.",
+      "source_page": 1236,
+      "source_pages": [
+        1236
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p007:b11"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1076.0,
+          903.0,
+          1122.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "83e27a4e1e4acea46cd48b3a90d85394e01eea9437799639694c7be5633d39f5"
     },
     {
       "type": "discussion",
-      "content": "Li and Ji (2005) noted that Cheverud's method often returns an overly large value of $ n_e $ (and therefore, less power), especially when used with a large number of moderately correlated tests. While Cheverud's approach considered the two extreme cases (n vs. 1 independent test), Li and Ji noted that a set of c identical tests will result in an eigenvalue of c > 1, while tests that are only partially correlated with others will generate eigenvalues values < 1. Hence, they partitioned an eigenvalue into two parts, its integer value and the remainder, where the integer part implies identical tests (and hence is counted as contributing one independent test), while the remainder represents partial correlations. Hence, if an eigensequence is 4.1, 3.5, 1, 0.5, 0.1,..., then the first three eigenvalues correspond to independent tests, and with the total of their non-integer residuals (0.1 + 0.5 + 0.5 + 0.1 = 1.2) adding one additional test, giving (for this part of the sequence) an effective number of four independent tests. Formally, the Li-Ji method is coded as $$ n_{e,Li-Ji}=\\sum_{i=1}^{N}I(\\lambda_{i}\\geq1)+\\sum_{i=1}^{N}(\\lambda_{i}-\\mathrm{floor}[\\lambda_{i}]) $$ where the indicator function $ I(x \\geq 1) $ returns a value of one when $ x \\geq 1 $, and otherwise returns a value of zero. Hence, the first sum in Equation A4.5b is the number of eigenvalues of C that are $ \\geq 1 $. The floor[x] function in the second term corresponds to the largest integer $ \\leq x $, so the second sum is all of the remainder terms (the effects of partial correlations among tests). Additional corrections for dealing with correlated tests have been proposed (e.g., Owen 2005; Efron 2007; Leek and Storey 2007, 2008; Li et al. 2012)."
+      "content": "Li and Ji (2005) noted that Cheverud's method often returns an overly large value of $ n_e $ (and therefore, less power), especially when used with a large number of moderately correlated tests. While Cheverud's approach considered the two extreme cases (n vs. 1 independent test), Li and Ji noted that a set of c identical tests will result in an eigenvalue of c > 1, while tests that are only partially correlated with others will generate eigenvalues values < 1. Hence, they partitioned an eigenvalue into two parts, its integer value and the remainder, where the integer part implies identical tests (and hence is counted as contributing one independent test), while the remainder represents partial correlations. Hence, if an eigensequence is 4.1, 3.5, 1, 0.5, 0.1,..., then the first three eigenvalues correspond to independent tests, and with the total of their non-integer residuals (0.1 + 0.5 + 0.5 + 0.1 = 1.2) adding one additional test, giving (for this part of the sequence) an effective number of four independent tests. Formally, the Li-Ji method is coded as $$ n_{e,Li-Ji}=\\sum_{i=1}^{N}I(\\lambda_{i}\\geq1)+\\sum_{i=1}^{N}(\\lambda_{i}-\\mathrm{floor}[\\lambda_{i}]) $$ where the indicator function $ I(x \\geq 1) $ returns a value of one when $ x \\geq 1 $, and otherwise returns a value of zero. Hence, the first sum in Equation A4.5b is the number of eigenvalues of C that are $ \\geq 1 $. The floor[x] function in the second term corresponds to the largest integer $ \\leq x $, so the second sum is all of the remainder terms (the effects of partial correlations among tests). Additional corrections for dealing with correlated tests have been proposed (e.g., Owen 2005; Efron 2007; Leek and Storey 2007, 2008; Li et al. 2012).",
+      "source_page": 1236,
+      "source_pages": [
+        1236,
+        1237
+      ],
+      "source_block_ids": [
+        "Evolution_appendix4:p007:b12",
+        "Evolution_appendix4:p007:b13",
+        "Evolution_appendix4:p008:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1123.0,
+          905.0,
+          1400.0
+        ],
+        [
+          322.0,
+          1408.0,
+          712.0,
+          1473.0
+        ],
+        [
+          287.0,
+          206.0,
+          1059.0,
+          347.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "50b0fe9d1915ba5086e3ae2cdb6ebf49d6353f78f42a6478960323dd53c91231"
     }
   ]
 }

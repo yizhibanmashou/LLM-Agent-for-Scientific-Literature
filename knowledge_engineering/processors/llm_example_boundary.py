@@ -7,15 +7,15 @@ are guarded by deterministic code.
 
 from __future__ import annotations
 
+import json
+import re
+import shutil
+import threading
+import time
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
-import json
 from pathlib import Path
-import re
-import shutil
-import time
-import threading
 from typing import Any
 
 from knowledge_engineering.core.common import read_json, table_reference_key, utc_now_iso, write_json
@@ -42,9 +42,8 @@ from knowledge_engineering.processors.example_extraction import (
     extract_table_refs,
     is_publication_footer,
     join_hyphenated,
-    load_unit_files,
-    looks_like_post_example_body,
     looks_like_example_start,
+    looks_like_post_example_body,
     looks_truncated,
     natural_key,
     next_placeholder_source,
@@ -57,7 +56,6 @@ from knowledge_engineering.processors.example_extraction import (
     strip_html,
     strip_structured_refs,
 )
-
 
 DEFAULT_OUTPUT = Path("tmp/structured_quality_probe/candidates/llm_example_boundary_ch6/structured")
 DEFAULT_ARTIFACTS = Path("tmp/structured_quality_probe/candidates/llm_example_boundary_ch6/artifacts")

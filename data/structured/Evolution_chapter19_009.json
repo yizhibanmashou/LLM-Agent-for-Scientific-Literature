@@ -26,23 +26,164 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Under a mixed-model analysis, response is measured by the change in the mean breeding value of a selected population over time. The estimated mean breeding value in generation $ k $ (or, alternatively, at time point $ k $) is simply obtained by calculating the average of individual breeding-value estimates for that generation. $$ \\widehat{\\overline{a}}_{k}=\\frac{1}{n_{k}}\\sum_{j=1}^{n_{k}}\\widehat{a}_{kj} $$ Because the predicted mean breeding value in generation 0 (the unselected base population) is zero by construction ($ \\bar{a}_{0}=0 $), the total (cumulative) response at generation k is $ \\bar{a}_{k}-\\bar{a}_{0}=\\bar{a}_{k} $. In matrix notation, the vector, $ \\bar{a} $, of mean breeding values is estimated by $$ \\widehat{\\overline{\\mathbf{a}}}=\\begin{pmatrix}\\widehat{\\overline{a}}_{0}\\\\ \\vdots\\\\ \\widehat{\\overline{a}}_{t-1}\\end{pmatrix}=\\mathbf{K}^{T}\\widehat{\\mathbf{a}} $$ where elements in the $k$th row of $\\mathbf{K}$ are $1/n_k$ when the column corresponds to an individual from generation $k$ and otherwise are zero (see Example 19.1). Thus, for $t$ generations of data (corresponding to $t-1$ generations of selection, as the analysis includes the unselected base population, generation 0), $\\mathbf{K}$ is an $n \\times t$ matrix that satisfies $\\mathbf{K}^T \\mathbf{1}_n = \\mathbf{1}_t$ (a $t \\times 1$ vector of ones). From Equation 19.5a, and recalling that $ \\mathbf{Var}(\\mathbf{B}\\mathbf{x}) = \\mathbf{B}\\mathbf{Var}(\\mathbf{x})\\mathbf{B}^{T} $ (LW Equation 8.21b), the sampling covariance matrix for the vector of estimated genotypic means becomes $$ \\mathbf{V a r}\\left(\\widehat{\\mathbf{a}}\\right)=\\sigma_{e}^{2}\\mathbf{K}^{T}\\mathbf{C}_{22}\\mathbf{K} $$ where the $ n \\times n $ matrix, $ C_{22} $, is the solution to Equation 19.7d (under the simple animal model), or more generally, Equation 19.5a. Again, these expressions assume that the residual variance is known without error, and using an estimate for $ \\sigma_e^2 $ adds an additional uncertainty by increasing the sample variance."
+      "content": "Under a mixed-model analysis, response is measured by the change in the mean breeding value of a selected population over time. The estimated mean breeding value in generation $ k $ (or, alternatively, at time point $ k $) is simply obtained by calculating the average of individual breeding-value estimates for that generation. $$ \\widehat{\\overline{a}}_{k}=\\frac{1}{n_{k}}\\sum_{j=1}^{n_{k}}\\widehat{a}_{kj} $$ Because the predicted mean breeding value in generation 0 (the unselected base population) is zero by construction ($ \\bar{a}_{0}=0 $), the total (cumulative) response at generation k is $ \\bar{a}_{k}-\\bar{a}_{0}=\\bar{a}_{k} $. In matrix notation, the vector, $ \\bar{a} $, of mean breeding values is estimated by $$ \\widehat{\\overline{\\mathbf{a}}}=\\begin{pmatrix}\\widehat{\\overline{a}}_{0}\\\\ \\vdots\\\\ \\widehat{\\overline{a}}_{t-1}\\end{pmatrix}=\\mathbf{K}^{T}\\widehat{\\mathbf{a}} $$ where elements in the $k$th row of $\\mathbf{K}$ are $1/n_k$ when the column corresponds to an individual from generation $k$ and otherwise are zero (see Example 19.1). Thus, for $t$ generations of data (corresponding to $t-1$ generations of selection, as the analysis includes the unselected base population, generation 0), $\\mathbf{K}$ is an $n \\times t$ matrix that satisfies $\\mathbf{K}^T \\mathbf{1}_n = \\mathbf{1}_t$ (a $t \\times 1$ vector of ones). From Equation 19.5a, and recalling that $ \\mathbf{Var}(\\mathbf{B}\\mathbf{x}) = \\mathbf{B}\\mathbf{Var}(\\mathbf{x})\\mathbf{B}^{T} $ (LW Equation 8.21b), the sampling covariance matrix for the vector of estimated genotypic means becomes $$ \\mathbf{V a r}\\left(\\widehat{\\mathbf{a}}\\right)=\\sigma_{e}^{2}\\mathbf{K}^{T}\\mathbf{C}_{22}\\mathbf{K} $$ where the $ n \\times n $ matrix, $ C_{22} $, is the solution to Equation 19.7d (under the simple animal model), or more generally, Equation 19.5a. Again, these expressions assume that the residual variance is known without error, and using an estimate for $ \\sigma_e^2 $ adds an additional uncertainty by increasing the sample variance.",
+      "source_page": 625,
+      "source_pages": [
+        625
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p009:b8",
+        "Evolution_chapter19:p009:b9",
+        "Evolution_chapter19:p009:b10",
+        "Evolution_chapter19:p009:b12",
+        "Evolution_chapter19:p009:b13",
+        "Evolution_chapter19:p009:b15",
+        "Evolution_chapter19:p009:b16",
+        "Evolution_chapter19:p009:b17",
+        "Evolution_chapter19:p009:b19"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          722.0,
+          666.0,
+          746.0
+        ],
+        [
+          132.0,
+          752.0,
+          903.0,
+          846.0
+        ],
+        [
+          445.0,
+          866.0,
+          589.0,
+          927.0
+        ],
+        [
+          132.0,
+          946.0,
+          904.0,
+          1019.0
+        ],
+        [
+          423.0,
+          1033.0,
+          613.0,
+          1116.0
+        ],
+        [
+          132.0,
+          1136.0,
+          904.0,
+          1251.0
+        ],
+        [
+          133.0,
+          1250.0,
+          903.0,
+          1300.0
+        ],
+        [
+          413.0,
+          1320.0,
+          625.0,
+          1356.0
+        ],
+        [
+          132.0,
+          1376.0,
+          903.0,
+          1472.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "795be42d53590a9b9a01842ac6d84aebba7da95b4b1cbee702441623a20c4506"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:19.1]]"
+      "content": "[[SEE_EXAMPLE:19.1]]",
+      "source_page": 625,
+      "source_pages": [
+        625
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p009:b15"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1136.0,
+          904.0,
+          1251.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "17a15b58dcbc80d4ac93bac0c0628019ae421add7a98247f73b9f49b12ce3963"
     },
     {
       "type": "discussion",
-      "content": "As is apparent from the above example, a mixed-model analysis of a selection experiment has a very different character than an LS analysis. In the latter, one estimates the realized heritability from a suitable regression of phenotypic means on selection differentials. Under a REML/BLUP analysis, however, one first estimates the heritability in the base population (using REML), and then uses (empirical) BLUP to estimate breeding values for all individuals. The genetic response in a given generation is given by the mean of the elements in the estimated vector, a, of breeding values in that generation, allowing for the separation of genetic from environmental response, even in the absence of a control population. Thompson and Atkins (1994) noted a fundamental difference between the two approaches in separating genetic from environmental change: an LS analysis typically uses between-population information (e.g., contrasts of the means of selection vs. control, or up-vs. down-selected lines), while a REML/BLUP analysis uses within-population information (the connections between relatives across generations contained within A)."
+      "content": "As is apparent from the above example, a mixed-model analysis of a selection experiment has a very different character than an LS analysis. In the latter, one estimates the realized heritability from a suitable regression of phenotypic means on selection differentials. Under a REML/BLUP analysis, however, one first estimates the heritability in the base population (using REML), and then uses (empirical) BLUP to estimate breeding values for all individuals. The genetic response in a given generation is given by the mean of the elements in the estimated vector, a, of breeding values in that generation, allowing for the separation of genetic from environmental response, even in the absence of a control population. Thompson and Atkins (1994) noted a fundamental difference between the two approaches in separating genetic from environmental change: an LS analysis typically uses between-population information (e.g., contrasts of the means of selection vs. control, or up-vs. down-selected lines), while a REML/BLUP analysis uses within-population information (the connections between relatives across generations contained within A).",
+      "source_page": 627,
+      "source_pages": [
+        627
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p011:b8"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          962.0,
+          905.0,
+          1259.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "86470156933ca91ccbe1ae809fac5553dd7435e6bcfdb4ae01c2fa6ea117b076"
     },
     {
       "type": "discussion",
-      "content": "Under an MM analysis, the estimate of heritability should be based on REML estimates of the base population variance components, $ \\widehat{h}^2 = \\widehat{\\sigma}_A^2 / (\\widehat{\\sigma}_A^2 + \\widehat{\\sigma}_e^2) $. One must avoid the temptation to estimate realized heritabilities using estimated mean breeding values. For example, Blair and Pollak (1984) regressed the BLUP mean breeding values on cumulative selection differentials to obtain a realized heritability estimate. The problem with this approach is that these mean estimates depend on the assumed, rather than the actual, heritability (Thompson 1986; Sorensen and Johannsson 1992; Ollivier 1999). In contrast, under a Bayesian analysis, the marginal posterior estimate of mean breeding value in any particular generation averages over all possible $ h^2 $ values and is independent of the heritability (Example 19.10)."
+      "content": "Under an MM analysis, the estimate of heritability should be based on REML estimates of the base population variance components, $ \\widehat{h}^2 = \\widehat{\\sigma}_A^2 / (\\widehat{\\sigma}_A^2 + \\widehat{\\sigma}_e^2) $. One must avoid the temptation to estimate realized heritabilities using estimated mean breeding values. For example, Blair and Pollak (1984) regressed the BLUP mean breeding values on cumulative selection differentials to obtain a realized heritability estimate. The problem with this approach is that these mean estimates depend on the assumed, rather than the actual, heritability (Thompson 1986; Sorensen and Johannsson 1992; Ollivier 1999). In contrast, under a Bayesian analysis, the marginal posterior estimate of mean breeding value in any particular generation averages over all possible $ h^2 $ values and is independent of the heritability (Example 19.10).",
+      "source_page": 627,
+      "source_pages": [
+        627
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p011:b9"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1259.0,
+          905.0,
+          1472.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a76540b97c3529eb2592b857ba9109df64095efb3dbe444106a1acb1bd08cec1"
     },
     {
       "type": "discussion",
-      "content": "Hence, a regression of Bayesian-derived mean breeding values on generations can return an unbiased estimate of realized heritability."
+      "content": "Hence, a regression of Bayesian-derived mean breeding values on generations can return an unbiased estimate of realized heritability.",
+      "source_page": 628,
+      "source_pages": [
+        628
+      ],
+      "source_block_ids": [
+        "Evolution_chapter19:p012:b2"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          206.0,
+          1058.0,
+          254.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2dde91977c1efdb2f6e0125f408812a734e0a06abe82417d72a7bd816678fcb9"
     }
   ]
 }

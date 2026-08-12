@@ -26,51 +26,390 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "How do we compare the amount of selection acting on different populations? At first glance, one might consider using the variance-standardized selection differential (the selection intensity), $ \\bar{\\imath} = S/\\sigma $, to compare the relative strengths of individual selection between populations (Chapter 13). The limitation with $ \\bar{\\imath} $ as a measure of overall selection on populations is that it is character specific. Hence, $ \\bar{\\imath} $ may be appropriate when comparing the strength of selection on a particular character (one could also use mean-standardization, $ S/\\mu $, instead; Chapters 13 and 30), but it is inappropriate for comparing the overall strength of selection in a population. This is because two populations may have the same $ \\bar{\\imath} $ value for a given character, but if that character is tightly correlated with fitness in one population and only weakly correlated in the other, selection will be much stronger in the latter population."
+      "content": "How do we compare the amount of selection acting on different populations? At first glance, one might consider using the variance-standardized selection differential (the selection intensity), $ \\bar{\\imath} = S/\\sigma $, to compare the relative strengths of individual selection between populations (Chapter 13). The limitation with $ \\bar{\\imath} $ as a measure of overall selection on populations is that it is character specific. Hence, $ \\bar{\\imath} $ may be appropriate when comparing the strength of selection on a particular character (one could also use mean-standardization, $ S/\\mu $, instead; Chapters 13 and 30), but it is inappropriate for comparing the overall strength of selection in a population. This is because two populations may have the same $ \\bar{\\imath} $ value for a given character, but if that character is tightly correlated with fitness in one population and only weakly correlated in the other, selection will be much stronger in the latter population.",
+      "source_page": 1067,
+      "source_pages": [
+        1067
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p011:b16",
+        "Evolution_chapter29:p011:b17"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1035.0,
+          493.0,
+          1058.0
+        ],
+        [
+          132.0,
+          1082.0,
+          905.0,
+          1312.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b369d488caf04585d46e46206a6a68659739ab332a343e4ed9e24e3e2fb0bdb8"
     },
     {
       "type": "discussion",
-      "content": "Another issue with using $ \\bar{\\tau} $ is that considerable selection can occur without changing the mean (e.g., stabilizing selection). Haldane (1954) and Van Valen (1965) proposed measures of the intensity of selection, which is suitable for stabilizing selection. Both contrast the mean fitness, $ \\overline{W} $, with $ W_o $, the fitness of the optimal phenotype (usually estimated as the value of the mode of a stabilizing selection function, e.g., $ \\theta $ in Equation 28.3). Haldane suggested $$ I_{H}=\\ln(W_{o})-\\ln(\\overline{W}) $$ while Van Valen proposed $$ \\begin{align*}I_{VV}={W_o-\\overline{W}\\over W_o}=1-\\exp(-I_H)\\end{align*} $$"
+      "content": "Another issue with using $ \\bar{\\tau} $ is that considerable selection can occur without changing the mean (e.g., stabilizing selection). Haldane (1954) and Van Valen (1965) proposed measures of the intensity of selection, which is suitable for stabilizing selection. Both contrast the mean fitness, $ \\overline{W} $, with $ W_o $, the fitness of the optimal phenotype (usually estimated as the value of the mode of a stabilizing selection function, e.g., $ \\theta $ in Equation 28.3). Haldane suggested $$ I_{H}=\\ln(W_{o})-\\ln(\\overline{W}) $$ while Van Valen proposed $$ \\begin{align*}I_{VV}={W_o-\\overline{W}\\over W_o}=1-\\exp(-I_H)\\end{align*} $$",
+      "source_page": 1067,
+      "source_pages": [
+        1067,
+        1068
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p011:b18",
+        "Evolution_chapter29:p011:b19",
+        "Evolution_chapter29:p012:b6",
+        "Evolution_chapter29:p012:b7",
+        "Evolution_chapter29:p012:b8"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          1313.0,
+          905.0,
+          1429.0
+        ],
+        [
+          424.0,
+          1444.0,
+          613.0,
+          1470.0
+        ],
+        [
+          321.0,
+          421.0,
+          1035.0,
+          508.0
+        ],
+        [
+          289.0,
+          551.0,
+          520.0,
+          577.0
+        ],
+        [
+          529.0,
+          592.0,
+          816.0,
+          644.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e593a62276249593d8373c6e5e110683f65f5385046c2ba9f573acfc038c95ee"
     },
     {
       "type": "discussion",
-      "content": "For small values, note that $ I_{VV} \\simeq I_H $ (as $ e^{-x} \\simeq 1 - x $ for small $ x $). These measures, however, also have limitations as comparative measures of the strength of selection. First, the value of $ W_o $ when selection is strictly directional is unclear, and second, like $ \\bar{\\imath} $, these metrics are also trait-specific."
+      "content": "For small values, note that $ I_{VV} \\simeq I_H $ (as $ e^{-x} \\simeq 1 - x $ for small $ x $). These measures, however, also have limitations as comparative measures of the strength of selection. First, the value of $ W_o $ when selection is strictly directional is unclear, and second, like $ \\bar{\\imath} $, these metrics are also trait-specific.",
+      "source_page": 1068,
+      "source_pages": [
+        1068
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p012:b9"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          658.0,
+          1059.0,
+          749.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3b284be5cc6a63c677ce26c2d44e07739e289824730515ec6531790c14b34f0a"
     },
     {
       "type": "discussion",
-      "content": "A much cleaner measure (which requires no assumptions about which traits are under selection or on the nature of that selection) is I, the opportunity for selection, which is defined as the variance in relative fitness $$ \\begin{align*}I=\\sigma^2_w={\\sigma^2_W\\over\\overline W^2}\\end{align*} $$"
+      "content": "A much cleaner measure (which requires no assumptions about which traits are under selection or on the nature of that selection) is I, the opportunity for selection, which is defined as the variance in relative fitness $$ \\begin{align*}I=\\sigma^2_w={\\sigma^2_W\\over\\overline W^2}\\end{align*} $$",
+      "source_page": 1068,
+      "source_pages": [
+        1068
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p012:b10",
+        "Evolution_chapter29:p012:b11"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          750.0,
+          1060.0,
+          820.0
+        ],
+        [
+          607.0,
+          830.0,
+          738.0,
+          884.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "132a3034200369baa98723e731abad556d8f42b29cbd1db1fa59b0e31b5a01dd"
     },
     {
       "type": "discussion",
-      "content": "This measure was introduced by Crow (1958; reviewed in 1989), who referred to it as the index of total selection, and was independently developed by O'Donald (1970). I is estimated by $$ \\widehat{I}=\\operatorname{Var}(w)=\\frac{n}{n-1}\\left(\\overline{w^{2}}-1\\right) $$"
+      "content": "This measure was introduced by Crow (1958; reviewed in 1989), who referred to it as the index of total selection, and was independently developed by O'Donald (1970). I is estimated by $$ \\widehat{I}=\\operatorname{Var}(w)=\\frac{n}{n-1}\\left(\\overline{w^{2}}-1\\right) $$",
+      "source_page": 1068,
+      "source_pages": [
+        1068
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p012:b13",
+        "Evolution_chapter29:p012:b14"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          896.0,
+          1059.0,
+          966.0
+        ],
+        [
+          541.0,
+          965.0,
+          801.0,
+          1007.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "dd7eeab63271c7b701586146be4c4eeba7973a5c4f9a35ad79b5522d92af1b7c"
     },
     {
       "type": "definition",
-      "content": "Crow noted that if fitness is perfectly heritable ($ h_W^2 = 1 $), then $ I = \\Delta \\overline{w} $, namely, the expected selection response in relative fitness. This follows from the Robertson-Price identity (Equation 6.10), $ S = \\sigma(z, w) $. When $ z = W $, then (applying the breeder's equation with $ h_W^2 = 1 $) we have $$ \\begin{align*}R_W=h_WS_W=S_W=\\sigma(W,w)=\\overline{W}\\sigma(W/\\overline{W},w)=\\overline{W}\\sigma_w^2\\end{align*} $$ implying that $ R_W / \\overline{W} = \\Delta \\overline{w} = \\sigma_w^2 = I $. Following Arnold and Wade (1984a, 1984b), I is called the opportunity for selection, as any variation in individual fitness represents an opportunity for a within-generation change in a trait. The opportunity for selection provides an upper bound on $ \\bar{\\nu} $. This follows by using: (i) the definition of a correlation, $ \\rho $, (ii) the Price-Robertson identity, $ S = \\sigma(z, w) $, and (iii) the fact that $ |\\rho| \\leq 1 $, to yield $$ \\begin{align*}\\mid\\rho_{z,w}\\mid=\\frac{\\lvert\\sigma(z,w)\\rvert}{\\sigma_{z}\\sigma_{w}}=\\frac{\\lvert S\\rvert}{\\sigma_{z}\\sqrt{I}}\\leq1\\end{align*} $$ implying that $$ |\\bar{\\imath}|\\leq\\sqrt{I} $$"
+      "content": "Crow noted that if fitness is perfectly heritable ($ h_W^2 = 1 $), then $ I = \\Delta \\overline{w} $, namely, the expected selection response in relative fitness. This follows from the Robertson-Price identity (Equation 6.10), $ S = \\sigma(z, w) $. When $ z = W $, then (applying the breeder's equation with $ h_W^2 = 1 $) we have $$ \\begin{align*}R_W=h_WS_W=S_W=\\sigma(W,w)=\\overline{W}\\sigma(W/\\overline{W},w)=\\overline{W}\\sigma_w^2\\end{align*} $$ implying that $ R_W / \\overline{W} = \\Delta \\overline{w} = \\sigma_w^2 = I $. Following Arnold and Wade (1984a, 1984b), I is called the opportunity for selection, as any variation in individual fitness represents an opportunity for a within-generation change in a trait. The opportunity for selection provides an upper bound on $ \\bar{\\nu} $. This follows by using: (i) the definition of a correlation, $ \\rho $, (ii) the Price-Robertson identity, $ S = \\sigma(z, w) $, and (iii) the fact that $ |\\rho| \\leq 1 $, to yield $$ \\begin{align*}\\mid\\rho_{z,w}\\mid=\\frac{\\lvert\\sigma(z,w)\\rvert}{\\sigma_{z}\\sigma_{w}}=\\frac{\\lvert S\\rvert}{\\sigma_{z}\\sqrt{I}}\\leq1\\end{align*} $$ implying that $$ |\\bar{\\imath}|\\leq\\sqrt{I} $$",
+      "source_page": 1068,
+      "source_pages": [
+        1068
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p012:b16",
+        "Evolution_chapter29:p012:b17",
+        "Evolution_chapter29:p012:b18",
+        "Evolution_chapter29:p012:b19",
+        "Evolution_chapter29:p012:b21",
+        "Evolution_chapter29:p012:b22"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1014.0,
+          1059.0,
+          1110.0
+        ],
+        [
+          431.0,
+          1122.0,
+          917.0,
+          1151.0
+        ],
+        [
+          287.0,
+          1165.0,
+          1060.0,
+          1284.0
+        ],
+        [
+          535.0,
+          1297.0,
+          810.0,
+          1349.0
+        ],
+        [
+          288.0,
+          1362.0,
+          415.0,
+          1388.0
+        ],
+        [
+          632.0,
+          1385.0,
+          716.0,
+          1412.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e299b60dc1eab42726a43d447e3e1af52062a3aa4383ad12691c080659be53fa"
     },
     {
       "type": "discussion",
-      "content": "Thus, the most that the mean of any trait can be shifted within a generation is $ \\sqrt{I} $ phenotypic standard deviations."
+      "content": "Thus, the most that the mean of any trait can be shifted within a generation is $ \\sqrt{I} $ phenotypic standard deviations.",
+      "source_page": 1068,
+      "source_pages": [
+        1068
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p012:b24"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1421.0,
+          1059.0,
+          1470.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ae23dc1b31d3b8874b2fd0016b2e8d97280602b1f6c93a18f08ada3d6167e924"
     },
     {
       "type": "discussion",
-      "content": "The usefulness of I as a bound of $ \\bar{i} $ depends on the correlation between relative fitness and the character being considered. From Equation 29.6a, $$ |\\bar{\\imath}|=|\\rho(z,w)|\\sqrt{I} $$"
+      "content": "The usefulness of I as a bound of $ \\bar{i} $ depends on the correlation between relative fitness and the character being considered. From Equation 29.6a, $$ |\\bar{\\imath}|=|\\rho(z,w)|\\sqrt{I} $$",
+      "source_page": 1069,
+      "source_pages": [
+        1069
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p013:b2",
+        "Evolution_chapter29:p013:b3"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          206.0,
+          903.0,
+          255.0
+        ],
+        [
+          441.0,
+          277.0,
+          597.0,
+          305.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "11c8ddd22c160e1a97f5f37860a0d110ed9ed7dbf42d845c8796d7932948d025"
     },
     {
       "type": "discussion",
-      "content": "Figure 29.2 shows scatterplots of relative fitness versus two characters $ (z_{1} $ and $ z_{2}) $ measured in the same set of individuals. The marginal distributions of fitness are identical for both characters (because the same set of individuals, and hence the same set of fitnesses, were measured for each trait), and thus both have the same opportunity for selection. The association between relative fitness and $ z_{1} $ is fairly strong, while there is no relationship between relative fitness and $ z_{2} $, which means that $ z_{1} $ realizes much of the opportunity for change, while $ z_{2} $ realizes none of it."
+      "content": "Figure 29.2 shows scatterplots of relative fitness versus two characters $ (z_{1} $ and $ z_{2}) $ measured in the same set of individuals. The marginal distributions of fitness are identical for both characters (because the same set of individuals, and hence the same set of fitnesses, were measured for each trait), and thus both have the same opportunity for selection. The association between relative fitness and $ z_{1} $ is fairly strong, while there is no relationship between relative fitness and $ z_{2} $, which means that $ z_{1} $ realizes much of the opportunity for change, while $ z_{2} $ realizes none of it.",
+      "source_page": 1069,
+      "source_pages": [
+        1069
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p013:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          326.0,
+          905.0,
+          490.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c15a934b4897358a66f992acd1e9e2be4c5742860f133e77b50a28ddfda34cb5"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:29.5]]"
+      "content": "[[SEE_EXAMPLE:29.5]]",
+      "source_page": 1069,
+      "source_pages": [
+        1069
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p013:b10",
+        "Evolution_chapter29:p013:b6",
+        "Evolution_chapter29:p013:b7",
+        "Evolution_chapter29:p013:b8",
+        "Evolution_chapter29:p013:b9"
+      ],
+      "source_bboxes": [
+        [
+          168.0,
+          759.0,
+          881.0,
+          855.0
+        ],
+        [
+          167.0,
+          553.0,
+          880.0,
+          619.0
+        ],
+        [
+          267.0,
+          636.0,
+          779.0,
+          665.0
+        ],
+        [
+          168.0,
+          687.0,
+          226.0,
+          711.0
+        ],
+        [
+          418.0,
+          706.0,
+          629.0,
+          751.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "036a73c18fe98697fcddf5e9d50997bcbacf556fd836ed58dd870ddde473e037"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:29.6]]"
-    },
-    {
-      "type": "discussion",
-      "content": "This is an underestimate of I, as to properly estimate I the distribution of individual fitnesses, rather than mean fitness for each phenotypic class (class fitnesses), is required. The Dowdeswell data only allow us to estimate the between-group variance in fitness (the variance in average fitness for the different eyespot classes) and neglects the additional within-group variance (the variance in fitness among individuals with the same number of eyespots)."
+      "content": "[[SEE_EXAMPLE:29.6]]",
+      "source_page": 1069,
+      "source_pages": [
+        1069,
+        1070
+      ],
+      "source_block_ids": [
+        "Evolution_chapter29:p013:b11",
+        "Evolution_chapter29:p013:b13",
+        "Evolution_chapter29:p013:b14",
+        "Evolution_chapter29:p014:b2",
+        "Evolution_chapter29:p014:b3",
+        "Evolution_chapter29:p014:b4"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          921.0,
+          882.0,
+          1156.0
+        ],
+        [
+          168.0,
+          1363.0,
+          880.0,
+          1408.0
+        ],
+        [
+          169.0,
+          1429.0,
+          877.0,
+          1476.0
+        ],
+        [
+          323.0,
+          208.0,
+          411.0,
+          230.0
+        ],
+        [
+          542.0,
+          221.0,
+          815.0,
+          269.0
+        ],
+        [
+          322.0,
+          275.0,
+          1036.0,
+          385.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a45bb85a36673ec9bfceee9642bb86d567ba76ce19816a13b36612ed673bd567"
     }
   ]
 }

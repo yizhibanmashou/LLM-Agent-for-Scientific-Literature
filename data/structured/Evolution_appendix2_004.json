@@ -21,19 +21,158 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "The method of maximum likelihood (LW Appendix 4) and Bayesian analysis are closely related. Suppose $ \\ell(\\boldsymbol{\\varTheta}|\\mathbf{x}) $ is the assumed likelihood function. Under ML estimation, we would compute the mode of the likelihood function (the maximal value of $ \\ell $, as a function of $ \\boldsymbol{\\varTheta} $ given the data $ \\mathbf{x} $), and use the local curvature around the mode to construct confidence intervals. Hypothesis testing follows using likelihood-ratio (LR) statistics. The strengths of ML estimation rely on its large-sample properties, namely, that when the sample size is sufficiently large, we can assume both normality of the estimators and that most LR tests follow $ \\chi^{2} $ distributions. These features, nice as they are, may not hold for small samples. Conversely, a Bayesian analysis is exact for any sample size, given a specified prior."
+      "content": "The method of maximum likelihood (LW Appendix 4) and Bayesian analysis are closely related. Suppose $ \\ell(\\boldsymbol{\\varTheta}|\\mathbf{x}) $ is the assumed likelihood function. Under ML estimation, we would compute the mode of the likelihood function (the maximal value of $ \\ell $, as a function of $ \\boldsymbol{\\varTheta} $ given the data $ \\mathbf{x} $), and use the local curvature around the mode to construct confidence intervals. Hypothesis testing follows using likelihood-ratio (LR) statistics. The strengths of ML estimation rely on its large-sample properties, namely, that when the sample size is sufficiently large, we can assume both normality of the estimators and that most LR tests follow $ \\chi^{2} $ distributions. These features, nice as they are, may not hold for small samples. Conversely, a Bayesian analysis is exact for any sample size, given a specified prior.",
+      "source_page": 1192,
+      "source_pages": [
+        1192
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p004:b8",
+        "Evolution_appendix2:p004:b9"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          610.0,
+          733.0,
+          632.0
+        ],
+        [
+          286.0,
+          656.0,
+          1060.0,
+          864.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ed348763249de1e74734e644257c4b7c92a1be8994b19ef6fb160ccd7e37bba4"
     },
     {
       "type": "proposition",
-      "content": "To transition from a likelihood to a Bayesian analysis, we start with some prior distribution, $ p(\\boldsymbol{\\Theta}) $, that captures our initial knowledge (or best guess) about the possible values of the unknown parameters. From Bayes' theorem, the data (likelihood) is combined with the prior to produce a posterior distribution, $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})=\\frac{1}{p(\\mathbf{x})}\\cdot p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})\\cdot p(\\boldsymbol{\\Theta}) $$ $$ =(normalizing constant)\\cdot p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})\\cdot p(\\boldsymbol{\\Theta}) $$ $$ =constant\\cdot likelihood\\cdot prior $$ as $ p(\\mathbf{x} \\mid \\boldsymbol{\\Theta}) = \\ell(\\boldsymbol{\\Theta} \\mid \\mathbf{x}) $ is simply the likelihood function (LW Appendix 4) and $ 1/p(\\mathbf{x}) $ is a constant (with respect to $ \\boldsymbol{\\Theta} $). Consequently, the posterior distribution is often written as $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})\\propto\\ell(\\boldsymbol{\\Theta}\\mid\\mathbf{x})~p(\\boldsymbol{\\Theta}) $$ where the symbol $ \\propto $ means “proportional to” (equal up to a constant). Note that the constant $ p(\\mathbf{x}) $ normalizes $ p(\\mathbf{x} \\mid \\boldsymbol{\\Theta}) \\cdot p(\\boldsymbol{\\Theta}) $ to one, and hence can be obtained by integration $$ p(\\mathbf{x})=\\int_{\\boldsymbol{\\varTheta}}p(\\mathbf{x}\\mid\\boldsymbol{\\varTheta})\\cdot p(\\boldsymbol{\\varTheta})d\\boldsymbol{\\varTheta} $$"
+      "content": "To transition from a likelihood to a Bayesian analysis, we start with some prior distribution, $ p(\\boldsymbol{\\Theta}) $, that captures our initial knowledge (or best guess) about the possible values of the unknown parameters. From Bayes' theorem, the data (likelihood) is combined with the prior to produce a posterior distribution, $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})=\\frac{1}{p(\\mathbf{x})}\\cdot p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})\\cdot p(\\boldsymbol{\\Theta}) $$ $$ =(normalizing constant)\\cdot p(\\mathbf{x}\\mid\\boldsymbol{\\Theta})\\cdot p(\\boldsymbol{\\Theta}) $$ $$ =constant\\cdot likelihood\\cdot prior $$ as $ p(\\mathbf{x} \\mid \\boldsymbol{\\Theta}) = \\ell(\\boldsymbol{\\Theta} \\mid \\mathbf{x}) $ is simply the likelihood function (LW Appendix 4) and $ 1/p(\\mathbf{x}) $ is a constant (with respect to $ \\boldsymbol{\\Theta} $). Consequently, the posterior distribution is often written as $$ p(\\boldsymbol{\\Theta}\\mid\\mathbf{x})\\propto\\ell(\\boldsymbol{\\Theta}\\mid\\mathbf{x})~p(\\boldsymbol{\\Theta}) $$ where the symbol $ \\propto $ means “proportional to” (equal up to a constant). Note that the constant $ p(\\mathbf{x}) $ normalizes $ p(\\mathbf{x} \\mid \\boldsymbol{\\Theta}) \\cdot p(\\boldsymbol{\\Theta}) $ to one, and hence can be obtained by integration $$ p(\\mathbf{x})=\\int_{\\boldsymbol{\\varTheta}}p(\\mathbf{x}\\mid\\boldsymbol{\\varTheta})\\cdot p(\\boldsymbol{\\varTheta})d\\boldsymbol{\\varTheta} $$",
+      "source_page": 1192,
+      "source_pages": [
+        1192
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p004:b10",
+        "Evolution_appendix2:p004:b11",
+        "Evolution_appendix2:p004:b13",
+        "Evolution_appendix2:p004:b15",
+        "Evolution_appendix2:p004:b17",
+        "Evolution_appendix2:p004:b18",
+        "Evolution_appendix2:p004:b20",
+        "Evolution_appendix2:p004:b21"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          864.0,
+          1060.0,
+          958.0
+        ],
+        [
+          460.0,
+          974.0,
+          728.0,
+          1023.0
+        ],
+        [
+          530.0,
+          1042.0,
+          884.0,
+          1067.0
+        ],
+        [
+          531.0,
+          1100.0,
+          786.0,
+          1124.0
+        ],
+        [
+          287.0,
+          1142.0,
+          1056.0,
+          1190.0
+        ],
+        [
+          570.0,
+          1211.0,
+          775.0,
+          1236.0
+        ],
+        [
+          286.0,
+          1246.0,
+          1060.0,
+          1294.0
+        ],
+        [
+          549.0,
+          1312.0,
+          798.0,
+          1361.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "551bc367c2911d5397d2bc5ce1b8da6b83e0fc6268ea3f45c6e1acd09c519259"
     },
     {
       "type": "discussion",
-      "content": "The dependence of the posterior on the prior (which can easily be assessed by trying different priors) provides an indication of how much information on the unknown parameter values is contained in the data (the curvature of the likelihood surface). If the posterior is highly dependent on the prior, then the data likely has little signal (a flat likelihood surface), while if the posterior is largely unaffected by different priors, then the data are likely highly informative (a sharply peaked likelihood surface). To see this, taking logs on Equation A2.4c yields $$ \\log(posterior)=\\log(likelihood)+\\log(prior)+constant $$"
+      "content": "The dependence of the posterior on the prior (which can easily be assessed by trying different priors) provides an indication of how much information on the unknown parameter values is contained in the data (the curvature of the likelihood surface). If the posterior is highly dependent on the prior, then the data likely has little signal (a flat likelihood surface), while if the posterior is largely unaffected by different priors, then the data are likely highly informative (a sharply peaked likelihood surface). To see this, taking logs on Equation A2.4c yields $$ \\log(posterior)=\\log(likelihood)+\\log(prior)+constant $$",
+      "source_page": 1192,
+      "source_pages": [
+        1192,
+        1193
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p004:b23",
+        "Evolution_appendix2:p005:b2",
+        "Evolution_appendix2:p005:b3"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1376.0,
+          1060.0,
+          1472.0
+        ],
+        [
+          131.0,
+          207.0,
+          903.0,
+          275.0
+        ],
+        [
+          280.0,
+          275.0,
+          758.0,
+          300.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "fb393af47132ef83055bea1173f1a411ab997938fb547c29dac54c3212284d04"
     },
     {
       "type": "discussion",
-      "content": "When the likelihood signal is strong, it largely dominates the prior in the resulting posterior, but when a likelihood is weak, the prior can dominate."
+      "content": "When the likelihood signal is strong, it largely dominates the prior in the resulting posterior, but when a likelihood is weak, the prior can dominate.",
+      "source_page": 1193,
+      "source_pages": [
+        1193
+      ],
+      "source_block_ids": [
+        "Evolution_appendix2:p005:b5"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          308.0,
+          903.0,
+          355.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1c1d2279f1faf81a09851d9fc0bc07df2a1102eb2cd80c20f0e74f7020c40498"
     }
   ]
 }

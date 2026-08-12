@@ -26,59 +26,509 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Response is a function of how selection decisions based on the sib families $ (x_{1} $ and $ x_{2}) $ translate into selection on the corresponding parents $ (\\mathcal{R}_{1} $ and $ \\mathcal{R}_{2}) $ of the offspring, y. Phrased in terms of breeding values, we predict response by using the sib information to predict the breeding values of the parents, R, for the next generation. Under the infinitesimal model, the expected mean of the offspring equals the mean breeding value of the chosen parents (Chapters 6 and 13)."
+      "content": "Response is a function of how selection decisions based on the sib families $ (x_{1} $ and $ x_{2}) $ translate into selection on the corresponding parents $ (\\mathcal{R}_{1} $ and $ \\mathcal{R}_{2}) $ of the offspring, y. Phrased in terms of breeding values, we predict response by using the sib information to predict the breeding values of the parents, R, for the next generation. Under the infinitesimal model, the expected mean of the offspring equals the mean breeding value of the chosen parents (Chapters 6 and 13).",
+      "source_page": 709,
+      "source_pages": [
+        709
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p009:b7",
+        "Evolution_chapter21:p009:b8"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1158.0,
+          827.0,
+          1180.0
+        ],
+        [
+          132.0,
+          1187.0,
+          904.0,
+          1324.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1173c48a91c40e6f186423aee8508fa0332c14e80c278f8901cf53775e48332c"
     },
     {
       "type": "proposition",
-      "content": "Making the standard assumption that all appropriate regressions are linear (which follows under the infinitesimal model assumptions; Chapters 6 and 24), the expected response is given by the general form of the breeder's equation (Equations 13.4a and 13.4b), $$ R_{y}=\\frac{\\sigma(x_{m},y)}{\\sigma_{x_{m}}^{2}}S_{x_{m}}+\\frac{\\sigma(x_{f},y)}{\\sigma_{x_{f}}^{2}}S_{x_{f}} $$"
+      "content": "Making the standard assumption that all appropriate regressions are linear (which follows under the infinitesimal model assumptions; Chapters 6 and 24), the expected response is given by the general form of the breeder's equation (Equations 13.4a and 13.4b), $$ R_{y}=\\frac{\\sigma(x_{m},y)}{\\sigma_{x_{m}}^{2}}S_{x_{m}}+\\frac{\\sigma(x_{f},y)}{\\sigma_{x_{f}}^{2}}S_{x_{f}} $$",
+      "source_page": 709,
+      "source_pages": [
+        709
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p009:b9",
+        "Evolution_chapter21:p009:b10"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1325.0,
+          904.0,
+          1396.0
+        ],
+        [
+          365.0,
+          1418.0,
+          669.0,
+          1473.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "17079af0bfb28fbd8ae84a37b33a430e792ebd7797f5c710babb874d2cfeec21"
     },
     {
       "type": "discussion",
-      "content": "Here $ x_{m} $ and $ x_{f} $ correspond to individuals from the selection units associated with the male (sire/pollen) and female (dam/seed) parents ($ R_{m} $ and $ R_{f} $) of the offspring, y. Equation 21.1a allows the male and female parents to be chosen by completely different schemes. For example, sib selection could be used on males and individual selection on females when selecting for a female-limited character (Example 13.5). The selection unit-offspring covariance, $ \\sigma(x,y) $, can be directly computed from the pedigree connecting P, a sib in x, and R through the use of path analysis (LW Appendix 2). The path (or correlation) between selection on the unit, $ x_{f} $, through the female parent, $ R_{f} $, and its offspring, y, is $$ x_{f}\\leftarrow P\\rightarrow\\mathcal{R}_{f}\\rightarrow y $$ Because the path connecting $ x_f $ and $ y $ is through $ \\mathcal{R}_f $, we often write $ \\sigma(x,y|\\mathcal{R}_f) $ in place of $ \\sigma(x_f,y) $ to remind the reader of this fact. Path(s) connecting $ x_m $ and $ y $ through $ \\mathcal{R}_m $ are similarly defined. If $ P $ consists of multiple relatives, each path connecting $ x_i $ and $ \\mathcal{R}_i $ (and hence $ y $) needs to be counted. For example, if $ x_i $ and $ \\mathcal{R}_i $ are full-sibs, we must compute the paths through each of the common parents (e.g., Figure 21.3D). If the selection unit-offspring covariances are the same for both parents, Equation 21.1a simplifies to $$ R_{y}=\\frac{\\sigma(x,y)}{\\sigma_{x}^{2}}S_{x} $$ where $ S_{x} = (S_{x_{m}} + S_{x_{f}})/2 $ is the average selection differential on the unit(s) leading to the parents and $$ \\sigma(x,y)=\\sigma(x,y\\mid\\mathcal{R}_{f})+\\sigma(x,y\\mid\\mathcal{R}_{m})=2\\sigma(x,y\\mid\\mathcal{R}) $$ is the covariance between the value of selection unit, x, and the offspring, y, counting the paths through both parents ($ R_{m} $ and $ R_{f} $). When covariances are equal, this is twice the single parent-covariance, $ \\sigma(x,y|\\mathcal{R}_{1}) $. By analogy with the breeder's equation, Equation 21.1b is often written as $$ R_{y}=h_{x,y}^{2}S_{x} $$ where the generalized heritability of y given x, $$ h_{x,y}^{2}=\\frac{\\sigma(x,y)}{\\sigma_{x}^{2}}=2\\left[\\frac{\\sigma(x,y\\mid\\mathcal{R})}{\\sigma_{x}^{2}}\\right] $$ is twice the slope of the regression of y on x (LW Chapter 3). Just as the individual heritability, $ h^{2} $, is the accuracy in using an individual's phenotypic value to predict the breeding value (Chapter 13), the generalized heritability is the accuracy of using the sib data, x, to predict the breeding value of R."
+      "content": "Here $ x_{m} $ and $ x_{f} $ correspond to individuals from the selection units associated with the male (sire/pollen) and female (dam/seed) parents ($ R_{m} $ and $ R_{f} $) of the offspring, y. Equation 21.1a allows the male and female parents to be chosen by completely different schemes. For example, sib selection could be used on males and individual selection on females when selecting for a female-limited character (Example 13.5). The selection unit-offspring covariance, $ \\sigma(x,y) $, can be directly computed from the pedigree connecting P, a sib in x, and R through the use of path analysis (LW Appendix 2). The path (or correlation) between selection on the unit, $ x_{f} $, through the female parent, $ R_{f} $, and its offspring, y, is $$ x_{f}\\leftarrow P\\rightarrow\\mathcal{R}_{f}\\rightarrow y $$ Because the path connecting $ x_f $ and $ y $ is through $ \\mathcal{R}_f $, we often write $ \\sigma(x,y|\\mathcal{R}_f) $ in place of $ \\sigma(x_f,y) $ to remind the reader of this fact. Path(s) connecting $ x_m $ and $ y $ through $ \\mathcal{R}_m $ are similarly defined. If $ P $ consists of multiple relatives, each path connecting $ x_i $ and $ \\mathcal{R}_i $ (and hence $ y $) needs to be counted. For example, if $ x_i $ and $ \\mathcal{R}_i $ are full-sibs, we must compute the paths through each of the common parents (e.g., Figure 21.3D). If the selection unit-offspring covariances are the same for both parents, Equation 21.1a simplifies to $$ R_{y}=\\frac{\\sigma(x,y)}{\\sigma_{x}^{2}}S_{x} $$ where $ S_{x} = (S_{x_{m}} + S_{x_{f}})/2 $ is the average selection differential on the unit(s) leading to the parents and $$ \\sigma(x,y)=\\sigma(x,y\\mid\\mathcal{R}_{f})+\\sigma(x,y\\mid\\mathcal{R}_{m})=2\\sigma(x,y\\mid\\mathcal{R}) $$ is the covariance between the value of selection unit, x, and the offspring, y, counting the paths through both parents ($ R_{m} $ and $ R_{f} $). When covariances are equal, this is twice the single parent-covariance, $ \\sigma(x,y|\\mathcal{R}_{1}) $. By analogy with the breeder's equation, Equation 21.1b is often written as $$ R_{y}=h_{x,y}^{2}S_{x} $$ where the generalized heritability of y given x, $$ h_{x,y}^{2}=\\frac{\\sigma(x,y)}{\\sigma_{x}^{2}}=2\\left[\\frac{\\sigma(x,y\\mid\\mathcal{R})}{\\sigma_{x}^{2}}\\right] $$ is twice the slope of the regression of y on x (LW Chapter 3). Just as the individual heritability, $ h^{2} $, is the accuracy in using an individual's phenotypic value to predict the breeding value (Chapter 13), the generalized heritability is the accuracy of using the sib data, x, to predict the breeding value of R.",
+      "source_page": 710,
+      "source_pages": [
+        710
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p010:b2",
+        "Evolution_chapter21:p010:b3",
+        "Evolution_chapter21:p010:b4",
+        "Evolution_chapter21:p010:b5",
+        "Evolution_chapter21:p010:b7",
+        "Evolution_chapter21:p010:b8",
+        "Evolution_chapter21:p010:b10",
+        "Evolution_chapter21:p010:b11",
+        "Evolution_chapter21:p010:b13",
+        "Evolution_chapter21:p010:b14",
+        "Evolution_chapter21:p010:b16"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          206.0,
+          1059.0,
+          393.0
+        ],
+        [
+          588.0,
+          410.0,
+          760.0,
+          434.0
+        ],
+        [
+          287.0,
+          451.0,
+          1059.0,
+          593.0
+        ],
+        [
+          601.0,
+          609.0,
+          746.0,
+          659.0
+        ],
+        [
+          287.0,
+          674.0,
+          1058.0,
+          723.0
+        ],
+        [
+          457.0,
+          720.0,
+          889.0,
+          746.0
+        ],
+        [
+          287.0,
+          755.0,
+          1059.0,
+          847.0
+        ],
+        [
+          619.0,
+          846.0,
+          730.0,
+          873.0
+        ],
+        [
+          289.0,
+          882.0,
+          704.0,
+          907.0
+        ],
+        [
+          533.0,
+          922.0,
+          808.0,
+          976.0
+        ],
+        [
+          288.0,
+          989.0,
+          1060.0,
+          1084.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ffb94a5cc3911ae8aeb412d83795da7fa50242ec24a7f5be133e8bbbca0e4dfb"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:21.2]]"
+      "content": "[[SEE_EXAMPLE:21.2]]",
+      "source_page": 710,
+      "source_pages": [
+        710,
+        711
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p010:b17",
+        "Evolution_chapter21:p010:b18",
+        "Evolution_chapter21:p010:b19",
+        "Evolution_chapter21:p010:b20",
+        "Evolution_chapter21:p011:b2",
+        "Evolution_chapter21:p011:b3",
+        "Evolution_chapter21:p011:b4",
+        "Evolution_chapter21:p011:b5",
+        "Evolution_chapter21:p011:b6"
+      ],
+      "source_bboxes": [
+        [
+          322.0,
+          1150.0,
+          1036.0,
+          1238.0
+        ],
+        [
+          580.0,
+          1254.0,
+          778.0,
+          1303.0
+        ],
+        [
+          322.0,
+          1318.0,
+          1036.0,
+          1407.0
+        ],
+        [
+          592.0,
+          1422.0,
+          764.0,
+          1473.0
+        ],
+        [
+          167.0,
+          207.0,
+          880.0,
+          275.0
+        ],
+        [
+          384.0,
+          288.0,
+          662.0,
+          339.0
+        ],
+        [
+          166.0,
+          352.0,
+          880.0,
+          400.0
+        ],
+        [
+          405.0,
+          414.0,
+          639.0,
+          464.0
+        ],
+        [
+          167.0,
+          478.0,
+          797.0,
+          501.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "859d6448ee3e70340c8010cfdbfe228332cd77dccd05d1a79cfe5dfe30ce3103"
     },
     {
       "type": "discussion",
-      "content": "Other (equivalent) versions of Equations 21.1a and 21.2a appear in the literature. The selection-intensity version allows for standardized comparisons of different selection schemes. Defining the selection intensity on x by $ \\bar{x} = S_x / \\sigma_x $, Equation 21.1a becomes $$ R_{y}=\\frac{\\sigma(x_{m},y)}{\\sigma_{x_{m}}}\\bar{\\imath}_{x_{m}}+\\frac{\\sigma(x_{f},y)}{\\sigma_{x_{f}}}\\bar{\\imath}_{x_{f}} $$"
+      "content": "Other (equivalent) versions of Equations 21.1a and 21.2a appear in the literature. The selection-intensity version allows for standardized comparisons of different selection schemes. Defining the selection intensity on x by $ \\bar{x} = S_x / \\sigma_x $, Equation 21.1a becomes $$ R_{y}=\\frac{\\sigma(x_{m},y)}{\\sigma_{x_{m}}}\\bar{\\imath}_{x_{m}}+\\frac{\\sigma(x_{f},y)}{\\sigma_{x_{f}}}\\bar{\\imath}_{x_{f}} $$",
+      "source_page": 711,
+      "source_pages": [
+        711
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p011:b7",
+        "Evolution_chapter21:p011:b8"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          568.0,
+          904.0,
+          639.0
+        ],
+        [
+          371.0,
+          654.0,
+          663.0,
+          707.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "14e92ee66bb6f441d81826cde1512d68b2951a3fa0e1cfef5c449d54ef1db100"
     },
     {
       "type": "discussion",
-      "content": "If the regressions are the same for both parents, $$ R_{y}=\\frac{\\sigma(x,y)}{\\sigma_{x}}\\bar{\\imath}_{x} $$ where $ \\bar{\\imath}_{x} = (\\bar{\\imath}_{x_{m}} + \\bar{\\imath}_{x_{f}})/2 $ is the average selection intensity. This expression is frequently written in terms of the selection unit-offspring correlation, $ \\rho(x, y) $, $$ R_{y}=\\sigma_{z}\\bar{\\imath}_{x}\\rho(x,y) $$ where (counting both parents) $ \\rho(x, y) = 2\\rho(x, y \\mid \\mathcal{R}) $. Equation 21.4a follows immediately from Equation 21.3b by recalling that $ \\rho(x, y) = \\sigma(x, y)/(\\sigma_x \\sigma_y) $ and that the trait variance in the offspring, $ y $, is simply the phenotypic variance of the character $ (\\sigma_y^2 = \\sigma_z^2) $. A variant of Equation 21.4a commonly seen in the literature is $$ R_{y}=\\sigma_{A}\\bar{\\imath}_{x}\\rho(x,A_{\\mathcal{R}}) $$ where $ \\rho(x, A_{\\mathcal{R}}) $, the correlation between the value of the selection unit, x, and the breeding value of a parent, R, of y, is the accuracy of selection (Equation 13.11a). Equation 21.4b holds in the absence of epistasis, while Equations 21.1–21.3 hold for arbitrary epistasis. Recall that the accuracy of individual selection (the correlation between an individual's phenotypic and breeding values) is $ \\rho(z_{\\mathcal{R}}, A_{\\mathcal{R}}) = h $. A particular family-based approach is favored over individual selection if x is a more accurate predictor of the breeding value of R than is R's phenotypic value, that is when $ \\rho(x, A_{\\mathcal{R}}) > h $."
+      "content": "If the regressions are the same for both parents, $$ R_{y}=\\frac{\\sigma(x,y)}{\\sigma_{x}}\\bar{\\imath}_{x} $$ where $ \\bar{\\imath}_{x} = (\\bar{\\imath}_{x_{m}} + \\bar{\\imath}_{x_{f}})/2 $ is the average selection intensity. This expression is frequently written in terms of the selection unit-offspring correlation, $ \\rho(x, y) $, $$ R_{y}=\\sigma_{z}\\bar{\\imath}_{x}\\rho(x,y) $$ where (counting both parents) $ \\rho(x, y) = 2\\rho(x, y \\mid \\mathcal{R}) $. Equation 21.4a follows immediately from Equation 21.3b by recalling that $ \\rho(x, y) = \\sigma(x, y)/(\\sigma_x \\sigma_y) $ and that the trait variance in the offspring, $ y $, is simply the phenotypic variance of the character $ (\\sigma_y^2 = \\sigma_z^2) $. A variant of Equation 21.4a commonly seen in the literature is $$ R_{y}=\\sigma_{A}\\bar{\\imath}_{x}\\rho(x,A_{\\mathcal{R}}) $$ where $ \\rho(x, A_{\\mathcal{R}}) $, the correlation between the value of the selection unit, x, and the breeding value of a parent, R, of y, is the accuracy of selection (Equation 13.11a). Equation 21.4b holds in the absence of epistasis, while Equations 21.1–21.3 hold for arbitrary epistasis. Recall that the accuracy of individual selection (the correlation between an individual's phenotypic and breeding values) is $ \\rho(z_{\\mathcal{R}}, A_{\\mathcal{R}}) = h $. A particular family-based approach is favored over individual selection if x is a more accurate predictor of the breeding value of R than is R's phenotypic value, that is when $ \\rho(x, A_{\\mathcal{R}}) > h $.",
+      "source_page": 711,
+      "source_pages": [
+        711
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p011:b10",
+        "Evolution_chapter21:p011:b11",
+        "Evolution_chapter21:p011:b13",
+        "Evolution_chapter21:p011:b14",
+        "Evolution_chapter21:p011:b15",
+        "Evolution_chapter21:p011:b17",
+        "Evolution_chapter21:p011:b18"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          720.0,
+          542.0,
+          745.0
+        ],
+        [
+          450.0,
+          761.0,
+          586.0,
+          809.0
+        ],
+        [
+          131.0,
+          822.0,
+          903.0,
+          870.0
+        ],
+        [
+          442.0,
+          886.0,
+          594.0,
+          911.0
+        ],
+        [
+          132.0,
+          926.0,
+          904.0,
+          1021.0
+        ],
+        [
+          429.0,
+          1036.0,
+          607.0,
+          1061.0
+        ],
+        [
+          132.0,
+          1075.0,
+          904.0,
+          1237.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1f5125d575accd018b43bcdfaefd3b10d8a523598b56c044411898c5a9c7313a"
     },
     {
       "type": "discussion",
-      "content": "Equation 21.4b follows by first recalling that the mean value of an offspring is the average of its parental breeding values, $ y = \\mu + (A_{\\mathcal{R}_m}/2) + (A_{\\mathcal{R}_f}/2) + e_y $. Hence, $$ \\sigma(x,y)=\\frac{1}{2}\\sigma(x,A_{\\mathcal{R}_{m}})+\\frac{1}{2}\\sigma(x,A_{\\mathcal{R}_{f}})+\\sigma(x,e_{y}) $$"
+      "content": "Equation 21.4b follows by first recalling that the mean value of an offspring is the average of its parental breeding values, $ y = \\mu + (A_{\\mathcal{R}_m}/2) + (A_{\\mathcal{R}_f}/2) + e_y $. Hence, $$ \\sigma(x,y)=\\frac{1}{2}\\sigma(x,A_{\\mathcal{R}_{m}})+\\frac{1}{2}\\sigma(x,A_{\\mathcal{R}_{f}})+\\sigma(x,e_{y}) $$",
+      "source_page": 711,
+      "source_pages": [
+        711
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p011:b20",
+        "Evolution_chapter21:p011:b21"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1238.0,
+          903.0,
+          1286.0
+        ],
+        [
+          317.0,
+          1301.0,
+          719.0,
+          1348.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2f152bf700d7b2f642a4c5c7cb05c137e1c1632529280473fcd709c5790f4df2"
     },
     {
       "type": "discussion",
-      "content": "In the absence of epistasis, inbreeding, and shared environmental effects, $ \\sigma(x,e)=0 $. If the regression is the same for both sexes, then $ \\sigma(x,y)=\\sigma(x_{1},A_{\\mathcal{R}_{1}}) $. Recalling that $ \\sigma_{y}=\\sigma_{z} $, $$ \\rho(x,y)=\\frac{\\sigma(x,y)}{\\sigma_{x}\\sigma_{z}}=\\left(\\frac{\\sigma_{A}}{\\sigma_{z}}\\right)\\frac{\\sigma(x_{1},A_{\\mathcal{R}_{1}})}{\\sigma_{x}\\sigma_{A}}=h\\rho(x,A_{\\mathcal{R}}) $$"
+      "content": "In the absence of epistasis, inbreeding, and shared environmental effects, $ \\sigma(x,e)=0 $. If the regression is the same for both sexes, then $ \\sigma(x,y)=\\sigma(x_{1},A_{\\mathcal{R}_{1}}) $. Recalling that $ \\sigma_{y}=\\sigma_{z} $, $$ \\rho(x,y)=\\frac{\\sigma(x,y)}{\\sigma_{x}\\sigma_{z}}=\\left(\\frac{\\sigma_{A}}{\\sigma_{z}}\\right)\\frac{\\sigma(x_{1},A_{\\mathcal{R}_{1}})}{\\sigma_{x}\\sigma_{A}}=h\\rho(x,A_{\\mathcal{R}}) $$",
+      "source_page": 711,
+      "source_pages": [
+        711
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p011:b22",
+        "Evolution_chapter21:p011:b23"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1359.0,
+          901.0,
+          1408.0
+        ],
+        [
+          293.0,
+          1421.0,
+          742.0,
+          1474.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a5f49e1082f54d6ebb8e3e48946f57254ed17f5ae5fd309e21d38086cb659aa6"
     },
     {
       "type": "discussion",
-      "content": "(A) $ x_{1} $ and $ R_{1} $ are half-sibs"
+      "content": "(A) $ x_{1} $ and $ R_{1} $ are half-sibs",
+      "source_page": 712,
+      "source_pages": [
+        712
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p012:b2"
+      ],
+      "source_bboxes": [
+        [
+          416.0,
+          203.0,
+          606.0,
+          226.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6983176f8ef2a7025bbb73658bf880e8810c8bcda0bf727f56a964825661416a"
     },
     {
       "type": "discussion",
-      "content": "(B) $ x_{1} $ and y have a common parent, $ P_{1} $"
+      "content": "(B) $ x_{1} $ and y have a common parent, $ P_{1} $",
+      "source_page": 712,
+      "source_pages": [
+        712
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p012:b4"
+      ],
+      "source_bboxes": [
+        [
+          417.0,
+          470.0,
+          688.0,
+          494.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "12dfb7710bbd63f17ef491f98a936b62d0f5f4e4e2c65091339ae54273d2c44c"
     },
     {
       "type": "discussion",
-      "content": "(C) Half-sib $ S_{1} $"
+      "content": "(C) Half-sib $ S_{1} $",
+      "source_page": 712,
+      "source_pages": [
+        712
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p012:b6"
+      ],
+      "source_bboxes": [
+        [
+          417.0,
+          741.0,
+          524.0,
+          765.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a611e6a3544e4bf2385eda33f5e9bf7def1fbc9fb2d7422dff3e9361a8f3df19"
     },
     {
       "type": "discussion",
-      "content": "(D) $ x_{1} $ and $ R_{1} $ are full-sibs"
+      "content": "(D) $ x_{1} $ and $ R_{1} $ are full-sibs",
+      "source_page": 712,
+      "source_pages": [
+        712
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p012:b9"
+      ],
+      "source_bboxes": [
+        [
+          417.0,
+          1012.0,
+          602.0,
+          1036.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "70434e46cd34e3f2636948ea3a8651a617e295951fbe16097a923cb69335438a"
     },
     {
       "type": "discussion",
-      "content": "Substitution into Equation 21.4a recovers Equation 21.4b (as $ \\sigma_z h = \\sigma_z (\\sigma_A / \\sigma_z) = \\sigma_A $). Equations 21.1–21.4 provide equivalent expressions for computing the expected selection response. To apply these expressions to a particular selection scheme, we need to compute the selection unit-offspring covariance, $ \\sigma(x, y) $, and the variance of the selection unit, $ \\sigma_x^2 $."
+      "content": "Substitution into Equation 21.4a recovers Equation 21.4b (as $ \\sigma_z h = \\sigma_z (\\sigma_A / \\sigma_z) = \\sigma_A $). Equations 21.1–21.4 provide equivalent expressions for computing the expected selection response. To apply these expressions to a particular selection scheme, we need to compute the selection unit-offspring covariance, $ \\sigma(x, y) $, and the variance of the selection unit, $ \\sigma_x^2 $.",
+      "source_page": 713,
+      "source_pages": [
+        713
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p013:b4"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          518.0,
+          903.0,
+          613.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "79b0db8fbd933255aa7a90a274ecdbd10d85990e2de26ecfa1f67646e0d83706"
     },
     {
       "type": "table",
-      "content": "[[TABLE:21.2]]"
+      "content": "[[TABLE:21.2]]",
+      "source_page": 712,
+      "source_pages": [
+        712,
+        713
+      ],
+      "source_block_ids": [
+        "Evolution_chapter21:p012:b12",
+        "Evolution_chapter21:p013:b3"
+      ],
+      "source_bboxes": [
+        [
+          322.0,
+          1276.0,
+          1047.0,
+          1456.0
+        ],
+        [
+          146.0,
+          288.0,
+          897.0,
+          475.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e3e012ba65b68e2ef91c91017b8315dc70c9a571c7e9122fd38b50df4e99fc59"
     }
   ]
 }

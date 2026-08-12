@@ -28,31 +28,217 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "A common strategy in the literature to support a claim for selection is to show that a number of different tests are all highly significant. To this aim, a number of authors have proposed compound tests based on the joint distribution of two (or more) summary statistics of selection. Zeng et al (2006) proposed their DH test, which combines signals from Tajima's D and Fay and Wu's H tests. Zeng et al. (2007b) extended this approach with their HEW and DHEW tests, which combine either Fay and Wu's H statistic or Zeng et al.'s DH test (respectively) with the Ewens-Watterson test (introduced shortly as Equation 9.30b). Pavlidis et al. (2010) and Lin et al. (2011) also suggested approaches that combine multiple signals. This approach was taken to the extreme by Grossman et al. (2010, 2013), who combined test statistics based on both population differentiation and haplotype information to construct a likelihood based on the values of multiple test statistics (their composite of multiple signals, or CMS, approach). While composite tests likely do not return proper significance values (due to a lack of independence between tests), they can still have considerable utility. Grossman et al. noted that CMS often yields a substantially narrower region for a selected site, increasing resolution up to 100-fold. Further, given that different tests are optimal over different time scales during a sweep ([[SEE_TABLE:8.2]]), a composite test offers the possibility of having power over a larger time span."
+      "content": "A common strategy in the literature to support a claim for selection is to show that a number of different tests are all highly significant. To this aim, a number of authors have proposed compound tests based on the joint distribution of two (or more) summary statistics of selection. Zeng et al (2006) proposed their DH test, which combines signals from Tajima's D and Fay and Wu's H tests. Zeng et al. (2007b) extended this approach with their HEW and DHEW tests, which combine either Fay and Wu's H statistic or Zeng et al.'s DH test (respectively) with the Ewens-Watterson test (introduced shortly as Equation 9.30b). Pavlidis et al. (2010) and Lin et al. (2011) also suggested approaches that combine multiple signals. This approach was taken to the extreme by Grossman et al. (2010, 2013), who combined test statistics based on both population differentiation and haplotype information to construct a likelihood based on the values of multiple test statistics (their composite of multiple signals, or CMS, approach). While composite tests likely do not return proper significance values (due to a lack of independence between tests), they can still have considerable utility. Grossman et al. noted that CMS often yields a substantially narrower region for a selected site, increasing resolution up to 100-fold. Further, given that different tests are optimal over different time scales during a sweep ([[SEE_TABLE:8.2]]), a composite test offers the possibility of having power over a larger time span.",
+      "source_page": 222,
+      "source_pages": [
+        222,
+        302,
+        303
+      ],
+      "source_block_ids": [
+        "Evolution_chapter8:p022:b9",
+        "Evolution_chapter9:p045:b5",
+        "Evolution_chapter9:p045:b6",
+        "Evolution_chapter9:p046:b2"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          762.0,
+          897.0,
+          787.0
+        ],
+        [
+          133.0,
+          1077.0,
+          503.0,
+          1100.0
+        ],
+        [
+          131.0,
+          1107.0,
+          905.0,
+          1454.0
+        ],
+        [
+          286.0,
+          206.0,
+          1060.0,
+          253.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a171586914b858a6f83d9ce33c37426d4e72fae8ef2da544d8419400f1e326d5"
     },
     {
       "type": "discussion",
-      "content": "Others have advocated meta-analysis approaches, combining the significance values over multiple tests (Appendix 4). This can be accomplished in several ways. Utsumomiya et al. (2013) proposed meta-SS, using Stouffer's Z score (Equation A4.2) to combine p values for different tests applied in a particular region to obtain a single overall p value for that region. Randhawa et al. (2014) used a slightly different approach, their composite selection signals or CSS. Here, for a given test, a standardized rank score, $ R_k/(n+1) $, is computed for each of the n SNPs ($ R_k $ is the rank, from lowest to highest, of the p value of the test). The resulting scores (for a given test) for each SNP range from $ 1/(n+1) $ to $ 1-1/(n+1) $, which are then probit-transformed (Equation 14.2) and averaged over all of the tests to obtain a Z score for each particular SNP. Again, such meta-analysis p values are only approximations, as they assume the p values for different tests are uncorrelated, which is usually not true. Their utility is largely as a convenient summary statistic for evidence of selection in a particular region, rather than as a definitive probability statement."
+      "content": "Others have advocated meta-analysis approaches, combining the significance values over multiple tests (Appendix 4). This can be accomplished in several ways. Utsumomiya et al. (2013) proposed meta-SS, using Stouffer's Z score (Equation A4.2) to combine p values for different tests applied in a particular region to obtain a single overall p value for that region. Randhawa et al. (2014) used a slightly different approach, their composite selection signals or CSS. Here, for a given test, a standardized rank score, $ R_k/(n+1) $, is computed for each of the n SNPs ($ R_k $ is the rank, from lowest to highest, of the p value of the test). The resulting scores (for a given test) for each SNP range from $ 1/(n+1) $ to $ 1-1/(n+1) $, which are then probit-transformed (Equation 14.2) and averaged over all of the tests to obtain a Z score for each particular SNP. Again, such meta-analysis p values are only approximations, as they assume the p values for different tests are uncorrelated, which is usually not true. Their utility is largely as a convenient summary statistic for evidence of selection in a particular region, rather than as a definitive probability statement.",
+      "source_page": 303,
+      "source_pages": [
+        303
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p046:b3"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          255.0,
+          1060.0,
+          551.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "74fe2b4b98714ebc90ae9082cdd42819ae454a02804ae5f6f1de04534d8de57f"
     },
     {
       "type": "discussion",
-      "content": "Ma et al. (2015) proposed a simple measure to deal with test correlations, their de-correlated composite of multiple signals, or DCMS statistic. Let $ p_{i,k} $ denote the p value for test k for site i, and let $ r_{kj} $ be the empirical correlation among the values of the test statistics for tests k and j over all of the scored sites, so that $ r_{kj} = 1 $ and $ r_{kj} = 0 $ when tests k and j are uncorrelated. Ma's DCMS statistic for site i is given by $$ DCMS_{i}=\\left(\\frac{1}{W}\\right)\\sum_{k=1}^{t}\\ln\\left(\\frac{1-p_{i,k}}{p_{i,k}}\\right),\\quad\\mathrm{w h e r e}\\quad W=\\sum_{k=1}^{t}\\left|r_{k t}\\right| $$"
+      "content": "Ma et al. (2015) proposed a simple measure to deal with test correlations, their de-correlated composite of multiple signals, or DCMS statistic. Let $ p_{i,k} $ denote the p value for test k for site i, and let $ r_{kj} $ be the empirical correlation among the values of the test statistics for tests k and j over all of the scored sites, so that $ r_{kj} = 1 $ and $ r_{kj} = 0 $ when tests k and j are uncorrelated. Ma's DCMS statistic for site i is given by $$ DCMS_{i}=\\left(\\frac{1}{W}\\right)\\sum_{k=1}^{t}\\ln\\left(\\frac{1-p_{i,k}}{p_{i,k}}\\right),\\quad\\mathrm{w h e r e}\\quad W=\\sum_{k=1}^{t}\\left|r_{k t}\\right| $$",
+      "source_page": 303,
+      "source_pages": [
+        303
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p046:b4",
+        "Evolution_chapter9:p046:b5"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          551.0,
+          1060.0,
+          669.0
+        ],
+        [
+          407.0,
+          685.0,
+          941.0,
+          748.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "98c766903099d67440b1d1daef3976f4344e5d8574c4ad3c9db808cff674409f"
     },
     {
       "type": "discussion",
-      "content": "The terms in the sum are the odds ratio for each test (which Ma et al. used in place of Bayes factors with equal prior weight on the null and alternative; see Equation A2.10b). The weighting term (W) ranges from 1 (none of the tests are correlated, so that $ W = r_{tt} + 0 = 1 $), to the case were all of the tests are perfectly correlated, so that $ W = t $. In the former case, the composite measure is simply the sum of the odds ratios, while in the latter it is the average of the odds ratio. Ma et al. found in their simulations that DCMS had higher power than either meta-SS or CSS under most settings."
+      "content": "The terms in the sum are the odds ratio for each test (which Ma et al. used in place of Bayes factors with equal prior weight on the null and alternative; see Equation A2.10b). The weighting term (W) ranges from 1 (none of the tests are correlated, so that $ W = r_{tt} + 0 = 1 $), to the case were all of the tests are perfectly correlated, so that $ W = t $. In the former case, the composite measure is simply the sum of the odds ratios, while in the latter it is the average of the odds ratio. Ma et al. found in their simulations that DCMS had higher power than either meta-SS or CSS under most settings.",
+      "source_page": 303,
+      "source_pages": [
+        303
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p046:b7"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          763.0,
+          1060.0,
+          925.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "358f79fe1eae7c703e6d52a489b63b7514ea1479e1d4eacd5a14b61d5b557e38"
     },
     {
       "type": "discussion",
-      "content": "A final class of composite measures are multivariate outlier metrics. Just as the outlier approach is widely used to highlight sites that have exceptional values in a given single test statistics, one can also consider outliers from a collection of test statistics. Assuming all the tests have a mean of zero under the null, the total Euclidean distance of a vector of test statistics from the mean value under the null (0) would be one approach. However, different test statistics have different variances, and further they are correlated. One standard approach in such cases is to transform all of the tests statistics to have the same variance and to be uncorrelated, which leads to the Mahalanobis distance (Equation A5.19). $$ D_{i}^{2}=\\mathbf{t}_{i}^{T}\\mathbf{\\Sigma _{t}^{-1}}\\mathbf{t}_{i} $$ where t is the vector of test statistics for site i and $ \\Sigma_t $ is the empirical variance-covariance matrix for the vector of test scores over all of the sites. Lotterhos et al. (2017) used this metric and a variant replacing the vector (t) of test statistics with a vector whose elements were based on the ranks of the p values for a given site (along the lines of Randhawa et al. 2014). They then took the negative log of these rank-based p values as the elements of t for the Mahalanobis distance. This approach goes by the compact name of Mahalanobis distance based on negative-log rank-based p-values, or Md-rank-P. They found that this approach worked the best of the composite measures they tested, followed by DCMS."
+      "content": "A final class of composite measures are multivariate outlier metrics. Just as the outlier approach is widely used to highlight sites that have exceptional values in a given single test statistics, one can also consider outliers from a collection of test statistics. Assuming all the tests have a mean of zero under the null, the total Euclidean distance of a vector of test statistics from the mean value under the null (0) would be one approach. However, different test statistics have different variances, and further they are correlated. One standard approach in such cases is to transform all of the tests statistics to have the same variance and to be uncorrelated, which leads to the Mahalanobis distance (Equation A5.19). $$ D_{i}^{2}=\\mathbf{t}_{i}^{T}\\mathbf{\\Sigma _{t}^{-1}}\\mathbf{t}_{i} $$ where t is the vector of test statistics for site i and $ \\Sigma_t $ is the empirical variance-covariance matrix for the vector of test scores over all of the sites. Lotterhos et al. (2017) used this metric and a variant replacing the vector (t) of test statistics with a vector whose elements were based on the ranks of the p values for a given site (along the lines of Randhawa et al. 2014). They then took the negative log of these rank-based p values as the elements of t for the Mahalanobis distance. This approach goes by the compact name of Mahalanobis distance based on negative-log rank-based p-values, or Md-rank-P. They found that this approach worked the best of the composite measures they tested, followed by DCMS.",
+      "source_page": 303,
+      "source_pages": [
+        303
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p046:b8",
+        "Evolution_chapter9:p046:b9",
+        "Evolution_chapter9:p046:b11"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          925.0,
+          1060.0,
+          1110.0
+        ],
+        [
+          607.0,
+          1124.0,
+          740.0,
+          1154.0
+        ],
+        [
+          287.0,
+          1170.0,
+          1059.0,
+          1355.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "fad8c0c65774e0ae60138ac0039ff2847a85b49293bf8250688ed574c0e0a6ff"
     },
     {
       "type": "discussion",
-      "content": "While seemingly logical, there are a number of subtle concerns with these composite approaches. First, although the tests reviewed in [[SEE_TABLE:9.1]] highlight different features of the site-frequency spectrum, they are generally still correlated (Fu 1997; Achaz 2009). Hence, when choosing a region because of an abnormal D value, one might expect to find other abnormal site-frequency values as well, even if the region is neutral. This also holds for other types of tests, such as parametric sweep-based approaches (CLR, Sweepfinder) and haplotype-based tests (discussed below). When a region is ascertained by having an unusual test statistic value, this skews the distribution of other tests as well. For example, a region of low recombination can amplify random departures from the neutral equilibrium model. This point was stressed by O'Reilly et al. (2008), who noted that loci with significant selection tests scores in humans are disproportionately found in regions of low recombination. On the one hand, this makes sense, as regions with low c values are expected to have stronger signals from sweeps (Chapter 8). However, on the other hand, regions of low recombination create longer correlations among adjacent sites as well, so that an extreme discordance of a local coalescence from the neutral equilibrium model extends over a larger region. This is one reason to be very cautious of tests that look for localized runs of a particular statistic. For example, consider the continuous regions of Tajima's D reduction (or CRTR) test (Carlson et al. 2005). While a run of sites with negative D values is expected under a sweep, it is also expected around an unlikely—but not exceptional—neutral genealogy in a region of low recombination."
+      "content": "While seemingly logical, there are a number of subtle concerns with these composite approaches. First, although the tests reviewed in [[SEE_TABLE:9.1]] highlight different features of the site-frequency spectrum, they are generally still correlated (Fu 1997; Achaz 2009). Hence, when choosing a region because of an abnormal D value, one might expect to find other abnormal site-frequency values as well, even if the region is neutral. This also holds for other types of tests, such as parametric sweep-based approaches (CLR, Sweepfinder) and haplotype-based tests (discussed below). When a region is ascertained by having an unusual test statistic value, this skews the distribution of other tests as well. For example, a region of low recombination can amplify random departures from the neutral equilibrium model. This point was stressed by O'Reilly et al. (2008), who noted that loci with significant selection tests scores in humans are disproportionately found in regions of low recombination. On the one hand, this makes sense, as regions with low c values are expected to have stronger signals from sweeps (Chapter 8). However, on the other hand, regions of low recombination create longer correlations among adjacent sites as well, so that an extreme discordance of a local coalescence from the neutral equilibrium model extends over a larger region. This is one reason to be very cautious of tests that look for localized runs of a particular statistic. For example, consider the continuous regions of Tajima's D reduction (or CRTR) test (Carlson et al. 2005). While a run of sites with negative D values is expected under a sweep, it is also expected around an unlikely—but not exceptional—neutral genealogy in a region of low recombination.",
+      "source_page": 294,
+      "source_pages": [
+        294,
+        303,
+        304
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p037:b2",
+        "Evolution_chapter9:p037:b3",
+        "Evolution_chapter9:p046:b12",
+        "Evolution_chapter9:p047:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          207.0,
+          901.0,
+          381.0
+        ],
+        [
+          136.0,
+          390.0,
+          901.0,
+          852.0
+        ],
+        [
+          287.0,
+          1354.0,
+          1060.0,
+          1472.0
+        ],
+        [
+          131.0,
+          207.0,
+          905.0,
+          551.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "525473109d112f318198d68729facb879a18f666ec9e3f818c03a93f321310d2"
     },
     {
       "type": "discussion",
-      "content": "The strongest preponderance of evidentiary support comes from completely independent tests, such as site-frequency data from one population coupled with an abnormal $ F_{ST} $ value for that site between populations. Even in these cases, the skeptic can suggest that most of the signal is coming from an unusual event in a single population, but an event that could be an outlier from a neutral drift process. For example, if one catches a surfing allele in one population, it has the potential for generating a number of selection-like signals and will also give a large $ F_{ST} $ value relative to other populations where it has not surfed."
+      "content": "The strongest preponderance of evidentiary support comes from completely independent tests, such as site-frequency data from one population coupled with an abnormal $ F_{ST} $ value for that site between populations. Even in these cases, the skeptic can suggest that most of the signal is coming from an unusual event in a single population, but an event that could be an outlier from a neutral drift process. For example, if one catches a surfing allele in one population, it has the potential for generating a number of selection-like signals and will also give a large $ F_{ST} $ value relative to other populations where it has not surfed.",
+      "source_page": 304,
+      "source_pages": [
+        304
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p047:b3"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          552.0,
+          905.0,
+          715.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "32be0b77ff3d7ce5bf4f97cccaecb42a51fd48a86b17553e75ddba5a49959acb"
     }
   ]
 }

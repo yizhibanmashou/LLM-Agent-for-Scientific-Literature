@@ -21,39 +21,418 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "The time for a process to reach a specified value (or values) is called the sojourn time. While we are often interested in the sojourn time to an absorbing boundary (the fixation time), the more general problem of the time to first reach a specific value within the interval over which the diffusion is defined is also tractable. Letting $ \\bar{t}_{a,b} $ denote the expected time that a diffusion spends in the interval $ (a,b) $ given it starts at frequency p, then $$ \\bar{t}_{a,b}=\\int_{0}^{\\infty}\\Pr\\left(a\\leq x_{t}\\leq b\\right)dt=\\int_{0}^{\\infty}\\int_{a}^{b}\\varphi(x,t,p)dx dt $$"
+      "content": "The time for a process to reach a specified value (or values) is called the sojourn time. While we are often interested in the sojourn time to an absorbing boundary (the fixation time), the more general problem of the time to first reach a specific value within the interval over which the diffusion is defined is also tractable. Letting $ \\bar{t}_{a,b} $ denote the expected time that a diffusion spends in the interval $ (a,b) $ given it starts at frequency p, then $$ \\bar{t}_{a,b}=\\int_{0}^{\\infty}\\Pr\\left(a\\leq x_{t}\\leq b\\right)dt=\\int_{0}^{\\infty}\\int_{a}^{b}\\varphi(x,t,p)dx dt $$",
+      "source_page": 1180,
+      "source_pages": [
+        1180
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p010:b14",
+        "Evolution_appendix1:p010:b15",
+        "Evolution_appendix1:p010:b16"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          997.0,
+          439.0,
+          1020.0
+        ],
+        [
+          287.0,
+          1027.0,
+          1059.0,
+          1144.0
+        ],
+        [
+          441.0,
+          1165.0,
+          905.0,
+          1221.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6fba29ce6dde8c27647cfa6e0ebebfc63b1c59f1101d2570c3b420967932c272"
     },
     {
       "type": "discussion",
-      "content": "If a stationary distribution exists, this time is infinite and hence not really of much biological interest. However, if one or both boundaries are absorbing (and accessible), then $ \\bar{t}(p) $, the total time the diffusion spends in the interior, is obtained from Equation A1.21 by letting a and b be the lower and upper limits, respectively, of the diffusion (typically, a = 0, b = 1)."
+      "content": "If a stationary distribution exists, this time is infinite and hence not really of much biological interest. However, if one or both boundaries are absorbing (and accessible), then $ \\bar{t}(p) $, the total time the diffusion spends in the interior, is obtained from Equation A1.21 by letting a and b be the lower and upper limits, respectively, of the diffusion (typically, a = 0, b = 1).",
+      "source_page": 1180,
+      "source_pages": [
+        1180
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p010:b18"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1238.0,
+          1059.0,
+          1332.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c85c721f753b0f0960a0b2e8a4b558ef942f50960425f2253c0ccad5848fb1d9"
     },
     {
       "type": "discussion",
-      "content": "A very useful approach for solving Equation A1.21, and more general problems, is to consider $ h(x,p) $, the expected amount of time that the process (starting at p) spends in the neighborhood of x before it is eventually absorbed. Formally, this is given by $$ h(x,p)=\\int_{0}^{\\infty}\\varphi(x,t,p)dt $$"
+      "content": "A very useful approach for solving Equation A1.21, and more general problems, is to consider $ h(x,p) $, the expected amount of time that the process (starting at p) spends in the neighborhood of x before it is eventually absorbed. Formally, this is given by $$ h(x,p)=\\int_{0}^{\\infty}\\varphi(x,t,p)dt $$",
+      "source_page": 1180,
+      "source_pages": [
+        1180
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p010:b19",
+        "Evolution_appendix1:p010:b20"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1331.0,
+          1059.0,
+          1403.0
+        ],
+        [
+          562.0,
+          1421.0,
+          785.0,
+          1474.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3158dc893f5e203b30df2050f59300385587c537b5494ffc12d46aea7c1ba868"
     },
     {
       "type": "discussion",
-      "content": "Thus, Equation A1.21 can be expressed as $$ \\begin{align*}\\bar t_{a,b}=\\int_a^b h(x,p)dx\\end{align*} $$"
+      "content": "Thus, Equation A1.21 can be expressed as $$ \\begin{align*}\\bar t_{a,b}=\\int_a^b h(x,p)dx\\end{align*} $$",
+      "source_page": 1181,
+      "source_pages": [
+        1181
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p011:b2",
+        "Evolution_appendix1:p011:b3"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          206.0,
+          495.0,
+          231.0
+        ],
+        [
+          433.0,
+          244.0,
+          603.0,
+          298.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "190921f69e8d4d6cb92dd75d6cdc9edef105bd9ad92b160a327a1b79f1a3d877"
     },
     {
       "type": "discussion",
-      "content": "$ h(x,p) $ is called a Green's function, and it will prove very useful in solving a variety of problems. The general solution for $ h(x,p) $, obtained by Maruyama (1977), is $$ h(x,p)=\\left\\{\\begin{aligned}&\\frac{2[1-u(p)]}{v(x)G(x)}\\int_{a}^{x}G(y)dy&\\text{for}a<x<p\\\\ &\\frac{2u(p)}{v(x)G(x)}\\int_{x}^{b}G(y)dy&\\text{for}p<x<b\\end{aligned}\\right. $$ where the fixation probability, $ u(p) $, is provided by Equation A1.17a."
+      "content": "$ h(x,p) $ is called a Green's function, and it will prove very useful in solving a variety of problems. The general solution for $ h(x,p) $, obtained by Maruyama (1977), is $$ h(x,p)=\\left\\{\\begin{aligned}&\\frac{2[1-u(p)]}{v(x)G(x)}\\int_{a}^{x}G(y)dy&\\text{for}a<x<p\\\\ &\\frac{2u(p)}{v(x)G(x)}\\int_{x}^{b}G(y)dy&\\text{for}p<x<b\\end{aligned}\\right. $$ where the fixation probability, $ u(p) $, is provided by Equation A1.17a.",
+      "source_page": 1181,
+      "source_pages": [
+        1181
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p011:b5",
+        "Evolution_appendix1:p011:b6",
+        "Evolution_appendix1:p011:b8"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          308.0,
+          904.0,
+          357.0
+        ],
+        [
+          297.0,
+          369.0,
+          734.0,
+          484.0
+        ],
+        [
+          133.0,
+          495.0,
+          717.0,
+          518.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "02f60b3f550e513cb7c17d847410195729baeb23e48a2f6a1701d29f82e35088"
     },
     {
       "type": "discussion",
-      "content": "One can also obtain modified Green’s functions for conditional processes, such as processes leading only to loss or processes leading only to fixation. For example, $ \\bar{t}_{F} $, the expected time to fix allele A (in those populations where it is fixed) is given by replacing $ h(x,p) $ in Equation A1.22b by $$ h_{1}(x,p)=h(x,p)\\frac{u(x)}{u(p)} $$"
+      "content": "One can also obtain modified Green’s functions for conditional processes, such as processes leading only to loss or processes leading only to fixation. For example, $ \\bar{t}_{F} $, the expected time to fix allele A (in those populations where it is fixed) is given by replacing $ h(x,p) $ in Equation A1.22b by $$ h_{1}(x,p)=h(x,p)\\frac{u(x)}{u(p)} $$",
+      "source_page": 1181,
+      "source_pages": [
+        1181
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p011:b9",
+        "Evolution_appendix1:p011:b10"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          520.0,
+          904.0,
+          612.0
+        ],
+        [
+          418.0,
+          624.0,
+          617.0,
+          675.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "6f5b0f47458ba38dfbe6a9a0213a78c7e5463b9223aa4871669749dc15882426"
     },
     {
       "type": "discussion",
-      "content": "This follows from standard conditional probability arguments (see Ewens 1979, 2004), with $ u(x)/u(p) $ correcting for the fact that we are only considering those sample paths over which the allele of interest (A) is fixed. This occurs with probability $ u(p) $, and hence $ u(x)/u(p) $ is the conditional density. Similarly, $ \\bar{t}_{L} $, the expected time to lose allele A, is obtained by replacing $ h(x,p) $ in Equation A1.22b by $$ h_{0}(x,p)=h(x,p)\\frac{1-u(x)}{1-u(p)} $$"
+      "content": "This follows from standard conditional probability arguments (see Ewens 1979, 2004), with $ u(x)/u(p) $ correcting for the fact that we are only considering those sample paths over which the allele of interest (A) is fixed. This occurs with probability $ u(p) $, and hence $ u(x)/u(p) $ is the conditional density. Similarly, $ \\bar{t}_{L} $, the expected time to lose allele A, is obtained by replacing $ h(x,p) $ in Equation A1.22b by $$ h_{0}(x,p)=h(x,p)\\frac{1-u(x)}{1-u(p)} $$",
+      "source_page": 1181,
+      "source_pages": [
+        1181
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p011:b12",
+        "Evolution_appendix1:p011:b13"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          686.0,
+          905.0,
+          803.0
+        ],
+        [
+          402.0,
+          816.0,
+          631.0,
+          865.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8af0da0547b6dd3bc9f3803ed2f1d553fb1e96dc5d9511b1587202b2eb126cd7"
     },
     {
       "type": "discussion",
-      "content": "Finally, we note that $ \\bar{t}, \\bar{t}_{F} $, and $ \\bar{t}_{L} $ are related by $$ \\bar{t}(p)=u(p)\\bar{t}_{F}(p)+[1-u(p)]\\bar{t}_{L}(p) $$ That is, the expected time to loss or fixation is equal to the expected time to fixation multiplied by the probability of fixation plus the expected time to loss multiplied by the probability of loss."
+      "content": "Finally, we note that $ \\bar{t}, \\bar{t}_{F} $, and $ \\bar{t}_{L} $ are related by $$ \\bar{t}(p)=u(p)\\bar{t}_{F}(p)+[1-u(p)]\\bar{t}_{L}(p) $$ That is, the expected time to loss or fixation is equal to the expected time to fixation multiplied by the probability of fixation plus the expected time to loss multiplied by the probability of loss.",
+      "source_page": 1181,
+      "source_pages": [
+        1181
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p011:b15",
+        "Evolution_appendix1:p011:b16",
+        "Evolution_appendix1:p011:b18"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          879.0,
+          540.0,
+          904.0
+        ],
+        [
+          368.0,
+          917.0,
+          666.0,
+          943.0
+        ],
+        [
+          131.0,
+          956.0,
+          904.0,
+          1027.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5ee2c422b5404099ed2d8c168e3787b36a995074b2ffab1700bb51a9b657d961"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A1.8]]"
+      "content": "[[SEE_EXAMPLE:A1.8]]",
+      "source_page": 1181,
+      "source_pages": [
+        1181,
+        1182,
+        1183
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p011:b19",
+        "Evolution_appendix1:p011:b20",
+        "Evolution_appendix1:p011:b21",
+        "Evolution_appendix1:p011:b22",
+        "Evolution_appendix1:p012:b11",
+        "Evolution_appendix1:p012:b12",
+        "Evolution_appendix1:p012:b14",
+        "Evolution_appendix1:p012:b15",
+        "Evolution_appendix1:p012:b16",
+        "Evolution_appendix1:p012:b17",
+        "Evolution_appendix1:p012:b18",
+        "Evolution_appendix1:p012:b2",
+        "Evolution_appendix1:p012:b20",
+        "Evolution_appendix1:p012:b21",
+        "Evolution_appendix1:p012:b22",
+        "Evolution_appendix1:p012:b23",
+        "Evolution_appendix1:p012:b24",
+        "Evolution_appendix1:p012:b3",
+        "Evolution_appendix1:p012:b5",
+        "Evolution_appendix1:p012:b6",
+        "Evolution_appendix1:p012:b8",
+        "Evolution_appendix1:p012:b9",
+        "Evolution_appendix1:p013:b3"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          1096.0,
+          879.0,
+          1170.0
+        ],
+        [
+          323.0,
+          1179.0,
+          720.0,
+          1264.0
+        ],
+        [
+          167.0,
+          1276.0,
+          880.0,
+          1321.0
+        ],
+        [
+          338.0,
+          1334.0,
+          709.0,
+          1471.0
+        ],
+        [
+          323.0,
+          702.0,
+          688.0,
+          724.0
+        ],
+        [
+          411.0,
+          743.0,
+          947.0,
+          852.0
+        ],
+        [
+          322.0,
+          870.0,
+          1035.0,
+          914.0
+        ],
+        [
+          432.0,
+          931.0,
+          921.0,
+          1044.0
+        ],
+        [
+          322.0,
+          1064.0,
+          1017.0,
+          1086.0
+        ],
+        [
+          323.0,
+          1087.0,
+          1034.0,
+          1129.0
+        ],
+        [
+          463.0,
+          1148.0,
+          896.0,
+          1173.0
+        ],
+        [
+          322.0,
+          208.0,
+          1035.0,
+          231.0
+        ],
+        [
+          417.0,
+          1212.0,
+          940.0,
+          1236.0
+        ],
+        [
+          323.0,
+          1247.0,
+          782.0,
+          1269.0
+        ],
+        [
+          452.0,
+          1288.0,
+          904.0,
+          1364.0
+        ],
+        [
+          322.0,
+          1380.0,
+          678.0,
+          1403.0
+        ],
+        [
+          497.0,
+          1420.0,
+          858.0,
+          1472.0
+        ],
+        [
+          396.0,
+          248.0,
+          885.0,
+          349.0
+        ],
+        [
+          322.0,
+          366.0,
+          597.0,
+          388.0
+        ],
+        [
+          411.0,
+          406.0,
+          868.0,
+          500.0
+        ],
+        [
+          322.0,
+          517.0,
+          1036.0,
+          562.0
+        ],
+        [
+          411.0,
+          576.0,
+          946.0,
+          683.0
+        ],
+        [
+          258.0,
+          223.0,
+          786.0,
+          276.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4f704716eb83a4467f5f7ea39ae4764f46e4af3b0d396a6573521362b1c5d493"
     }
   ]
 }

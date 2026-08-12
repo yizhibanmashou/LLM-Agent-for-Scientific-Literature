@@ -26,67 +26,592 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Suppose $ n_2 $ $ F_2 $ individuals are collected and selfed to create $ F_3 $ families of size $ n_3 $ for each of the $ F_2 $ founding lines. In trying to choose the best $ F_3 $ line, we might consider combined selection, basing the choice of which individuals to save on both their individual values ($ z_{ij} $) and the average value of the entire $ F_2 $ family ($ \\overline{z}_{i.} $) from which they derive, with $$ \\overline{z}_{i.}=\\frac{1}{n_{3}}\\sum_{j=1}^{n_{3}}z_{ij} $$ where $ n_{3} $ is the number of measured sibs in the family. By analogy with the family index (Chapter 21), we can select individuals using the index $$ I_{ij}=b\\overline{z}_{i.}+z_{ij} $$ As with the standard family index, a large value of b places more weight on the family average, while a small value of b places more weight on the individual value. Individuals chosen of the basis of a superior I value are then selfed to complete fixation in order to generate a fully inbred line. The expected response in generation T of selfing follows from a slight modification to the generalized breeder's equation (Equation 13.10b), and is $$ R_{y}(T)=\\bar{\\imath}\\frac{\\sigma(I_{ij},y_{T})}{\\sigma(I_{ij})} $$ where $ y_T $ is a direct descendant of the individual $ z_{ij} $ in generation $ T $ of selfing. The permanent response is given by considering $ T = \\infty $."
+      "content": "Suppose $ n_2 $ $ F_2 $ individuals are collected and selfed to create $ F_3 $ families of size $ n_3 $ for each of the $ F_2 $ founding lines. In trying to choose the best $ F_3 $ line, we might consider combined selection, basing the choice of which individuals to save on both their individual values ($ z_{ij} $) and the average value of the entire $ F_2 $ family ($ \\overline{z}_{i.} $) from which they derive, with $$ \\overline{z}_{i.}=\\frac{1}{n_{3}}\\sum_{j=1}^{n_{3}}z_{ij} $$ where $ n_{3} $ is the number of measured sibs in the family. By analogy with the family index (Chapter 21), we can select individuals using the index $$ I_{ij}=b\\overline{z}_{i.}+z_{ij} $$ As with the standard family index, a large value of b places more weight on the family average, while a small value of b places more weight on the individual value. Individuals chosen of the basis of a superior I value are then selfed to complete fixation in order to generate a fully inbred line. The expected response in generation T of selfing follows from a slight modification to the generalized breeder's equation (Equation 13.10b), and is $$ R_{y}(T)=\\bar{\\imath}\\frac{\\sigma(I_{ij},y_{T})}{\\sigma(I_{ij})} $$ where $ y_T $ is a direct descendant of the individual $ z_{ij} $ in generation $ T $ of selfing. The permanent response is given by considering $ T = \\infty $.",
+      "source_page": 838,
+      "source_pages": [
+        838
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p032:b12",
+        "Evolution_chapter23:p032:b13",
+        "Evolution_chapter23:p032:b14",
+        "Evolution_chapter23:p032:b15",
+        "Evolution_chapter23:p032:b16",
+        "Evolution_chapter23:p032:b18",
+        "Evolution_chapter23:p032:b19",
+        "Evolution_chapter23:p032:b21"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          671.0,
+          475.0,
+          694.0
+        ],
+        [
+          286.0,
+          701.0,
+          1059.0,
+          796.0
+        ],
+        [
+          601.0,
+          819.0,
+          743.0,
+          879.0
+        ],
+        [
+          286.0,
+          902.0,
+          1059.0,
+          951.0
+        ],
+        [
+          605.0,
+          973.0,
+          741.0,
+          999.0
+        ],
+        [
+          287.0,
+          1021.0,
+          1060.0,
+          1140.0
+        ],
+        [
+          584.0,
+          1160.0,
+          761.0,
+          1211.0
+        ],
+        [
+          286.0,
+          1232.0,
+          1057.0,
+          1278.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4f050d1d282803ba73a2cd0e495f511675df4bd2aa8f20cb4a4373e54a7d02c7"
     },
     {
       "type": "discussion",
-      "content": "It will be useful at this point to introduce two variance components that will (somewhat) simplify our results. First define $$ \\sigma_{c}^{2}(T)=\\sigma_{G}(T,1,0) $$ as the variance between crosses (the different $ F_{2}s $) and $$ \\sigma_{\\ell|c}^{2}(T)=\\sigma_{G}(T,1,1)-\\sigma_{G}(T,1,0) $$ as the variance in lines within crosses (the variance in deviations from the mean cross effect). For a pure-line cross, these variances are $$ \\sigma_{c}^{2}(T)=\\sigma_{A}^{2}+2^{-(T+1)}\\sigma_{D}^{2}+\\sigma_{A A}^{2}+\\cdots\\sigma_{A^{k}}^{2} $$ $$ \\sigma_{\\ell|c}^{2}(T)=(1/2)\\sigma_{A}^{2}+2^{-T}\\sigma_{D}^{2}+(5/4)\\sigma_{A A}^{2}+\\cdots+\\left[\\left(\\frac{3}{2}\\right)^{k}-1\\right]\\sigma_{A^{k}}^{2} $$ With these variance components in hand, consider the numerator of Equation 23.45. First note that $$ \\sigma(I_{ij},y_{T})=b\\sigma(\\overline{z}_{i.},y_{T})+\\sigma(z_{ij},y_{T}) $$ Because $ y_{T} $ is a direct descendant of line ij, $ \\tau = t = 1 $, hence $$ \\sigma(z_{ij},y_{T})=\\sigma_{G}(T,1,1) $$"
+      "content": "It will be useful at this point to introduce two variance components that will (somewhat) simplify our results. First define $$ \\sigma_{c}^{2}(T)=\\sigma_{G}(T,1,0) $$ as the variance between crosses (the different $ F_{2}s $) and $$ \\sigma_{\\ell|c}^{2}(T)=\\sigma_{G}(T,1,1)-\\sigma_{G}(T,1,0) $$ as the variance in lines within crosses (the variance in deviations from the mean cross effect). For a pure-line cross, these variances are $$ \\sigma_{c}^{2}(T)=\\sigma_{A}^{2}+2^{-(T+1)}\\sigma_{D}^{2}+\\sigma_{A A}^{2}+\\cdots\\sigma_{A^{k}}^{2} $$ $$ \\sigma_{\\ell|c}^{2}(T)=(1/2)\\sigma_{A}^{2}+2^{-T}\\sigma_{D}^{2}+(5/4)\\sigma_{A A}^{2}+\\cdots+\\left[\\left(\\frac{3}{2}\\right)^{k}-1\\right]\\sigma_{A^{k}}^{2} $$ With these variance components in hand, consider the numerator of Equation 23.45. First note that $$ \\sigma(I_{ij},y_{T})=b\\sigma(\\overline{z}_{i.},y_{T})+\\sigma(z_{ij},y_{T}) $$ Because $ y_{T} $ is a direct descendant of line ij, $ \\tau = t = 1 $, hence $$ \\sigma(z_{ij},y_{T})=\\sigma_{G}(T,1,1) $$",
+      "source_page": 838,
+      "source_pages": [
+        838,
+        839
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p032:b22",
+        "Evolution_chapter23:p032:b23",
+        "Evolution_chapter23:p032:b25",
+        "Evolution_chapter23:p032:b26",
+        "Evolution_chapter23:p033:b2",
+        "Evolution_chapter23:p033:b3",
+        "Evolution_chapter23:p033:b5",
+        "Evolution_chapter23:p033:b7",
+        "Evolution_chapter23:p033:b8",
+        "Evolution_chapter23:p033:b9",
+        "Evolution_chapter23:p033:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1279.0,
+          1058.0,
+          1326.0
+        ],
+        [
+          588.0,
+          1347.0,
+          759.0,
+          1374.0
+        ],
+        [
+          288.0,
+          1397.0,
+          755.0,
+          1420.0
+        ],
+        [
+          527.0,
+          1442.0,
+          818.0,
+          1471.0
+        ],
+        [
+          132.0,
+          207.0,
+          902.0,
+          255.0
+        ],
+        [
+          224.0,
+          271.0,
+          584.0,
+          302.0
+        ],
+        [
+          216.0,
+          304.0,
+          781.0,
+          366.0
+        ],
+        [
+          132.0,
+          381.0,
+          904.0,
+          428.0
+        ],
+        [
+          367.0,
+          428.0,
+          671.0,
+          453.0
+        ],
+        [
+          133.0,
+          463.0,
+          650.0,
+          486.0
+        ],
+        [
+          416.0,
+          506.0,
+          620.0,
+          530.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ee80597fa4f90ef5990a1bd7b668e5779bf8e6fbe4a04a2f49ae049d93f5eb89"
     },
     {
       "type": "discussion",
-      "content": "Likewise, $$ \\sigma(\\overline{z}_{i.},y_{T})=\\frac{1}{n_{3}}\\sum_{k=1}^{n_{3}}\\sigma(z_{ik},y_{T})=\\frac{\\sigma(z_{ij},y_{T})}{n_{3}}+\\left(1-\\frac{1}{n_{3}}\\right)\\sigma(z_{ik},y_{T}) $$"
+      "content": "Likewise, $$ \\sigma(\\overline{z}_{i.},y_{T})=\\frac{1}{n_{3}}\\sum_{k=1}^{n_{3}}\\sigma(z_{ik},y_{T})=\\frac{\\sigma(z_{ij},y_{T})}{n_{3}}+\\left(1-\\frac{1}{n_{3}}\\right)\\sigma(z_{ik},y_{T}) $$",
+      "source_page": 839,
+      "source_pages": [
+        839
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p033:b12",
+        "Evolution_chapter23:p033:b13"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          549.0,
+          223.0,
+          571.0
+        ],
+        [
+          232.0,
+          592.0,
+          804.0,
+          647.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5ce681522468a031a645c147d22a202c98478b9ed8ccad09655161d89d0222c4"
     },
     {
       "type": "discussion",
-      "content": "The first term is given by Equation 23.48a, while the second is the covariance between a sib, $ z_{ik} $, of individual ij. Here, the common parent between ik and y is the $ F_2 $, meaning that $ t = 0, \\tau = 1 $, and this covariance is $ \\sigma_G(T, 1, 0) $. Putting these together, $$ \\sigma(\\overline{z}_{i.},y_{T})=\\sigma_{G}(T,1,0)+\\frac{\\sigma_{G}(T,1,1)-\\sigma_{G}(T,1,0)}{n_{3}}=\\sigma_{c}^{2}(T)+\\frac{\\sigma_{\\ell|c}^{2}(T)}{n_{3}} $$"
+      "content": "The first term is given by Equation 23.48a, while the second is the covariance between a sib, $ z_{ik} $, of individual ij. Here, the common parent between ik and y is the $ F_2 $, meaning that $ t = 0, \\tau = 1 $, and this covariance is $ \\sigma_G(T, 1, 0) $. Putting these together, $$ \\sigma(\\overline{z}_{i.},y_{T})=\\sigma_{G}(T,1,0)+\\frac{\\sigma_{G}(T,1,1)-\\sigma_{G}(T,1,0)}{n_{3}}=\\sigma_{c}^{2}(T)+\\frac{\\sigma_{\\ell|c}^{2}(T)}{n_{3}} $$",
+      "source_page": 839,
+      "source_pages": [
+        839
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p033:b14",
+        "Evolution_chapter23:p033:b15"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          666.0,
+          904.0,
+          737.0
+        ],
+        [
+          187.0,
+          755.0,
+          779.0,
+          809.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e0f5dffe8f7d0663fc70b3b2477f51217dcaa0336b1cb2ceb15f837a41be4b9f"
     },
     {
       "type": "discussion",
-      "content": "The numerator covariance in Equation 23.45 thus becomes $$ \\sigma(I_{ij},y_{T})=b\\left(\\sigma_{c}^{2}(T)+\\frac{\\sigma_{\\ell|c}^{2}(T)}{n_{3}}\\right)+\\sigma_{c}^{2}(T)+\\sigma_{\\ell|c}^{2}(T) $$"
+      "content": "The numerator covariance in Equation 23.45 thus becomes $$ \\sigma(I_{ij},y_{T})=b\\left(\\sigma_{c}^{2}(T)+\\frac{\\sigma_{\\ell|c}^{2}(T)}{n_{3}}\\right)+\\sigma_{c}^{2}(T)+\\sigma_{\\ell|c}^{2}(T) $$",
+      "source_page": 839,
+      "source_pages": [
+        839
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p033:b17",
+        "Evolution_chapter23:p033:b18"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          824.0,
+          636.0,
+          847.0
+        ],
+        [
+          295.0,
+          869.0,
+          740.0,
+          927.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "70c41eaa9cc1b3adfdfb8edfcc0c1564b4d79162682a86fc2bfbc8763b1daeb6"
     },
     {
       "type": "discussion",
-      "content": "Now turning to the variance of the selection index, $$ \\sigma^{2}(I_{i j})=\\sigma^{2}\\left(b\\overline{z}_{i.}+z_{i j}\\right)=b^{2}\\sigma^{2}\\left(\\overline{z}_{i.}\\right)+\\sigma^{2}\\left(z_{i j}\\right)+2b\\sigma\\left(\\overline{z}_{i.},z_{i j}\\right) $$"
+      "content": "Now turning to the variance of the selection index, $$ \\sigma^{2}(I_{i j})=\\sigma^{2}\\left(b\\overline{z}_{i.}+z_{i j}\\right)=b^{2}\\sigma^{2}\\left(\\overline{z}_{i.}\\right)+\\sigma^{2}\\left(z_{i j}\\right)+2b\\sigma\\left(\\overline{z}_{i.},z_{i j}\\right) $$",
+      "source_page": 839,
+      "source_pages": [
+        839
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p033:b19",
+        "Evolution_chapter23:p033:b21"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          945.0,
+          571.0,
+          969.0
+        ],
+        [
+          219.0,
+          985.0,
+          748.0,
+          1014.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a542b4a36836aae95cb9de0029117969e089948f485b976af5575ed0365e6a84"
     },
     {
       "type": "discussion",
-      "content": "First, consider the variance of a random $ F_{3} $ line, $$ \\sigma^{2}\\left(z_{i j}\\right)=\\sigma_{G}(1,1,1)+\\sigma_{\\epsilon}^{2}=\\sigma_{c}^{2}(1)+\\sigma_{\\ell|c}^{2}(1)+\\sigma_{\\epsilon}^{2} $$ where $ \\sigma_{\\epsilon}^{2} $ is the within-line error variance. Next, note that $$ \\sigma^{2}\\left(\\overline{z}_{i.}\\right)=\\frac{n_{3}\\sigma^{2}\\left(z_{i j}\\right)}{n_{3}^{2}}+\\frac{n_{3}\\left(n_{3}-1\\right)\\sigma\\left(z_{i j},z_{i k}\\right)}{n_{3}^{2}}=\\frac{\\sigma^{2}\\left(z_{i j}\\right)}{n_{3}}+\\left(1-\\frac{1}{n_{3}}\\right)\\sigma\\left(z_{i j},z_{i k}\\right) $$"
+      "content": "First, consider the variance of a random $ F_{3} $ line, $$ \\sigma^{2}\\left(z_{i j}\\right)=\\sigma_{G}(1,1,1)+\\sigma_{\\epsilon}^{2}=\\sigma_{c}^{2}(1)+\\sigma_{\\ell|c}^{2}(1)+\\sigma_{\\epsilon}^{2} $$ where $ \\sigma_{\\epsilon}^{2} $ is the within-line error variance. Next, note that $$ \\sigma^{2}\\left(\\overline{z}_{i.}\\right)=\\frac{n_{3}\\sigma^{2}\\left(z_{i j}\\right)}{n_{3}^{2}}+\\frac{n_{3}\\left(n_{3}-1\\right)\\sigma\\left(z_{i j},z_{i k}\\right)}{n_{3}^{2}}=\\frac{\\sigma^{2}\\left(z_{i j}\\right)}{n_{3}}+\\left(1-\\frac{1}{n_{3}}\\right)\\sigma\\left(z_{i j},z_{i k}\\right) $$",
+      "source_page": 839,
+      "source_pages": [
+        839
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p033:b22",
+        "Evolution_chapter23:p033:b24",
+        "Evolution_chapter23:p033:b26",
+        "Evolution_chapter23:p033:b27"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1031.0,
+          543.0,
+          1054.0
+        ],
+        [
+          309.0,
+          1071.0,
+          728.0,
+          1100.0
+        ],
+        [
+          132.0,
+          1120.0,
+          628.0,
+          1144.0
+        ],
+        [
+          171.0,
+          1161.0,
+          864.0,
+          1214.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c7989019e6c8f2a5ae724eaba8b6c6983a267b4208b2ecbb2c8162a08a7cdd88"
     },
     {
       "type": "discussion",
-      "content": "The first covariance is given by Equation 23.50b, while the second is the covariance between sibs, $ \\sigma(1,1,0) $, which yields $$ \\sigma^{2}\\left(\\overline{z}_{i.}\\right)=\\frac{\\sigma(1,1,1)+\\sigma_{\\epsilon}^{2}}{n_{3}}+\\left(1-\\frac{1}{n_{3}}\\right)\\sigma(1,1,0)=\\sigma_{c}^{2}(1)+\\frac{\\sigma_{\\ell|c}^{2}(1)+\\sigma_{\\epsilon}^{2}}{n_{3}} $$ Finally, we can show that $ \\sigma\\left(\\overline{z}_{i.}, z_{ij}\\right) = \\sigma^{2}\\left(\\overline{z}_{i.}\\right) $. Putting all these together gives $$ \\sigma^{2}(I_{i j})=b(b+2)\\left(\\sigma_{c}^{2}(1)+\\frac{\\sigma_{\\ell|c}^{2}(1)+\\sigma_{\\epsilon}^{2}}{n_{3}}\\right)+\\left(\\sigma_{c}^{2}(1)+\\sigma_{\\ell|c}^{2}(1)+\\sigma_{\\epsilon}^{2}\\right) $$"
+      "content": "The first covariance is given by Equation 23.50b, while the second is the covariance between sibs, $ \\sigma(1,1,0) $, which yields $$ \\sigma^{2}\\left(\\overline{z}_{i.}\\right)=\\frac{\\sigma(1,1,1)+\\sigma_{\\epsilon}^{2}}{n_{3}}+\\left(1-\\frac{1}{n_{3}}\\right)\\sigma(1,1,0)=\\sigma_{c}^{2}(1)+\\frac{\\sigma_{\\ell|c}^{2}(1)+\\sigma_{\\epsilon}^{2}}{n_{3}} $$ Finally, we can show that $ \\sigma\\left(\\overline{z}_{i.}, z_{ij}\\right) = \\sigma^{2}\\left(\\overline{z}_{i.}\\right) $. Putting all these together gives $$ \\sigma^{2}(I_{i j})=b(b+2)\\left(\\sigma_{c}^{2}(1)+\\frac{\\sigma_{\\ell|c}^{2}(1)+\\sigma_{\\epsilon}^{2}}{n_{3}}\\right)+\\left(\\sigma_{c}^{2}(1)+\\sigma_{\\ell|c}^{2}(1)+\\sigma_{\\epsilon}^{2}\\right) $$",
+      "source_page": 839,
+      "source_pages": [
+        839
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p033:b28",
+        "Evolution_chapter23:p033:b29",
+        "Evolution_chapter23:p033:b31",
+        "Evolution_chapter23:p033:b32"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1230.0,
+          904.0,
+          1277.0
+        ],
+        [
+          184.0,
+          1294.0,
+          785.0,
+          1352.0
+        ],
+        [
+          133.0,
+          1368.0,
+          808.0,
+          1393.0
+        ],
+        [
+          198.0,
+          1411.0,
+          775.0,
+          1469.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "63bd833f7e0cf7537319861e6c30e8855963aac43fbfca159dfa2c297ccedd53"
     },
     {
       "type": "discussion",
-      "content": "Substitution of Equations 23.49 and 23.51 into 23.45 shows the expected response for arbitrary b and T > 1."
+      "content": "Substitution of Equations 23.49 and 23.51 into 23.45 shows the expected response for arbitrary b and T > 1.",
+      "source_page": 840,
+      "source_pages": [
+        840
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p034:b2"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          206.0,
+          1058.0,
+          252.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "5d97a6809738cfe4d708bc178ffbd822ecde81050a8c10765f5e36551244bc09"
     },
     {
       "type": "discussion",
-      "content": "An obvious question is what value of b maximizes response? Taking the derivative of Equation 23.45 with respect to b and solving for zero returns the optimal value as $$ b=\\frac{n_{3}\\left[\\sigma_{c}^{2}(T)\\sigma_{\\epsilon}^{2}-\\sigma_{c}^{2}(1)\\sigma_{\\ell|c}^{2}(1)+\\sigma_{c}^{2}(T)\\sigma_{\\ell|c}^{2}(1)\\right]}{\\sigma_{\\ell|c}^{2}(T)\\left[n_{3}\\sigma_{c}^{2}(1)+\\sigma_{\\ell|c}^{2}(1)+\\sigma_{\\epsilon}^{2}\\right]} $$ As with family-index selection (Chapter 21), the selection intensity is reduced by the fact that $ F_3 $ lines from the same $ F_2 $ are related and hence correlated, and we must correct for this correlation. Letting $ \\rho $ be the correlation between the index scores from lines in the same cross, if we choose the best $ K $ from $ N = n_2 n_3 $ total lines ($ n_3 $ lines from each of $ n_2 $ $ F_2' $s), then Equation 21.57b returns the adjusted selection intensity as $$ \\bar{\\imath}_{n_{2}n_{3},K}=\\bar{\\imath}_{q}-\\frac{1-q}{2\\bar{\\imath}_{q}q\\left[n_{2}n_{3}(1-\\rho)+n_{2}\\rho+1\\right]} $$ where $q = K/N$ is the fraction saved (we use $q$ in place of our normal usage of $p$ to avoid confusion here with $\\rho$) and $\\bar{\\nu}_q$ the infinite-population size selection intensity (Equation 14.3a). To compute the correlation, $\\rho$, between index scores, first note that $$ \\begin{aligned}\\sigma(I_{ij},I_{ik})&=\\sigma\\left(b\\overline{z}_{i.}+z_{ij},b\\overline{z}_{i.}+z_{ik}\\right)\\\\&=b^{2}\\sigma^{2}(\\overline{z}_{i.})+2b\\sigma(\\overline{z}_{i.},z_{ij})+\\sigma(z_{ij},z_{ik})\\\\&=\\left[b^{2}\\sigma^{2}(\\overline{z}_{i.})+2b\\sigma(\\overline{z}_{i.},z_{ij})+\\sigma^{2}(z_{ij})\\right]-\\sigma^{2}(z_{ij})+\\sigma(z_{ij},z_{ik})\\\\&=\\sigma^{2}(I_{ij})-\\left(\\sigma_{c}^{2}+\\sigma_{\\ell|c}^{2}+\\sigma_{\\epsilon}^{2}\\right)+\\sigma_{c}^{2}\\\\&=\\sigma^{2}(I_{ij})-\\left(\\sigma_{\\ell|c}^{2}+\\sigma_{\\epsilon}^{2}\\right)\\\\ \\end{aligned} $$"
+      "content": "An obvious question is what value of b maximizes response? Taking the derivative of Equation 23.45 with respect to b and solving for zero returns the optimal value as $$ b=\\frac{n_{3}\\left[\\sigma_{c}^{2}(T)\\sigma_{\\epsilon}^{2}-\\sigma_{c}^{2}(1)\\sigma_{\\ell|c}^{2}(1)+\\sigma_{c}^{2}(T)\\sigma_{\\ell|c}^{2}(1)\\right]}{\\sigma_{\\ell|c}^{2}(T)\\left[n_{3}\\sigma_{c}^{2}(1)+\\sigma_{\\ell|c}^{2}(1)+\\sigma_{\\epsilon}^{2}\\right]} $$ As with family-index selection (Chapter 21), the selection intensity is reduced by the fact that $ F_3 $ lines from the same $ F_2 $ are related and hence correlated, and we must correct for this correlation. Letting $ \\rho $ be the correlation between the index scores from lines in the same cross, if we choose the best $ K $ from $ N = n_2 n_3 $ total lines ($ n_3 $ lines from each of $ n_2 $ $ F_2' $s), then Equation 21.57b returns the adjusted selection intensity as $$ \\bar{\\imath}_{n_{2}n_{3},K}=\\bar{\\imath}_{q}-\\frac{1-q}{2\\bar{\\imath}_{q}q\\left[n_{2}n_{3}(1-\\rho)+n_{2}\\rho+1\\right]} $$ where $q = K/N$ is the fraction saved (we use $q$ in place of our normal usage of $p$ to avoid confusion here with $\\rho$) and $\\bar{\\nu}_q$ the infinite-population size selection intensity (Equation 14.3a). To compute the correlation, $\\rho$, between index scores, first note that $$ \\begin{aligned}\\sigma(I_{ij},I_{ik})&=\\sigma\\left(b\\overline{z}_{i.}+z_{ij},b\\overline{z}_{i.}+z_{ik}\\right)\\\\&=b^{2}\\sigma^{2}(\\overline{z}_{i.})+2b\\sigma(\\overline{z}_{i.},z_{ij})+\\sigma(z_{ij},z_{ik})\\\\&=\\left[b^{2}\\sigma^{2}(\\overline{z}_{i.})+2b\\sigma(\\overline{z}_{i.},z_{ij})+\\sigma^{2}(z_{ij})\\right]-\\sigma^{2}(z_{ij})+\\sigma(z_{ij},z_{ik})\\\\&=\\sigma^{2}(I_{ij})-\\left(\\sigma_{c}^{2}+\\sigma_{\\ell|c}^{2}+\\sigma_{\\epsilon}^{2}\\right)+\\sigma_{c}^{2}\\\\&=\\sigma^{2}(I_{ij})-\\left(\\sigma_{\\ell|c}^{2}+\\sigma_{\\epsilon}^{2}\\right)\\\\ \\end{aligned} $$",
+      "source_page": 840,
+      "source_pages": [
+        840
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p034:b3",
+        "Evolution_chapter23:p034:b4",
+        "Evolution_chapter23:p034:b6",
+        "Evolution_chapter23:p034:b7",
+        "Evolution_chapter23:p034:b9",
+        "Evolution_chapter23:p034:b10"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          253.0,
+          1060.0,
+          301.0
+        ],
+        [
+          460.0,
+          319.0,
+          882.0,
+          396.0
+        ],
+        [
+          286.0,
+          414.0,
+          1060.0,
+          533.0
+        ],
+        [
+          481.0,
+          550.0,
+          863.0,
+          598.0
+        ],
+        [
+          286.0,
+          615.0,
+          1058.0,
+          687.0
+        ],
+        [
+          368.0,
+          704.0,
+          978.0,
+          868.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3030f9b06737d219fd604b9b8d4391badb396f0b9b48a47e731e94c8b750f619"
     },
     {
       "type": "discussion",
-      "content": "The third step follows upon recalling Equation 23.50a. The correlation between index scores among individuals from the same line thus becomes $$ \\rho=\\frac{\\sigma(I_{ij},I_{ik})}{\\sigma^{2}(I)}=\\frac{\\sigma^{2}(I_{ij})-\\left(\\sigma_{\\ell|c}^{2}+\\sigma_{\\epsilon}^{2}\\right)}{\\sigma^{2}(I_{ij})}=1-\\frac{\\sigma_{\\ell|c}^{2}+\\sigma_{\\epsilon}^{2}}{\\sigma^{2}(I_{ij})} $$"
+      "content": "The third step follows upon recalling Equation 23.50a. The correlation between index scores among individuals from the same line thus becomes $$ \\rho=\\frac{\\sigma(I_{ij},I_{ik})}{\\sigma^{2}(I)}=\\frac{\\sigma^{2}(I_{ij})-\\left(\\sigma_{\\ell|c}^{2}+\\sigma_{\\epsilon}^{2}\\right)}{\\sigma^{2}(I_{ij})}=1-\\frac{\\sigma_{\\ell|c}^{2}+\\sigma_{\\epsilon}^{2}}{\\sigma^{2}(I_{ij})} $$",
+      "source_page": 840,
+      "source_pages": [
+        840
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p034:b12",
+        "Evolution_chapter23:p034:b13"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          889.0,
+          1059.0,
+          938.0
+        ],
+        [
+          431.0,
+          957.0,
+          912.0,
+          1021.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "82b7b05696584ee8758261b933c1f87695c88a290212f83aa411e2d8110a0f95"
     },
     {
       "type": "discussion",
-      "content": "Substitution of this value into Equation 23.53 yields the appropriate selection intensity, which is corrected for both finite population size and correlation between lines."
+      "content": "Substitution of this value into Equation 23.53 yields the appropriate selection intensity, which is corrected for both finite population size and correlation between lines.",
+      "source_page": 840,
+      "source_pages": [
+        840
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p034:b15"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1038.0,
+          1058.0,
+          1084.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "94d0c9aaa43a06cfabe700252766a5fd8593108239c2d58820cdc1e5ed33d0ad"
     },
     {
       "type": "discussion",
-      "content": "When there is a fixed total number of lines to examine, there is a tradeoff between selection intensity and accuracy. The optimal design for known (or estimated) genetic variances can be obtained by numerically evaluating different combinations of the $ n_{2}/n_{3} $ ratio (for fixed values of N) in Equation 23.45 (and its associated components, Equations 23.49 and 23.51–23.53). Weber (1982, 1984; Wricke and Weber 1986) examines index selection under selfing, including both optimal design (in the absence of dominance) and its extension to additional generations of selfing. For example, Weber (1982) considered the more general situation where each $ F_{2} $ family consists of $ n_{3} $ $ F_{3} $ families, with each $ F_{3} $ family consisting of $ n_{4} $ $ F_{4} $ families and so on to $ F_{j} $ families. In this case, the full index is $$ I=b_{2}\\left(\\overline{z}_{2}-\\overline{z}\\right)+b_{3}\\left(\\overline{z}_{3}-\\overline{z}_{2}\\right)+\\cdots+b_{j}\\left(\\overline{z}_{j}-\\overline{z}_{j-1}\\right) $$"
+      "content": "When there is a fixed total number of lines to examine, there is a tradeoff between selection intensity and accuracy. The optimal design for known (or estimated) genetic variances can be obtained by numerically evaluating different combinations of the $ n_{2}/n_{3} $ ratio (for fixed values of N) in Equation 23.45 (and its associated components, Equations 23.49 and 23.51–23.53). Weber (1982, 1984; Wricke and Weber 1986) examines index selection under selfing, including both optimal design (in the absence of dominance) and its extension to additional generations of selfing. For example, Weber (1982) considered the more general situation where each $ F_{2} $ family consists of $ n_{3} $ $ F_{3} $ families, with each $ F_{3} $ family consisting of $ n_{4} $ $ F_{4} $ families and so on to $ F_{j} $ families. In this case, the full index is $$ I=b_{2}\\left(\\overline{z}_{2}-\\overline{z}\\right)+b_{3}\\left(\\overline{z}_{3}-\\overline{z}_{2}\\right)+\\cdots+b_{j}\\left(\\overline{z}_{j}-\\overline{z}_{j-1}\\right) $$",
+      "source_page": 840,
+      "source_pages": [
+        840
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p034:b16",
+        "Evolution_chapter23:p034:b17"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          1086.0,
+          1060.0,
+          1293.0
+        ],
+        [
+          452.0,
+          1311.0,
+          894.0,
+          1336.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3495b55e26f19145b69132a92228eea4faf2bbc8d810034b2ab4b4aadb8698e7"
     },
     {
       "type": "discussion",
-      "content": "The weights, $ b_{k} $, are chosen to maximize the correlation between the index, I, and the final genetic value of the completely inbred lines (which we denote as $ g_{\\infty} $), which (Weber 1982) implies $$ b_{k}=\\frac{\\sigma\\left(\\overline{z}_{k}-\\overline{z}_{k-1},g_{\\infty}\\right)}{\\sigma^{2}\\left(\\overline{z}_{k}-\\overline{z}_{k-1}\\right)} $$"
+      "content": "The weights, $ b_{k} $, are chosen to maximize the correlation between the index, I, and the final genetic value of the completely inbred lines (which we denote as $ g_{\\infty} $), which (Weber 1982) implies $$ b_{k}=\\frac{\\sigma\\left(\\overline{z}_{k}-\\overline{z}_{k-1},g_{\\infty}\\right)}{\\sigma^{2}\\left(\\overline{z}_{k}-\\overline{z}_{k-1}\\right)} $$",
+      "source_page": 840,
+      "source_pages": [
+        840
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p034:b19",
+        "Evolution_chapter23:p034:b20"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1355.0,
+          1059.0,
+          1425.0
+        ],
+        [
+          569.0,
+          1424.0,
+          775.0,
+          1473.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a725bd052741deef033193e93b642d9e0114f60071cbc359054751041a61cae1"
     },
     {
       "type": "discussion",
-      "content": "Consult Weber (1982) for further details. Finally, an important extension of combined selection schemes is the work of Cowling et al. (2015), who incorporated multiple-generation family information into a BLUP-based index (i.e., they used the animal model to predict the breeding values of focal individuals."
+      "content": "Consult Weber (1982) for further details. Finally, an important extension of combined selection schemes is the work of Cowling et al. (2015), who incorporated multiple-generation family information into a BLUP-based index (i.e., they used the animal model to predict the breeding values of focal individuals.",
+      "source_page": 841,
+      "source_pages": [
+        841
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p035:b4"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          628.0,
+          904.0,
+          723.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8461c397b9cd838d7dc8df0d4feb3983cf2711d24e17f6dcfff6b6fcc78ddc28"
     },
     {
       "type": "table",
-      "content": "[[TABLE:23.4]]"
+      "content": "[[TABLE:23.4]]",
+      "source_page": 841,
+      "source_pages": [
+        841
+      ],
+      "source_block_ids": [
+        "Evolution_chapter23:p035:b2",
+        "Evolution_chapter23:p035:b3"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          207.0,
+          905.0,
+          336.0
+        ],
+        [
+          174.0,
+          350.0,
+          834.0,
+          584.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "00f62a3d3fd7fb5a6b67d6ae37ebd63235b4d1cc3b628e4c4418498ebd9c349d"
     }
   ]
 }

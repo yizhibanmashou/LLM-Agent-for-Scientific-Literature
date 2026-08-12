@@ -26,39 +26,333 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "It is not uncommon for a trait to show different variances between the sexes or to have a less than perfect correlation across the sexes. In such cases, the coefficients for parent-offspring regressions can vary with the sex of both the parents and of the offspring. We denote the phenotypic values of the father and mother by $ z_{fa} $ and $ z_{mo} $ and an offspring by $ z_{o} $ (if its sex is unimportant) or by $ z_{so} $ and $ z_{da} $ for sons and daughters (respectively) if sex is important. Let $ E[z_{o} | z_{fa}, z_{mo}] $ be the expected phenotypic value of an offspring whose parents have phenotypic values $ z_{mo} $ and $ z_{fa} $. The importance of this conditional expectation (the biparental regression) is that the expected character value in the next generation (assuming there are no fertility differences) is the average of this expectation over all selected parents. Taking expectations is straightforward when the biparental regression is linear, i.e., $$ E[z_{o}\\mid z_{fa},z_{mo}]=\\mu_{o}+b_{o,fa}\\left(z_{fa}-\\mu_{fa}\\right)+b_{o,mo}\\left(z_{mo}-\\mu_{mo}\\right) $$ where $ \\mu_{fa} $ and $ \\mu_{mo} $ are the mean character values of males and females before selection, and $ \\mu_{o} $ is the mean for the offspring sex being considered. Taking the expectation over all selected parents, the expected offspring mean after selection is $$ \\begin{aligned}E_{s}\\big[E(z_{o}\\mid z_{fa},z_{mo})\\big]&=\\mu_{o}+b_{o,fa}E_{s}\\big[\\left(z_{fa}-\\mu_{fa}\\right)\\big]+b_{o,mo}E_{s}\\big[\\left(z_{mo}-\\mu_{mo}\\right)\\big]\\\\&=\\mu_{o}+b_{o,fa}S_{fa}+b_{o,mo}S_{mo}\\end{aligned} $$ where $ S_{fa} $ and $ S_{mo} $ are the directional selection differentials for fathers and mothers."
+      "content": "It is not uncommon for a trait to show different variances between the sexes or to have a less than perfect correlation across the sexes. In such cases, the coefficients for parent-offspring regressions can vary with the sex of both the parents and of the offspring. We denote the phenotypic values of the father and mother by $ z_{fa} $ and $ z_{mo} $ and an offspring by $ z_{o} $ (if its sex is unimportant) or by $ z_{so} $ and $ z_{da} $ for sons and daughters (respectively) if sex is important. Let $ E[z_{o} | z_{fa}, z_{mo}] $ be the expected phenotypic value of an offspring whose parents have phenotypic values $ z_{mo} $ and $ z_{fa} $. The importance of this conditional expectation (the biparental regression) is that the expected character value in the next generation (assuming there are no fertility differences) is the average of this expectation over all selected parents. Taking expectations is straightforward when the biparental regression is linear, i.e., $$ E[z_{o}\\mid z_{fa},z_{mo}]=\\mu_{o}+b_{o,fa}\\left(z_{fa}-\\mu_{fa}\\right)+b_{o,mo}\\left(z_{mo}-\\mu_{mo}\\right) $$ where $ \\mu_{fa} $ and $ \\mu_{mo} $ are the mean character values of males and females before selection, and $ \\mu_{o} $ is the mean for the offspring sex being considered. Taking the expectation over all selected parents, the expected offspring mean after selection is $$ \\begin{aligned}E_{s}\\big[E(z_{o}\\mid z_{fa},z_{mo})\\big]&=\\mu_{o}+b_{o,fa}E_{s}\\big[\\left(z_{fa}-\\mu_{fa}\\right)\\big]+b_{o,mo}E_{s}\\big[\\left(z_{mo}-\\mu_{mo}\\right)\\big]\\\\&=\\mu_{o}+b_{o,fa}S_{fa}+b_{o,mo}S_{mo}\\end{aligned} $$ where $ S_{fa} $ and $ S_{mo} $ are the directional selection differentials for fathers and mothers.",
+      "source_page": 473,
+      "source_pages": [
+        473
+      ],
+      "source_block_ids": [
+        "Evolution_chapter13:p004:b7",
+        "Evolution_chapter13:p004:b8",
+        "Evolution_chapter13:p004:b9",
+        "Evolution_chapter13:p004:b11",
+        "Evolution_chapter13:p004:b12",
+        "Evolution_chapter13:p004:b14"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          558.0,
+          847.0,
+          582.0
+        ],
+        [
+          286.0,
+          587.0,
+          1060.0,
+          842.0
+        ],
+        [
+          419.0,
+          859.0,
+          928.0,
+          885.0
+        ],
+        [
+          285.0,
+          902.0,
+          1059.0,
+          972.0
+        ],
+        [
+          349.0,
+          986.0,
+          994.0,
+          1042.0
+        ],
+        [
+          286.0,
+          1060.0,
+          1012.0,
+          1084.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a3cf9427d361cf55657767a46809e646011e69ce8045740265e92ef64f85eaab"
     },
     {
       "type": "discussion",
-      "content": "Given that Equations 13.2 and 13.3 acknowledge the presence of differences between sexes in regression coefficients, separate equations for sons and daughters are required (e.g., Example 13.1). For example, the expected change in the mean character value of daughters, $ R_{da} $, equals the expected mean of daughters of selected parents minus the mean of females before selection. Applying Equation 13.3, $$ E_{s}\\left[E(z_{d a}\\mid z_{f a},z_{m o})\\right]=\\mu_{m o}+b_{d a,f a}S_{f a}+b_{d a,m o}S_{m o} $$ implying $$ R_{da}=b_{da,fa}S_{fa}+b_{da,mo}S_{mo} $$ where $ b_{da,fa} $ is the regression coefficient of daughters on fathers and $ b_{da,mo} $ is the mother-daughter regression coefficient. Likewise, for sons $$ R_{s o}=b_{s o,f a}S_{f a}+b_{s o,m o}S_{m o} $$"
+      "content": "Given that Equations 13.2 and 13.3 acknowledge the presence of differences between sexes in regression coefficients, separate equations for sons and daughters are required (e.g., Example 13.1). For example, the expected change in the mean character value of daughters, $ R_{da} $, equals the expected mean of daughters of selected parents minus the mean of females before selection. Applying Equation 13.3, $$ E_{s}\\left[E(z_{d a}\\mid z_{f a},z_{m o})\\right]=\\mu_{m o}+b_{d a,f a}S_{f a}+b_{d a,m o}S_{m o} $$ implying $$ R_{da}=b_{da,fa}S_{fa}+b_{da,mo}S_{mo} $$ where $ b_{da,fa} $ is the regression coefficient of daughters on fathers and $ b_{da,mo} $ is the mother-daughter regression coefficient. Likewise, for sons $$ R_{s o}=b_{s o,f a}S_{f a}+b_{s o,m o}S_{m o} $$",
+      "source_page": 473,
+      "source_pages": [
+        473
+      ],
+      "source_block_ids": [
+        "Evolution_chapter13:p004:b15",
+        "Evolution_chapter13:p004:b16",
+        "Evolution_chapter13:p004:b17",
+        "Evolution_chapter13:p004:b18",
+        "Evolution_chapter13:p004:b20",
+        "Evolution_chapter13:p004:b21"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1085.0,
+          1058.0,
+          1198.0
+        ],
+        [
+          442.0,
+          1216.0,
+          906.0,
+          1243.0
+        ],
+        [
+          288.0,
+          1258.0,
+          376.0,
+          1284.0
+        ],
+        [
+          544.0,
+          1281.0,
+          802.0,
+          1306.0
+        ],
+        [
+          286.0,
+          1316.0,
+          1058.0,
+          1363.0
+        ],
+        [
+          547.0,
+          1380.0,
+          801.0,
+          1406.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9e4f5d730a9048f5592ecd2a977cceb253640260b4a5fcdfb8efd0b7494ac4c9"
+    },
+    {
+      "type": "example",
+      "content": "[[SEE_EXAMPLE:13.1]]",
+      "source_page": 473,
+      "source_pages": [
+        473
+      ],
+      "source_block_ids": [
+        "Evolution_chapter13:p004:b15",
+        "Evolution_chapter13:p004:b18",
+        "Evolution_chapter13:p004:b21"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1085.0,
+          1058.0,
+          1198.0
+        ],
+        [
+          544.0,
+          1281.0,
+          802.0,
+          1306.0
+        ],
+        [
+          547.0,
+          1380.0,
+          801.0,
+          1406.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "dc749e80af72f902a2641d934358238175fdef68dc2a998271a1897d1d29aa43"
     },
     {
       "type": "discussion",
-      "content": "Equations 13.4a and 13.4b require that the biparental regression be linear, in which case $ b_{o,fa} $ and $ b_{o,mo} $ are partial regression coefficients and can be obtained from the sex-specific covariances between relatives. Again, linearity is ensured if the joint distribution of breeding values in both parents and their offspring is multivariate normal. If there is no correlation between the phenotypes of the parents (which is guaranteed under random mating), the partial regression coefficients are standard univariate regression coefficients (LW Chapter 8) and applying LW Equation 3.14b yields $$ b_{o,fa}=\\frac{\\sigma(z_{o},z_{fa})}{\\sigma^{2}(z_{fa})}\\qquad and\\qquad b_{o,mo}=\\frac{\\sigma(z_{o},z_{mo})}{\\sigma^{2}(z_{mo})} $$"
+      "content": "Equations 13.4a and 13.4b require that the biparental regression be linear, in which case $ b_{o,fa} $ and $ b_{o,mo} $ are partial regression coefficients and can be obtained from the sex-specific covariances between relatives. Again, linearity is ensured if the joint distribution of breeding values in both parents and their offspring is multivariate normal. If there is no correlation between the phenotypes of the parents (which is guaranteed under random mating), the partial regression coefficients are standard univariate regression coefficients (LW Chapter 8) and applying LW Equation 3.14b yields $$ b_{o,fa}=\\frac{\\sigma(z_{o},z_{fa})}{\\sigma^{2}(z_{fa})}\\qquad and\\qquad b_{o,mo}=\\frac{\\sigma(z_{o},z_{mo})}{\\sigma^{2}(z_{mo})} $$",
+      "source_page": 473,
+      "source_pages": [
+        473,
+        474
+      ],
+      "source_block_ids": [
+        "Evolution_chapter13:p004:b23",
+        "Evolution_chapter13:p005:b2",
+        "Evolution_chapter13:p005:b3"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1423.0,
+          1058.0,
+          1472.0
+        ],
+        [
+          132.0,
+          206.0,
+          905.0,
+          325.0
+        ],
+        [
+          306.0,
+          345.0,
+          728.0,
+          396.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "42076e24df8ae062c81decf1545b99c9da356e73cfd0c832497556dc01af9176"
     },
     {
       "type": "discussion",
-      "content": "If mating is random, and genotype × environmental interactions, shared environmental effects, epistasis, and sex-specific effects (i.e., the need for separate regression coefficients) can all be neglected, the regression slope (for each parent-offspring combination) is $ b_{o,p} = h^{2}/2 $ (LW Chapters 7 and 17). If we define the total selection differential as the average of both parental values, $ S = (S_{fa} + S_{mo})/2 $, we again will recover the breeder's equation $$ R=\\frac{h^{2}}{2}S_{fa}+\\frac{h^{2}}{2}S_{mo}=h^{2}S $$"
+      "content": "If mating is random, and genotype × environmental interactions, shared environmental effects, epistasis, and sex-specific effects (i.e., the need for separate regression coefficients) can all be neglected, the regression slope (for each parent-offspring combination) is $ b_{o,p} = h^{2}/2 $ (LW Chapters 7 and 17). If we define the total selection differential as the average of both parental values, $ S = (S_{fa} + S_{mo})/2 $, we again will recover the breeder's equation $$ R=\\frac{h^{2}}{2}S_{fa}+\\frac{h^{2}}{2}S_{mo}=h^{2}S $$",
+      "source_page": 474,
+      "source_pages": [
+        474
+      ],
+      "source_block_ids": [
+        "Evolution_chapter13:p005:b4",
+        "Evolution_chapter13:p005:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          418.0,
+          905.0,
+          558.0
+        ],
+        [
+          392.0,
+          556.0,
+          645.0,
+          604.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "07b5060a40e1b7d58dd003e6e6ce16a241105fa9d892452509404d052f3ba8cc"
     },
     {
       "type": "discussion",
-      "content": "Equation 13.5 shows how differential selection on parents is incorporated into the breeder's equation. For example, consider selection on dioecious plants. If plants that form the next generation are chosen after pollination, fathers (pollen donors) are chosen at random with respect to the character under selection ($ S_{fa} = 0 $), yielding $ R = (h^{2}/2)S_{mo} $. If parents are selected before pollination with equal amounts of selection (S) on both sexes, $ R = h^{2}S $. Chapter 21 examines family-based breeding schemes that ensure equal selection on both pollen and seed parents."
+      "content": "Equation 13.5 shows how differential selection on parents is incorporated into the breeder's equation. For example, consider selection on dioecious plants. If plants that form the next generation are chosen after pollination, fathers (pollen donors) are chosen at random with respect to the character under selection ($ S_{fa} = 0 $), yielding $ R = (h^{2}/2)S_{mo} $. If parents are selected before pollination with equal amounts of selection (S) on both sexes, $ R = h^{2}S $. Chapter 21 examines family-based breeding schemes that ensure equal selection on both pollen and seed parents.",
+      "source_page": 474,
+      "source_pages": [
+        474
+      ],
+      "source_block_ids": [
+        "Evolution_chapter13:p005:b7"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          613.0,
+          904.0,
+          779.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "397d42ec939919eb3bf0f7c2d4ef447f841a8d8713148ee4d5571d48842dc702"
     },
     {
       "type": "discussion",
-      "content": "Note that the father-son regression has a significantly smaller slope than the three other parent-offspring sex combinations. Other Drosophila examples where the regressions differ significantly between sons and daughters were given by Gimelfarb and Willis (1994)."
+      "content": "Note that the father-son regression has a significantly smaller slope than the three other parent-offspring sex combinations. Other Drosophila examples where the regressions differ significantly between sons and daughters were given by Gimelfarb and Willis (1994).",
+      "source_page": 474,
+      "source_pages": [
+        474
+      ],
+      "source_block_ids": [
+        "Evolution_chapter13:p005:b10"
+      ],
+      "source_bboxes": [
+        [
+          155.0,
+          996.0,
+          880.0,
+          1059.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "7bb93ba4bb1804d7eae834a14f3c790c8a475d3b1b0e0937f29abc68104faf8c"
     },
     {
       "type": "discussion",
-      "content": "Suppose that different amounts of selection are applied to fathers and mothers, with selected fathers showing an increase of two bristles, while selected mothers show a decrease of one bristle. What is the expected change in mean bristle number in the male and female offspring using these estimated regression coefficients, assuming all parent-offspring regressions are linear? Here $ S_{mo} = -1 $ and $ S_{fa} = 2 $, and from Equation 13.4a, the expected change in bristle number in females becomes $$ R_{da}=b_{da,fa}S_{fa}+b_{da,mo}S_{mo}=0.40\\left(2\\right)+0.32\\left(-1\\right)=0.48 $$"
+      "content": "Suppose that different amounts of selection are applied to fathers and mothers, with selected fathers showing an increase of two bristles, while selected mothers show a decrease of one bristle. What is the expected change in mean bristle number in the male and female offspring using these estimated regression coefficients, assuming all parent-offspring regressions are linear? Here $ S_{mo} = -1 $ and $ S_{fa} = 2 $, and from Equation 13.4a, the expected change in bristle number in females becomes $$ R_{da}=b_{da,fa}S_{fa}+b_{da,mo}S_{mo}=0.40\\left(2\\right)+0.32\\left(-1\\right)=0.48 $$",
+      "source_page": 474,
+      "source_pages": [
+        474
+      ],
+      "source_block_ids": [
+        "Evolution_chapter13:p005:b11",
+        "Evolution_chapter13:p005:b12"
+      ],
+      "source_bboxes": [
+        [
+          157.0,
+          1060.0,
+          881.0,
+          1186.0
+        ],
+        [
+          269.0,
+          1208.0,
+          774.0,
+          1234.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "50ae5227041eb679251ceaed3abb102df14b5462d7c36d275d7fa482af0cb01f"
     },
     {
       "type": "discussion",
-      "content": "Likewise, from Equation 13.4b, the expected change in males is $$ R_{s o}=b_{s o,f a}S_{f a}+b_{s o,m o}S_{m o}=0.13\\left(2\\right)+0.39\\left(-1\\right)=-0.13 $$"
+      "content": "Likewise, from Equation 13.4b, the expected change in males is $$ R_{s o}=b_{s o,f a}S_{f a}+b_{s o,m o}S_{m o}=0.13\\left(2\\right)+0.39\\left(-1\\right)=-0.13 $$",
+      "source_page": 474,
+      "source_pages": [
+        474
+      ],
+      "source_block_ids": [
+        "Evolution_chapter13:p005:b13",
+        "Evolution_chapter13:p005:b14"
+      ],
+      "source_bboxes": [
+        [
+          161.0,
+          1256.0,
+          650.0,
+          1278.0
+        ],
+        [
+          263.0,
+          1300.0,
+          779.0,
+          1325.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "276dedad907555341801a4f5726d0274f374c46811ad71aad30889487de30aa2"
     },
     {
       "type": "discussion",
-      "content": "This expected response of a decrease in males and an increase in females is the exact opposite of the pattern of selection on the sexes."
+      "content": "This expected response of a decrease in males and an increase in females is the exact opposite of the pattern of selection on the sexes.",
+      "source_page": 474,
+      "source_pages": [
+        474
+      ],
+      "source_block_ids": [
+        "Evolution_chapter13:p005:b15"
+      ],
+      "source_bboxes": [
+        [
+          161.0,
+          1348.0,
+          880.0,
+          1392.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "d6c37ca8fac68f369a7cb116216f41e90684eeb531e84b94880dd1bb9057555b"
     }
   ]
 }

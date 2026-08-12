@@ -21,19 +21,263 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Given $ m(x) $, $ v(x) $, and an initial frequency of p, the diffusion approximation for the dynamics of the probability density function for the realized value x at time t satisfies the Kolmogorov forward equation (or KFE) $$ \\"
+      "content": "Given $ m(x) $, $ v(x) $, and an initial frequency of p, the diffusion approximation for the dynamics of the probability density function for the realized value x at time t satisfies the Kolmogorov forward equation (or KFE) $$ \\frac{\\partial\\varphi(x,t,p)}{\\partial t}=\\frac{1}{2}\\frac{\\partial^{2}[v(x)\\varphi(x,t,p)]}{\\partial x^{2}}-\\frac{\\partial[m(x)\\varphi(x,t,p)]}{\\partial x} $$",
+      "source_page": 1172,
+      "source_pages": [
+        1172,
+        1173
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p002:b16",
+        "Evolution_appendix1:p002:b17",
+        "Evolution_appendix1:p002:b18",
+        "Evolution_appendix1:p003:b9"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1305.0,
+          608.0,
+          1329.0
+        ],
+        [
+          287.0,
+          1335.0,
+          1059.0,
+          1406.0
+        ],
+        [
+          455.0,
+          1425.0,
+          891.0,
+          1475.0
+        ],
+        [
+          386.0,
+          716.0,
+          660.0,
+          765.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "30acc54ca64f1fc3182e735f457a7dbb7d5561225d5648ef5e6c6edc1fdca7ce"
     },
     {
       "type": "discussion",
-      "content": "A derivation of the KFE is given below. When they can be found, closed-form solutions of $ \\varphi(x,t,p) $ are usually complicated (e.g., Example A1.2). The standard approach is to express the solution as a power series: $$ \\varphi(x,t,p)=\\sum_{i=1}^{\\infty}f_{i}(x,p)e^{-\\lambda_{i}t} $$"
+      "content": "where $ \\varphi(x,t,p) $ is the probability density for x at time t, given that the process starts at p, namely,",
+      "source_page": 1173,
+      "source_pages": [
+        1173,
+        1174
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p003:b2",
+        "Evolution_appendix1:p003:b19",
+        "Evolution_appendix1:p004:b3"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          207.0,
+          902.0,
+          254.0
+        ],
+        [
+          167.0,
+          1371.0,
+          882.0,
+          1438.0
+        ],
+        [
+          286.0,
+          236.0,
+          1060.0,
+          536.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "ad8c5edb285d5a480e7f4bd12232a5d0e054c724d2f3eff3bde35138c208f778"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ \\Pr[c\\leq x(t)\\leq d\\mid x(0)=p]=\\int {c}^{d}\\varphi(x,t,p)dx $$",
+      "source_page": 1173,
+      "source_pages": [
+        1173
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p003:b3"
+      ],
+      "source_bboxes": [
+        [
+          324.0,
+          253.0,
+          712.0,
+          306.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "414ec80f9ce5955e86bb169a277a4b42a0086c8345d8672d51ec233c4507600b"
     },
     {
       "type": "discussion",
-      "content": "Here, the values of $ \\lambda_i $ are the eigenvalues associated with the partial differential equation given by Equation A1.6, and the functions, $ f_i $, are the associated eigenfunctions. Notice that time, $ t $, only appears as a multiplier of the eigenvalues, while the starting position, $ p $, appears only in the eigenfunctions. Crow and Kimura (1970) presented exact solutions of $ \\varphi(x, t, p) $ for a number of population-genetic problems. As the next example shows, even in the simplest case (pure drift), the result are rather complex."
+      "content": "and $C$ is a constant such that $\\varphi(x)$ integrates to one, ensuring that Equation A1.11 is a proper probability density function. Stationary distributions for population-genetic processes were first obtained by Wright (1931, 1938b), who used a somewhat different approach. Note that $\\int [v(x) G(x)]^{-1} dx$ may be infinite, in which case no stationary distribution exists. This happens, for example, in the absence of mutation and migration, where both boundaries (allele frequencies of 0 or 1) are absorbing.",
+      "source_page": 1176,
+      "source_pages": [
+        1176
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p006:b15"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          784.0,
+          1061.0,
+          926.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "dc9f1cb5ac5142425648902f67efb7bfd603a4c6f05aada2e6ad3c6b11c4d05c"
+    },
+    {
+      "type": "discussion",
+      "content": "Fortunately, we do not have to solve for $ \\varphi(x,t,p) $, as (recalling Equation A1.22a) the general solution is obtained by using the Green's function, as described by Equation A1.22c, with",
+      "source_page": 1183,
+      "source_pages": [
+        1183
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p013:b10"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          763.0,
+          902.0,
+          812.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "e09d609dbc03771ff39b6486cdf71ff7ea21e5d2ca32f38f0262cc361179b010"
+    },
+    {
+      "type": "derivation",
+      "content": "$$ E[I {f}(p)]=\\int {0}^{1}f(x)h(x,p)dx $$",
+      "source_page": 1183,
+      "source_pages": [
+        1183
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p013:b11"
+      ],
+      "source_bboxes": [
+        [
+          392.0,
+          834.0,
+          645.0,
+          888.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "4b77de386890f5839f91420447d77cc9c0ce469a508a3d47ddefac5900a355ff"
+    },
+    {
+      "type": "discussion",
+      "content": "This makes sense, as $ h(x,p)dx $ is the expected amount of time that the process (starting at p) spends in the neighborhood of x before it is eventually lost or fixed. Thus, integration over all possible neighborhoods gives the expected value of the function over all sample paths.",
+      "source_page": 1183,
+      "source_pages": [
+        1183
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p013:b13"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          907.0,
+          904.0,
+          980.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "coverage_repair": "authoritative_chapter_pdf_source_block",
+      "content_sha256": "3fa3674d4959ef792d082ad1d3196f0d73b318a3dd9c992a58a3677b361269f5"
+    },
+    {
+      "type": "discussion",
+      "content": "A derivation of the KFE is given below. When they can be found, closed-form solutions of $ \\varphi(x,t,p) $ are usually complicated (e.g., Example A1.2). The standard approach is to express the solution as a power series: $$ \\varphi(x,t,p)=\\sum_{i=1}^{\\infty}f_{i}(x,p)e^{-\\lambda_{i}t} $$",
+      "source_page": 1173,
+      "source_pages": [
+        1173
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p003:b4",
+        "Evolution_appendix1:p003:b5"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          311.0,
+          904.0,
+          381.0
+        ],
+        [
+          398.0,
+          396.0,
+          639.0,
+          457.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "71f5b8eb9b76682b8df5768cc13c1ef43da61bfcdf9449b7cdf03a86ec2d4edc"
+    },
+    {
+      "type": "discussion",
+      "content": "Here, the values of $ \\lambda_i $ are the eigenvalues associated with the partial differential equation given by Equation A1.6, and the functions, $ f_i $, are the associated eigenfunctions. Notice that time, $ t $, only appears as a multiplier of the eigenvalues, while the starting position, $ p $, appears only in the eigenfunctions. Crow and Kimura (1970) presented exact solutions of $ \\varphi(x, t, p) $ for a number of population-genetic problems. As the next example shows, even in the simplest case (pure drift), the result are rather complex.",
+      "source_page": 1173,
+      "source_pages": [
+        1173
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p003:b7"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          471.0,
+          904.0,
+          610.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "274660f8962149667974ed6cb904f1997f706d69f9195be635f0e5b1098f8d77"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A1.2]]"
+      "content": "[[SEE_EXAMPLE:A1.2]]",
+      "source_page": 1173,
+      "source_pages": [
+        1173
+      ],
+      "source_block_ids": [
+        "Evolution_appendix1:p003:b4"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          311.0,
+          904.0,
+          381.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cf383e5b1936bc0921bb177187f9adf7bcd8fa593e501e77695fd6a4c48ffd79"
     }
   ]
 }

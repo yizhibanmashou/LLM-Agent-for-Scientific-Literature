@@ -7,14 +7,15 @@ should not depend on trial scripts for extraction behavior.
 
 from __future__ import annotations
 
+import hashlib
+import html
+import logging
+import re
 from collections import defaultdict
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
-import hashlib
-import html
-import re
 
 from knowledge_engineering.core.common import read_json
 from knowledge_engineering.processors.ocr_evidence import (
@@ -22,6 +23,7 @@ from knowledge_engineering.processors.ocr_evidence import (
     _page_size_from_payload_page,
 )
 
+logger = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 EXAMPLE_HEAD_RE = re.compile(
@@ -385,7 +387,8 @@ def load_unit_files(structured_dir: Path) -> list[Path]:
             continue
         try:
             data = read_json(path)
-        except Exception:
+        except Exception as exc:
+            logger.warning("Skipping unreadable structured unit %s: %s", path, exc)
             continue
         if isinstance(data, dict) and isinstance(data.get("blocks"), list):
             files.append(path)
@@ -401,7 +404,8 @@ def build_structured_context(structured_dir: Path) -> StructuredContext:
     for path in load_unit_files(structured_dir):
         try:
             data = read_json(path)
-        except Exception:
+        except Exception as exc:
+            logger.warning("Skipping unreadable structured unit %s: %s", path, exc)
             continue
         if not isinstance(data, dict):
             continue
@@ -473,7 +477,6 @@ def find_example_anchors(spans: list[BlockSpan], block_text: str) -> list[dict[s
     for span in spans:
         for match in EXAMPLE_HEAD_RE.finditer(span.text):
             local_start = match.start()
-            prefix = span.text[:local_start]
             if not is_example_heading_match(span.text, match):
                 continue
             suffix = span.text[match.end() :].lstrip()
@@ -697,7 +700,8 @@ def load_paddle_raw_pages(project_root: Path, chapter: str) -> list[dict[str, An
                 continue
             try:
                 payload = read_json(raw_path)
-            except Exception:
+            except Exception as exc:
+                logger.warning("Skipping unreadable Paddle response %s: %s", raw_path, exc)
                 continue
             if isinstance(payload, list):
                 return [page for page in payload if isinstance(page, dict)]

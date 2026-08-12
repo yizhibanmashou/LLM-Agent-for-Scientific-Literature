@@ -21,39 +21,383 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "The eigenvalues, and their associated eigenvectors, of a square matrix describe its transformational geometry. Eigenvalues describe how the original coordinate axes are scaled in the new coordinate system that is described by the eigenvectors (i.e., how the original axes are rotated)."
+      "content": "The eigenvalues, and their associated eigenvectors, of a square matrix describe its transformational geometry. Eigenvalues describe how the original coordinate axes are scaled in the new coordinate system that is described by the eigenvectors (i.e., how the original axes are rotated).",
+      "source_page": 1264,
+      "source_pages": [
+        1264,
+        1265
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p004:b20",
+        "Evolution_appendix5:p004:b21",
+        "Evolution_appendix5:p005:b2"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          1392.0,
+          559.0,
+          1417.0
+        ],
+        [
+          287.0,
+          1422.0,
+          1060.0,
+          1471.0
+        ],
+        [
+          132.0,
+          207.0,
+          902.0,
+          251.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "dce288f5828d76d99a026bb77aeffa85b060cc425893263f11a357a3871aecaf"
     },
     {
       "type": "discussion",
-      "content": "To more formally introduce eigenvalues and eigenvectors, suppose, for a square matrix A, that the vector y satisfies the matrix equation $$ \\mathbf{A}\\mathbf{y}=\\lambda\\mathbf{y} $$ for some scalar value, λ. Geometrically, this means that the new vector resulting from transformation of y by A points in the same direction as y (or is exactly reflected about the origin if λ < 0). For such vectors, the only action of the matrix transformation is to scale them by some amount, λ. These vectors thus represent the inherent axes associated with the transformation given by A, and the set of all such vectors, along with their corresponding scalar multipliers, completely describes the geometry of this transformation. Vectors that satisfy Equation A5.6 are referred to as eigenvectors, and their associated scaling factors are eigenvalues, and together they jointly describe the eigenstructure (the intrinsic geometry) of the square matrix, A. If y is an eigenvector, then ay is also an eigenvector, as $ \\mathbf{A}(ay) = a(\\mathbf{Ay}) = \\lambda(ay) $. Note, however, that the associated eigenvalue, λ, remains unchanged. Hence, we typically scale eigenvectors to be of unit length to yield unit or normalized eigenvectors. In particular, if $ y_i $ is any eigenvector associated with the ith eigenvalue, then the associated normalized eigenvector is $ e_i = y_i / \\|y_i\\| $."
+      "content": "To more formally introduce eigenvalues and eigenvectors, suppose, for a square matrix A, that the vector y satisfies the matrix equation $$ \\mathbf{A}\\mathbf{y}=\\lambda\\mathbf{y} $$ for some scalar value, λ. Geometrically, this means that the new vector resulting from transformation of y by A points in the same direction as y (or is exactly reflected about the origin if λ < 0). For such vectors, the only action of the matrix transformation is to scale them by some amount, λ. These vectors thus represent the inherent axes associated with the transformation given by A, and the set of all such vectors, along with their corresponding scalar multipliers, completely describes the geometry of this transformation. Vectors that satisfy Equation A5.6 are referred to as eigenvectors, and their associated scaling factors are eigenvalues, and together they jointly describe the eigenstructure (the intrinsic geometry) of the square matrix, A. If y is an eigenvector, then ay is also an eigenvector, as $ \\mathbf{A}(ay) = a(\\mathbf{Ay}) = \\lambda(ay) $. Note, however, that the associated eigenvalue, λ, remains unchanged. Hence, we typically scale eigenvectors to be of unit length to yield unit or normalized eigenvectors. In particular, if $ y_i $ is any eigenvector associated with the ith eigenvalue, then the associated normalized eigenvector is $ e_i = y_i / \\|y_i\\| $.",
+      "source_page": 1265,
+      "source_pages": [
+        1265
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p005:b3",
+        "Evolution_appendix5:p005:b4",
+        "Evolution_appendix5:p005:b6"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          253.0,
+          903.0,
+          300.0
+        ],
+        [
+          477.0,
+          313.0,
+          561.0,
+          336.0
+        ],
+        [
+          132.0,
+          351.0,
+          904.0,
+          649.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "23a182411d8002e55fbe3cdb99029ec05c4d9a69a1b8494aaa97485571bd1add"
     },
     {
       "type": "discussion",
-      "content": "The eigenvalues of an $n$-dimensional square matrix, $\\mathbf{A}$, are solutions of Equation A5.6, which can be written as $(\\mathbf{A} - \\lambda \\mathbf{I}) \\mathbf{y} = 0$. This implies that the determinant of $(\\mathbf{A} - \\lambda \\mathbf{I})$ must equal zero, which gives rise to the characteristic equation, $|\\mathbf{A} - \\lambda \\mathbf{I}| = 0$, whose solution yields the eigenvalues of $\\mathbf{A}$. This equation can be also be expressed using the Laplace expansion, $$ \\left|\\mathbf{A}-\\lambda\\mathbf{I}\\right|=(-\\lambda)^{n}+S_{1}(-\\lambda)^{n-1}+\\cdots+S_{n-1}(-\\lambda)^{1}+S_{n}=0 $$ where $ |A| $ denotes the determinant of A and $ S_i $ is the sum of all principal minors (minors including diagonal elements of the original matrix) of order i (minors, which are subsets of the full matrix, were defined in LW Chapter 8). Finding the eigenvalues thus requires solving a polynomial equation of order n, implying that there are exactly n eigenvalues (some of which may be identical, i.e., repeated). In practice, for n > 2 this is accomplished numerically, and most statistical analysis packages offer routines to accomplish this task."
+      "content": "The eigenvalues of an $n$-dimensional square matrix, $\\mathbf{A}$, are solutions of Equation A5.6, which can be written as $(\\mathbf{A} - \\lambda \\mathbf{I}) \\mathbf{y} = 0$. This implies that the determinant of $(\\mathbf{A} - \\lambda \\mathbf{I})$ must equal zero, which gives rise to the characteristic equation, $|\\mathbf{A} - \\lambda \\mathbf{I}| = 0$, whose solution yields the eigenvalues of $\\mathbf{A}$. This equation can be also be expressed using the Laplace expansion, $$ \\left|\\mathbf{A}-\\lambda\\mathbf{I}\\right|=(-\\lambda)^{n}+S_{1}(-\\lambda)^{n-1}+\\cdots+S_{n-1}(-\\lambda)^{1}+S_{n}=0 $$ where $ |A| $ denotes the determinant of A and $ S_i $ is the sum of all principal minors (minors including diagonal elements of the original matrix) of order i (minors, which are subsets of the full matrix, were defined in LW Chapter 8). Finding the eigenvalues thus requires solving a polynomial equation of order n, implying that there are exactly n eigenvalues (some of which may be identical, i.e., repeated). In practice, for n > 2 this is accomplished numerically, and most statistical analysis packages offer routines to accomplish this task.",
+      "source_page": 1265,
+      "source_pages": [
+        1265
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p005:b7",
+        "Evolution_appendix5:p005:b8",
+        "Evolution_appendix5:p005:b10"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          650.0,
+          904.0,
+          766.0
+        ],
+        [
+          261.0,
+          777.0,
+          776.0,
+          802.0
+        ],
+        [
+          132.0,
+          815.0,
+          904.0,
+          953.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cac352ff9a8cc15601f1fd0588d1bf4a365f0f2503cd6c1e5d26af2efde7a19e"
     },
     {
       "type": "discussion",
-      "content": "Two of these principal minors are easily obtained and provide information on the nature of the eigenvalues. The only principal minor having the same order of the matrix is the full matrix itself, which means that $ S_n = |\\mathbf{A}| $, the determinant of $ \\mathbf{A} $. $ S_1 $ is also related to an important matrix quantity, the trace. This is denoted by $ \\mathrm{tr}(\\mathbf{A}) $, and is the sum of the diagonal elements of the matrix, namely, $$ \\mathbf{tr}(\\mathbf{A})=\\sum_{i=1}^{n}A_{ii} $$"
+      "content": "Two of these principal minors are easily obtained and provide information on the nature of the eigenvalues. The only principal minor having the same order of the matrix is the full matrix itself, which means that $ S_n = |\\mathbf{A}| $, the determinant of $ \\mathbf{A} $. $ S_1 $ is also related to an important matrix quantity, the trace. This is denoted by $ \\mathrm{tr}(\\mathbf{A}) $, and is the sum of the diagonal elements of the matrix, namely, $$ \\mathbf{tr}(\\mathbf{A})=\\sum_{i=1}^{n}A_{ii} $$",
+      "source_page": 1265,
+      "source_pages": [
+        1265
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p005:b11",
+        "Evolution_appendix5:p005:b12"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          954.0,
+          905.0,
+          1071.0
+        ],
+        [
+          451.0,
+          1083.0,
+          586.0,
+          1141.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "060c221886f7cb9b408a57c2ecfac573adb405acb9bb21d595fdacff96cffa38"
     },
     {
       "type": "discussion",
-      "content": "Observe that $ S_1 = \\text{tr}(\\mathbf{A}) $, as the only principal minors of order one are the diagonal elements themselves, the sum of which equals the trace. Both the trace and determinant can be expressed as functions of the eigenvalues, with $$ \\mathbf{tr}(\\mathbf{A})=\\sum_{i=1}^{n}\\lambda_{i}\\qquad and\\qquad|\\mathbf{A}|=\\prod_{i=1}^{n}\\lambda_{i} $$ Hence $ \\mathbf{A} $ is singular ($ |A|=0 $) if, and only if, at least one eigenvalue is zero. As we will see, if $ \\mathbf{A} $ is a covariance matrix, then its trace (the sum of its eigenvalues) measures its total amount of variation, as the eigenvalues of a covariance matrix are nonnegative ($ \\lambda_i \\geq 0 $)."
+      "content": "Observe that $ S_1 = \\text{tr}(\\mathbf{A}) $, as the only principal minors of order one are the diagonal elements themselves, the sum of which equals the trace. Both the trace and determinant can be expressed as functions of the eigenvalues, with $$ \\mathbf{tr}(\\mathbf{A})=\\sum_{i=1}^{n}\\lambda_{i}\\qquad and\\qquad|\\mathbf{A}|=\\prod_{i=1}^{n}\\lambda_{i} $$ Hence $ \\mathbf{A} $ is singular ($ |A|=0 $) if, and only if, at least one eigenvalue is zero. As we will see, if $ \\mathbf{A} $ is a covariance matrix, then its trace (the sum of its eigenvalues) measures its total amount of variation, as the eigenvalues of a covariance matrix are nonnegative ($ \\lambda_i \\geq 0 $).",
+      "source_page": 1265,
+      "source_pages": [
+        1265
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p005:b13",
+        "Evolution_appendix5:p005:b14",
+        "Evolution_appendix5:p005:b16"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1153.0,
+          904.0,
+          1224.0
+        ],
+        [
+          350.0,
+          1236.0,
+          686.0,
+          1296.0
+        ],
+        [
+          131.0,
+          1307.0,
+          903.0,
+          1377.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "4d55b19cfc0891cfc85a2b44829877727deb6d17db4af679d7b9e49598fd866c"
     },
     {
       "type": "discussion",
-      "content": "Let $\\mathbf{e}_i$ be the (unit-length) eigenvector associated with eigenvalue $\\lambda_i$. If the eigenvectors of $\\mathbf{A}$ can be chosen to be mutually orthogonal, namely, $\\mathbf{e}_i^T \\mathbf{e}_j = 0$ for $i \\neq j$, then we can express $\\mathbf{A}$ as $$ \\mathbf{A}=\\lambda_{1}\\mathbf{e}_{1}\\mathbf{e}_{1}^{T}+\\lambda_{2}\\mathbf{e}_{2}\\mathbf{e}_{2}^{T}+\\cdots+\\lambda_{n}\\mathbf{e}_{n}\\mathbf{e}_{n}^{T} $$"
+      "content": "Let $\\mathbf{e}_i$ be the (unit-length) eigenvector associated with eigenvalue $\\lambda_i$. If the eigenvectors of $\\mathbf{A}$ can be chosen to be mutually orthogonal, namely, $\\mathbf{e}_i^T \\mathbf{e}_j = 0$ for $i \\neq j$, then we can express $\\mathbf{A}$ as $$ \\mathbf{A}=\\lambda_{1}\\mathbf{e}_{1}\\mathbf{e}_{1}^{T}+\\lambda_{2}\\mathbf{e}_{2}\\mathbf{e}_{2}^{T}+\\cdots+\\lambda_{n}\\mathbf{e}_{n}\\mathbf{e}_{n}^{T} $$",
+      "source_page": 1265,
+      "source_pages": [
+        1265
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p005:b17",
+        "Evolution_appendix5:p005:b18"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1376.0,
+          903.0,
+          1444.0
+        ],
+        [
+          354.0,
+          1443.0,
+          682.0,
+          1472.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "bae245503f6df304fa2e9775063b170d42c20822117c36707ad7138168c90bf3"
     },
     {
       "type": "discussion",
-      "content": "This is called the spectral decomposition of A, and it is derived below in Equation A5.10d. Because $ \\|\\mathbf{e}_i\\| = 1 $, Equation A5.3b gives the projection of $ \\mathbf{x} $ on $ \\mathbf{e}_i $ as $ (\\mathbf{x}^T \\mathbf{e}_i) \\mathbf{e}_i $. Note that $ \\mathbf{e}_i(\\mathbf{e}_i^T \\mathbf{x}) = (\\mathbf{e}_i^T \\mathbf{x}) \\mathbf{e}_i = (\\mathbf{x}^T \\mathbf{e}_i) \\mathbf{e}_i $, as $ \\mathbf{e}_i^T \\mathbf{x} $ is a scalar, which implies that $ \\mathbf{e}_i^T \\mathbf{x} = (\\mathbf{e}_i^T \\mathbf{x})^T = \\mathbf{x}^T \\mathbf{e}_i $. Hence, from Equation A5.3b, we have $$ \\begin{aligned}\\mathbf{A}\\mathbf{x}&=\\lambda_{1}\\mathbf{e}_{1}\\mathbf{e}_{1}^{T}\\mathbf{x}+\\lambda_{2}\\mathbf{e}_{2}\\mathbf{e}_{2}^{T}\\mathbf{x}+\\cdots+\\lambda_{n}\\mathbf{e}_{n}\\mathbf{e}_{n}^{T}\\mathbf{x}\\\\&=\\lambda_{1}\\left(\\mathbf{e}_{1}^{T}\\mathbf{x}\\right)\\mathbf{e}_{1}+\\lambda_{2}\\left(\\mathbf{e}_{2}^{T}\\mathbf{x}\\right)\\mathbf{e}_{2}+\\cdots+\\lambda_{n}\\left(\\mathbf{e}_{n}^{T}\\mathbf{x}\\right)\\mathbf{e}_{n}\\\\&=\\lambda_{1}Proj(\\mathbf{x}on\\mathbf{e}_{1})+\\lambda_{2}Proj(\\mathbf{x}on\\mathbf{e}_{2})+\\cdots+\\lambda_{n}Proj(\\mathbf{x}on\\mathbf{e}_{n})\\\\ \\end{aligned} $$"
+      "content": "This is called the spectral decomposition of A, and it is derived below in Equation A5.10d. Because $ \\|\\mathbf{e}_i\\| = 1 $, Equation A5.3b gives the projection of $ \\mathbf{x} $ on $ \\mathbf{e}_i $ as $ (\\mathbf{x}^T \\mathbf{e}_i) \\mathbf{e}_i $. Note that $ \\mathbf{e}_i(\\mathbf{e}_i^T \\mathbf{x}) = (\\mathbf{e}_i^T \\mathbf{x}) \\mathbf{e}_i = (\\mathbf{x}^T \\mathbf{e}_i) \\mathbf{e}_i $, as $ \\mathbf{e}_i^T \\mathbf{x} $ is a scalar, which implies that $ \\mathbf{e}_i^T \\mathbf{x} = (\\mathbf{e}_i^T \\mathbf{x})^T = \\mathbf{x}^T \\mathbf{e}_i $. Hence, from Equation A5.3b, we have $$ \\begin{aligned}\\mathbf{A}\\mathbf{x}&=\\lambda_{1}\\mathbf{e}_{1}\\mathbf{e}_{1}^{T}\\mathbf{x}+\\lambda_{2}\\mathbf{e}_{2}\\mathbf{e}_{2}^{T}\\mathbf{x}+\\cdots+\\lambda_{n}\\mathbf{e}_{n}\\mathbf{e}_{n}^{T}\\mathbf{x}\\\\&=\\lambda_{1}\\left(\\mathbf{e}_{1}^{T}\\mathbf{x}\\right)\\mathbf{e}_{1}+\\lambda_{2}\\left(\\mathbf{e}_{2}^{T}\\mathbf{x}\\right)\\mathbf{e}_{2}+\\cdots+\\lambda_{n}\\left(\\mathbf{e}_{n}^{T}\\mathbf{x}\\right)\\mathbf{e}_{n}\\\\&=\\lambda_{1}Proj(\\mathbf{x}on\\mathbf{e}_{1})+\\lambda_{2}Proj(\\mathbf{x}on\\mathbf{e}_{2})+\\cdots+\\lambda_{n}Proj(\\mathbf{x}on\\mathbf{e}_{n})\\\\ \\end{aligned} $$",
+      "source_page": 1266,
+      "source_pages": [
+        1266
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p006:b2",
+        "Evolution_appendix5:p006:b3"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          206.0,
+          1056.0,
+          297.0
+        ],
+        [
+          404.0,
+          309.0,
+          944.0,
+          392.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e9a71aef77aea32bb4dd1bd8d1a6fddb823b58a96157a04f79e11b804f127432"
     },
     {
       "type": "discussion",
-      "content": "If we again apply Equation A5.3b, we can express this decomposition as $$ \\mathbf{A}\\mathbf{x}=||\\mathbf{x}||\\sum_{i=}^{n}\\left[\\lambda_{i}\\cdot\\cos(\\theta|\\mathbf{x},\\mathbf{e}_{i})\\right]\\mathbf{e}_{i} $$ where $ \\theta|\\mathbf{x}, \\mathbf{e}_i $ denotes the angle between the vectors $ \\mathbf{x} $ and $ \\mathbf{e}_i $. Thus, one can view a matrix as a series of vectors that form the projection space (the eigenvectors), so when a vector is multiplied by this matrix, the resulting vector is the weighted (by the eigenvalues) sum of projections over all of the vectors (the $ \\mathbf{e}_i $) that span the space defined by the matrix."
+      "content": "If we again apply Equation A5.3b, we can express this decomposition as $$ \\mathbf{A}\\mathbf{x}=||\\mathbf{x}||\\sum_{i=}^{n}\\left[\\lambda_{i}\\cdot\\cos(\\theta|\\mathbf{x},\\mathbf{e}_{i})\\right]\\mathbf{e}_{i} $$ where $ \\theta|\\mathbf{x}, \\mathbf{e}_i $ denotes the angle between the vectors $ \\mathbf{x} $ and $ \\mathbf{e}_i $. Thus, one can view a matrix as a series of vectors that form the projection space (the eigenvectors), so when a vector is multiplied by this matrix, the resulting vector is the weighted (by the eigenvalues) sum of projections over all of the vectors (the $ \\mathbf{e}_i $) that span the space defined by the matrix.",
+      "source_page": 1266,
+      "source_pages": [
+        1266
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p006:b5",
+        "Evolution_appendix5:p006:b6",
+        "Evolution_appendix5:p006:b8"
+      ],
+      "source_bboxes": [
+        [
+          289.0,
+          403.0,
+          908.0,
+          428.0
+        ],
+        [
+          529.0,
+          438.0,
+          816.0,
+          497.0
+        ],
+        [
+          287.0,
+          507.0,
+          1059.0,
+          603.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "a942ed06eb269f05dc53bacf6a951eef83b0f72130c37c72048f6c81e80e36f0"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:A5.2]]"
+      "content": "[[SEE_EXAMPLE:A5.2]]",
+      "source_page": 1266,
+      "source_pages": [
+        1266,
+        1267
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p006:b10",
+        "Evolution_appendix5:p006:b11",
+        "Evolution_appendix5:p006:b12",
+        "Evolution_appendix5:p006:b13",
+        "Evolution_appendix5:p006:b14",
+        "Evolution_appendix5:p006:b15",
+        "Evolution_appendix5:p006:b16",
+        "Evolution_appendix5:p006:b17",
+        "Evolution_appendix5:p006:b18",
+        "Evolution_appendix5:p006:b19",
+        "Evolution_appendix5:p006:b20",
+        "Evolution_appendix5:p006:b9",
+        "Evolution_appendix5:p007:b4",
+        "Evolution_appendix5:p007:b5",
+        "Evolution_appendix5:p007:b6"
+      ],
+      "source_bboxes": [
+        [
+          452.0,
+          742.0,
+          906.0,
+          822.0
+        ],
+        [
+          322.0,
+          831.0,
+          1034.0,
+          878.0
+        ],
+        [
+          483.0,
+          888.0,
+          874.0,
+          913.0
+        ],
+        [
+          321.0,
+          924.0,
+          1035.0,
+          969.0
+        ],
+        [
+          524.0,
+          977.0,
+          829.0,
+          1028.0
+        ],
+        [
+          323.0,
+          1039.0,
+          594.0,
+          1062.0
+        ],
+        [
+          322.0,
+          1066.0,
+          1035.0,
+          1154.0
+        ],
+        [
+          384.0,
+          1162.0,
+          972.0,
+          1213.0
+        ],
+        [
+          322.0,
+          1221.0,
+          1035.0,
+          1267.0
+        ],
+        [
+          398.0,
+          1277.0,
+          957.0,
+          1368.0
+        ],
+        [
+          402.0,
+          1381.0,
+          959.0,
+          1469.0
+        ],
+        [
+          322.0,
+          668.0,
+          1036.0,
+          734.0
+        ],
+        [
+          168.0,
+          690.0,
+          881.0,
+          736.0
+        ],
+        [
+          330.0,
+          752.0,
+          714.0,
+          832.0
+        ],
+        [
+          166.0,
+          848.0,
+          881.0,
+          999.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "57753b420c90760589dfbb56b8dc960a09f00b3a45efdcac3e524ecc25373a1e"
     }
   ]
 }

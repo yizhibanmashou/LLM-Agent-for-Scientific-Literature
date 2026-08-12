@@ -123,11 +123,7 @@ In practical applications of Design II, several $ N_{s} \times N_{d} $ sets (blo
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter20:1` · source: `Genetics_chapter20_002.json` · blocks 26–27
->
-> Example 1. Dawson (1965) set up 43 blocks of 2 male × 2 female factorial experiments ( $ N_s = N_d = 2 $) for the flour beetle Tribolium castaneum and monitored development time in the progeny. (For each block, the offspring of the four crosses $ s_1 \times d_1 $, $ s_1 \times d_2 $, $ s_2 \times d_1 $, and $ s_2 \times d_2 $ were examined.) The ANOVA table follows. Note from Table 20.1 that for each 2 × 2 factorial, the degrees of freedom for sires, dams, and interactions are all equal to one. The within-family sample size varied slightly around 8, but to maintain compatibility with the lay-out for a balanced design, it is treated as a constant n = 8 here, with little effect on the final results. Thus, the error degrees of freedom for each factorial is $ N_s N_d (n - 1) = 2 \times 2 \times 7 = 28 $. At all levels, the total degrees of freedom are obtained by multiplying those for individual factorials by the number of blocks (43).
-> 
-> <table><tr><td>Factor</td><td>df</td><td>SS</td><td>MS</td><td>$ E(MS) $</td><td>Estimates (SE)</td></tr><tr><td>Sires</td><td>43</td><td>257.3</td><td>5.98</td><td>$ \sigma_{e}^{2} + 8\sigma_{I}^{2} + 16\sigma_{s}^{2} $</td><td>Var(s) = 0.073 (0.101)</td></tr><tr><td>Dams</td><td>43</td><td>362.6</td><td>8.43</td><td>$ \sigma_{e}^{2} + 8\sigma_{I}^{2} + 16\sigma_{d}^{2} $</td><td>Var(d) = 0.226 (0.128)</td></tr><tr><td>Interaction</td><td>43</td><td>207.3</td><td>4.82</td><td>$ \sigma_{e}^{2} + 8\sigma_{I}^{2} $</td><td>Var(I) = 0.370 (0.127)</td></tr><tr><td>Error</td><td>1,204</td><td>2,539.4</td><td>1.86</td><td>$ \sigma_{e}^{2} $</td><td>Var(e) = 1.860 (0.076)</td></tr><tr><td>Total</td><td></td><td></td><td></td><td></td><td>Var(z) = 2.529</td></tr></table>
+> **[UNRESOLVED EXAMPLE: Genetics_chapter20:1]**
 
 
 The variance component estimates given in the above table are obtained by equating the observed mean squares to their expectations. Under the assumption of normality, the standard errors of these estimates (SE) are obtained as the square roots of the expressions in the bottom right of Table 20.1.
@@ -246,50 +242,7 @@ As an example of how the Comstock-Robinson and Cockerham-Weir models can be appl
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter20:2` · source: `Genetics_chapter20_004.json` · blocks 18–31
->
-> Example 2. By using marked chromosomes with crossover suppressors, Mukai constructed 14 lines of Drosophila melanogaster carrying unique second chromosomes extracted from a natural population. Presumably, the lines varied randomly with respect to other chromosomes and extranuclear factors. A $ 7 \times 7 $ factorial experiment ( $ N_1 = N_2 = 7 $) was performed on these lines to evaluate the relative viabilities of various chromosomal heterozygotes. Each of the 49 crosses was done reciprocally and in duplicate (n = 2). A portion of the data, along with the marginal means, is given below, with one set of parents (1 to 7) denoted vertically and the other set (8 to 14) horizontally. Each cell contains four estimates, the top two being maternal × paternal replicates, and the bottom two the reciprocals; each of the assays involves a large number (unknown to the authors) of flies. $ \bar{z}_i $, is the marginal mean of progeny with chromosome $ i $ inherited through mothers, and $ \bar{z}_{.i} $ through fathers.
-> 
-> <table><tr><td></td><td colspan="2">8</td><td colspan="2">9</td><td></td><td colspan="2">14</td><td>$ \bar{z}_{i} $</td><td>$ \bar{z}_{i} $</td></tr><tr><td rowspan="2">1</td><td>0.63</td><td>0.95</td><td>0.77</td><td>1.09</td><td>……</td><td>0.92</td><td>1.17</td><td>0.89</td><td></td></tr><tr><td>1.12</td><td>0.84</td><td>0.73</td><td>0.83</td><td>……</td><td>0.93</td><td>0.97</td><td></td><td>1.11</td></tr><tr><td rowspan="2">2</td><td>1.11</td><td>0.95</td><td>0.62</td><td>0.75</td><td>……</td><td>1.16</td><td>0.95</td><td>0.98</td><td></td></tr><tr><td>0.77</td><td>1.07</td><td>0.66</td><td>1.09</td><td>……</td><td>0.87</td><td>0.72</td><td></td><td>0.96</td></tr><tr><td></td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td><td>……</td><td></td><td></td></tr><tr><td rowspan="2">7</td><td>1.17</td><td>1.19</td><td>0.82</td><td>0.73</td><td>……</td><td>1.12</td><td>1.04</td><td>1.05</td><td></td></tr><tr><td>0.87</td><td>1.03</td><td>0.76</td><td>0.89</td><td>……</td><td>1.31</td><td>0.86</td><td></td><td>0.93</td></tr><tr><td>$ \bar{z}_{j} $</td><td>1.02</td><td></td><td>0.76</td><td></td><td>……</td><td>1.13</td><td></td><td></td><td></td></tr><tr><td>$ \bar{z}_{j} $.</td><td></td><td>1.06</td><td></td><td>0.82</td><td></td><td>……</td><td>1.02</td><td></td><td></td></tr></table>
-> 
-> From the raw data, the sums of squares and cross products and the Comstock-Robinson variance-covariance components were calculated following the procedures in Table 20.3.
-> 
-> <table><tr><td>Factor</td><td>df</td><td>MS or MCP</td><td>Estimate (SE)</td></tr><tr><td>Dams</td><td>12</td><td>0.2213</td><td>$ \mathrm{Var}(d) = 0.0090 (0.0061) $</td></tr><tr><td>Sires</td><td>12</td><td>0.3107</td><td>$ \mathrm{Var}(s) = 0.0154 (0.0085) $</td></tr><tr><td>Interaction</td><td>72</td><td>0.0956</td><td>$ \mathrm{Var}(I) = 0.0388 (0.0113) $</td></tr><tr><td>Error</td><td>98</td><td>0.0180</td><td>$ \mathrm{Var}(e) = 0.0180 (0.0025) $</td></tr><tr><td>Recip. Main</td><td>12</td><td>0.0633</td><td>$ \mathrm{Cov}(d, s) = 0.0012 (0.0019) $</td></tr><tr><td>Recip. Interaction</td><td>36</td><td>0.0466</td><td>$ \mathrm{Cov}(I_d, I_s) = 0.0233 (0.0053) $</td></tr></table>
-> 
-> Several specific hypotheses about the mode of gene action can be tested with $F$ ratios (given in the following table), and these lead to the conclusion that $\sigma_k^2$, $(\sigma_p^2 + \sigma_m^2)$, and $\sigma_t^2$ are all significantly greater than zero ($P < 0.01$, 0.01, and 0.001, respectively), while the additive component of variance associated with nuclear genes ($\sigma_n^2$) is not. The hypothesis that extranuclear maternal and paternal effects are equally variable ($\sigma_m^2 = \sigma_p^2$) cannot be rejected.
-> 
-> <table><tr><td>Hypothesis</td><td>Test Statistic</td><td>Degrees of Freedom</td></tr><tr><td>$ \sigma_{k}^{2}=0 $</td><td>$ \frac{MS_{I}-MCP_{Id,Is}}{MS_{e}}=2.72 $</td><td>$ (N_{1}-1)(N_{2}-1) $, $ 2N_{1}N_{2}(n-1) $</td></tr><tr><td rowspan="2">$ \sigma_{p}^{2}+\sigma_{m}^{2}=0 $</td><td>$ \frac{(MS_{s}+MS_{d})/2-MCP_{d,s}}{MS_{I}-MCP_{Id,Is}} $</td><td rowspan="2">$ N_{1}+N_{2}-2 $, $ (N_{1}-1)(N_{2}-1) $</td></tr><tr><td>=4.15</td></tr><tr><td>$ \sigma_{t}^{2}=0 $</td><td>$ \frac{MS_{I}+MCP_{Id,Is}}{MS_{I}-MCP_{Id,Is}}=2.91 $</td><td>$ (N_{1}-1)(N_{2}-1) $, $ (N_{1}-1)(N_{2}-1) $</td></tr><tr><td>$ \sigma_{n}^{2}=0 $</td><td>$ \frac{MCP_{d,s}}{MCP_{Id,Is}}=1.36 $</td><td>$ N_{1}+N_{2}-2 $, $ (N_{1}-1)(N_{2}-1) $</td></tr><tr><td>$ \sigma_{m}^{2}=\sigma_{p}^{2} $</td><td>$ \frac{MS_{s}}{MS_{d}}=1.40 $</td><td>$ N_{1}+N_{2}-2 $, $ N_{1}+N_{2}-2 $</td></tr></table>
-> 
-> Note that the rather unusual appearance of the F-ratio expressions in the preceding table is due to the translation of the mean squares and cross products between models. All of the ratios do, in fact, satisfy the desired property that the numerator and denominator have equal expectations under the null hypothesis. For example, using the expressions in Tables 20.2 and 20.3, it can be shown that the expected values of the numerator and denominator of the statistic testing $ \sigma_{k}^{2}=0 $ are $ \sigma_{e}^{2}+n\sigma_{k}^{2} $ and $ \sigma_{e}^{2} $.
-> 
-> Using the relationships in Table 20.2, the variance components given above for the Comstock-Robinson model (and their standard errors) can be transformed into those for the Cockerham-Weir model:
-> 
-> $$
-> \mathrm{Var}(n)=0.0012(0.0019)
-> $$
-> 
-> 
-> $$
-> \operatorname{Var}(p)=0.0142(0.0087)
-> $$
-> 
-> 
-> $$
-> \operatorname{Var}(m)=0.0078(0.0064)
-> $$
-> 
-> 
-> $$
-> \operatorname{Var}(t)=0.0233(0.0053)
-> $$
-> 
-> 
-> $$
-> \operatorname{Var}(k)=0.0155(0.0125)
-> $$
-> 
-> 
-> Almost all of the genetic variance is attributable to extranuclear effects ( $ \sigma_{p}^{2} $, $ \sigma_{m}^{2} $, and $ \sigma_{k}^{2} $) and to dominance ( $ \sigma_{t}^{2} $).
+> **[UNRESOLVED EXAMPLE: Genetics_chapter20:2]**
 
 
 > **Table 20.2** · `20.2` · page 618 · source: `Genetics_chapter20_004`
@@ -412,13 +365,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter20:3` · source: `Genetics_chapter20_006.json` · blocks 24–26
->
-> Example 3. The following example concerns a diallel between $N = 6$ lines of the oyster, Crassostrea gigas. By stripping eggs and sperm from the hermaphroditic adults, Lannan (1980) performed all possible $6(6-1)/2 = 15$ crosses (excluding reciprocals) and recorded an index of female gonadal development in the progeny. Both the number of parental lines and the number of offspring per full-sib family ($n = 9$) are very small, so this example will serve simply to illustrate how the observed mean squares lead to parameter estimates by the method of moments, with no attention being given to the significance of the resultant estimates. The results of the analysis of variance are given in the following table:
-> 
-> <table><tr><td>Factor</td><td>df</td><td>Mean Squares</td><td>E(MS)</td><td>Estimates</td></tr><tr><td>GCA</td><td>5</td><td>1957.14</td><td>$ \sigma_{e}^{2} + 9\sigma_{SCA}^{2} + 36\sigma_{GCA}^{2} $</td><td>$ \mathrm{Var}(GCA) = 54.08 $</td></tr><tr><td>SCA</td><td>9</td><td>10.13</td><td>$ \sigma_{e}^{2} + 9\sigma_{SCA}^{2} $</td><td>$ \mathrm{Var}(SCA) = -5.24 $</td></tr><tr><td>Error</td><td>112</td><td>57.31</td><td>$ \sigma_{e}^{2} $</td><td>$ \mathrm{Var}(e) = 57.31 $</td></tr></table>
-> 
-> The remaining analysis is somewhat complicated by the fact that the parental lines had been inbred by full-sib mating to $f = 0.375$. To simplify matters, we will assume that all of the genetic variance is due to additive effects, an assumption that seems justified based on the observation that the SCA variance estimate is negative. Recall from Equation 7.5a that provided the parents are unrelated and inbred to the same degree, the coefficient of coancestry (and the additive genetic covariance) of two individuals is inflated by the factor $(1 + f)$ relative to its expectation in a random-mating population. Thus, for this experiment, the expected GCA variance, which is equivalent to the covariance between half sibs, is $(1 + 0.375)\sigma_A^2 / 4$. Setting this equal to the observed Var(GCA), the additive genetic variance in the random-mating source population is estimated to be 157.32. This estimate nearly equals the total phenotypic variance $(2\sigma_{GCA}^2 + \sigma_{SCA}^2 + \sigma_e^2)$ revealed by the analysis, suggesting the possibility that the vast majority of the phenotypic variance has an additive genetic basis.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter20:3]**
 
 
 > **Table 20.4** · `20.4` · page 624 · source: `Genetics_chapter20_006`
@@ -495,17 +442,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter20:4` · source: `Genetics_chapter20_007.json` · blocks 16–20
->
-> Example 4. Thomas-Orillard and Jeune (1985) performed all possible reciprocal crosses between six $ (N = 6) $ strains of $ D.\ melanogaster $ (three French and three African) and examined the female progeny for number of ovarioles. ANOVA was performed on means of 50 measures in each of two replicate blocks $ (n = 2) $. The ANOVA table follows, and from it, the estimated variance components for the Cockerham-Weir model are obtained by setting the observed mean squares equal to their expectations (defined in Table 20.5). We illustrate the computation of variance components primarily for heuristic purposes, as the lines involved in this experiment can hardly be viewed as a random sample of the species.
-> 
-> <table><tr><td>Source</td><td>df</td><td>Mean Squares</td><td>Estimates</td></tr><tr><td>GCA</td><td>5</td><td>59.649</td><td>$ \mathrm{Var}(n) = 3.182 $</td></tr><tr><td>SCA</td><td>9</td><td>9.593</td><td>$ \mathrm{Var}(t) = 1.616 $</td></tr><tr><td>RGCA</td><td>5</td><td>1.853</td><td>$ \mathrm{Var}(m) + \mathrm{Var}(p) = -0.213 $</td></tr><tr><td>RSCA</td><td>10</td><td>3.129</td><td>$ \mathrm{Var}(k) = 0.999 $</td></tr><tr><td>Error</td><td>30</td><td>1.130</td><td></td></tr></table>
-> 
-> From the results provided in the original analysis, $ T_m $ and $ T_p $ are found to be 1,718.958 and 1,720.854, respectively. Setting these equal to their expectations and subtracting, $ \text{Var}(m) - \text{Var}(p) = -1.896 $, which when combined with the results in the table leads to the estimates $ \text{Var}(m) = -1.054 $ and $ \text{Var}(p) = 0.841 $. Using $ F $ ratios, the following hypotheses can be tested:
-> 
-> <table><tr><td>Hypothesis</td><td>Test Statistic</td><td>Degrees of Freedom</td></tr><tr><td>$ \sigma_{n}^{2}=0 $</td><td>$ \frac{MS_{GCA}+[(N-2)MS_{RSCA}/N]}{MS_{SCA}+[(N-2)MS_{RGCA}/N]} $</td><td>See remarks below.</td></tr><tr><td></td><td>= 5.70</td><td></td></tr><tr><td>$ \sigma_{k}^{2}=0 $</td><td>$ \frac{MS_{RSCA}}{MS_{e}}=2.77 $</td><td>$ (N-1)(N-2)/2, $</td></tr><tr><td></td><td></td><td>$ N(N-1)(n-1) $</td></tr><tr><td>$ \sigma_{m}^{2}+\sigma_{p}^{2}=0 $</td><td>$ \frac{MS_{RGCA}}{MS_{RSCA}}=0.59 $</td><td>$ (N-1), $</td></tr><tr><td></td><td></td><td>$ (N-1)(N-2)/2 $</td></tr><tr><td>$ \sigma_{t}^{2}=0 $</td><td>$ \frac{MS_{SCA}}{MS_{RSCA}}=3.07 $</td><td>$ N(N-3)/2, $</td></tr><tr><td></td><td></td><td>$ (N-1)(N-2)/2 $</td></tr></table> (Note that the degrees of freedom for the test of $ \sigma_{n}^{2}=0 $ are not a simple function of N and n, due to the fact that the numerator and denominator of the test statistic are sums of observed mean squares. For situations like this, the degrees of freedom can be approximated using the method of Satterthwaite (1946), described in Chapter 18. For this particular example, the approximate degrees of freedom are 5 and 11).
-> 
-> The variance of nuclear additive effects $ (n) $, nuclear nonadditive effects $ (t) $, and extranuclear interaction effects $ (k) $ are all significant (at the 0.01, 0.05, and 0.05 levels, respectively), the latter arising despite the fact that the summed variance of the extranuclear effects $ \sigma_{m}^{2} + \sigma_{p}^{2} $ is nonsignificant. Nearly half of the observed genetic variance is attributable to nonadditive effects, $ \sigma_{t}^{2} + \sigma_{k}^{2} $.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter20:4]**
 
 
 > **Table 20.5** · `20.5` · page 627 · source: `Genetics_chapter20_007`

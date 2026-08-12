@@ -21,23 +21,200 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Recall the probability density function for the multivariate normal distribution (LW Chapter 8) $$ \\begin{align*}\\phi(\\mathbf x)=(2\\pi)^{-n/2}\\left|\\mathbf V_{\\mathbf x}\\right|^{-1/2}\\exp\\left[-{1\\over2}(\\mathbf x-\\boldsymbol\\mu)^T\\mathbf V_{\\mathbf x}^{-1}\\left(\\mathbf x-\\boldsymbol\\mu\\right)\\right]\\end{align*} $$ Because only the quadratic product in the exponential varies with x, surfaces of equal probability for MVN distributed vectors satisfy $$ \\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)^{T}\\mathbf{V}_{\\mathbf{X}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)=c^{2} $$ From the discussion following Equation A5.17c, these surfaces are $n$-dimensional ellipsoids centered at $\\mu$ whose axes of symmetry are given by the principal components (the eigenvectors) of the covariance matrix, $\\mathbf{V}_{\\mathbf{x}}$. The length of the ellipsoid along the $i$th axis is $c\\sqrt{\\lambda_{i}}$ where $\\lambda_{i}$ is the eigenvalue associated with the eigenvector $\\mathbf{e}_{i}$ (Figure A5.6)."
+      "content": "Recall the probability density function for the multivariate normal distribution (LW Chapter 8) $$ \\begin{align*}\\phi(\\mathbf x)=(2\\pi)^{-n/2}\\left|\\mathbf V_{\\mathbf x}\\right|^{-1/2}\\exp\\left[-{1\\over2}(\\mathbf x-\\boldsymbol\\mu)^T\\mathbf V_{\\mathbf x}^{-1}\\left(\\mathbf x-\\boldsymbol\\mu\\right)\\right]\\end{align*} $$ Because only the quadratic product in the exponential varies with x, surfaces of equal probability for MVN distributed vectors satisfy $$ \\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)^{T}\\mathbf{V}_{\\mathbf{X}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)=c^{2} $$ From the discussion following Equation A5.17c, these surfaces are $n$-dimensional ellipsoids centered at $\\mu$ whose axes of symmetry are given by the principal components (the eigenvectors) of the covariance matrix, $\\mathbf{V}_{\\mathbf{x}}$. The length of the ellipsoid along the $i$th axis is $c\\sqrt{\\lambda_{i}}$ where $\\lambda_{i}$ is the eigenvalue associated with the eigenvector $\\mathbf{e}_{i}$ (Figure A5.6).",
+      "source_page": 1274,
+      "source_pages": [
+        1274
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p014:b8",
+        "Evolution_appendix5:p014:b9",
+        "Evolution_appendix5:p014:b10",
+        "Evolution_appendix5:p014:b12",
+        "Evolution_appendix5:p014:b13",
+        "Evolution_appendix5:p014:b15"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1082.0,
+          771.0,
+          1105.0
+        ],
+        [
+          288.0,
+          1112.0,
+          1059.0,
+          1157.0
+        ],
+        [
+          387.0,
+          1155.0,
+          883.0,
+          1206.0
+        ],
+        [
+          287.0,
+          1211.0,
+          1059.0,
+          1259.0
+        ],
+        [
+          558.0,
+          1266.0,
+          791.0,
+          1295.0
+        ],
+        [
+          287.0,
+          1305.0,
+          1058.0,
+          1398.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ba097a5fcc184599a9b74f94feb56a65073ba92afb06301fd35af203c722613f"
     },
     {
       "type": "discussion",
-      "content": "Equation A5.18b motivates the Mahalanobis distance $$ D=\\sqrt{\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)^{T}\\mathbf{V}_{\\mathbf{X}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)} $$ which measures the distance of a point from its mean $ \\mu $, correcting for its covariance structure, $ V_X $ (Mahalanobis 1938). As we detail shortly, $ D $ provides one metric for tests of multivariate normality."
+      "content": "Equation A5.18b motivates the Mahalanobis distance $$ D=\\sqrt{\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)^{T}\\mathbf{V}_{\\mathbf{X}}^{-1}\\left(\\mathbf{x}-\\boldsymbol{\\mu}\\right)} $$ which measures the distance of a point from its mean $ \\mu $, correcting for its covariance structure, $ V_X $ (Mahalanobis 1938). As we detail shortly, $ D $ provides one metric for tests of multivariate normality.",
+      "source_page": 1274,
+      "source_pages": [
+        1274,
+        1275
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p014:b16",
+        "Evolution_appendix5:p014:b17",
+        "Evolution_appendix5:p015:b2"
+      ],
+      "source_bboxes": [
+        [
+          327.0,
+          1399.0,
+          794.0,
+          1421.0
+        ],
+        [
+          547.0,
+          1436.0,
+          800.0,
+          1471.0
+        ],
+        [
+          132.0,
+          207.0,
+          903.0,
+          275.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ce6112b2420e304e49ca5853726cf90088f72825dfca1ae873a6a6a27aee8a7d"
     },
     {
       "type": "discussion",
-      "content": "Applying the canonical transformation (Equation A5.15a), we can change coordinate systems by a rigid rotation to remove any correlations between the variables in x. If $ x \\sim \\text{MVN}(\\mu, \\mathbf{V}_x) $, then for $ y = \\mathbf{U}^T(\\mathbf{x} - \\boldsymbol{\\mu}) $, it follows that $$ \\mathbf{y}\\sim MVN(\\mathbf{0},\\boldsymbol{\\Lambda}) $$ where A and U are the matrices defined by Equations A5.10b and A5.10bc for the diagonalization of $ V_x $. In particular, $$ y_{i}=\\mathbf{e}_{i}^{T}(\\mathbf{x}-\\boldsymbol{\\mu})\\qquad\\mathrm{w h e r e}\\quad y_{i}\\sim\\mathrm{N}(0,\\lambda_{i}) $$"
+      "content": "Applying the canonical transformation (Equation A5.15a), we can change coordinate systems by a rigid rotation to remove any correlations between the variables in x. If $ x \\sim \\text{MVN}(\\mu, \\mathbf{V}_x) $, then for $ y = \\mathbf{U}^T(\\mathbf{x} - \\boldsymbol{\\mu}) $, it follows that $$ \\mathbf{y}\\sim MVN(\\mathbf{0},\\boldsymbol{\\Lambda}) $$ where A and U are the matrices defined by Equations A5.10b and A5.10bc for the diagonalization of $ V_x $. In particular, $$ y_{i}=\\mathbf{e}_{i}^{T}(\\mathbf{x}-\\boldsymbol{\\mu})\\qquad\\mathrm{w h e r e}\\quad y_{i}\\sim\\mathrm{N}(0,\\lambda_{i}) $$",
+      "source_page": 1275,
+      "source_pages": [
+        1275
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p015:b3",
+        "Evolution_appendix5:p015:b4",
+        "Evolution_appendix5:p015:b6",
+        "Evolution_appendix5:p015:b7"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          277.0,
+          904.0,
+          346.0
+        ],
+        [
+          445.0,
+          364.0,
+          589.0,
+          388.0
+        ],
+        [
+          132.0,
+          405.0,
+          902.0,
+          453.0
+        ],
+        [
+          340.0,
+          470.0,
+          695.0,
+          497.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "e18762565f205c9ae7e904a7b1eb8e50e4160833f6d0025695e6ab8390778dcb"
     },
     {
       "type": "discussion",
-      "content": "Note from Equation A5.20a that because the $ y_{i} $ are uncorrelated, they are also independent as the joint probability density is the product of n individual univariate normal densities. We can further transform the original vector by taking $$ z_{i}=\\frac{\\mathbf{e}_{i}^{T}(\\mathbf{x}-\\boldsymbol{\\mu})}{\\sqrt{\\lambda_{i}}}\\qquad\\mathrm{g i v i n g}\\qquad z_{i}\\sim\\mathrm{N}(0,1) $$"
+      "content": "Note from Equation A5.20a that because the $ y_{i} $ are uncorrelated, they are also independent as the joint probability density is the product of n individual univariate normal densities. We can further transform the original vector by taking $$ z_{i}=\\frac{\\mathbf{e}_{i}^{T}(\\mathbf{x}-\\boldsymbol{\\mu})}{\\sqrt{\\lambda_{i}}}\\qquad\\mathrm{g i v i n g}\\qquad z_{i}\\sim\\mathrm{N}(0,1) $$",
+      "source_page": 1275,
+      "source_pages": [
+        1275
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p015:b9",
+        "Evolution_appendix5:p015:b10"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          513.0,
+          904.0,
+          584.0
+        ],
+        [
+          332.0,
+          601.0,
+          702.0,
+          653.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "881088ed36422d79be67c82c4891a16969a74d6e9d10833bca7c4054e5ecc4b2"
     },
     {
       "type": "discussion",
-      "content": "Applying the transformation $$ \\mathbf{z}=A^{-1/2}\\mathbf{U}^{T}(\\mathbf{x}-\\boldsymbol{\\mu}) $$ results in $ \\mathbf{z} \\sim \\text{MVN}(\\mathbf{0}, \\mathbf{I}) $, namely that the $ n $ elements of the vector $ \\mathbf{y} $ are each independent unit normal random variables."
+      "content": "Applying the transformation $$ \\mathbf{z}=A^{-1/2}\\mathbf{U}^{T}(\\mathbf{x}-\\boldsymbol{\\mu}) $$ results in $ \\mathbf{z} \\sim \\text{MVN}(\\mathbf{0}, \\mathbf{I}) $, namely that the $ n $ elements of the vector $ \\mathbf{y} $ are each independent unit normal random variables.",
+      "source_page": 1275,
+      "source_pages": [
+        1275
+      ],
+      "source_block_ids": [
+        "Evolution_appendix5:p015:b12",
+        "Evolution_appendix5:p015:b13",
+        "Evolution_appendix5:p015:b15"
+      ],
+      "source_bboxes": [
+        [
+          134.0,
+          668.0,
+          388.0,
+          694.0
+        ],
+        [
+          424.0,
+          691.0,
+          611.0,
+          718.0
+        ],
+        [
+          132.0,
+          730.0,
+          904.0,
+          776.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "59ce4367e2131bba4e8b4159f29176b30677fa05d5329b7ce2213eceb5febf12"
     }
   ]
 }

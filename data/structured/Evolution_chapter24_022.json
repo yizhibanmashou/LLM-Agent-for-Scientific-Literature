@@ -21,59 +21,417 @@
   "blocks": [
     {
       "type": "proposition",
-      "content": "Under our assumption that genotypic and environmental values are additive and independent, $ z = G + E $. When environmental values, E, are normally distributed, phenotypes, z, are normally distributed if and only if the genotypic values are Gaussian (i.e., follow a normal distribution). However, the converse is not true—an approximately normal distribution of phenotypes does not necessarily imply that genotypic values are Gaussian. While we can test if phenotypes are normally distributed, this tells us little about the distribution of genotypes. In theory, we can estimate the genotypic distribution by estimating the breeding values for a sample of individuals (LW Chapter 26), but this is generally impractical in most studies (however, see Chapter 20). Further, methods used to estimate breeding values typically start with the assumption of normality (Chapters 19 and 20; LW Chapters 26 and 27), and hence bias the distribution of estimated values toward a Gaussian. Because we assume that there are no genotype×environment interactions, if the environment remains constant over time, any changes in the phenotypic distribution are entirely due to changes in the genotypic distribution. The moments of a distribution provide a conve- nient measure to describe its shape, and hence changes in the moments provide descriptions of changes in the shape of the distribution. To see the connection between the moments of the phenotypic and genotypic distributions, note that the phenotypic mean, variance, and skew can be decomposed as $ \\mu_z = \\mu_G $, $ \\sigma_z^2 = \\sigma_G^2 + \\sigma_E^2 $, and $ \\mu_{3,z} = \\mu_{3,G} + \\mu_{3,E} $. Thus, assuming no environmentally induced changes in the moments, changes in any of the first three phenotypic moments will exactly equal the change in the corresponding genotypic moments. Example 24.6 (below) uses cumulants to derive the fourth phenotypic moment, yielding $$ \\mu_{4,z}=\\mu_{4,G}+\\mu_{4,E}+6\\sigma_{G}^{2}\\sigma_{E}^{2} $$"
+      "content": "Under our assumption that genotypic and environmental values are additive and independent, $ z = G + E $. When environmental values, E, are normally distributed, phenotypes, z, are normally distributed if and only if the genotypic values are Gaussian (i.e., follow a normal distribution). However, the converse is not true—an approximately normal distribution of phenotypes does not necessarily imply that genotypic values are Gaussian. While we can test if phenotypes are normally distributed, this tells us little about the distribution of genotypes. In theory, we can estimate the genotypic distribution by estimating the breeding values for a sample of individuals (LW Chapter 26), but this is generally impractical in most studies (however, see Chapter 20). Further, methods used to estimate breeding values typically start with the assumption of normality (Chapters 19 and 20; LW Chapters 26 and 27), and hence bias the distribution of estimated values toward a Gaussian. Because we assume that there are no genotype×environment interactions, if the environment remains constant over time, any changes in the phenotypic distribution are entirely due to changes in the genotypic distribution. The moments of a distribution provide a conve- nient measure to describe its shape, and hence changes in the moments provide descriptions of changes in the shape of the distribution. To see the connection between the moments of the phenotypic and genotypic distributions, note that the phenotypic mean, variance, and skew can be decomposed as $ \\mu_z = \\mu_G $, $ \\sigma_z^2 = \\sigma_G^2 + \\sigma_E^2 $, and $ \\mu_{3,z} = \\mu_{3,G} + \\mu_{3,E} $. Thus, assuming no environmentally induced changes in the moments, changes in any of the first three phenotypic moments will exactly equal the change in the corresponding genotypic moments. Example 24.6 (below) uses cumulants to derive the fourth phenotypic moment, yielding $$ \\mu_{4,z}=\\mu_{4,G}+\\mu_{4,E}+6\\sigma_{G}^{2}\\sigma_{E}^{2} $$",
+      "source_page": 875,
+      "source_pages": [
+        875,
+        876
+      ],
+      "source_block_ids": [
+        "Evolution_chapter24:p021:b8",
+        "Evolution_chapter24:p021:b9",
+        "Evolution_chapter24:p021:b10",
+        "Evolution_chapter24:p022:b2",
+        "Evolution_chapter24:p022:b3"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          1112.0,
+          576.0,
+          1133.0
+        ],
+        [
+          132.0,
+          1143.0,
+          904.0,
+          1393.0
+        ],
+        [
+          132.0,
+          1394.0,
+          905.0,
+          1464.0
+        ],
+        [
+          287.0,
+          207.0,
+          1059.0,
+          393.0
+        ],
+        [
+          547.0,
+          389.0,
+          799.0,
+          416.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "add4a5cd7059e5f323fa574a84090c91124e7c13709929eb94c3a8939d9f07c8"
     },
     {
       "type": "discussion",
-      "content": "This shows that any changes here can result from either changes in the second (variance) or fourth moments of the genotypic distribution. When E is normal, $ \\mu_{3,E} = 0 $ and $ \\mu_{4,E} = 3\\sigma_{E}^{4} $, simplifying these expressions."
+      "content": "This shows that any changes here can result from either changes in the second (variance) or fourth moments of the genotypic distribution. When E is normal, $ \\mu_{3,E} = 0 $ and $ \\mu_{4,E} = 3\\sigma_{E}^{4} $, simplifying these expressions.",
+      "source_page": 876,
+      "source_pages": [
+        876
+      ],
+      "source_block_ids": [
+        "Evolution_chapter24:p022:b5"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          426.0,
+          1056.0,
+          495.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b158e010eeae6508ebbba30d8246b4c655eeafb71ecec3019bda74299215a15f"
     },
     {
       "type": "proposition",
-      "content": "How do the moments of G depend on the distribution of allelic effects at individual loci? If n loci control the character, our assumption of complete additivity implies $$ G=\\sum_{i=1}^{n}\\left(X_{fa,i}+X_{mo,i}\\right) $$ where $ X_{fa,i}\\left(X_{mo,i}\\right) $ is the value of the paternal (maternal) allele at the ith locus. Assuming both sexes have the same distribution of allelic effects, the moments of G can be related to moments of the distribution of allelic effects at individual loci by expanding $$ \\begin{aligned}\\mu_{k,G}&=E\\left(\\left[G-\\mu_{G}\\right]^{k}\\right)\\\\&=E\\left(\\left[\\sum_{i=1}^{n}\\left\\{X_{fa,i}+X_{mo,i}-2E(X_{i})\\right\\}\\right]^{k}\\right)\\qquad for k\\geq2\\end{aligned} $$"
+      "content": "How do the moments of G depend on the distribution of allelic effects at individual loci? If n loci control the character, our assumption of complete additivity implies $$ G=\\sum_{i=1}^{n}\\left(X_{fa,i}+X_{mo,i}\\right) $$ where $ X_{fa,i}\\left(X_{mo,i}\\right) $ is the value of the paternal (maternal) allele at the ith locus. Assuming both sexes have the same distribution of allelic effects, the moments of G can be related to moments of the distribution of allelic effects at individual loci by expanding $$ \\begin{aligned}\\mu_{k,G}&=E\\left(\\left[G-\\mu_{G}\\right]^{k}\\right)\\\\&=E\\left(\\left[\\sum_{i=1}^{n}\\left\\{X_{fa,i}+X_{mo,i}-2E(X_{i})\\right\\}\\right]^{k}\\right)\\qquad for k\\geq2\\end{aligned} $$",
+      "source_page": 876,
+      "source_pages": [
+        876
+      ],
+      "source_block_ids": [
+        "Evolution_chapter24:p022:b6",
+        "Evolution_chapter24:p022:b7",
+        "Evolution_chapter24:p022:b9",
+        "Evolution_chapter24:p022:b10"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          495.0,
+          1059.0,
+          542.0
+        ],
+        [
+          567.0,
+          562.0,
+          778.0,
+          621.0
+        ],
+        [
+          286.0,
+          640.0,
+          1059.0,
+          711.0
+        ],
+        [
+          397.0,
+          728.0,
+          951.0,
+          830.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9293255c3cbe999e12a464acd682d7a67d49bfbed07f5fadd870f2185833a984"
     },
     {
       "type": "discussion",
-      "content": "Finally, we assume random mating, so that $ X_{fa,i} $ and $ X_{mo,i} $ are independent at the start of each generation. Because we assume that the distribution of allelic effects is the same in both sexes, we drop the subscript referring to parental origin."
+      "content": "Finally, we assume random mating, so that $ X_{fa,i} $ and $ X_{mo,i} $ are independent at the start of each generation. Because we assume that the distribution of allelic effects is the same in both sexes, we drop the subscript referring to parental origin.",
+      "source_page": 876,
+      "source_pages": [
+        876
+      ],
+      "source_block_ids": [
+        "Evolution_chapter24:p022:b12"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          851.0,
+          1059.0,
+          920.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cd2ac596e5fc52296a44150cd1d9b6ad303935bc419b82652ea926ae30be56e3"
     },
     {
       "type": "discussion",
-      "content": "When considering a particular moment of $G$, it will be important to distinguish between contributions to that moment from individual loci (within-locus moments) and contributions from gametic-phase disequilibrium (between-locus covariances). This partitioning, which was used earlier with the additive genetic variance (e.g., Equation 16.2), is extended here to the third and higher genotypic moments. To describe the distribution of effects at locus $i$, let $\\mu_{1,i} = E(X_i) = m_i$ denote the average value of an allele at locus $i$, and define the $k$th moment for this locus by $\\mu_{k,i} = E([X_i - m_i]^k)$ for $k \\geq 2$. After summing over all $n$ loci, we define $$ M_{1}=2\\sum_{i=1}^{n}\\mu_{1,i} $$ $$ M_{2}=2\\sum_{i=1}^{n}\\mu_{2,i} $$ $$ M_{3}=2\\sum_{i=1}^{n}\\mu_{3,i} $$ as the mean, variance, and skewness, respectively, of the genotypic distribution in terms of the mean, variance, and skew at individual loci (the within-locus moments). Finally, we define the within-locus kurtosis as $$ M_{4}=2\\sum_{i=1}^{n}\\left(\\mu_{4,i}-3\\mu_{2,i}^{2}\\right) $$"
+      "content": "When considering a particular moment of $G$, it will be important to distinguish between contributions to that moment from individual loci (within-locus moments) and contributions from gametic-phase disequilibrium (between-locus covariances). This partitioning, which was used earlier with the additive genetic variance (e.g., Equation 16.2), is extended here to the third and higher genotypic moments. To describe the distribution of effects at locus $i$, let $\\mu_{1,i} = E(X_i) = m_i$ denote the average value of an allele at locus $i$, and define the $k$th moment for this locus by $\\mu_{k,i} = E([X_i - m_i]^k)$ for $k \\geq 2$. After summing over all $n$ loci, we define $$ M_{1}=2\\sum_{i=1}^{n}\\mu_{1,i} $$ $$ M_{2}=2\\sum_{i=1}^{n}\\mu_{2,i} $$ $$ M_{3}=2\\sum_{i=1}^{n}\\mu_{3,i} $$ as the mean, variance, and skewness, respectively, of the genotypic distribution in terms of the mean, variance, and skew at individual loci (the within-locus moments). Finally, we define the within-locus kurtosis as $$ M_{4}=2\\sum_{i=1}^{n}\\left(\\mu_{4,i}-3\\mu_{2,i}^{2}\\right) $$",
+      "source_page": 876,
+      "source_pages": [
+        876
+      ],
+      "source_block_ids": [
+        "Evolution_chapter24:p022:b13",
+        "Evolution_chapter24:p022:b14",
+        "Evolution_chapter24:p022:b16",
+        "Evolution_chapter24:p022:b18",
+        "Evolution_chapter24:p022:b20",
+        "Evolution_chapter24:p022:b21"
+      ],
+      "source_bboxes": [
+        [
+          286.0,
+          921.0,
+          1060.0,
+          1105.0
+        ],
+        [
+          605.0,
+          1123.0,
+          742.0,
+          1182.0
+        ],
+        [
+          606.0,
+          1188.0,
+          742.0,
+          1246.0
+        ],
+        [
+          605.0,
+          1251.0,
+          742.0,
+          1310.0
+        ],
+        [
+          287.0,
+          1328.0,
+          1059.0,
+          1398.0
+        ],
+        [
+          559.0,
+          1412.0,
+          786.0,
+          1472.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c5809fee4e8a7faea414d0c6e73a139b28d955b9aca02bfe826467e6bdbf85ce"
     },
     {
       "type": "discussion",
-      "content": "While this may seem odd at first, recall that the fourth and second moments of a normal distribution are related by $ \\mu_4 = 3\\mu_2^2 $ (LW Chapter 2). Hence, if the distribution of allelic effects at each locus is normal, $ M_4 = 0 $ and, likewise, $ M_3 = 0 $ ($ \\mu_{3,i} = 0 $ because a normal random variable does not display skew). On the other hand, nonzero values of $ M_3 $ or $ M_4 $ imply that $ G $ is non-Gaussian and provide a quantitative measure of the departure from normality."
+      "content": "While this may seem odd at first, recall that the fourth and second moments of a normal distribution are related by $ \\mu_4 = 3\\mu_2^2 $ (LW Chapter 2). Hence, if the distribution of allelic effects at each locus is normal, $ M_4 = 0 $ and, likewise, $ M_3 = 0 $ ($ \\mu_{3,i} = 0 $ because a normal random variable does not display skew). On the other hand, nonzero values of $ M_3 $ or $ M_4 $ imply that $ G $ is non-Gaussian and provide a quantitative measure of the departure from normality.",
+      "source_page": 877,
+      "source_pages": [
+        877
+      ],
+      "source_block_ids": [
+        "Evolution_chapter24:p023:b2"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          206.0,
+          904.0,
+          343.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8523db87d8e6f770f046ea260ad96bccbe10bae5c6aceeb43136857c60c84bc5"
     },
     {
       "type": "discussion",
-      "content": "The between-locus contributions from gametic-phase disequilibrium are described by $ C_{ij} $, $ C_{ijk} $, and $ C_{ijkl} $, the covariances between, respectively, groups of two, three, and four loci, as defined previously. Note that with this notation, $ C_{ii} = \\mu_{2,i} $, $ C_{iii} = \\mu_{3,i} $ and $ C_{iiii} = \\mu_{4,i} $, referring to the moments at locus i. If loci are independent (i.e., in gametic-phase equilibrium), then all other combinations involving four (or fewer) loci are zero except $ C_{iijj} $, which equals $ C_{ii} \\cdot C_{jj} = \\mu_{2,i} \\cdot \\mu_{2,j} $."
+      "content": "The between-locus contributions from gametic-phase disequilibrium are described by $ C_{ij} $, $ C_{ijk} $, and $ C_{ijkl} $, the covariances between, respectively, groups of two, three, and four loci, as defined previously. Note that with this notation, $ C_{ii} = \\mu_{2,i} $, $ C_{iii} = \\mu_{3,i} $ and $ C_{iiii} = \\mu_{4,i} $, referring to the moments at locus i. If loci are independent (i.e., in gametic-phase equilibrium), then all other combinations involving four (or fewer) loci are zero except $ C_{iijj} $, which equals $ C_{ii} \\cdot C_{jj} = \\mu_{2,i} \\cdot \\mu_{2,j} $.",
+      "source_page": 877,
+      "source_pages": [
+        877
+      ],
+      "source_block_ids": [
+        "Evolution_chapter24:p023:b3"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          344.0,
+          903.0,
+          484.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "23407b0cfcbf8934407cc68f1315f0733746911d817bbad550fa83a1effd942c"
     },
     {
       "type": "discussion",
-      "content": "Following Turelli and Barton (1990), the genotypic moments can be decomposed into within-locus effects (the $ M_{i} $ from Equation 24.18) due to the moments at individual loci and between-locus effects due to covariances generated by gametic-phase disequilibrium. Remember that we are assuming the simplest case, complete additivity (no dominance or epistasis), so the genotypic distribution G is the distribution of additive genetic (breeding) values (A), namely, the sum of allelic effects over all loci. Expanding Equation 24.17 and taking expectations yields the familiar expressions for the mean and variance $$ \\mu_{G}=2\\sum_{i=1}^{n}\\mu_{1,i}=M_{1} $$ $$ \\sigma_{G}^{2}=\\sigma_{A}^{2}=2\\sum_{i,j=1}^{n}C_{ij}=M_{2}+2\\sum_{i=1}^{n}\\sum_{j\\neq i}^{n}C_{ij} $$ where $ M_2 = 2 \\sum C_{ii} $ corresponds to the genic variance $ \\sigma_a^2 $, and the double sum corresponds to the disequilibrium, $ d $ (Equation 16.1b). Similarly, the skew can be partitioned as $$ \\mu_{3,G}=2\\sum_{i,j,k=1}^{n}C_{ijk}=M_{3}+2\\sum_{i=1}^{n}\\sum_{j,k\\neq i}^{n}C_{ijk} $$"
+      "content": "Following Turelli and Barton (1990), the genotypic moments can be decomposed into within-locus effects (the $ M_{i} $ from Equation 24.18) due to the moments at individual loci and between-locus effects due to covariances generated by gametic-phase disequilibrium. Remember that we are assuming the simplest case, complete additivity (no dominance or epistasis), so the genotypic distribution G is the distribution of additive genetic (breeding) values (A), namely, the sum of allelic effects over all loci. Expanding Equation 24.17 and taking expectations yields the familiar expressions for the mean and variance $$ \\mu_{G}=2\\sum_{i=1}^{n}\\mu_{1,i}=M_{1} $$ $$ \\sigma_{G}^{2}=\\sigma_{A}^{2}=2\\sum_{i,j=1}^{n}C_{ij}=M_{2}+2\\sum_{i=1}^{n}\\sum_{j\\neq i}^{n}C_{ij} $$ where $ M_2 = 2 \\sum C_{ii} $ corresponds to the genic variance $ \\sigma_a^2 $, and the double sum corresponds to the disequilibrium, $ d $ (Equation 16.1b). Similarly, the skew can be partitioned as $$ \\mu_{3,G}=2\\sum_{i,j,k=1}^{n}C_{ijk}=M_{3}+2\\sum_{i=1}^{n}\\sum_{j,k\\neq i}^{n}C_{ijk} $$",
+      "source_page": 877,
+      "source_pages": [
+        877
+      ],
+      "source_block_ids": [
+        "Evolution_chapter24:p023:b4",
+        "Evolution_chapter24:p023:b5",
+        "Evolution_chapter24:p023:b7",
+        "Evolution_chapter24:p023:b9",
+        "Evolution_chapter24:p023:b10"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          483.0,
+          904.0,
+          646.0
+        ],
+        [
+          422.0,
+          663.0,
+          611.0,
+          722.0
+        ],
+        [
+          333.0,
+          740.0,
+          701.0,
+          803.0
+        ],
+        [
+          131.0,
+          814.0,
+          904.0,
+          862.0
+        ],
+        [
+          332.0,
+          879.0,
+          702.0,
+          943.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "fc5a4a0f3a1e50655529138bf377c6eaf05074cba526b3cd96b91061c886c945"
     },
     {
       "type": "discussion",
-      "content": "All terms in the second sums of Equations 24.19b and 24.19c are zero when all groups of two and three loci (respectively) are in gametic-phase equilibrium ($ C_{ij} = C_{ijk} = 0 $). Partitioning the kurtosis requires a little more care. After some simplification (Turelli and Barton 1990), we obtain $$ \\mu_{4,G}=3\\sigma_{A}^{4}+M_{4}+2\\sum_{i=1}^{n}\\sum_{j,k,\\ell\\neq i}^{n}\\left(C_{i j\\ell k}-C_{i j}C_{k\\ell}-C_{i k}C_{j\\ell}-C_{i\\ell}C_{j k}\\right) $$"
+      "content": "All terms in the second sums of Equations 24.19b and 24.19c are zero when all groups of two and three loci (respectively) are in gametic-phase equilibrium ($ C_{ij} = C_{ijk} = 0 $). Partitioning the kurtosis requires a little more care. After some simplification (Turelli and Barton 1990), we obtain $$ \\mu_{4,G}=3\\sigma_{A}^{4}+M_{4}+2\\sum_{i=1}^{n}\\sum_{j,k,\\ell\\neq i}^{n}\\left(C_{i j\\ell k}-C_{i j}C_{k\\ell}-C_{i k}C_{j\\ell}-C_{i\\ell}C_{j k}\\right) $$",
+      "source_page": 877,
+      "source_pages": [
+        877
+      ],
+      "source_block_ids": [
+        "Evolution_chapter24:p023:b12",
+        "Evolution_chapter24:p023:b13"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          961.0,
+          904.0,
+          1053.0
+        ],
+        [
+          190.0,
+          1068.0,
+          774.0,
+          1127.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b6425228dcdb155c6ef61ce7e13b9755dba22c5adf778ad9413e6eec779ce5fd"
     },
     {
       "type": "discussion",
-      "content": "Again, these fourth- and second-order covariance terms $ (C_{ij\\ell k} $ and $ C_{ij} $, respectively) are zero when all groups of four loci are in gametic-phase equilibrium. Because $ 3\\sigma_A^4 $ is the kurtosis value that is expected when genotypic values are Gaussian-distributed, the last two terms partition any kurtosis in G into the contribution from individual locus kurtosis $ (M_4) $ and the contribution generated by gametic-phase disequilibrium between groups of four loci. If the distribution of allelic effects is multivariate normal, then $ M_4 = 0 $, and each term within the covariance sum is zero as $ C_{ij\\ell k} = C_{ij}C_{kl} + C_{ik}C_{jl} + C_{il}C_{jk} $."
+      "content": "Again, these fourth- and second-order covariance terms $ (C_{ij\\ell k} $ and $ C_{ij} $, respectively) are zero when all groups of four loci are in gametic-phase equilibrium. Because $ 3\\sigma_A^4 $ is the kurtosis value that is expected when genotypic values are Gaussian-distributed, the last two terms partition any kurtosis in G into the contribution from individual locus kurtosis $ (M_4) $ and the contribution generated by gametic-phase disequilibrium between groups of four loci. If the distribution of allelic effects is multivariate normal, then $ M_4 = 0 $, and each term within the covariance sum is zero as $ C_{ij\\ell k} = C_{ij}C_{kl} + C_{ik}C_{jl} + C_{il}C_{jk} $.",
+      "source_page": 877,
+      "source_pages": [
+        877
+      ],
+      "source_block_ids": [
+        "Evolution_chapter24:p023:b14"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1146.0,
+          904.0,
+          1309.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "3b0f79807b38d7de02e104ea44cbbc3ea9de5829ad1dce1a36a46b9d16cde55a"
     },
     {
       "type": "discussion",
-      "content": "Analogous to allele frequencies changing the genic variance, $\\sigma_a^2$, and disequilibrium changing the covariances (and hence $d$), changes in $M_3$ and $M_4$ reflect allele-frequency change, while changes in the third- and fourth-order covariances reflect changes from disequilibrium. These higher-order moments can depart from their expectations under normality by the presence of skewness or kurtosis of allelic effects at the individual loci (generating nonzero $M_3$ and/or $M_4$), which can result from allele-frequency changes. Alternatively, even if the within-locus moments are normal ($M_3 = M_4 = 0$), gametic-phase disequilibrium (nonzero"
+      "content": "Analogous to allele frequencies changing the genic variance, $\\sigma_a^2$, and disequilibrium changing the covariances (and hence $d$), changes in $M_3$ and $M_4$ reflect allele-frequency change, while changes in the third- and fourth-order covariances reflect changes from disequilibrium. These higher-order moments can depart from their expectations under normality by the presence of skewness or kurtosis of allelic effects at the individual loci (generating nonzero $M_3$ and/or $M_4$), which can result from allele-frequency changes. Alternatively, even if the within-locus moments are normal ($M_3 = M_4 = 0$), gametic-phase disequilibrium (nonzero",
+      "source_page": 877,
+      "source_pages": [
+        877
+      ],
+      "source_block_ids": [
+        "Evolution_chapter24:p023:b16"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          1310.0,
+          904.0,
+          1471.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1ca2b23c32921bcf38d74911b018d49df57ed9302151298e986955deb07b8527"
     },
     {
       "type": "discussion",
-      "content": "$ C_{ijk} $ and/or $ C_{ijk\\ell} $ can introduce skewness and/or kurtosis. When the number of loci is small, the impact of skew or kurtosis at the individual loci can be significant (Equation 24.6), yielding nonzero $ M_3 $ and/or $ M_4 $, with the resulting genotypic distribution deviating from normality."
+      "content": "$ C_{ijk} $ and/or $ C_{ijk\\ell} $ can introduce skewness and/or kurtosis. When the number of loci is small, the impact of skew or kurtosis at the individual loci can be significant (Equation 24.6), yielding nonzero $ M_3 $ and/or $ M_4 $, with the resulting genotypic distribution deviating from normality.",
+      "source_page": 878,
+      "source_pages": [
+        878
+      ],
+      "source_block_ids": [
+        "Evolution_chapter24:p024:b2"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          206.0,
+          1059.0,
+          296.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "0db0b63e18dbeddd12b0dce80ac89bfdaa9de0025db4dc9e02a271c4498e08d5"
     },
     {
       "type": "discussion",
-      "content": "To see these points, first consider the changes due to within-locus moments. If $ n $ is the number of loci, then as we saw earlier the effects $ (a) $ of alleles at individual loci must scale as $ 1/\\sqrt{n} $ in order for the genetic variance to remain bounded, hence $ C_{ii} $ terms scale as $ a^2 $ or $ n^{-1} $. Summing over all $ n $ loci, $ M_2 $ will be of order $ n \\cdot n^{-1} = 1 $ and, as required, remains bounded as the number of loci increases. What happens to the skew and kurtosis as $ n $ increases? Assuming $ a $ is of order $ n^{-1/2} $, then $ \\mu_{3,i} $ will be of order $ a^3 $ or $ n^{-3/2} $, implying that $ M_3 $ is of order $ n \\cdot n^{-3/2} = n^{-1/2} $ (also see Equation 24.6). Hence, as the number of loci becomes very large, the contribution from skew at individual loci becomes negligible. Likewise, $ \\mu_{4,i} $ is of order $ n^{-4/2} $, implying $ M_4 $ is of order $ n \\cdot n^{-2} = n^{-1} $ (Equation 24.6). Changes in kurtosis generated by within-locus $ (i.e.,\\text{allele-frequency}) $ changes become negligible as the number of loci becomes sufficiently large, but this occurs even more rapidly than skew with increasing $ n $."
+      "content": "To see these points, first consider the changes due to within-locus moments. If $ n $ is the number of loci, then as we saw earlier the effects $ (a) $ of alleles at individual loci must scale as $ 1/\\sqrt{n} $ in order for the genetic variance to remain bounded, hence $ C_{ii} $ terms scale as $ a^2 $ or $ n^{-1} $. Summing over all $ n $ loci, $ M_2 $ will be of order $ n \\cdot n^{-1} = 1 $ and, as required, remains bounded as the number of loci increases. What happens to the skew and kurtosis as $ n $ increases? Assuming $ a $ is of order $ n^{-1/2} $, then $ \\mu_{3,i} $ will be of order $ a^3 $ or $ n^{-3/2} $, implying that $ M_3 $ is of order $ n \\cdot n^{-3/2} = n^{-1/2} $ (also see Equation 24.6). Hence, as the number of loci becomes very large, the contribution from skew at individual loci becomes negligible. Likewise, $ \\mu_{4,i} $ is of order $ n^{-4/2} $, implying $ M_4 $ is of order $ n \\cdot n^{-2} = n^{-1} $ (Equation 24.6). Changes in kurtosis generated by within-locus $ (i.e.,\\text{allele-frequency}) $ changes become negligible as the number of loci becomes sufficiently large, but this occurs even more rapidly than skew with increasing $ n $.",
+      "source_page": 878,
+      "source_pages": [
+        878
+      ],
+      "source_block_ids": [
+        "Evolution_chapter24:p024:b3"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          298.0,
+          1057.0,
+          573.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "bd7bca80c9a2828b91e08683cf15346ddf674ab0ac93aa7024a911f56fa60f3d"
     },
     {
       "type": "discussion",
-      "content": "The behavior of the between-locus contributions (correlations from disequilibrium) as n increases is quite different from that due to within-locus contributions (Turelli and Barton 1990). Under weak selection, Turelli and Barton showed that $ C_{ijk} $ is proportional to $ C_{ii}C_{jj}C_{kk} $, and of order $ n^{-3} $. However, there are $ n(n-1)(n-2) \\simeq n^{3} $ terms involving $ C_{ijk} $ in the covariance contribution to skew, so the total contribution is of order one and does not necessarily converge to zero as the number of loci approaches infinity. The same argument holds for the kurtosis and higher-order moments (Turelli and Barton 1990). If the number of loci is very large, the distribution of genotypic values can depart from a Gaussian due to selection generating third- and higher-order covariances between loci, which in turn creates skew and kurtosis in the genotypic distribution. Even if the distribution of genotypes is initially Gaussian, selection generates these higher-order disequilibria, driving it away from normality (Bulmer 1980; Zeng 1987; Turelli and Barton 1990, 1994). Conversely, when selection stops, this disequilibrium quickly decays to zero, restoring the Gaussian."
+      "content": "The behavior of the between-locus contributions (correlations from disequilibrium) as n increases is quite different from that due to within-locus contributions (Turelli and Barton 1990). Under weak selection, Turelli and Barton showed that $ C_{ijk} $ is proportional to $ C_{ii}C_{jj}C_{kk} $, and of order $ n^{-3} $. However, there are $ n(n-1)(n-2) \\simeq n^{3} $ terms involving $ C_{ijk} $ in the covariance contribution to skew, so the total contribution is of order one and does not necessarily converge to zero as the number of loci approaches infinity. The same argument holds for the kurtosis and higher-order moments (Turelli and Barton 1990). If the number of loci is very large, the distribution of genotypic values can depart from a Gaussian due to selection generating third- and higher-order covariances between loci, which in turn creates skew and kurtosis in the genotypic distribution. Even if the distribution of genotypes is initially Gaussian, selection generates these higher-order disequilibria, driving it away from normality (Bulmer 1980; Zeng 1987; Turelli and Barton 1990, 1994). Conversely, when selection stops, this disequilibrium quickly decays to zero, restoring the Gaussian.",
+      "source_page": 878,
+      "source_pages": [
+        878
+      ],
+      "source_block_ids": [
+        "Evolution_chapter24:p024:b4"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          573.0,
+          1060.0,
+          874.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "95fe9595d9cc0ce62343404edee22f45df8378172c2b4c9f6678ef3769793ec1"
     }
   ]
 }

@@ -21,43 +21,165 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Chapter 4 considered the estimation of $ N_{e} $ from allele-frequency change, a setting where one typically averages over a number of loci to reduce the evolutionary sampling variance. Here our task is the complementary problem. Given some estimate of $ N_{e} $, is the observed change in allele frequency at a candidate locus excessive? If so, this presumably reflects directional selection acting at, or close to, this region. In theory, one could also test for too little divergence (reflecting balancing selection), although this is rarely done, given the high sampling variance (and hence low power), unless sample sizes are extremely large."
-    },
-    {
-      "type": "discussion",
-      "content": "In the early literature, a number of workers tested for excessive divergence by simply querying whether allele frequencies in two samples were significantly different. As noted by Gibson et al. (1979) and Waples (1989b), this is inappropriate, as it does not account for the evolutionary drift variance in allele frequencies $$ \\sigma^{2}(p_{t})=p_{0}(1-p_{0})\\left[1-\\left(1-\\frac{1}{2N_{e}}\\right)^{t}\\right]\\simeq p_{0}(1-p_{0})\\frac{t}{2N_{e}}\\quad\\mathrm{f o r}t\\ll N_{e} $$ where $ p_{0} $ is the initial allele frequency (Equation 2.14a). Consider a population sampled at two time points (0 and t), with sample sizes of $ n_{0} $ and $ n_{t} $, respectively. The estimated divergence is $$ \\widehat{\\delta}_{t}=\\widehat{p}_{t}-\\widehat{p}_{0} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "This divergence has an expected value of zero (as $ E[\\widehat{p}_{t}] = p_{0} $), with a variance of $$ \\sigma^{2}\\left(\\widehat{\\delta}_{t}\\right)=\\sigma^{2}\\left(\\widehat{p}_{t}-\\widehat{p}_{0}\\right)=\\sigma^{2}\\left(\\widehat{p}_{t}\\right)+\\sigma^{2}\\left(\\widehat{p}_{0}\\right)-2\\sigma\\left(\\widehat{p}_{t},\\widehat{p}_{0}\\right) $$ where $ \\widehat{p}_{i}=p_{i}+e_{i} $, the true value plus an error due to finite sampling. Because these are draws from a binomial distribution, the sampling variance of the initial frequency is $$ \\sigma^{2}\\left(\\widehat{p}_{0}\\right)=\\frac{p_{0}\\left(1-p_{0}\\right)}{2n_{0}} $$ while the final allele frequency is influenced by both the drift and sampling variances (Waples 1989a, 1989b) $$ \\begin{align*}\\sigma^{2}\\left(\\widehat{p}_{t}\\right)&=p_{0}(1-p_{0})\\left[1-\\left(1-\\frac{1}{2n_{t}}\\right)\\left(1-\\frac{1}{2N_{e}}\\right)^{t}\\right]\\\\&\\simeq p_{0}(1-p_{0})\\left[\\frac{1}{2n_{t}}+\\frac{t}{2N_{e}}\\left(1-\\frac{1}{2n_{t}}\\right)\\right]\\end{align*} $$"
-    },
-    {
-      "type": "discussion",
-      "content": "If sampling is done (without replacement) before reproduction, then $ \\sigma(\\widehat{p}_{t},\\widehat{p}_{0})=0 $, and substitution of Equations 9.2a and 9.2b into Equation 9.1b yields $$ \\sigma^{2}\\left(\\widehat{\\delta_{t}}\\right)\\simeq p_{0}(1-p_{0})\\left[\\frac{1}{2n_{0}}+\\frac{1}{2n_{t}}+\\frac{t}{2N_{e}}\\left(1-\\frac{1}{2n_{t}}\\right)\\right] $$"
-    },
-    {
-      "type": "discussion",
-      "content": "If sampling is done either after reproduction or with replacement, this generates a covariance between the sample estimators $ \\widehat{p}_t $ and $ \\widehat{p}_0 $; see Nei and Tajima (1981b) and especially Waples (1989a, 1989b) for details. Assuming this is not the case, so that $ \\sigma(\\widehat{p}_0, \\widehat{p}_t) = 0 $, Equation 9.2c yields the correct variance for the null hypothesis of random genetic drift, giving the test statistic as $$ \\frac{\\widehat{\\delta}_{t}^{2}}{\\sigma^{2}\\left(\\widehat{\\delta}_{t}\\right)} $$ which is approximately $ \\chi_{1}^{2} $-distributed. This is the Waples adjusted test (Waples 1989b)."
-    },
-    {
-      "type": "discussion",
-      "content": "The application of this test requires an accurate estimate of $ p_0 $ to compute the sample variance (Equation 9.2c). While the sample estimate, $ \\widehat{p}_0 $, can be used, this can be improved upon by noting that the expected allele frequency change is zero, meaning that $ \\widehat{p}_t $ also contributes information about $ p_0 $. A simple average of the two frequencies is not appropriate, as $ \\widehat{p}_0 $ has a smaller drift variance and the two estimates may differ in informational value due to differences in sample size, $ n_i $. Given these concerns, Schaffer et al. (1977) and Waples (1989b) proposed a generalized (i.e., weighted) least-squares (GLS) estimator (LW Chapter 8) for $ p_0 $. Let $ \\mathbf{p} = (\\widehat{p}_0, \\widehat{p}_t)^T $ denote the two sample estimates and denote its sampling variance-covariance matrix by $$ \\mathbf{V}=\\left(\\begin{array}{cc}\\sigma^{2}\\left(\\widehat{p}_{0}\\right)&\\sigma\\left(\\widehat{p}_{0},\\widehat{p}_{t}\\right)\\\\ \\sigma\\left(\\widehat{p}_{0},\\widehat{p}_{t}\\right)&\\sigma^{2}\\left(\\widehat{p}_{t}\\right)\\end{array}\\right) $$"
-    },
-    {
-      "type": "discussion",
-      "content": "Finally, let $ \\mathbf{1} = (1, 1)^T $ be a vector of ones. The underlying statistical model is $ p_i = p_0 + e_i $, which can be written in general linear model form as $ \\mathbf{p} = p_0 \\mathbf{X} + \\mathbf{e} $, where $ \\mathbf{V} $ is the covariance matrix for the vector, $ \\mathbf{e} $, of residuals and $ \\mathbf{X} = 1 $. Recalling LW Equation 8.34 for GLS regression, the resulting estimate of $ p_0 $ is given by $ \\left(\\mathbf{X}^T \\mathbf{V}^{-1} \\mathbf{X} \\right)^{-1} \\mathbf{X}^T \\mathbf{V}^{-1} \\mathbf{p} $, which reduces to $$ GLS\\left(p_{0}\\right)=\\frac{\\mathbf{1}^{T}\\mathbf{V}^{-1}\\mathbf{p}}{\\mathbf{1}^{T}\\mathbf{V}^{-1}\\mathbf{1}} $$ because both quadratic products are scalars."
+      "content": "Chapter 4 considered the estimation of $ N_{e} $ from allele-frequency change, a setting where one typically averages over a number of loci to reduce the evolutionary sampling variance. Here our task is the complementary problem. Given some estimate of $ N_{e} $, is the observed change in allele frequency at a candidate locus excessive? If so, this presumably reflects directional selection acting at, or close to, this region. In theory, one could also test for too little divergence (reflecting balancing selection), although this is rarely done, given the high sampling variance (and hence low power), unless sample sizes are extremely large.",
+      "source_page": 263,
+      "source_pages": [
+        263
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p006:b3",
+        "Evolution_chapter9:p006:b4"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          249.0,
+          980.0,
+          275.0
+        ],
+        [
+          286.0,
+          280.0,
+          1059.0,
+          442.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "42ab69f8500c26b0f064d611e9dc7081b926d2bd69b97a33bea4d6d355612135"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:9.1]]"
+      "content": "[[SEE_EXAMPLE:9.1]]",
+      "source_page": 264,
+      "source_pages": [
+        264,
+        265
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p007:b10",
+        "Evolution_chapter9:p007:b11",
+        "Evolution_chapter9:p007:b12",
+        "Evolution_chapter9:p007:b13",
+        "Evolution_chapter9:p007:b14",
+        "Evolution_chapter9:p007:b15",
+        "Evolution_chapter9:p007:b16",
+        "Evolution_chapter9:p008:b2",
+        "Evolution_chapter9:p008:b3",
+        "Evolution_chapter9:p008:b4",
+        "Evolution_chapter9:p008:b5"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          753.0,
+          881.0,
+          1048.0
+        ],
+        [
+          168.0,
+          1047.0,
+          879.0,
+          1091.0
+        ],
+        [
+          185.0,
+          1103.0,
+          859.0,
+          1191.0
+        ],
+        [
+          167.0,
+          1200.0,
+          879.0,
+          1267.0
+        ],
+        [
+          346.0,
+          1278.0,
+          701.0,
+          1327.0
+        ],
+        [
+          168.0,
+          1335.0,
+          812.0,
+          1358.0
+        ],
+        [
+          214.0,
+          1369.0,
+          835.0,
+          1471.0
+        ],
+        [
+          322.0,
+          208.0,
+          800.0,
+          231.0
+        ],
+        [
+          573.0,
+          245.0,
+          789.0,
+          295.0
+        ],
+        [
+          322.0,
+          309.0,
+          1035.0,
+          434.0
+        ],
+        [
+          321.0,
+          436.0,
+          1037.0,
+          755.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2c23252f5fd1c9d1e2ccf86cbbb1f97cd385a2f0931a5c015cff1d1d33c9faab"
     },
     {
       "type": "discussion",
-      "content": "While one might think that tests based solely on allele-frequency change are among the most convincing, this is not the case. As Example 9.1 shows, rejection of the neutral model can easily result from an overestimation of the true effective population size. Fisher and Ford took their results as evidence against Sewall Wright's notion of the importance of genetic drift. In his reply, Wright (1948a) noted that values of $ N_e $ simply based on census numbers can easily be contested by the widespread observation that the effective population size is generally (and often dramatically) lower than the observed number of individuals in the population (Chapter 3). In addition, tests of allele-frequency change suffer from low power. If selection is modest relative to $ 1/N_e $ or 1/n (with n being the sample size), the sample variance can obscure any selection signal. Waples (1989b) examined some of these design issues."
+      "content": "While one might think that tests based solely on allele-frequency change are among the most convincing, this is not the case. As Example 9.1 shows, rejection of the neutral model can easily result from an overestimation of the true effective population size. Fisher and Ford took their results as evidence against Sewall Wright's notion of the importance of genetic drift. In his reply, Wright (1948a) noted that values of $ N_e $ simply based on census numbers can easily be contested by the widespread observation that the effective population size is generally (and often dramatically) lower than the observed number of individuals in the population (Chapter 3). In addition, tests of allele-frequency change suffer from low power. If selection is modest relative to $ 1/N_e $ or 1/n (with n being the sample size), the sample variance can obscure any selection signal. Waples (1989b) examined some of these design issues.",
+      "source_page": 265,
+      "source_pages": [
+        265
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p008:b6"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          822.0,
+          1060.0,
+          1073.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "13f453faa5d349d1c00b3e32e2859b05c11c4ad1642bb2b515df8c5574fb136a"
     },
     {
       "type": "discussion",
-      "content": "Although we have presented this test for a single locus with just two alleles, its extension to multiple alleles is straightforward (e.g., Waples 1989b; Goldringer and Bataillon 2004). A more subtle issue is the fit of a $ \\chi^{2} $ distribution to the test statistic given by Equation 9.2d, which can be poor when alleles are rare, the number of alleles is large, or the number of generations is large (Goldringer and Bataillon 2004). While more sophisticated modifications (e.g., Sandoval-Castellanos 2010) can avoid some of these issues, the use of simulations that incorporate as much of the specific biology of the species as is known (e.g., Mueller et al. 1985) to model the change in the neutral alleles under drift is strongly preferred over parametric tests."
+      "content": "Although we have presented this test for a single locus with just two alleles, its extension to multiple alleles is straightforward (e.g., Waples 1989b; Goldringer and Bataillon 2004). A more subtle issue is the fit of a $ \\chi^{2} $ distribution to the test statistic given by Equation 9.2d, which can be poor when alleles are rare, the number of alleles is large, or the number of generations is large (Goldringer and Bataillon 2004). While more sophisticated modifications (e.g., Sandoval-Castellanos 2010) can avoid some of these issues, the use of simulations that incorporate as much of the specific biology of the species as is known (e.g., Mueller et al. 1985) to model the change in the neutral alleles under drift is strongly preferred over parametric tests.",
+      "source_page": 265,
+      "source_pages": [
+        265
+      ],
+      "source_block_ids": [
+        "Evolution_chapter9:p008:b7"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1074.0,
+          1060.0,
+          1283.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "c06a7441af8ff0182c87ec387f8ef7ef4f56c8d6f709770e4cddc7d3e1a597ba"
     }
   ]
 }

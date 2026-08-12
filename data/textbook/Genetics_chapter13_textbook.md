@@ -51,9 +51,7 @@ where $ \operatorname{Var}(z_i) $ is the phenotypic variance within the ith sibs
 
 **[示例 Example]**
 
-> **Example 1** · ref: `Genetics_chapter13:1` · source: `Genetics_chapter13_004.json` · blocks 4–4
->
-> Example 1. Bucher et al. (1982) examined a large sample of families that were classified into groups based on cholesterol levels. One particular group (the High group) showed significant heterogeneity of within-sibship variance for cholesterol level (P < 0.001 using Bartlett's test of homogeneity of variances), while the other groups did not. Likewise, the regression of the within-sibship variance on the sibship means had a significant quadratic term for the High group, while the quadratic term was not significant in the other groups. These data suggest that a major gene was segregating in at least some of the families forming the High group (i.e., at least one parent was a heterozygote) but was not in the families forming the other groups. Thus, there are additional sources of variance beyond the major gene (such as environmental factors and/or additional polygenes) that contribute to the difference between groups.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter13:1]**
 
 
 Our second example of Fain’s test is based on Mitchell-Olds and Bergelson’s (1990) work on the annual plant Impatiens capensis. These authors found that the regression of within-sibship variance on sibship mean usually had significant linear (but not quadratic) terms, suggesting that scale effects are common. However, the regression for germination date also showed a significant quadratic term (Figure 13.2), suggesting the presence of a major gene influencing this character.
@@ -213,30 +211,7 @@ $$
 
 **[示例 Example]**
 
-> **Example 2** · ref: `Genetics_chapter13:2` · source: `Genetics_chapter13_010.json` · blocks 9–15
->
-> Example 2. Consider the likelihood-ratio test statistic for whether a diallelic major gene (in Hardy-Weinberg frequencies, with the phenotypes for each major-locus genotype normally distributed with constant variance) provides a better fit of the data than a single normal distribution. Assume that the data consist of n (unrelated) individuals, randomly chosen from the population. From Equations 13.7 and 13.8, the likelihood-ratio test statistic is given by
-> 
-> $$
-> \begin{aligned}\Lambda(\mathbf{z})&=-2\left\{\ln\left[\widehat{\ell}_{r}(\mathbf{z})\right]-\ln\left[\widehat{\ell}(\mathbf{z})\right]\right\}\\&=2\ln\left[\widehat{\ell}(\mathbf{z})\right]+n\cdot[\ln\operatorname{Var}(z)+\ln2\pi+1]\end{aligned}
-> $$
-> 
-> 
-> where
-> 
-> $$
-> \widehat{\ell}(\mathbf{z})=\max\left[\prod_{j=1}^{n}\ell(z_{j})\right]
-> $$
-> 
-> 
-> the maximum being taken over all admissible values of $p$ ($0 \leq p \leq 1$), $\mu_{QQ}$, $\mu_{Qq}$, $\mu_{qq}(-\infty < \mu < \infty)$, and $\sigma^{2}(\sigma^{2} \geq 0)$ and
-> 
-> $$
-> \ell(z_{j})=p^{2}\cdot\varphi(z_{j},\mu_{QQ},\sigma^{2})+2p(1-p)\cdot\varphi(z_{j},\mu_{Qq},\sigma^{2})+(1-p)^{2}\cdot\varphi(z_{j},\mu_{qq},\sigma^{2})
-> $$
-> 
-> 
-> Since the full model has five unknown parameters while the reduced model has two $(\mu, \sigma^{2})$, the test statistic $\Lambda$ is approximately distributed as $\chi_{3}^{2}$. Hence $\Lambda$ values exceeding 7.82 and 11.4 indicate that a mixture of three normals provides a better fit at the 5% and 1% levels of significance, respectively, than a single normal.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter13:2]**
 
 
 Likelihood-ratio tests require that alternate hypotheses be nested, one model being a subset of the other (i.e., by fixing some parameters of one model we recover the second). If they are not, the large-sample distribution does not necessarily approach a $ \chi^{2} $. Likelihood functions involving nonnested hypotheses can be compared by using Akaike's (1974) information content (AIC),
@@ -267,15 +242,7 @@ The following sections illustrate some general approaches for constructing likel
 
 **[示例 Example]**
 
-> **Example 3** · ref: `Genetics_chapter13:3` · source: `Genetics_chapter13_011.json` · blocks 5–8
->
-> Example 3. Morton and MacLean (1974) consider a model with both a segregating diallelic major gene (alleles Q and q) and a completely additive polygenic background. Conditioned on the genotype at the major locus, the distributions of phenotypic values are assumed to be normally distributed with means $ \mu_{QQ} $, $ \mu_{Qq} $, or $ \mu_{qq} $, and common variance $ \sigma^2 = \sigma_E^2 + \sigma_A^2 $ (the environmental variance plus the additive genetic variance contributed by the background polygenes). Assuming the major-locus genotypes are in Hardy-Weinberg proportions, this model is described by six parameters: $ p = $ frequency of Q, the means of each major-locus genotype ( $ \mu_{QQ} $, $ \mu_{Qq} $, $ \mu_{qq} $), the environmental variance $ \sigma_E^2 $, and the genetic variance from the polygenic contribution $ \sigma_A^2 $. The resulting likelihood function (see Equations 13.11b and 13.22 below) is complex as it incorporates transmission of both the major alleles and polygenic background from parent to offspring, conditioning over all possible parental genotypes. The amount of support for various genetic hypotheses can be tested using likelihood ratios of appropriate subsets of the full model, as given in the following table:
-> 
-> <table><tr><td>Model</td><td>Free Parameters</td><td>Restricted Parameters</td></tr><tr><td>1. No genetic effects</td><td>$ \mu, \sigma_{E}^{2} $</td><td>$ \mu_{QQ} = \mu_{Qq} = \mu_{qq} = \mu $ $ p = 0, \sigma_{A}^{2} = 0 $</td></tr><tr><td>2. Major gene, no background polygenes</td><td>$ \mu_{QQ}, \mu_{Qq}, \mu_{qq}, p, \sigma_{E}^{2} $</td><td>$ \sigma_{A}^{2} = 0 $</td></tr></table>
-> 
-> <table><tr><td>Model (Continued)</td><td>Free Parameters</td><td>Restricted Parameters</td></tr><tr><td>3. Background polygenes, no major gene</td><td>$ \mu, \sigma_{E}^{2}, \sigma_{A}^{2} $</td><td>$ \mu_{QQ} = \mu_{Qq} = \mu_{qq} = \mu_{p} = 0 $</td></tr><tr><td>4. Full model: Major gene, background polygenes</td><td>$ \mu_{QQ}, \mu_{Qq}, \mu_{qq}, p, \sigma_{E}^{2}, \sigma_{A}^{2} $</td><td>None</td></tr></table>
-> 
-> For example, a test of support for a major gene is given by the likelihood ratio using model 1 (a single normal distribution) as the restricted model and model 2 as the full model. The resulting test statistic has 5 - 2 = 3 degrees of freedom, with twice the log of the maximum of the restricted likelihood function given by Equation 13.8. If the major-gene model provides a significant improvement, model 4 (major gene plus polygenic background) can next be tested against the major-gene-only model (2), with the test statistic having 6 - 5 = 1 degree of freedom. More complicated models are analyzed in a similar fashion.
+> **[UNRESOLVED EXAMPLE: Genetics_chapter13:3]**
 
 
 ---
@@ -394,18 +361,7 @@ The fact that not all families are expected to be segregating the major gene has
 
 **[示例 Example]**
 
-> **Example 4** · ref: `Genetics_chapter13:4` · source: `Genetics_chapter13_012.json` · blocks 30–33
->
-> Example 4. As a demonstration of the utility of the Elston et al. (1975) criteria for accepting a major-gene hypothesis, we consider McGuffin and Huckle (1990) test for a genetic basis for attending medical school. The trait here is scored as a binary variable,
-> 
-> $$
-> z=\begin{cases}1&attending medical school\\0&not attending medical school\end{cases}
-> $$
-> 
-> 
-> As is discussed below (Equation 13.28), complex segregation analysis can be easily modified to accommodate such binary characters. Of 249 students at the Wales College of Medicine, 13.4% had mothers/fathers who also attended medical school, a 61-fold increase in “risk” relative to the general population (0.2%). Taking $ \mu $ as the population mean, the expected means at an underlying major locus can be modeled by using measures of additivity (a) and dominance (k), and the allele frequency p. General single-locus (a, k, p all estimated) and recessive (k = 0, a and p estimated) models were fitted and compared with a null model (a = k = p = 0). These single-locus models, which assumed Mendelian transmission probabilities ( $ \tau_1 = 1 $, $ \tau_2 = 1/2 $, $ \tau_3 = 0 $), were then compared against two alternate transmission models — a generalized model where the three parameters ( $ \tau_1 $, $ \tau_2 $, $ \tau_3 $) were estimated from the data, and an equal transmission model ( $ \tau_1 = \tau_2 = \tau_3 = \tau $). The latter simply fits a mixture model to the data without allowing for Mendelian transmission. The resulting log likelihoods for these models were as follows:
-> 
-> <table><tr><td rowspan="2">Model</td><td colspan="2">Parameters (in addition to $ \mu $)</td><td rowspan="2">Constant + -2 $ \ln $ (likelihood)</td></tr><tr><td>Free</td><td>Fixed</td></tr><tr><td>Null</td><td>None</td><td>$ a = k = p = 0 $</td><td>283.60</td></tr><tr><td>Equal transmission</td><td>$ a, p,\tau_{1} = \tau_{2} = \tau_{3} $</td><td>$ k = 0 $</td><td>283.60</td></tr><tr><td>General single-locus</td><td>$ a, k, p $</td><td>$ \tau_{1} = 1, \tau_{2} = 1/2,\tau_{3} = 0 $</td><td>120.14</td></tr><tr><td>Recessive</td><td>$ a, p $</td><td>$ k = 0, \tau_{1} = 1,\tau_{2} = 1/2, \tau_{3} = 0 $</td><td>120.14</td></tr><tr><td>General transmission</td><td>$ a, p, \tau_{1}, \tau_{2}, \tau_{3} $</td><td>$ k = 0 $</td><td>111.22</td></tr></table>
+> **[UNRESOLVED EXAMPLE: Genetics_chapter13:4]**
 
 
 The general single-locus model gives a significantly better fit than the null (single underlying normal) model, with a likelihood-ratio test statistic of 283.60 – 120.14 = 163.46 (three degrees of freedom). However, since the recessive model gives the same fit with fewer parameters, it is chosen as the standard for further analysis. The recessive model gives a significantly better fit than the equal transmission model (a mixture distribution not incorporating Mendelian segregation). Thus, criteria (1) and (3) for a major gene hold, since a mixture gives a better fit than a single normal, and the hypothesis of equal transmission ( $ \tau_1 = \tau_2 = \tau_3 $) is rejected. However, the general transmission model ( $ \tau_i $ estimated from the data) gives a significantly better fit than the Mendelian segregation hypothesis ( $ \tau_1 = 1 $, $ \tau_2 = 1/2 $, $ \tau_3 = 0 $), with a likelihood-ratio test statistic of 120.14 – 111.22 = 8.92 with three degrees of freedom (P < 0.03). Thus, these data fail the major-gene criterion (2), as the hypothesis of Mendelian segregation is rejected. Shared environmental effects, rather than major gene effects, likely account for this association between relatives.

@@ -103,29 +103,13 @@
   ],
   "assets": [
     {
-      "kind": "example",
-      "id": "14.1",
-      "anchor": "example-14.1",
-      "label": "Example 14.1",
-      "section_id": "Evolution_chapter14_003",
-      "excerpt": "Example 14.1 · ref: 14.1 · source: Evolution chapter14 003.json · blocks 4–6 Example 14.1. Consider selection on a normally distributed trait for which the upper 5% of the population is saved (p = 0.05). Here $ x {[1-0.05]} = x {[0.95]} $ is obtained by the R command gnorm(0.95), which returns 1.645, as Pr[U 1.645] = 0.05. The R command dnorm(x) returns the value of $ \\varphi(x) $, with dnorm(1.645) returning a value of 0.103. Hence, $$ \\bar{\\imath}=\\frac{\\varphi(1.645)}{0.0…"
-    },
-    {
       "kind": "figure",
       "id": "14.1",
       "anchor": "figure-14.1",
       "label": "Figure 14.1",
-      "section_id": "Evolution_chapter14_003",
+      "section_id": "Evolution_chapter14_001",
       "src": "figures/Evolution_14.1.png",
       "caption": "Figure 14.1 Under truncation selection, the uppermost (or lowermost) fraction, $p$, of a population is selected to reproduce. Alternatively, one could set a threshold level, $T$, in advance. To predict the selection response, given either $p$ or $T$, we need to know the expected mean of the selected tail ($\\mu^{*}$), from which we can compute either $S = \\mu^{*} - \\mu$ or $\\bar{i} = S/\\sigma$, and then apply the breeder's equation."
-    },
-    {
-      "kind": "example",
-      "id": "14.2",
-      "anchor": "example-14.2",
-      "label": "Example 14.2",
-      "section_id": "Evolution_chapter14_004",
-      "excerpt": "Example 14.2 · ref: 14.2 · source: Evolution chapter14 004.json · blocks 5–6 Example 14.2. Consider the expected selection intensity on males when the upper 5% are used to form the next generation and phenotypes are normally distributed. If the sampled number is large, $ \\bar{\\imath} \\simeq 2.06 $ (Example 14.1). Suppose, however, that just 20 males are scored (phenotyped), with only the largest allowed to reproduce, in order to yield p = 0.05. The expected value for this in…"
     },
     {
       "kind": "figure",
@@ -146,22 +130,6 @@
       "caption": "Figure 14.3 The expected selection intensity,  $ E[\\bar{i}_{(N,M)}] $, under truncation selection on a normally distributed phenotype, as a function of the total number of individuals measured, M, and the fraction of these saved,  $ p = N/M $. The curve  $ M = \\infty $ is given by Equation 14.3a, while the curves for M = 10, 20, 50, and 100 were obtained from the average of the expected values of the N = pM largest unit normal order statistics (Harter 1961). Note that Equation 14.3a is generally a good approximation, even when N is fairly small."
     },
     {
-      "kind": "example",
-      "id": "14.3",
-      "anchor": "example-14.3",
-      "label": "Example 14.3",
-      "section_id": "Evolution_chapter14_005",
-      "excerpt": "Example 14.3 · ref: 14.3 · source: Evolution chapter14 005.json · blocks 6–10 Example 14.3. Consider a threshold trait whose liability has a heritability of $ h^{2} = 0.25 $ (Example 14.4 and especially LW Chapter 25 discuss how $ h^{2} $ can be estimated on this scale). What is the expected response to selection if the initial frequency of individuals displaying the character is 5% and selection is practiced by choosing only adults displaying the character? Only six generat…"
-    },
-    {
-      "kind": "example",
-      "id": "14.4",
-      "anchor": "example-14.4",
-      "label": "Example 14.4",
-      "section_id": "Evolution_chapter14_005",
-      "excerpt": "Example 14.4 · ref: 14.4 · source: Evolution chapter14 005.json · blocks 11–14 Example 14.4. The effectiveness of selection on wing morphs in females of the whitebacked planthopper (Sogatella furcifera) was examined by Matsumura (1996). While this hemipteran is a serious rice pest in Japan, it is unable to overwinter. Rather, each year it migrates from southern China to recolonize Japan. Females exhibit two wing morphs: macropterous females are fully winged, while brachypter…"
-    },
-    {
       "kind": "figure",
       "id": "14.4",
       "anchor": "figure-14.4",
@@ -169,15 +137,6 @@
       "section_id": "Evolution_chapter14_005",
       "src": "figures/Evolution_14.4.png",
       "caption": "Figure 14.4 Selection response for a binary trait when the underlying liability, z, exceeds some threshold value, T. We assume that an appropriate scale can be found such that  $ z \\sim N(\\mu_t, 1) $, where  $ \\mu_t $ is the current mean and  $ T = 0 $. Under this scaling for T, a mean liability of zero ( $ \\mu = 0 $) implies that 50% of the population shows the trait, while  $ <50\\% $ display the trait when  $ \\mu < 0 $ and  $ >50\\% $ do when  $ \\mu > 0 $. Because z is normally distributed, the probit transform estimates  $ \\mu_t $ from the frequency,  $ q_t $, of individuals displaying the character (Equation 14.6). We assume that the breeder's equation holds on the liability scale, so that  $ \\mu_{t+1} = \\mu_t + S_t h^2 $, where  $ S_t = \\mu_t^* - \\mu_t $. Using properties of the unit normal allows translation of the mean liability following selection,  $ \\mu_{t+1} $, into the new frequency,  $ q_{t+1} $, of the trait (Equation 14.7). Note that after selection, where a fraction,  $ p_t $, of the selected parents display the trait, the mean liability value is now the weighted average of the means of two truncated normal distributions (Equation 14.8a)."
-    },
-    {
-      "kind": "figure",
-      "id": "14.5",
-      "anchor": "figure-14.5",
-      "label": "Figure 14.5",
-      "section_id": "Evolution_chapter14_005",
-      "src": "figures/Evolution_14.5.png",
-      "caption": "Figure 14.5 The response to selection on a threshold trait. Changes in q and S are plotted below, where solid circles denote  $ q_{t} $, and open circles denote  $ S_{t} $. See Example 14.3 for details."
     },
     {
       "kind": "figure",
@@ -205,6 +164,56 @@
       "section_id": "Evolution_chapter14_007",
       "src": "figures/Evolution_14.8.png",
       "caption": "Figure 14.8 The logistic regressions for the relationship between dry weight and flowering in hound's-tongue (Cynoglossum officinale). Data were obtained from Wesselingh and de Jong (1995). Regressions are given for control, high, and low lines, grown contemporaneously. See Example 14.5 for further details."
+    },
+    {
+      "kind": "example",
+      "id": "14.1",
+      "anchor": "example-14.1",
+      "label": "Example 14.1",
+      "section_id": "Evolution_chapter14_003",
+      "excerpt": "Example 14.1. Consider selection on a normally distributed trait for which the upper 5% of the population is saved (p = 0.05). Here $ x {[1-0.05]} = x {[0.95]} $ is obtained by the R command gnorm(0.95), which returns 1.645, as Pr[U 1.645] = 0.05. The R command dnorm(x) returns the value of $ \\varphi(x) $, with dnorm(1.645) returning a value of 0.103. Hence, $$ \\bar{\\imath}=\\frac{\\varphi(1.645)}{0.05}=\\frac{0.103}{0.05}\\simeq2.06 $$ More compactly, the R command for any valu…",
+      "content_markdown": "Example 14.1. Consider selection on a normally distributed trait for which the upper 5% of the population is saved (p = 0.05). Here $ x_{[1-0.05]} = x_{[0.95]} $ is obtained by the R command gnorm(0.95), which returns 1.645, as Pr[U > 1.645] = 0.05. The R command dnorm(x) returns the value of $ \\varphi(x) $, with dnorm(1.645) returning a value of 0.103. Hence, $$ \\bar{\\imath}=\\frac{\\varphi(1.645)}{0.05}=\\frac{0.103}{0.05}\\simeq2.06 $$\n\nMore compactly, the R command for any value of p is dnorm(qnorm(1-p))/p. In contrast, Smith's approximation calculates the selection intensity as $$ \\bar{\\imath}\\simeq0.8+0.41\\ln\\left(\\frac{1}{0.05}-1\\right)\\simeq2.01 $$\n\nFinally, if we selected for the lowermost 5%, $ \\bar{\\imath} = -2.06 $.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "14.2",
+      "anchor": "example-14.2",
+      "label": "Example 14.2",
+      "section_id": "Evolution_chapter14_004",
+      "excerpt": "Example 14.2. Consider the expected selection intensity on males when the upper 5% are used to form the next generation and phenotypes are normally distributed. If the sampled number is large, $ \\bar{\\imath} \\simeq 2.06 $ (Example 14.1). Suppose, however, that just 20 males are scored (phenotyped), with only the largest allowed to reproduce, in order to yield p = 0.05. The expected value for this individual is the expected value of the largest order statistic for a sample of…",
+      "content_markdown": "Example 14.2. Consider the expected selection intensity on males when the upper 5% are used to form the next generation and phenotypes are normally distributed. If the sampled number is large, $ \\bar{\\imath} \\simeq 2.06 $ (Example 14.1). Suppose, however, that just 20 males are scored (phenotyped), with only the largest allowed to reproduce, in order to yield p = 0.05. The expected value for this individual is the expected value of the largest order statistic for a sample of size 20. For the unit normal, this is $ \\simeq $1.87 (Harter 1961), and hence $ E[\\bar{\\nu}_{(1,20)}] \\simeq 1.87 $. There is considerable spread about this expected value, as the standard deviation of this order statistic is 0.525 (Sarhan and Greenberg 1962). How well do the approximations of $ E[\\bar{\\nu}_{(1,20)}] $ perform? Burrows's approximation (Equation 14.4b) yields $$ E\\left[\\bar{\\imath}_{(1,20)}\\right]\\simeq2.06-\\frac{(20-1)}{2\\left(20+1\\right)2.06}=2.06-0.22=1.84 $$\n\nBulmer's approximation (Equation 14.4c) uses $$ \\widetilde{p}=\\frac{1+1/2}{20+1/40}\\simeq0.075 $$ which returns $ x_{[1-0.075]} \\simeq 1.44 $. Because $ \\varphi(1.44) = 0.1415 $, $ E[\\bar{\\imath}_{(1,20)}] \\simeq 0.1415/0.075 \\simeq 1.89 $.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "14.3",
+      "anchor": "example-14.3",
+      "label": "Example 14.3",
+      "section_id": "Evolution_chapter14_005",
+      "excerpt": "Example 14.3. Consider a threshold trait whose liability has a heritability of $ h^{2} = 0.25 $ (Example 14.4 and especially LW Chapter 25 discuss how $ h^{2} $ can be estimated on this scale). What is the expected response to selection if the initial frequency of individuals displaying the character is 5% and selection is practiced by choosing only adults displaying the character? Only six generations are required to increase the frequency of the trait to 50% ( $ \\mu = 0 $)…",
+      "content_markdown": "Example 14.3. Consider a threshold trait whose liability has a heritability of $ h^{2} = 0.25 $ (Example 14.4 and especially LW Chapter 25 discuss how $ h^{2} $ can be estimated on this scale). What is the expected response to selection if the initial frequency of individuals displaying the character is 5% and selection is practiced by choosing only adults displaying the character? Only six generations are required to increase the frequency of the trait to 50% ( $ \\mu = 0 $). Note that even though all selected parents exhibit the trait, the selection differential rapidly declines in a nonlinear fashion (Figure 14.5). The values plotted in Figure 14.5 were obtained as follows. As was calculated earlier, $ q_0 = 0.05 $, which implies $ \\mu_0 = -1.645 $ (the mean liability is 1.65 standard deviations below the threshold). Only individuals displaying the trait are allowed to reproduce, yielding (from Equation 14.9) the resulting selection differential on the liability scale: $$ S_{0}=\\varphi(-1.645)/0.05\\simeq0.106/0.05\\simeq2.062 $$ Applying the breeder’s equation returns the new mean value of liability: $$ \\mu_{1}=\\mu_{0}+0.25\\cdot S_{0}=-1.645+0.25\\cdot2.062=-1.129 $$ Equation 14.7 translates this new mean into the fraction of the population now above the threshold $$ q_{1}=\\Pr(U\\geq-\\mu_{1})=\\Pr(U\\geq1.129)=0.129 $$ Thus, after one generation of selection, the character frequency is expected to increase from 5% to 12.9%. Further iteration in this fashion recovers the rest of the values in Figure 14.5.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "14.4",
+      "anchor": "example-14.4",
+      "label": "Example 14.4",
+      "section_id": "Evolution_chapter14_005",
+      "excerpt": "Example 14.4. The effectiveness of selection on wing morphs in females of the whitebacked planthopper (Sogatella furcifera) was examined by Matsumura (1996). While this hemipteran is a serious rice pest in Japan, it is unable to overwinter. Rather, each year it migrates from southern China to recolonize Japan. Females exhibit two wing morphs: macropterous females are fully winged, while brachypterous females have reduced wings and cannot fly. Further, increasing nymphal popu…",
+      "content_markdown": "Example 14.4. The effectiveness of selection on wing morphs in females of the whitebacked planthopper (Sogatella furcifera) was examined by Matsumura (1996). While this hemipteran is a serious rice pest in Japan, it is unable to overwinter. Rather, each year it migrates from southern China to recolonize Japan. Females exhibit two wing morphs: macropterous females are fully winged, while brachypterous females have reduced wings and cannot fly. Further, increasing nymphal population density increases the frequency of macropterous females (leading to increased dispersal). Using three replicate experiments at each of three densities, Matsumura selected for increased macroptery in one replicate, decreased macroptery in another, and a control (no selection) in the third. For the replicates with a density of one nymph per container, roughly 40–90 adults were scored, and 20 were chosen to form the next generation. The resulting data for the first five generations in the up-selected line was as follows (Matsumura, pers. comm.): [[TABLE:inline_1]] Here q is the frequency of macroptery before selection and p is the frequency of macroptery in the selected parents. Translation from q into the mean liability, $ \\mu $, follows from Equation 14.6. The response (on the liability scale) to selection on generation 1 is $$ R(1)=\\mu_{2}-\\mu_{1}=-x_{[1-0.340]}-(-x_{[1-0.224]})=-0.41-(-0.76)=0.35 $$ Likewise, the total response was $$ \\mu_{6}-\\mu_{1}=0.55-(-0.76)=1.31 $$ Selection differentials were calculated from q and p using Equation 14.9. For example, for generation 2, $$ S_{2}=\\frac{\\varphi(\\mu_{2})}{q_{2}}\\frac{p_{2}-q_{2}}{1-q_{2}}=\\frac{\\varphi(-0.41)}{0.34}\\frac{(0.80-0.34)}{1-0.34}=0.75 $$ The total selection differential is $ \\sum_{i} S_{i} = 3.91 $. One key summary statistic for any selection experiment is the realized heritability, the ratio of response to selection differential. As detailed in Chapter 18, there are several ways to compute this for a multigeneration selection experiment. One simple estimate is the ratio of the total response to the total differential. $$ \\widehat{h^{2}}=\\frac{\\sum R_{i}}{\\sum_{i}S_{i}}=\\frac{1.31}{3.91}=0.33 $$ giving an estimated heritability of the underlying liability for macroptery of around 30%.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "14.5",
+      "anchor": "example-14.5",
+      "label": "Example 14.5",
+      "section_id": "Evolution_chapter14_007",
+      "excerpt": "Example 14.5. An interesting analysis of selection on a threshold trait using logistic regressions was provided by Wesselingh and de Jong (1995), who studied the connection between plant size (measured by the proxy of dry weight) and flowering in hound's-tongue (Cynoglossum officinale). This species is a facultative biennial, which means that, like an annual plant, it flowers only once, but unlike an annual, it may live several years before flowering. This strategy represent…",
+      "content_markdown": "Example 14.5. An interesting analysis of selection on a threshold trait using logistic regressions was provided by Wesselingh and de Jong (1995), who studied the connection between plant size (measured by the proxy of dry weight) and flowering in hound's-tongue (Cynoglossum officinale). This species is a facultative biennial, which means that, like an annual plant, it flowers only once, but unlike an annual, it may live several years before flowering. This strategy represents a tradeoff between reduced survival and a larger seed set from a larger size at flowering. For Cynoglossum, it has been shown that vernalization (cold treatment) followed by an appropriate photoperiod is required for flowering. However, unless plants are at (or above) a certain threshold size, they are unresponsive to vernalization, and will grow without flowering through the next growing cycle. The authors were interested in the threshold size that triggers the binary trait (vernalization sensitivity), and in particular whether this size is both variable and heritable. To examine this, they grew plants for different numbers of days (ranging from 31 to 86) to generate individuals of different sizes before the vernalization treatment. This generated two selection groups based on threshold size: the smallest plants that flowered following vernalization were chosen as the low-line (low-threshold) parents, while those plants that did [[FIGURE:14.8]] not respond to the first vernalization treatment were allowed to grow a second cycle and were chosen as the parents for the high lines. The response to a single generation of selection can be assessed by comparing the offspring from the low (or high) selected parents against those from an unselected control, as plotted in Figure 14.8. The data available to the authors were 0 or 1 (insensitive or sensitive to vernalization) values as a function of size. To estimate the distribution of threshold sizes, they performed a logistic regression on these data, using maximum likelihood (LW Appendix 4) to fit the $ \\alpha $ and mean (m) terms of Equation 14.10b. Data for the high and low lines are plotted in Figure 14.8 along with the ML solution for the logistic regression. Each individual has a 0 or 1 data point (individual ticks), while the circles represent the average value for weight classes with more than ten individuals. Logistic regressions were estimated for progeny from the low- and high-line parents and for a control line grown contemporaneously with these progeny. The ML estimates of the mean, m (which corresponds to the weight yielding 50% flowering), and value of $ \\alpha $ for these regressions were [[TABLE:inline_2]] Note that the low line not only had a smaller mean size for vernalization (1.85), but also a much larger $ \\alpha $ value (2.58), and therefore a more abrupt transition between insensitivity and sensitivity. Using these estimates, Equation 14.10b yields the expected percent of vernalization sensitivity (flowering) for a given weight. For a 3 gram plant, this is 0.43 in the control line and 0.32 in the high lines, but 0.95 in the low line. By estimating both the response, $ R $, to selection as well as the within-generation change, $ S $, we can estimate the heritability of this trait by calculating $ R/S $. First, the response to selection (change in $ m $) can be estimated by using the contemporaneously grown control line as a standard. From the previous table, the response in the high line is 5.41 - 3.30 = 2.11, while the response in the low line is 1.85 - 3.30 = -1.45. Turning to estimating $ S $, the selection truncation point for the low line is the largest low parent (2.74 grams, or 25.5% of the left tail of the founding source population), while the smallest flowering high parent was 9.95 grams (corresponding to the upper 12.2% of the founding source population). From Equation 14.3a, these translate into selection intensities of $ \\bar{\\imath} = -1.26 $ and 1.66, respectively. To obtain the selection differentials, $ S $, for each line, recall that $ S = \\bar{\\imath}\\sigma_{p} $. To estimate $ \\sigma_{p} $, the authors note that the 0.25 quartile for a normal distribution is 0.674 $ \\sigma $ from the mean. Although the assumption is that the threshold values follow a logistic distribution, the cumulative probability functions are rather similar for both the normal and the logistic (Figure 14.7). Hence, taking the observed 0.25 quartile (in the founding lines) of 2.68, and its mean of 5.12, suggests $$ \\sigma_{p}=\\frac{5.12-2.68}{0.674}=3.63 $$ The response (change in m), selection intensity, and estimated heritability, $ \\hat{h}^{2} = R/S $, for the high and low lines are [[TABLE:inline_3]] Thus, there is heritable variation in threshold size, as there was response to selection for both larger and smaller threshold sizes. Further, the estimated heritability (based on the single-generation response to selection) was around 0.3.",
+      "origin": "example-library"
     },
     {
       "kind": "formula",
@@ -639,13 +648,6 @@
         "label": "Example 14.1",
         "book_hint": "",
         "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "14.1",
-        "label": "Figure 14.1",
-        "book_hint": "",
-        "link_scope": "current-book"
       }
     ],
     "Evolution_chapter14_004": [
@@ -704,20 +706,6 @@
         "label": "Example 14.2",
         "book_hint": "",
         "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "14.1",
-        "label": "Example 14.1",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "14.4c",
-        "label": "Equation 14.4c",
-        "book_hint": "",
-        "link_scope": "current-book"
       }
     ],
     "Evolution_chapter14_005": [
@@ -743,16 +731,30 @@
         "link_scope": "current-book"
       },
       {
-        "kind": "chapter",
-        "id": "18",
-        "label": "Chapter 18",
+        "kind": "figure",
+        "id": "14.4",
+        "label": "Figure 14.4",
         "book_hint": "",
         "link_scope": "current-book"
       },
       {
-        "kind": "figure",
-        "id": "14.4",
-        "label": "Figure 14.4",
+        "kind": "equation",
+        "id": "14.6",
+        "label": "Equation 14.6",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "14.7",
+        "label": "Equation 14.7",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
+        "kind": "equation",
+        "id": "14.8a",
+        "label": "Equation 14.8a",
         "book_hint": "",
         "link_scope": "current-book"
       },
@@ -779,13 +781,6 @@
       },
       {
         "kind": "equation",
-        "id": "14.8a",
-        "label": "Equation 14.8a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
         "id": "14.9",
         "label": "Equation 14.9",
         "book_hint": "",
@@ -802,27 +797,6 @@
         "kind": "example",
         "id": "14.4",
         "label": "Example 14.4",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "14.5",
-        "label": "Figure 14.5",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "14.7",
-        "label": "Equation 14.7",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "14.6",
-        "label": "Equation 14.6",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -873,6 +847,13 @@
         "link_scope": "current-book"
       },
       {
+        "kind": "example",
+        "id": "14.5",
+        "label": "Example 14.5",
+        "book_hint": "",
+        "link_scope": "current-book"
+      },
+      {
         "kind": "figure",
         "id": "14.8",
         "label": "Figure 14.8",
@@ -883,13 +864,6 @@
         "kind": "equation",
         "id": "14.3a",
         "label": "Equation 14.3a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "example",
-        "id": "14.5",
-        "label": "Example 14.5",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -1039,7 +1013,7 @@
       "target_section_title": "Chapter 11 · Matters of Scale",
       "book_hint": "Genetics",
       "link_scope": "lw",
-      "context_excerpt": "T p-\\mu}{\\sigma}\\right)=\\Pr\\left(U \\frac{T p-\\mu}{\\sigma}\\right)=p\\end{align } $$ where $ U \\sim \\mathrm{N}(0,1) $ denotes a unit normal random variable. Define $ x {[p]} $, the probit transformation of $ p $ (LW Chapter 11), as satisfying $$ \\Pr(U\\leq x {[p]})=p $$ so that $$ \\Pr(U x {[1-p]})=p $$ It immediately follows that $ x {[1-p]} = (T p - \\mu)/\\sigma $, and Equation 14.1 yields the expected selection intensi…",
+      "context_excerpt": "p-\\mu}{\\sigma}\\right)=\\Pr\\left(U \\frac{T p-\\mu}{\\sigma}\\right)=p\\end{align } $$ where $ U \\sim \\mathrm{N}(0,1) $ denotes a unit normal random variable. Define $ x {[p]} $, the probit transformation of $ p $ (LW Chapter 11), as satisfying $$ \\Pr(U\\leq x {[p]})=p $$ so that $$ \\Pr(U x {[1-p]})=p $$ It immediately follows that $ x {[1-p]} = (T p - \\mu)/\\sigma $, and Equation 14.1 yields the expected selection intensity…",
       "match_source": "llm-prerequisite"
     },
     {
@@ -1054,7 +1028,7 @@
       "target_section_title": "Chapter 21 · 21",
       "book_hint": "",
       "link_scope": "current-book",
-      "context_excerpt": "tau+\\tau/n)}\\right]{1\\over{\\bar\\imath}}\\end{align } $$ where $ \\tau $ is the intraclass correlation of family members. This important result for certain types of family selection is revisited in more detail in Chapter 21. [示例 Example] Example 14.2 · ref: 14.2 · source: Evolution chapter14 004.json · blocks 5–6 Example 14.2. Consider the expected selection intensity on males when the upper 5% are used to for",
+      "context_excerpt": "au+\\tau/n)}\\right]{1\\over{\\bar\\imath}}\\end{align } $$ where $ \\tau $ is the intraclass correlation of family members. This important result for certain types of family selection is revisited in more detail in Chapter 21. [示例 Example] (See Example 14.2.) ---",
       "match_source": "chapter-overview"
     },
     {
@@ -1084,7 +1058,7 @@
       "target_section_title": "Chapter 25 Textbook Mapping",
       "book_hint": "Genetics",
       "link_scope": "lw",
-      "context_excerpt": "mple 14.3 · ref: 14.3 · source: Evolution chapter14 005.json · blocks 6–10 Example 14.3. Consider a threshold trait whose liability has a heritability of $ h^{2} = 0.25 $ (Example 14.4 and especially LW Chapter 25 discuss how $ h^{2} $ can be estimated on this scale). What is the expected response to selection if the initial frequency of individuals displaying the character is 5% and selection is practiced by choosi…",
+      "context_excerpt": "RESPONSE IN DISCRETE TRAITS: BINARY CHARACTERS / The Threshold/Liability Model [命题 Proposition] One application of truncation-selection theory is in the response to selection of binary traits, which are characterized simply by presence or absence (such as normal or diseased). The basic trait model to this point assumed a continuous character, which initially seems at odds with a binary trait. However, as discussed i…",
       "match_source": "llm-prerequisite"
     },
     {
@@ -1100,21 +1074,6 @@
       "book_hint": "",
       "link_scope": "current-book",
       "context_excerpt": "ssume that normality is restored in the liability distribution at the start of the next generation due to segregation plus the addition of the environmental value. We examine the validity of this assumption in Chapter 24. Finally, a diligent reader might be concerned that this lack of normality violates the breeder's equation, and hence our assumption that $ \\mu {t+1} = \\mu t + h^2 S $. However, this expression is a…",
-      "match_source": "chapter-overview"
-    },
-    {
-      "current_section_id": "Evolution_chapter14_005",
-      "current_anchor": "evolution_chapter14_005",
-      "source_chapter_id": "Evolution_chapter18",
-      "label": "Chapter 18",
-      "target_anchor": "evolution_chapter18_section_001",
-      "target_label": "Chapter 18",
-      "target_ref_type": "chapter",
-      "target_ref_id": "18",
-      "target_section_title": "Chapter 18 · Analysis of Short-term Selection Experiments:",
-      "book_hint": "",
-      "link_scope": "current-book",
-      "context_excerpt": "e total selection differential is $ \\sum {i} S {i} = 3.91 $. One key summary statistic for any selection experiment is the realized heritability, the ratio of response to selection differential. As detailed in Chapter 18, there are several ways to compute this for a multigeneration selection experiment. One simple estimate is the ratio of the total response to the total differential. $$ \\widehat{h^{2}}=\\frac{\\sum R…",
       "match_source": "chapter-overview"
     },
     {
@@ -1440,7 +1399,7 @@
     "provider": "deepseek",
     "model": "deepseek-v4-flash",
     "cache_enabled": true,
-    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "cache_dir": "tmp/llm_cache",
     "max_remote_calls": 0,
     "max_prompt_chars_total": 0,
     "max_response_chars_total": 0,

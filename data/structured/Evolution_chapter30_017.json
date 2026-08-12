@@ -21,15 +21,94 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "Recall from Equation 30.21a that when $ \\gamma $ is nonsingular (i.e., it contains no zero eigenvalues), then $ z_0 = -\\gamma^{-1}b $ is the unique extremum (stationary point) in the quadratic regression. If $ \\gamma $ contains $ k $ zero eigenvalues, there is no curvature along the trait combinations given by the $ k $ associated eigenvectors (the fitness surface is a $ k $-dimensional hyperplane along these directions), while there is curvature (and a unique stationary point) in the remaining fitness space. As mentioned, this stationary value is a maximum if all of the eigenvalues are negative (and hence a test for significance for a maximum is that all of the eigenvalues should be significantly less than zero). Likewise, it is a local minimum if all the eigenvalues are positive (which can also be tested in the same manner). If $ \\gamma $ contains both (significant) positive and negative eigenvalues, then $ z_0 $ is a saddle point. Thus, tests for maxima or minima are straightforward. But what about the confidence region (or more correctly, a confidence volume) for the location of the stationary point?"
+      "content": "Recall from Equation 30.21a that when $ \\gamma $ is nonsingular (i.e., it contains no zero eigenvalues), then $ z_0 = -\\gamma^{-1}b $ is the unique extremum (stationary point) in the quadratic regression. If $ \\gamma $ contains $ k $ zero eigenvalues, there is no curvature along the trait combinations given by the $ k $ associated eigenvectors (the fitness surface is a $ k $-dimensional hyperplane along these directions), while there is curvature (and a unique stationary point) in the remaining fitness space. As mentioned, this stationary value is a maximum if all of the eigenvalues are negative (and hence a test for significance for a maximum is that all of the eigenvalues should be significantly less than zero). Likewise, it is a local minimum if all the eigenvalues are positive (which can also be tested in the same manner). If $ \\gamma $ contains both (significant) positive and negative eigenvalues, then $ z_0 $ is a saddle point. Thus, tests for maxima or minima are straightforward. But what about the confidence region (or more correctly, a confidence volume) for the location of the stationary point?",
+      "source_page": 1134,
+      "source_pages": [
+        1134
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p021:b3",
+        "Evolution_chapter30:p021:b4"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          431.0,
+          659.0,
+          455.0
+        ],
+        [
+          131.0,
+          462.0,
+          904.0,
+          736.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "f1c5d89ddefa715bc00545fb6857acfa5f0348053e834c674dee3bdbbb7ddb75"
     },
     {
       "type": "discussion",
-      "content": "A classical result for a quadratic regression is the Box-Hunter confidence region. Suppose we let $ d_z $ denote the gradient vector of the best quadratic regression of w on z, which (Equation 30.20a) is calculated by $$ \\mathbf{d}_{\\mathbf{Z}}=\\nabla_{\\mathbf{Z}}[w(\\mathbf{z})]=\\mathbf{b}+\\gamma\\mathbf{z} $$"
+      "content": "A classical result for a quadratic regression is the Box-Hunter confidence region. Suppose we let $ d_z $ denote the gradient vector of the best quadratic regression of w on z, which (Equation 30.20a) is calculated by $$ \\mathbf{d}_{\\mathbf{Z}}=\\nabla_{\\mathbf{Z}}[w(\\mathbf{z})]=\\mathbf{b}+\\gamma\\mathbf{z} $$",
+      "source_page": 1134,
+      "source_pages": [
+        1134
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p021:b5",
+        "Evolution_chapter30:p021:b6"
+      ],
+      "source_bboxes": [
+        [
+          132.0,
+          737.0,
+          904.0,
+          808.0
+        ],
+        [
+          405.0,
+          820.0,
+          633.0,
+          845.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "9e771ffc3058f75136fb818f4d9108cf59b3affd2612026851be9f62be3325f2"
     },
     {
       "type": "proposition",
-      "content": "Suppose there are k traits and n observations, and the residuals to the quadratic regression are independent and homoscedastic normal variables (as mentioned, for fitness data, this assumption is usually problematic). Box and Hunter (1954) showed that a $ 100(1 - \\alpha)% $ confidence volume is given by those vectors z that satisfy the quadratic inequality $$ \\mathbf{d}_{\\mathbf{z}}^{T}\\mathbf{V}^{-1}\\mathbf{d}_{\\mathbf{z}}=\\left(\\mathbf{b}+\\gamma\\mathbf{z}\\right)^{T}\\mathbf{V}^{-1}\\left(\\mathbf{b}+\\gamma\\mathbf{z}\\right)\\leq k F_{1-\\alpha,k,n-p} $$ where $F$ is the $(1-\\alpha)$ value for an $F$ distribution with $k$ and $n-p$ degrees of freedom $(p=k(k+3)/2)$ is the total number of estimated regression coefficients) and $\\mathbf{V}$ is an estimate of the covariance matrix for $\\mathbf{d}_z$. Values of $z$ that satisfy Equation 30.28 are within the confidence volume for the stationary point. See Del Castillo and Cahya (2001) and Peterson et al. (2002) for further discussion and developments. It is critical to stress that these methods all make the strong assumption that fitness residuals are normally distributed, which typically fails. We strongly favor using aster models (Chapter 29), which correctly model the fitness distribution and for which Geyer and Shaw (2010a) developed likelihood-based approaches for hypothesis testing and confidence intervals."
+      "content": "Suppose there are k traits and n observations, and the residuals to the quadratic regression are independent and homoscedastic normal variables (as mentioned, for fitness data, this assumption is usually problematic). Box and Hunter (1954) showed that a $ 100(1 - \\alpha)% $ confidence volume is given by those vectors z that satisfy the quadratic inequality $$ \\mathbf{d}_{\\mathbf{z}}^{T}\\mathbf{V}^{-1}\\mathbf{d}_{\\mathbf{z}}=\\left(\\mathbf{b}+\\gamma\\mathbf{z}\\right)^{T}\\mathbf{V}^{-1}\\left(\\mathbf{b}+\\gamma\\mathbf{z}\\right)\\leq k F_{1-\\alpha,k,n-p} $$ where $F$ is the $(1-\\alpha)$ value for an $F$ distribution with $k$ and $n-p$ degrees of freedom $(p=k(k+3)/2)$ is the total number of estimated regression coefficients) and $\\mathbf{V}$ is an estimate of the covariance matrix for $\\mathbf{d}_z$. Values of $z$ that satisfy Equation 30.28 are within the confidence volume for the stationary point. See Del Castillo and Cahya (2001) and Peterson et al. (2002) for further discussion and developments. It is critical to stress that these methods all make the strong assumption that fitness residuals are normally distributed, which typically fails. We strongly favor using aster models (Chapter 29), which correctly model the fitness distribution and for which Geyer and Shaw (2010a) developed likelihood-based approaches for hypothesis testing and confidence intervals.",
+      "source_page": 1134,
+      "source_pages": [
+        1134
+      ],
+      "source_block_ids": [
+        "Evolution_chapter30:p021:b7",
+        "Evolution_chapter30:p021:b8",
+        "Evolution_chapter30:p021:b10"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          857.0,
+          905.0,
+          952.0
+        ],
+        [
+          290.0,
+          964.0,
+          747.0,
+          994.0
+        ],
+        [
+          132.0,
+          1005.0,
+          905.0,
+          1214.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "b6764ccc9c09088968582ef2f74df59403d1b5415a73ecf8a208936fb85f1fc5"
     }
   ]
 }

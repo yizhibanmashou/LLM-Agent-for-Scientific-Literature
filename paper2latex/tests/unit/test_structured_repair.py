@@ -12,7 +12,6 @@ from knowledge_engineering.processors.structured_repair import (
     verify_patch_with_llm,
 )
 
-
 TEST_RUNTIME_ROOT = Path(__file__).resolve().parents[3] / "tmp" / "test_runtime" / "structured_repair"
 TEST_RUNTIME_ROOT.mkdir(parents=True, exist_ok=True)
 

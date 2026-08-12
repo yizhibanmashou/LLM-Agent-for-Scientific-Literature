@@ -30,43 +30,454 @@
   "blocks": [
     {
       "type": "discussion",
-      "content": "The general approach follows if we consider a standard animal model with additional random effects (Equations 19.20 and 19.21). Equation 22.1b shows how the phenotype of individual i is the sum of its direct breeding value, the social breeding values of its group members, and the environmental effects, $$ z_{i}=\\mu+\\left(A_{d_{i}}+E_{d_{i}}\\right)+\\sum_{j\\neq1}\\left(A_{s_{j}}+E_{s_{j}}\\right) $$"
+      "content": "The general approach follows if we consider a standard animal model with additional random effects (Equations 19.20 and 19.21). Equation 22.1b shows how the phenotype of individual i is the sum of its direct breeding value, the social breeding values of its group members, and the environmental effects, $$ z_{i}=\\mu+\\left(A_{d_{i}}+E_{d_{i}}\\right)+\\sum_{j\\neq1}\\left(A_{s_{j}}+E_{s_{j}}\\right) $$",
+      "source_page": 778,
+      "source_pages": [
+        778
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p028:b13",
+        "Evolution_chapter22:p028:b14",
+        "Evolution_chapter22:p028:b15"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1041.0,
+          807.0,
+          1064.0
+        ],
+        [
+          286.0,
+          1071.0,
+          1060.0,
+          1165.0
+        ],
+        [
+          504.0,
+          1178.0,
+          841.0,
+          1228.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "1388a4865c931d608bd6562e084348a823c38d64df398f8a6a1f4f737ae763c6"
     },
     {
       "type": "discussion",
-      "content": "To start, we assume a very simple residual structure $$ z_{i}=\\mu+A_{d_{i}}+\\sum_{j\\neq1}A_{s_{j}}+e_{i} $$ where the $ e_i $ are uncorrelated and homoscedastic, so that $ \\mathbf{e} \\sim (\\mathbf{0}, \\sigma^2(\\mathbf{e}))\\mathbf{I} $. Letting $ \\mathbf{a}_d $ denote the vector of direct breeding values (DBVs), and $ \\mathbf{a}_s $ be the vector of social breeding values (SBVs), the resulting mixed model becomes $$ \\mathbf{z}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{d}\\mathbf{a}_{d}+\\mathbf{Z}_{s}\\mathbf{a}_{s}+\\mathbf{e},\\quad with\\quad\\mathbf{e}\\sim(\\mathbf{0},\\sigma^{2}(e)\\mathbf{I}) $$"
+      "content": "To start, we assume a very simple residual structure $$ z_{i}=\\mu+A_{d_{i}}+\\sum_{j\\neq1}A_{s_{j}}+e_{i} $$ where the $ e_i $ are uncorrelated and homoscedastic, so that $ \\mathbf{e} \\sim (\\mathbf{0}, \\sigma^2(\\mathbf{e}))\\mathbf{I} $. Letting $ \\mathbf{a}_d $ denote the vector of direct breeding values (DBVs), and $ \\mathbf{a}_s $ be the vector of social breeding values (SBVs), the resulting mixed model becomes $$ \\mathbf{z}=\\mathbf{X}\\boldsymbol{\\beta}+\\mathbf{Z}_{d}\\mathbf{a}_{d}+\\mathbf{Z}_{s}\\mathbf{a}_{s}+\\mathbf{e},\\quad with\\quad\\mathbf{e}\\sim(\\mathbf{0},\\sigma^{2}(e)\\mathbf{I}) $$",
+      "source_page": 778,
+      "source_pages": [
+        778
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p028:b17",
+        "Evolution_chapter22:p028:b18",
+        "Evolution_chapter22:p028:b20",
+        "Evolution_chapter22:p028:b21"
+      ],
+      "source_bboxes": [
+        [
+          288.0,
+          1247.0,
+          738.0,
+          1271.0
+        ],
+        [
+          555.0,
+          1288.0,
+          791.0,
+          1338.0
+        ],
+        [
+          287.0,
+          1357.0,
+          1060.0,
+          1428.0
+        ],
+        [
+          444.0,
+          1445.0,
+          900.0,
+          1470.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "737e45bff5bf90b99ee984739f5b3d79ec04aba9c969b5bcae1766dfc491a2f9"
     },
     {
       "type": "discussion",
-      "content": "Here $ \\beta $ is the vector of fixed effects (which will be just the mean for our simple example) and X is the design matrix associated with these fixed effects. Likewise, $ Z_{d} $ and $ Z_{s} $ are the corresponding incidence matrices for the direct and social effects, which follow logically upon considering the group members (Examples 22.10 and 22.11)."
+      "content": "Here $ \\beta $ is the vector of fixed effects (which will be just the mean for our simple example) and X is the design matrix associated with these fixed effects. Likewise, $ Z_{d} $ and $ Z_{s} $ are the corresponding incidence matrices for the direct and social effects, which follow logically upon considering the group members (Examples 22.10 and 22.11).",
+      "source_page": 779,
+      "source_pages": [
+        779
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p029:b2"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          207.0,
+          904.0,
+          300.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "2945277d5d11d2bdef1031438f275f18690dedcd8b1dba16224334d6b751f0ec"
     },
     {
       "type": "proposition",
-      "content": "To complete the model, we need to specify the covariance structures of the three vectors of random effects. Our initial assumption on the residual errors implies that the covariance matrix for the residuals is $ \\sigma^2(e) $. The covariance structure for the two vectors of random effects is a function of the relationship matrix A (Chapter 19) of the individuals in the study, which has block-matrix form. $$ \\mathbf{V a r}\\begin{pmatrix}\\mathbf{a}_{d}\\\\ \\mathbf{a}_{s}\\end{pmatrix}=\\begin{pmatrix}\\sigma^{2}(A_{d})\\mathbf{A}&\\sigma(A_{d},A_{s})\\mathbf{A}\\\\ \\sigma(A_{d},A_{s})\\mathbf{A}&\\sigma^{2}(A_{s})\\mathbf{A}\\end{pmatrix} $$"
+      "content": "To complete the model, we need to specify the covariance structures of the three vectors of random effects. Our initial assumption on the residual errors implies that the covariance matrix for the residuals is $ \\sigma^2(e) $. The covariance structure for the two vectors of random effects is a function of the relationship matrix A (Chapter 19) of the individuals in the study, which has block-matrix form. $$ \\mathbf{V a r}\\begin{pmatrix}\\mathbf{a}_{d}\\\\ \\mathbf{a}_{s}\\end{pmatrix}=\\begin{pmatrix}\\sigma^{2}(A_{d})\\mathbf{A}&\\sigma(A_{d},A_{s})\\mathbf{A}\\\\ \\sigma(A_{d},A_{s})\\mathbf{A}&\\sigma^{2}(A_{s})\\mathbf{A}\\end{pmatrix} $$",
+      "source_page": 779,
+      "source_pages": [
+        779
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p029:b3",
+        "Evolution_chapter22:p029:b4"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          299.0,
+          905.0,
+          414.0
+        ],
+        [
+          330.0,
+          426.0,
+          704.0,
+          477.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "243722885990e1e4368a861dc4150a1a95b7cdd29abb909eef0be20f416ec98e"
     },
     {
       "type": "discussion",
-      "content": "This is often written more compactly using the Kronecker or direct product notation as $ \\mathbf{G} \\otimes \\mathbf{A} $, where $$ \\mathbf{G}=\\begin{pmatrix}\\sigma^{2}(A_{d})&\\sigma(A_{d},A_{s})\\\\ \\sigma(A_{d},A_{s})&\\sigma^{2}(A_{s})\\end{pmatrix} $$ Because the residuals are assumed to be uncorrelated with the other random effects, the full covariance structure for this model is $$ \\mathbf{V a r}\\begin{pmatrix}\\mathbf{a}_{d}\\\\ \\mathbf{a}_{s}\\\\ \\mathbf{e}\\end{pmatrix}=\\begin{pmatrix}\\sigma^{2}(A_{d})\\mathbf{A}&\\sigma(A_{d},A_{s})\\mathbf{A}&\\mathbf{0}\\\\ \\sigma(A_{d},A_{s})\\mathbf{A}&\\sigma^{2}(A_{s})\\mathbf{A}&\\mathbf{0}\\\\ \\mathbf{0}&\\mathbf{0}&\\sigma^{2}(e)\\mathbf{I}\\end{pmatrix} $$"
+      "content": "This is often written more compactly using the Kronecker or direct product notation as $ \\mathbf{G} \\otimes \\mathbf{A} $, where $$ \\mathbf{G}=\\begin{pmatrix}\\sigma^{2}(A_{d})&\\sigma(A_{d},A_{s})\\\\ \\sigma(A_{d},A_{s})&\\sigma^{2}(A_{s})\\end{pmatrix} $$ Because the residuals are assumed to be uncorrelated with the other random effects, the full covariance structure for this model is $$ \\mathbf{V a r}\\begin{pmatrix}\\mathbf{a}_{d}\\\\ \\mathbf{a}_{s}\\\\ \\mathbf{e}\\end{pmatrix}=\\begin{pmatrix}\\sigma^{2}(A_{d})\\mathbf{A}&\\sigma(A_{d},A_{s})\\mathbf{A}&\\mathbf{0}\\\\ \\sigma(A_{d},A_{s})\\mathbf{A}&\\sigma^{2}(A_{s})\\mathbf{A}&\\mathbf{0}\\\\ \\mathbf{0}&\\mathbf{0}&\\sigma^{2}(e)\\mathbf{I}\\end{pmatrix} $$",
+      "source_page": 779,
+      "source_pages": [
+        779
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p029:b6",
+        "Evolution_chapter22:p029:b7",
+        "Evolution_chapter22:p029:b9",
+        "Evolution_chapter22:p029:b10"
+      ],
+      "source_bboxes": [
+        [
+          133.0,
+          494.0,
+          903.0,
+          538.0
+        ],
+        [
+          384.0,
+          537.0,
+          649.0,
+          586.0
+        ],
+        [
+          132.0,
+          596.0,
+          903.0,
+          642.0
+        ],
+        [
+          288.0,
+          655.0,
+          745.0,
+          728.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "98b976e7533125e2eb375daf06f01e0cec4aa33609b204b66ac1f4afc9903c78"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:22.10]]"
+      "content": "[[SEE_EXAMPLE:22.10]]",
+      "source_page": 779,
+      "source_pages": [
+        779,
+        780
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p029:b12",
+        "Evolution_chapter22:p029:b13",
+        "Evolution_chapter22:p029:b14",
+        "Evolution_chapter22:p029:b15",
+        "Evolution_chapter22:p029:b16",
+        "Evolution_chapter22:p029:b17",
+        "Evolution_chapter22:p030:b2",
+        "Evolution_chapter22:p030:b3",
+        "Evolution_chapter22:p030:b4",
+        "Evolution_chapter22:p030:b5",
+        "Evolution_chapter22:p030:b6"
+      ],
+      "source_bboxes": [
+        [
+          167.0,
+          816.0,
+          880.0,
+          903.0
+        ],
+        [
+          282.0,
+          918.0,
+          761.0,
+          1103.0
+        ],
+        [
+          167.0,
+          1121.0,
+          880.0,
+          1185.0
+        ],
+        [
+          179.0,
+          1201.0,
+          869.0,
+          1386.0
+        ],
+        [
+          168.0,
+          1403.0,
+          301.0,
+          1426.0
+        ],
+        [
+          167.0,
+          1425.0,
+          880.0,
+          1470.0
+        ],
+        [
+          321.0,
+          207.0,
+          1036.0,
+          295.0
+        ],
+        [
+          453.0,
+          297.0,
+          900.0,
+          483.0
+        ],
+        [
+          322.0,
+          488.0,
+          1035.0,
+          552.0
+        ],
+        [
+          344.0,
+          556.0,
+          1008.0,
+          741.0
+        ],
+        [
+          323.0,
+          746.0,
+          868.0,
+          769.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "db700d3d9b75d5995e925af53d29f925a3a994ab737aa5cc18b41048d8ddf785"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:22.11]]"
+      "content": "[[SEE_EXAMPLE:22.11]]",
+      "source_page": 760,
+      "source_pages": [
+        760
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p010:b11"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1155.0,
+          1059.0,
+          1337.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "874458264fdc47d6dc85b86cb39c5f533ca2b145269ea74fd39e5720347f8ffb"
     },
     {
       "type": "discussion",
-      "content": "Because we allow for the possibility that the direct and social breeding values are correlated, the standard mixed-model equations for two vectors of random effects (Equation 19.21; LW Equations 26.19b and 26.30) must be slightly modified. They become $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}_{d}&\\mathbf{X}^{T}\\mathbf{Z}_{s}\\\\\\mathbf{Z}_{d}\\mathbf{X}^{T}&\\mathbf{Z}_{d}^{T}\\mathbf{Z}_{d}+\\lambda_{1}\\mathbf{A}^{-1}&\\mathbf{Z}_{d}^{T}\\mathbf{Z}_{s}+\\lambda_{2}\\mathbf{A}^{-1}\\\\\\mathbf{Z}_{s}\\mathbf{X}^{T}&\\mathbf{Z}_{s}^{T}\\mathbf{Z}_{d}+\\lambda_{2}\\mathbf{A}^{-1}&\\mathbf{Z}_{s}^{T}\\mathbf{Z}_{s}+\\lambda_{3}\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\boldsymbol{\\beta}\\\\\\mathbf{a}_{d}\\\\\\mathbf{a}_{s}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}\\\\\\mathbf{X}^{T}\\mathbf{Z}_{d}\\\\\\mathbf{X}^{T}\\mathbf{Z}_{s}\\end{pmatrix} $$ where the weights $ \\left(\\lambda_{i}\\right) $ are related to elements in the inverse of G, namely, $$ \\begin{pmatrix}\\lambda_{1}&\\lambda_{2}\\\\\\lambda_{2}&\\lambda_{3}\\end{pmatrix}=\\sigma^{2}(e)\\mathbf{G}^{-1}=\\sigma^{2}(e)\\begin{pmatrix}\\sigma^{2}(A_{d})&\\sigma(A_{d},A_{s})\\\\\\sigma(A_{d},A_{s})&\\sigma^{2}(A_{s})\\end{pmatrix}^{-1} $$ as obtained by Muir (2005) and Van Vleck and Cassady (2005)."
+      "content": "Because we allow for the possibility that the direct and social breeding values are correlated, the standard mixed-model equations for two vectors of random effects (Equation 19.21; LW Equations 26.19b and 26.30) must be slightly modified. They become $$ \\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}&\\mathbf{X}^{T}\\mathbf{Z}_{d}&\\mathbf{X}^{T}\\mathbf{Z}_{s}\\\\\\mathbf{Z}_{d}\\mathbf{X}^{T}&\\mathbf{Z}_{d}^{T}\\mathbf{Z}_{d}+\\lambda_{1}\\mathbf{A}^{-1}&\\mathbf{Z}_{d}^{T}\\mathbf{Z}_{s}+\\lambda_{2}\\mathbf{A}^{-1}\\\\\\mathbf{Z}_{s}\\mathbf{X}^{T}&\\mathbf{Z}_{s}^{T}\\mathbf{Z}_{d}+\\lambda_{2}\\mathbf{A}^{-1}&\\mathbf{Z}_{s}^{T}\\mathbf{Z}_{s}+\\lambda_{3}\\mathbf{A}^{-1}\\end{pmatrix}\\begin{pmatrix}\\boldsymbol{\\beta}\\\\\\mathbf{a}_{d}\\\\\\mathbf{a}_{s}\\end{pmatrix}=\\begin{pmatrix}\\mathbf{X}^{T}\\mathbf{X}\\\\\\mathbf{X}^{T}\\mathbf{Z}_{d}\\\\\\mathbf{X}^{T}\\mathbf{Z}_{s}\\end{pmatrix} $$ where the weights $ \\left(\\lambda_{i}\\right) $ are related to elements in the inverse of G, namely, $$ \\begin{pmatrix}\\lambda_{1}&\\lambda_{2}\\\\\\lambda_{2}&\\lambda_{3}\\end{pmatrix}=\\sigma^{2}(e)\\mathbf{G}^{-1}=\\sigma^{2}(e)\\begin{pmatrix}\\sigma^{2}(A_{d})&\\sigma(A_{d},A_{s})\\\\\\sigma(A_{d},A_{s})&\\sigma^{2}(A_{s})\\end{pmatrix}^{-1} $$ as obtained by Muir (2005) and Van Vleck and Cassady (2005).",
+      "source_page": 780,
+      "source_pages": [
+        780,
+        781
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p030:b10",
+        "Evolution_chapter22:p030:b11",
+        "Evolution_chapter22:p031:b2",
+        "Evolution_chapter22:p031:b3",
+        "Evolution_chapter22:p031:b5"
+      ],
+      "source_bboxes": [
+        [
+          287.0,
+          1264.0,
+          1060.0,
+          1335.0
+        ],
+        [
+          357.0,
+          1352.0,
+          923.0,
+          1473.0
+        ],
+        [
+          132.0,
+          207.0,
+          768.0,
+          231.0
+        ],
+        [
+          226.0,
+          252.0,
+          743.0,
+          306.0
+        ],
+        [
+          132.0,
+          325.0,
+          668.0,
+          348.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "8a821fa67ecafac384a4a48ed59fc52d49c670fa005cd66dce6f57b3ecbdc613"
     },
     {
       "type": "discussion",
-      "content": "In order to solve these equations, estimates of the variance components—$\\sigma^{2}(e)$, $\\sigma^{2}(A_{d})$, $\\sigma^{2}(A_{s})$, and $\\sigma(A_{d}, A_{s})$—are required, and within the mixed-model framework, these are obtained by REML (LW Chapter 27). Van Vleck and Cassady (2005) used simulated data to show that, under the appropriate design, REML does indeed provide separable estimates of the genetic variance components. However, two early applications to real data sets, weight gain in pigs within pens by Arango et al. (2005) and weight gain in Hereford cattle in feedlots by Van Vleck et al. (2007), found that the likelihood surface for $\\sigma^{2}(A_{s})$ was very flat, making model fitting challenging. We will examine such issues of identifiability shortly. While mixed-model methodology is very robust (for example, it easily handles missing data and variable group numbers), it can easily fail if the model is not correctly specified or the experimental design is such that random effects are not separable, points that we will address shortly."
+      "content": "In order to solve these equations, estimates of the variance components—$\\sigma^{2}(e)$, $\\sigma^{2}(A_{d})$, $\\sigma^{2}(A_{s})$, and $\\sigma(A_{d}, A_{s})$—are required, and within the mixed-model framework, these are obtained by REML (LW Chapter 27). Van Vleck and Cassady (2005) used simulated data to show that, under the appropriate design, REML does indeed provide separable estimates of the genetic variance components. However, two early applications to real data sets, weight gain in pigs within pens by Arango et al. (2005) and weight gain in Hereford cattle in feedlots by Van Vleck et al. (2007), found that the likelihood surface for $\\sigma^{2}(A_{s})$ was very flat, making model fitting challenging. We will examine such issues of identifiability shortly. While mixed-model methodology is very robust (for example, it easily handles missing data and variable group numbers), it can easily fail if the model is not correctly specified or the experimental design is such that random effects are not separable, points that we will address shortly.",
+      "source_page": 781,
+      "source_pages": [
+        781
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p031:b6"
+      ],
+      "source_bboxes": [
+        [
+          131.0,
+          349.0,
+          906.0,
+          626.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "cfc7499422ce38a8c5b5ec0f97b10378b558488d2737a1f26b1f85f6a9e40b31"
     },
     {
       "type": "example",
-      "content": "[[SEE_EXAMPLE:22.12]]"
+      "content": "[[SEE_EXAMPLE:22.12]]",
+      "source_page": 781,
+      "source_pages": [
+        781,
+        782
+      ],
+      "source_block_ids": [
+        "Evolution_chapter22:p031:b11",
+        "Evolution_chapter22:p031:b12",
+        "Evolution_chapter22:p031:b14",
+        "Evolution_chapter22:p031:b15",
+        "Evolution_chapter22:p031:b16",
+        "Evolution_chapter22:p031:b18",
+        "Evolution_chapter22:p031:b19",
+        "Evolution_chapter22:p031:b20",
+        "Evolution_chapter22:p031:b7",
+        "Evolution_chapter22:p031:b8",
+        "Evolution_chapter22:p031:b9",
+        "Evolution_chapter22:p032:b3"
+      ],
+      "source_bboxes": [
+        [
+          256.0,
+          905.0,
+          791.0,
+          930.0
+        ],
+        [
+          167.0,
+          942.0,
+          880.0,
+          965.0
+        ],
+        [
+          167.0,
+          1052.0,
+          880.0,
+          1097.0
+        ],
+        [
+          249.0,
+          1118.0,
+          796.0,
+          1145.0
+        ],
+        [
+          167.0,
+          1164.0,
+          880.0,
+          1208.0
+        ],
+        [
+          166.0,
+          1295.0,
+          881.0,
+          1380.0
+        ],
+        [
+          344.0,
+          1401.0,
+          703.0,
+          1426.0
+        ],
+        [
+          167.0,
+          1447.0,
+          391.0,
+          1469.0
+        ],
+        [
+          166.0,
+          693.0,
+          881.0,
+          779.0
+        ],
+        [
+          166.0,
+          778.0,
+          880.0,
+          821.0
+        ],
+        [
+          413.0,
+          842.0,
+          635.0,
+          864.0
+        ],
+        [
+          321.0,
+          362.0,
+          1037.0,
+          575.0
+        ]
+      ],
+      "provenance_score": 1.0,
+      "content_sha256": "ebe45b7d97d567de272a6a7301a82555c21945a73ee2258123dc64a4a6500b5a"
     }
   ]
 }

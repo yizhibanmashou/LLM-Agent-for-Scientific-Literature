@@ -699,8 +699,8 @@ Linkage disequilibrium can also arise as an artifact of admixture of subpopulati
 > Ab | $ P_{Ab} $ | 0.0475 | 0.0475 | 0.0475
 > aB | $ P_{aB} $ | 0.0475 | 0.0475 | 0.0475
 > ab | $ P_{ab} $ | 0.9025 | 0.0025 | 0.4525
-> D= $ P_{AB}P_{ab}-P_{Ab}P_{aB} $ | 0 | 0 | 0.2025 | 
-> Dmin | -0.0025 | -0.0025 | -0.2500 | 
+> D= $ P_{AB}P_{ab}-P_{Ab}P_{aB} $ | 0 | 0 | 0.2025 |
+> Dmin | -0.0025 | -0.0025 | -0.2500 |
 > Dmax | 0.0475 | 0.0475 | 0.2500 |
 
 ---
@@ -790,6 +790,13 @@ $$
 $$
 
 10. The accompanying gel diagram shows the banding patterns observed for an esterase enzyme in 1000 individuals of the black-tailed jackrabbit, Lepus californicus, in which four alleles $ A_{1}-A_{4} $ encode polypeptide chains that differ in their electrophoretic mobility. Estimate the allele frequency for each allele, the expected number of each genotype assuming Hardy-Weinberg proportions, the chi-square value for goodness of fit, the number of degrees of freedom, and the corresponding P value. Interpret the P value in terms of whether it supports or rejects the hypothesis of Hardy-Weinberg proportions.
+
+> **Figure problem_2.10** · page 46 · source: `PopGen_chapter2`
+>
+> ![Figure problem_2.10](figures/PopGen_problem_2.10.png)
+>
+> Problem 2.10 diagram from the authoritative chapter PDF.
+
 
 11. In a population undergoing random mating for a single gene with a dominant and recessive allele, show that the allele frequency of the recessive allele among individuals with the dominant phenotype is $ q/(1 + q) $, where $ q $ is the allele frequency of the recessive in the whole population. Then show that the frequency of homozygous recessive genotypes from dominant $ \times $ dominant matings is $ [q/(1 + q)]^2 $, and from dominant $ \times $ recessive matings is $ q/(1 + q) $. Note that the latter is equal to the square root of the former. These proportions are called Snyder's ratios and were once used to test human traits for simple recessive inheritance.
 

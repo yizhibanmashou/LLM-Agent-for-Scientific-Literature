@@ -15,7 +15,6 @@ import fitz
 import numpy as np
 from PIL import Image, ImageDraw
 
-
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "tmp" / "genetics_full_audit" / "structured_diagnosis"
 FIGURE_GLOB = ("Genetics_3.*.png", "Genetics_4.*.png")

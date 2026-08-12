@@ -168,7 +168,7 @@
       "level": 2,
       "depth": 1,
       "anchor": "evolution_appendix2_016",
-      "text_preview": "The final distribution needed for a Bayesian analysis of a Gaussian likelihood is the $t$ (or Student's $t$) distribution. Suppose that $x i \\sim N(\\mu, \\sigma^2)$, so for $n$ independent draws, $\\overline{x} \\sim N(\\mu, \\sigma^2/n)$. This implies that $(\\overline{x} - \\mu)/\\sqrt{\\sigma^2/n} \\sim U$, where $U \\sim N(0…"
+      "text_preview": "The final distribution needed for a Bayesian analysis of a Gaussian likelihood is the $t$ (or Student's $t$) distribution. Suppose that $x i \\sim N(\\mu, \\sigma^2)$, so for $n$ independent draws, $\\overline{x} \\sim N(\\mu, \\sigma^2/n)$. This implies that $(\\overline{x} - \\mu) / \\sqrt{\\sigma^2/n} \\sim U$, where $U \\sim N…"
     },
     {
       "id": "Evolution_appendix2_017",
@@ -213,30 +213,6 @@
   ],
   "assets": [
     {
-      "kind": "example",
-      "id": "A2.1",
-      "anchor": "example-a2.1",
-      "label": "Example A2.1",
-      "section_id": "Evolution_appendix2_003",
-      "excerpt": "Example A2.1 · ref: A2.1 · source: Evolution appendix2 003.json · blocks 7–11 Example A2.1. Consider a recessive color locus in cattle in which the genotypes BB and Bb are black, while bb is red. Two black-coated parents are crossed, and produce some red offspring, which implies that both parents must be Bb. A black-coated son of theirs is crossed to n red dams (bb), and all of his offspring are black. What is the posterior probability that he is BB? To solve this problem us…"
-    },
-    {
-      "kind": "example",
-      "id": "A2.2",
-      "anchor": "example-a2.2",
-      "label": "Example A2.2",
-      "section_id": "Evolution_appendix2_003",
-      "excerpt": "Example A2.2 · ref: A2.2 · source: Evolution appendix2 003.json · blocks 12–14 Example A2.2. Suppose a major gene (with alleles Q and q) underlies a character of interest. The distribution of phenotypic values for each major-locus genotype follows a normal distribution with a variance of 1 and means of 2.1, 3.5, and 1.3 for QQ, Qq, and qq, respectively. Suppose the frequencies of these genotypes for a random individual drawn from the population are 0.3, 0.2, and 0.5 (for QQ,…"
-    },
-    {
-      "kind": "example",
-      "id": "A2.3",
-      "anchor": "example-a2.3",
-      "label": "Example A2.3",
-      "section_id": "Evolution_appendix2_008",
-      "excerpt": "Example A2.3 · ref: A2.3 · source: Evolution appendix2 008.json · blocks 6–11 Example A2.3. Suppose that the prior distribution of $ \\theta $ is such that $ \\Pr(\\theta \\theta 0) = 0.10 $, while for the posterior distribution $ \\Pr(\\theta \\theta 0 \\mid \\mathbf{x}) = 0.05 $. The latter is significant at the 5% level in a classical hypothesis-testing framework, but the data only doubles our confidence in the alternative hypothesis relative to our belief based on prior informati…"
-    },
-    {
       "kind": "figure",
       "id": "A2.1",
       "anchor": "figure-a2.1",
@@ -244,22 +220,6 @@
       "section_id": "Evolution_appendix2_010",
       "src": "figures/Evolution_A2.1.png",
       "caption": "Figure A2.1 A uniform prior on one scale does not result in a flat prior on a transformed scale. Suppose a flat prior on  $ (0,10000) $ is assumed for both the additive and residual variances. To mimic what happens under MCMC, we display these priors by using the resulting histograms generated from a large number of random draws, with a uniform expected to return a flat histogram. Left: The resulting prior for the standard deviation of either variance (the square root of a random draw). Right: The resulting prior for  $ h^{2} $, the ratio of a random draw for the additive variance divided by this value plus a random draw for the residual variance. Neither of these priors results in a uniform prior (namely, a flat histogram) on the transformed scale."
-    },
-    {
-      "kind": "example",
-      "id": "A2.4",
-      "anchor": "example-a2.4",
-      "label": "Example A2.4",
-      "section_id": "Evolution_appendix2_011",
-      "excerpt": "Example A2.4 · ref: A2.4 · source: Evolution appendix2 011.json · blocks 5–7 Example A2.4. Consider the likelihood of x successes in n independent draws from a binomial with a success parameter of $ \\theta $, $$ \\ell(\\theta\\mid\\mathbf{x})=C\\theta^{x}(1-\\theta)^{n-x} $$ where the constant C does not involve $ \\theta $. Taking logs gives $$ L(\\theta\\mid\\mathbf{x})=\\ln\\left[\\ell(\\theta\\mid\\mathbf{x})\\right]=\\ln C+x\\ln\\theta+(n-x)\\ln(1-\\theta) $$ Thus $$ \\frac{\\partial L(\\theta\\…"
-    },
-    {
-      "kind": "example",
-      "id": "A2.5",
-      "anchor": "example-a2.5",
-      "label": "Example A2.5",
-      "section_id": "Evolution_appendix2_011",
-      "excerpt": "Example A2.5 · ref: A2.5 · source: Evolution appendix2 011.json · blocks 8–8 Example A2.5. Suppose our data consists of $n$ independent draws from a normal distribution with an unknown mean and variance, $\\mu$ and $\\sigma^{2}$. In LW Appendix 4, we showed that the information matrix in this case is $$ \\mathbf{I}=n\\begin{pmatrix}{{{\\frac{1}{\\sigma^{2}}}}}&{{{0}}} \\\\{{{0}}}&{{{\\frac{1}{2\\sigma^{4}}}}}\\end{pmatrix} $$ Because the determinant of a diagonal matrix is the product…"
     },
     {
       "kind": "figure",
@@ -278,6 +238,56 @@
       "section_id": "Evolution_appendix2_019",
       "src": "figures/Evolution_A2.3.png",
       "caption": "Figure A2.3 For  $ \\alpha = \\beta = 1 $ (long-dashed curve), the beta distribution is simply the uniform distribution over  $ (0, 1) $. The pdf for the beta distribution can also be U-shaped ( $ \\alpha = \\beta = 0.5 $; solid curve), unimodal ( $ \\alpha = 2 $,  $ \\beta = 5 $; short-dashed curve), or L-shaped ( $ \\alpha = 10 $,  $ \\beta = 1 $; dotted curve). Because the beta distribution is symmetric in  $ \\alpha $ and  $ \\beta $, switching their parameter values generates a distribution of the same shape translated about 0.5."
+    },
+    {
+      "kind": "example",
+      "id": "A2.1",
+      "anchor": "example-a2.1",
+      "label": "Example A2.1",
+      "section_id": "Evolution_appendix2_003",
+      "excerpt": "Example A2.1. Consider a recessive color locus in cattle in which the genotypes BB and Bb are black, while bb is red. Two black-coated parents are crossed, and produce some red offspring, which implies that both parents must be Bb. A black-coated son of theirs is crossed to n red dams (bb), and all of his offspring are black. What is the posterior probability that he is BB? To solve this problem using Bayes' theorem, we first define the indicator random variable $$ \\theta=\\l…",
+      "content_markdown": "Example A2.1. Consider a recessive color locus in cattle in which the genotypes BB and Bb are black, while bb is red. Two black-coated parents are crossed, and produce some red offspring, which implies that both parents must be Bb. A black-coated son of theirs is crossed to n red dams (bb), and all of his offspring are black. What is the posterior probability that he is BB?\n\nTo solve this problem using Bayes' theorem, we first define the indicator random variable $$ \\theta=\\left\\{\\begin{aligned}0&\\quad son is Bb\\\\ 1&\\quad son is BB\\end{aligned}\\right. $$\n\nGiven that both parents are Bb, the expected priors for their offspring are 1/4 for BB and 1/2 for Bb, resulting in a 3/4 prior for a black-coated offspring. Further, from conditional probability (Equation A2.1a), the prior that a black offspring is BB is $$ \\Pr(BB\\mid\\mathrm{Black})=\\frac{\\Pr(BB,\\mathrm{Black})}{\\Pr(\\mathrm{Black})}=\\frac{\\Pr(BB)}{\\Pr(\\mathrm{Black})}=\\frac{1/4}{3/4}=1/3 $$ where we used the fact that all BB are black, so that $ \\Pr(BB, \\text{Black}) = \\Pr(BB) $. Hence, the prior becomes $$ \\Pr(\\theta)=\\left\\{\\begin{aligned}&0&is&2/3\\\\ &1&is&1/3\\end{aligned}\\right. $$\n\nFurther $$ \\Pr(all n offspring are black\\mid sire is BB)=1 $$ $$ \\Pr(all n offspring are black\\mid sire is Bb)=(1/2)^{n} $$ and $$ \\begin{aligned}Pr(all n black)&=Pr(all black\\mid BB)^{*}Pr(BB)+Pr(all black\\mid Bb)^{*}Pr(Bb)\\\\&=1\\cdot1/3+(1/2)^{n}\\cdot(2/3)\\end{aligned} $$\n\nIf we combine the above values, Bayes' theorem yields $$ \\Pr(\\theta=1\\mid n black offspring)=\\frac{\\Pr(n\\mid\\theta=1)Pr(\\theta=1)}{\\Pr(n)}=\\frac{1\\cdot(1/3)}{1\\cdot(1/3)+(1/2)^{n}\\cdot(2/3)} $$ which returns values of 0.5, 0.67, 0.8, 0.89, 0.94, and 0.998 for n = 1, 2, 3, 4, 5, and 10, respectively.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A2.2",
+      "anchor": "example-a2.2",
+      "label": "Example A2.2",
+      "section_id": "Evolution_appendix2_003",
+      "excerpt": "Example A2.2. Suppose a major gene (with alleles Q and q) underlies a character of interest. The distribution of phenotypic values for each major-locus genotype follows a normal distribution with a variance of 1 and means of 2.1, 3.5, and 1.3 for QQ, Qq, and qq, respectively. Suppose the frequencies of these genotypes for a random individual drawn from the population are 0.3, 0.2, and 0.5 (for QQ, Qq, and qq, respectively). If an individual from this population has a phenoty…",
+      "content_markdown": "Example A2.2. Suppose a major gene (with alleles Q and q) underlies a character of interest. The distribution of phenotypic values for each major-locus genotype follows a normal distribution with a variance of 1 and means of 2.1, 3.5, and 1.3 for QQ, Qq, and qq, respectively. Suppose the frequencies of these genotypes for a random individual drawn from the population are 0.3, 0.2, and 0.5 (for QQ, Qq, and qq, respectively). If an individual from this population has a phenotypic value of 3, then what is the probability of it being QQ? Qq? qq? Let $ \\varphi(x \\mid \\mu, 1) = (2\\pi)^{-1/2} e^{-(x-\\mu)^2 / 2} $ denote the density function for a normal distribution with a mean of $ \\mu $ and variance of 1. To apply Bayes' theorem, note that the values for the priors and the conditionals are as follows: [[TABLE:inline_1]] Because $ p(3) = \\sum_{G} \\operatorname{Pr}(G) \\cdot p(3|G) = 0.195 $, Bayes' theorem gives the posterior probabilities for the genotypes given the observed value of 3 as: $$ \\Pr(QQ\\mid x=3)=0.078/0.195=0.400 $$ $$ \\Pr(Qq\\mid x=3)=0.070/0.195=0.359 $$ $$ \\Pr(qq\\mid x=3)=0.047/0.195=0.241 $$ Thus, there is a 40 percent chance that this individual has a genotype of QQ, a 36 percent chance it is Qq, and a 24 percent chance it is qq.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A2.3",
+      "anchor": "example-a2.3",
+      "label": "Example A2.3",
+      "section_id": "Evolution_appendix2_008",
+      "excerpt": "Example A2.3. Suppose that the prior distribution of $ \\theta $ is such that $ \\Pr(\\theta \\theta 0) = 0.10 $, while for the posterior distribution $ \\Pr(\\theta \\theta 0 \\mid \\mathbf{x}) = 0.05 $. The latter is significant at the 5% level in a classical hypothesis-testing framework, but the data only doubles our confidence in the alternative hypothesis relative to our belief based on prior information. If $ \\Pr(\\theta \\theta 0) = 0.50 $ for the prior, then a 5% posterior prob…",
+      "content_markdown": "Example A2.3. Suppose that the prior distribution of $ \\theta $ is such that $ \\Pr(\\theta > \\theta_0) = 0.10 $, while for the posterior distribution $ \\Pr(\\theta > \\theta_0 \\mid \\mathbf{x}) = 0.05 $. The latter is significant at the 5% level in a classical hypothesis-testing framework, but the data only doubles our confidence in the alternative hypothesis relative to our belief based on prior information. If $ \\Pr(\\theta > \\theta_0) = 0.50 $ for the prior, then a 5% posterior probability would greatly increase our confidence in the alternative hypothesis. Consider the first case in this example, where the prior and posterior probabilities for the null were $ \\pi_0 = 0.1 $ and $ p_0 = 0.05 $, respectively. The Bayes factor in favor of $ H_1 $ versus $ H_0 $ is $$ B_{1}=\\frac{\\pi_{0}(1-p_{0})}{p_{0}(1-\\pi_{0})}=\\frac{0.1\\cdot0.95}{0.05\\cdot0.9}=4.22 $$\n\nSimilarly, for the second example, where the prior for the null was $ \\pi_{0}=0.5 $, $$ B_{1}=\\frac{0.5\\cdot0.95}{0.05\\cdot0.5}=19 $$\n\nHere, the data showed close to a 20-fold improvement (relative to the prior) in support of $ H_{1} $. Bayes factors and p values represent fundamentally different approaches to an analysis and are not formally comparable. However, a loose interpretation is that a factor of 20 is akin to the level of support of a p = 0.05, and a factor of 100 to p = 0.01.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A2.4",
+      "anchor": "example-a2.4",
+      "label": "Example A2.4",
+      "section_id": "Evolution_appendix2_011",
+      "excerpt": "Example A2.4. Consider the likelihood of x successes in n independent draws from a binomial with a success parameter of $ \\theta $, $$ \\ell(\\theta\\mid\\mathbf{x})=C\\theta^{x}(1-\\theta)^{n-x} $$ where the constant C does not involve $ \\theta $. Taking logs gives $$ L(\\theta\\mid\\mathbf{x})=\\ln\\left[\\ell(\\theta\\mid\\mathbf{x})\\right]=\\ln C+x\\ln\\theta+(n-x)\\ln(1-\\theta) $$ Thus $$ \\frac{\\partial L(\\theta\\mid\\mathbf{x})}{\\partial\\theta}=\\frac{x}{\\theta}-\\frac{n-x}{1-\\theta} $$ and…",
+      "content_markdown": "Example A2.4. Consider the likelihood of x successes in n independent draws from a binomial with a success parameter of $ \\theta $, $$ \\ell(\\theta\\mid\\mathbf{x})=C\\theta^{x}(1-\\theta)^{n-x} $$ where the constant C does not involve $ \\theta $. Taking logs gives $$ L(\\theta\\mid\\mathbf{x})=\\ln\\left[\\ell(\\theta\\mid\\mathbf{x})\\right]=\\ln C+x\\ln\\theta+(n-x)\\ln(1-\\theta) $$\n\nThus $$ \\frac{\\partial L(\\theta\\mid\\mathbf{x})}{\\partial\\theta}=\\frac{x}{\\theta}-\\frac{n-x}{1-\\theta} $$ and likewise $$ \\frac{\\partial^{2}L(\\theta\\mid\\mathbf{x})}{\\partial\\theta^{2}}=-\\frac{x}{\\theta^{2}}-(-1)\\cdot(-1)\\frac{n-x}{(1-\\theta)^{2}}=-\\left(\\frac{x}{\\theta^{2}}+\\frac{n-x}{(1-\\theta)^{2}}\\right) $$ Because $ E[x] = n\\theta $, then $$ -E\\left[\\frac{\\partial^{2}\\ln\\ell(\\theta\\mid\\mathbf{x})}{\\partial\\theta^{2}}\\right]=\\frac{n\\theta}{\\theta^{2}}+\\frac{n(1-\\theta)}{(1-\\theta)^{2}}=n\\theta^{-1}(1-\\theta)^{-1} $$\n\nThe resulting Jeffreys prior for this likelihood becomes $$ p(\\theta)\\propto\\sqrt{\\theta^{-1}(1-\\theta)^{-1}}\\propto\\theta^{-1/2}(1-\\theta)^{-1/2} $$ which is a U-shaped beta distribution with parameters $ \\alpha = \\beta = 1/2 $ (Equation A2.38a). This prior puts more weight on extreme values relative to assuming a uniform over $ (0,1) $, see Figure A2.3.",
+      "origin": "example-library"
+    },
+    {
+      "kind": "example",
+      "id": "A2.5",
+      "anchor": "example-a2.5",
+      "label": "Example A2.5",
+      "section_id": "Evolution_appendix2_011",
+      "excerpt": "Example A2.5. Suppose our data consists of $n$ independent draws from a normal distribution with an unknown mean and variance, $\\mu$ and $\\sigma^{2}$. In LW Appendix 4, we showed that the information matrix in this case is $$ \\mathbf{I}=n\\begin{pmatrix}{{{\\frac{1}{\\sigma^{2}}}}}&{{{0}}} \\\\{{{0}}}&{{{\\frac{1}{2\\sigma^{4}}}}}\\end{pmatrix} $$ Because the determinant of a diagonal matrix is the product of the diagonal elements, $ \\det(\\mathbf{I}) \\propto \\sigma^{-6} $, giving th…",
+      "content_markdown": "Example A2.5. Suppose our data consists of $n$ independent draws from a normal distribution with an unknown mean and variance, $\\mu$ and $\\sigma^{2}$. In LW Appendix 4, we showed that the information matrix in this case is $$ \\mathbf{I}=n\\begin{pmatrix}{{{\\frac{1}{\\sigma^{2}}}}}&{{{0}}} \\\\{{{0}}}&{{{\\frac{1}{2\\sigma^{4}}}}}\\end{pmatrix} $$ Because the determinant of a diagonal matrix is the product of the diagonal elements, $ \\det(\\mathbf{I}) \\propto \\sigma^{-6} $, giving the Jeffreys prior for $ \\mu $ and $ \\sigma^{2} $ as $$ p(\\boldsymbol{\\Theta})\\propto\\sqrt{\\sigma^{-6}}=\\sigma^{-3} $$ Because the joint prior does not involve $ \\mu $, this implies a flat prior for $ \\mu $ (i.e., $ p[\\mu] = c $). Note here that the prior distributions of $ \\mu $ and $ \\sigma^2 $ are independent, as $$ p(\\mu,\\theta)=c\\cdot\\sigma^{-3}=p(\\mu)\\cdot p(\\sigma^{2}) $$",
+      "origin": "example-library"
     },
     {
       "kind": "formula",
@@ -496,7 +506,7 @@
       "label": "Formula (A2.12)",
       "section_id": "Evolution_appendix2_008",
       "latex": "p_{i}(\\theta)=p(\\theta)/\\pi_{i}\\qquadfor\\quad i=0,1",
-      "latex_render": "p_{i}(\\theta)=p(\\theta)/\\pi_{i}\\qquadfor\\quad i=0,1",
+      "latex_render": "p_{i}(\\theta)=p(\\theta)/\\pi_{i}\\qquad for\\quad i=0,1",
       "origin": "paddle"
     },
     {
@@ -756,7 +766,7 @@
       "label": "Formula (A2.26a)",
       "section_id": "Evolution_appendix2_014",
       "latex": "\\Gamma(\\alpha)=\\int_{0}^{\\infty}y^{\\alpha-1}e^{-y}d y\\qquadfor\\alpha>0",
-      "latex_render": "\\Gamma(\\alpha)=\\int_{0}^{\\infty}y^{\\alpha-1}e^{-y}d y\\qquadfor\\alpha>0",
+      "latex_render": "\\Gamma(\\alpha)=\\int_{0}^{\\infty}y^{\\alpha-1}e^{-y}d y\\qquad for\\alpha>0",
       "origin": "paddle"
     },
     {
@@ -1046,7 +1056,7 @@
       "label": "Formula (A2.38a)",
       "section_id": "Evolution_appendix2_019",
       "latex": "\\begin{align*}p(x)=\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}\\;x^{\\alpha-1}(1-x)^{\\beta-1}\\quad{\\rm for}\\quad0\\le x\\le1,\\quad\\alpha,\\;\\beta>0\\end{align*}",
-      "latex_render": "\\begin{aligned}p(x)=\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}\\;x^{\\alpha-1}(1-x)^{\\beta-1}\\quad{\\rm for}\\quad0\\le x\\le1,\\quad\\alpha,\\;\\beta>0\\end{aligned}",
+      "latex_render": "\\begin{aligned}p(x)=\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha)\\Gamma(\\beta)}\\; x^{\\alpha-1}(1-x)^{\\beta-1}\\quad{\\rm for}\\quad0\\le x\\le1,\\quad\\alpha,\\;\\beta>0\\end{aligned}",
       "origin": "paddle"
     },
     {
@@ -1107,13 +1117,6 @@
         "kind": "example",
         "id": "A2.1",
         "label": "Example A2.1",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "equation",
-        "id": "A2.1a",
-        "label": "Equation A2.1a",
         "book_hint": "",
         "link_scope": "current-book"
       },
@@ -1179,20 +1182,6 @@
         "link_scope": "current-book"
       },
       {
-        "kind": "equation",
-        "id": "A2.38a",
-        "label": "Equation A2.38a",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
-        "kind": "figure",
-        "id": "A2.3",
-        "label": "Figure A2.3",
-        "book_hint": "",
-        "link_scope": "current-book"
-      },
-      {
         "kind": "example",
         "id": "A2.5",
         "label": "Example A2.5",
@@ -1226,16 +1215,16 @@
     ],
     "Evolution_appendix2_014": [
       {
-        "kind": "figure",
-        "id": "A2.2",
-        "label": "Figure A2.2",
+        "kind": "equation",
+        "id": "A2.26a",
+        "label": "Equation A2.26a",
         "book_hint": "",
         "link_scope": "current-book"
       },
       {
-        "kind": "equation",
-        "id": "A2.26a",
-        "label": "Equation A2.26a",
+        "kind": "figure",
+        "id": "A2.2",
+        "label": "Figure A2.2",
         "book_hint": "",
         "link_scope": "current-book"
       }
@@ -1379,7 +1368,7 @@
     "provider": "deepseek",
     "model": "deepseek-v4-flash",
     "cache_enabled": true,
-    "cache_dir": "D:\\大学资料\\大二\\LLM-Agent科学文献系统知识库处理\\tmp\\llm_cache",
+    "cache_dir": "tmp/llm_cache",
     "max_remote_calls": 0,
     "max_prompt_chars_total": 0,
     "max_response_chars_total": 0,
